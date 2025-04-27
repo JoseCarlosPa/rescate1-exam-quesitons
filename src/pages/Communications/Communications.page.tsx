@@ -1,14 +1,14 @@
-import {IoMdBriefcase} from "react-icons/io";
 import {NavLink} from "react-router";
 import {Disclosure} from "@headlessui/react";
 import {ChevronUpIcon} from "@heroicons/react/16/solid";
 import {faqData} from "./Communications.questions.ts";
+import { LuRadioTower } from "react-icons/lu";
 
 export default function Communications(){
     return(
         <div className="">
-            <div className="flex flex-col items-center justify-center bg-gray-100 pb-12 md:px-0  dark:bg-gray-900 dark:text-gray-100 ">
-                <IoMdBriefcase className="w-24 h-24 mb-1 text-orange-500" />
+            <div className="flex flex-col items-center w-screen justify-center bg-gray-100 pb-12 md:px-0 px-4 dark:bg-gray-900 dark:text-gray-100 p-4">
+                <LuRadioTower className="w-24 h-24 mb-1 text-orange-500" />
                 <p className="text-5xl font-bold mb-4 flex text-center">Comunicaciones y documentación</p>
                 <p className="text-sm italic">Alumnos Generacion 2025 Sabados Rescate 1</p>
                 <NavLink
