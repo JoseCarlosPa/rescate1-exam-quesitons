@@ -10,6 +10,9 @@ import {communicationsQuestions} from "../../pages/Communications/Communications
 import Sem from "../../pages/SEM/Sem.page.tsx";
 import {semSystemQuestions} from "../../pages/SEM/Sem.questions.ts";
 import Main from "../../pages/Main/Main.page.tsx";
+import Lms from "../../pages/LMS/Lms.page.tsx";
+import Bls from "../../pages/BLS/Bls.page.tsx";
+import StopTheBleed from "../../pages/StopTheBleed/StopTheBleed.page.tsx";
 
 export default function Router(){
     return(
@@ -24,6 +27,10 @@ export default function Router(){
                 <Route path="/communications/exam" element={<Exam returnRoute="/communications" name="Comunicaciones y documentación" questions={communicationsQuestions}  />}/>
                 <Route path="/sem" element={<Sem />}/>
                 <Route path="/sem/exam" element={<Exam returnRoute="/sem" name="Sistema SEM." questions={semSystemQuestions}  />}/>
+
+                <Route path="/lms" element={<Lms /> }/>
+                <Route path="/bls" element={<Bls />}/>
+                <Route path="/stop-the-bleed" element={<StopTheBleed />}/>
 
             </Routes>
         </Suspense>

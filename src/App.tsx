@@ -14,7 +14,6 @@ import {
     FaNotesMedical, FaQrcode, FaWineBottle
 } from "react-icons/fa";
 import {
-    GiBlood,
     GiMedicines,
     GiMorgueFeet,
     GiProtectionGlasses,
@@ -31,6 +30,7 @@ import {SiSpine} from "react-icons/si";
 import {PiBabyBold, PiBrainFill} from "react-icons/pi";
 import {AiOutlineWoman} from "react-icons/ai";
 import {IoWoman} from "react-icons/io5";
+import {BsSignStopFill} from "react-icons/bs";
 
 function App() {
     return(
@@ -199,7 +199,7 @@ function App() {
                 <NavLink
                     to="/"
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
-                    <GiBlood className="w-12 h-12 mb-1 text-orange-500" />
+                    <BsSignStopFill className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">STOP THE BLEED</p>
                 </NavLink>
                 <NavLink

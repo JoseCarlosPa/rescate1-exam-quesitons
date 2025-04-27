@@ -31,7 +31,7 @@ export default function Main() {
                         <FaHeartbeat className="text-orange-500 w-10 h-10" />
                         <p className="text-lg text-orange-500">BLS</p>
                     </NavLink>
-                    <NavLink to="/stb"
+                    <NavLink to="/stop-the-bleed"
                              className="flex flex-col items-center justify-center gap-2 mb-4 bg-white rounded-lg shadow-md p-4 hover:bg-gray-200 transition duration-300 ease-in-out h-32 md:w-52 w-full">
                         <BsSignStopFill className="text-orange-500 w-10 h-10" />
                         <p className="text-lg text-orange-500">STOP THE BLEED</p>
