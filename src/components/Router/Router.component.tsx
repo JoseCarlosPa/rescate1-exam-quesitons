@@ -19,6 +19,8 @@ import {medicTermsQuestions} from "../../pages/EMT/MedicTerms/MediTerms.question
 import MedicTerms from "../../pages/EMT/MedicTerms/MedicTerms.page.tsx";
 import {humanBodyQuestions} from "../../pages/EMT/HumanBody/HumanBody.questions.ts";
 import HumanBody from "../../pages/EMT/HumanBody/HumanBody.page.tsx";
+import LifeSpec from "../../pages/EMT/LifeSpec/LifeSpec.page.tsx";
+import {lifeSpecQuestions} from "../../pages/EMT/LifeSpec/LifeSpec.questions.ts";
 
 export default function Router(){
     return(
@@ -39,6 +41,8 @@ export default function Router(){
                 <Route path="/medic-terms/exam" element={<Exam returnRoute="/medic-terms" name="Terminos Médicos" questions={medicTermsQuestions}  />}/>
                 <Route path="/human-body" element={<HumanBody />}/>
                 <Route path="/human-body/exam" element={<Exam returnRoute="/human-body" name="El Cuerpo Humano" questions={humanBodyQuestions}  />}/>
+                <Route path="/life-spect" element={<LifeSpec />}/>
+                <Route path="/life-spect/exam" element={<Exam returnRoute="/life-spect" name="Desarrollo y esperanza de vida" questions={lifeSpecQuestions}  />}/>
                 <Route path="/lms" element={<Lms /> }/>
                 <Route path="/bls" element={<Bls />}/>
                 <Route path="/stop-the-bleed" element={<StopTheBleed />}/>
