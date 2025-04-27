@@ -1,0 +1,106 @@
+import { useState } from 'react'
+import './App.css'
+import { questions } from './questions';
+import {Question} from "./question";
+
+function App() {
+    const [answers, setAnswers] = useState<{ [index: number]: string }>({});
+    const [submitted, setSubmitted] = useState(false);
+
+    const handleSelect = (qIndex: number, letter: string) => {
+        setAnswers({ ...answers, [qIndex]: letter });
+    };
+
+    const handleSubmit = () => {
+        setSubmitted(true);
+    };
+
+    const score = Object.keys(answers).reduce((acc, key) => {
+        const index = parseInt(key);
+        if (questions[index].correctAnswer === answers[index]) {
+            return acc + 1;
+        }
+        return acc;
+    }, 0);
+
+    const getOptionText = (q: Question, letter: string) => {
+        return q.options.find((opt:any) => opt.letter === letter)?.text || "";
+    };
+    return (
+        <div className="flex flex-col items-center w-screen justify-center bg-gray-100 pb-12">
+            <img src="/public/estrella-de-la-vida.png"
+                    alt="Logo" className="h-24 w-24 mb-4" />
+            <p className="text-sm italic">Generacion 2025 Rescate 1: Este examen fue hecho por los propios alumnos de la clase sabados R1 2025</p>
+
+            <div className="flex justify-center mb-4">
+                <h1 className="text-2xl font-bold mb-4">Examen Prueba Primer Parcial</h1>
+            </div>
+            {!submitted ? (
+                <form
+                    onSubmit={(e) => {
+                        e.preventDefault();
+                        handleSubmit();
+                    }}
+                >
+                    {questions.map((q, index) => (
+                        <div key={index} className="mb-6">
+                            <p className="font-semibold mb-2">
+                                {index + 1}. {q.question}
+                            </p>
+                            <div className="space-y-2">
+                                {q.options.map((opt) => (
+                                    <label key={opt.letter} className="flex items-center gap-2">
+                                        <input
+                                            type="radio"
+                                            name={`question-${index}`}
+                                            value={opt.letter}
+                                            checked={answers[index] === opt.letter}
+                                            onChange={() => handleSelect(index, opt.letter)}
+
+                                        />
+                                        {opt.letter}) {opt.text}
+                                    </label>
+                                ))}
+                            </div>
+                        </div>
+                    ))}
+                    <button
+                        type="submit"
+                        className="bg-blue-200 hover:bg-blue-300 text-blue-800 font-semibold py-2 px-4 rounded shadow"
+                    >
+                        Enviar respuestas
+                    </button>
+                </form>
+            ) : (
+                <div className="text-center">
+                    <h2 className="text-2xl font-bold">Resultado</h2>
+                    <p className="mt-4 text-xl">
+                        Respondiste correctamente {score} de {questions.length} preguntas.
+                        Sacaste un {((score / questions.length) * 100).toFixed(2)}%
+                    </p>
+                    <div className="mt-8 space-y-6">
+                        {questions.map((q, index) => (
+                            <div key={index} className="text-left">
+                                <p className="font-semibold">
+                                    {index + 1}. {q.question}
+                                </p>
+                                <p>
+                                    Tu respuesta: <strong>{answers[index]?.toUpperCase()}) {getOptionText(q, answers[index])}</strong>
+                                </p>
+                                {answers[index] === q.correctAnswer ? (
+                                    <p className="text-green-600 font-semibold">✅ Correcto</p>
+                                ) : (
+                                    <p className="text-red-600 font-semibold">
+                                        ❌ Incorrecto (Respuesta correcta: {q.correctAnswer.toUpperCase()}) {getOptionText(q, q.correctAnswer)}
+                                    </p>
+                                )}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            )}
+        </div>
+    );
+}
+
+export default App
