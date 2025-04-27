@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import { questions } from './questions';
 import {Question} from "./question";
+import logo from './assets/logo.png'
 
 function App() {
     const [answers, setAnswers] = useState<{ [index: number]: string }>({});
@@ -27,8 +28,8 @@ function App() {
         return q.options.find((opt:any) => opt.letter === letter)?.text || "";
     };
     return (
-        <div className="flex flex-col items-center w-screen justify-center bg-gray-100 pb-12">
-            <img src="/public/estrella-de-la-vida.png"
+        <div className="flex flex-col items-center w-screen justify-center bg-gray-100 pb-12 md:px-0 px-4">
+            <img src={logo}
                     alt="Logo" className="h-24 w-24 mb-4" />
             <p className="text-sm italic">Generacion 2025 Rescate 1: Este examen fue hecho por los propios alumnos de la clase sabados R1 2025</p>
 
