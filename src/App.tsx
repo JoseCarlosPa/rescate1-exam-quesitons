@@ -22,7 +22,7 @@ function App() {
         <div className="flex flex-col items-center w-screen h-full bg-gray-100 pb-12 md:px-0 dark:bg-gray-900 dark:text-gray-100 p-4 ">
             <img src={logo}
                  alt="Logo" className="h-24 w-24 mb-4" />
-            <p className="text-sm italic">Generación 2025 Rescate 1: Esta plataforma fue hecha por los alumnos de la clase sabados R1 2025</p>
+            <p className="text-sm italic">Generación 2025 Rescate 1: Esta plataforma fue hecha por y para los alumnos de la clase sabados R1 2025</p>
 
             <div className="grid md:grid-cols-4 grid-cols-2 gap-4 mt-12 w-full md:px-20 ">
                 <NavLink
@@ -44,7 +44,7 @@ function App() {
                     <p className="flex text-center text-orange-500">Comunicaciones y documentacion</p>
                 </NavLink>
                 <NavLink
-                    to="/"
+                    to="/sem"
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
                     <FaAmbulance className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Sistemas de SEM</p>
