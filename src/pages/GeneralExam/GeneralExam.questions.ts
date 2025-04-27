@@ -1,6 +1,6 @@
-import {Question} from "./question";
+import {Question} from "../../question";
 
-export const questions: Question[] = [
+export const generalExamQuestions: Question[] = [
     {
         question: "Un paciente adulto consciente y orientado que rechaza el tratamiento después de que le hayas explicado los riesgos y beneficios está ejerciendo su derecho a:",
         options: [
