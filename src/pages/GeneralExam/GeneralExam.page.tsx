@@ -35,7 +35,7 @@ export default function GeneralExam(){
                  alt="Logo" className="h-24 w-24 mb-4" />
             <p className="text-sm italic">Generacion 2025 Rescate 1: Este examen fue hecho por los alumnos de la clase sabados R1 2025</p>
             <div className="flex justify-center ">
-                <h1 className="text-2xl font-bold mb-4">Examen Prueba: General</h1>
+                <p className="text-5xl font-bold mb-4 flex text-center">Examen Prueba: General</p>
             </div>
             <NavLink
                 to="/"
