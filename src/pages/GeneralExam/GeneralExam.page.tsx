@@ -38,7 +38,7 @@ export default function GeneralExam(){
                 <p className="text-5xl font-bold mb-4 flex text-center">Examen Prueba: General</p>
             </div>
             <NavLink
-                to="/"
+                to="/emt"
                 className="flex gap-2 mb-4">
                 <p className="text-lg">Regresar</p>
             </NavLink>

@@ -9,12 +9,14 @@ import Communications from "../../pages/Communications/Communications.page.tsx";
 import {communicationsQuestions} from "../../pages/Communications/Communications.questions.ts";
 import Sem from "../../pages/SEM/Sem.page.tsx";
 import {semSystemQuestions} from "../../pages/SEM/Sem.questions.ts";
+import Main from "../../pages/Main/Main.page.tsx";
 
 export default function Router(){
     return(
         <Suspense fallback={<div>Loading...</div>}>
             <Routes>
-                <Route path="/" element={<App/>}/>
+                <Route path="/" element={<Main/>}/>
+                <Route path="/emt" element={<App/>}/>
                 <Route path="/general" element={<GeneralExam/>}/>
                 <Route path="/legal" element={<LegalAspects />}/>
                 <Route path="/legal/exam" element={<Exam returnRoute="/legal" name="Aspectos Legales" questions={legalQuestions}  />}/>

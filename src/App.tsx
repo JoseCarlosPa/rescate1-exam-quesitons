@@ -6,16 +6,31 @@ import {IoIosBody, IoMdBriefcase} from "react-icons/io";
 import {LuRadioTower} from "react-icons/lu";
 import {
     FaAmbulance,
-    FaBaby,
-    FaBookMedical,
+    FaBaby, FaBacteria, FaBomb,
+    FaBookMedical, FaCarCrash, FaChild, FaFireAlt,
     FaHandHoldingMedical,
     FaHeadSideMask,
     FaLaptopMedical,
-    FaNotesMedical
+    FaNotesMedical, FaQrcode, FaWineBottle
 } from "react-icons/fa";
-import {GiMedicines, GiProtectionGlasses, GiTripleNeedle} from "react-icons/gi";
+import {
+    GiBlood,
+    GiMedicines,
+    GiMorgueFeet,
+    GiProtectionGlasses,
+    GiStomach,
+    GiTrenchBodyArmor,
+    GiTripleNeedle
+} from "react-icons/gi";
 import {RxLetterSpacing} from "react-icons/rx";
-import {TbMedicalCrossCircle} from "react-icons/tb";
+import {TbBodyScan, TbDisabled, TbMedicalCrossCircle} from "react-icons/tb";
+import {FaHeartPulse, FaMaskVentilator, FaPersonCane, FaTruckMedical} from "react-icons/fa6";
+import {RiBrain2Fill} from "react-icons/ri";
+import {MdBloodtype, MdFace6, MdOutlineFireTruck} from "react-icons/md";
+import {SiSpine} from "react-icons/si";
+import {PiBabyBold, PiBrainFill} from "react-icons/pi";
+import {AiOutlineWoman} from "react-icons/ai";
+import {IoWoman} from "react-icons/io5";
 
 function App() {
     return(
@@ -23,6 +38,11 @@ function App() {
             <img src={logo}
                  alt="Logo" className="h-24 w-24 mb-4" />
             <p className="text-sm italic">Generación 2025 Rescate 1: Esta plataforma fue hecha por y para los alumnos de la clase sabados R1 2025</p>
+            <p className="text-5xl font-bold mb-4 flex text-center mt-2">TAMP-B</p>
+            <NavLink to="/"
+                        className="flex gap-2 mb-4">
+                    <p className="text-lg">Regresar</p>
+            </NavLink>
 
             <div className="grid md:grid-cols-4 grid-cols-2 gap-4 mt-12 w-full md:px-20 ">
                 <NavLink
@@ -118,7 +138,7 @@ function App() {
                 <NavLink
                     to="/"
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
-                    <CiMedicalCross className="w-12 h-12 mb-1 text-orange-500" />
+                    <FaQrcode className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">CÓDIGO MEGA</p>
                 </NavLink>
                 <NavLink
@@ -130,25 +150,25 @@ function App() {
                 <NavLink
                     to="/"
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
-                    <CiMedicalCross className="w-12 h-12 mb-1 text-orange-500" />
+                    <FaMaskVentilator className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Emergencias respiratorias</p>
                 </NavLink>
                 <NavLink
                     to="/"
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
-                    <CiMedicalCross className="w-12 h-12 mb-1 text-orange-500" />
+                    <FaHeartPulse className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Emergencias cardiovasculares</p>
                 </NavLink>
                 <NavLink
                     to="/"
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
-                    <CiMedicalCross className="w-12 h-12 mb-1 text-orange-500" />
+                    <RiBrain2Fill className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Emergencias neurológicas</p>
                 </NavLink>
                 <NavLink
                     to="/"
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
-                    <CiMedicalCross className="w-12 h-12 mb-1 text-orange-500" />
+                    <GiStomach  className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Emergencias gastrointestinales y urológicas</p>
                 </NavLink>
                 <NavLink
@@ -160,32 +180,32 @@ function App() {
                 <NavLink
                     to="/"
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
-                    <CiMedicalCross className="w-12 h-12 mb-1 text-orange-500" />
+                    <FaCarCrash className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Conceptos generales de trauma</p>
                 </NavLink>
 
                 <NavLink
                     to="/"
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
-                    <CiMedicalCross className="w-12 h-12 mb-1 text-orange-500" />
+                    <TbBodyScan className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">INMOVILIZACION</p>
                 </NavLink>
                 <NavLink
                     to="/"
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
-                    <CiMedicalCross className="w-12 h-12 mb-1 text-orange-500" />
+                    <MdBloodtype className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Hemorragia</p>
                 </NavLink>
                 <NavLink
                     to="/"
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
-                    <CiMedicalCross className="w-12 h-12 mb-1 text-orange-500" />
+                    <GiBlood className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">STOP THE BLEED</p>
                 </NavLink>
                 <NavLink
                     to="/"
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
-                    <CiMedicalCross className="w-12 h-12 mb-1 text-orange-500" />
+                    <MdFace6 className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Lesiones de cara y cuello</p>
                 </NavLink>
                 <NavLink
@@ -197,19 +217,19 @@ function App() {
                 <NavLink
                     to="/"
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
-                    <CiMedicalCross className="w-12 h-12 mb-1 text-orange-500" />
+                    <SiSpine  className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Lesiones de cabeza y columna vertebral</p>
                 </NavLink>
                 <NavLink
                     to="/"
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
-                    <CiMedicalCross className="w-12 h-12 mb-1 text-orange-500" />
+                    <GiTrenchBodyArmor className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Lesiones del torax</p>
                 </NavLink>
                 <NavLink
                     to="/"
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
-                    <CiMedicalCross className="w-12 h-12 mb-1 text-orange-500" />
+                    <GiMorgueFeet className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Lesiones ortopédicas</p>
                 </NavLink>
                 <NavLink
@@ -221,79 +241,73 @@ function App() {
                 <NavLink
                     to="/"
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
-                    <CiMedicalCross className="w-12 h-12 mb-1 text-orange-500" />
+                    <FaBacteria className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Emergencias inmunologicas</p>
                 </NavLink>
                 <NavLink
                     to="/"
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
-                    <CiMedicalCross className="w-12 h-12 mb-1 text-orange-500" />
+                    <FaWineBottle className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Toxicología</p>
                 </NavLink>
                 <NavLink
                     to="/"
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
-                    <CiMedicalCross className="w-12 h-12 mb-1 text-orange-500" />
+                    <FaFireAlt className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Emergencias ambientales</p>
                 </NavLink>
                 <NavLink
                     to="/"
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
-                    <CiMedicalCross className="w-12 h-12 mb-1 text-orange-500" />
+                    <PiBrainFill className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Emergencias psiquiátricas</p>
                 </NavLink>
                 <NavLink
                     to="/"
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
-                    <CiMedicalCross className="w-12 h-12 mb-1 text-orange-500" />
+                    <AiOutlineWoman  className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Emergencias ginecológicas</p>
                 </NavLink>
                 <NavLink
                     to="/"
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
-                    <CiMedicalCross className="w-12 h-12 mb-1 text-orange-500" />
+                    <PiBabyBold className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Cuidados obstétricos y neonatales</p>
                 </NavLink>
                 <NavLink
                     to="/"
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
-                    <CiMedicalCross className="w-12 h-12 mb-1 text-orange-500" />
+                    <IoWoman className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Práctica parto</p>
                 </NavLink>
                 <NavLink
                     to="/"
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
-                    <CiMedicalCross className="w-12 h-12 mb-1 text-orange-500" />
+                    <FaChild className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Emergencias pediátricas</p>
                 </NavLink>
                 <NavLink
                     to="/"
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
-                    <CiMedicalCross className="w-12 h-12 mb-1 text-orange-500" />
+                    <FaPersonCane className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Emergencias geriátricas</p>
                 </NavLink>
                 <NavLink
                     to="/"
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
-                    <CiMedicalCross className="w-12 h-12 mb-1 text-orange-500" />
+                    <TbDisabled className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Pacientes con necesidades especiales</p>
                 </NavLink>
                 <NavLink
                     to="/"
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
-                    <CiMedicalCross className="w-12 h-12 mb-1 text-orange-500" />
+                    <FaTruckMedical className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Operaciones de transporte</p>
                 </NavLink>
                 <NavLink
                     to="/"
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
-                    <CiMedicalCross className="w-12 h-12 mb-1 text-orange-500" />
-                    <p className="flex text-center text-orange-500">Pacientes con necesidades especiales</p>
-                </NavLink>
-                <NavLink
-                    to="/"
-                    className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
-                    <CiMedicalCross className="w-12 h-12 mb-1 text-orange-500" />
+                    <MdOutlineFireTruck className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Manejo de incidentes</p>
                 </NavLink>
                 <NavLink
@@ -305,7 +319,7 @@ function App() {
                 <NavLink
                     to="/"
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
-                    <CiMedicalCross className="w-12 h-12 mb-1 text-orange-500" />
+                    <FaBomb className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Respuesta al terrorismo y manejo de desastres</p>
                 </NavLink>
 

@@ -12,7 +12,7 @@ export default function Communications(){
                 <p className="text-5xl font-bold mb-4 flex text-center">Comunicaciones y documentación</p>
                 <p className="text-sm italic">Alumnos Generacion 2025 Sabados Rescate 1</p>
                 <NavLink
-                    to="/"
+                    to="/emt"
                     className="flex gap-2 mb-4">
                     <p className="text-lg">Regresar</p>
                 </NavLink>

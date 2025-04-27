@@ -38,7 +38,7 @@ export default function Exam(props: ExamProps){
             </div>
             <div className="flex gap-4">
                 <NavLink
-                    to="/"
+                    to="/emt"
                     className="flex gap-2 mb-4">
                     <p className="text-lg">Inicio</p>
                 </NavLink>
