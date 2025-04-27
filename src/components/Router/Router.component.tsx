@@ -17,6 +17,8 @@ import SecurityOfPersonal from "../../pages/EMT/SecurityOfPersonal/SecurityOfPer
 import {securityQuestions} from "../../pages/EMT/SecurityOfPersonal/SecurityOfPersonal.questions.ts";
 import {medicTermsQuestions} from "../../pages/EMT/MedicTerms/MediTerms.questions.ts";
 import MedicTerms from "../../pages/EMT/MedicTerms/MedicTerms.page.tsx";
+import {humanBodyQuestions} from "../../pages/EMT/HumanBody/HumanBody.questions.ts";
+import HumanBody from "../../pages/EMT/HumanBody/HumanBody.page.tsx";
 
 export default function Router(){
     return(
@@ -35,7 +37,8 @@ export default function Router(){
                 <Route path="/security-of-personal/exam" element={<Exam returnRoute="/security-of-personal" name="Seguridad y bienestar del personal" questions={securityQuestions}  />}/>
                 <Route path="/medic-terms" element={<MedicTerms />}/>
                 <Route path="/medic-terms/exam" element={<Exam returnRoute="/medic-terms" name="Terminos Médicos" questions={medicTermsQuestions}  />}/>
-
+                <Route path="/human-body" element={<HumanBody />}/>
+                <Route path="/human-body/exam" element={<Exam returnRoute="/human-body" name="El Cuerpo Humano" questions={humanBodyQuestions}  />}/>
                 <Route path="/lms" element={<Lms /> }/>
                 <Route path="/bls" element={<Bls />}/>
                 <Route path="/stop-the-bleed" element={<StopTheBleed />}/>
