@@ -1,5 +1,5 @@
 import {NavLink} from "react-router";
-import { faqData } from "./LegalAspects.questions";
+import { faqData } from "./LegalAspects.questions.ts";
 import { Disclosure } from "@headlessui/react";
 import {ChevronUpIcon} from "@heroicons/react/16/solid";
 import {IoMdBriefcase} from "react-icons/io";

@@ -1,7 +1,7 @@
 import {useState} from "react";
 import {generalExamQuestions} from "./GeneralExam.questions.ts";
-import {Option, Question} from "../../question";
-import logo from "../../assets/logo.png";
+import {Option, Question} from "../../../question";
+import logo from "../../../assets/logo.png";
 import {NavLink} from "react-router";
 
 export default function GeneralExam(){

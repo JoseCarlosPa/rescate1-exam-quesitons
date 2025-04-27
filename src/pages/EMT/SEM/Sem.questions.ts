@@ -1,4 +1,48 @@
-import {Question} from "../../question";
+import {Question} from "../../../question";
+
+
+export const faqData = [
+    {
+        question: "¿Qué es el Sistema SEM?",
+        answer: "El Sistema de Emergencias Médicas (SEM) es un conjunto de servicios de atención médica prehospitalaria, que proporciona atención inmediata en el lugar del incidente y transporte adecuado a los centros de salud."
+    },
+    {
+        question: "¿Cómo se activa el Sistema SEM en caso de emergencia?",
+        answer: "Para activar el SEM, se debe llamar al número de emergencia 911, proporcionando detalles sobre la ubicación, el tipo de emergencia y la condición de la víctima. El centro de atención coordina el envío de recursos y da instrucciones iniciales."
+    },
+    {
+        question: "¿Qué tipos de recursos forman parte del Sistema SEM?",
+        answer: "El SEM incluye ambulancias equipadas con personal médico capacitado, centros de atención telefónica y un sistema de coordinación con otras entidades de emergencia como bomberos y seguridad pública."
+    },
+    {
+        question: "¿Cuáles son las funciones principales del SEM?",
+        answer: "Las funciones principales del SEM incluyen la atención médica prehospitalaria, el transporte sanitario a hospitales y la coordinación con otras instituciones para una respuesta efectiva a las emergencias."
+    },
+    {
+        question: "¿Cómo está compuesto el personal del SEM?",
+        answer: "El personal del SEM está compuesto por paramédicos, médicos de urgencias, y técnicos especializados en atención prehospitalaria, quienes están capacitados para manejar emergencias médicas en el lugar del incidente y durante el traslado."
+    },
+    {
+        question: "¿Cuáles son los protocolos que sigue el SEM para la atención de emergencias?",
+        answer: "El SEM sigue protocolos establecidos que incluyen la evaluación inicial del paciente, la estabilización en el lugar, y el traslado a un centro de salud cuando sea necesario. El personal de SEM puede dar instrucciones por teléfono hasta que la ambulancia llegue."
+    },
+    {
+        question: "¿Qué importancia tiene la coordinación con otras entidades en el SEM?",
+        answer: "La coordinación con fuerzas de seguridad, bomberos y protección civil es crucial para garantizar una respuesta rápida y segura ante situaciones complejas, como accidentes de tráfico, incendios o desastres naturales."
+    },
+    {
+        question: "¿Cómo se mejora la eficiencia del Sistema SEM?",
+        answer: "El SEM mejora su eficiencia mediante la evaluación constante de su desempeño, simulacros y capacitaciones continuas para su personal. También se implementan tecnologías de comunicación y sistemas de gestión para optimizar el tiempo de respuesta."
+    },
+    {
+        question: "¿El SEM cubre emergencias en todo el país?",
+        answer: "Sí, el SEM está disponible en la mayoría de los estados de México a través del número de emergencia 911. Sin embargo, la cobertura y la calidad del servicio pueden variar según la ubicación geográfica."
+    },
+    {
+        question: "¿Qué hacer si el SEM tarda en llegar a la escena de emergencia?",
+        answer: "Si el SEM tarda en llegar, el personal de emergencia o los testigos deben seguir las instrucciones dadas por el centro de atención y realizar la atención básica que sea posible, como la reanimación cardiopulmonar (RCP) si es necesario."
+    }
+];
 
 export const semSystemQuestions: Question[] = [
     {
