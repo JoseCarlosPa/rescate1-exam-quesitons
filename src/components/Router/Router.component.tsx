@@ -5,6 +5,8 @@ import GeneralExam from "../../pages/GeneralExam/GeneralExam.page.tsx";
 import LegalAspects from "../../pages/LegalAspects/LegalAspects.page.tsx";
 import Exam from "../Exam/Exam.component.tsx";
 import {legalQuestions} from "../../pages/LegalAspects/LegalAspects.questions.ts";
+import Communications from "../../pages/Communications/Communications.page.tsx";
+import {communicationsQuestions} from "../../pages/Communications/Communications.questions.ts";
 
 export default function Router(){
     return(
@@ -14,6 +16,9 @@ export default function Router(){
                 <Route path="/general" element={<GeneralExam/>}/>
                 <Route path="/legal" element={<LegalAspects />}/>
                 <Route path="/legal/exam" element={<Exam returnRoute="/legal" name="Aspectos Legales" questions={legalQuestions}  />}/>
+                <Route path="/communications" element={<Communications />}/>
+                <Route path="/communications/exam" element={<Exam returnRoute="/communications" name="Comunicaciones y documentación" questions={communicationsQuestions}  />}/>
+
             </Routes>
         </Suspense>
     );

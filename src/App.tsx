@@ -19,7 +19,7 @@ import {TbMedicalCrossCircle} from "react-icons/tb";
 
 function App() {
     return(
-        <div className="flex flex-col items-center w-screen h-full bg-gray-100 pb-12 md:px-0 px-4 dark:bg-gray-900 dark:text-gray-100 p-4 ">
+        <div className="flex flex-col items-center w-screen h-full bg-gray-100 pb-12 md:px-0 dark:bg-gray-900 dark:text-gray-100 p-4 ">
             <img src={logo}
                  alt="Logo" className="h-24 w-24 mb-4" />
             <p className="text-sm italic">Generación 2025 Rescate 1: Esta plataforma fue hecha por los alumnos de la clase sabados R1 2025</p>
@@ -38,7 +38,7 @@ function App() {
                     <p className="flex text-center text-orange-500">Aspectos médicos, legales y éticos </p>
                 </NavLink>
                 <NavLink
-                    to="/"
+                    to="/communications"
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
                     <LuRadioTower className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Comunicaciones y documentacion</p>
