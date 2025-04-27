@@ -1,5 +1,10 @@
 export interface Question {
     question: string;
-    options: { letter: string; text: string }[];
+    options: Option[];
     correctAnswer: string;
+}
+
+export interface Option {
+    letter: string;
+    text: string;
 }
