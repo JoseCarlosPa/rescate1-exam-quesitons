@@ -1251,4 +1251,1504 @@ export const generalExamQuestions: Question[] = [
         ],
         correctAnswer: "b", // [cite: 287]
     },
+    {
+        question: "Al levantar una camilla pesada, ¿dónde debes intentar mantener el peso?",
+        options: [
+            { letter: "a", text: "Lo más lejos posible de tu cuerpo para mejorar el equilibrio." }, //
+            { letter: "b", text: "Lo más cerca posible de tu cuerpo." }, //
+            { letter: "c", text: "Principalmente sobre tu espalda baja." }, //
+            { letter: "d", text: "Siempre por encima de tu cabeza." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿Cuál es el principio MÁS importante de la mecánica corporal para prevenir lesiones?",
+        options: [
+            { letter: "a", text: "Levantar rápidamente para terminar antes." }, //
+            { letter: "b", text: "Usar los músculos fuertes de las piernas y mantener la espalda recta." }, //
+            { letter: "c", text: "Girar la cintura mientras se levanta." }, //
+            { letter: "d", text: "Mantener los brazos completamente extendidos." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿Cuándo está indicado un movimiento de EMERGENCIA de un paciente?",
+        options: [
+            { letter: "a", text: "Siempre que el paciente se queje de dolor." }, //
+            { letter: "b", text: "Cuando el paciente necesita ser movido a una superficie más cómoda." }, //
+            { letter: "c", text: "Cuando existe un peligro inmediato para el paciente o el reanimador en la ubicación actual (fuego, derrumbe, etc.)." }, //
+            { letter: "d", text: "Para facilitar una evaluación secundaria completa." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "¿Qué dispositivo es MÁS apropiado para mover a un paciente sin sospecha de trauma espinal desde una cama a una camilla?",
+        options: [
+            { letter: "a", text: "Tabla espinal larga." }, //
+            { letter: "b", text: "Método de levantamiento directo (direct carry) o sábana de arrastre (draw sheet method)." }, //
+            { letter: "c", text: "Chaleco de extricación (KED)." }, //
+            { letter: "d", text: "Camilla de cuchara (scoop stretcher)." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "La camilla de cuchara (scoop stretcher) es especialmente útil para:",
+        options: [
+            { letter: "a", text: "Pacientes que necesitan sentarse." }, //
+            { letter: "b", text: "Mover pacientes con mínima movilización desde espacios reducidos o con sospecha de lesión pélvica/cadera." }, //
+            { letter: "c", text: "Transporte a larga distancia dentro del hospital." }, //
+            { letter: "d", text: "Pacientes bariátricos exclusivamente." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿En qué posición se debe colocar generalmente a un paciente consciente con dificultad respiratoria (disnea) sin sospecha de trauma?",
+        options: [
+            { letter: "a", text: "Supina (acostado boca arriba)" }, //
+            { letter: "b", text: "Prona (acostado boca abajo)" }, //
+            { letter: "c", text: "Posición de Fowler o semi-Fowler (sentado o semi-sentado)" }, //
+            { letter: "d", text: "Trendelenburg (cabeza más baja que los pies)" }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "¿Qué técnica de movimiento implica tirar del paciente por la ropa desde los hombros?",
+        options: [
+            { letter: "a", text: "Arrastre inclinado." }, //
+            { letter: "b", text: "Arrastre por las axilas." }, //
+            { letter: "c", text: "Arrastre de ropa (clothes drag)." }, //
+            { letter: "d", text: "Levantamiento de manta." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "Para mover a un paciente estable por escaleras estrechas, ¿qué equipo sería el MÁS adecuado?",
+        options: [
+            { letter: "a", text: "Camilla de ambulancia estándar." }, //
+            { letter: "b", text: "Tabla espinal larga." }, //
+            { letter: "c", text: "Silla de traslado (stair chair)." }, //
+            { letter: "d", text: "Camilla de cuchara (scoop stretcher)." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "Antes de intentar levantar a cualquier paciente, el TAMP-B debe:",
+        options: [
+            { letter: "a", text: "Calcular el peso exacto del paciente." }, //
+            { letter: "b", text: "Estimar el peso y determinar si necesita ayuda adicional." }, //
+            { letter: "c", text: "Intentar levantarlo solo primero." }, //
+            { letter: "d", text: "Pedirle al paciente que intente caminar, sin importar su condición." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "El chaleco de extricación (KED - Kendrick Extrication Device) se utiliza principalmente para:",
+        options: [
+            { letter: "a", text: "Mover pacientes de la cama a la camilla." }, //
+            { letter: "b", text: "Inmovilizar y extraer a un paciente sentado con sospecha de lesión espinal (ej. accidente de coche)." }, //
+            { letter: "c", text: "Transportar pacientes pediátricos." }, //
+            { letter: "d", text: "Levantar pacientes bariátricos." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "Un paciente en shock, sin trauma y sin dificultad respiratoria, a menudo se beneficia de ser colocado en posición:",
+        options: [
+            { letter: "a", text: "Fowler alta." }, //
+            { letter: "b", text: "Supina, posiblemente con las piernas ligeramente elevadas (Trendelenburg modificado, según protocolo)." }, //
+            { letter: "c", text: "Prona." }, //
+            { letter: "d", text: "Sentado con las piernas colgando." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "La comunicación clara entre los miembros del equipo es crucial durante un levantamiento para asegurar:",
+        options: [
+            { letter: "a", text: "Que todos levanten al mismo tiempo y de manera coordinada." }, //
+            { letter: "b", text: "Que el paciente se sienta importante." }, //
+            { letter: "c", text: "Que se cumpla con el papeleo." }, //
+            { letter: "d", text: "Que el levantamiento sea más rápido." }, //
+        ],
+        correctAnswer: "a", //
+    },
+    {
+        question: "¿Qué tipo de movimiento se utiliza cuando la condición del paciente es grave y requiere transporte inmediato o no se puede evaluar adecuadamente en el lugar, pero no hay peligro inminente en la escena?",
+        options: [
+            { letter: "a", text: "Movimiento de emergencia." }, //
+            { letter: "b", text: "Movimiento no urgente." }, //
+            { letter: "c", text: "Movimiento urgente (ej. extricación rápida con tabla espinal)." }, //
+            { letter: "d", text: "Movimiento de conveniencia." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "¿Cuál es una consideración clave al mover a un paciente bariátrico (muy obeso)?",
+        options: [
+            { letter: "a", text: "Siempre pueden ser movidos por dos personas." }, //
+            { letter: "b", text: "Usar el mismo equipo que para un paciente de peso promedio." }, //
+            { letter: "c", text: "Asegurarse de tener suficiente personal y equipo adecuado (camillas bariátricas, técnicas especiales) y planificar el movimiento cuidadosamente." }, //
+            { letter: "d", text: "Moverlos lo más rápido posible para minimizar el esfuerzo." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "La tabla espinal larga se usa para:",
+        options: [
+            { letter: "a", text: "Proporcionar comodidad durante el transporte." }, //
+            { letter: "b", text: "Inmovilizar a pacientes con sospecha de lesión en la columna vertebral, especialmente durante el traslado." }, //
+            { letter: "c", text: "Mover pacientes por escaleras." }, //
+            { letter: "d", text: "Sentar a pacientes con dificultad respiratoria." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "Al trasladar a un paciente en la camilla principal de la ambulancia, ¿cuál es una práctica de seguridad esencial?",
+        options: [
+            { letter: "a", text: "Dejar las barandillas laterales bajadas para facilitar el acceso." }, //
+            { letter: "b", text: "Asegurar siempre al paciente con todos los cinturones de seguridad." }, //
+            { letter: "c", text: "Mover la camilla lo más rápido posible sobre terreno irregular." }, //
+            { letter: "d", text: "Permitir que el paciente se siente en el borde si lo desea." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "Un paciente inconsciente sin sospecha de trauma que está vomitando debe colocarse preferentemente en:",
+        options: [
+            { letter: "a", text: "Posición supina." }, //
+            { letter: "b", text: "Posición de recuperación (lateral de seguridad)." }, //
+            { letter: "c", text: "Posición de Fowler." }, //
+            { letter: "d", text: "Posición prona." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "El movimiento \"no urgente\" se caracteriza por:",
+        options: [
+            { letter: "a", text: "Realizarse rápidamente debido a peligros en la escena." }, //
+            { letter: "b", text: "Priorizar la velocidad sobre la comodidad del paciente." }, //
+            { letter: "c", text: "Utilizarse cuando no hay amenazas inmediatas a la vida y se puede planificar el movimiento cuidadosamente, a menudo usando dispositivos de traslado." }, //
+            { letter: "d", text: "Ser exclusivo para pacientes de trauma." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "¿Cuál es el PRIMER paso en cualquier respuesta de SEM, incluso antes de llegar al lado del paciente?",
+        options: [
+            { letter: "a", text: "Realizar la evaluación primaria." }, //
+            { letter: "b", text: "Evaluar la seguridad de la escena (Scene Size-up)." }, //
+            { letter: "c", text: "Obtener la historia SAMPLE." }, //
+            { letter: "d", text: "Tomar los signos vitales." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "La evaluación primaria (XABCDE) tiene como objetivo:",
+        options: [
+            { letter: "a", text: "Obtener un diagnóstico definitivo." }, //
+            { letter: "b", text: "Identificar y tratar inmediatamente las condiciones que amenazan la vida." }, //
+            { letter: "c", text: "Realizar una exploración física detallada de la cabeza a los pies." }, //
+            { letter: "d", text: "Determinar el historial médico completo del paciente." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "Al evaluar la Vía Aérea (A) en un paciente inconsciente, ¿qué debes buscar y hacer primero?",
+        options: [
+            { letter: "a", text: "Administrar oxígeno inmediatamente." }, //
+            { letter: "b", text: "Buscar obstrucciones, escuchar ruidos (ronquidos, gorgoteo) y abrir la vía aérea (ej. maniobra frente-mentón o tracción mandibular si hay sospecha de trauma)." }, //
+            { letter: "c", text: "Evaluar la frecuencia respiratoria." }, //
+            { letter: "d", text: "Tomar la presión arterial." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿Qué evalúas en la 'B' (Breathing/Ventilación) de la evaluación primaria?",
+        options: [
+            { letter: "a", text: "La frecuencia y calidad del pulso." }, //
+            { letter: "b", text: "El nivel de conciencia." }, //
+            { letter: "c", text: "La frecuencia, profundidad y esfuerzo respiratorio; auscultar campos pulmonares si es necesario; verificar la oxigenación." }, //
+            { letter: "d", text: "El color y temperatura de la piel." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "¿Cuál de los siguientes hallazgos en la 'C' (Circulación) requiere atención inmediata?",
+        options: [
+            { letter: "a", text: "Pulso radial fuerte y regular de 80 lpm." }, //
+            { letter: "b", text: "Piel tibia, rosada y seca." }, //
+            { letter: "c", text: "Hemorragia arterial activa (exanguinante)." }, //
+            { letter: "d", text: "Llenado capilar de 2 segundos." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "La escala AVDI (o AVPU en inglés) se utiliza para evaluar:",
+        options: [
+            { letter: "a", text: "La frecuencia respiratoria." }, //
+            { letter: "b", text: "La presión arterial." }, //
+            { letter: "c", text: "El nivel de conciencia del paciente." }, //
+            { letter: "d", text: "La presencia de dolor." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "¿Qué significa la 'E' en XABCDE?",
+        options: [
+            { letter: "a", text: "Eventos que precedieron al incidente." }, //
+            { letter: "b", text: "Equipo necesario." }, //
+            { letter: "c", text: "Exposición del paciente (buscar lesiones ocultas) y control del Entorno (prevenir hipotermia)." }, //
+            { letter: "d", text: "Evaluación de la efectividad del tratamiento." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "La nemotecnia SAMPLE se utiliza para obtener:",
+        options: [
+            { letter: "a", text: "Los signos vitales del paciente." }, //
+            { letter: "b", text: "Una descripción detallada del dolor." }, //
+            { letter: "c", text: "El historial médico relevante del paciente." }, //
+            { letter: "d", text: "Los hallazgos de la exploración física." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "¿Qué pregunta corresponde a la 'P' en SAMPLE?",
+        options: [
+            { letter: "a", text: "¿Qué Pasó? (Eventos)" }, //
+            { letter: "b", text: "¿Tiene algún Dolor (Pain)?" }, //
+            { letter: "c", text: "¿Tiene antecedentes médicos Previos o Pertinentes?" }, //
+            { letter: "d", text: "¿Cuál fue su Última (Past) ingesta oral?" }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "La nemotecnia OPQRST se utiliza específicamente para evaluar:",
+        options: [
+            { letter: "a", text: "El nivel de conciencia." }, //
+            { letter: "b", text: "La queja principal del paciente, especialmente el dolor." }, //
+            { letter: "c", text: "Las alergias a medicamentos." }, //
+            { letter: "d", text: "Los signos vitales basales." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿Qué representa la 'Q' en OPQRST?",
+        options: [
+            { letter: "a", text: "Cantidad (Quantity) - ¿Cuántos medicamentos tomó?" }, //
+            { letter: "b", text: "Calidad (Quality) - ¿Cómo es el dolor (ej. opresivo, punzante, quemante)?" }, //
+            { letter: "c", text: "Preguntas (Questions) - ¿Tiene alguna pregunta?" }, //
+            { letter: "d", text: "Rapidez (Quickness) - ¿Apareció rápido el dolor?" }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿Cuándo se realiza típicamente la evaluación secundaria?",
+        options: [
+            { letter: "a", text: "Antes de la evaluación primaria." }, //
+            { letter: "b", text: "Solo en pacientes de trauma." }, //
+            { letter: "c", text: "Después de completar la evaluación primaria y manejar las amenazas inmediatas, si el tiempo y la condición del paciente lo permiten." }, //
+            { letter: "d", text: "Únicamente en el hospital." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "¿Cuál es la diferencia principal entre una evaluación física enfocada y una evaluación rápida de trauma (céfalo-caudal)?",
+        options: [
+            { letter: "a", text: "La evaluación rápida se enfoca solo en la queja principal." }, //
+            { letter: "b", text: "La evaluación enfocada examina todo el cuerpo de la cabeza a los pies." }, //
+            { letter: "c", text: "La evaluación enfocada se centra en la región afectada según la queja o lesión, mientras que la rápida es una revisión sistemática de cabeza a pies (usualmente para trauma significativo o paciente inconsciente)." }, //
+            { letter: "d", text: "No hay diferencia, son lo mismo." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "La nemotecnia DCAP-BTLS se usa durante la exploración física para buscar signos de lesión. ¿Qué significa la 'D'?",
+        options: [
+            { letter: "a", text: "Dificultad respiratoria." }, //
+            { letter: "b", text: "Dolor (dolor a la palpación)." }, //
+            { letter: "c", text: "Deformidades." }, //
+            { letter: "d", text: "Decoloración." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "La reevaluación de un paciente estable debe realizarse al menos cada:",
+        options: [
+            { letter: "a", text: "5 minutos." }, //
+            { letter: "b", text: "15 minutos." }, //
+            { letter: "c", text: "30 minutos." }, //
+            { letter: "d", text: "Solo una vez antes de llegar al hospital." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "La reevaluación de un paciente inestable debe realizarse al menos cada:",
+        options: [
+            { letter: "a", text: "5 minutos." }, //
+            { letter: "b", text: "15 minutos." }, //
+            { letter: "c", text: "20 minutos." }, //
+            { letter: "d", text: "Solo si hay un cambio significativo." }, //
+        ],
+        correctAnswer: "a", //
+    },
+    {
+        question: "¿Qué componente de los signos vitales nos da información sobre la perfusión periférica?",
+        options: [
+            { letter: "a", text: "La frecuencia respiratoria." }, //
+            { letter: "b", text: "La temperatura corporal central." }, //
+            { letter: "c", text: "El color, temperatura y humedad de la piel, y el llenado capilar." }, //
+            { letter: "d", text: "La escala de coma de Glasgow." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "¿Qué indica una pupila dilatada y no reactiva en un paciente con traumatismo craneoencefálico?",
+        options: [
+            { letter: "a", text: "Una condición normal." }, //
+            { letter: "b", text: "Posible aumento de la presión intracraneal y herniación cerebral (un signo grave)." }, //
+            { letter: "c", text: "Uso de gotas oftálmicas." }, //
+            { letter: "d", text: "Que el paciente está despierto y alerta." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿Cuál es el propósito de determinar el Mecanismo de Lesión (MOI) en un paciente de trauma?",
+        options: [
+            { letter: "a", text: "Determinar quién tuvo la culpa del accidente." }, //
+            { letter: "b", text: "Ayudar a predecir posibles lesiones ocultas basadas en las fuerzas involucradas." }, //
+            { letter: "c", text: "Decidir qué hospital está más cerca." }, //
+            { letter: "d", text: "Calcular el costo del daño vehicular." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿Qué significa P.E.R.R.L.A. (o P.I.C.A. en algunas regiones) al evaluar las pupilas?",
+        options: [
+            { letter: "a", text: "Palidez, Equimosis, Rigidez, Ruidos, Laceraciones, Abrasiones." }, //
+            { letter: "b", text: "Presión, Enrojecimiento, Reacción, Rotación, Lagrimeo, Agudeza." }, //
+            { letter: "c", text: "Pupilas Iguales, Redondas, Reactivas a la Luz y Acomodación." }, //
+            { letter: "d", text: "Paciente Intubado Con Anestesia." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "¿Cuál es el primer paso al evaluar la Ventilación (B) en un paciente consciente que habla contigo?",
+        options: [
+            { letter: "a", text: "Insertar una cánula orofaríngea." }, //
+            { letter: "b", text: "Evaluar la frecuencia, ritmo y calidad de sus respiraciones y si habla en frases completas." }, //
+            { letter: "c", text: "Aplicar inmediatamente ventilación con bolsa-mascarilla." }, //
+            { letter: "d", text: "Auscultar los pulmones bilateralmente." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "La auscultación de ruidos respiratorios como sibilancias sugiere:",
+        options: [
+            { letter: "a", text: "Líquido en los alvéolos (edema pulmonar)." }, //
+            { letter: "b", text: "Obstrucción de la vía aérea superior (cuerpo extraño)." }, //
+            { letter: "c", text: "Estrechamiento de las vías aéreas inferiores (broncoespasmo, como en asma o EPOC)." }, //
+            { letter: "d", text: "Neumotórax a tensión." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "¿Cuál es la diferencia entre un signo y un síntoma?",
+        options: [
+            { letter: "a", text: "Son lo mismo." }, //
+            { letter: "b", text: "Un signo es algo que el TAMP observa o mide (objetivo), mientras que un síntoma es algo que el paciente siente o describe (subjetivo)." }, //
+            { letter: "c", text: "Un signo es subjetivo y un síntoma es objetivo." }, //
+            { letter: "d", text: "Un signo se relaciona con trauma y un síntoma con enfermedad médica." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿Por qué es importante preguntar por la \"Última ingesta oral\" (L en SAMPLE)?",
+        options: [
+            { letter: "a", text: "Para saber si el paciente tiene hambre." }, //
+            { letter: "b", text: "Por si el paciente necesita cirugía (riesgo de aspiración con anestesia) o si los síntomas podrían estar relacionados con alimentos." }, //
+            { letter: "c", text: "Para determinar sus preferencias alimenticias." }, //
+            { letter: "d", text: "No es relevante en la atención prehospitalaria." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "Si durante la evaluación primaria encuentras una amenaza para la vida (ej. obstrucción de vía aérea, hemorragia grave), ¿qué debes hacer?",
+        options: [
+            { letter: "a", text: "Continuar con la evaluación primaria completa antes de tratarla." }, //
+            { letter: "b", text: "Tratarla inmediatamente antes de continuar con el siguiente paso de la evaluación primaria." }, //
+            { letter: "c", text: "Omitir la evaluación primaria y pasar directamente a la secundaria." }, //
+            { letter: "d", text: "Anotarla para tratarla durante el transporte." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "La Escala de Coma de Glasgow (ECG / GCS) evalúa tres componentes. ¿Cuáles son?",
+        options: [
+            { letter: "a", text: "Respuesta Ocular, Respuesta Verbal y Respuesta Motora." }, //
+            { letter: "b", text: "Pulso, Respiración y Presión Arterial." }, //
+            { letter: "c", text: "Apertura de Vía Aérea, Ventilación y Circulación." }, //
+            { letter: "d", text: "Signos, Síntomas y Alergias." }, //
+        ],
+        correctAnswer: "a", //
+    },
+    {
+        question: "¿Cuál es el propósito de la Reevaluación continua?",
+        options: [
+            { letter: "a", text: "Cumplir con un requisito de tiempo." }, //
+            { letter: "b", text: "Detectar cambios en la condición del paciente (mejoría o deterioro) y evaluar la efectividad de las intervenciones." }, //
+            { letter: "c", text: "Llenar el tiempo durante el transporte." }, //
+            { letter: "d", text: "Repetir la historia SAMPLE." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿Cuál es la maniobra manual preferida para abrir la vía aérea en un paciente INCONSCIENTE SIN sospecha de lesión cervical?",
+        options: [
+            { letter: "a", text: "Tracción mandibular (Jaw-thrust)." }, //
+            { letter: "b", text: "Inclinación de la cabeza y elevación del mentón (Head-tilt/Chin-lift)." }, //
+            { letter: "c", text: "Elevación solo del mentón." }, //
+            { letter: "d", text: "Rotación de la cabeza hacia un lado." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿En qué situación se debe utilizar la maniobra de tracción mandibular para abrir la vía aérea?",
+        options: [
+            { letter: "a", text: "En todos los pacientes inconscientes." }, //
+            { letter: "b", text: "Solo en niños." }, //
+            { letter: "c", text: "Cuando se sospecha una lesión en la columna cervical (trauma)." }, //
+            { letter: "d", text: "Cuando la maniobra de inclinación de cabeza-elevación de mentón no funciona." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "La cánula orofaríngea (OPA) está indicada en:",
+        options: [
+            { letter: "a", text: "Pacientes conscientes que se quejan de dificultad para respirar." }, //
+            { letter: "b", text: "Pacientes inconscientes SIN reflejo nauseoso." }, //
+            { letter: "c", text: "Pacientes con trauma facial severo." }, //
+            { letter: "d", text: "Pacientes que han ingerido veneno." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿Cómo se mide correctamente una cánula orofaríngea (OPA) antes de insertarla?",
+        options: [
+            { letter: "a", text: "Desde la comisura labial hasta el ángulo de la mandíbula." }, //
+            { letter: "b", text: "Desde el centro de la boca hasta el lóbulo de la oreja." }, //
+            { letter: "c", text: "Desde la punta de la nariz hasta el lóbulo de la oreja." }, //
+            { letter: "d", text: "El tamaño no importa, todas son universales." }, //
+        ],
+        correctAnswer: "a", //
+    },
+    {
+        question: "¿Cuál es una contraindicación para el uso de la cánula nasofaríngea (NPA)?",
+        options: [
+            { letter: "a", text: "Paciente inconsciente sin reflejo nauseoso." }, //
+            { letter: "b", text: "Paciente consciente con dificultad respiratoria." }, //
+            { letter: "c", text: "Sospecha de fractura de la base del cráneo (signos como ojos de mapache, signo de Battle)." }, //
+            { letter: "d", text: "Paciente con asma." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "Al succionar la vía aérea de un adulto, la duración de la succión no debe exceder:",
+        options: [
+            { letter: "a", text: "5 segundos." }, //
+            { letter: "b", text: "10-15 segundos." }, //
+            { letter: "c", text: "30 segundos." }, //
+            { letter: "d", text: "1 minuto." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿Qué dispositivo de oxigenoterapia administra la concentración de oxígeno MÁS ALTA?",
+        options: [
+            { letter: "a", text: "Cánula nasal." }, //
+            { letter: "b", text: "Mascarilla simple." }, //
+            { letter: "c", text: "Mascarilla no recirculante con reservorio (Non-rebreather mask)." }, //
+            { letter: "d", text: "Mascarilla tipo Venturi." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "¿Cuál es el flujo de oxígeno recomendado para una cánula nasal?",
+        options: [
+            { letter: "a", text: "10-15 litros por minuto (lpm)." }, //
+            { letter: "b", text: "6-10 lpm." }, //
+            { letter: "c", text: "1-6 lpm." }, //
+            { letter: "d", text: "Menos de 1 lpm." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "La ventilación con Bolsa-Válvula-Mascarilla (BVM/Ambú) está indicada cuando el paciente:",
+        options: [
+            { letter: "a", text: "Está hablando claramente pero rápido." }, //
+            { letter: "b", text: "Tiene una frecuencia respiratoria de 16 rpm y buen volumen tidal." }, //
+            { letter: "c", text: "Está en apnea (no respira) o tiene ventilaciones inadecuadas (muy lentas, muy superficiales)." }, //
+            { letter: "d", text: "Tiene una saturación de oxígeno del 95% en aire ambiente." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "¿Cuál es la frecuencia de ventilación adecuada para un adulto usando una BVM?",
+        options: [
+            { letter: "a", text: "Una ventilación cada 10 segundos (6 por minuto)." }, //
+            { letter: "b", text: "Una ventilación cada 5-6 segundos (10-12 por minuto)." }, //
+            { letter: "c", text: "Una ventilación cada 3 segundos (20 por minuto)." }, //
+            { letter: "d", text: "Lo más rápido posible." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "Un ruido de \"gorgoteo\" al evaluar la vía aérea usualmente indica:",
+        options: [
+            { letter: "a", text: "Estrechamiento de las vías aéreas inferiores (broncoespasmo)." }, //
+            { letter: "b", text: "Obstrucción parcial de la vía aérea superior por la lengua." }, //
+            { letter: "c", text: "Presencia de líquidos (sangre, vómito, secreciones) en la vía aérea superior." }, //
+            { letter: "d", text: "Inflamación de la laringe (crup)." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "¿Qué se debe hacer INMEDIATAMENTE si se escuchan gorgoteos en la vía aérea de un paciente?",
+        options: [
+            { letter: "a", text: "Insertar una cánula orofaríngea." }, //
+            { letter: "b", text: "Administrar oxígeno a alto flujo." }, //
+            { letter: "c", text: "Realizar succión de la vía aérea." }, //
+            { letter: "d", text: "Iniciar ventilaciones con BVM." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "¿Cuál es el propósito principal de una cánula nasofaríngea (NPA)?",
+        options: [
+            { letter: "a", text: "Administrar medicamentos directamente a los pulmones." }, //
+            { letter: "b", text: "Mantener permeable la vía aérea superior en pacientes que pueden tener reflejo nauseoso." }, //
+            { letter: "c", text: "Reemplazar la necesidad de succión." }, //
+            { letter: "d", text: "Servir como ruta para la intubación endotraqueal." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿Qué indica una buena técnica de ventilación con BVM?",
+        options: [
+            { letter: "a", text: "Ruidos fuertes provenientes del estómago." }, //
+            { letter: "b", text: "La máxima compresión posible de la bolsa." }, //
+            { letter: "c", text: "Elevación visible y adecuada del tórax con cada ventilación." }, //
+            { letter: "d", text: "Una frecuencia de 30 ventilaciones por minuto." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "¿Qué medida de seguridad es ESENCIAL al manejar cilindros de oxígeno?",
+        options: [
+            { letter: "a", text: "Mantenerlos acostados durante el transporte." }, //
+            { letter: "b", text: "Usar aceite o grasa para lubricar el regulador." }, //
+            { letter: "c", text: "Asegurarse de que no haya fuentes de ignición cerca (fuego, chispas, fumar) y manejarlos con cuidado." }, //
+            { letter: "d", text: "Abrir la válvula principal lo más rápido posible." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "¿Qué adjunto de vía aérea es preferible en un paciente con trauma facial severo que le impide abrir la boca o tener buen sello con mascarilla?",
+        options: [
+            { letter: "a", text: "Cánula orofaríngea (OPA)." }, //
+            { letter: "b", text: "Cánula nasofaríngea (NPA), si no hay contraindicación." }, //
+            { letter: "c", text: "Intubación endotraqueal inmediata por el TAMP-B." }, //
+            { letter: "d", text: "No usar ningún adjunto." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "El estridor es un ruido agudo escuchado durante la inspiración y generalmente indica:",
+        options: [
+            { letter: "a", text: "Líquido en la vía aérea inferior." }, //
+            { letter: "b", text: "Broncoespasmo severo." }, //
+            { letter: "c", text: "Obstrucción parcial de la vía aérea SUPERIOR (ej. cuerpo extraño, edema laríngeo)." }, //
+            { letter: "d", text: "Neumonía." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "Al usar una BVM, ¿cuál es el riesgo si se ventila demasiado rápido o con demasiado volumen?",
+        options: [
+            { letter: "a", text: "Hipoxia." }, //
+            { letter: "b", text: "Insuflación gástrica, que puede llevar a vómito y aspiración." }, //
+            { letter: "c", text: "Colapso pulmonar (atelectasia)." }, //
+            { letter: "d", text: "Bradicardia." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿Qué dispositivo de oxígeno permite administrar una concentración de O2 específica y es útil en pacientes con EPOC que retienen CO2?",
+        options: [
+            { letter: "a", text: "Mascarilla no recirculante." }, //
+            { letter: "b", text: "Mascarilla simple." }, //
+            { letter: "c", text: "Mascarilla tipo Venturi." }, //
+            { letter: "d", text: "Cánula nasal." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "¿Cuál es el primer paso si un paciente adulto consciente con sospecha de atragantamiento (obstrucción completa) no puede toser, hablar ni respirar?",
+        options: [
+            { letter: "a", text: "Iniciar RCP inmediatamente." }, //
+            { letter: "b", text: "Realizar compresiones abdominales (maniobra de Heimlich)." }, //
+            { letter: "c", text: "Intentar la ventilación boca a boca." }, //
+            { letter: "d", text: "Realizar un barrido digital a ciegas." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "El nombre oficial y no propietario de un medicamento se conoce como:",
+        options: [
+            { letter: "a", text: "Nombre comercial o de marca." }, //
+            { letter: "b", text: "Nombre químico." }, //
+            { letter: "c", text: "Nombre genérico." }, //
+            { letter: "d", text: "Nombre código." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "Una razón específica por la cual NO se debe administrar un medicamento, incluso si normalmente está indicado para esa condición, se llama:",
+        options: [
+            { letter: "a", text: "Indicación." }, //
+            { letter: "b", text: "Efecto secundario." }, //
+            { letter: "c", text: "Contraindicación." }, //
+            { letter: "d", text: "Acción terapéutica." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "La vía de administración sublingual (SL) implica colocar el medicamento:",
+        options: [
+            { letter: "a", text: "Debajo de la lengua." }, //
+            { letter: "b", text: "Inyectado en el músculo." }, //
+            { letter: "c", text: "Inhalado en los pulmones." }, //
+            { letter: "d", text: "Aplicado sobre la piel." }, //
+        ],
+        correctAnswer: "a", //
+    },
+    {
+        question: "¿Cuál de los siguientes NO es uno de los \"6 correctos\" de la administración de medicamentos?",
+        options: [
+            { letter: "a", text: "Paciente correcto." }, //
+            { letter: "b", text: "Medicamento correcto." }, //
+            { letter: "c", text: "Color correcto del medicamento." }, //
+            { letter: "d", text: "Dosis correcta." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "Un efecto no deseado de un medicamento que ocurre además del efecto terapéutico esperado se denomina:",
+        options: [
+            { letter: "a", text: "Indicación." }, //
+            { letter: "b", text: "Contraindicación." }, //
+            { letter: "c", text: "Acción." }, //
+            { letter: "d", text: "Efecto secundario." }, //
+        ],
+        correctAnswer: "d", //
+    },
+    {
+        question: "¿Cuál es la forma farmacéutica del Salbutamol/Albuterol cuando se usa en un inhalador de dosis medida (MDI)?",
+        options: [
+            { letter: "a", text: "Tableta." }, //
+            { letter: "b", text: "Gel." }, //
+            { letter: "c", text: "Aerosol presurizado." }, //
+            { letter: "d", text: "Polvo para reconstituir." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "La vía de administración oral (PO) significa que el paciente:",
+        options: [
+            { letter: "a", text: "Inhala el medicamento." }, //
+            { letter: "b", text: "Se aplica el medicamento en la piel." }, //
+            { letter: "c", text: "Recibe una inyección." }, //
+            { letter: "d", text: "Traga el medicamento." }, //
+        ],
+        correctAnswer: "d", //
+    },
+    {
+        question: "La \"acción\" de un medicamento se refiere a:",
+        options: [
+            { letter: "a", text: "Cómo se ve el medicamento." }, //
+            { letter: "b", text: "El efecto que tiene en el cuerpo." }, //
+            { letter: "c", text: "Las razones para administrarlo." }, //
+            { letter: "d", text: "Las razones para no administrarlo." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿Qué vía de administración permite la absorción más rápida en la circulación sistémica?",
+        options: [
+            { letter: "a", text: "Oral (PO)." }, //
+            { letter: "b", text: "Subcutánea (SC)." }, //
+            { letter: "c", text: "Intravenosa (IV) - (Aunque no la administre el TAMP-B, es importante conocer el principio)." }, //
+            { letter: "d", text: "Tópica (sobre la piel)." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "Verificar la fecha de caducidad de un medicamento es parte de asegurar el:",
+        options: [
+            { letter: "a", text: "Paciente correcto." }, //
+            { letter: "b", text: "Medicamento correcto (y su integridad/eficacia)." }, //
+            { letter: "c", text: "Vía correcta." }, //
+            { letter: "d", text: "Momento correcto." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿Qué significa la vía de administración Intramuscular (IM)?",
+        options: [
+            { letter: "a", text: "Dentro de la vena." }, //
+            { letter: "b", text: "Debajo de la piel." }, //
+            { letter: "c", text: "Dentro del músculo." }, //
+            { letter: "d", text: "Dentro de la nariz." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "La documentación precisa después de administrar un medicamento debe incluir TODO EXCEPTO:",
+        options: [
+            { letter: "a", text: "El nombre del medicamento." }, //
+            { letter: "b", text: "La dosis administrada." }, //
+            { letter: "c", text: "La vía de administración." }, //
+            { letter: "d", text: "El costo del medicamento." }, //
+        ],
+        correctAnswer: "d", //
+    },
+    {
+        question: "¿Por qué es importante conocer las alergias del paciente (la 'A' en SAMPLE) antes de administrar o ayudar con un medicamento?",
+        options: [
+            { letter: "a", text: "Para calcular la dosis correcta." }, //
+            { letter: "b", text: "Para evitar una reacción alérgica potencialmente mortal." }, //
+            { letter: "c", text: "Para determinar la vía de administración." }, //
+            { letter: "d", text: "No es relevante para la farmacología." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "Los medicamentos como la nitroglicerina y la glucosa oral dependen de una absorción a través de:",
+        options: [
+            { letter: "a", text: "La piel." }, //
+            { letter: "b", text: "Las membranas mucosas (sublingual, bucal)." }, //
+            { letter: "c", text: "El tracto gastrointestinal después de la digestión." }, //
+            { letter: "d", text: "La vía intramuscular." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿Qué información debe verificarse SIEMPRE en la etiqueta del medicamento antes de administrarlo?",
+        options: [
+            { letter: "a", text: "El color de la etiqueta." }, //
+            { letter: "b", text: "El nombre del medicamento y la concentración/dosis." }, //
+            { letter: "c", text: "El fabricante." }, //
+            { letter: "d", text: "El país de origen." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "El término \"indicación\" en farmacología se refiere a:",
+        options: [
+            { letter: "a", text: "Un efecto adverso del medicamento." }, //
+            { letter: "b", text: "La razón o condición médica para la cual se administra el medicamento." }, //
+            { letter: "c", text: "La forma en que el medicamento se presenta (tableta, líquido, etc.)." }, //
+            { letter: "d", text: "La interacción con otros medicamentos." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "Ayudar a un paciente a tomar su propio medicamento prescrito (ej. inhalador) requiere:",
+        options: [
+            { letter: "a", text: "Ignorar los \"6 correctos\" ya que es medicamento del paciente." }, //
+            { letter: "b", text: "Confirmar los \"6 correctos\" (que sea su medicamento, dosis correcta según prescripción, etc.) y seguir protocolos locales." }, //
+            { letter: "c", text: "Administrar una dosis doble por si acaso." }, //
+            { letter: "d", text: "Desalentar al paciente de tomar su medicación." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿Cuál es la indicación principal para administrar glucosa oral?",
+        options: [
+            { letter: "a", text: "Paciente inconsciente con sospecha de diabetes." }, //
+            { letter: "b", text: "Paciente consciente con nivel bajo de glucosa en sangre confirmado (hipoglucemia) que puede tragar." }, //
+            { letter: "c", text: "Paciente con hiperglucemia (azúcar alta)." }, //
+            { letter: "d", text: "Cualquier paciente diabético, como medida preventiva." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿Cuál es la principal contraindicación para administrar nitroglicerina a un paciente con dolor torácico?",
+        options: [
+            { letter: "a", text: "Frecuencia cardíaca > 100 lpm." }, //
+            { letter: "b", text: "Presión arterial sistólica < 90-100 mmHg o uso reciente de inhibidores de PDE-5 (Viagra, Cialis, etc.)." }, //
+            { letter: "c", text: "El paciente no tiene receta para nitroglicerina. (Esto es una condición necesaria, pero la contraindicación es la de la opción b)." }, //
+            { letter: "d", text: "El paciente tomó aspirina." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "La aspirina se administra en el contexto prehospitalario a pacientes con sospecha de síndrome coronario agudo porque:",
+        options: [
+            { letter: "a", text: "Alivia el dolor inmediatamente." }, //
+            { letter: "b", text: "Disuelve los coágulos ya formados." }, //
+            { letter: "c", text: "Ayuda a prevenir la formación de nuevos coágulos al inhibir la agregación plaquetaria." }, //
+            { letter: "d", text: "Baja la presión arterial." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "¿En qué sitio anatómico se administra un autoinyector de epinefrina?",
+        options: [
+            { letter: "a", text: "En el músculo deltoides (brazo)." }, //
+            { letter: "b", text: "En la cara anterolateral del muslo." }, //
+            { letter: "c", text: "Por vía subcutánea en el abdomen." }, //
+            { letter: "d", text: "Por vía intravenosa." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿Cuál es la indicación CLAVE para usar un autoinyector de epinefrina?",
+        options: [
+            { letter: "a", text: "Reacción alérgica leve con picazón." }, //
+            { letter: "b", text: "Ataque de asma." }, //
+            { letter: "c", text: "Anafilaxia: reacción alérgica severa con dificultad respiratoria y/o hipotensión (shock)." }, //
+            { letter: "d", text: "Dolor torácico." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "Al asistir a un paciente con su inhalador de dosis medida (MDI) para el asma, ¿qué instrucción es importante darle?",
+        options: [
+            { letter: "a", text: "Inhalar rápidamente justo antes de presionar el MDI." }, //
+            { letter: "b", text: "Contener la respiración por unos segundos después de inhalar el medicamento." }, //
+            { letter: "c", text: "Exhalar mientras presiona el MDI." }, //
+            { letter: "d", text: "Usar el inhalador boca abajo." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "El carbón activado funciona principalmente:",
+        options: [
+            { letter: "a", text: "Neutralizando químicamente el veneno." }, //
+            { letter: "b", text: "Induciendo el vómito." }, //
+            { letter: "c", text: "Adsorbiendo (uniéndose a) ciertas toxinas en el estómago para prevenir su absorción." }, //
+            { letter: "d", text: "Acelerando el metabolismo del veneno en el hígado." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "¿Cuál es la indicación para administrar Naloxona (Narcan)?",
+        options: [
+            { letter: "a", text: "Sobredosis de cualquier droga recreativa." }, //
+            { letter: "b", text: "Paro cardíaco de causa desconocida." }, //
+            { letter: "c", text: "Sospecha de sobredosis de opioides con depresión respiratoria significativa o apnea." }, //
+            { letter: "d", text: "Agitación psicomotriz." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "¿Por qué es crucial verificar la presión arterial antes y después de administrar nitroglicerina?",
+        options: [
+            { letter: "a", text: "Porque la nitroglicerina puede causar hipertensión severa." }, //
+            { letter: "b", text: "Porque la nitroglicerina es un vasodilatador y puede causar hipotensión significativa." }, //
+            { letter: "c", text: "Porque afecta la frecuencia respiratoria." }, //
+            { letter: "d", text: "Para asegurar que el paciente tenga una vía IV permeable." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "La dosis estándar de aspirina para sospecha de síndrome coronario agudo suele ser:",
+        options: [
+            { letter: "a", text: "81 mg (dosis baja o \"baby aspirin\")." }, //
+            { letter: "b", text: "162 a 324 mg (usualmente 2-4 tabletas masticables de 81 mg)." }, //
+            { letter: "c", text: "500 mg." }, //
+            { letter: "d", text: "1000 mg." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿Qué medicamento se considera fundamental en el tratamiento inicial de casi cualquier paciente con dificultad respiratoria o signos de hipoxia?",
+        options: [
+            { letter: "a", text: "Glucosa oral." }, //
+            { letter: "b", text: "Aspirina." }, //
+            { letter: "c", text: "Oxígeno." }, //
+            { letter: "d", text: "Naloxona." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "Si un paciente consciente con hipoglucemia conocida se niega a tomar glucosa oral, ¿qué debes hacer?",
+        options: [
+            { letter: "a", text: "Forzar al paciente a tomarla." }, //
+            { letter: "b", text: "Administrarla por vía intramuscular." }, //
+            { letter: "c", text: "Documentar el rechazo, explicar los riesgos y preparar para un posible deterioro/transporte." }, //
+            { letter: "d", text: "Dejar al paciente en la escena." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "Antes de ayudar a un paciente a usar su broncodilatador (MDI o nebulizador), ¿qué debes confirmar?",
+        options: [
+            { letter: "a", text: "Que el paciente no haya comido recientemente." }, //
+            { letter: "b", text: "Que el medicamento le pertenezca, no esté caducado, y seguir los \"6 correctos\" según sea aplicable." }, //
+            { letter: "c", text: "Que la presión arterial esté elevada." }, //
+            { letter: "d", text: "Que el paciente tenga más de 18 años." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "La vía de administración Intranasal (IN) para Naloxona implica:",
+        options: [
+            { letter: "a", text: "Inyectar en la fosa nasal." }, //
+            { letter: "b", text: "Rociar el medicamento en una o ambas fosas nasales usando un atomizador." }, //
+            { letter: "c", text: "Que el paciente inhale un polvo." }, //
+            { letter: "d", text: "Colocar una tableta debajo de la lengua." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿Cuál es un efecto secundario común de la nitroglicerina?",
+        options: [
+            { letter: "a", text: "Dolor de cabeza (cefalea)." }, //
+            { letter: "b", text: "Bradicardia (frecuencia cardíaca lenta)." }, //
+            { letter: "c", text: "Hipertensión." }, //
+            { letter: "d", text: "Somnolencia extrema." }, //
+        ],
+        correctAnswer: "a", //
+    },
+    {
+        question: "¿Cuál es una contraindicación absoluta para administrar carbón activado?",
+        options: [
+            { letter: "a", text: "Ingestión de una sustancia desconocida." }, //
+            { letter: "b", text: "Paciente vomitando activamente." }, //
+            { letter: "c", text: "Ingestión de productos ácidos, álcalis o derivados del petróleo (hidrocarburos)." }, //
+            { letter: "d", text: "Han pasado más de 2 horas desde la ingestión." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "La epinefrina causa ___________ de los vasos sanguíneos y ___________ de los bronquios.",
+        options: [
+            { letter: "a", text: "Vasodilatación / Broncoconstricción" }, //
+            { letter: "b", text: "Vasoconstricción / Broncodilatación" }, //
+            { letter: "c", text: "Vasoconstricción / Broncoconstricción" }, //
+            { letter: "d", text: "Vasodilatación / Broncodilatación" }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "Después de administrar cualquier medicamento, ¿qué es crucial hacer como parte de la reevaluación?",
+        options: [
+            { letter: "a", text: "Preguntar al paciente si le gustó el sabor." }, //
+            { letter: "b", text: "Medir la temperatura corporal." }, //
+            { letter: "c", text: "Evaluar la respuesta del paciente al medicamento (mejoría, empeoramiento, efectos secundarios) y reevaluar los signos vitales." }, //
+            { letter: "d", text: "Administrar una segunda dosis inmediatamente." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "¿Cuál es la definición MÁS precisa de shock?",
+        options: [
+            { letter: "a", text: "Una caída repentina de la presión arterial." }, //
+            { letter: "b", text: "Una reacción emocional extrema al trauma." }, //
+            { letter: "c", text: "Un estado de hipoperfusión celular generalizada (entrega inadecuada de oxígeno a las células)." }, //
+            { letter: "d", text: "Una frecuencia cardíaca muy rápida." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "¿Qué tipo de shock es causado por una pérdida significativa de sangre o fluidos corporales?",
+        options: [
+            { letter: "a", text: "Cardiogénico" }, //
+            { letter: "b", text: "Distributivo" }, //
+            { letter: "c", text: "Obstructivo" }, //
+            { letter: "d", text: "Hipovolémico" }, //
+        ],
+        correctAnswer: "d", //
+    },
+    {
+        question: "Un paciente con una reacción alérgica severa (anafilaxia) que presenta urticaria, dificultad respiratoria e hipotensión está probablemente en shock:",
+        options: [
+            { letter: "a", text: "Séptico" }, //
+            { letter: "b", text: "Anafiláctico (un tipo de shock distributivo)" }, //
+            { letter: "c", text: "Neurogénico" }, //
+            { letter: "d", text: "Hipovolémico" }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿Cuál de los siguientes signos es característico del shock COMPENSADO?",
+        options: [
+            { letter: "a", text: "Presión arterial muy baja (hipotensión)." }, //
+            { letter: "b", text: "Piel caliente y seca." }, //
+            { letter: "c", text: "Ansiedad, piel pálida/fría/húmeda, taquicardia, llenado capilar retardado, pero presión arterial aún normal." }, //
+            { letter: "d", text: "Inconsciencia profunda." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "El shock cardiogénico se debe a una falla en:",
+        options: [
+            { letter: "a", text: "El volumen sanguíneo (contenido)." }, //
+            { letter: "b", text: "El tono de los vasos sanguíneos (contenedor)." }, //
+            { letter: "c", text: "La función de bomba del corazón." }, //
+            { letter: "d", text: "Una obstrucción física del flujo sanguíneo." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "¿Cuál es el manejo prehospitalario básico MÁS importante para la mayoría de los tipos de shock?",
+        options: [
+            { letter: "a", text: "Administrar líquidos intravenosos agresivamente (rol más avanzado)." }, //
+            { letter: "b", text: "Asegurar vía aérea permeable, administrar oxígeno a alto flujo, controlar hemorragias externas y mantener la temperatura corporal." }, //
+            { letter: "c", text: "Colocar al paciente en posición sentada." }, //
+            { letter: "d", text: "Administrar analgésicos potentes." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "Un paciente con lesión en la médula espinal alta que presenta piel caliente y seca por debajo del nivel de la lesión, bradicardia e hipotensión podría estar experimentando shock:",
+        options: [
+            { letter: "a", text: "Hipovolémico" }, //
+            { letter: "b", text: "Cardiogénico" }, //
+            { letter: "c", text: "Séptico" }, //
+            { letter: "d", text: "Neurogénico (un tipo de shock distributivo)" }, //
+        ],
+        correctAnswer: "d", //
+    },
+    {
+        question: "¿Cuál es la diferencia clave entre el shock compensado y el descompensado?",
+        options: [
+            { letter: "a", text: "La frecuencia cardíaca." }, //
+            { letter: "b", text: "La presencia de dificultad respiratoria." }, //
+            { letter: "c", text: "La presión arterial (la hipotensión marca el inicio del shock descompensado)." }, //
+            { letter: "d", text: "La temperatura de la piel." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "Un neumotórax a tensión o un taponamiento cardíaco pueden causar shock de tipo:",
+        options: [
+            { letter: "a", text: "Hipovolémico" }, //
+            { letter: "b", text: "Distributivo" }, //
+            { letter: "c", text: "Cardiogénico" }, //
+            { letter: "d", text: "Obstructivo" }, //
+        ],
+        correctAnswer: "d", //
+    },
+    {
+        question: "¿Por qué es crucial prevenir la hipotermia en pacientes en shock?",
+        options: [
+            { letter: "a", text: "Porque la hipotermia mejora la coagulación." }, //
+            { letter: "b", text: "Porque la hipotermia interfiere con la coagulación sanguínea y empeora la acidosis metabólica." }, //
+            { letter: "c", text: "Porque los pacientes en shock siempre sienten calor." }, //
+            { letter: "d", text: "Porque facilita la administración de medicamentos." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿Cuál de estos NO es un componente esencial para mantener una perfusión adecuada?",
+        options: [
+            { letter: "a", text: "Una bomba cardíaca funcional." }, //
+            { letter: "b", text: "Un volumen sanguíneo adecuado (contenido)." }, //
+            { letter: "c", text: "Vasos sanguíneos con tono adecuado (contenedor)." }, //
+            { letter: "d", text: "Una alta concentración de azúcar en la sangre." }, //
+        ],
+        correctAnswer: "d", //
+    },
+    {
+        question: "¿Cuál es el tratamiento prehospitalario INMEDIATO para una hemorragia externa grave que contribuye al shock hipovolémico?",
+        options: [
+            { letter: "a", text: "Aplicar calor en la herida." }, //
+            { letter: "b", text: "Administrar oxígeno." }, //
+            { letter: "c", text: "Aplicar presión directa firme sobre la herida." }, //
+            { letter: "d", text: "Elevar la cabeza del paciente." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "En un paciente pediátrico, ¿cuál suele ser el signo MÁS temprano y fiable de shock compensado?",
+        options: [
+            { letter: "a", text: "Hipotensión severa." }, //
+            { letter: "b", text: "Bradicardia." }, //
+            { letter: "c", text: "Taquicardia inexplicable y cambios sutiles en el estado mental o la perfusión cutánea." }, //
+            { letter: "d", text: "Cianosis central." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "El shock séptico es causado por:",
+        options: [
+            { letter: "a", text: "Una lesión cerebral traumática." }, //
+            { letter: "b", text: "Una reacción alérgica." }, //
+            { letter: "c", text: "Una infección sistémica grave que causa vasodilatación y fuga capilar." }, //
+            { letter: "d", text: "Una embolia pulmonar masiva." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "¿Qué posición es generalmente recomendada para pacientes en shock (si no hay contraindicación como trauma o dificultad respiratoria severa)?",
+        options: [
+            { letter: "a", text: "Sentado derecho (Fowler alto)." }, //
+            { letter: "b", text: "Prona (boca abajo)." }, //
+            { letter: "c", text: "Supina (acostado boca arriba), posiblemente con elevación ligera de piernas si el protocolo lo indica." }, //
+            { letter: "d", text: "De lado (recuperación)." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "La piel pálida, fría y húmeda (diaforética) en un paciente en shock se debe principalmente a:",
+        options: [
+            { letter: "a", text: "Fiebre alta." }, //
+            { letter: "b", text: "La respuesta del sistema nervioso simpático (vasoconstricción periférica y estimulación de glándulas sudoríparas)." }, //
+            { letter: "c", text: "Exposición al frío ambiental." }, //
+            { letter: "d", text: "Una reacción alérgica cutánea." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "El objetivo final del manejo del shock es:",
+        options: [
+            { letter: "a", text: "Aumentar la frecuencia cardíaca." }, //
+            { letter: "b", text: "Restaurar la perfusión adecuada a nivel celular." }, //
+            { letter: "c", text: "Disminuir la frecuencia respiratoria." }, //
+            { letter: "d", text: "Elevar la temperatura corporal central." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿Cuál es el primer paso al encontrar a una persona colapsada?",
+        options: [
+            { letter: "a", text: "Iniciar compresiones torácicas inmediatamente." }, //
+            { letter: "b", text: "Verificar la seguridad de la escena y luego evaluar la respuesta del paciente." }, //
+            { letter: "c", text: "Abrir la vía aérea." }, //
+            { letter: "d", text: "Llamar inmediatamente por ayuda avanzada." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿Cómo se verifica la respiración normal en un paciente sin respuesta?",
+        options: [
+            { letter: "a", text: "Observando cualquier movimiento torácico durante al menos 30 segundos." }, //
+            { letter: "b", text: "Escuchando atentamente si hay ronquidos." }, //
+            { letter: "c", text: "Observando el movimiento del tórax y escuchando/sintiendo el aire durante no más de 10 segundos (el jadeo/gasping no es normal)." }, //
+            { letter: "d", text: "Pellizcando al paciente para ver si reacciona." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "¿Cuál es la frecuencia correcta para las compresiones torácicas en adultos, niños y lactantes?",
+        options: [
+            { letter: "a", text: "60-80 compresiones por minuto." }, //
+            { letter: "b", text: "80-100 compresiones por minuto." }, //
+            { letter: "c", text: "100-120 compresiones por minuto." }, //
+            { letter: "d", text: "Más de 120 compresiones por minuto." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "¿Cuál es la profundidad adecuada de las compresiones torácicas en un adulto?",
+        options: [
+            { letter: "a", text: "2-3 cm (aproximadamente 1 pulgada)." }, //
+            { letter: "b", text: "Al menos 5 cm (2 pulgadas), pero no más de 6 cm (2.4 pulgadas)." }, //
+            { letter: "c", text: "Al menos 7 cm (3 pulgadas)." }, //
+            { letter: "d", text: "La profundidad no importa tanto como la frecuencia." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "La relación correcta de compresión:ventilación para un adulto en RCP por un solo reanimador es:",
+        options: [
+            { letter: "a", text: "15 compresiones : 2 ventilaciones." }, //
+            { letter: "b", text: "30 compresiones : 2 ventilaciones." }, //
+            { letter: "c", text: "5 compresiones : 1 ventilación." }, //
+            { letter: "d", text: "Compresiones continuas sin ventilaciones." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "En RCP de dos reanimadores para un niño (de 1 año a la pubertad), la relación compresión:ventilación cambia a:",
+        options: [
+            { letter: "a", text: "30:2" }, //
+            { letter: "b", text: "15:2" }, //
+            { letter: "c", text: "15:1" }, //
+            { letter: "d", text: "30:1" }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿Dónde se colocan las manos (o dedos) para las compresiones torácicas en un lactante (< 1 año)?",
+        options: [
+            { letter: "a", text: "En la parte superior del esternón." }, //
+            { letter: "b", text: "Justo debajo del apéndice xifoides." }, //
+            { letter: "c", text: "En el centro del pecho, justo debajo de la línea intermamilar." }, //
+            { letter: "d", text: "Sobre el abdomen." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "¿Cuál es el propósito principal de permitir una expansión torácica completa entre compresiones?",
+        options: [
+            { letter: "a", text: "Para dar descanso al reanimador." }, //
+            { letter: "b", text: "Para permitir que el corazón se llene adecuadamente de sangre." }, //
+            { letter: "c", text: "Para facilitar la ventilación." }, //
+            { letter: "d", text: "Para evitar fracturar las costillas." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿Cuándo debe utilizarse un DEA (Desfibrilador Externo Automático)?",
+        options: [
+            { letter: "a", text: "En cualquier paciente inconsciente." }, //
+            { letter: "b", text: "Solo si se confirma un infarto de miocardio." }, //
+            { letter: "c", text: "Tan pronto como esté disponible en un paciente con paro cardiorrespiratorio sin pulso." }, //
+            { letter: "d", text: "Solo después de 5 ciclos de RCP." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "Después de administrar una descarga con el DEA, ¿qué se debe hacer INMEDIATAMENTE?",
+        options: [
+            { letter: "a", text: "Verificar el pulso." }, //
+            { letter: "b", text: "Reanudar las compresiones torácicas de alta calidad." }, //
+            { letter: "c", text: "Administrar dos ventilaciones." }, //
+            { letter: "d", text: "Esperar a que el DEA indique el siguiente paso." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿Cuál es la profundidad de compresión correcta para un niño (no lactante)?",
+        options: [
+            { letter: "a", text: "Al menos 1/2 del diámetro anteroposterior del tórax." }, //
+            { letter: "b", text: "Al menos 1/3 del diámetro anteroposterior del tórax (aproximadamente 5 cm o 2 pulgadas)." }, //
+            { letter: "c", text: "Menos de 4 cm (1.5 pulgadas)." }, //
+            { letter: "d", text: "Igual que en adultos (al menos 5 cm, no más de 6 cm)." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿Cómo se maneja una obstrucción de vía aérea por cuerpo extraño (OVACE) en un adulto consciente que no puede toser ni hablar?",
+        options: [
+            { letter: "a", text: "Compresiones torácicas de RCP." }, //
+            { letter: "b", text: "Barrido digital a ciegas." }, //
+            { letter: "c", text: "Compresiones abdominales (maniobra de Heimlich)." }, //
+            { letter: "d", text: "Esperar a que pierda la conciencia." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "Si un lactante con OVACE consciente no puede llorar ni respirar, ¿cuál es la intervención correcta?",
+        options: [
+            { letter: "a", text: "Compresiones abdominales." }, //
+            { letter: "b", text: "Administrar 5 golpes en la espalda seguidos de 5 compresiones torácicas." }, //
+            { letter: "c", text: "Intentar ventilaciones inmediatamente." }, //
+            { letter: "d", text: "Colocarlo boca abajo y sacudirlo." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿Cuál es un elemento clave de la RCP de \"alta calidad\"?",
+        options: [
+            { letter: "a", text: "Realizar las compresiones lo más rápido posible." }, //
+            { letter: "b", text: "Minimizar las interrupciones en las compresiones torácicas (menos de 10 segundos)." }, //
+            { letter: "c", text: "Administrar ventilaciones muy profundas." }, //
+            { letter: "d", text: "Verificar el pulso cada minuto." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿Por qué NO se recomienda el barrido digital a ciegas para intentar extraer un cuerpo extraño de la vía aérea?",
+        options: [
+            { letter: "a", text: "Porque es ineficaz." }, //
+            { letter: "b", text: "Porque podría empujar el objeto más adentro." }, //
+            { letter: "c", text: "Porque requiere equipo especial." }, //
+            { letter: "d", text: "Porque causa dolor innecesario." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿Dónde se verifica el pulso en un lactante durante la evaluación de SVB?",
+        options: [
+            { letter: "a", text: "Arteria carótida (cuello)." }, //
+            { letter: "b", text: "Arteria radial (muñeca)." }, //
+            { letter: "c", text: "Arteria femoral (ingle)." }, //
+            { letter: "d", text: "Arteria braquial (parte interna del brazo, entre codo y hombro)." }, //
+        ],
+        correctAnswer: "d", //
+    },
+    {
+        question: "Al ventilar a un paciente durante la RCP, cada ventilación debe durar aproximadamente:",
+        options: [
+            { letter: "a", text: "3 segundos." }, //
+            { letter: "b", text: "Menos de 0.5 segundos." }, //
+            { letter: "c", text: "1 segundo, lo suficiente para ver la elevación del tórax." }, //
+            { letter: "d", text: "El mayor tiempo posible." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "¿Cuál es la prioridad en la secuencia de RCP según las guías actuales (C-A-B)?",
+        options: [
+            { letter: "a", text: "Abrir la vía aérea (A)." }, //
+            { letter: "b", text: "Iniciar ventilaciones (B)." }, //
+            { letter: "c", text: "Iniciar compresiones torácicas de alta calidad (C)." }, //
+            { letter: "d", text: "Colocar el DEA (D)." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "En un equipo de reanimación (\"Código Mega\"), ¿cuál es el rol MÁS fundamental y continuo que puede desempeñar un TAMP-B?",
+        options: [
+            { letter: "a", text: "Liderar el código." }, //
+            { letter: "b", text: "Administrar medicamentos avanzados." }, //
+            { letter: "c", text: "Realizar compresiones torácicas de alta calidad y relevarse frecuentemente." }, //
+            { letter: "d", text: "Interpretar el electrocardiograma." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "La comunicación en \"circuito cerrado\" durante una reanimación implica:",
+        options: [
+            { letter: "a", text: "Hablar en voz muy baja." }, //
+            { letter: "b", text: "Que el líder da una orden y el miembro del equipo la repite al recibirla y confirma cuando la ha completado." }, //
+            { letter: "c", text: "Usar radios para comunicarse." }, //
+            { letter: "d", text: "Que todos hablan al mismo tiempo." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿Por qué es crucial minimizar las interrupciones en las compresiones torácicas durante un Código Mega?",
+        options: [
+            { letter: "a", text: "Porque cada interrupción reduce drásticamente la presión de perfusión coronaria y cerebral." }, //
+            { letter: "b", text: "Porque cansa menos a los reanimadores." }, //
+            { letter: "c", text: "Porque permite administrar medicamentos más rápido." }, //
+            { letter: "d", text: "Porque facilita la intubación." }, //
+        ],
+        correctAnswer: "a", //
+    },
+    {
+        question: "El uso temprano del DEA es vital porque:",
+        options: [
+            { letter: "a", text: "Reinicia cualquier actividad eléctrica del corazón." }, //
+            { letter: "b", text: "La probabilidad de éxito de la desfibrilación disminuye rápidamente con el tiempo en casos de Fibrilación Ventricular (FV) o Taquicardia Ventricular sin pulso (TVSP)." }, //
+            { letter: "c", text: "Asegura que el paciente no sienta dolor." }, //
+            { letter: "d", text: "Reemplaza la necesidad de compresiones." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "Como TAMP-B en un código, si estás realizando ventilaciones con BVM, ¿qué debes evitar?",
+        options: [
+            { letter: "a", text: "Usar oxígeno suplementario." }, //
+            { letter: "b", text: "Ventilar una vez cada 5-6 segundos (en adulto)." }, //
+            { letter: "c", text: "Hiperventilar al paciente (demasiado rápido o con demasiado volumen)." }, //
+            { letter: "d", text: "Asegurar un buen sello de la mascarilla." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "¿Qué significa ROSC?",
+        options: [
+            { letter: "a", text: "Reanimación Óptima Sin Complicaciones." }, //
+            { letter: "b", text: "Respuesta Ocular, Sensorial y Coordinada." }, //
+            { letter: "c", text: "Retorno de la Circulación Espontánea." }, //
+            { letter: "d", text: "Ritmo Organizado Sin Contracción." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "Si durante la RCP se detecta ROSC (ej. el paciente empieza a moverse o respirar, se detecta pulso), ¿cuál es el siguiente paso inmediato?",
+        options: [
+            { letter: "a", text: "Continuar la RCP exactamente igual." }, //
+            { letter: "b", text: "Detener la RCP y evaluar la vía aérea, respiración y circulación (evaluación post-paro), administrar O2 y monitorizar." }, //
+            { letter: "c", text: "Administrar una descarga del DEA por si acaso." }, //
+            { letter: "d", text: "Retirar todo el equipo y esperar al personal avanzado." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿Cómo puede un TAMP-B apoyar eficazmente la llegada de un equipo de Soporte Vital Avanzado (SVA)?",
+        options: [
+            { letter: "a", text: "Deteniendo la RCP para no interferir." }, //
+            { letter: "b", text: "Dando un informe conciso y claro de la situación y continuando con RCP de alta calidad hasta que SVA indique lo contrario." }, //
+            { letter: "c", text: "Intentando colocar una vía IV." }, //
+            { letter: "d", text: "Criticando las acciones del equipo SVA." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "Una Orden de No Reanimar (ONR) válida significa que:",
+        options: [
+            { letter: "a", text: "Se debe realizar RCP pero sin usar el DEA." }, //
+            { letter: "b", text: "Se debe intentar la reanimación durante 10 minutos solamente." }, //
+            { letter: "c", text: "No se deben iniciar o se deben suspender los esfuerzos de reanimación (RCP, desfibrilación, manejo avanzado vía aérea, etc.)." }, //
+            { letter: "d", text: "Solo aplica si el paciente está en un hospital." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "¿Cuál es la base de cualquier esfuerzo de reanimación exitoso, tanto en SVB como en SVA?",
+        options: [
+            { letter: "a", text: "La administración temprana de epinefrina." }, //
+            { letter: "b", text: "La intubación endotraqueal rápida." }, //
+            { letter: "c", text: "La RCP de alta calidad (compresiones efectivas y minimización de interrupciones)." }, //
+            { letter: "d", text: "El uso de dispositivos mecánicos de compresión." }, //
+        ],
+        correctAnswer: "c", //
+    },
+    {
+        question: "El concepto de \"equipo de reanimación\" enfatiza:",
+        options: [
+            { letter: "a", text: "Que una sola persona debe hacer todo." }, //
+            { letter: "b", text: "Roles definidos, coordinación, comunicación clara y apoyo mutuo." }, //
+            { letter: "c", text: "Que el líder toma todas las decisiones sin consultar." }, //
+            { letter: "d", text: "Que la jerarquía es lo más importante." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "Durante un código, si el líder te pide administrar oxígeno y tú estás ocupado con compresiones, ¿qué deberías hacer según la comunicación en circuito cerrado?",
+        options: [
+            { letter: "a", text: "Ignorar la orden." }, //
+            { letter: "b", text: "Decir \"Entendido, administraré oxígeno\" y pedir a otro miembro que te releve en compresiones o esperar el momento adecuado." }, //
+            { letter: "c", text: "Gritarle al líder que estás ocupado." }, //
+            { letter: "d", text: "Administrar el oxígeno mientras sigues haciendo compresiones." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "¿Cuál es el objetivo principal de las compresiones torácicas durante la RCP?",
+        options: [
+            { letter: "a", text: "Estimular eléctricamente al corazón." }, //
+            { letter: "b", text: "Mantener un flujo sanguíneo artificial mínimo al cerebro y al propio corazón." }, //
+            { letter: "c", text: "Romper coágulos en las arterias coronarias." }, //
+            { letter: "d", text: "Calentar al paciente." }, //
+        ],
+        correctAnswer: "b", //
+    },
+    {
+        question: "La hiperventilación durante la RCP es perjudicial porque:",
+        options: [
+            { letter: "a", text: "Aumenta la presión intratorácica, disminuyendo el retorno venoso al corazón y el gasto cardíaco." }, //
+            { letter: "b", text: "Causa hipoxia." }, //
+            { letter: "c", text: "Es difícil de realizar con una BVM." }, //
+            { letter: "d", text: "Puede dañar los pulmones directamente." }, //
+        ],
+        correctAnswer: "a", //
+    },
+    {
+        question: "¿Qué debe hacer el TAMP-B si se encuentra con una directiva anticipada válida (como una ONR) al llegar a atender a un paciente en paro?",
+        options: [
+            { letter: "a", text: "Ignorarla e iniciar RCP." }, //
+            { letter: "b", text: "Verificar su validez según protocolo local y respetarla, proporcionando cuidados paliativos si es apropiado." }, //
+            { letter: "c", text: "Iniciar RCP mientras se verifica la directiva." }, //
+            { letter: "d", text: "Pedirle a la familia que revoque la orden." }, //
+        ],
+        correctAnswer: "b", //
+    },
 ];

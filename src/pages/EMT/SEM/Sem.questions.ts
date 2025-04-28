@@ -346,4 +346,84 @@ export const semSystemQuestions: Question[] = [
         ],
         correctAnswer: "a",
     },
+    {
+        question: "¿En qué década surgió el concepto moderno del Sistema de Emergencias Médicas (SEM)?",
+        options: [
+            { letter: "a", text: "1950s" },
+            { letter: "b", text: "1960s" },
+            { letter: "c", text: "1970s" },
+            { letter: "d", text: "1980s" },
+        ],
+        correctAnswer: "b",
+    },
+    {
+        question: "¿Qué informe publicado en 1966 impulsó la creación formal del SEM?",
+        options: [
+            { letter: "a", text: "Prehospital Care Manual" },
+            { letter: "b", text: "Accidental Death and Disability" },
+            { letter: "c", text: "Trauma System Review" },
+            { letter: "d", text: "First Responder Guide" },
+        ],
+        correctAnswer: "b",
+    },
+    {
+        question: "¿Cuál era uno de los principales problemas identificados antes de la creación del SEM moderno?",
+        options: [
+            { letter: "a", text: "Falta de hospitales" },
+            { letter: "b", text: "Falta de médicos especialistas" },
+            { letter: "c", text: "Ausencia de atención prehospitalaria efectiva" },
+            { letter: "d", text: "Demora en diagnósticos" },
+        ],
+        correctAnswer: "c",
+    },
+    {
+        question: "¿Qué motivó en Estados Unidos la estructuración formal del SEM?",
+        options: [
+            { letter: "a", text: "Guerra de Vietnam" },
+            { letter: "b", text: "Altos índices de muertes accidentales fuera de hospitales" },
+            { letter: "c", text: "Cambio de políticas de salud pública" },
+            { letter: "d", text: "Privatización de servicios médicos" },
+        ],
+        correctAnswer: "b",
+    },
+    {
+        question: "¿En qué año se publicó 'Accidental Death and Disability'?",
+        options: [
+            { letter: "a", text: "1964" },
+            { letter: "b", text: "1966" },
+            { letter: "c", text: "1968" },
+            { letter: "d", text: "1970" },
+        ],
+        correctAnswer: "b",
+    },
+    {
+        question: "¿Qué organización regula actualmente el Sistema SEM en México?",
+        options: [
+            { letter: "a", text: "Protección Civil" },
+            { letter: "b", text: "Cruz Roja Mexicana" },
+            { letter: "c", text: "Secretaría de Salud" },
+            { letter: "d", text: "Instituto Mexicano del Seguro Social" },
+        ],
+        correctAnswer: "c",
+    },
+    {
+        question: "¿Qué número telefónico centraliza emergencias en México desde 2016?",
+        options: [
+            { letter: "a", text: "066" },
+            { letter: "b", text: "060" },
+            { letter: "c", text: "911" },
+            { letter: "d", text: "800" },
+        ],
+        correctAnswer: "c",
+    },
+    {
+        question: "¿Cuál es el principal objetivo de un SEM efectivo?",
+        options: [
+            { letter: "a", text: "Reducir tiempos de respuesta" },
+            { letter: "b", text: "Recaudar fondos hospitalarios" },
+            { letter: "c", text: "Privatizar servicios" },
+            { letter: "d", text: "Aumentar trámites burocráticos" },
+        ],
+        correctAnswer: "a",
+    },
 ];
