@@ -29,7 +29,7 @@ export default function GeneralExam(){
         return q.options.find((opt:Option) => opt.letter === letter)?.text || "";
     };
     return (
-        <div className="flex flex-col items-center  justify-center bg-gray-100 pb-12 md:px-0 px-4 dark:bg-gray-900 dark:text-gray-100 p-4">
+        <div className="flex flex-col items-center  justify-center bg-gray-100 pb-12  px-4 dark:bg-gray-900 dark:text-gray-100 p-4">
 
             <img src={logo}
                  alt="Logo" className="h-24 w-24 mb-4" />
