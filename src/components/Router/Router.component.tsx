@@ -31,6 +31,8 @@ import Pharmacology from "../../pages/EMT/Pharmacology/Pharmacology.page.tsx";
 import {pharmacologyQuestions} from "../../pages/EMT/Pharmacology/Pharmacology.questions.ts";
 import MedAdmin from "../../pages/EMT/MedAdmin/MedAdmin.page.tsx";
 import {medicationAdministrationQuestions} from "../../pages/EMT/MedAdmin/MedAdmin.questions.ts";
+import {shockQuestions} from "../../pages/EMT/Shock/Shock.questions.ts";
+import Shock from "../../pages/EMT/Shock/Shock.page.tsx";
 
 export default function Router(){
     return(
@@ -63,6 +65,8 @@ export default function Router(){
                 <Route path="/pharmacology/exam" element={<Exam returnRoute="/pharmacology" name="Principios de la Farmacología" questions={pharmacologyQuestions}  />}/>
                 <Route path="/med-admin" element={<MedAdmin />}/>
                 <Route path="/med-admin/exam" element={<Exam returnRoute="/med-admin" name="Administración de Medicamentos" questions={medicationAdministrationQuestions}  />}/>
+                <Route path="/shock" element={<Shock />}/>
+                <Route path="/shock/exam" element={<Exam returnRoute="/shock" name="shock" questions={shockQuestions}  />}/>
 
 
                 <Route path="/lms" element={<Lms /> }/>
