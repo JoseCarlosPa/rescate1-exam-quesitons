@@ -29,7 +29,7 @@ export default function Exam(props: ExamProps){
         return q.options.find((opt: Option) => opt.letter === letter)?.text || "";
     };
     return (
-        <div className="flex flex-col items-center w-screen justify-center bg-gray-100 pb-12 md:px-0 px-4 dark:bg-gray-900 dark:text-gray-100 p-4">
+        <div className="flex flex-col items-center  justify-center bg-gray-100 pb-12 md:px-0 px-4 dark:bg-gray-900 dark:text-gray-100 p-4">
             <img src={logo}
                  alt="Logo" className="h-24 w-24 mb-4" />
             <p className="text-sm italic ">Generacion 2025 Rescate 1: Este examen fue hecho por los alumnos de la clase sabados R1 2025</p>

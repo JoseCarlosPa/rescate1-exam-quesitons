@@ -33,6 +33,7 @@ import MedAdmin from "../../pages/EMT/MedAdmin/MedAdmin.page.tsx";
 import {medicationAdministrationQuestions} from "../../pages/EMT/MedAdmin/MedAdmin.questions.ts";
 import {shockQuestions} from "../../pages/EMT/Shock/Shock.questions.ts";
 import Shock from "../../pages/EMT/Shock/Shock.page.tsx";
+import Resources from "../../pages/Resources/Resources.page.tsx";
 
 export default function Router(){
     return(
@@ -72,7 +73,7 @@ export default function Router(){
                 <Route path="/lms" element={<Lms /> }/>
                 <Route path="/bls" element={<Bls />}/>
                 <Route path="/stop-the-bleed" element={<StopTheBleed />}/>
-
+                <Route path="/resources" element={<Resources />}/>
             </Routes>
         </Suspense>
     );

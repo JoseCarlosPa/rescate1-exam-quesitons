@@ -7,7 +7,7 @@ import {faqData} from "./AirwayManage.questions.ts";
 export default function AirwayManage(){
     return(
         <div className="">
-            <div className="flex flex-col items-center w-screen justify-center bg-gray-100 pb-12 md:px-0 px-4 dark:bg-gray-900 dark:text-gray-100 p-4">
+            <div className="flex flex-col items-center  justify-center bg-gray-100 pb-12 md:px-0 px-4 dark:bg-gray-900 dark:text-gray-100 p-4">
                 <FaHeadSideMask  className="w-24 h-24 mb-1 text-orange-500" />
                 <p className="text-5xl font-bold mb-4 flex text-center">Manejo de la Vía Aérea</p>
                 <p className="text-sm italic">Alumnos Generacion 2025 Sabados Rescate 1</p>
@@ -22,7 +22,7 @@ export default function AirwayManage(){
                         className="flex gap-2 mb-4">
                         <p className="text-lg">Hacer examen</p>
                     </NavLink>
-                    <a href="https://drive.google.com/file/d/1UZwgL6BvbwWvcmivQZ538n-n-jwR09jR/view?usp=sharing"
+                    <a href="https://docs.google.com/presentation/d/1hA3-7Yh-8XEeliOwZYnRbLHdM8KQ8_Vi/edit?usp=drive_link&ouid=107287742628985461156&rtpof=true&sd=true"
                        target="_blank"
                        rel="noopener noreferrer"
                        className="flex gap-2 mb-4">
@@ -83,7 +83,7 @@ export default function AirwayManage(){
                             <Disclosure key={idx}>
                                 {({ open }) => (
                                     <div className="border rounded-lg overflow-hidden">
-                                        <Disclosure.Button className="flex w-full justify-between items-center bg-gray-100 dark:bg-gray-800 px-4 py-3 text-left text-lg font-medium hover:bg-gray-200 dark:hover:bg-gray-700">
+                                        <Disclosure.Button className="flex w-full justify-between items-center bg-gray-100 dark:bg-gray-800 px-4 py-3 text-left text-lg font-medium hover:bg-orange-100 dark:hover:bg-gray-700">
                                             <span>{faq.question}</span>
                                             <ChevronUpIcon
                                                 className={`${
