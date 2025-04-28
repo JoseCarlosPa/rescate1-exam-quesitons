@@ -4,7 +4,7 @@ import {NavLink} from "react-router";
 export default function Lms(){
     return(
         <div className="flex flex-col min-h-screen  bg-gray-100 pb-12 md:p-12 px-4 dark:bg-gray-900 dark:text-gray-100 p-4">
-            <section className="bg-gradient-to-b from-blue-50 to-white py-12 md:py-20">
+            <section className="bg-gradient-to-b from-blue-50 to-white dark:bg-gray-900 dark:text-gray-100 py-12 md:py-20">
                 <div className="container mx-auto px-6 lg:px-8">
                     <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10 md:mb-16">
                         Aprende Lengua de Señas Mexicana (LSM)
@@ -18,7 +18,7 @@ export default function Lms(){
                         {temasLSM.map((tema) => (
                             <div
                                 key={tema.id}
-                                className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105 flex flex-col"
+                                className="bg-white dark:bg-gray-800 dark:hover:bg-gray-700 rounded-xl shadow-lg overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105 flex flex-col"
                             >
                                 <div className="p-6 flex flex-col flex-grow">
                                     <h3 className="text-xl font-semibold text-blue-700 mb-3">
