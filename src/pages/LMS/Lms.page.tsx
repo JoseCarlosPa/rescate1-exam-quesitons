@@ -24,11 +24,11 @@ export default function Lms(){
                                     <h3 className="text-xl font-semibold text-blue-700 mb-3">
                                         {tema.titulo}
                                     </h3>
-                                    <p className="text-gray-600 text-sm mb-4 flex-grow">
+                                    <p className="text-gray-600 dark:text-gray-100 text-sm mb-4 flex-grow">
                                         {tema.descripcion}
                                     </p>
                                     <div>
-                                        <h4 className="text-sm font-semibold text-gray-700 mb-2">
+                                        <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-100 mb-2">
                                             Recursos para aprender más:
                                         </h4>
                                         <ul className="list-none space-y-2">
