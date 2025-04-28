@@ -10,7 +10,7 @@ export default function Evaluation(){
             <div
                 className="flex flex-col items-center w-screen justify-center bg-gray-100 pb-12 md:px-0 px-4 dark:bg-gray-900 dark:text-gray-100 p-4">
                 <FaNotesMedical className="w-24 h-24 mb-1 text-orange-500"/>
-                <p className="text-5xl font-bold mb-4 flex text-center">El Cuerpo Humano</p>
+                <p className="text-5xl font-bold mb-4 flex text-center">Evaluación del Paciente</p>
                 <p className="text-sm italic">Alumnos Generacion 2025 Sabados Rescate 1</p>
                 <NavLink
                     to="/emt"
@@ -32,8 +32,6 @@ export default function Evaluation(){
                 </div>
 
                 <section className="max-w-5xl mx-auto p-6">
-                    <h1 className="text-3xl font-bold mb-6 text-center">Evaluación del Paciente</h1>
-
                     <div className="space-y-8">
                         <div>
                             <h2 className="text-2xl font-semibold mb-2">¿Qué es la Evaluación del Paciente?</h2>

@@ -23,6 +23,8 @@ import LifeSpec from "../../pages/EMT/LifeSpec/LifeSpec.page.tsx";
 import {lifeSpecQuestions} from "../../pages/EMT/LifeSpec/LifeSpec.questions.ts";
 import Evaluation from "../../pages/EMT/Evaluation/Evaluation.page.tsx";
 import {patientAssessmentQuestions} from "../../pages/EMT/Evaluation/Evaluation.questions.ts";
+import {nemotecniasQuestions} from "../../pages/EMT/Nnemotecnias/Mnemotecnias.questions.ts";
+import Mnemotecnias from "../../pages/EMT/Nnemotecnias/Mnemotecnias.page.tsx";
 
 export default function Router(){
     return(
@@ -47,6 +49,8 @@ export default function Router(){
                 <Route path="/life-spect/exam" element={<Exam returnRoute="/life-spect" name="Desarrollo y esperanza de vida" questions={lifeSpecQuestions}  />}/>
                 <Route path="/evaluation" element={<Evaluation />}/>
                 <Route path="/evaluation/exam" element={<Exam returnRoute="/evaluation" name="Evaluacion del paciente" questions={patientAssessmentQuestions}  />}/>
+                <Route path="/nemotecnias" element={<Mnemotecnias />}/>
+                <Route path="/nemotecnias/exam" element={<Exam returnRoute="/nemotecnias" name="Evaluacion del paciente" questions={nemotecniasQuestions}  />}/>
                 <Route path="/lms" element={<Lms /> }/>
                 <Route path="/bls" element={<Bls />}/>
                 <Route path="/stop-the-bleed" element={<StopTheBleed />}/>
