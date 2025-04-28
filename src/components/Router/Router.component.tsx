@@ -29,6 +29,8 @@ import AirwayManage from "../../pages/EMT/AirwayManage/AirwayManage.page.tsx";
 import {airwayManagementQuestions} from "../../pages/EMT/AirwayManage/AirwayManage.questions.ts";
 import Pharmacology from "../../pages/EMT/Pharmacology/Pharmacology.page.tsx";
 import {pharmacologyQuestions} from "../../pages/EMT/Pharmacology/Pharmacology.questions.ts";
+import MedAdmin from "../../pages/EMT/MedAdmin/MedAdmin.page.tsx";
+import {medicationAdministrationQuestions} from "../../pages/EMT/MedAdmin/MedAdmin.questions.ts";
 
 export default function Router(){
     return(
@@ -59,6 +61,10 @@ export default function Router(){
                 <Route path="/airway-manage/exam" element={<Exam returnRoute="/airway-manage" name="Manejo de la Vía Aérea" questions={airwayManagementQuestions}  />}/>
                 <Route path="/pharmacology" element={<Pharmacology />}/>
                 <Route path="/pharmacology/exam" element={<Exam returnRoute="/pharmacology" name="Principios de la Farmacología" questions={pharmacologyQuestions}  />}/>
+                <Route path="/med-admin" element={<MedAdmin />}/>
+                <Route path="/med-admin/exam" element={<Exam returnRoute="/med-admin" name="Administración de Medicamentos" questions={medicationAdministrationQuestions}  />}/>
+
+
                 <Route path="/lms" element={<Lms /> }/>
                 <Route path="/bls" element={<Bls />}/>
                 <Route path="/stop-the-bleed" element={<StopTheBleed />}/>
