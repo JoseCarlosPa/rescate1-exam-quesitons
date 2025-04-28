@@ -130,7 +130,7 @@ function App() {
                     <p className="flex text-center text-orange-500">Shock</p>
                 </NavLink>
                 <NavLink
-                    to="/"
+                    to="/reanimation-svb"
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
                     <FaHandHoldingMedical className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Reanimación de SVB</p>

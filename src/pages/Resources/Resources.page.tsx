@@ -2,6 +2,8 @@ import aaos from "../../assets/aaos.jpg";
 import codes from "../../assets/codes.png";
 import bls from "../../assets/bls.jpg";
 import phtl from "../../assets/phtls.jpg";
+import nudos from "../../assets/nudos.jpg";
+
 
 import {FaDownload} from "react-icons/fa";
 import {NavLink} from "react-router";
@@ -110,6 +112,24 @@ export default function Resources() {
                            target="_blank"
                            rel="noopener noreferrer"
                            className="text-blue-500 hover:underline">Visitar sitio web</a>
+
+                    </div>
+                </div>
+                <div className="col-span-1 flex items-center justify-center">
+                    <div className="p-4 bg-white shadow rounded-md col-span-2">
+                        <img src={nudos} className=" mb-4 w-40 object-cover" alt="phtls" />
+                    </div>
+                    <div className="flex flex-col gap-3 p-4 ">
+                        <p className="text-lg font-semibold">NUDOS BASICOS DE RESCATE Y DESCENSOS</p>
+                        <a
+                            target="_blank"
+                            href="https://drive.google.com/uc?export=download&id=12rBumebSfvLmATWFMpGkbusxGobpnk8X"
+                            className="flex gap-4 text-orange-500 underline"
+                            download
+                        >
+                            <FaDownload className="w-5 h-5" />
+                            <p>Descargar</p>
+                        </a>
 
                     </div>
                 </div>

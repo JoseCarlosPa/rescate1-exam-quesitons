@@ -34,6 +34,8 @@ import {medicationAdministrationQuestions} from "../../pages/EMT/MedAdmin/MedAdm
 import {shockQuestions} from "../../pages/EMT/Shock/Shock.questions.ts";
 import Shock from "../../pages/EMT/Shock/Shock.page.tsx";
 import Resources from "../../pages/Resources/Resources.page.tsx";
+import ReanimateSvb from "../../pages/EMT/ReanimateSvb/ReanimateSvb.page.tsx";
+import {svbQuestions} from "../../pages/EMT/ReanimateSvb/ReanimateSvb.questions.ts";
 
 export default function Router(){
     return(
@@ -68,6 +70,8 @@ export default function Router(){
                 <Route path="/med-admin/exam" element={<Exam returnRoute="/med-admin" name="Administración de Medicamentos" questions={medicationAdministrationQuestions}  />}/>
                 <Route path="/shock" element={<Shock />}/>
                 <Route path="/shock/exam" element={<Exam returnRoute="/shock" name="shock" questions={shockQuestions}  />}/>
+                <Route path="/reanimation-svb" element={<ReanimateSvb />}/>
+                <Route path="/reanimation-svb/exam" element={<Exam returnRoute="/reanimation-svb" name="shock" questions={svbQuestions}  />}/>
 
 
                 <Route path="/lms" element={<Lms /> }/>
