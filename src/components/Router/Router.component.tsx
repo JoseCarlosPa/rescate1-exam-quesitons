@@ -27,6 +27,8 @@ import {nemotecniasQuestions} from "../../pages/EMT/Nnemotecnias/Mnemotecnias.qu
 import Mnemotecnias from "../../pages/EMT/Nnemotecnias/Mnemotecnias.page.tsx";
 import AirwayManage from "../../pages/EMT/AirwayManage/AirwayManage.page.tsx";
 import {airwayManagementQuestions} from "../../pages/EMT/AirwayManage/AirwayManage.questions.ts";
+import Pharmacology from "../../pages/EMT/Pharmacology/Pharmacology.page.tsx";
+import {pharmacologyQuestions} from "../../pages/EMT/Pharmacology/Pharmacology.questions.ts";
 
 export default function Router(){
     return(
@@ -55,6 +57,8 @@ export default function Router(){
                 <Route path="/nemotecnias/exam" element={<Exam returnRoute="/nemotecnias" name="Evaluacion del paciente" questions={nemotecniasQuestions}  />}/>
                 <Route path="/airway-manage" element={<AirwayManage />}/>
                 <Route path="/airway-manage/exam" element={<Exam returnRoute="/airway-manage" name="Manejo de la Vía Aérea" questions={airwayManagementQuestions}  />}/>
+                <Route path="/pharmacology" element={<Pharmacology />}/>
+                <Route path="/pharmacology/exam" element={<Exam returnRoute="/pharmacology" name="Principios de la Farmacología" questions={pharmacologyQuestions}  />}/>
                 <Route path="/lms" element={<Lms /> }/>
                 <Route path="/bls" element={<Bls />}/>
                 <Route path="/stop-the-bleed" element={<StopTheBleed />}/>
