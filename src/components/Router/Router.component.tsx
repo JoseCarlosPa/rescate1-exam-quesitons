@@ -54,7 +54,6 @@ export default function Router(){
             <Routes>
 
                 <Route path={AllRoutes.LOGIN} element={<Login/>}/>
-
                 <Route path="/" element={<Main/>}/>
                 <Route path={AllRoutes.EMT} element={<App/>}/>
                 <Route path={AllRoutes.GENERAL} element={<GeneralExam/>}/>

@@ -24,7 +24,6 @@ export default function Login() {
     const {handleFirebaseError} = useLogin()
 
     useEffect(() => {
-        console.log('auth')
         const unsubscribe = auth.onAuthStateChanged((user) => {
             if (user) {
                 setUser({
@@ -71,7 +70,12 @@ export default function Login() {
             if (emails.find(email => email.email === user.email)) {
                 console.log("email", email)
             } else {
-                await setDoc(doc(db, 'users', user.uid), {id: user.uid, email: user.email})
+                await setDoc(doc(db, 'users', user.uid), {
+                    id: user.uid,
+                    email: user.email,
+                    role: "Alumno",
+                    exams:[],
+                })
             }
             setUser({
                 id: user.uid,

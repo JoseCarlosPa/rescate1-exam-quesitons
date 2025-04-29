@@ -50,7 +50,6 @@ export const lections: tLection[] = [
         icon: <IoMdBriefcase className="w-12 h-12 mb-1 text-orange-500"/>,
         route: AllRoutes.LEGAL,
         active: true,
-
     },
     {
         id: '3',
@@ -334,10 +333,4 @@ export const lections: tLection[] = [
         icon: <FaBomb className="w-12 h-12 mb-1 text-orange-500"/>,
         route: AllRoutes.EMT,
     },
-
-
-
-
-
-
 ]
