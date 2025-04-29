@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider} from "firebase/auth";
 import {auth, db} from "../../../firebase/firebaseConfig.ts";
 import {ImSpinner2} from "react-icons/im";
@@ -8,21 +8,53 @@ import {collection, doc, getDocs, setDoc} from "firebase/firestore";
 import {toast} from "sonner";
 import * as React from "react";
 import {useLogin} from "./Login.hook.ts";
+import {NavLink} from "react-router";
+import {AllRoutes} from "../../../components/Router/Router.constants.ts";
+import {useUserContext} from "../../../Providers/UserProvider/User.context.tsx";
+import { useNavigate } from "react-router";
 
 export default function Login() {
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
     const [authing, setAuthing] = useState<boolean>(false)
     const userCollectionsRef = collection(db, 'users')
+    const {setUser} = useUserContext()
+    const navigate = useNavigate();
 
     const {handleFirebaseError} = useLogin()
+
+    useEffect(() => {
+        console.log('auth')
+        const unsubscribe = auth.onAuthStateChanged((user) => {
+            if (user) {
+                setUser({
+                    id: user.uid,
+                    email: user.email,
+                    name: null,
+                    photoURL: null,
+                    role: null
+                })
+                navigate(AllRoutes.MAIN)
+            }
+        })
+
+        return () => unsubscribe()
+    },[navigate, setUser])
 
     function handleLogin(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault()
         setAuthing(true)
         signInWithEmailAndPassword(auth, email, password).then(async (userCredential) => {
             const user = userCredential.user
-            console.log('user', user)
+            setUser({
+                id: user.uid,
+                email: user.email,
+                name: null,
+                photoURL: null,
+                role: null
+            })
+            navigate(AllRoutes.MAIN)
+
         }).catch((error) => {
             handleFirebaseError(error)
         })
@@ -41,6 +73,16 @@ export default function Login() {
             } else {
                 await setDoc(doc(db, 'users', user.uid), {id: user.uid, email: user.email})
             }
+            setUser({
+                id: user.uid,
+                email: user.email,
+                name: null,
+                photoURL: null,
+                role: null
+            })
+
+            navigate(AllRoutes.MAIN)
+
 
         }).catch(error => {
             console.error(error)
@@ -57,10 +99,12 @@ export default function Login() {
                         <div className="flex items-center xl:p-10">
                             <form onSubmit={handleLogin}
                                   className="flex flex-col w-full h-full pb-6 text-center  rounded-3xl">
-                                <div className="flex justify-center w-full">
+                                <NavLink
+                                    to={AllRoutes.MAIN}
+                                    className="flex justify-center w-full">
                                     <img src={logo}
                                          alt="Logo" className="h-20 w-20 mb-2"/>
-                                </div>
+                                </NavLink>
                                 <h3 className="mb-3 text-4xl font-extrabold text-orange-500">Alumnos Rescate 1</h3>
 
                                 <p className="mb-4 text-gray-700">Ingresa tu correo y contraseña</p>
