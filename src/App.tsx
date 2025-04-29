@@ -144,7 +144,7 @@ function App() {
                     <p className="flex text-center text-orange-500">Emergencias cardiovasculares</p>
                 </NavLink>
                 <NavLink
-                    to="/"
+                    to={AllRoutes.NEURO_EMERGENCY}
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
                     <RiBrain2Fill className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Emergencias neurológicas</p>
