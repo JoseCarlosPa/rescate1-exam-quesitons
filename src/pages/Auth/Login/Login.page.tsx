@@ -7,6 +7,7 @@ import logo from "../../../assets/logo.png";
 import {collection, doc, getDocs, setDoc} from "firebase/firestore";
 import {toast} from "sonner";
 import * as React from "react";
+import {useLogin} from "./Login.hook.ts";
 
 export default function Login() {
     const [email, setEmail] = useState<string>("");
@@ -14,6 +15,7 @@ export default function Login() {
     const [authing, setAuthing] = useState<boolean>(false)
     const userCollectionsRef = collection(db, 'users')
 
+    const {handleFirebaseError} = useLogin()
 
     function handleLogin(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault()
@@ -22,7 +24,7 @@ export default function Login() {
             const user = userCredential.user
             console.log('user', user)
         }).catch((error) => {
-            toast.error(error.message)
+            handleFirebaseError(error)
         })
         setAuthing(false)
 
@@ -67,7 +69,7 @@ export default function Login() {
                                     disabled={authing}
                                     onClick={signInWithGoogle}
                                     className="cursor-pointer shadow-lg flex items-center justify-center w-full py-4 mb-6  font-medium transition duration-300 rounded-2xl text-gray-900 bg-white hover:bg-gray-200 focus:ring-4 focus:ring-gray-300">
-                                    {authing ? <ImSpinner2 className="animate-spin w-6 h-6 text-black"/> : <>
+                                    {authing ? <ImSpinner2 className="animate-spin w-6 h-6 text-orange-700"/> : <>
                                         <FcGoogle className="mr-2 my-auto"/>
                                         Iniciar con Google</>}
 
@@ -91,8 +93,8 @@ export default function Login() {
                                 </div>
                                 <button
                                     type="submit"
-                                    className="w-full cursor-pointer px-6 py-5 mb-5 text-sm font-bold leading-none text-white transition duration-300 md:w-96 rounded-2xl hover:bg-orange-400 focus:ring-4 focus:ring-purple-blue-100 bg-orange-500">
-                                    {authing ? <ImSpinner2 className="animate-spin w-6 h-6 text-black"/> : 'Iniciar sesion' }
+                                    className="w-full text-center flex justify-center cursor-pointer px-6 py-5 mb-5 text-sm font-bold leading-none text-white transition duration-300 md:w-96 rounded-2xl hover:bg-orange-400 focus:ring-4 focus:ring-purple-blue-100 bg-orange-500">
+                                    {authing ? <ImSpinner2 className="animate-spin w-6 h-6 text-orange-700 "/> : 'Iniciar sesion' }
                                 </button>
                                 <p className="text-sm leading-relaxed text-gray-900">Aun no tienes cuenta? <a
                                     href="/register"
