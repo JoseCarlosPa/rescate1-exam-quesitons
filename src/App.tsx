@@ -49,7 +49,7 @@ function App() {
                     to="/general"
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col  justify-center items-center hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
                     <FaLaptopMedical className="w-12 h-12 mb-1 text-orange-500" />
-                    <p className="flex text-center text-orange-500 ">Examen General</p>
+                    <p className="flex text-center text-orange-500 ">Examen General (1er Parcial)</p>
                 </NavLink>
                 <NavLink
                     to="/legal"
@@ -136,7 +136,7 @@ function App() {
                     <p className="flex text-center text-orange-500">Reanimación de SVB</p>
                 </NavLink>
                 <NavLink
-                    to="/"
+                    to="/mega"
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
                     <FaQrcode className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">CÓDIGO MEGA</p>

@@ -36,6 +36,8 @@ import Shock from "../../pages/EMT/Shock/Shock.page.tsx";
 import Resources from "../../pages/Resources/Resources.page.tsx";
 import ReanimateSvb from "../../pages/EMT/ReanimateSvb/ReanimateSvb.page.tsx";
 import {svbQuestions} from "../../pages/EMT/ReanimateSvb/ReanimateSvb.questions.ts";
+import {megaQuestions} from "../../pages/EMT/Mega/Mega.questions.ts";
+import Mega from "../../pages/EMT/Mega/Mega.page.tsx";
 
 export default function Router(){
     return(
@@ -72,6 +74,8 @@ export default function Router(){
                 <Route path="/shock/exam" element={<Exam returnRoute="/shock" name="shock" questions={shockQuestions}  />}/>
                 <Route path="/reanimation-svb" element={<ReanimateSvb />}/>
                 <Route path="/reanimation-svb/exam" element={<Exam returnRoute="/reanimation-svb" name="shock" questions={svbQuestions}  />}/>
+                <Route path="/mega" element={<Mega />}/>
+                <Route path="/mega/exam" element={<Exam returnRoute="/mega" name="Codigo Mega" questions={megaQuestions}  />}/>
 
 
                 <Route path="/lms" element={<Lms /> }/>
