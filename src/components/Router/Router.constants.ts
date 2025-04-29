@@ -20,6 +20,7 @@ export enum AllRoutes {
     MEGA = "/mega",
     MEDIC_VISION = "/medic-vision",
     AIRWAY_EMERGENCY = "/airway-emergency",
+    CARDIO_EMERGENCY = "/cardio-emergency",
     BLS = "/bls",
     LMS = "/lms",
     STOP_THE_BLEED = "/stop-the-bleed",
