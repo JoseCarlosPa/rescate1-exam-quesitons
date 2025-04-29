@@ -52,7 +52,7 @@ export default function Login() {
     return (
         <div className="bg-gray-100 rounded-lg">
             <div className="">
-                <div className="flex justify-center w-full h-full  xl:gap-14 lg:justify-normal md:gap-5 draggable">
+                <div className="flex justify-center w-full h-full min-h-screen  xl:gap-14 lg:justify-normal md:gap-5 draggable">
                     <div className="flex items-center justify-center w-full">
                         <div className="flex items-center xl:p-10">
                             <form onSubmit={handleLogin}
@@ -96,10 +96,6 @@ export default function Login() {
                                     className="w-full text-center flex justify-center cursor-pointer px-6 py-5 mb-5 text-sm font-bold leading-none text-white transition duration-300 md:w-96 rounded-2xl hover:bg-orange-400 focus:ring-4 focus:ring-purple-blue-100 bg-orange-500">
                                     {authing ? <ImSpinner2 className="animate-spin w-6 h-6 text-orange-700 "/> : 'Iniciar sesion' }
                                 </button>
-                                <p className="text-sm leading-relaxed text-gray-900">Aun no tienes cuenta? <a
-                                    href="/register"
-                                    className="font-bold text-orange-300">Crear
-                                    una cuenta</a></p>
                             </form>
                         </div>
                     </div>
