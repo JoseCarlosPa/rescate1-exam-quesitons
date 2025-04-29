@@ -3,6 +3,7 @@ import {Disclosure} from "@headlessui/react";
 import {ChevronUpIcon} from "@heroicons/react/16/solid";
 import {faqData} from "./SecurityOfPersonal.questions.ts";
 import {GiProtectionGlasses} from "react-icons/gi";
+import {AllRoutes} from "../../../components/Router/Router.constants.ts";
 
 export default function SecurityOfPersonal(){
     return(
@@ -12,7 +13,7 @@ export default function SecurityOfPersonal(){
                 <p className="text-5xl font-bold mb-4 flex text-center">Seguridad y bienestar del personal</p>
                 <p className="text-sm italic">Alumnos Generacion 2025 Sabados Rescate 1</p>
                 <NavLink
-                    to="/emt"
+                    to={AllRoutes.EMT}
                     className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out4">
                     <p className="text-lg">Regresar</p>
                 </NavLink>

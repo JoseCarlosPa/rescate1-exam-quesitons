@@ -3,6 +3,7 @@ import {generalExamQuestions} from "./GeneralExam.questions.ts";
 import {Option, Question} from "../../../question";
 import logo from "../../../assets/logo.png";
 import {NavLink} from "react-router";
+import {AllRoutes} from "../../../components/Router/Router.constants.ts";
 
 export default function GeneralExam(){
     const [answers, setAnswers] = useState<{ [index: number]: string }>({});
@@ -38,7 +39,7 @@ export default function GeneralExam(){
                 <p className="text-5xl font-bold mb-4 flex text-center">Examen Prueba: General</p>
             </div>
             <NavLink
-                to="/emt"
+                to={AllRoutes.EMT}
                 className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out4">
                 <p className="text-lg">Regresar</p>
             </NavLink>

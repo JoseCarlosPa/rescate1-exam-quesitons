@@ -1,16 +1,16 @@
 import {NavLink} from "react-router";
 import {Disclosure} from "@headlessui/react";
 import {ChevronUpIcon} from "@heroicons/react/16/solid";
-import {faqData} from "./Pharmacology.questions.ts";
-import {GiMedicines} from "react-icons/gi";
-import {AllRoutes} from "../../../components/Router/Router.constants.ts";
+import {faqData} from "./MedicVision.questions.ts";
+import {CiMedicalCross} from "react-icons/ci";
+import { AllRoutes } from "../../../components/Router/Router.constants.ts";
 
-export default function Pharmacology(){
+export default function MedicVision(){
     return(
         <div className="">
             <div className="flex flex-col items-center  justify-center bg-gray-100 pb-12 md:px-0 px-4 dark:bg-gray-900 dark:text-gray-100 p-4">
-                <GiMedicines className="w-24 h-24 mb-1 text-orange-500" />
-                <p className="text-5xl font-bold mb-4 flex text-center">Principios de la Farmacología</p>
+                <CiMedicalCross className="w-24 h-24 mb-1 text-orange-500" />
+                <p className="text-5xl font-bold mb-4 flex text-center">Vision médica general</p>
                 <p className="text-sm italic">Alumnos Generacion 2025 Sabados Rescate 1</p>
                 <NavLink
                     to={AllRoutes.EMT}
@@ -19,11 +19,11 @@ export default function Pharmacology(){
                 </NavLink>
                 <div className="flex gap-6">
                     <NavLink
-                        to="/pharmacology/exam"
+                        to="/medic-vision/exam"
                         className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out4">
                         <p className="text-lg">Hacer examen</p>
                     </NavLink>
-                    <a href="https://docs.google.com/presentation/d/1qr0_uoihdOoUbp2bYr91hPmWs7hAnFXC/edit?usp=drive_link&ouid=107287742628985461156&rtpof=true&sd=true"
+                    <a href="https://docs.google.com/presentation/d/1zEIo1hIbfVHgW14HMe1GoLSouQqf-qqE/edit?usp=drive_link&ouid=107287742628985461156&rtpof=true&sd=true"
                        target="_blank"
                        rel="noopener noreferrer"
                        className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out4">
@@ -34,43 +34,34 @@ export default function Pharmacology(){
                 <section className="max-w-5xl mx-auto p-6">
                     <div className="space-y-8">
                         <div>
-                            <h2 className="text-2xl font-semibold mb-2">¿Qué es la Farmacología?</h2>
+                            <h2 className="text-2xl font-semibold mb-2">¿Qué es la Visión Médica General?</h2>
+                            <p className="text-gray-700">
+                                Se refiere a la capacidad del Técnico en Atención Médica Prehospitalaria (TAMP) de realizar una
+                                valoración completa, rápida y estructurada del estado general de un paciente médico, es decir,
+                                no traumático. Inicia con la evaluación del entorno y culmina con un abordaje diagnóstico basado
+                                en signos y síntomas.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h2 className="text-2xl font-semibold mb-2">Componentes Clave</h2>
                             <ul className="list-disc list-inside space-y-2">
-                                <li>Es la ciencia que estudia las propiedades, acciones y uso de los medicamentos en el cuerpo.</li>
-                                <li>Incluye el conocimiento de indicaciones, contraindicaciones, dosis, efectos secundarios y vías de administración.</li>
+                                <li><strong>Escena segura:</strong> Verificar que no existan riesgos.</li>
+                                <li><strong>Evaluación inicial:</strong> Nivel de conciencia, posición del paciente, signos evidentes.</li>
+                                <li><strong>Signos vitales:</strong> FC, FR, PA, temperatura, oximetría.</li>
+                                <li><strong>Signos y síntomas:</strong> Información subjetiva y objetiva del paciente.</li>
+                                <li><strong>Historial médico relevante:</strong> Medicamentos, alergias, antecedentes.</li>
+                                <li><strong>Abordaje sistemático:</strong> Aplicar herramientas como OPQRST, SAMPLE.</li>
                             </ul>
                         </div>
 
                         <div>
-                            <h2 className="text-2xl font-semibold mb-2">Conceptos Básicos</h2>
-                            <ul className="list-disc list-inside space-y-2">
-                                <li><strong>Fármaco:</strong> Sustancia química que modifica funciones corporales.</li>
-                                <li><strong>Medicamento:</strong> Preparado que contiene uno o más fármacos para prevenir, tratar o curar enfermedades.</li>
-                                <li><strong>Dosis:</strong> Cantidad específica que se debe administrar.</li>
-                                <li><strong>Vía de administración:</strong> Método por el cual un medicamento entra al cuerpo (oral, sublingual, intramuscular, intravenosa, etc.).</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h2 className="text-2xl font-semibold mb-2">Medicamentos Comunes en el Ámbito Prehospitalario</h2>
-                            <ul className="list-disc list-inside space-y-2">
-                                <li><strong>Aspirina:</strong> Inhibe la agregación plaquetaria en eventos cardiacos.</li>
-                                <li><strong>Oxígeno:</strong> Tratamiento primario en hipoxia.</li>
-                                <li><strong>Glucosa oral:</strong> Para hipoglucemia.</li>
-                                <li><strong>Epinefrina:</strong> Utilizada en anafilaxia severa.</li>
-                                <li><strong>Carbón activado:</strong> Adsorbe tóxicos en ciertos tipos de envenenamiento.</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h2 className="text-2xl font-semibold mb-2">5 Correctos de la Administración de Medicamentos</h2>
-                            <ul className="list-disc list-inside space-y-2">
-                                <li>Paciente correcto.</li>
-                                <li>Medicamento correcto.</li>
-                                <li>Dosis correcta.</li>
-                                <li>Hora correcta.</li>
-                                <li>Vía correcta.</li>
-                            </ul>
+                            <h2 className="text-2xl font-semibold mb-2">Importancia</h2>
+                            <p className="text-gray-700">
+                                La valoración médica permite identificar enfermedades que requieren intervención urgente,
+                                como infartos, EVC, crisis hipertensivas, disnea severa o alteraciones metabólicas, y
+                                priorizar el traslado y tratamiento.
+                            </p>
                         </div>
                     </div>
                 </section>

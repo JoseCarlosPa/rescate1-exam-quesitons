@@ -40,6 +40,10 @@ import {megaQuestions} from "../../pages/EMT/Mega/Mega.questions.ts";
 import Mega from "../../pages/EMT/Mega/Mega.page.tsx";
 import {AllRoutes} from "./Router.constants.ts";
 import Login from "../../pages/Auth/Login/Login.page.tsx";
+import {visionMedicGeneralQuestions} from "../../pages/EMT/MedicVision/MedicVision.questions.ts";
+import MedicVision from "../../pages/EMT/MedicVision/MedicVision.page.tsx";
+import {respiratoryEmergenciesExam} from "../../pages/EMT/AirwayEmergency/AirwayEmergency.questions.ts";
+import AirwayEmergency from "../../pages/EMT/AirwayEmergency/AirwayEmergency.page.tsx";
 export default function Router(){
     return(
         <Suspense fallback={<div>Loading...</div>}>
@@ -80,6 +84,11 @@ export default function Router(){
                 <Route path={`${AllRoutes.REANIMATE_SVB}/exam`} element={<Exam returnRoute={AllRoutes.REANIMATE_SVB} name="shock" questions={svbQuestions}  />}/>
                 <Route path={AllRoutes.MEGA} element={<Mega />}/>
                 <Route path={`${AllRoutes.MEGA}/exam`} element={<Exam returnRoute={AllRoutes.MEGA} name="Codigo Mega" questions={megaQuestions}  />}/>
+                <Route path={AllRoutes.MEDIC_VISION} element={<MedicVision />}/>
+                <Route path={`${AllRoutes.MEDIC_VISION}/exam`} element={<Exam returnRoute={AllRoutes.MEDIC_VISION} name="Vision médica general" questions={visionMedicGeneralQuestions}  />}/>
+                <Route path={AllRoutes.AIRWAY_EMERGENCY} element={<AirwayEmergency />}/>
+                <Route path={`${AllRoutes.AIRWAY_EMERGENCY}/exam`} element={<Exam returnRoute={AllRoutes.AIRWAY_EMERGENCY} name="Emergencias respiratorias" questions={respiratoryEmergenciesExam}  />}/>
+
                 <Route path={AllRoutes.LMS} element={<Lms /> }/>
                 <Route path={AllRoutes.BLS} element={<Bls />}/>
                 <Route path={AllRoutes.STOP_THE_BLEED} element={<StopTheBleed />}/>

@@ -3,6 +3,7 @@ import {Disclosure} from "@headlessui/react";
 import {ChevronUpIcon} from "@heroicons/react/16/solid";
 import {faqData} from "./LifeSpec.questions.ts";
 import {FaBaby} from "react-icons/fa";
+import {AllRoutes} from "../../../components/Router/Router.constants.ts";
 
 export default function LifeSpec(){
     return(
@@ -12,7 +13,7 @@ export default function LifeSpec(){
                 <p className="text-5xl font-bold mb-4 flex text-center">Desarrollo y esperanza de vida</p>
                 <p className="text-sm italic">Alumnos Generacion 2025 Sabados Rescate 1</p>
                 <NavLink
-                    to="/emt"
+                    to={AllRoutes.EMT}
                     className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out4">
                     <p className="text-lg">Regresar</p>
                 </NavLink>

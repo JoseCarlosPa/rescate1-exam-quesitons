@@ -18,6 +18,8 @@ export enum AllRoutes {
     RESOURCES = "/resources",
     REANIMATE_SVB = "/reanimate-svb",
     MEGA = "/mega",
+    MEDIC_VISION = "/medic-vision",
+    AIRWAY_EMERGENCY = "/airway-emergency",
     BLS = "/bls",
     LMS = "/lms",
     STOP_THE_BLEED = "/stop-the-bleed",
