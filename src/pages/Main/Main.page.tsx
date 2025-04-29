@@ -4,6 +4,7 @@ import {NavLink} from "react-router";
 import {BsSignStopFill} from "react-icons/bs";
 import {FaHandScissors, FaHeartbeat} from "react-icons/fa";
 import {ImBooks} from "react-icons/im";
+import {AllRoutes} from "../../components/Router/Router.constants.ts";
 
 export default function Main() {
     return (
@@ -17,27 +18,27 @@ export default function Main() {
                 <p className="text-5xl font-bold mb-12 flex text-center">Rescate 1: Alumnos</p>
 
                 <div className="grid md:grid-cols-5 grid-cols-2 gap-4">
-                    <NavLink to="/emt"
+                    <NavLink to={AllRoutes.EMT}
                              className="flex flex-col items-center justify-center gap-2 mb-4 bg-white rounded-lg shadow-md p-4 dark:bg-gray-800 dark:hover:bg-gray-700 hover:bg-orange-100 hover:scale-105 transition duration-300 ease-in-out h-32 md:w-52 w-full">
                         <TbMedicalCrossFilled className="text-orange-500 w-10 h-10" />
                         <p className="text-lg text-orange-500">TAMP-B</p>
                     </NavLink>
-                    <NavLink to="/lms"
+                    <NavLink to={AllRoutes.LMS}
                              className="flex flex-col items-center justify-center gap-2 mb-4 bg-white rounded-lg shadow-md p-4 dark:bg-gray-800 dark:hover:bg-gray-700 hover:bg-orange-100 hover:scale-105 transition duration-300 ease-in-out h-32 md:w-52 w-full">
                         <FaHandScissors className="text-orange-500 w-10 h-10" />
                         <p className="text-lg text-orange-500">Lengua de señas</p>
                     </NavLink>
-                    <NavLink to="/bls"
+                    <NavLink to={AllRoutes.BLS}
                              className="flex flex-col items-center justify-center gap-2 mb-4 bg-white rounded-lg shadow-md p-4  dark:bg-gray-800 dark:hover:bg-gray-700 hover:bg-orange-100 hover:scale-105 transition duration-300 ease-in-out h-32 md:w-52 w-full">
                         <FaHeartbeat className="text-orange-500 w-10 h-10" />
                         <p className="text-lg text-orange-500">BLS</p>
                     </NavLink>
-                    <NavLink to="/stop-the-bleed"
+                    <NavLink to={AllRoutes.STOP_THE_BLEED}
                              className="flex flex-col items-center justify-center gap-2 mb-4 bg-white rounded-lg shadow-md p-4 dark:bg-gray-800 dark:hover:bg-gray-700 hover:bg-orange-100 hover:scale-105 transition duration-300 ease-in-out h-32 md:w-52 w-full">
                         <BsSignStopFill className="text-orange-500 w-10 h-10" />
                         <p className="text-lg text-orange-500">STOP THE BLEED</p>
                     </NavLink>
-                    <NavLink to="/resources"
+                    <NavLink to={AllRoutes.RESOURCES}
                              className="flex flex-col items-center justify-center gap-2 mb-4 bg-white rounded-lg shadow-md p-4 dark:bg-gray-800 dark:hover:bg-gray-700 hover:bg-orange-100 hover:scale-105 transition duration-300 ease-in-out h-32 md:w-52 w-full">
                         <ImBooks  className="text-orange-500 w-10 h-10" />
                         <p className="text-lg text-orange-500">Recursos</p>

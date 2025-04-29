@@ -13,19 +13,19 @@ export default function ReanimateSvb() {
                 <p className="text-sm italic">Alumnos Generacion 2025 Sabados Rescate 1</p>
                 <NavLink
                     to="/emt"
-                    className="flex gap-2 mb-4">
+                    className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out4">
                     <p className="text-lg">Regresar</p>
                 </NavLink>
                 <div className="flex gap-6">
                     <NavLink
                         to="/reanimation-svb/exam"
-                        className="flex gap-2 mb-4">
+                        className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out4">
                         <p className="text-lg">Hacer examen</p>
                     </NavLink>
                     <a href="https://docs.google.com/presentation/d/1OtpAqjIRZ7Gya51-UDNSIl1x46aLJXcU/edit?usp=drive_link&ouid=107287742628985461156&rtpof=true&sd=true"
                        target="_blank"
                        rel="noopener noreferrer"
-                       className="flex gap-2 mb-4">
+                       className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out4">
                         <p className="text-lg">Presentación</p>
                     </a>
                 </div>

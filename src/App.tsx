@@ -31,6 +31,7 @@ import {PiBabyBold, PiBrainFill} from "react-icons/pi";
 import {AiOutlineWoman} from "react-icons/ai";
 import {IoWoman} from "react-icons/io5";
 import {BsSignStopFill} from "react-icons/bs";
+import {AllRoutes} from "./components/Router/Router.constants.ts";
 
 function App() {
     return(
@@ -39,104 +40,87 @@ function App() {
                  alt="Logo" className="h-24 w-24 mb-4" />
             <p className="text-sm italic">Generación 2025 Rescate 1: Esta plataforma fue hecha por y para los alumnos de la clase sabados R1 2025</p>
             <p className="text-5xl font-bold mb-4 flex text-center mt-2">TAMP-B</p>
-            <NavLink to="/"
-                        className="flex gap-2 mb-4">
-                    <p className="text-lg">Regresar</p>
+            <NavLink to={AllRoutes.MAIN} className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out4 bg-white shadow rounded p-2 hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
+                <p className="text-lg">Regresar</p>
             </NavLink>
 
             <div className="grid md:grid-cols-4 grid-cols-2 gap-4 mt-12 w-full md:px-20 ">
-                <NavLink
-                    to="/general"
-                    className="bg-white shadow-md rounded-lg p-6 flex flex-col  justify-center items-center hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
+                <NavLink to={AllRoutes.GENERAL} className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
                     <FaLaptopMedical className="w-12 h-12 mb-1 text-orange-500" />
-                    <p className="flex text-center text-orange-500 ">Examen General (1er Parcial)</p>
+                    <p className="flex text-center text-orange-500">Examen General (1er Parcial)</p>
                 </NavLink>
-                <NavLink
-                    to="/legal"
-                    className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
+                <NavLink to={AllRoutes.LEGAL} className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
                     <IoMdBriefcase className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Aspectos médicos, legales y éticos</p>
                 </NavLink>
-                <NavLink
-                    to="/communications"
-                    className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
+                <NavLink to={AllRoutes.COMMUNICATIONS} className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
                     <LuRadioTower className="w-12 h-12 mb-1 text-orange-500" />
-                    <p className="flex text-center text-orange-500">Comunicaciones y documentacion</p>
+                    <p className="flex text-center text-orange-500">Comunicaciones y documentación</p>
                 </NavLink>
-                <NavLink
-                    to="/sem"
-                    className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
+                <NavLink to={AllRoutes.SEM} className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
                     <FaAmbulance className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Sistemas de SEM</p>
                 </NavLink>
-                <NavLink
-                    to="/security-of-personal"
-                    className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out ">
+                <NavLink to={AllRoutes.SECURITY_OF_PERSONAL} className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
                     <GiProtectionGlasses className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Seguridad y bienestar del personal</p>
                 </NavLink>
-                <NavLink
-                    to="/medic-terms"
-                    className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
+                <NavLink to={AllRoutes.MEDIC_TERMS} className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
                     <FaBookMedical className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Terminología médica</p>
                 </NavLink>
-                <NavLink
-                    to="/human-body"
-                    className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
+                <NavLink to={AllRoutes.HUMAN_BODY} className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
                     <IoIosBody className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">El cuerpo humano</p>
                 </NavLink>
-                <NavLink
-                    to="/life-spect"
-                    className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
+                <NavLink to={AllRoutes.LIFE_SPEC} className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
                     <FaBaby className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Desarrollo de la esperanza de vida</p>
                 </NavLink>
                 <NavLink
-                    to="/evaluation"
+                    to={AllRoutes.EVALUATION}
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
                     <FaNotesMedical className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Evaluación del paciente</p>
                 </NavLink>
                 <NavLink
-                    to="/nemotecnias"
+                    to={AllRoutes.MNEMOTECNIAS}
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
                     <RxLetterSpacing className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Nemotecnias</p>
                 </NavLink>
                 <NavLink
-                    to="/airway-manage"
+                    to={AllRoutes.AIRWAY_MANAGE}
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
                     <FaHeadSideMask className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Manejo de la vía aérea</p>
                 </NavLink>
                 <NavLink
-                    to="/pharmacology"
+                    to={AllRoutes.PHARMACOLOGY}
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
                     <GiMedicines className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Principios de farmacología</p>
                 </NavLink>
                 <NavLink
-                    to="/med-admin"
+                    to={AllRoutes.MEDIC_TERMS}
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
                     <GiTripleNeedle className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Administración medicamentos</p>
                 </NavLink>
                 <NavLink
-                    to="/shock"
+                    to={AllRoutes.MEDIC_TERMS}
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
                     <TbMedicalCrossCircle className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Shock</p>
                 </NavLink>
                 <NavLink
-                    to="/reanimation-svb"
+                    to={AllRoutes.REANIMATE_SVB}
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
                     <FaHandHoldingMedical className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">Reanimación de SVB</p>
                 </NavLink>
                 <NavLink
-                    to="/mega"
+                    to={AllRoutes.MEGA}
                     className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
                     <FaQrcode className="w-12 h-12 mb-1 text-orange-500" />
                     <p className="flex text-center text-orange-500">CÓDIGO MEGA</p>

@@ -16,7 +16,7 @@ export default function Resources() {
                 <p className="text-sm italic">Alumnos Generacion 2025 Sabados Rescate 1</p>
                 <NavLink
                     to="/"
-                    className="flex gap-2 mb-4">
+                    className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out4">
                     <p className="text-lg">Regresar</p>
                 </NavLink>
             </div>
