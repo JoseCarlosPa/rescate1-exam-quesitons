@@ -209,7 +209,8 @@ export const lections: tLection[] = [
         id: '25',
         title: 'Hemorragia',
         icon: <MdBloodtype className="w-12 h-12 mb-1 text-orange-500"/>,
-        route: AllRoutes.EMT,
+        route: AllRoutes.BLEEDING,
+        active: true,
     },
     {
         id: '26',

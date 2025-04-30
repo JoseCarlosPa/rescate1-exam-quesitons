@@ -23,6 +23,7 @@ import {securityQuestions} from "./SecurityOfPersonal/SecurityOfPersonal.questio
 import {semSystemQuestions} from "./SEM/Sem.questions.ts";
 import {shockQuestions} from "./Shock/Shock.questions.ts";
 import {traumaGeneralQuestions} from "./Trauma/Trauma.questions.ts";
+import {hemorragiasQuestions} from "./Bleeding/Bleeding.questions.ts";
 
 export function getRandomQuestion() {
     const randomIndex = Math.floor(Math.random() * allQuestions.length);
@@ -54,7 +55,8 @@ export const allQuestions: Question[] = [
     ...securityQuestions,
     ...semSystemQuestions,
     ...shockQuestions,
-    ...traumaGeneralQuestions
+    ...traumaGeneralQuestions,
+    ...hemorragiasQuestions,
 
 ]
 
