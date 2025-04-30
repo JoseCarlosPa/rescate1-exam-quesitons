@@ -75,7 +75,7 @@ export default function StudyCase(){
     if (!currentCase) return <p className="text-center text-gray-500">Cargando caso...</p>;
 
     return (
-        <div className="max-w-3xl mx-auto bg-white dark:bg-gray-800 shadow-lg rounded-2xl p-6 space-y-4 my-8">
+        <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-2xl p-6 space-y-4 my-8">
             <div className="flex ">
                 <NavLink
                     to={AllRoutes.EMT}
@@ -106,7 +106,7 @@ export default function StudyCase(){
 
             </div>
 
-            <p className="text-gray-700 dark:text-gray-300">{currentCase.description}</p>
+            <p className="text-gray-700 ">{currentCase.description}</p>
 
             <div>
                 <h3 className="font-semibold">Evaluación inicial</h3>
