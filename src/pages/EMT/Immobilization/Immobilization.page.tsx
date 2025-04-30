@@ -1,16 +1,17 @@
+import {IoIosBody} from "react-icons/io";
 import {NavLink} from "react-router";
+import {AllRoutes} from "../../../components/Router/Router.constants.ts";
 import {Disclosure} from "@headlessui/react";
 import {ChevronUpIcon} from "@heroicons/react/16/solid";
-import {faqData} from "./Shock.questions.ts";
-import {TbMedicalCrossCircle} from "react-icons/tb";
-import {AllRoutes} from "../../../components/Router/Router.constants.ts";
+import {faqData} from "./Immobilization.questionts.ts";
 
-export default function Shock(){
-    return(
+export default function Immobilization() {
+    return (
         <div className="">
-            <div className="flex flex-col items-center  justify-center bg-gray-100 pb-12 md:px-0 px-4 dark:bg-gray-900 dark:text-gray-100 p-4">
-                <TbMedicalCrossCircle className="w-24 h-24 mb-1 text-orange-500" />
-                <p className="text-5xl font-bold mb-4 flex text-center">Shock en Atención Prehospitalaria</p>
+            <div
+                className="flex flex-col items-center  justify-center bg-gray-100 pb-12 md:px-0 px-4 dark:bg-gray-900 dark:text-gray-100 p-4">
+                <IoIosBody className="w-24 h-24 mb-1 text-orange-500"/>
+                <p className="text-5xl font-bold mb-4 flex text-center">Inmovilización</p>
                 <p className="text-sm italic">Alumnos Generacion 2025 Sabados Rescate 1</p>
                 <NavLink
                     to={AllRoutes.EMT}
@@ -19,56 +20,54 @@ export default function Shock(){
                 </NavLink>
                 <div className="flex gap-6">
                     <NavLink
-                        to="/shock/exam"
+                        to="/inmobilization/exam"
                         className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out4">
                         <p className="text-lg">Hacer examen</p>
                     </NavLink>
-                    <a href="https://docs.google.com/presentation/d/1cshonwi1NXgFzcxxmJYUUDFBMNabtgjg/edit?usp=drive_link&ouid=107287742628985461156&rtpof=true&sd=true"
+                    <a href="https://docs.google.com/presentation/d/1Rnfsa9yfGk1X8vWPptTCUSNO46Snf2nq/edit?usp=drive_link&ouid=107287742628985461156&rtpof=true&sd=true"
                        target="_blank"
                        rel="noopener noreferrer"
                        className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out4">
                         <p className="text-lg">Presentación</p>
                     </a>
                 </div>
+
                 <section className="max-w-5xl mx-auto p-6">
+
                     <div className="space-y-8">
                         <div>
-                            <h2 className="text-2xl font-semibold mb-2">¿Qué es el Shock?</h2>
+                            <h2 className="text-2xl font-semibold mb-2">¿Qué es la Inmovilización?</h2>
+                            <p className="text-gray-700">
+                                Es el proceso mediante el cual se restringe el movimiento de una parte del cuerpo lesionada para prevenir daños adicionales, reducir el dolor y facilitar el traslado del paciente en el entorno prehospitalario.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h2 className="text-2xl font-semibold mb-2">Objetivos principales</h2>
                             <ul className="list-disc list-inside space-y-2">
-                                <li>El shock es un estado de perfusión inadecuada de los tejidos y órganos del cuerpo.</li>
-                                <li>Resulta en falta de oxígeno y nutrientes esenciales, llevando a disfunción celular y muerte si no se trata a tiempo.</li>
+                                <li>Evitar el empeoramiento de lesiones musculoesqueléticas.</li>
+                                <li>Prevenir lesiones en columna vertebral o médula espinal.</li>
+                                <li>Reducir el dolor y controlar el sangrado asociado.</li>
+                                <li>Facilitar el transporte seguro del paciente.</li>
                             </ul>
                         </div>
 
                         <div>
-                            <h2 className="text-2xl font-semibold mb-2">Tipos Principales de Shock</h2>
+                            <h2 className="text-2xl font-semibold mb-2">Técnicas comunes de inmovilización</h2>
                             <ul className="list-disc list-inside space-y-2">
-                                <li><strong>Shock hipovolémico:</strong> Por pérdida de volumen sanguíneo o de líquidos.</li>
-                                <li><strong>Shock cardiogénico:</strong> Fallo de la bomba cardiaca.</li>
-                                <li><strong>Shock obstructivo:</strong> Obstrucción al flujo sanguíneo (ej. neumotórax a tensión, embolia pulmonar).</li>
-                                <li><strong>Shock distributivo:</strong> Alteración en la distribución del flujo (ej. anafilaxia, sépsis, shock neurogénico).</li>
+                                <li>Uso de férulas rígidas, neumáticas y de vacío.</li>
+                                <li>Colocación de collarines cervicales.</li>
+                                <li>Inmovilización espinal con camillas rígidas o de cuchara.</li>
+                                <li>Fijación con tablas espinales largas y dispositivos de sujeción.</li>
                             </ul>
                         </div>
 
                         <div>
-                            <h2 className="text-2xl font-semibold mb-2">Signos y Síntomas de Shock</h2>
+                            <h2 className="text-2xl font-semibold mb-2">Precauciones</h2>
                             <ul className="list-disc list-inside space-y-2">
-                                <li>Piel fría, pálida y sudorosa.</li>
-                                <li>Taquicardia.</li>
-                                <li>Hipotensión.</li>
-                                <li>Estado mental alterado (confusión, ansiedad, pérdida de conciencia).</li>
-                                <li>Respiración rápida y superficial.</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h2 className="text-2xl font-semibold mb-2">Tratamiento Prehospitalario Básico del Shock</h2>
-                            <ul className="list-disc list-inside space-y-2">
-                                <li>Controlar hemorragias externas de inmediato.</li>
-                                <li>Administrar oxígeno suplementario si está indicado.</li>
-                                <li>Colocar al paciente en posición supina si es posible (excepto contraindicaciones).</li>
-                                <li>Mantener la temperatura corporal adecuada (evitar la hipotermia).</li>
-                                <li>Transportar rápidamente a un centro médico adecuado.</li>
+                                <li>Evaluar circulación, sensibilidad y movimiento antes y después de aplicar férulas.</li>
+                                <li>No reducir desplazamientos óseos evidentes.</li>
+                                <li>Evitar presionar puntos óseos o heridas abiertas.</li>
                             </ul>
                         </div>
                     </div>
@@ -79,9 +78,10 @@ export default function Shock(){
                     <div className="space-y-4">
                         {faqData.map((faq, idx) => (
                             <Disclosure key={idx}>
-                                {({ open }) => (
+                                {({open}) => (
                                     <div className="border rounded-lg overflow-hidden">
-                                        <Disclosure.Button className="flex w-full justify-between items-center bg-gray-100 dark:bg-gray-800 px-4 py-3 text-left text-lg font-medium hover:bg-orange-100 dark:hover:bg-gray-700">
+                                        <Disclosure.Button
+                                            className="flex w-full justify-between items-center bg-gray-100 dark:bg-gray-800 px-4 py-3 text-left text-lg font-medium hover:bg-orange-100 dark:hover:bg-gray-700">
                                             <span>{faq.question}</span>
                                             <ChevronUpIcon
                                                 className={`${

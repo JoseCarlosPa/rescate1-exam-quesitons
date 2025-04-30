@@ -1,16 +1,16 @@
 import {NavLink} from "react-router";
+import {AllRoutes} from "../../../components/Router/Router.constants.ts";
 import {Disclosure} from "@headlessui/react";
 import {ChevronUpIcon} from "@heroicons/react/16/solid";
-import {faqData} from "./Shock.questions.ts";
-import {TbMedicalCrossCircle} from "react-icons/tb";
-import {AllRoutes} from "../../../components/Router/Router.constants.ts";
+import {faqData} from "./Trauma.questions.ts";
+import {FaCarCrash} from "react-icons/fa";
 
-export default function Shock(){
+export default function Trauma(){
     return(
         <div className="">
             <div className="flex flex-col items-center  justify-center bg-gray-100 pb-12 md:px-0 px-4 dark:bg-gray-900 dark:text-gray-100 p-4">
-                <TbMedicalCrossCircle className="w-24 h-24 mb-1 text-orange-500" />
-                <p className="text-5xl font-bold mb-4 flex text-center">Shock en Atención Prehospitalaria</p>
+                <FaCarCrash className="w-24 h-24 mb-1 text-orange-500" />
+                <p className="text-5xl font-bold mb-4 flex text-center">Conceptos generales de trauma</p>
                 <p className="text-sm italic">Alumnos Generacion 2025 Sabados Rescate 1</p>
                 <NavLink
                     to={AllRoutes.EMT}
@@ -19,7 +19,7 @@ export default function Shock(){
                 </NavLink>
                 <div className="flex gap-6">
                     <NavLink
-                        to="/shock/exam"
+                        to="/trauma/exam"
                         className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out4">
                         <p className="text-lg">Hacer examen</p>
                     </NavLink>
@@ -31,45 +31,43 @@ export default function Shock(){
                     </a>
                 </div>
                 <section className="max-w-5xl mx-auto p-6">
+
                     <div className="space-y-8">
                         <div>
-                            <h2 className="text-2xl font-semibold mb-2">¿Qué es el Shock?</h2>
+                            <h2 className="text-2xl font-semibold mb-2">¿Qué es el trauma?</h2>
+                            <p className="text-gray-700">
+                                El trauma es una lesión o daño físico causado por una fuerza externa. Es una de las principales causas de muerte y discapacidad en personas menores de 45 años.
+                                La atención prehospitalaria temprana es vital para reducir la mortalidad y mejorar los resultados.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h2 className="text-2xl font-semibold mb-2">Mecanismo de lesión (MOI)</h2>
+                            <p className="text-gray-700">
+                                Comprender el mecanismo de lesión ayuda a predecir el tipo y la gravedad de las lesiones. Se clasifica en trauma contuso (golpes) y penetrante (heridas abiertas).
+                            </p>
+                        </div>
+
+                        <div>
+                            <h2 className="text-2xl font-semibold mb-2">Cinética del trauma</h2>
+                            <p className="text-gray-700">
+                                Analiza cómo la energía del impacto se transfiere al cuerpo. Incluye factores como velocidad, desaceleración, masa del objeto y punto de impacto.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h2 className="text-2xl font-semibold mb-2">Evaluación primaria y secundaria</h2>
                             <ul className="list-disc list-inside space-y-2">
-                                <li>El shock es un estado de perfusión inadecuada de los tejidos y órganos del cuerpo.</li>
-                                <li>Resulta en falta de oxígeno y nutrientes esenciales, llevando a disfunción celular y muerte si no se trata a tiempo.</li>
+                                <li><strong>Evaluación primaria:</strong> Identifica y trata amenazas inmediatas a la vida (ABCDE).</li>
+                                <li><strong>Evaluación secundaria:</strong> Examen físico detallado y evaluación de antecedentes (SAMPLE, OPQRST).</li>
                             </ul>
                         </div>
 
                         <div>
-                            <h2 className="text-2xl font-semibold mb-2">Tipos Principales de Shock</h2>
-                            <ul className="list-disc list-inside space-y-2">
-                                <li><strong>Shock hipovolémico:</strong> Por pérdida de volumen sanguíneo o de líquidos.</li>
-                                <li><strong>Shock cardiogénico:</strong> Fallo de la bomba cardiaca.</li>
-                                <li><strong>Shock obstructivo:</strong> Obstrucción al flujo sanguíneo (ej. neumotórax a tensión, embolia pulmonar).</li>
-                                <li><strong>Shock distributivo:</strong> Alteración en la distribución del flujo (ej. anafilaxia, sépsis, shock neurogénico).</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h2 className="text-2xl font-semibold mb-2">Signos y Síntomas de Shock</h2>
-                            <ul className="list-disc list-inside space-y-2">
-                                <li>Piel fría, pálida y sudorosa.</li>
-                                <li>Taquicardia.</li>
-                                <li>Hipotensión.</li>
-                                <li>Estado mental alterado (confusión, ansiedad, pérdida de conciencia).</li>
-                                <li>Respiración rápida y superficial.</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h2 className="text-2xl font-semibold mb-2">Tratamiento Prehospitalario Básico del Shock</h2>
-                            <ul className="list-disc list-inside space-y-2">
-                                <li>Controlar hemorragias externas de inmediato.</li>
-                                <li>Administrar oxígeno suplementario si está indicado.</li>
-                                <li>Colocar al paciente en posición supina si es posible (excepto contraindicaciones).</li>
-                                <li>Mantener la temperatura corporal adecuada (evitar la hipotermia).</li>
-                                <li>Transportar rápidamente a un centro médico adecuado.</li>
-                            </ul>
+                            <h2 className="text-2xl font-semibold mb-2">Importancia del tiempo</h2>
+                            <p className="text-gray-700">
+                                El concepto de la “hora dorada” enfatiza la necesidad de atención rápida. El transporte al hospital adecuado debe ser una prioridad en pacientes traumatizados graves.
+                            </p>
                         </div>
                     </div>
                 </section>

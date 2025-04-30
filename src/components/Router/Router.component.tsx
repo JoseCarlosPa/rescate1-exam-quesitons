@@ -48,6 +48,14 @@ import {cardiovascularQuestions} from "../../pages/EMT/CardioEmergency/CardioEme
 import CardioEmergency from "../../pages/EMT/CardioEmergency/CardioEmergency.page.tsx";
 import NeuroEmergency from "../../pages/EMT/NeuroEmergency/NeuroEmergency.page.tsx";
 import {neurologicasQuestions} from "../../pages/EMT/NeuroEmergency/NeuroEmergency.questions.ts";
+import GastroEmergency from "../../pages/EMT/GastroEmergency/GastroEmergency.page.tsx";
+import {gastrointestinalUrologicQuestions} from "../../pages/EMT/GastroEmergency/GastroEmergency.questions.ts";
+import EndocryEmergency from "../../pages/EMT/EndocryEmergency/EndocryEmergency.page.tsx";
+import {endocrineHematologicQuestions} from "../../pages/EMT/EndocryEmergency/EndocryEmergency.questions.ts";
+import {traumaGeneralQuestions} from "../../pages/EMT/Trauma/Trauma.questions.ts";
+import Trauma from "../../pages/EMT/Trauma/Trauma.page.tsx";
+import Immobilization from "../../pages/EMT/Immobilization/Immobilization.page.tsx";
+import {immobilizationQuestions} from "../../pages/EMT/Immobilization/Immobilization.questionts.ts";
 export default function Router(){
     return(
         <Suspense fallback={<div>Loading...</div>}>
@@ -55,6 +63,7 @@ export default function Router(){
 
                 <Route path={AllRoutes.LOGIN} element={<Login/>}/>
                 <Route path="/" element={<Main/>}/>
+
                 <Route path={AllRoutes.EMT} element={<App/>}/>
                 <Route path={AllRoutes.GENERAL} element={<GeneralExam/>}/>
                 <Route path={AllRoutes.LEGAL} element={<LegalAspects />}/>
@@ -95,6 +104,14 @@ export default function Router(){
                 <Route path={`${AllRoutes.CARDIO_EMERGENCY}/exam`} element={<Exam returnRoute={AllRoutes.CARDIO_EMERGENCY} name="Emergencias Cardiovasculares" questions={cardiovascularQuestions} id={19}  />}/>
                 <Route path={AllRoutes.NEURO_EMERGENCY} element={<NeuroEmergency />}/>
                 <Route path={`${AllRoutes.NEURO_EMERGENCY}/exam`} element={<Exam returnRoute={AllRoutes.NEURO_EMERGENCY} name="Emergencias Neurologicas" questions={neurologicasQuestions} id={20}  />}/>
+                <Route path={AllRoutes.GASTRO_EMERGENCY} element={<GastroEmergency />}/>
+                <Route path={`${AllRoutes.GASTRO_EMERGENCY}/exam`} element={<Exam returnRoute={AllRoutes.GASTRO_EMERGENCY} name="Emergencias gastrointestinales y urológicas" questions={gastrointestinalUrologicQuestions} id={21}  />}/>
+                <Route path={AllRoutes.ENDOCRINE_EMERGENCY} element={<EndocryEmergency />}/>
+                <Route path={`${AllRoutes.ENDOCRINE_EMERGENCY}/exam`} element={<Exam returnRoute={AllRoutes.ENDOCRINE_EMERGENCY} name="Emergencias endocrinas y hematológicas" questions={endocrineHematologicQuestions} id={22}  />}/>
+                <Route path={AllRoutes.TRAUMA} element={<Trauma />}/>
+                <Route path={`${AllRoutes.TRAUMA}/exam`} element={<Exam returnRoute={AllRoutes.TRAUMA} name="Conceptos generales de trauma" questions={traumaGeneralQuestions} id={23}  />}/>
+                <Route path={AllRoutes.IMMOBILIZATION} element={<Immobilization />}/>
+                <Route path={`${AllRoutes.IMMOBILIZATION}/exam`} element={<Exam returnRoute={AllRoutes.IMMOBILIZATION} name="Inmovilización" questions={immobilizationQuestions} id={24}  />}/>
 
                 <Route path={AllRoutes.LMS} element={<Lms /> }/>
                 <Route path={AllRoutes.BLS} element={<Bls />}/>
