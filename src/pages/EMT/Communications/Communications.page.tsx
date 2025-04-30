@@ -4,6 +4,7 @@ import {ChevronUpIcon} from "@heroicons/react/16/solid";
 import {faqData} from "./Communications.questions.ts";
 import { LuRadioTower } from "react-icons/lu";
 import {AllRoutes} from "../../../components/Router/Router.constants.ts";
+import {IoReturnDownBack} from "react-icons/io5";
 
 export default function Communications(){
     return(
@@ -15,6 +16,7 @@ export default function Communications(){
                 <NavLink
                     to={AllRoutes.EMT}
                     className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out4">
+                    <IoReturnDownBack className="w-5 h-5 my-auto"  />
                     <p className="text-lg">Regresar</p>
                 </NavLink>
                 <div className="flex gap-6">
