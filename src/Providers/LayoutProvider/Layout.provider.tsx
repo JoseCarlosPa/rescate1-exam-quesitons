@@ -30,7 +30,7 @@ export default function LayoutProvider(props: tProvidersProps) {
     return (
         <LayoutContext.Provider value={{}}>
             <div className="">
-                <div className="md:h-12 h-24 flex md:flex-row flex-col items-center justify-between px-4 bg-orange-400 dark:bg-orange-500 text-white shadow-md">
+                <div className="md:h-12 h-24 flex md:flex-row flex-col items-center justify-between px-4 bg-orange-400  text-white shadow-md">
                     <div className="flex items-center">
                         <span className="text-lg font-bold">Alumnos R1</span>
                     </div>
@@ -54,7 +54,7 @@ export default function LayoutProvider(props: tProvidersProps) {
                 </div>
             </div>
             {children}
-            <footer className="bg-orange-300 dark:bg-orange-500 text-white text-center p-4 ">
+            <footer className="bg-orange-300  text-white text-center p-4 ">
                 <p>&copy; {new Date().getFullYear()} Página Informativa creada por los alumnos de R1. Contenido solo para fines educativos.</p>
                 <p className="text-sm mt-1">Esta información no reemplaza la formación profesional de ningun tipo.</p>
                 <div className="flex gap-2 justify-center">

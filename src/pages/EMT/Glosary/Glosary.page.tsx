@@ -100,7 +100,7 @@ export default function Glosary() {
             <div className="flex justify-center">
                 <NavLink
                     to={AllRoutes.EMT}
-                    className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out4">
+                    className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100   transition duration-300 ease-in-out4">
                     <IoReturnDownBack className="w-5 h-5 my-auto"/>
                     <p className="text-lg">Regresar</p>
                 </NavLink>

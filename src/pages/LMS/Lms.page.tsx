@@ -4,18 +4,18 @@ import {FaHandScissors} from "react-icons/fa";
 
 export default function Lms(){
     return(
-        <div className="flex flex-col min-h-screen  bg-gray-100 pb-12 md:p-12 px-4 dark:bg-gray-900 dark:text-gray-100 p-4">
-            <section className="bg-white dark:bg-gray-900 dark:text-gray-100 py-12 md:py-20">
+        <div className="flex flex-col min-h-screen  bg-gray-100 pb-12 md:p-12 px-4   p-4">
+            <section className="bg-white   py-12 md:py-20">
                 <div className="container mx-auto px-6 lg:px-8">
                     <div className="flex justify-center mb-2">
                         <FaHandScissors className="text-orange-500 w-16 h-16" />
 
                     </div>
-                    <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 dark:text-white mb-10 md:mb-16">
+                    <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800  mb-10 md:mb-16">
                         Aprende Lengua de Señas Mexicana (LSM)
                     </h2>
                     <NavLink to="/"
-                                className="flex gap-2 mb-4 w-32 bg-white shadow rounded p-2 hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out4">
+                                className="flex gap-2 mb-4 w-32 bg-white shadow rounded p-2 hover:bg-orange-100   transition duration-300 ease-in-out4">
                             <p className="text-lg">Regresar</p>
                     </NavLink>
 
@@ -23,17 +23,17 @@ export default function Lms(){
                         {temasLSM.map((tema) => (
                             <div
                                 key={tema.id}
-                                className="bg-white dark:bg-gray-800 dark:hover:bg-gray-700 rounded-xl shadow-lg overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105 flex flex-col"
+                                className="bg-white   rounded-xl shadow-lg overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105 flex flex-col"
                             >
                                 <div className="p-6 flex flex-col flex-grow">
                                     <h3 className="text-xl font-semibold text-blue-700 mb-3">
                                         {tema.titulo}
                                     </h3>
-                                    <p className="text-gray-600 dark:text-gray-100 text-sm mb-4 flex-grow">
+                                    <p className="text-gray-600  text-sm mb-4 flex-grow">
                                         {tema.descripcion}
                                     </p>
                                     <div>
-                                        <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-100 mb-2">
+                                        <h4 className="text-sm font-semibold text-gray-700  mb-2">
                                             Recursos para aprender más:
                                         </h4>
                                         <ul className="list-none space-y-2">
@@ -62,7 +62,7 @@ export default function Lms(){
                         ))}
                     </div>
                     <div className="text-center mt-12">
-                        <p className="text-gray-600 dark:text-white">
+                        <p className="text-gray-600 ">
                             Recuerda que la mejor forma de aprender LSM es practicando con hablantes nativos y tomando cursos formales.
                         </p>
                     </div>

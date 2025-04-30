@@ -49,7 +49,7 @@ function App() {
 
     return (
         <div
-            className="flex flex-col items-center min-h-screen h-full bg-gray-100 pb-12 md:px-0 dark:bg-gray-900 dark:text-gray-100 p-4 ">
+            className="flex flex-col items-center min-h-screen h-full bg-gray-100 pb-12 md:px-0   p-4 ">
             <img src={logo}
                  alt="Logo" className="h-24 w-24 mb-4"/>
             <p className="text-sm italic">Generación 2025 Rescate 1: Esta plataforma fue hecha por y para los alumnos de
@@ -57,18 +57,18 @@ function App() {
             <p className="text-5xl font-bold mb-4 flex text-center mt-2">TAMP-B</p>
             <div className="flex gap-4">
                 <NavLink to={AllRoutes.MAIN}
-                         className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
+                         className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100   transition duration-300 ease-in-out">
                     <IoReturnDownBack className="w-5 h-5 my-auto"  />
                     <p className="text-lg">Regresar</p>
                 </NavLink>
                 <NavLink to={AllRoutes.GLOSARY}
-                         className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
+                         className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100   transition duration-300 ease-in-out">
                     <TbListLetters className="w-5 h-5 my-auto"  />
                     <p className="text-lg">Glosario</p>
                 </NavLink>
                 <button
                     onClick={() => setShowRandomQuestion(!showRandomQuestion)}
-                    className="cursor-pointer flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
+                    className="cursor-pointer flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100   transition duration-300 ease-in-out">
                     <FaQuestion className="w-3 h-3 my-auto" />
                     {showRandomQuestion ? 'Cerrar Pregunta aleatoria ' : 'Pregunta aleatoria'}
                 </button>
@@ -87,7 +87,7 @@ function App() {
                         <NavLink
                             key={lection.id}
                             to={lection.route}
-                            className={`${lection.active ? 'bg-white' : 'bg-gray-200'} shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out`}>
+                            className={`${lection.active ? 'bg-white' : 'bg-gray-200'} shadow-md rounded-lg p-6 flex flex-col justify-center items-center hover:bg-orange-100   transition duration-300 ease-in-out`}>
                             {user?.id ?
                                 <div className="gap-1 w-full flex justify-end items-center">
                                     <MdOutlineGrade className="w-5 h-5 text-orange-500"/>

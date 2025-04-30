@@ -97,7 +97,7 @@ export default function Login() {
     }
 
     return (
-        <div className="bg-gray-100 dark:bg-gray-900  rounded-lg">
+        <div className="bg-gray-100   rounded-lg">
             <div className="">
                 <div className="flex justify-center w-full h-full min-h-screen  xl:gap-14 lg:justify-normal md:gap-5 draggable">
                     <div className="flex items-center justify-center w-full">
@@ -112,12 +112,12 @@ export default function Login() {
                                 </NavLink>
                                 <h3 className="mb-3 text-4xl font-extrabold text-orange-500">Alumnos Rescate 1</h3>
 
-                                <p className="mb-4 text-gray-700 dark:text-white">Ingresa tu correo y contraseña</p>
+                                <p className="mb-4 text-gray-700 ">Ingresa tu correo y contraseña</p>
                                 <button
                                     type={"button"}
                                     disabled={authing}
                                     onClick={signInWithGoogle}
-                                    className="cursor-pointer shadow-lg flex items-center justify-center w-full py-4 mb-6  font-medium transition duration-300 rounded-2xl text-gray-900 bg-white dark:bg-gray-500 dark:text-white hover:bg-gray-200 focus:ring-4 focus:ring-gray-300">
+                                    className="cursor-pointer shadow-lg flex items-center justify-center w-full py-4 mb-6  font-medium transition duration-300 rounded-2xl text-gray-900 bg-white   hover:bg-gray-200 focus:ring-4 focus:ring-gray-300">
                                     {authing ? <ImSpinner2 className="animate-spin w-6 h-6 text-orange-700"/> : <>
                                         <FcGoogle className="mr-2 my-auto"/>
                                         Iniciar con Google</>}
@@ -131,11 +131,11 @@ export default function Login() {
                                 <label className="mb-2 text-sm text-start text-gray-900">Correo*</label>
                                 <input id="email" type="email" placeholder="tu-email@rescate.com"
                                        onChange={(event) => setEmail(event.target.value)}
-                                       className="flex items-center w-full px-5 py-4 mr-2 text-sm font-medium outline-none focus:bg-gray-200 mb-7 placeholder:text-gray-700 dark:bg-gray-500 dark:text-white bg-white text-dark-gray-900 rounded-2xl"/>
+                                       className="flex items-center w-full px-5 py-4 mr-2 text-sm font-medium outline-none focus:bg-gray-200 mb-7 placeholder:text-gray-700   bg-white text-dark-gray-900 rounded-2xl"/>
                                 <label className="mb-2 text-sm text-start text-gray-900">Contraseña*</label>
                                 <input id="password" type="password" placeholder="Tu constraseña"
                                        onChange={(event) => setPassword(event.target.value)}
-                                       className="flex items-center w-full px-5 py-4 mb-5 mr-2 text-sm font-medium outline-none focus:bg-gray-200  placeholder:text-gray-700  dark:bg-gray-500 dark:text-white bg-white text-dark-gray-900 rounded-2xl"/>
+                                       className="flex items-center w-full px-5 py-4 mb-5 mr-2 text-sm font-medium outline-none focus:bg-gray-200  placeholder:text-gray-700    bg-white text-dark-gray-900 rounded-2xl"/>
                                 <div className="flex flex-row justify-end mb-8">
                                     <a href="#" className="mr-4 text-sm font-medium text-orange-300">Olvidaste la
                                         contraseña?</a>

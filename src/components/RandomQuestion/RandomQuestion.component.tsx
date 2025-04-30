@@ -26,7 +26,7 @@ export default function RandomQuestion() {
     };
 
     return (
-        <div className="px-6 py-4 bg-white dark:bg-gray-900 rounded shadow-md">
+        <div className="px-6 py-4 bg-white  rounded shadow-md">
             <h2 className="text-xl font-bold mb-4">Pregunta Aleatoria {feedback && <span className="italic">{feedback}</span>}</h2>
             <p className="mb-4">{question.question}</p>
             {question.options && (

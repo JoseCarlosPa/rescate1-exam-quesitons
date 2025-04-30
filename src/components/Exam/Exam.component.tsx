@@ -64,7 +64,7 @@ export default function Exam(props: ExamProps){
         return q.options.find((opt: Option) => opt.letter === letter)?.text || "";
     };
     return (
-        <div className="flex flex-col items-center  justify-center bg-gray-100 pb-12 md:px-0 px-4 dark:bg-gray-900 dark:text-gray-100 p-4">
+        <div className="flex flex-col items-center  justify-center bg-gray-100 pb-12 md:px-0 px-4   p-4">
             <img src={logo}
                  alt="Logo" className="h-24 w-24 mb-4" />
             <p className="text-sm italic ">Generacion 2025 Rescate 1: Este examen fue hecho por los alumnos de la clase sabados R1 2025</p>
@@ -74,12 +74,12 @@ export default function Exam(props: ExamProps){
             <div className="flex gap-4">
                 <NavLink
                     to={AllRoutes.EMT}
-                    className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out4">
+                    className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100   transition duration-300 ease-in-out4">
                     <p className="text-lg">Inicio</p>
                 </NavLink>
                 <NavLink
                     to={props.returnRoute}
-                    className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out4">
+                    className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100   transition duration-300 ease-in-out4">
                     <p className="text-lg">Regresar</p>
                 </NavLink>
 

@@ -31,7 +31,7 @@ export default function GeneralExam(){
         return q.options.find((opt:Option) => opt.letter === letter)?.text || "";
     };
     return (
-        <div className="flex flex-col items-center  justify-center bg-gray-100 pb-12  px-4 dark:bg-gray-900 dark:text-gray-100 p-4">
+        <div className="flex flex-col items-center  justify-center bg-gray-100 pb-12  px-4   p-4">
 
             <img src={logo}
                  alt="Logo" className="h-24 w-24 mb-4" />
@@ -41,7 +41,7 @@ export default function GeneralExam(){
             </div>
             <NavLink
                 to={AllRoutes.EMT}
-                className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out4">
+                className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100   transition duration-300 ease-in-out4">
                 <IoReturnDownBack className="w-5 h-5 my-auto"  />
                 <p className="text-lg">Regresar</p>
             </NavLink>

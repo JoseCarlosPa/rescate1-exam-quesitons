@@ -11,13 +11,13 @@ import {NavLink} from "react-router";
 
 export default function Resources() {
     return (
-        <div className="flex flex-col min-h-screen  bg-gray-100 pb-12 md:p-12 px-4 dark:bg-gray-900 dark:text-gray-100 p-4">
+        <div className="flex flex-col min-h-screen  bg-gray-100 pb-12 md:p-12 px-4   p-4">
             <div className="flex flex-col justify-center items-center ">
                 <p className="text-5xl font-bold mb-4 flex text-center">Recursos y Libros</p>
                 <p className="text-sm italic">Alumnos Generacion 2025 Sabados Rescate 1</p>
                 <NavLink
                     to="/"
-                    className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out4">
+                    className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100   transition duration-300 ease-in-out4">
                     <p className="text-lg">Regresar</p>
                 </NavLink>
             </div>
