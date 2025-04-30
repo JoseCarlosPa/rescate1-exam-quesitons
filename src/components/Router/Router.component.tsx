@@ -58,6 +58,7 @@ import Immobilization from "../../pages/EMT/Immobilization/Immobilization.page.t
 import {immobilizationQuestions} from "../../pages/EMT/Immobilization/Immobilization.questionts.ts";
 import Disclaimer from "../../pages/Main/Disclaimer.page.tsx";
 import PrivacyAndTerms from "../../pages/Main/PrivacyAndTerms.page.tsx";
+import Glosary from "../../pages/EMT/Glosary/Glosary.page.tsx";
 export default function Router(){
     return(
         <Suspense fallback={<div>Loading...</div>}>
@@ -118,6 +119,7 @@ export default function Router(){
                 <Route path={AllRoutes.LMS} element={<Lms /> }/>
                 <Route path={AllRoutes.BLS} element={<Bls />}/>
                 <Route path={AllRoutes.STOP_THE_BLEED} element={<StopTheBleed />}/>
+                <Route path={AllRoutes.GLOSARY} element={<Glosary />}/>
                 <Route path={AllRoutes.RESOURCES} element={<Resources />}/>
                 <Route path={AllRoutes.DISCLAMER} element={<Disclaimer />}/>
                 <Route path={AllRoutes.PRIVACYANDTERMS} element={<PrivacyAndTerms />}/>

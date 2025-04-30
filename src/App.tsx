@@ -11,6 +11,7 @@ import {AiOutlineLoading3Quarters} from "react-icons/ai";
 import RandomQuestion from "./components/RandomQuestion/RandomQuestion.component.tsx";
 import {IoReturnDownBack} from "react-icons/io5";
 import {FaQuestion} from "react-icons/fa";
+import {TbListLetters} from "react-icons/tb";
 
 function App() {
 
@@ -59,6 +60,11 @@ function App() {
                          className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
                     <IoReturnDownBack className="w-5 h-5 my-auto"  />
                     <p className="text-lg">Regresar</p>
+                </NavLink>
+                <NavLink to={AllRoutes.GLOSARY}
+                         className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
+                    <TbListLetters className="w-5 h-5 my-auto"  />
+                    <p className="text-lg">Glosario</p>
                 </NavLink>
                 <button
                     onClick={() => setShowRandomQuestion(!showRandomQuestion)}

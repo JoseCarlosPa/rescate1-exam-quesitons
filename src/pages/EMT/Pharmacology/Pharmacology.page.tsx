@@ -5,6 +5,7 @@ import {faqData} from "./Pharmacology.questions.ts";
 import {GiMedicines} from "react-icons/gi";
 import {AllRoutes} from "../../../components/Router/Router.constants.ts";
 import {IoReturnDownBack} from "react-icons/io5";
+import {FaPills} from "react-icons/fa";
 
 export default function Pharmacology(){
     return(
@@ -25,11 +26,19 @@ export default function Pharmacology(){
                         className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out4">
                         <p className="text-lg">Hacer examen</p>
                     </NavLink>
+
                     <a href="https://docs.google.com/presentation/d/1qr0_uoihdOoUbp2bYr91hPmWs7hAnFXC/edit?usp=drive_link&ouid=107287742628985461156&rtpof=true&sd=true"
                        target="_blank"
                        rel="noopener noreferrer"
                        className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out4">
                         <p className="text-lg">Presentación</p>
+                    </a>
+                    <a href="https://www.medicamentosplm.com/Home/Medicamento/A/1"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out4">
+                        <FaPills className="w-5 h-5 my-auto" />
+                        <p className="text-lg">Diccionario de medicamentos</p>
                     </a>
                 </div>
 
