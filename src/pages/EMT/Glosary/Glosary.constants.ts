@@ -1,8 +1,8 @@
 export interface GlosarioItem {
     termino: string;
     definicion: string;
-    ejemplo?: string; // El ejemplo es opcional
-    tipo: 'termino' | 'prefijo' | 'sufijo'; // Para identificar qué es cada entrada
+    ejemplo?: string;
+    tipo: 'termino' | 'prefijo' | 'sufijo' | 'mnemotecnia';
 }
 
 export const terminosData: GlosarioItem[] = [
@@ -609,5 +609,53 @@ export const terminosData: GlosarioItem[] = [
         definicion: 'Sufijo relacionado con la orina.',
         ejemplo: 'Hematuria (sangre en la orina), Poliuria (orinar mucho).',
         tipo: 'sufijo'
+    },
+    {
+        termino: 'SAMPLE',
+        definicion: 'Mnemotecnia utilizada para obtener la historia clínica relevante de un paciente.',
+        ejemplo: `Desglose:\n
+      • S: Signos y Síntomas (¿Qué le pasa? ¿Qué siente?)\n
+      • A: Alergias (¿Es alérgico a algún medicamento, alimento, etc.?)\n
+      • M: Medicamentos (¿Toma alguna medicación regularmente? ¿Dosis? ¿Cuándo fue la última?)\n
+      • P: Padecimientos previos / Historia médica (¿Sufre de alguna enfermedad crónica? ¿Cirugías previas?)\n
+      • L: Última ingesta oral (Last Oral Intake) (¿Cuándo fue la última vez que comió o bebió algo?)\n
+      • E: Eventos previos al incidente (¿Qué estaba haciendo justo antes de que comenzara el problema?)`,
+        tipo: 'mnemotecnia' // 2. Asignar el tipo 'mnemotecnia'
+    },
+    {
+        termino: 'OPQRST',
+        definicion: 'Mnemotecnia utilizada para evaluar el dolor de un paciente.',
+        ejemplo: `Desglose:\n
+      • O: Onset / Inicio (¿Cuándo empezó el dolor? ¿Fue súbito o gradual?)\n
+      • P: Provocación / Paliación (¿Hay algo que lo mejore o lo empeore? ¿Movimiento, reposo, posición?)\n
+      • Q: Quality / Calidad (¿Cómo es el dolor? ¿Opresivo, punzante, quemante, sordo...?)\n
+      • R: Radiación / Región (¿Dónde le duele exactamente? ¿Se irradia o se mueve a otra parte?)\n
+      • S: Severity / Severidad (En una escala del 0 al 10, ¿qué número le daría a su dolor?)\n
+      • T: Time / Tiempo (¿Es constante o intermitente? ¿Cuánto tiempo lleva con el dolor?)`,
+        tipo: 'mnemotecnia' // 2. Asignar el tipo 'mnemotecnia'
+    },
+    {
+        termino: 'DCAP-BTLS',
+        definicion: 'Mnemotecnia utilizada durante la evaluación física de un paciente de trauma para buscar lesiones específicas.',
+        ejemplo: `Desglose:\n
+      • D: Deformidades (¿Hay alguna deformidad ósea visible?)\n
+      • C: Contusiones (¿Hay moretones?)\n
+      • A: Abrasiones (¿Hay raspaduras?)\n
+      • P: Punciones / Penetraciones (¿Hay heridas penetrantes?)\n
+      • B: Burns / Quemaduras (¿Hay quemaduras? ¿De qué tipo y extensión?)\n
+      • T: Tenderness / Sensibilidad (¿Hay dolor a la palpación en alguna zona?)\n
+      • L: Laceraciones (¿Hay heridas abiertas con bordes irregulares?)\n
+      • S: Swelling / Hinchazón (¿Hay edema o hinchazón?)`,
+        tipo: 'mnemotecnia' // 2. Asignar el tipo 'mnemotecnia'
+    },
+    {
+        termino: 'AVDI', // Puedes renombrar la entrada existente o añadir esta si prefieres mantener ambas
+        definicion: 'Escala rápida para evaluar el nivel de conciencia de un paciente.',
+        ejemplo: `Desglose:\n
+      • A: Alerta (El paciente está despierto, consciente y orientado).\n
+      • V: Verbal (El paciente responde a estímulos verbales, aunque esté desorientado o confuso).\n
+      • D: Dolor (El paciente solo responde a estímulos dolorosos).\n
+      • I: Inconsciente (El paciente no responde a ningún estímulo).`,
+        tipo: 'mnemotecnia' // Asegúrate que el tipo sea consistente
     },
 ];
