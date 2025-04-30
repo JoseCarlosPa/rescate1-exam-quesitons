@@ -153,7 +153,25 @@ export const terminosData: GlosarioItem[] = [
     {
         termino: 'Escala de Coma de Glasgow (ECG / GCS)',
         definicion: 'Herramienta estandarizada para evaluar el nivel de conciencia basándose en la respuesta ocular, verbal y motora (puntaje de 3 a 15).',
-        ejemplo: 'Paciente con ECG de 8 requiere manejo avanzado de la vía aérea.',
+        ejemplo: `Desglose:\n
+      • Respuesta ocular (1-4):\n
+         1. Ninguna\n
+         2. Al dolor\n
+         3. Al estímulo verbal\n
+         4. Espontánea\n
+      • Respuesta verbal (1-5):\n
+        1. Ninguna\n
+        2. Sonidos incomprensibles\n
+        3. Palabras inapropiadas\n
+        4. Confuso\n
+        5. Orientado\n
+      • Respuesta motora (1-6):\n
+        1. Ninguna\n
+        2. Extensión anormal\n
+        3. Flexión anormal\n
+        4. Retira al dolor\n
+        5. Localiza el dolor\n
+        6. Obedece órdenes`,
         tipo: 'termino'
     },
     {
@@ -730,5 +748,6 @@ export const terminosData: GlosarioItem[] = [
       • O: Obstruction / Obstrucción (¿Hay obstrucciones en la vía aérea?)\n
       • N: Neck Mobility / Movilidad del cuello (¿El cuello tiene rango de movimiento adecuado?)`,
         tipo: 'mnemotecnia'
-    }
+    },
+
 ];

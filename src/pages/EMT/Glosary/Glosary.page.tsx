@@ -158,7 +158,7 @@ export default function Glosary() {
 
             {/* Nota al final */}
             <p className="mt-10 text-center text-sm text-gray-500">
-                Nota: Este glosario es una guía general... (resto de la nota)
+                Nota: Este glosario es una guía general y no sustituye la formación profesional. Siempre consulta a un experto o profesional de la salud para obtener información precisa y actualizada.
             </p>
         </div>
     );
