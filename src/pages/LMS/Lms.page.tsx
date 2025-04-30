@@ -1,11 +1,16 @@
 import {temasLSM} from "./Lms.constants.ts";
 import {NavLink} from "react-router";
+import {FaHandScissors} from "react-icons/fa";
 
 export default function Lms(){
     return(
         <div className="flex flex-col min-h-screen  bg-gray-100 pb-12 md:p-12 px-4 dark:bg-gray-900 dark:text-gray-100 p-4">
             <section className="bg-white dark:bg-gray-900 dark:text-gray-100 py-12 md:py-20">
                 <div className="container mx-auto px-6 lg:px-8">
+                    <div className="flex justify-center mb-2">
+                        <FaHandScissors className="text-orange-500 w-16 h-16" />
+
+                    </div>
                     <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 dark:text-white mb-10 md:mb-16">
                         Aprende Lengua de Señas Mexicana (LSM)
                     </h2>

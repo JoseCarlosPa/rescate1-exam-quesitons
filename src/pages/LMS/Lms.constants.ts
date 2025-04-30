@@ -48,12 +48,53 @@ export const temasLSM: TemaLSM[] = [
     },
     {
         id: 5,
+        titulo: 'Los Sentimientos',
+        descripcion: 'Aprende a expresar emociones y sentimientos como felicidad, tristeza, enojo, sorpresa, etc.',
+        referencias: [
+            { nombre: 'Video: Los sentimientos 1ra Parte', url: 'https://www.youtube.com/watch?v=fy0MZXpu9os&t=1s&ab_channel=AprendiendoLenguadeSe%C3%B1asMexicana', tipo: 'video' }, // Ejemplo de URL real
+            { nombre: 'Video: Los sentimientos 2da Parte', url: 'https://www.youtube.com/watch?v=N-grMMrkEUM&t=1s&ab_channel=AprendiendoLenguadeSe%C3%B1asMexicana', tipo: 'video' }, // Ejemplo de URL real
+
+        ],
+    },
+    {
+        id: 6,
+        titulo: 'Los Verbos',
+        descripcion: 'Aprende a usar verbos comunes en LSM como "comer", "beber", "dormir", "hablar", etc.',
+        referencias: [
+            { nombre: 'Video: Los Verbos 1ra Parte', url: 'https://www.youtube.com/watch?v=vYqeKOo8Oso&t=1s&ab_channel=AprendiendoLenguadeSe%C3%B1asMexicana', tipo: 'video' }, // Ejemplo de URL real
+            { nombre: 'Video: Los Verbos 2da Parte', url: 'https://www.youtube.com/watch?v=FbCdESieECc&ab_channel=AprendiendoLenguadeSe%C3%B1asMexicana', tipo: 'video' }, // Ejemplo de URL real
+            { nombre: 'Video: Los Verbos 3ra Parte', url: 'https://www.youtube.com/watch?v=-pN9brIQy7g&ab_channel=AprendiendoLenguadeSe%C3%B1asMexicana', tipo: 'video' }, // Ejemplo de URL real
+        ],
+    },
+    {
+        id: 6,
+        titulo: 'Los Verbos',
+        descripcion: 'Aprende a usar verbos comunes en LSM como "comer", "beber", "dormir", "hablar", etc.',
+        referencias: [
+           { nombre: 'Video: Los Verbos 4ta Parte', url: 'https://www.youtube.com/watch?v=-pN9brIQy7g&t=1s&ab_channel=AprendiendoLenguadeSe%C3%B1asMexicana', tipo: 'video' }, // Ejemplo de URL real
+            { nombre: 'Video: Los Verbos 5ta Parte', url: 'https://www.youtube.com/watch?v=PWpL9Ji9qXY&t=1s&ab_channel=AprendiendoLenguadeSe%C3%B1asMexicana', tipo: 'video' }, // Ejemplo de URL real
+            { nombre: 'Video: Los Verbos 6ta Parte', url: 'https://www.youtube.com/watch?v=PWpL9Ji9qXY&ab_channel=AprendiendoLenguadeSe%C3%B1asMexicana', tipo: 'video' }, // Ejemplo de URL real
+
+        ],
+    },
+    {
+        id: 7,
+        titulo: 'Vocabulario: Tiempos',
+        descripcion: 'Aprende a usar verbos comunes en LSM como "comer", "beber", "dormir", "hablar", etc.',
+        referencias: [
+            { nombre: 'Video: Conceptos de tiempos', url: 'https://www.youtube.com/watch?v=N_4fbbSLWUY&t=1s&ab_channel=MANOSENVOZCONTRAELAUDISMO', tipo: 'video' }, // Ejemplo de URL real
+            { nombre: 'Video: Días de la semana', url: 'https://www.youtube.com/watch?v=P3JzTqgS-nU&t=1s&ab_channel=MANOSENVOZCONTRAELAUDISMO', tipo: 'video' }, // Ejemplo de URL real
+            { nombre: 'Video: Meses del año', url: 'https://www.youtube.com/watch?v=qMqoxTGeR2Q&t=1s&ab_channel=MANOSENVOZCONTRAELAUDISMO', tipo: 'video' }, // Ejemplo de URL real
+            { nombre: 'Video: Estaciones del año', url: 'https://www.youtube.com/watch?v=R7ZqEe3NOcE&t=1s&ab_channel=MANOSENVOZCONTRAELAUDISMO', tipo: 'video' }, // Ejemplo de URL real
+        ],
+    },
+    {
+        id: 8,
         titulo: 'Cultura Sorda y LSM',
         descripcion: 'Entiende que la LSM no es solo un lenguaje, sino parte de una identidad y cultura rica. Aprende sobre la comunidad Sorda en México.',
         referencias: [
             { nombre: 'CONADIS México (Información sobre discapacidad)', url: 'https://www.gob.mx/conadis', tipo: 'otro' }, // Ejemplo de URL real
         ],
     },
-    // --- Agrega más temas aquí ---
-    // Ejemplos: Colores, Días de la semana, Comida, Preguntas (Qué, Quién, Dónde...), Verbos comunes, etc.
+
 ];
