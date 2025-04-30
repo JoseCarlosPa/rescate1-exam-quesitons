@@ -749,5 +749,33 @@ export const terminosData: GlosarioItem[] = [
       • N: Neck Mobility / Movilidad del cuello (¿El cuello tiene rango de movimiento adecuado?)`,
         tipo: 'mnemotecnia'
     },
+    {
+        termino: 'AEIOU-TIPS',
+        definicion: 'Mnemotecnia utilizada para recordar las posibles causas de alteración del estado mental.',
+        ejemplo: `Desglose:\n
+      • A: Alcohol\n
+      • E: Epilepsia\n
+      • I: Insulina (hipoglucemia o hiperglucemia)\n
+      • O: Overdose / Sobredosis (drogas o medicamentos)\n
+      • U: Uremia (insuficiencia renal)\n
+      • T: Trauma (lesión craneal)\n
+      • I: Infección (sepsis, meningitis)\n
+      • P: Psiquiátrico (trastornos mentales) o Envenenamiento (Poisoning)\n
+      • S: Stroke / Accidente cerebrovascular`,
+        tipo: 'mnemotecnia'
+    },
+    {
+        termino: 'ALICIA',
+        definicion: 'Mnemotecnia utilizada para evaluar el dolor de un paciente.',
+        ejemplo: `Desglose:\n
+      • A: Aparición (¿Cuándo comenzó el dolor? ¿Fue súbito o gradual?)\n
+      • L: Localización (¿Dónde se localiza el dolor? ¿Es en un punto específico o generalizado?)\n
+      • I: Irradiación (¿El dolor se mueve o se irradia a otra parte del cuerpo?)\n
+      • C: Características (¿Cómo describiría el dolor? ¿Es punzante, opresivo, quemante, etc.?)\n
+      • I: Intensidad (En una escala del 0 al 10, ¿qué tan intenso es el dolor?)\n
+      • A: Alivio/Agravantes (¿Hay algo que mejore o empeore el dolor?)`,
+        tipo: 'mnemotecnia'
+    }
+
 
 ];
