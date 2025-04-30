@@ -54,6 +54,10 @@ export default function LayoutProvider(props: tProvidersProps) {
                 </div>
             </div>
             {children}
+            <footer className="bg-orange-300 text-white text-center p-4 mt-10">
+                <p>&copy; {new Date().getFullYear()} Página Informativa creada por los alumnos de R1. Contenido solo para fines educativos.</p>
+                <p className="text-sm mt-1">Esta información no reemplaza la formación profesional de ningun tipo.</p>
+            </footer>
         </LayoutContext.Provider>
     );
 }

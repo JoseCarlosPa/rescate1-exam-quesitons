@@ -29,6 +29,12 @@ export default function AirwayManage(){
                        className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out4">
                         <p className="text-lg">Presentación</p>
                     </a>
+                    <a href="https://www.easyauscultation.com/lung-sounds"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out4">
+                        <p className="text-lg">Practica escuchando</p>
+                    </a>
                 </div>
 
                 <section className="max-w-5xl mx-auto p-6">

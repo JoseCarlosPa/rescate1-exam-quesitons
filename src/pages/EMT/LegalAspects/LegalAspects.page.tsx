@@ -1,15 +1,16 @@
 import {NavLink} from "react-router";
-import { faqData } from "./LegalAspects.questions.ts";
-import { Disclosure } from "@headlessui/react";
+import {faqData} from "./LegalAspects.questions.ts";
+import {Disclosure} from "@headlessui/react";
 import {ChevronUpIcon} from "@heroicons/react/16/solid";
 import {IoMdBriefcase} from "react-icons/io";
 import {AllRoutes} from "../../../components/Router/Router.constants.ts";
 
-export default function LegalAspects(){
-    return(
+export default function LegalAspects() {
+    return (
         <div className="">
-            <div className="flex flex-col items-center  justify-center bg-gray-100 pb-12 md:px-0 px-4 dark:bg-gray-900 dark:text-gray-100 p-4">
-                <IoMdBriefcase className="w-24 h-24 mb-1 text-orange-500" />
+            <div
+                className="flex flex-col items-center  justify-center bg-gray-100 pb-12 md:px-0 px-4 dark:bg-gray-900 dark:text-gray-100 p-4">
+                <IoMdBriefcase className="w-24 h-24 mb-1 text-orange-500"/>
                 <p className="text-5xl font-bold mb-4 flex text-center">Aspectos Médicos, Legales y Éticos</p>
                 <p className="text-sm italic">Alumnos Generacion 2025 Sabados Rescate 1</p>
                 <NavLink
@@ -24,10 +25,10 @@ export default function LegalAspects(){
                         <p className="text-lg">Hacer examen</p>
                     </NavLink>
                     <a href="https://docs.google.com/presentation/d/1a2LmZGb5lIg9ZN__5t0sspwiev13kUpj/edit?usp=sharing&ouid=107287742628985461156&rtpof=true&sd=true"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out4">
-                            <p className="text-lg">Presentación</p>
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out4">
+                        <p className="text-lg">Presentación</p>
                     </a>
                 </div>
 
@@ -45,48 +46,81 @@ export default function LegalAspects(){
                         <div>
                             <h2 className="text-2xl font-semibold mb-2">Normas y Reglamentos</h2>
                             <ul className="list-disc list-inside space-y-2">
-                                <li><strong>Modelo de Atención Prehospitalaria (STCONAPRA):</strong> Define los alcances y objetivos del TAMP.</li>
-                                <li><strong>NOM-034-SSA3-2013:</strong> Establece equipamiento e insumos mínimos de ambulancias.</li>
-                                <li><strong>Artículo 72:</strong> Define urgencia médica como riesgo inmediato para la vida, órgano o función.</li>
-                                <li><strong>Artículo 79:</strong> TAMP es profesional de salud y debe recertificarse cada 3 años.</li>
+                                <li><strong>Modelo de Atención Prehospitalaria (<a
+                                    target="_blank"
+                                    className="underline text-orange-500"
+                                    href="https://www.gob.mx/salud/acciones-y-programas/secretariado-tecnico-del-consejo-nacional-para-la-prevencion-de-accidentes-102486/">STCONAPRA</a>):</strong> Define los alcances
+                                    y objetivos del TAMP.
+                                </li>
+                                <li><strong><a
+                                    target="_blank"
+                                    className="underline text-orange-500"
+                                    href="https://www.gob.mx/cms/uploads/attachment/file/512076/NOM-034-SSA3-2013.pdf">NOM-034-SSA3-2013:</a></strong> Establece
+                                    equipamiento e insumos mínimos de ambulancias.
+                                </li>
+                                <li><strong>Artículo 72:</strong> Define urgencia médica como riesgo inmediato para la
+                                    vida, órgano o función.
+                                </li>
+                                <li><strong>Artículo 79:</strong> TAMP es profesional de salud y debe recertificarse
+                                    cada 3 años.
+                                </li>
                             </ul>
                         </div>
 
                         <div>
                             <h2 className="text-2xl font-semibold mb-2">Conceptos Legales Clave</h2>
                             <ul className="list-disc list-inside space-y-2">
-                                <li><strong>Deber de Actuar:</strong> Obligación de prestar ayuda según los códigos penales estatales.</li>
+                                <li><strong>Deber de Actuar:</strong> Obligación de prestar ayuda según los códigos
+                                    penales estatales.
+                                </li>
                                 <li><strong>Negligencia:</strong> Fallar en proporcionar cuidados adecuados.</li>
                                 <li><strong>Impericia:</strong> Falta de conocimientos técnicos necesarios.</li>
                                 <li><strong>Abandono:</strong> Interrumpir el cuidado sin transferencia adecuada.</li>
-                                <li><strong>Consentimiento:</strong> El paciente debe autorizar el tratamiento después de ser informado.</li>
-                                <li><strong>Consentimiento Implícito:</strong> Aplicable en casos de inconsciencia o amenaza grave a la vida.</li>
+                                <li><strong>Consentimiento:</strong> El paciente debe autorizar el tratamiento después
+                                    de ser informado.
+                                </li>
+                                <li><strong>Consentimiento Implícito:</strong> Aplicable en casos de inconsciencia o
+                                    amenaza grave a la vida.
+                                </li>
                             </ul>
                         </div>
 
                         <div>
                             <h2 className="text-2xl font-semibold mb-2">Muerte y Reanimación</h2>
                             <ul className="list-disc list-inside space-y-2">
-                                <li><strong>Signos negativos de vida:</strong> Ausencia de pulso, respiración y actividad cerebral.</li>
-                                <li><strong>Signos positivos de muerte:</strong> Livor mortis, rigor mortis, algor mortis, decapitación, putrefacción.</li>
-                                <li><strong>RCP:</strong> Se inicia solo si los signos de muerte no están presentes y la causa puede ser reversible.</li>
+                                <li><strong>Signos negativos de vida:</strong> Ausencia de pulso, respiración y
+                                    actividad cerebral.
+                                </li>
+                                <li><strong>Signos positivos de muerte:</strong> Livor mortis, rigor mortis, algor
+                                    mortis, decapitación, putrefacción.
+                                </li>
+                                <li><strong>RCP:</strong> Se inicia solo si los signos de muerte no están presentes y la
+                                    causa puede ser reversible.
+                                </li>
                             </ul>
                         </div>
 
                         <div>
                             <h2 className="text-2xl font-semibold mb-2">Reglamento de Tránsito y Código Penal</h2>
                             <ul className="list-disc list-inside space-y-2">
-                                <li><strong>Prioridad de paso:</strong> Ambulancias con sirena y torreta activadas tienen prioridad en vías públicas.</li>
-                                <li><strong>Código Penal de Querétaro:</strong> Homicidio, lesiones, aborto, allanamiento de morada, omisión de auxilio, entre otros.</li>
+                                <li><strong>Prioridad de paso:</strong> Ambulancias con sirena y torreta activadas
+                                    tienen prioridad en vías públicas.
+                                </li>
+                                <li><strong>Código Penal de Querétaro:</strong> Homicidio, lesiones, aborto,
+                                    allanamiento de morada, omisión de auxilio, entre otros.
+                                </li>
                             </ul>
                         </div>
 
                         <div>
                             <h2 className="text-2xl font-semibold mb-2">Responsabilidad Profesional</h2>
                             <ul className="list-disc list-inside space-y-2">
-                                <li>El TAMP es considerado primer respondiente y responsable de la escena y cadena de custodia.</li>
+                                <li>El TAMP es considerado primer respondiente y responsable de la escena y cadena de
+                                    custodia.
+                                </li>
                                 <li>Debe actuar siempre bajo estándares éticos y legales establecidos.</li>
-                                <li>Documentar detalladamente todo procedimiento en medios físicos o digitales (FRAP).</li>
+                                <li>Documentar detalladamente todo procedimiento en medios físicos o digitales (FRAP).
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -97,9 +131,10 @@ export default function LegalAspects(){
                     <div className="space-y-4">
                         {faqData.map((faq, idx) => (
                             <Disclosure key={idx}>
-                                {({ open }) => (
+                                {({open}) => (
                                     <div className="border rounded-lg overflow-hidden">
-                                        <Disclosure.Button className="flex w-full justify-between items-center bg-gray-100 dark:bg-gray-800 px-4 py-3 text-left text-lg font-medium hover:bg-orange-100 dark:hover:bg-gray-700">
+                                        <Disclosure.Button
+                                            className="flex w-full justify-between items-center bg-gray-100 dark:bg-gray-800 px-4 py-3 text-left text-lg font-medium hover:bg-orange-100 dark:hover:bg-gray-700">
                                             <span>{faq.question}</span>
                                             <ChevronUpIcon
                                                 className={`${
