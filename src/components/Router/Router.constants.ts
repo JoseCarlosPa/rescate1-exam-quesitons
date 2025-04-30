@@ -30,4 +30,6 @@ export enum AllRoutes {
     LMS = "/lms",
     STOP_THE_BLEED = "/stop-the-bleed",
     LOGIN= "/login",
+    DISCLAMER= "/disclaimer",
+    PRIVACYANDTERMS = "/privacy-and-terms",
 }

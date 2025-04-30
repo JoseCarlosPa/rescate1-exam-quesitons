@@ -56,6 +56,8 @@ import {traumaGeneralQuestions} from "../../pages/EMT/Trauma/Trauma.questions.ts
 import Trauma from "../../pages/EMT/Trauma/Trauma.page.tsx";
 import Immobilization from "../../pages/EMT/Immobilization/Immobilization.page.tsx";
 import {immobilizationQuestions} from "../../pages/EMT/Immobilization/Immobilization.questionts.ts";
+import Disclaimer from "../../pages/Main/Disclaimer.page.tsx";
+import PrivacyAndTerms from "../../pages/Main/PrivacyAndTerms.page.tsx";
 export default function Router(){
     return(
         <Suspense fallback={<div>Loading...</div>}>
@@ -117,6 +119,9 @@ export default function Router(){
                 <Route path={AllRoutes.BLS} element={<Bls />}/>
                 <Route path={AllRoutes.STOP_THE_BLEED} element={<StopTheBleed />}/>
                 <Route path={AllRoutes.RESOURCES} element={<Resources />}/>
+                <Route path={AllRoutes.DISCLAMER} element={<Disclaimer />}/>
+                <Route path={AllRoutes.PRIVACYANDTERMS} element={<PrivacyAndTerms />}/>
+
             </Routes>
         </Suspense>
     );

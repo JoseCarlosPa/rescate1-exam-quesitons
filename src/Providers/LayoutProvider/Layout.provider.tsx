@@ -57,6 +57,11 @@ export default function LayoutProvider(props: tProvidersProps) {
             <footer className="bg-orange-300 dark:bg-orange-500 text-white text-center p-4 ">
                 <p>&copy; {new Date().getFullYear()} Página Informativa creada por los alumnos de R1. Contenido solo para fines educativos.</p>
                 <p className="text-sm mt-1">Esta información no reemplaza la formación profesional de ningun tipo.</p>
+                <div className="flex gap-2 justify-center">
+                    <NavLink className="underline" target="_blank" to={AllRoutes.DISCLAMER}>Descargo de responsabilidad</NavLink>
+                    <NavLink className="underline" target="_blank" to={AllRoutes.PRIVACYANDTERMS}>Aviso de privacidad</NavLink>
+
+                </div>
             </footer>
         </LayoutContext.Provider>
     );
