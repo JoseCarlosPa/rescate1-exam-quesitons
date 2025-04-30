@@ -58,43 +58,43 @@ export default function Router(){
                 <Route path={AllRoutes.EMT} element={<App/>}/>
                 <Route path={AllRoutes.GENERAL} element={<GeneralExam/>}/>
                 <Route path={AllRoutes.LEGAL} element={<LegalAspects />}/>
-                <Route path={`/${AllRoutes.LEGAL}/exam`} element={<Exam returnRoute={AllRoutes.LEGAL} name="Aspectos Legales" questions={legalQuestions}  />}/>
+                <Route path={`/${AllRoutes.LEGAL}/exam`} element={<Exam returnRoute={AllRoutes.LEGAL} name="Aspectos Legales" questions={legalQuestions} id={2}  />}/>
                 <Route path={AllRoutes.COMMUNICATIONS} element={<Communications />}/>
-                <Route path={`${AllRoutes.COMMUNICATIONS}/exam`} element={<Exam returnRoute={AllRoutes.COMMUNICATIONS} name="Comunicaciones y documentación" questions={communicationsQuestions}  />}/>
+                <Route path={`${AllRoutes.COMMUNICATIONS}/exam`} element={<Exam returnRoute={AllRoutes.COMMUNICATIONS} name="Comunicaciones y documentación" questions={communicationsQuestions} id={3}  />}/>
                 <Route path={AllRoutes.SEM} element={<Sem />}/>
-                <Route path={`${AllRoutes.SEM}/exam`} element={<Exam returnRoute={AllRoutes.SEM} name="Sistema SEM" questions={semSystemQuestions}  />}/>
+                <Route path={`${AllRoutes.SEM}/exam`} element={<Exam returnRoute={AllRoutes.SEM} name="Sistema SEM" questions={semSystemQuestions} id={4}  />}/>
                 <Route path={AllRoutes.SECURITY_OF_PERSONAL} element={<SecurityOfPersonal />}/>
-                <Route path={`${AllRoutes.SECURITY_OF_PERSONAL}/exam`} element={<Exam returnRoute={AllRoutes.SECURITY_OF_PERSONAL} name="Seguridad y bienestar del personal" questions={securityQuestions}  />}/>
+                <Route path={`${AllRoutes.SECURITY_OF_PERSONAL}/exam`} element={<Exam returnRoute={AllRoutes.SECURITY_OF_PERSONAL} name="Seguridad y bienestar del personal" questions={securityQuestions} id={5}  />}/>
                 <Route path={AllRoutes.MEDIC_TERMS} element={<MedicTerms />}/>
-                <Route path={`${AllRoutes.MEDIC_TERMS}/exam`} element={<Exam returnRoute={AllRoutes.MEDIC_TERMS} name="Terminos Médicos" questions={medicTermsQuestions}  />}/>
+                <Route path={`${AllRoutes.MEDIC_TERMS}/exam`} element={<Exam returnRoute={AllRoutes.MEDIC_TERMS} name="Terminos Médicos" questions={medicTermsQuestions} id={6}  />}/>
                 <Route path={AllRoutes.HUMAN_BODY} element={<HumanBody />}/>
-                <Route path={`${AllRoutes.HUMAN_BODY}/exam`} element={<Exam returnRoute={AllRoutes.HUMAN_BODY} name="El Cuerpo Humano" questions={humanBodyQuestions}  />}/>
+                <Route path={`${AllRoutes.HUMAN_BODY}/exam`} element={<Exam returnRoute={AllRoutes.HUMAN_BODY} name="El Cuerpo Humano" questions={humanBodyQuestions} id={7}  />}/>
                 <Route path={AllRoutes.LIFE_SPEC} element={<LifeSpec />}/>
-                <Route path={`${AllRoutes.LIFE_SPEC}/exam`} element={<Exam returnRoute={AllRoutes.LIFE_SPEC} name="Desarrollo y esperanza de vida" questions={lifeSpecQuestions}  />}/>
+                <Route path={`${AllRoutes.LIFE_SPEC}/exam`} element={<Exam returnRoute={AllRoutes.LIFE_SPEC} name="Desarrollo y esperanza de vida" questions={lifeSpecQuestions} id={8}  />}/>
                 <Route path={AllRoutes.EVALUATION} element={<Evaluation />}/>
-                <Route path={`${AllRoutes.EVALUATION}/exam`} element={<Exam returnRoute={AllRoutes.EVALUATION} name="Evaluacion del paciente" questions={patientAssessmentQuestions}  />}/>
+                <Route path={`${AllRoutes.EVALUATION}/exam`} element={<Exam returnRoute={AllRoutes.EVALUATION} name="Evaluacion del paciente" questions={patientAssessmentQuestions} id={9} />}/>
                 <Route path={AllRoutes.MNEMOTECNIAS} element={<Mnemotecnias />}/>
-                <Route path={`${AllRoutes.MNEMOTECNIAS}/exam`} element={<Exam returnRoute={AllRoutes.MNEMOTECNIAS} name="Evaluacion del paciente" questions={nemotecniasQuestions}  />}/>
+                <Route path={`${AllRoutes.MNEMOTECNIAS}/exam`} element={<Exam returnRoute={AllRoutes.MNEMOTECNIAS} name="Evaluacion del paciente" questions={nemotecniasQuestions} id={10}  />}/>
                 <Route path={AllRoutes.AIRWAY_MANAGE} element={<AirwayManage />}/>
-                <Route path={`${AllRoutes.AIRWAY_MANAGE}/exam`} element={<Exam returnRoute={AllRoutes.AIRWAY_MANAGE} name="Manejo de la Vía Aérea" questions={airwayManagementQuestions}  />}/>
+                <Route path={`${AllRoutes.AIRWAY_MANAGE}/exam`} element={<Exam returnRoute={AllRoutes.AIRWAY_MANAGE} name="Manejo de la Vía Aérea" questions={airwayManagementQuestions} id={11}  />}/>
                 <Route path={AllRoutes.PHARMACOLOGY} element={<Pharmacology />}/>
-                <Route path={`${AllRoutes.PHARMACOLOGY}/exam`} element={<Exam returnRoute={AllRoutes.PHARMACOLOGY} name="Principios de la Farmacología" questions={pharmacologyQuestions}  />}/>
+                <Route path={`${AllRoutes.PHARMACOLOGY}/exam`} element={<Exam returnRoute={AllRoutes.PHARMACOLOGY} name="Principios de la Farmacología" questions={pharmacologyQuestions} id={12}  />}/>
                 <Route path={AllRoutes.MED_ADMIN} element={<MedAdmin />}/>
-                <Route path={`${AllRoutes.MED_ADMIN}/exam`} element={<Exam returnRoute={AllRoutes.MED_ADMIN} name="Administración de Medicamentos" questions={medicationAdministrationQuestions}  />}/>
+                <Route path={`${AllRoutes.MED_ADMIN}/exam`} element={<Exam returnRoute={AllRoutes.MED_ADMIN} name="Administración de Medicamentos" questions={medicationAdministrationQuestions} id={13}  />}/>
                 <Route path={AllRoutes.SHOCK} element={<Shock />}/>
-                <Route path={`${AllRoutes.SHOCK}/exam`} element={<Exam returnRoute={AllRoutes.SHOCK} name="shock" questions={shockQuestions}  />}/>
+                <Route path={`${AllRoutes.SHOCK}/exam`} element={<Exam returnRoute={AllRoutes.SHOCK} name="shock" questions={shockQuestions} id={14}  />}/>
                 <Route path={AllRoutes.REANIMATE_SVB} element={<ReanimateSvb />}/>
-                <Route path={`${AllRoutes.REANIMATE_SVB}/exam`} element={<Exam returnRoute={AllRoutes.REANIMATE_SVB} name="shock" questions={svbQuestions}  />}/>
+                <Route path={`${AllRoutes.REANIMATE_SVB}/exam`} element={<Exam returnRoute={AllRoutes.REANIMATE_SVB} name="shock" questions={svbQuestions} id={15}  />}/>
                 <Route path={AllRoutes.MEGA} element={<Mega />}/>
-                <Route path={`${AllRoutes.MEGA}/exam`} element={<Exam returnRoute={AllRoutes.MEGA} name="Codigo Mega" questions={megaQuestions}  />}/>
+                <Route path={`${AllRoutes.MEGA}/exam`} element={<Exam returnRoute={AllRoutes.MEGA} name="Codigo Mega" questions={megaQuestions} id={16}  />}/>
                 <Route path={AllRoutes.MEDIC_VISION} element={<MedicVision />}/>
-                <Route path={`${AllRoutes.MEDIC_VISION}/exam`} element={<Exam returnRoute={AllRoutes.MEDIC_VISION} name="Vision médica general" questions={visionMedicGeneralQuestions}  />}/>
+                <Route path={`${AllRoutes.MEDIC_VISION}/exam`} element={<Exam returnRoute={AllRoutes.MEDIC_VISION} name="Vision médica general" questions={visionMedicGeneralQuestions} id={17} />}/>
                 <Route path={AllRoutes.AIRWAY_EMERGENCY} element={<AirwayEmergency />}/>
-                <Route path={`${AllRoutes.AIRWAY_EMERGENCY}/exam`} element={<Exam returnRoute={AllRoutes.AIRWAY_EMERGENCY} name="Emergencias respiratorias" questions={respiratoryEmergenciesExam}  />}/>
+                <Route path={`${AllRoutes.AIRWAY_EMERGENCY}/exam`} element={<Exam returnRoute={AllRoutes.AIRWAY_EMERGENCY} name="Emergencias respiratorias" questions={respiratoryEmergenciesExam} id={18} />}/>
                 <Route path={AllRoutes.CARDIO_EMERGENCY} element={<CardioEmergency />}/>
-                <Route path={`${AllRoutes.CARDIO_EMERGENCY}/exam`} element={<Exam returnRoute={AllRoutes.CARDIO_EMERGENCY} name="Emergencias Cardiovasculares" questions={cardiovascularQuestions}  />}/>
+                <Route path={`${AllRoutes.CARDIO_EMERGENCY}/exam`} element={<Exam returnRoute={AllRoutes.CARDIO_EMERGENCY} name="Emergencias Cardiovasculares" questions={cardiovascularQuestions} id={19}  />}/>
                 <Route path={AllRoutes.NEURO_EMERGENCY} element={<NeuroEmergency />}/>
-                <Route path={`${AllRoutes.NEURO_EMERGENCY}/exam`} element={<Exam returnRoute={AllRoutes.NEURO_EMERGENCY} name="Emergencias Neurologicas" questions={neurologicasQuestions}  />}/>
+                <Route path={`${AllRoutes.NEURO_EMERGENCY}/exam`} element={<Exam returnRoute={AllRoutes.NEURO_EMERGENCY} name="Emergencias Neurologicas" questions={neurologicasQuestions} id={20}  />}/>
 
                 <Route path={AllRoutes.LMS} element={<Lms /> }/>
                 <Route path={AllRoutes.BLS} element={<Bls />}/>

@@ -4,17 +4,51 @@ import logo from "../../assets/logo.png";
 import {NavLink} from "react-router";
 import { ExamProps } from "./Exam.types";
 import {AllRoutes} from "../Router/Router.constants.ts";
+import {auth, db} from "../../firebase/firebaseConfig.ts";
+import {doc, getDoc, setDoc} from "firebase/firestore";
+import {AiOutlineLoading3Quarters} from "react-icons/ai";
 
 export default function Exam(props: ExamProps){
     const [answers, setAnswers] = useState<{ [index: number]: string }>({});
     const [submitted, setSubmitted] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     const handleSelect = (qIndex: number, letter: string) => {
         setAnswers({ ...answers, [qIndex]: letter });
     };
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         setSubmitted(true);
+        const scoreS = Object.keys(answers).reduce((acc, key) => {
+            const index = parseInt(key);
+            if (props.questions[index].correctAnswer === answers[index]) {
+                return acc + 1;
+            }
+            return acc;
+        }, 0);
+
+        const finalScore = ((scoreS / props.questions.length) * 100).toFixed(2)
+        setLoading(true);
+        const user = auth.currentUser;
+
+        if (user) {
+
+            const userDocRef = doc(db, "users", user.uid);
+            const userDoc = await getDoc(userDocRef);
+
+            if (userDoc.exists()) {
+                const userData = userDoc.data();
+                const exams = userData.exams || [];
+                exams[props.id - 1] = parseFloat(finalScore);
+                await setDoc(userDocRef, { exams }, { merge: true });
+            } else {
+                console.error("El documento del usuario no existe.");
+            }
+        } else {
+            console.error("No hay un usuario autenticado.");
+        }
+
+        setLoading(false);
         window.scrollTo(0, 0);
     };
 
@@ -48,7 +82,10 @@ export default function Exam(props: ExamProps){
                     className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out4">
                     <p className="text-lg">Regresar</p>
                 </NavLink>
+
             </div>
+            {loading ?  <AiOutlineLoading3Quarters className="animate-spin h-12 w-12 text-orange-500 my-4" /> : null}
+
 
             {!submitted ? (
                 <form
@@ -83,7 +120,11 @@ export default function Exam(props: ExamProps){
                         type="submit"
                         className="bg-blue-200 hover:bg-blue-300 text-blue-800 font-semibold py-2 px-4 rounded shadow"
                     >
-                        Calificar respuestas
+                        {loading ? (
+                            <AiOutlineLoading3Quarters className="animate-spin h-6 w-6 text-blue-800" />
+                        ) : (
+                            "Calificar respuestas"
+                        )}
                     </button>
                 </form>
             ) : (

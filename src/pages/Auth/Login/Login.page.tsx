@@ -12,6 +12,7 @@ import {NavLink} from "react-router";
 import {AllRoutes} from "../../../components/Router/Router.constants.ts";
 import {useUserContext} from "../../../Providers/UserProvider/User.context.tsx";
 import { useNavigate } from "react-router";
+import {examsInitialvalues} from "./Login.constants.ts";
 
 export default function Login() {
     const [email, setEmail] = useState<string>("");
@@ -74,7 +75,7 @@ export default function Login() {
                     id: user.uid,
                     email: user.email,
                     role: "Alumno",
-                    exams:[],
+                    exams: examsInitialvalues,
                 })
             }
             setUser({

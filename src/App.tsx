@@ -7,20 +7,19 @@ import {useUserContext} from "./Providers/UserProvider/User.context.tsx";
 import {useEffect, useState} from "react";
 import useApp from "./App.hook.ts";
 import {MdOutlineGrade} from "react-icons/md";
+import {AiOutlineLoading3Quarters} from "react-icons/ai";
 
 function App() {
 
     const {user} = useUserContext()
     const [leactionWithGrades,setLeactionWithGrades] = useState<tLection[]>([])
-    const {getUserExams} = useApp()
+    const {getUserExams,loading,setLoading} = useApp()
 
     useEffect(()=>{
         if (user?.id) {
             const data = getUserExams()
             data.then((res) => {
                 const lectionsWithGrades = lections.map((lection, index) => {
-                    console.log('res',res[index])
-
                     return {
                         ...lection,
                         grade: res[index ] || 0
@@ -28,17 +27,25 @@ function App() {
                 })
 
                 setLeactionWithGrades(lectionsWithGrades)
-                console.log('lectionsWithGrades',lectionsWithGrades)
 
             })
+        }else{
+            const lectionsWithGrades = lections.map((lection) => {
+                return {
+                    ...lection,
+                    grade: 0
+                }
+            })
+            setLeactionWithGrades(lectionsWithGrades)
         }
+        setLoading(false)
     },[user?.id])
 
 
 
     return (
         <div
-            className="flex flex-col items-center h-full bg-gray-100 pb-12 md:px-0 dark:bg-gray-900 dark:text-gray-100 p-4 ">
+            className="flex flex-col items-center min-h-screen h-full bg-gray-100 pb-12 md:px-0 dark:bg-gray-900 dark:text-gray-100 p-4 ">
             <img src={logo}
                  alt="Logo" className="h-24 w-24 mb-4"/>
             <p className="text-sm italic">Generación 2025 Rescate 1: Esta plataforma fue hecha por y para los alumnos de
@@ -46,8 +53,10 @@ function App() {
             <p className="text-5xl font-bold mb-4 flex text-center mt-2">TAMP-B</p>
             <NavLink to={AllRoutes.MAIN}
                      className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 ease-in-out">
+
                 <p className="text-lg">Regresar</p>
             </NavLink>
+            {loading ?  <AiOutlineLoading3Quarters className="animate-spin h-20 w-20 text-orange-500" /> : null}
 
             <div className="grid md:grid-cols-4 grid-cols-2 gap-4 mt-12 w-full md:px-20 ">
                 {leactionWithGrades.map((lection) => {
@@ -59,7 +68,7 @@ function App() {
                             {user?.id ?
                                 <div className="gap-1 w-full flex justify-end items-center">
                                     <MdOutlineGrade  className="w-5 h-5 text-orange-500"/>
-                                    <p className="text-gray-500  ">{lection?.grade}</p>
+                                    <p className="text-gray-500  ">{lection?.grade}/100</p>
 
                                 </div>
                                 : null}
