@@ -658,4 +658,77 @@ export const terminosData: GlosarioItem[] = [
       • I: Inconsciente (El paciente no responde a ningún estímulo).`,
         tipo: 'mnemotecnia' // Asegúrate que el tipo sea consistente
     },
+    {
+        termino: 'ABCDE',
+        definicion: 'Mnemotecnia utilizada para la evaluación primaria de un paciente en situaciones de emergencia.',
+        ejemplo: `Desglose:\n
+      • A: Airway / Vía aérea (¿Está la vía aérea permeable?)\n
+      • B: Breathing / Respiración (¿Está respirando adecuadamente?)\n
+      • C: Circulation / Circulación (¿Hay signos de hemorragia o shock?)\n
+      • D: Disability / Discapacidad (Evaluar el estado neurológico, como la Escala de Coma de Glasgow).\n
+      • E: Exposure / Exposición (Exponer al paciente para buscar lesiones ocultas, manteniendo la temperatura).`,
+        tipo: 'mnemotecnia'
+    },
+    {
+        termino: 'FAST',
+        definicion: 'Mnemotecnia utilizada para identificar signos de un accidente cerebrovascular (ACV).',
+        ejemplo: `Desglose:\n
+      • F: Face / Cara (¿Hay asimetría facial al sonreír?)\n
+      • A: Arms / Brazos (¿Puede levantar ambos brazos? ¿Uno cae?)\n
+      • S: Speech / Habla (¿Tiene dificultad para hablar o se le entiende mal?)\n
+      • T: Time / Tiempo (Actuar rápidamente y llamar a emergencias).`,
+        tipo: 'mnemotecnia'
+    },
+    {
+        termino: 'MARCH',
+        definicion: 'Mnemotecnia utilizada en el manejo de trauma para priorizar intervenciones críticas.',
+        ejemplo: `Desglose:\n
+      • M: Massive Hemorrhage / Hemorragia masiva (Controlar hemorragias graves).\n
+      • A: Airway / Vía aérea (Asegurar la permeabilidad de la vía aérea).\n
+      • R: Respiration / Respiración (Tratar neumotórax o problemas respiratorios).\n
+      • C: Circulation / Circulación (Evaluar perfusión y tratar shock).\n
+      • H: Hypothermia / Hipotermia (Prevenir pérdida de calor).`,
+        tipo: 'mnemotecnia'
+    },
+    {
+        termino: 'SOAP',
+        definicion: 'Mnemotecnia utilizada para documentar la evaluación y tratamiento del paciente.',
+        ejemplo: `Desglose:\n
+      • S: Subjective / Subjetivo (Información proporcionada por el paciente, como síntomas).\n
+      • O: Objective / Objetivo (Signos observados, como signos vitales y hallazgos físicos).\n
+      • A: Assessment / Evaluación (Diagnóstico o impresión clínica).\n
+      • P: Plan (Tratamiento o intervenciones realizadas).`,
+        tipo: 'mnemotecnia'
+    },
+    {
+        termino: 'GEMS',
+        definicion: 'Mnemotecnia utilizada para evaluar pacientes geriátricos.',
+        ejemplo: `Desglose:\n
+      • G: Geriatric / Geriátrico (Considerar problemas específicos de la edad avanzada).\n
+      • E: Environmental / Entorno (Evaluar el entorno del paciente para posibles riesgos).\n
+      • M: Medical / Médico (Buscar condiciones médicas subyacentes).\n
+      • S: Social / Social (Evaluar el soporte social y las necesidades del paciente).`,
+        tipo: 'mnemotecnia'
+    },
+    {
+        termino: 'PERL',
+        definicion: 'Mnemotecnia utilizada para evaluar la respuesta pupilar de un paciente.',
+        ejemplo: `Desglose:\n
+      • P: Pupils / Pupilas\n
+      • E: Equal / Iguales (¿Son del mismo tamaño?)\n
+      • R: Reactive / Reactivas (¿Reaccionan a la luz?)\n
+      • L: Light / Luz (¿Reaccionan adecuadamente a la luz?)`,
+        tipo: 'mnemotecnia'
+    },
+    {
+        termino: 'LEMON',
+        definicion: 'Mnemotecnia utilizada para evaluar la dificultad de intubación en un paciente.',
+        ejemplo: `Desglose:\n
+      • L: Look / Mirar (¿Hay características anatómicas que sugieran dificultad?)\n
+      • E: Evaluate / Evaluar (Usar la regla 3-3-2 para medir la apertura oral, distancia hioidea y tiromental).\n
+      • M: Mallampati / Clasificación de Mallampati (Evaluar la visibilidad de estructuras orofaríngeas).\n
+      • O: Obstruction / Obstrucción (¿Hay obstrucciones en la vía aérea?)\n
+      • N: Neck Mobility / Movilidad del cuello (¿El cuello tiene rango de movimiento adecuado?)`,
+        tipo: 'mnemotecnia'
+    }
 ];
