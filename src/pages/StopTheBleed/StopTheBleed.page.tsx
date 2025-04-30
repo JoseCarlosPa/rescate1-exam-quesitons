@@ -201,7 +201,7 @@ export default function StopTheBleed(){
                         <li>
                             <a href="https://www.stopthebleed.org/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                                 Stop the Bleed Official Website (American College of Surgeons)
-                            </a> (Buscar sección en español si existe)
+                            </a>
                         </li>
                         <li>
                             <a href="https://www.dhs.gov/stopthebleed" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">

@@ -211,17 +211,17 @@ export default function Bls(){
                         <li>
                             <a href="https://cpr.heart.org/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                                 American Heart Association (AHA) - CPR & First Aid
-                            </a> (Reemplazar con enlace específico de BLS si se encuentra)
+                            </a>
                         </li>
                         <li>
                             <a href="https://www.erc.edu/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                                 European Resuscitation Council (ERC)
-                            </a> (Reemplazar con enlace específico de guías BLS)
+                            </a>
                         </li>
                         <li>
                             <a href="https://www.redcross.org/take-a-class/cpr" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                                 Cruz Roja Americana - Clases de RCP
-                            </a> (Buscar equivalente local si es necesario)
+                            </a>
                         </li>
                         <li>
                             <a href="#" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
