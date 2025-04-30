@@ -62,6 +62,7 @@ import Glosary from "../../pages/EMT/Glosary/Glosary.page.tsx";
 import Bleeding from "../../pages/EMT/Bleeding/Bleeding.page.tsx";
 import {hemorragiasQuestions} from "../../pages/EMT/Bleeding/Bleeding.questions.ts";
 import StudyCase from "../StudyCase/StudyCase.page.tsx";
+import AlgorithmsAndProtocols from "../AlgorithmsAndProtocols/AlgorithmsAndProtocols.page.tsx";
 export default function Router(){
     return(
         <Suspense fallback={<div>Loading...</div>}>
@@ -126,6 +127,7 @@ export default function Router(){
                 <Route path={AllRoutes.STOP_THE_BLEED} element={<StopTheBleed />}/>
                 <Route path={AllRoutes.GLOSARY} element={<Glosary />}/>
                 <Route path={AllRoutes.STUDY_CASES} element={<StudyCase />}/>
+                <Route path={AllRoutes.ALOGIRTHMS} element={<AlgorithmsAndProtocols />}/>
                 <Route path={AllRoutes.RESOURCES} element={<Resources />}/>
                 <Route path={AllRoutes.DISCLAMER} element={<Disclaimer />}/>
                 <Route path={AllRoutes.PRIVACYANDTERMS} element={<PrivacyAndTerms />}/>

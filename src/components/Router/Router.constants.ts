@@ -32,6 +32,7 @@ export enum AllRoutes {
     STOP_THE_BLEED = "/stop-the-bleed",
     GLOSARY = "/glossary",
     STUDY_CASES = "/study-cases",
+    ALOGIRTHMS = "/algorithms-protocols",
     LOGIN= "/login",
     DISCLAMER= "/disclaimer",
     PRIVACYANDTERMS = "/privacy-and-terms",

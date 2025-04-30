@@ -12,7 +12,7 @@ import RandomQuestion from "./components/RandomQuestion/RandomQuestion.component
 import {IoReturnDownBack} from "react-icons/io5";
 import {FaQuestion} from "react-icons/fa";
 import {TbListLetters} from "react-icons/tb";
-import {GoBook} from "react-icons/go";
+import {GoBook, GoWorkflow} from "react-icons/go";
 
 function App() {
 
@@ -56,7 +56,7 @@ function App() {
             <p className="text-sm italic">Generación 2025 Rescate 1: Esta plataforma fue hecha por y para los alumnos de
                 la clase sabados R1 2025</p>
             <p className="text-5xl font-bold mb-4 flex text-center mt-2">TAMP-B</p>
-            <div className="grid md:grid-cols-4 grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-5 grid-cols-2 gap-4">
                 <NavLink to={AllRoutes.MAIN}
                          className="flex items-center justify-center gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100   transition duration-300 ease-in-out">
                     <IoReturnDownBack className="w-5 h-5 my-auto"  />
@@ -77,6 +77,11 @@ function App() {
                          className="flex items-center justify-center gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100   transition duration-300 ease-in-out">
                     <GoBook className="w-5 h-5 my-auto"  />
                     <p className="text-lg">Casos de estudio</p>
+                </NavLink>
+                <NavLink to={AllRoutes.ALOGIRTHMS}
+                         className="flex items-center justify-center gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100   transition duration-300 ease-in-out">
+                    <GoWorkflow className="w-5 h-5 my-auto"  />
+                    <p className="text-lg truncate">Algortimos/Protocolos</p>
                 </NavLink>
             </div>
             {showRandomQuestion ? <div className="w-full flex justify-center items-center">
