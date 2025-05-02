@@ -1,6 +1,6 @@
 import {useMemo, useState} from "react";
-import {terminosData} from "./Glosary.constants";
-import {AllRoutes} from "../../../components/Router/Router.constants.ts";
+import {terminosData} from "./Glosary.constants.ts";
+import {AllRoutes} from "../Router/Router.constants.ts";
 import {IoReturnDownBack} from "react-icons/io5";
 import {NavLink} from "react-router";
 

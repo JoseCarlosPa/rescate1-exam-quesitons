@@ -58,7 +58,7 @@ import Immobilization from "../../pages/EMT/Immobilization/Immobilization.page.t
 import {immobilizationQuestions} from "../../pages/EMT/Immobilization/Immobilization.questionts.ts";
 import Disclaimer from "../../pages/Main/Disclaimer.page.tsx";
 import PrivacyAndTerms from "../../pages/Main/PrivacyAndTerms.page.tsx";
-import Glosary from "../../pages/EMT/Glosary/Glosary.page.tsx";
+import Glosary from "../Glosary/Glosary.page.tsx";
 import Bleeding from "../../pages/EMT/Bleeding/Bleeding.page.tsx";
 import {hemorragiasQuestions} from "../../pages/EMT/Bleeding/Bleeding.questions.ts";
 import StudyCase from "../StudyCase/StudyCase.page.tsx";
@@ -90,7 +90,7 @@ export default function Router(){
                 <Route path={AllRoutes.EVALUATION} element={<Evaluation />}/>
                 <Route path={`${AllRoutes.EVALUATION}/exam`} element={<Exam returnRoute={AllRoutes.EVALUATION} name="Evaluacion del paciente" questions={patientAssessmentQuestions} id={9} />}/>
                 <Route path={AllRoutes.MNEMOTECNIAS} element={<Mnemotecnias />}/>
-                <Route path={`${AllRoutes.MNEMOTECNIAS}/exam`} element={<Exam returnRoute={AllRoutes.MNEMOTECNIAS} name="Evaluacion del paciente" questions={nemotecniasQuestions} id={10}  />}/>
+                <Route path={`${AllRoutes.MNEMOTECNIAS}/exam`} element={<Exam returnRoute={AllRoutes.MNEMOTECNIAS} name="Mnemotecnias" questions={nemotecniasQuestions} id={10}  />}/>
                 <Route path={AllRoutes.AIRWAY_MANAGE} element={<AirwayManage />}/>
                 <Route path={`${AllRoutes.AIRWAY_MANAGE}/exam`} element={<Exam returnRoute={AllRoutes.AIRWAY_MANAGE} name="Manejo de la Vía Aérea" questions={airwayManagementQuestions} id={11}  />}/>
                 <Route path={AllRoutes.PHARMACOLOGY} element={<Pharmacology />}/>

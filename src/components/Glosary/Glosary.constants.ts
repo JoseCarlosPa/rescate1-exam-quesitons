@@ -775,7 +775,265 @@ export const terminosData: GlosarioItem[] = [
       • I: Intensidad (En una escala del 0 al 10, ¿qué tan intenso es el dolor?)\n
       • A: Alivio/Agravantes (¿Hay algo que mejore o empeore el dolor?)`,
         tipo: 'mnemotecnia'
-    }
+    },
+    {
+        termino: 'Adrenalina / Epinefrina (Autoinyector)',
+        definicion: 'Medicamento simpaticomimético usado para tratar reacciones alérgicas graves (anafilaxia). El TEM Básico puede asistir o administrarla mediante autoinyector según protocolo.',
+        ejemplo: 'Paciente con anafilaxia recibió una dosis de epinefrina intramuscular a través de autoinyector en el muslo.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Aspirina (Ácido Acetilsalicílico)',
+        definicion: 'Medicamento antiinflamatorio no esteroideo (AINE) y antiplaquetario. Se administra a pacientes con sospecha de síndrome coronario agudo (dolor torácico de origen cardíaco) según protocolo.',
+        ejemplo: 'Se administraron 324 mg de aspirina masticable a paciente con dolor torácico sugestivo de IAM.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Auscultación',
+        definicion: 'Acción de escuchar los sonidos producidos dentro del cuerpo, generalmente con un estetoscopio (ej. ruidos pulmonares, cardíacos, intestinales).',
+        ejemplo: 'La auscultación pulmonar reveló sibilancias bilaterales.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Avulsión',
+        definicion: 'Lesión en la que un colgajo de piel u otro tejido es arrancado parcial o totalmente del cuerpo.',
+        ejemplo: 'Avulsión extensa en el antebrazo tras accidente con maquinaria.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Cánula Nasofaríngea (NPA)',
+        definicion: 'Tubo blando y flexible que se inserta a través de una fosa nasal hasta la faringe posterior para mantener la vía aérea permeable en pacientes conscientes o semiconscientes con reflejo nauseoso intacto.',
+        ejemplo: 'Se insertó una cánula nasofaríngea lubricada en la fosa nasal derecha.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Carbón Activado',
+        definicion: 'Sustancia que se administra por vía oral para adsorber (unir a su superficie) ciertas toxinas ingeridas en el tracto digestivo, disminuyendo su absorción.',
+        ejemplo: 'Administración de carbón activado tras consulta con el centro de toxicología por ingesta de medicamentos.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Crepitantes / Estertores',
+        definicion: 'Sonidos pulmonares anormales, finos y burbujeantes, escuchados durante la inspiración. Usualmente indican presencia de líquido en los alvéolos (ej. edema pulmonar, neumonía).',
+        ejemplo: 'Se auscultaron crepitantes en ambas bases pulmonares.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Estado Mental Alterado (EMA)',
+        definicion: 'Cualquier desviación del estado de conciencia normal y orientado de un paciente. Abarca desde confusión leve hasta coma profundo.',
+        ejemplo: 'Paciente diabético encontrado con estado mental alterado; se sospecha hipoglucemia.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Evisceración',
+        definicion: 'Protrusión de órganos internos (generalmente abdominales) a través de una herida abierta.',
+        ejemplo: 'Cubrir la evisceración abdominal con apósitos estériles húmedos y luego un vendaje oclusivo seco.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Fontanela',
+        definicion: 'Áreas blandas en el cráneo de un bebé donde los huesos aún no se han fusionado completamente. Pueden indicar hidratación o aumento de presión intracraneal.',
+        ejemplo: 'La fontanela anterior del lactante se palpaba tensa y abombada.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Geriatría (Consideraciones)',
+        definicion: 'Rama de la medicina enfocada en los adultos mayores. En prehospitalaria implica reconocer diferencias en la presentación de enfermedades, polifarmacia, mayor riesgo de caídas y comorbilidades.',
+        ejemplo: 'Paciente geriátrico con IAM puede presentar disnea o síncope en lugar de dolor torácico clásico.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Glucosa Oral',
+        definicion: 'Gel o pasta de azúcar simple que se administra por vía oral (generalmente entre la mejilla y la encía) a pacientes conscientes con hipoglucemia confirmada o sospechada.',
+        ejemplo: 'Se administró un tubo de glucosa oral al paciente con glucemia de 50 mg/dL.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Golpe de Calor',
+        definicion: 'Emergencia médica grave causada por fallo del sistema de termorregulación del cuerpo, resultando en temperatura corporal peligrosamente alta (>40°C) y alteraciones del SNC (convulsiones, coma).',
+        ejemplo: 'Paciente encontrado inconsciente tras ejercicio intenso en clima cálido, piel caliente y seca; sospecha de golpe de calor.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Hemostasia',
+        definicion: 'Proceso fisiológico para detener el sangrado o la hemorragia.',
+        ejemplo: 'La presión directa es el método inicial para lograr la hemostasia en heridas externas.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Hipotermia',
+        definicion: 'Condición en la que la temperatura corporal central desciende por debajo de los 35°C (95°F), afectando las funciones fisiológicas.',
+        ejemplo: 'Retirar ropa mojada y cubrir con mantas para tratar la hipotermia leve.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Nitroglicerina (NTG)',
+        definicion: 'Medicamento vasodilatador utilizado para tratar el dolor torácico asociado a angina de pecho o infarto agudo de miocardio. El TEM Básico puede asistir al paciente a tomar su propia NTG prescrita (sublingual), según protocolo y si la PA es adecuada.',
+        ejemplo: 'Se asistió al paciente en la administración de una dosis de nitroglicerina sublingual de su propio frasco.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Parto Inminente (Signos)',
+        definicion: 'Indicadores de que el nacimiento del bebé es muy próximo: contracciones fuertes y frecuentes (cada 2-3 min), sensación de pujo o necesidad de evacuar, coronamiento (visualización de la cabeza del bebé).',
+        ejemplo: 'La paciente refería ganas de pujar y se observó coronamiento; se preparó el equipo para parto de emergencia.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Pupilas (Evaluación / PERRLA)',
+        definicion: 'Examen del tamaño, igualdad y reactividad de las pupilas a la luz. PERRLA: Pupilas Iguales, Redondas, Reactivas a la Luz y Acomodación (la acomodación es menos evaluada en prehospitalaria).',
+        ejemplo: 'Evaluación pupilar: PERRL. Una pupila dilatada y no reactiva puede indicar lesión cerebral grave.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Quemadura (Clasificación)',
+        definicion: 'Lesión en los tejidos causada por calor, químicos, electricidad, radiación o fricción. Se clasifican por profundidad: 1er grado (superficial, ej. eritema solar), 2do grado (espesor parcial, ampollas), 3er grado (espesor total, aspecto carbonáceo o blanquecino).',
+        ejemplo: 'Paciente con quemaduras de 2do y 3er grado en el brazo tras incendio.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Regla de los Nueves',
+        definicion: 'Método utilizado para estimar rápidamente el porcentaje de la superficie corporal total (SCT) afectada por quemaduras en adultos.',
+        ejemplo: 'Según la Regla de los Nueves, la quemadura que afecta todo el brazo derecho representa un 9% de la SCT.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Salbutamol / Albuterol (Inhalador/Nebulizador)',
+        definicion: 'Medicamento broncodilatador utilizado para tratar el broncoespasmo en condiciones como asma o EPOC. El TEM Básico puede asistir al paciente con su inhalador de dosis medida (MDI) o administrarlo nebulizado según protocolo.',
+        ejemplo: 'Se administraron 2 disparos de salbutamol con cámara espaciadora.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Sibilancias',
+        definicion: 'Sonido pulmonar anormal, agudo y musical, generalmente escuchado durante la espiración. Causado por el estrechamiento de las vías aéreas (ej. asma, EPOC, anafilaxia).',
+        ejemplo: 'Paciente asmático presenta sibilancias audibles sin estetoscopio.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Vendaje Oclusivo',
+        definicion: 'Vendaje que sella una herida y no permite el paso de aire o fluidos. Se usa en heridas torácicas penetrantes (sellado en 3 lados) o para cubrir evisceraciones (sellado completo, seco sobre húmedo).',
+        ejemplo: 'Se aplicó un vendaje oclusivo de tres lados a la herida succionante en el tórax.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Abandono (Legal/Ético)',
+        definicion: 'Terminación unilateral de la atención a un paciente por parte del proveedor prehospitalario sin asegurar la continuidad de la atención por personal de igual o mayor nivel de capacitación.',
+        ejemplo: 'Dejar a un paciente en la sala de espera del hospital sin haber realizado una transferencia formal al personal de enfermería o médico podría considerarse abandono.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Aspiración de Secreciones (Suctioning)',
+        definicion: 'Procedimiento para remover sangre, vómito, mucosidad u otras secreciones de la vía aérea mediante un dispositivo de succión (manual o mecánico) para mantenerla permeable.',
+        ejemplo: 'Se realizó aspiración orofaríngea con cánula rígida (Yankauer) por 10 segundos.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Bolsa-Válvula-Mascarilla (BVM / Ambú)',
+        definicion: 'Dispositivo manual utilizado para proporcionar ventilaciones con presión positiva a pacientes que no respiran adecuadamente o están en apnea.',
+        ejemplo: 'Ventilación con BVM conectada a oxígeno a alto flujo, asegurando un buen sellado y elevación torácica.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Collarín Cervical',
+        definicion: 'Dispositivo rígido o semirrígido que se coloca alrededor del cuello para limitar el movimiento de la columna cervical en pacientes con sospecha de lesión espinal.',
+        ejemplo: 'Se aplicó un collarín cervical de tamaño adecuado antes de movilizar al paciente.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Comunicación por Radio (Reporte)',
+        definicion: 'Transmisión de información concisa y estructurada sobre el paciente y la situación a la base, al hospital receptor o a otras unidades, utilizando un equipo de radiocomunicación.',
+        ejemplo: 'Reporte radial inicial: "[Nombre unidad] a [Base/Hospital], tenemos paciente masculino de aprox. 50 años, con dificultad respiratoria aguda..."',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Consentimiento (Implícito / Explícito)',
+        definicion: 'Permiso otorgado por el paciente para recibir atención. Explícito: dado verbalmente o por escrito por un paciente competente. Implícito: asumido en emergencias cuando el paciente está inconsciente, incapacitado o es menor sin tutor presente, asumiendo que querría ayuda.',
+        ejemplo: 'Paciente consciente y orientado otorgó consentimiento explícito para la evaluación. Paciente inconsciente recibió atención bajo consentimiento implícito.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Equipo de Protección Personal (EPP) / BSI',
+        definicion: 'Equipo utilizado para proteger al proveedor de la exposición a sangre, fluidos corporales u otros materiales potencialmente infecciosos (Guantes, protección ocular, mascarilla, bata). BSI: Body Substance Isolation (Aislamiento de Sustancias Corporales).',
+        ejemplo: 'Utilizar siempre guantes como mínimo EPP antes de cualquier contacto con el paciente.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Formato de Registro de Atención Prehospitalaria (FRAP) / PCR',
+        definicion: 'Documento legal y médico donde se registra toda la información relevante sobre la atención proporcionada a un paciente, incluyendo evaluación, tratamiento, tiempos y datos demográficos. PCR: Prehospital Care Report.',
+        ejemplo: 'Completar el FRAP de manera precisa y legible es esencial para la continuidad de la atención y para fines legales.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Inmovilización Espinal / Restricción del Movimiento Espinal (SMR)',
+        definicion: 'Conjunto de técnicas y dispositivos (collarín cervical, tabla espinal, fijadores laterales, correas) utilizados para minimizar el movimiento de la columna vertebral en pacientes con sospecha de lesión espinal. SMR (Spinal Motion Restriction) es el término más actual que enfatiza limitar el movimiento en lugar de inmovilización completa.',
+        ejemplo: 'Se aplicó restricción del movimiento espinal utilizando collarín y tabla larga debido al mecanismo de lesión.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Mascarilla con Reservorio (No Recirculante / NRB)',
+        definicion: 'Dispositivo de oxigenoterapia que permite administrar altas concentraciones de oxígeno (hasta 90%+) a pacientes que respiran espontáneamente.',
+        ejemplo: 'Paciente con SpO2 baja y disnea severa fue colocado con mascarilla no recirculante a 15 lpm.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Mecanismo de Lesión (MOI) / Naturaleza de la Enfermedad (NOI)',
+        definicion: 'MOI: Las fuerzas o eventos que causaron una lesión traumática (ej. caída de altura, colisión vehicular). NOI: La condición médica subyacente o tipo de enfermedad que presenta el paciente (ej. dificultad respiratoria, dolor torácico).',
+        ejemplo: 'Evaluar el MOI ayuda a anticipar posibles lesiones ocultas. Determinar la NOI guía la evaluación médica.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Motivo de Consulta (Chief Complaint)',
+        definicion: 'La razón principal por la cual el paciente o alguien en su nombre solicitó ayuda de emergencia, expresada idealmente en las propias palabras del paciente.',
+        ejemplo: 'El motivo de consulta referido por el paciente fue "un fuerte dolor en el pecho".',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Negligencia (Legal/Ético)',
+        definicion: 'Falla en actuar conforme al estándar de cuidado esperado para un proveedor con el mismo nivel de capacitación, resultando en daño al paciente. Requiere probar: Deber de actuar, Incumplimiento del deber, Daño y Causalidad.',
+        ejemplo: 'No administrar oxígeno a un paciente hipóxico según protocolo podría considerarse negligencia si causa daño.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Posición de Fowler / Semi-Fowler',
+        definicion: 'Posición en la que el paciente está sentado, con la cabecera de la camilla elevada. Fowler: 45-60 grados. Semi-Fowler: 30-45 grados. Usada a menudo para pacientes con dificultad respiratoria o problemas cardíacos.',
+        ejemplo: 'Se colocó al paciente en posición de Semi-Fowler para facilitar su respiración.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Posición de Recuperación (Lateral de Seguridad)',
+        definicion: 'Posición en la que se coloca a un paciente inconsciente que respira espontáneamente y no tiene sospecha de lesión espinal, para mantener la vía aérea permeable y facilitar el drenaje de fluidos.',
+        ejemplo: 'Paciente postictal fue colocado en posición lateral de seguridad.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Seguridad de la Escena',
+        definicion: 'Evaluación continua de los peligros potenciales en el lugar del incidente (tráfico, materiales peligrosos, violencia, inestabilidad estructural, etc.) para garantizar la seguridad del personal prehospitalario, del paciente y de los espectadores.',
+        ejemplo: 'Prioridad número uno al llegar a cualquier llamado: evaluar la seguridad de la escena.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Tabla Espinal Larga / Corta',
+        definicion: 'Dispositivos rígidos utilizados para la restricción del movimiento espinal y la extricación de pacientes. Larga: para cuerpo completo. Corta: para extricación de pacientes sentados (ej. KED).',
+        ejemplo: 'Extricación del vehículo utilizando una tabla espinal corta y luego transferencia a tabla larga.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Transferencia del Paciente (Handoff Report)',
+        definicion: 'Proceso formal de entregar la responsabilidad del cuidado del paciente a otro proveedor de salud (ej. personal de urgencias del hospital), incluyendo un resumen verbal conciso y completo de la evaluación, tratamiento y estado del paciente.',
+        ejemplo: 'Se realizó la transferencia del paciente al médico de urgencias, entregando un reporte verbal y el FRAP.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Triángulo de Evaluación Pediátrica (TEP / PAT)',
+        definicion: 'Herramienta de evaluación visual rápida para niños que valora tres componentes: Apariencia (tono, interactividad, consuelo, mirada, llanto/habla), Trabajo Respiratorio (sonidos, retracciones, aleteo nasal, posición) y Circulación Cutánea (color de piel: palidez, cianosis, moteado).',
+        ejemplo: 'El TEP inicial mostró un niño con apariencia letárgica, aumento del trabajo respiratorio y piel pálida.',
+        tipo: 'termino'
+    },
+    {
+        termino: 'Hematoma',
+        definicion: 'Un hematoma es una acumulación de sangre, usualmente coagulada, que se forma en un órgano, tejido o espacio del cuerpo debido a la ruptura de un vaso sanguíneo',
+        ejemplo: 'Es común encontrar hematomas en la piel, donde se manifiestan como moretones o cardenales. Los hematomas pueden ser causados por golpes, caídas, cirugías o incluso por algunas enfermedades.' ,
+        tipo: 'termino'
+    },
 
 
 ];
