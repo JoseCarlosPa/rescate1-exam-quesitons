@@ -21,7 +21,7 @@ export default function LifeSpec(){
                 </NavLink>
                 <div className="flex gap-6">
                     <NavLink
-                        to="/life-spect/exam"
+                        to={`${AllRoutes.LIFE_SPEC}/exam`}
                         className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100   transition duration-300 ease-in-out4">
                         <p className="text-lg">Hacer examen</p>
                     </NavLink>
