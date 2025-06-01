@@ -12,7 +12,7 @@ import {BsBookHalf} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
 
 export default function CardioEmergency() {
-    const [activeTab, setActiveTab] = useState<'overview' | 'anatomy' | 'treatment' | 'practice'>('overview');
+    const [activeTab, setActiveTab] = useState<'overview' | 'anatomy' | 'treatment' | 'practice' | 'diseases'>('overview');
     const [showQuickQuiz, setShowQuickQuiz] = useState(false);
     return(
         <div className="min-h-screen bg-gray-50">
@@ -114,6 +114,15 @@ export default function CardioEmergency() {
                                 }`}>
                                 Casos Clínicos
                             </button>
+                            <button
+                                onClick={() => setActiveTab('diseases')}
+                                className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
+                                    activeTab === 'diseases' 
+                                        ? 'border-orange-500 text-orange-600' 
+                                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                                }`}>
+                                Enfermedades Comunes
+                            </button>
                         </nav>
                     </div>
 
@@ -124,226 +133,200 @@ export default function CardioEmergency() {
                                 <div>
                                     <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">¿Qué son las emergencias cardiovasculares?</h2>
                                     <p className="text-gray-700 leading-relaxed">
-                                        Son afecciones críticas que comprometen el sistema cardiovascular, como el infarto agudo al miocardio, arritmias graves, paro cardíaco, insuficiencia cardíaca y taponamiento cardíaco. Estas emergencias requieren una evaluación y tratamiento inmediato para preservar la vida y reducir el daño al miocardio.
+                                        Las emergencias cardiovasculares comprenden todas aquellas situaciones en las que el corazón o los vasos sanguíneos sufren una alteración aguda que pone en peligro la vida. Incluyen el paro cardíaco súbito, el síndrome coronario agudo (SCA), arritmias, insuficiencia cardíaca y shock cardiogénico.
+                                    </p>
+                                    <p className="text-gray-700 mt-2 leading-relaxed">
+                                        Según la AAOS (11ª edición), el reconocimiento temprano y la intervención rápida son fundamentales para mejorar la supervivencia. La cadena de supervivencia es clave en la atención prehospitalaria.
                                     </p>
                                 </div>
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Signos y síntomas frecuentes</h2>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Cadena de Supervivencia</h2>
+                                    <ol className="list-decimal list-inside space-y-2 text-gray-700">
+                                        <li>Reconocimiento inmediato del paro cardíaco y activación del sistema de emergencias.</li>
+                                        <li>RCP de alta calidad precoz, con énfasis en compresiones torácicas efectivas.</li>
+                                        <li>Desfibrilación rápida con DEA.</li>
+                                        <li>Soporte vital avanzado y cuidados post-paro.</li>
+                                    </ol>
+                                </div>
+                                <div>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Signos y síntomas comunes</h2>
                                     <div className="grid md:grid-cols-2 gap-4">
                                         <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                            <li>Dolor torácico opresivo, irradiado o persistente</li>
-                                            <li>Disnea (dificultad para respirar)</li>
-                                            <li>Palpitaciones o pérdida súbita del pulso</li>
-                                            <li>Sudoración profusa, náuseas o mareo</li>
-                                            <li>Cambios en el estado de conciencia</li>
+                                            <li>Dolor torácico opresivo</li>
+                                            <li>Dificultad para respirar (disnea)</li>
+                                            <li>Palpitaciones o arritmias</li>
+                                            <li>Pérdida súbita de la conciencia</li>
+                                            <li>Piel fría, sudorosa y pálida</li>
+                                            <li>Debilidad extrema</li>
                                         </ul>
                                         <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                            <li>Coloración azulada (cianosis) o palidez</li>
+                                            <li>Hipotensión</li>
+                                            <li>Náusea o vómito</li>
                                             <li>Ansiedad o sensación de muerte inminente</li>
-                                            <li>Edema en extremidades</li>
-                                            <li>Taquicardia o bradicardia</li>
-                                            <li>Presión arterial anormal</li>
+                                            <li>Edema pulmonar agudo</li>
+                                            <li>Signos de shock</li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Importancia de la intervención prehospitalaria</h2>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Enfermedades cardiovasculares más comunes en México (2025)</h2>
                                     <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                        <li>Reconocer signos tempranos de infarto o paro cardíaco puede salvar vidas.</li>
-                                        <li>Las compresiones torácicas de alta calidad aumentan las posibilidades de supervivencia.</li>
-                                        <li>El uso rápido de un DEA (desfibrilador externo automático) es crucial en ritmos desfibrilables.</li>
-                                        <li>El monitoreo continuo y el traslado oportuno mejoran los resultados clínicos.</li>
+                                        <li>Enfermedad isquémica del corazón (infarto agudo al miocardio, angina de pecho)</li>
+                                        <li>Hipertensión arterial sistémica</li>
+                                        <li>Insuficiencia cardíaca</li>
+                                        <li>Arritmias cardíacas (fibrilación auricular, taquicardias, bradicardias)</li>
+                                        <li>Enfermedad cerebrovascular (accidente vascular cerebral)</li>
+                                        <li>Cardiopatía hipertensiva</li>
+                                        <li>Miocardiopatías</li>
+                                        <li>Enfermedad vascular periférica</li>
                                     </ul>
+                                    <p className="text-gray-700 mt-2 leading-relaxed">
+                                        Estas enfermedades representan la principal causa de muerte en México y requieren atención prehospitalaria oportuna. Factores de riesgo frecuentes incluyen obesidad, diabetes, tabaquismo, sedentarismo y dislipidemia.
+                                    </p>
                                 </div>
                             </div>
                         )}
                         {activeTab === 'anatomy' && (
                             <div className="space-y-6">
-                                <div className="flex flex-col md:flex-row gap-6 items-center mb-6">
-                                    <div className="md:w-1/2">
-                                        <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Anatomía del sistema cardiovascular</h2>
-                                        <p className="text-gray-700 leading-relaxed">
-                                            El sistema cardiovascular está compuesto por el corazón y los vasos sanguíneos (arterias, venas y capilares). El corazón es una bomba muscular dividida en cuatro cavidades: dos aurículas y dos ventrículos.
-                                        </p>
-                                        <ul className="list-disc list-inside space-y-2 mt-2 text-gray-700">
-                                            <li><strong>Corazón:</strong> Aurícula derecha, ventrículo derecho, aurícula izquierda, ventrículo izquierdo</li>
-                                            <li><strong>Vasos sanguíneos:</strong> Arterias (llevan sangre del corazón a los tejidos), venas (devuelven sangre al corazón), capilares (intercambio de gases y nutrientes)</li>
-                                            <li><strong>Válvulas cardíacas:</strong> Tricúspide, pulmonar, mitral y aórtica</li>
-                                        </ul>
-                                    </div>
-                                    <div className="md:w-1/2 flex justify-center">
-                                        <img
-                                            src="/aaos.jpg"
-                                            alt="Anatomía del sistema cardiovascular"
-                                            className="rounded-lg shadow-md max-w-full h-auto"
-                                        />
-                                    </div>
-                                </div>
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Fisiología básica</h2>
-                                    <div className="grid md:grid-cols-2 gap-6">
-                                        <div>
-                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Ciclo cardíaco</h3>
-                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                                <li>Sístole: contracción y vaciado de los ventrículos</li>
-                                                <li>Diástole: relajación y llenado de los ventrículos</li>
-                                                <li>El gasto cardíaco depende de la frecuencia y el volumen sistólico</li>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Conducción eléctrica</h3>
-                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                                <li>Nódulo SA (marcapasos natural)</li>
-                                                <li>Nódulo AV</li>
-                                                <li>Haz de His y fibras de Purkinje</li>
-                                                <li>Permite la contracción coordinada del corazón</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Valores normales y evaluación</h2>
-                                    <div className="overflow-x-auto">
-                                        <table className="min-w-full bg-white">
-                                            <thead>
-                                                <tr className="bg-gray-100">
-                                                    <th className="py-2 px-4 border">Parámetro</th>
-                                                    <th className="py-2 px-4 border">Adultos</th>
-                                                    <th className="py-2 px-4 border">Niños</th>
-                                                    <th className="py-2 px-4 border">Lactantes</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td className="py-2 px-4 border font-medium">Frecuencia cardíaca</td>
-                                                    <td className="py-2 px-4 border">60-100/min</td>
-                                                    <td className="py-2 px-4 border">80-120/min</td>
-                                                    <td className="py-2 px-4 border">100-160/min</td>
-                                                </tr>
-                                                <tr>
-                                                    <td className="py-2 px-4 border font-medium">Presión arterial sistólica</td>
-                                                    <td className="py-2 px-4 border">90-140 mmHg</td>
-                                                    <td className="py-2 px-4 border">80-110 mmHg</td>
-                                                    <td className="py-2 px-4 border">70-100 mmHg</td>
-                                                </tr>
-                                                <tr>
-                                                    <td className="py-2 px-4 border font-medium">Presión arterial diastólica</td>
-                                                    <td className="py-2 px-4 border">60-90 mmHg</td>
-                                                    <td className="py-2 px-4 border">50-80 mmHg</td>
-                                                    <td className="py-2 px-4 border">40-60 mmHg</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Anatomía y Fisiología Cardiovascular</h2>
+                                    <p className="text-gray-700 leading-relaxed">
+                                        El sistema cardiovascular está compuesto por el corazón y los vasos sanguíneos. El corazón es una bomba muscular dividida en cuatro cámaras (dos aurículas y dos ventrículos) que impulsa la sangre a través de la circulación pulmonar y sistémica.
+                                    </p>
+                                    <ul className="list-disc list-inside space-y-2 text-gray-700 mt-2">
+                                        <li>El nodo sinoauricular (SA) inicia el impulso eléctrico.</li>
+                                        <li>El nodo auriculoventricular (AV) regula el paso a los ventrículos.</li>
+                                        <li>El sistema de His-Purkinje distribuye el impulso para la contracción ventricular.</li>
+                                    </ul>
+                                    <p className="text-gray-700 mt-2 leading-relaxed">
+                                        La perfusión tisular depende de un gasto cardíaco adecuado y de la integridad vascular. Cualquier alteración puede llevar a hipoperfusión y shock.
+                                    </p>
                                 </div>
                             </div>
                         )}
                         {activeTab === 'treatment' && (
                             <div className="space-y-6">
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Manejo inicial prehospitalario</h2>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Evaluación y Manejo Inicial</h2>
                                     <ol className="list-decimal list-inside space-y-2 text-gray-700">
-                                        <li>Evaluar ABCDE y signos vitales</li>
-                                        <li>Administrar oxígeno si SpO₂ &lt;94%</li>
-                                        <li>Monitorización cardíaca si está disponible</li>
-                                        <li>Identificar y tratar arritmias o paro cardíaco</li>
-                                        <li>Preparar para traslado urgente</li>
+                                        <li>Evaluación de la seguridad de la escena y uso de EPP.</li>
+                                        <li>Valoración primaria: respuesta, respiración y pulso.</li>
+                                        <li>Activación del SEM y solicitud de DEA.</li>
+                                        <li>Inicio inmediato de RCP de alta calidad si no hay pulso.</li>
+                                        <li>Desfibrilación precoz si está indicado.</li>
+                                        <li>Soporte vital avanzado según protocolos locales.</li>
                                     </ol>
                                 </div>
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Manejo específico por patologías</h2>
-                                    <div className="space-y-4">
-                                        <div className="p-4 bg-orange-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-orange-700">Infarto agudo al miocardio (IAM)</h3>
-                                            <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                                <li>Oxígeno si SpO₂ &lt;94%</li>
-                                                <li>Aspirina (160-325 mg, masticable, si no hay contraindicación)</li>
-                                                <li>Monitoreo y traslado urgente</li>
-                                                <li>Considerar nitroglicerina sublingual si está indicado</li>
-                                                <li>Alerta a hospital receptor</li>
-                                            </ol>
-                                        </div>
-                                        <div className="p-4 bg-blue-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-blue-700">Arritmias</h3>
-                                            <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                                <li>Monitorización cardíaca</li>
-                                                <li>Identificar bradiarritmias o taquiarritmias</li>
-                                                <li>Tratar según protocolo local (DEA, medicamentos, RCP)</li>
-                                                <li>Preparar para traslado</li>
-                                            </ol>
-                                        </div>
-                                        <div className="p-4 bg-green-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-green-700">Insuficiencia cardíaca</h3>
-                                            <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                                <li>Oxígeno a alto flujo</li>
-                                                <li>Posición semisentada</li>
-                                                <li>Monitorización y traslado urgente</li>
-                                                <li>Considerar CPAP si está disponible</li>
-                                            </ol>
-                                        </div>
-                                        <div className="p-4 bg-red-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-red-700">Paro cardíaco</h3>
-                                            <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                                <li>Iniciar RCP de alta calidad</li>
-                                                <li>Desfibrilación precoz con DEA si está indicado</li>
-                                                <li>Ventilación con BVM</li>
-                                                <li>Relevo de compresiones cada 2 minutos</li>
-                                                <li>Traslado inmediato tras retorno de circulación</li>
-                                            </ol>
-                                        </div>
-                                    </div>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Algoritmo básico de RCP y DEA (adulto)</h2>
+                                    <ul className="list-disc list-inside space-y-2 text-gray-700">
+                                        <li>Comprobar respuesta y respiración.</li>
+                                        <li>Llamar al SEM y pedir DEA.</li>
+                                        <li>Iniciar compresiones torácicas (100-120/min, profundidad 5-6 cm).</li>
+                                        <li>Ventilar 2 veces cada 30 compresiones si hay personal capacitado.</li>
+                                        <li>Aplicar DEA en cuanto esté disponible y seguir instrucciones.</li>
+                                    </ul>
                                 </div>
                             </div>
                         )}
                         {activeTab === 'practice' && (
                             <div className="space-y-6">
-                                <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Casos clínicos para análisis</h2>
-                                <div className="p-5 bg-gray-50 rounded-lg shadow-sm mb-4">
-                                    <h3 className="text-xl font-semibold mb-2 text-orange-600">Caso 1: Dolor torácico típico</h3>
-                                    <p className="italic text-gray-600 mb-4">
-                                        Hombre de 58 años, dolor torácico opresivo irradiado a brazo izquierdo, sudoración y náusea.
+                                <div>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Caso Clínico</h2>
+                                    <p className="text-gray-700 leading-relaxed">
+                                        Paciente masculino de 55 años, se desploma súbitamente durante una reunión. No responde, no respira y no tiene pulso. ¿Qué acciones debe realizar el primer respondiente?
                                     </p>
-                                    <div className="mb-4">
-                                        <h4 className="font-medium mb-2">Abordaje correcto:</h4>
-                                        <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                            <li>Evaluar ABCDE y signos vitales</li>
-                                            <li>Administrar oxígeno si SpO₂ &lt;94%</li>
-                                            <li>Aspirina masticable</li>
-                                            <li>Monitorización y traslado urgente</li>
-                                        </ol>
-                                    </div>
+                                    <ul className="list-disc list-inside space-y-2 text-gray-700 mt-2">
+                                        <li>Verificar seguridad de la escena.</li>
+                                        <li>Solicitar ayuda y pedir un DEA.</li>
+                                        <li>Iniciar RCP de alta calidad.</li>
+                                        <li>Aplicar DEA en cuanto esté disponible.</li>
+                                        <li>Continuar hasta llegada de SEM o recuperación del paciente.</li>
+                                    </ul>
                                 </div>
-                                <div className="p-5 bg-gray-50 rounded-lg shadow-sm mb-4">
-                                    <h3 className="text-xl font-semibold mb-2 text-blue-600">Caso 2: Paro cardíaco presenciado</h3>
-                                    <p className="italic text-gray-600 mb-4">
-                                        Mujer de 65 años colapsa súbitamente, no responde, no respira y no tiene pulso.
-                                    </p>
-                                    <div className="mb-4">
-                                        <h4 className="font-medium mb-2">Abordaje correcto:</h4>
-                                        <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                            <li>Iniciar RCP de alta calidad</li>
-                                            <li>Solicitar y usar DEA</li>
-                                            <li>Ventilación con BVM</li>
-                                            <li>Relevo de compresiones cada 2 minutos</li>
-                                            <li>Traslado inmediato tras retorno de circulación</li>
-                                        </ol>
-                                    </div>
+                                <div>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Preguntas frecuentes (FAQ)</h2>
+                                    {faqData.map((faq, idx) => (
+                                        <Disclosure key={idx}>
+                                            {({ open }) => (
+                                                <div className="border rounded-lg overflow-hidden">
+                                                    <Disclosure.Button className="flex w-full justify-between items-center bg-gray-100 px-4 py-3 text-left text-lg font-medium hover:bg-orange-100 transition">
+                                                        <span>{faq.question}</span>
+                                                        <ChevronUpIcon
+                                                            className={`${
+                                                                open ? "transform rotate-180" : ""
+                                                            } h-5 w-5 text-gray-500`}
+                                                        />
+                                                    </Disclosure.Button>
+                                                    <Disclosure.Panel className="px-4 pb-4 pt-2 text-gray-700">
+                                                        {faq.answer}
+                                                    </Disclosure.Panel>
+                                                </div>
+                                            )}
+                                        </Disclosure>
+                                    ))}
                                 </div>
-                                <div className="p-5 bg-gray-50 rounded-lg shadow-sm">
-                                    <h3 className="text-xl font-semibold mb-2 text-green-600">Caso 3: Insuficiencia cardíaca aguda</h3>
-                                    <p className="italic text-gray-600 mb-4">
-                                        Paciente masculino de 72 años, disnea súbita, ortopnea, estertores pulmonares y edema en miembros inferiores.
-                                    </p>
-                                    <div className="mb-4">
-                                        <h4 className="font-medium mb-2">Abordaje correcto:</h4>
-                                        <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                            <li>Posición semisentada</li>
-                                            <li>Oxígeno a alto flujo</li>
-                                            <li>Monitorización y traslado urgente</li>
-                                            <li>Considerar CPAP si está disponible</li>
-                                        </ol>
-                                    </div>
+                            </div>
+                        )}
+                        {activeTab === 'diseases' && (
+                            <div>
+                                <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Enfermedades cardiovasculares más comunes en México (2025)</h2>
+                                <div className="overflow-x-auto">
+                                    <table className="min-w-full divide-y divide-gray-200">
+                                        <thead className="bg-gray-100">
+                                            <tr>
+                                                <th className="px-4 py-2 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Enfermedad</th>
+                                                <th className="px-4 py-2 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Descripción</th>
+                                                <th className="px-4 py-2 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Medicamento más común</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody className="bg-white divide-y divide-gray-200 text-gray-700">
+                                            <tr>
+                                                <td className="px-4 py-2 font-medium">Enfermedad isquémica del corazón</td>
+                                                <td className="px-4 py-2">Incluye infarto agudo al miocardio y angina de pecho. Oclusión de arterias coronarias.</td>
+                                                <td className="px-4 py-2">AAS (ácido acetilsalicílico)</td>
+                                            </tr>
+                                            <tr>
+                                                <td className="px-4 py-2 font-medium">Hipertensión arterial sistémica</td>
+                                                <td className="px-4 py-2">Presión arterial elevada de forma crónica.</td>
+                                                <td className="px-4 py-2">IECA (ej. enalapril)</td>
+                                            </tr>
+                                            <tr>
+                                                <td className="px-4 py-2 font-medium">Insuficiencia cardíaca</td>
+                                                <td className="px-4 py-2">Incapacidad del corazón para bombear sangre suficiente.</td>
+                                                <td className="px-4 py-2">Furosemida</td>
+                                            </tr>
+                                            <tr>
+                                                <td className="px-4 py-2 font-medium">Arritmias cardíacas</td>
+                                                <td className="px-4 py-2">Alteraciones en el ritmo cardíaco (fibrilación auricular, taquicardias, bradicardias).</td>
+                                                <td className="px-4 py-2">Amiodarona</td>
+                                            </tr>
+                                            <tr>
+                                                <td className="px-4 py-2 font-medium">Enfermedad cerebrovascular</td>
+                                                <td className="px-4 py-2">Accidente vascular cerebral (isquémico o hemorrágico).</td>
+                                                <td className="px-4 py-2">Alteplasa (en casos seleccionados de EVC isquémico)</td>
+                                            </tr>
+                                            <tr>
+                                                <td className="px-4 py-2 font-medium">Cardiopatía hipertensiva</td>
+                                                <td className="px-4 py-2">Daño cardíaco secundario a hipertensión crónica.</td>
+                                                <td className="px-4 py-2">IECA (ej. enalapril)</td>
+                                            </tr>
+                                            <tr>
+                                                <td className="px-4 py-2 font-medium">Miocardiopatías</td>
+                                                <td className="px-4 py-2">Enfermedades del músculo cardíaco (dilatada, hipertrófica, restrictiva).</td>
+                                                <td className="px-4 py-2">Betabloqueadores</td>
+                                            </tr>
+                                            <tr>
+                                                <td className="px-4 py-2 font-medium">Enfermedad vascular periférica</td>
+                                                <td className="px-4 py-2">Afectación de arterias periféricas, principalmente en extremidades.</td>
+                                                <td className="px-4 py-2">Clopidogrel</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
+                                <p className="text-gray-700 mt-4 leading-relaxed">
+                                    Estas enfermedades representan la principal causa de muerte en México y requieren atención prehospitalaria oportuna. Factores de riesgo frecuentes incluyen obesidad, diabetes, tabaquismo, sedentarismo y dislipidemia.
+                                </p>
                             </div>
                         )}
                     </div>
