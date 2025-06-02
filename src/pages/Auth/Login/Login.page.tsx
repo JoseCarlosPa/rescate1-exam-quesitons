@@ -11,8 +11,9 @@ import {useLogin} from "./Login.hook.ts";
 import {NavLink} from "react-router";
 import {AllRoutes} from "../../../components/Router/Router.constants.ts";
 import {useUserContext} from "../../../Providers/UserProvider/User.context.tsx";
-import { useNavigate } from "react-router";
+import {useNavigate} from "react-router";
 import {examsInitialvalues} from "./Login.constants.ts";
+import {IoIosReturnLeft} from "react-icons/io";
 
 export default function Login() {
     const [email, setEmail] = useState<string>("");
@@ -39,7 +40,7 @@ export default function Login() {
         })
 
         return () => unsubscribe()
-    },[navigate, setUser])
+    }, [navigate, setUser])
 
     function handleLogin(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault()
@@ -74,6 +75,7 @@ export default function Login() {
                 await setDoc(doc(db, 'users', user.uid), {
                     id: user.uid,
                     email: user.email,
+                    name: user.displayName,
                     role: "Alumno",
                     exams: examsInitialvalues,
                 })
@@ -99,7 +101,11 @@ export default function Login() {
     return (
         <div className="bg-gray-100   rounded-lg">
             <div className="">
-                <div className="flex justify-center w-full h-full min-h-screen  xl:gap-14 lg:justify-normal md:gap-5 draggable">
+                <div
+                    className="flex justify-center w-full h-full min-h-screen  xl:gap-14 lg:justify-normal md:gap-5 draggable">
+                    <NavLink to="/">
+                        <IoIosReturnLeft className="h-32 w-32 p-8 absolute cursor-pointer"/>
+                    </NavLink>
                     <div className="flex items-center justify-center w-full">
                         <div className="flex items-center xl:p-10">
                             <form onSubmit={handleLogin}
@@ -143,7 +149,8 @@ export default function Login() {
                                 <button
                                     type="submit"
                                     className="w-full text-center flex justify-center cursor-pointer px-6 py-5 mb-5 text-sm font-bold leading-none text-white transition duration-300 md:w-96 rounded-2xl hover:bg-orange-400 focus:ring-4 focus:ring-purple-blue-100 bg-orange-500">
-                                    {authing ? <ImSpinner2 className="animate-spin w-6 h-6 text-orange-700 "/> : 'Iniciar sesion' }
+                                    {authing ? <ImSpinner2
+                                        className="animate-spin w-6 h-6 text-orange-700 "/> : 'Iniciar sesion'}
                                 </button>
                             </form>
                         </div>

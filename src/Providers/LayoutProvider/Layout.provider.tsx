@@ -39,7 +39,7 @@ export default function LayoutProvider(props: tProvidersProps) {
                             <div className="flex gap-4">
                                 <p className="text-center flex items-center">{user?.email}</p>
                                 <button
-                                    className="bg-white text-orange-400 px-4 py-2 rounded"
+                                    className="bg-white text-orange-400 px-4 py-2 rounded cursor-pointer hover:bg-orange-200 transition-colors"
                                     onClick={closeSession}>Cerrar sesión</button>
                             </div>
                         ) : (
