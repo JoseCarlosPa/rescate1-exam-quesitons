@@ -7,7 +7,6 @@ import {AllRoutes} from "../../../components/Router/Router.constants.ts";
 import {IoReturnDownBack} from "react-icons/io5";
 import {useState} from "react";
 import {MdQuiz} from "react-icons/md";
-import {TbNotebook} from "react-icons/tb";
 import {BsBookHalf} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
 

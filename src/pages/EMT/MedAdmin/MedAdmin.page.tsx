@@ -6,7 +6,6 @@ import {faqData} from "./MedAdmin.questions.ts";
 import {GiTripleNeedle} from "react-icons/gi";
 import {IoReturnDownBack} from "react-icons/io5";
 import {MdQuiz} from "react-icons/md";
-import {TbNotebook} from "react-icons/tb";
 import {PiChalkboardTeacher} from "react-icons/pi";
 import {FaPills} from "react-icons/fa";
 import {useState} from "react";

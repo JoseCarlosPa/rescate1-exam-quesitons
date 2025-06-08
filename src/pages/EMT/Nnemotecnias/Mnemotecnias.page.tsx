@@ -6,7 +6,6 @@ import {faqData} from "./Mnemotecnias.questions.ts";
 import {AllRoutes} from "../../../components/Router/Router.constants.ts";
 import {IoReturnDownBack} from "react-icons/io5";
 import {MdQuiz} from "react-icons/md";
-import {TbNotebook} from "react-icons/tb";
 import {PiChalkboardTeacher} from "react-icons/pi";
 import {useState} from "react";
 
