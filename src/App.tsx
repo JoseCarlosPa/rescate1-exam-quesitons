@@ -101,7 +101,7 @@ function App() {
                 <NavLink to={AllRoutes.ALOGIRTHMS}
                          className="flex flex-col  items-center justify-center bg-white shadow-md rounded-xl p-3 hover:bg-orange-100 border border-orange-200 transition duration-300 ease-in-out focus:ring-2 focus:ring-orange-300 outline-none">
                     <GoWorkflow className="w-5 h-5 my-auto text-orange-400"  />
-                    <p className="text-lg font-medium truncate">Algoritmos/Protocolos</p>
+                    <p className="text-sm md:text-lg font-medium truncate">Algoritmos/Protocolos</p>
                 </NavLink>
             </div>
             {showRandomQuestion ? <div className="w-full flex justify-center items-center mt-4 animate-fade-in">
@@ -119,7 +119,7 @@ function App() {
                         <NavLink
                             key={lection.id}
                             to={lection.route}
-                            className={`${lection.active ? 'bg-white' : 'bg-gray-100'} shadow-lg border border-orange-100 rounded-2xl p-7 flex flex-col justify-center items-center hover:bg-orange-50 transition duration-300 ease-in-out group relative focus:ring-2 focus:ring-orange-300 outline-none`}
+                            className={`${lection.active ? 'bg-white' : 'bg-gray-100'}  shadow-lg border border-orange-100 rounded-2xl md:p-7 p-2 flex flex-col justify-center items-center hover:bg-orange-50 transition duration-300 ease-in-out group relative focus:ring-2 focus:ring-orange-300 outline-none`}
                         >
                             {user?.id ?
                                 <div className="gap-1 w-full flex justify-end items-center absolute top-3 right-4">

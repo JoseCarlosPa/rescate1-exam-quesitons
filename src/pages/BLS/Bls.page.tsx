@@ -1,13 +1,48 @@
-import {FaHeartbeat} from "react-icons/fa";
+import {FaHeartbeat, FaChevronDown, FaChevronUp, FaChalkboardTeacher, FaUserMd, FaTasks, FaClipboardCheck, FaExternalLinkAlt} from "react-icons/fa";
 import chain from '../../assets/chain.png'
 import nineone from '../../assets/911.jpeg'
 import comp from '../../assets/comp.jpg'
 import parches from '../../assets/parches.jpg'
-import heim from '../../assets/heim.webp'
+import heim from '../../assets/heim.webp' // Se reactiva la importación de heim.webp
 import {NavLink} from "react-router";
+import {useState} from "react";
+
+
+interface AccordionSectionProps {
+    title: string;
+    id: string;
+    children: React.ReactNode;
+    isOpen: boolean;
+    toggleSection: (id: string) => void;
+}
+
+const AccordionSection: React.FC<AccordionSectionProps> = ({ title, id, children, isOpen, toggleSection }) => {
+    return (
+        <div className="mb-6">
+            <button
+                onClick={() => toggleSection(id)}
+                className="w-full flex justify-between items-center text-left text-xl font-semibold text-red-600 hover:text-red-700 focus:outline-none p-4 bg-red-50 rounded-lg shadow"
+            >
+                {title}
+                {isOpen ? <FaChevronUp className="text-red-600" /> : <FaChevronDown className="text-red-600" />}
+            </button>
+            {isOpen && (
+                <div className="mt-2 p-4 bg-white rounded-b-lg shadow-inner">
+                    {children}
+                </div>
+            )}
+        </div>
+    );
+};
 
 
 export default function Bls(){
+    const [openSection, setOpenSection] = useState<string | null>(null);
+
+    const toggleSection = (id: string) => {
+        setOpenSection(openSection === id ? null : id);
+    };
+
     return (
         <div className="bg-gray-100   min-h-screen">
             <header className="bg-red-700 text-white p-6 shadow-md">
@@ -63,28 +98,22 @@ export default function Bls(){
                 <section className="mb-10 bg-white  p-6 rounded-lg shadow">
                     <h2 className="text-2xl font-semibold text-gray-800  mb-4 border-b pb-2">Componentes Clave del BLS</h2>
 
-                    {/* 1. Seguridad de la Escena */}
-                    <div className="mb-6">
-                        <h3 className="text-xl font-semibold text-red-600 mb-2">1. Asegurar la Escena</h3>
+                    <AccordionSection title="1. Asegurar la Escena" id="sceneSafety" isOpen={openSection === 'sceneSafety'} toggleSection={toggleSection}>
                         <p className="text-gray-700  leading-relaxed">
                             Antes de acercarte a la víctima, evalúa rápidamente el entorno para asegurarte de que sea seguro para ti y para la persona. Busca peligros como tráfico, fuego, cables eléctricos caídos, materiales peligrosos, etc. No te conviertas tú también en una víctima.
                         </p>
-                    </div>
+                    </AccordionSection>
 
-                    {/* 2. Evaluar Respuesta y Respiración */}
-                    <div className="mb-6">
-                        <h3 className="text-xl font-semibold text-red-600 mb-2">2. Evaluar la Capacidad de Respuesta y la Respiración</h3>
+                    <AccordionSection title="2. Evaluar la Capacidad de Respuesta y la Respiración" id="responseBreathing" isOpen={openSection === 'responseBreathing'} toggleSection={toggleSection}>
                         <p className="text-gray-700  leading-relaxed mb-2">
                             Acércate a la víctima y tócala suavemente en los hombros preguntando en voz alta: "¿Estás bien?". Observa si hay respuesta verbal o movimiento.
                         </p>
                         <p className="text-gray-700 leading-relaxed">
                             Simultáneamente, evalúa la respiración durante no más de 10 segundos. Mira si el pecho se eleva y desciende. Escucha si hay sonidos respiratorios normales. Ignora los jadeos o respiraciones agónicas (boqueadas), ya que no son respiraciones efectivas. Si la persona no responde y no respira normalmente (o solo jadea), asume que está en paro cardíaco.
                         </p>
-                    </div>
+                    </AccordionSection>
 
-                    {/* 3. Activar el Sistema de Emergencias Médicas (SEM) */}
-                    <div className="mb-6">
-                        <h3 className="text-xl font-semibold text-red-600 mb-2">3. Activar el Sistema de Emergencias Médicas (SEM)</h3>
+                    <AccordionSection title="3. Activar el Sistema de Emergencias Médicas (SEM)" id="activateEMS" isOpen={openSection === 'activateEMS'} toggleSection={toggleSection}>
                         <p className="text-gray-700  leading-relaxed">
                             Si estás solo, llama inmediatamente al número de emergencia local (ej., 911, 112) antes de iniciar la RCP en adultos. Si hay alguien más contigo, pídele que llame y que busque un Desfibrilador Externo Automático (DEA) si hay uno disponible, mientras tú comienzas la RCP. Para niños y bebés, si estás solo y no presenciaste el colapso, realiza 5 ciclos (aproximadamente 2 minutos) de RCP antes de llamar.
                         </p>
@@ -93,11 +122,9 @@ export default function Bls(){
                             alt="Persona llamando a emergencias"
                             className="mt-4 rounded-lg shadow-sm w-full max-w-md h-auto object-cover mx-auto"
                         />
-                    </div>
+                    </AccordionSection>
 
-                    {/* 4. Reanimación Cardiopulmonar (RCP) */}
-                    <div className="mb-6">
-                        <h3 className="text-xl font-semibold text-red-600 mb-2">4. Reanimación Cardiopulmonar (RCP)</h3>
+                    <AccordionSection title="4. Reanimación Cardiopulmonar (RCP)" id="cpr" isOpen={openSection === 'cpr'} toggleSection={toggleSection}>
                         <p className="text-gray-700  leading-relaxed mb-3">
                             La RCP consiste en compresiones torácicas y, si estás entrenado y dispuesto, ventilaciones de rescate. El objetivo es mantener la sangre oxigenada circulando hacia los órganos vitales.
                         </p>
@@ -129,11 +156,9 @@ export default function Bls(){
                         <p className="mt-3 text-sm text-gray-600 italic">
                             Nota: Las profundidades y técnicas de compresión/ventilación varían para niños e infantes. Se requiere formación específica.
                         </p>
-                    </div>
+                    </AccordionSection>
 
-                    {/* 5. Uso del Desfibrilador Externo Automático (DEA) */}
-                    <div className="mb-6">
-                        <h3 className="text-xl font-semibold text-red-600 mb-2">5. Uso del Desfibrilador Externo Automático (DEA)</h3>
+                    <AccordionSection title="5. Uso del Desfibrilador Externo Automático (DEA)" id="aed" isOpen={openSection === 'aed'} toggleSection={toggleSection}>
                         <p className="text-gray-700  leading-relaxed mb-3">
                             Un DEA es un dispositivo portátil que analiza el ritmo cardíaco y puede administrar una descarga eléctrica (desfibrilación) si detecta un ritmo anormal potencialmente mortal (como la fibrilación ventricular).
                         </p>
@@ -150,18 +175,16 @@ export default function Bls(){
                             alt="Colocación de parches de DEA"
                             className="mt-4 rounded-lg shadow-sm w-full max-w-md h-auto object-cover mx-auto"
                         />
-                    </div>
+                    </AccordionSection>
 
-                    {/* 6. Manejo de la Obstrucción de la Vía Aérea (Atragantamiento) */}
-                    <div className="mb-6">
-                        <h3 className="text-xl font-semibold text-red-600 mb-2">6. Manejo de la Obstrucción de la Vía Aérea (Atragantamiento)</h3>
+                    <AccordionSection title="6. Manejo de la Obstrucción de la Vía Aérea (Atragantamiento)" id="choking" isOpen={openSection === 'choking'} toggleSection={toggleSection}>
                         <p className="text-gray-700   leading-relaxed mb-3">
                             El BLS también incluye el manejo del atragantamiento (obstrucción de la vía aérea por cuerpo extraño - OVACE).
                         </p>
                         <h4 className="text-lg font-semibold text-gray-700 mb-2">Adultos y Niños (mayores de 1 año) conscientes:</h4>
                         <ul className="list-disc ml-6 text-gray-700  leading-relaxed space-y-1">
                             <li>Pregunta "¿Te estás atragantando?". Si la persona asiente o no puede hablar, toser o respirar, actúa.</li>
-                            <li>Realiza compresiones abdominales (Maniobra de Heimlich):</li>
+                            <li>Realiza compresiones abdominales (Maniobra de Heimlich):</li> {/* Etiqueta <li> cerrada correctamente */}
                             <li>Párate detrás de la persona y rodea su cintura con tus brazos.</li>
                             <li>Forma un puño con una mano y colócalo por encima del ombligo y debajo del esternón.</li>
                             <li>Agarra tu puño con la otra mano y realiza compresiones rápidas hacia adentro y hacia arriba.</li>
@@ -178,68 +201,83 @@ export default function Bls(){
                             Nota: Las técnicas para infantes (menores de 1 año) son diferentes (golpes en la espalda y compresiones torácicas). Se requiere formación específica.
                         </p>
                         <img
-                            src={heim}
+                            src={heim} // Se reactiva el uso de la imagen heim
                             alt="Ilustración de la Maniobra de Heimlich"
                             className="mt-4 rounded-lg shadow-sm w-full max-w-md h-auto object-cover mx-auto"
                         />
-                    </div>
+                    </AccordionSection>
                 </section>
 
                 {/* Entrenamiento y Certificación */}
-                <section className="mb-10 bg-white  p-6 rounded-lg shadow">
-                    <h2 className="text-2xl font-semibold text-gray-800  mb-4 border-b pb-2">Entrenamiento y Certificación</h2>
-                    <p className="text-gray-700   leading-relaxed mb-4">
-                        Si bien esta página proporciona información general, **no sustituye a un curso de formación práctico y certificado**. Organizaciones como la American Heart Association (AHA), la Cruz Roja, el European Resuscitation Council (ERC) y otras entidades locales ofrecen cursos de BLS/RCP/DEA.
+                <section className="mb-10 bg-white p-6 rounded-lg shadow">
+                    <h2 className="text-2xl font-semibold text-gray-800 mb-4 border-b pb-2">Entrenamiento y Certificación</h2>
+                    <p className="text-gray-700 leading-relaxed mb-4">
+                        Realizar un curso de BLS acreditado es la mejor manera de aprender y practicar estas habilidades vitales. Organizaciones como la American Heart Association (AHA), la Cruz Roja Americana y otros organismos locales ofrecen cursos de certificación.
                     </p>
-                    <p className="text-gray-700  leading-relaxed">
-                        Estos cursos incluyen instrucción teórica y práctica supervisada con maniquíes, lo que te permite desarrollar las habilidades y la confianza necesarias para actuar eficazmente en una emergencia. La certificación suele tener una validez de 1 a 2 años, y se recomienda realizar cursos de actualización periódicos.
+                    <p className="text-gray-700 leading-relaxed mb-4">
+                        Estos cursos suelen incluir:
                     </p>
-                </section>
-
-                {/* Consideraciones Legales */}
-                <section className="mb-10 bg-white  p-6 rounded-lg shadow">
-                    <h2 className="text-2xl font-semibold text-gray-800 mb-4 border-b pb-2">Consideraciones Legales (Leyes del Buen Samaritano)</h2>
+                    <ul className="space-y-3 text-gray-700 leading-relaxed mb-4">
+                        <li className="flex items-start">
+                            <FaChalkboardTeacher className="text-red-500 mr-3 mt-1 flex-shrink-0 h-5 w-5" />
+                            <span>Instrucción teórica sobre los principios del BLS.</span>
+                        </li>
+                        <li className="flex items-start">
+                            <FaUserMd className="text-red-500 mr-3 mt-1 flex-shrink-0 h-5 w-5" />
+                            <span>Práctica de habilidades en maniquíes (compresiones, ventilaciones, uso del DEA).</span>
+                        </li>
+                        <li className="flex items-start">
+                            <FaTasks className="text-red-500 mr-3 mt-1 flex-shrink-0 h-5 w-5" />
+                            <span>Escenarios simulados de emergencias.</span>
+                        </li>
+                        <li className="flex items-start">
+                            <FaClipboardCheck className="text-red-500 mr-3 mt-1 flex-shrink-0 h-5 w-5" />
+                            <span>Evaluación de conocimientos y habilidades.</span>
+                        </li>
+                    </ul>
                     <p className="text-gray-700 leading-relaxed">
-                        En muchas regiones existen "Leyes del Buen Samaritano" que protegen legalmente a las personas que brindan asistencia razonable a quienes están lesionados, enfermos, en peligro o incapacitados. El propósito de estas leyes es alentar a las personas a ayudar a otros en situaciones de emergencia sin temor a ser demandadas si involuntariamente causan algún daño mientras actúan de buena fe. Infórmate sobre las leyes específicas de tu localidad.
+                        La certificación en BLS generalmente es válida por dos años, después de los cuales se requiere un curso de actualización.
                     </p>
                 </section>
 
-                {/* Referencias */}
-                <section className="bg-gray-200  p-6 rounded-lg shadow">
-                    <h2 className="text-2xl font-semibold text-gray-800 mb-4 border-b border-gray-400 pb-2">Referencias y Recursos Adicionales</h2>
-                    <ul className="list-disc ml-6 text-gray-700 space-y-2">
-                        <li>
-                            <a href="https://cpr.heart.org/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-                                American Heart Association (AHA) - CPR & First Aid
+                {/* Recursos Adicionales */}
+                <section className="mb-10 bg-white p-6 rounded-lg shadow">
+                    <h2 className="text-2xl font-semibold text-gray-800 mb-4 border-b pb-2">Recursos Adicionales</h2>
+                    <p className="text-gray-700 leading-relaxed mb-4">
+                        Para más información y para encontrar cursos de BLS cerca de ti, puedes visitar los siguientes sitios web (ten en cuenta que los enlaces pueden variar según tu región):
+                    </p>
+                    <ul className="space-y-2">
+                        <li className="flex items-center">
+                            <FaExternalLinkAlt className="text-red-500 mr-2 flex-shrink-0 h-4 w-4" />
+                            <a href="https://cpr.heart.org" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                                American Heart Association (AHA)
                             </a>
                         </li>
-                        <li>
-                            <a href="https://www.erc.edu/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-                                European Resuscitation Council (ERC)
-                            </a>
-                        </li>
-                        <li>
+                        <li className="flex items-center">
+                            <FaExternalLinkAlt className="text-red-500 mr-2 flex-shrink-0 h-4 w-4" />
                             <a href="https://www.redcross.org/take-a-class/cpr" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-                                Cruz Roja Americana - Clases de RCP
+                                Cruz Roja Americana - Cursos de RCP
                             </a>
                         </li>
-                        <li>
-                            <a href="#" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-                                [Otra fuente autorizada como Mayo Clinic, Guías Nacionales de Salud, etc.]
+                        <li className="flex items-center">
+                            <FaExternalLinkAlt className="text-red-500 mr-2 flex-shrink-0 h-4 w-4" />
+                            <a href="https://www.mayoclinic.org/first-aid" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                                Mayo Clinic - Primeros Auxilios (Ejemplo, buscar recurso específico de BLS)
                             </a>
                         </li>
-                        <li>
-                            <a href="#" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-                                [Enlace a Guías de BLS Pediátrico]
+                        <li className="flex items-center">
+                            <FaExternalLinkAlt className="text-red-500 mr-2 flex-shrink-0 h-4 w-4" />
+                            <a href="https://cpr.heart.org/en/cpr-courses-and-kits/pediatric-first-aid-cpr-aed" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                                AHA - RCP Pediátrica y Primeros Auxilios (Ejemplo)
                             </a>
                         </li>
                     </ul>
                     <p className="mt-4 text-sm text-gray-600 italic">
-                        Nota: Consulta siempre las guías de reanimación más actualizadas publicadas por las organizaciones reconocidas internacionalmente, ya que pueden cambiar con el tiempo según la nueva evidencia científica.
+                        La información proporcionada en esta guía es solo para fines educativos y no sustituye la formación profesional. Se recomienda encarecidamente realizar un curso de BLS acreditado para obtener la certificación y la práctica necesarias.
                     </p>
                 </section>
             </main>
-
         </div>
     );
 }
+
