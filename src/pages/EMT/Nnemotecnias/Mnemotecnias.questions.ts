@@ -14,7 +14,7 @@ export const faqData = [
         answer: "Explora características clave del dolor como inicio, provocación, calidad, irradiación, severidad y tiempo.",
     },
     {
-        question: "¿Cómo evalúas el estado de conciencia con AVPU?",
+        question: "¿Cómo evalúas el estado de conciencia con AVDI?",
         answer: "Determinas si el paciente está alerta, responde a voz, responde al dolor o está inconsciente.",
     },
     {
@@ -74,7 +74,7 @@ export const nemotecniasQuestions: Question[] = [
         correctAnswer: "c",
     },
     {
-        question: "¿Qué indica 'U' en AVPU?",
+        question: "¿Qué indica 'U' en AVDI?",
         options: [
             { letter: "a", text: "Unidad de emergencia" },
             { letter: "b", text: "Unresponsive (no responde)" },
@@ -164,7 +164,7 @@ export const nemotecniasQuestions: Question[] = [
         correctAnswer: "c",
     },
     {
-        question: "En AVPU, si un paciente responde al dolor pero no a la voz, se clasifica como:",
+        question: "En AVDI, si un paciente responde al dolor pero no a la voz, se clasifica como:",
         options: [
             { letter: "a", text: "Alerta" },
             { letter: "b", text: "V" },
@@ -234,7 +234,7 @@ export const nemotecniasQuestions: Question[] = [
         correctAnswer: "b",
     },
     {
-        question: "¿Cuándo se aplica AVPU en la evaluación prehospitalaria?",
+        question: "¿Cuándo se aplica AVDI en la evaluación prehospitalaria?",
         options: [
             { letter: "a", text: "Durante la evaluación secundaria" },
             { letter: "b", text: "Al inicio de la evaluación primaria" },

@@ -1042,7 +1042,7 @@ export const generalExamQuestions: Question[] = [
         correctAnswer: "c", // [cite: 274]
     },
     {
-        question: "El nivel de conciencia de un paciente se evalúa frecuentemente usando la escala AVDI/AVPU. ¿Qué representa la 'V'?",
+        question: "El nivel de conciencia de un paciente se evalúa frecuentemente usando la escala AVDI/AVDI. ¿Qué representa la 'V'?",
         options: [
             { letter: "a", text: "Vía aérea permeable (Airway)" },
             { letter: "b", text: "Responde a estímulos Verbales" },
@@ -1482,7 +1482,7 @@ export const generalExamQuestions: Question[] = [
         correctAnswer: "c", //
     },
     {
-        question: "La escala AVDI (o AVPU en inglés) se utiliza para evaluar:",
+        question: "La escala AVDI (o AVDI en inglés) se utiliza para evaluar:",
         options: [
             { letter: "a", text: "La frecuencia respiratoria." }, //
             { letter: "b", text: "La presión arterial." }, //

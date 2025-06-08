@@ -7,7 +7,6 @@ import {AllRoutes} from "../../../components/Router/Router.constants.ts";
 import {IoReturnDownBack} from "react-icons/io5";
 import {useState} from "react";
 import {MdQuiz} from "react-icons/md";
-import {TbNotebook} from "react-icons/tb";
 import {BsBookHalf} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
 
@@ -52,7 +51,7 @@ export default function LifeSpec(){
                             <p className="text-center font-medium">Presentación</p>
                         </a>
                         
-                        <a href="https://www.ems1.com/ems-education/"
+                        <a href="https://drive.google.com/file/d/1ERUNCs4ZsMiCDHeYwuoS6SWJOPpY6iW3/view?usp=drive_link"
                            target="_blank"
                            rel="noopener noreferrer"
                            className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
@@ -152,45 +151,66 @@ export default function LifeSpec(){
                                             </thead>
                                             <tbody>
                                             <tr>
-                                                <td className="py-2 px-4 border">Neonato</td>
-                                                <td className="py-2 px-4 border">100-180</td>
+                                                <td className="py-2 px-4 border">Neonato (0 a 1 mes)</td>
+                                                <td className="py-2 px-4 border">90-180</td>
                                                 <td className="py-2 px-4 border">30-60</td>
-                                                <td className="py-2 px-4 border">60-90</td>
-                                                <td className="py-2 px-4 border">36.5-37.5</td>
+                                                <td className="py-2 px-4 border">50-70</td>
+                                                <td className="py-2 px-4 border">37-38</td>
                                             </tr>
                                             <tr>
-                                                <td className="py-2 px-4 border">Lactante</td>
+                                                <td className="py-2 px-4 border">Lactante (1mes a 1 año)</td>
                                                 <td className="py-2 px-4 border">100-160</td>
-                                                <td className="py-2 px-4 border">30-53</td>
-                                                <td className="py-2 px-4 border">72-104</td>
-                                                <td className="py-2 px-4 border">36.5-37.5</td>
+                                                <td className="py-2 px-4 border">25-50</td>
+                                                <td className="py-2 px-4 border">70-95</td>
+                                                <td className="py-2 px-4 border">36-37.5</td>
                                             </tr>
                                             <tr>
-                                                <td className="py-2 px-4 border">Niño pequeño</td>
+                                                <td className="py-2 px-4 border">Niño pequeño (1 a 3 años) </td>
+                                                <td className="py-2 px-4 border">90-150</td>
+                                                <td className="py-2 px-4 border">20-30</td>
+                                                <td className="py-2 px-4 border">80-100</td>
+                                                <td className="py-2 px-4 border">36-37.5</td>
+                                            </tr>
+                                            <tr>
+                                                <td className="py-2 px-4 border">PreEscolar (3 a 6 años)</td>
+                                                <td className="py-2 px-4 border">80-140</td>
+                                                <td className="py-2 px-4 border">20-25</td>
+                                                <td className="py-2 px-4 border">80-100</td>
+                                                <td className="py-2 px-4 border">36-37.5</td>
+                                            </tr>
+                                            <tr>
+                                                <td className="py-2 px-4 border">Escolar (6 a 12 años)</td>
+                                                <td className="py-2 px-4 border">70-120</td>
+                                                <td className="py-2 px-4 border">15-20</td>
                                                 <td className="py-2 px-4 border">80-110</td>
-                                                <td className="py-2 px-4 border">22-37</td>
-                                                <td className="py-2 px-4 border">86-106</td>
-                                                <td className="py-2 px-4 border">36.5-37.5</td>
-                                            </tr>
-                                            <tr>
-                                                <td className="py-2 px-4 border">Escolar</td>
-                                                <td className="py-2 px-4 border">75-118</td>
-                                                <td className="py-2 px-4 border">18-25</td>
-                                                <td className="py-2 px-4 border">97-115</td>
                                                 <td className="py-2 px-4 border">36-37.5</td>
                                             </tr>
                                             <tr>
-                                                <td className="py-2 px-4 border">Adolescente</td>
+                                                <td className="py-2 px-4 border">Adolescente (12 a 18 años)</td>
                                                 <td className="py-2 px-4 border">60-100</td>
                                                 <td className="py-2 px-4 border">12-20</td>
-                                                <td className="py-2 px-4 border">110-131</td>
+                                                <td className="py-2 px-4 border">90-110</td>
                                                 <td className="py-2 px-4 border">36-37.5</td>
                                             </tr>
                                             <tr>
-                                                <td className="py-2 px-4 border">Adulto</td>
+                                                <td className="py-2 px-4 border">Adulto Joven (19 a 40 años)</td>
                                                 <td className="py-2 px-4 border">60-100</td>
                                                 <td className="py-2 px-4 border">12-20</td>
-                                                <td className="py-2 px-4 border">110-139</td>
+                                                <td className="py-2 px-4 border">90-140</td>
+                                                <td className="py-2 px-4 border">36-37.5</td>
+                                            </tr>
+                                            <tr>
+                                                <td className="py-2 px-4 border">Adulto de edad media(41 a 60 años)</td>
+                                                <td className="py-2 px-4 border">60-100</td>
+                                                <td className="py-2 px-4 border">12-20</td>
+                                                <td className="py-2 px-4 border">90-140</td>
+                                                <td className="py-2 px-4 border">36-37.5</td>
+                                            </tr>
+                                            <tr>
+                                                <td className="py-2 px-4 border">Adulto mayor (mayor a 61 años)</td>
+                                                <td className="py-2 px-4 border">60-100</td>
+                                                <td className="py-2 px-4 border">12-20</td>
+                                                <td className="py-2 px-4 border">90-140</td>
                                                 <td className="py-2 px-4 border">36-37.5</td>
                                             </tr>
                                             </tbody>

@@ -3,11 +3,11 @@ import {Question} from "../../../question";
 export const faqData = [
     {
         question: "¿Por qué es importante conocer la terminología médica?",
-        answer: "Conocer la terminología médica es esencial para comunicarse de manera efectiva en el entorno de atención médica, asegurando la precisión en los diagnósticos, tratamientos y en la documentación de las intervenciones."
+        answer: "Conocer la terminología médica es esencial para comunicarse de manera efectiva en el entorno de atención médica, asegurando la precisión en los diagnósticos, tratamientos y en la documentación de las intervenciones. Esto facilita la comprensión entre profesionales y mejora la seguridad del paciente."
     },
     {
         question: "¿Qué es una raíz en la terminología médica?",
-        answer: "Una raíz es la base de un término médico que generalmente indica una parte del cuerpo o una función. Por ejemplo, 'cardi-' se refiere al corazón y 'dermat-' a la piel."
+        answer: "Una raíz es la base de un término médico que generalmente indica una parte del cuerpo, un órgano o una función. Por ejemplo, 'cardi-' se refiere al corazón y 'dermat-' a la piel."
     },
     {
         question: "¿Qué significa el sufijo '-itis'?",
@@ -15,295 +15,125 @@ export const faqData = [
     },
     {
         question: "¿Qué son los prefijos en la terminología médica?",
-        answer: "Los prefijos se agregan al principio de una raíz para alterar su significado. Por ejemplo, 'hipo-' significa debajo o bajo, como en 'hipotensión', que es una presión arterial baja."
+        answer: "Los prefijos se agregan al principio de una raíz para alterar o especificar su significado, indicando, por ejemplo, ubicación, número o estado. Por ejemplo, 'hipo-' significa debajo o bajo, como en 'hipotensión', que es una presión arterial baja."
     },
     {
         question: "¿Cuáles son algunas abreviaturas comunes en la terminología médica?",
-        answer: "Algunas abreviaturas comunes incluyen 'RCP' para reanimación cardiopulmonar, 'ECG' para electrocardiograma y 'IV' para vía intravenosa."
+        answer: "Algunas abreviaturas comunes incluyen 'RCP' para reanimación cardiopulmonar, 'ECG' para electrocardiograma y 'IV' para vía intravenosa. Es crucial conocer las abreviaturas propensas a errores para evitarlos."
     },
     {
-        question: "¿Por qué es importante la terminología médica en la práctica prehospitalaria?",
-        answer: "Es crucial para asegurar una comunicación precisa y rápida entre los paramédicos y otros profesionales de la salud, reduciendo el riesgo de errores y mejorando los cuidados al paciente."
+        question: "¿Cuál es el propósito principal de la terminología médica?",
+        answer: "El propósito principal es proporcionar un lenguaje estandarizado y universal para la comunicación entre profesionales de la salud, asegurando la precisión y claridad en la documentación y el intercambio de información."
     },
     {
-        question: "¿Cómo se estructura generalmente un término médico?",
-        answer: "Un término médico generalmente está compuesto por una raíz, un prefijo y un sufijo. La raíz indica la parte del cuerpo o función, el prefijo modifica el significado, y el sufijo describe una condición o acción."
+        question: "¿Cómo se desglosa el significado de un término médico?",
+        answer: "El significado de un término médico se desglosa identificando sus componentes: el prefijo (si lo hay), la raíz o raíces, y el sufijo. Cada componente aporta una parte del significado total del término."
     },
     {
-        question: "¿Qué significa el término 'arritmia'?",
-        answer: "'Arritmia' se refiere a un trastorno del ritmo cardíaco, donde el corazón late de manera irregular, ya sea demasiado rápido, lento o con una cadencia irregular."
+        question: "¿Qué significa el término 'anterior' o 'ventral' en anatomía?",
+        answer: "Ambos términos se refieren a la parte frontal del cuerpo o hacia la parte delantera de una estructura."
     },
     {
-        question: "¿Qué es una 'neumonía'?",
-        answer: "La neumonía es una infección pulmonar que puede causar fiebre, tos y dificultad para respirar."
+        question: "¿Qué significa el término 'posterior' o 'dorsal' en anatomía?",
+        answer: "Ambos términos se refieren a la parte trasera del cuerpo o hacia la parte posterior de una estructura."
     },
     {
-        question: "¿Qué significa 'hipoxia'?",
-        answer: "'Hipoxia' es la condición de tener niveles insuficientes de oxígeno en los tejidos del cuerpo, lo cual puede afectar seriamente la función de los órganos."
+        question: "¿Cuál es la diferencia entre 'proximal' y 'distal'?",
+        answer: "'Proximal' se refiere a la parte de una extremidad o estructura que está más cerca del tronco o del punto de origen, mientras que 'distal' se refiere a la parte que está más lejos del tronco o del punto de origen."
+    },
+    {
+        question: "¿Qué es la posición 'Fowler'?",
+        answer: "La posición Fowler es una posición en la que el paciente está semisentado, con la cabeza elevada. Se utiliza comúnmente para pacientes con dificultad respiratoria."
+    },
+    {
+        question: "¿Qué es la posición 'supina'?",
+        answer: "La posición supina es cuando el paciente se encuentra acostado boca arriba."
+    },
+    {
+        question: "¿Qué es la posición 'prona'?",
+        answer: "La posición prona es cuando el paciente se encuentra acostado boca abajo."
+    },
+    {
+        question: "¿Qué indica el término 'medial'?",
+        answer: "Medial indica una estructura que está más cerca de la línea media del cuerpo."
+    },
+    {
+        question: "¿Qué indica el término 'lateral'?",
+        answer: "Lateral indica una estructura que está más lejos de la línea media del cuerpo o hacia el lado."
     }
 ];
 
 
 export const medicTermsQuestions: Question[] = [
     {
-        question: "¿Qué término se refiere a la inflamación del hígado?",
+        question: "¿Cuál es el término para la posición en la que el paciente se encuentra acostado boca arriba?",
         options: [
-            { letter: "a", text: "Hepatitis" },
-            { letter: "b", text: "Gastritis" },
-            { letter: "c", text: "Neumonía" },
-            { letter: "d", text: "Cistitis" },
+            { letter: "a", text: "Prona" },
+            { letter: "b", text: "Fowler" },
+            { letter: "c", text: "Supina" },
+            { letter: "d", text: "Decúbito lateral" },
+        ],
+        correctAnswer: "c",
+    },
+    {
+        question: "Al documentar una llamada, usted nota que el paciente está sufriendo. ¿Cuál es la palabra raíz para dolor?",
+        options: [
+            { letter: "a", text: "alges" },
+            { letter: "b", text: "angi" },
+            { letter: "c", text: "asten" },
+            { letter: "d", text: "centesis" },
         ],
         correctAnswer: "a",
     },
     {
-        question: "El sufijo '-algia' significa:",
+        question: "Usted observa que el paciente reporta debilidad. ¿Cuál es la palabra raíz para debilidad?",
         options: [
-            { letter: "a", text: "Fiebre" },
-            { letter: "b", text: "Dolor" },
-            { letter: "c", text: "Inflamación" },
-            { letter: "d", text: "Lesión" },
+            { letter: "a", text: "alges" },
+            { letter: "b", text: "angi" },
+            { letter: "c", text: "asten" },
+            { letter: "d", text: "centesis" },
         ],
-        correctAnswer: "b",
+        correctAnswer: "c",
     },
     {
-        question: "¿Qué prefijo indica 'bajo' o 'por debajo de'?",
+        question: "El paciente reporta debilidad en un lado. ¿Cuál es el término para 'en un lado'?",
         options: [
-            { letter: "a", text: "Hipo-" },
-            { letter: "b", text: "Hiper-" },
-            { letter: "c", text: "Hemi-" },
-            { letter: "d", text: "Macro-" },
+            { letter: "a", text: "bilateral" },
+            { letter: "b", text: "hemilateral" }, // El PDF usa "hemilateral" en la pregunta 4, aunque "unilateral" es más común en medicina. Mantengo el del PDF para coherencia con la fuente.
+            { letter: "c", text: "lateral" },
+            { letter: "d", text: "unilateral" },
         ],
-        correctAnswer: "a",
+        correctAnswer: "b", // Basado en la pregunta 4 del PDF, aunque "unilateral" es la respuesta lógica si se busca el término general.
     },
     {
-        question: "¿Qué término se utiliza para describir una respiración anormalmente rápida?",
+        question: "El paciente no parece tener alergias. ¿Cuál es el acrónimo para esto según el capítulo?",
         options: [
-            { letter: "a", text: "Bradipnea" },
-            { letter: "b", text: "Taquipnea" },
-            { letter: "c", text: "Apnea" },
-            { letter: "d", text: "Eupnea" },
+            { letter: "a", text: "NA" },
+            { letter: "b", text: "ANK" },
+            { letter: "c", text: "NAC" },
+            { letter: "d", text: "ANN" },
         ],
-        correctAnswer: "b",
+        correctAnswer: "a", // "NA" es No Alergias según la imagen del PDF.
     },
     {
-        question: "¿Qué término se refiere a la dificultad para respirar?",
+        question: "El paciente ve doble. ¿Qué término médico significa visión doble?",
         options: [
-            { letter: "a", text: "Dispnea" },
-            { letter: "b", text: "Tos" },
-            { letter: "c", text: "Cianosis" },
-            { letter: "d", text: "Euforia" },
+            { letter: "a", text: "Biocular" },
+            { letter: "b", text: "Bióptico" },
+            { letter: "c", text: "Diocular" },
+            { letter: "d", text: "Diplopía" },
         ],
-        correctAnswer: "a",
+        correctAnswer: "d",
     },
     {
-        question: "¿Cuál de los siguientes términos significa 'bajo nivel de oxígeno en la sangre'?",
+        question: "El paciente tose sangre. ¿Cuál es el término médico para toser sangre?",
         options: [
-            { letter: "a", text: "Hipoxia" },
-            { letter: "b", text: "Acidosis" },
-            { letter: "c", text: "Hipotensión" },
-            { letter: "d", text: "Hipertermia" },
+            { letter: "a", text: "Hemogastritis" },
+            { letter: "b", text: "Hematuria" },
+            { letter: "c", text: "Hematemesis" },
+            { letter: "d", text: "Hemoptisis" },
         ],
-        correctAnswer: "a",
-    },
-    {
-        question: "¿Qué término describe una condición en la que los pulmones se llenan de líquido?",
-        options: [
-            { letter: "a", text: "Edema pulmonar" },
-            { letter: "b", text: "Asma" },
-            { letter: "c", text: "Neumonía" },
-            { letter: "d", text: "Embolia pulmonar" },
-        ],
-        correctAnswer: "a",
-    },
-    {
-        question: "El término 'cardiopatía' se refiere a:",
-        options: [
-            { letter: "a", text: "Enfermedad del corazón" },
-            { letter: "b", text: "Inflamación del corazón" },
-            { letter: "c", text: "Arritmia" },
-            { letter: "d", text: "Presión arterial alta" },
-        ],
-        correctAnswer: "a",
-    },
-    {
-        question: "¿Qué término médico describe la pérdida de consciencia?",
-        options: [
-            { letter: "a", text: "Síncope" },
-            { letter: "b", text: "Convulsión" },
-            { letter: "c", text: "Fiebre" },
-            { letter: "d", text: "Taquicardia" },
-        ],
-        correctAnswer: "a",
-    },
-    {
-        question: "¿Qué significa el término 'acidosis'?",
-        options: [
-            { letter: "a", text: "Exceso de ácido en la sangre" },
-            { letter: "b", text: "Falta de oxígeno en la sangre" },
-            { letter: "c", text: "Alta presión arterial" },
-            { letter: "d", text: "Insuficiencia renal" },
-        ],
-        correctAnswer: "a",
-    },
-    {
-        question: "¿Cuál de los siguientes términos significa 'dificultad para tragar'?",
-        options: [
-            { letter: "a", text: "Disfagia" },
-            { letter: "b", text: "Disartria" },
-            { letter: "c", text: "Cianosis" },
-            { letter: "d", text: "Hemorragia" },
-        ],
-        correctAnswer: "a",
-    },
-    {
-        question: "El término 'hipotensión' se refiere a:",
-        options: [
-            { letter: "a", text: "Presión arterial baja" },
-            { letter: "b", text: "Presión arterial alta" },
-            { letter: "c", text: "Fiebre alta" },
-            { letter: "d", text: "Insuficiencia renal" },
-        ],
-        correctAnswer: "a",
-    },
-    {
-        question: "¿Qué significa 'taquicardia'?",
-        options: [
-            { letter: "a", text: "Frecuencia cardíaca acelerada" },
-            { letter: "b", text: "Frecuencia respiratoria baja" },
-            { letter: "c", text: "Presión arterial baja" },
-            { letter: "d", text: "Dolor en el pecho" },
-        ],
-        correctAnswer: "a",
-    },
-    {
-        question: "¿Qué término se refiere a la fiebre?",
-        options: [
-            { letter: "a", text: "Hipertermia" },
-            { letter: "b", text: "Hipotermia" },
-            { letter: "c", text: "Eutermia" },
-            { letter: "d", text: "Hipoacusia" },
-        ],
-        correctAnswer: "a",
-    },
-    {
-        question: "¿Qué término médico describe la insuficiencia respiratoria?",
-        options: [
-            { letter: "a", text: "Asfixia" },
-            { letter: "b", text: "Cianosis" },
-            { letter: "c", text: "Apnea" },
-            { letter: "d", text: "Aspiración" },
-        ],
-        correctAnswer: "a",
-    },
-    {
-        question: "El término 'trombosis' se refiere a:",
-        options: [
-            { letter: "a", text: "Formación de un coágulo sanguíneo" },
-            { letter: "b", text: "Inflamación de los pulmones" },
-            { letter: "c", text: "Bloqueo de las vías respiratorias" },
-            { letter: "d", text: "Aumento de la presión sanguínea" },
-        ],
-        correctAnswer: "a",
-    },
-    {
-        question: "¿Qué significa el término 'hemorragia'?",
-        options: [
-            { letter: "a", text: "Sangrado excesivo" },
-            { letter: "b", text: "Falta de oxígeno en la sangre" },
-            { letter: "c", text: "Disminución de la frecuencia cardíaca" },
-            { letter: "d", text: "Infección de la piel" },
-        ],
-        correctAnswer: "a",
-    },
-    {
-        question: "¿Qué significa 'ictericia'?",
-        options: [
-            { letter: "a", text: "Coloración amarilla de la piel y ojos" },
-            { letter: "b", text: "Falta de aire" },
-            { letter: "c", text: "Dolor abdominal" },
-            { letter: "d", text: "Aumento de la frecuencia respiratoria" },
-        ],
-        correctAnswer: "a",
-    },
-    {
-        question: "¿Qué término describe una condición de falta de sangre en los tejidos del cuerpo?",
-        options: [
-            { letter: "a", text: "Isquemia" },
-            { letter: "b", text: "Hipoxia" },
-            { letter: "c", text: "Hemorragia" },
-            { letter: "d", text: "Cianosis" },
-        ],
-        correctAnswer: "a",
-    },
-    {
-        question: "¿Qué es la 'bradicardia'?",
-        options: [
-            { letter: "a", text: "Frecuencia cardíaca baja" },
-            { letter: "b", text: "Fiebre alta" },
-            { letter: "c", text: "Presión arterial elevada" },
-            { letter: "d", text: "Dificultad respiratoria" },
-        ],
-        correctAnswer: "a",
-    },
-    {
-        question: "¿Qué significa 'hiperglucemia'?",
-        options: [
-            { letter: "a", text: "Alta concentración de glucosa en sangre" },
-            { letter: "b", text: "Falta de oxígeno en la sangre" },
-            { letter: "c", text: "Presión arterial baja" },
-            { letter: "d", text: "Disminución de la frecuencia cardíaca" },
-        ],
-        correctAnswer: "a",
-    },
-    {
-        question: "¿Qué término médico se usa para describir el sangrado en los pulmones?",
-        options: [
-            { letter: "a", text: "Hemoptisis" },
-            { letter: "b", text: "Epistaxis" },
-            { letter: "c", text: "Hematoma" },
-            { letter: "d", text: "Hiperemia" },
-        ],
-        correctAnswer: "a",
-    },
-    {
-        question: "¿Qué es la 'apnea'?",
-        options: [
-            { letter: "a", text: "Ausencia de respiración" },
-            { letter: "b", text: "Frecuencia respiratoria acelerada" },
-            { letter: "c", text: "Dolor en el pecho" },
-            { letter: "d", text: "Dificultad para respirar" },
-        ],
-        correctAnswer: "a",
-    },
-    {
-        question: "¿Qué significa el término 'anemia'?",
-        options: [
-            { letter: "a", text: "Bajo nivel de glóbulos rojos en la sangre" },
-            { letter: "b", text: "Bajo nivel de oxígeno en la sangre" },
-            { letter: "c", text: "Alta presión arterial" },
-            { letter: "d", text: "Fiebre" },
-        ],
-        correctAnswer: "a",
-    },
-    {
-        question: "El término 'epistaxis' se refiere a:",
-        options: [
-            { letter: "a", text: "Sangrado de la nariz" },
-            { letter: "b", text: "Sangrado de los pulmones" },
-            { letter: "c", text: "Sangrado del estómago" },
-            { letter: "d", text: "Sangrado vaginal" },
-        ],
-        correctAnswer: "a",
-    },
-    {
-        question: "¿Qué significa 'hipertermia'?",
-        options: [
-            { letter: "a", text: "Temperatura corporal elevada" },
-            { letter: "b", text: "Temperatura corporal baja" },
-            { letter: "c", text: "Falta de aire" },
-            { letter: "d", text: "Falta de agua en el cuerpo" },
-        ],
-        correctAnswer: "a",
+        correctAnswer: "d",
     },
     {
         question: "¿Qué término describe la acumulación de líquido en los tejidos?",
@@ -338,11 +168,141 @@ export const medicTermsQuestions: Question[] = [
     {
         question: "¿Qué término se refiere a la presión arterial elevada?",
         options: [
-            { letter: "a", text: "Hipertensión" },
-            { letter: "b", text: "Hipotensión" },
-            { letter: "c", text: "Taquicardia" },
-            { letter: "d", text: "Arritmia" },
+            { letter: "a", text: "Hipotensión" },
+            { letter: "b", text: "Taquicardia" },
+            { letter: "c", text: "Hipertensión" },
+            { letter: "d", text: "Bradicardia" },
+        ],
+        correctAnswer: "c",
+    },
+    {
+        question: "¿Cuál es el término para el sangrado excesivo?",
+        options: [
+            { letter: "a", text: "Isquemia" },
+            { letter: "b", text: "Hemorragia" },
+            { letter: "c", text: "Trombosis" },
+            { letter: "d", text: "Embolia" },
+        ],
+        correctAnswer: "b",
+    },
+    {
+        question: "¿Qué significa el prefijo 'taqui-'?",
+        options: [
+            { letter: "a", text: "Lento" },
+            { letter: "b", text: "Rápido" },
+            { letter: "c", text: "Grande" },
+            { letter: "d", text: "Pequeño" },
+        ],
+        correctAnswer: "b",
+    },
+    {
+        question: "¿Qué significa el prefijo 'bradi-'?",
+        options: [
+            { letter: "a", text: "Lento" },
+            { letter: "b", text: "Rápido" },
+            { letter: "c", text: "Mucho" },
+            { letter: "d", text: "Poco" },
         ],
         correctAnswer: "a",
+    },
+    {
+        question: "¿Qué término describe la inflamación de las articulaciones?",
+        options: [
+            { letter: "a", text: "Osteoporosis" },
+            { letter: "b", text: "Artritis" },
+            { letter: "c", text: "Mialgia" },
+            { letter: "d", text: "Esclerosis" },
+        ],
+        correctAnswer: "b",
+    },
+    {
+        question: "¿Qué significa el sufijo '-algia'?",
+        options: [
+            { letter: "a", text: "Inflamación" },
+            { letter: "b", text: "Dolor" },
+            { letter: "c", text: "Hinchazón" },
+            { letter: "d", text: "Debilidad" },
+        ],
+        correctAnswer: "b",
+    },
+    {
+        question: "¿Qué término se refiere a la falta de oxígeno en los tejidos?",
+        options: [
+            { letter: "a", text: "Hiperoxia" },
+            { letter: "b", text: "Anoxia" },
+            { letter: "c", text: "Hipoxia" },
+            { letter: "d", text: "Apnea" },
+        ],
+        correctAnswer: "c", // Hipoxia es la falta parcial, anoxia es la ausencia total. Considerando el nivel paramédico, hipoxia es el término más comúnmente aplicable en este contexto.
+    },
+    {
+        question: "¿Cuál de los siguientes términos describe una estructura más cercana al tronco?",
+        options: [
+            { letter: "a", text: "Distal" },
+            { letter: "b", text: "Lateral" },
+            { letter: "c", text: "Proximal" },
+            { letter: "d", text: "Superficial" },
+        ],
+        correctAnswer: "c",
+    },
+    {
+        question: "¿Qué posición corporal se describe cuando el paciente se encuentra semisentado, con la parte superior del cuerpo elevada?",
+        options: [
+            { letter: "a", text: "Decúbito supino" },
+            { letter: "b", text: "Trendelenburg" },
+            { letter: "c", text: "Fowler" },
+            { letter: "d", text: "Prona" },
+        ],
+        correctAnswer: "c",
+    },
+    {
+        question: "¿Cuál es el término para 'hacia el frente del cuerpo'?",
+        options: [
+            { letter: "a", text: "Posterior" },
+            { letter: "b", text: "Dorsal" },
+            { letter: "c", text: "Ventral" },
+            { letter: "d", text: "Caudal" },
+        ],
+        correctAnswer: "c",
+    },
+    {
+        question: "¿Qué abreviatura se utiliza comúnmente para 'sin antecedentes conocidos de alergias'?",
+        options: [
+            { letter: "a", text: "SAMA" },
+            { letter: "b", text: "NKA" },
+            { letter: "c", text: "NOAL" },
+            { letter: "d", text: "SNA" },
+        ],
+        correctAnswer: "b", // NKA (No Known Allergies) es muy común, aunque el PDF menciona "NA". Agrego esta opción por su relevancia práctica. Si se debe mantener estrictamente lo del PDF, la anterior pregunta ya lo cubre. Si esta es una pregunta adicional, NKA es buena.
+    },
+    {
+        question: "¿Qué significa el sufijo '-ectomía'?",
+        options: [
+            { letter: "a", text: "Inflamación" },
+            { letter: "b", text: "Extirpación quirúrgica" },
+            { letter: "c", text: "Estudio de" },
+            { letter: "d", text: "Registro" },
+        ],
+        correctAnswer: "b",
+    },
+    {
+        question: "¿Qué término describe una estructura que está más cerca de la superficie del cuerpo?",
+        options: [
+            { letter: "a", text: "Profundo" },
+            { letter: "b", text: "Interno" },
+            { letter: "c", text: "Superficial" },
+            { letter: "d", text: "Medial" },
+        ],
+        correctAnswer: "c",
+    },
+    {
+        question: "¿Cuál es el término médico para la 'inflamación del hígado'?",
+        options: [
+            { letter: "a", text: "Nefritis" },
+            { letter: "b", text: "Hepatitis" },
+            { letter: "c", text: "Gastritis" },
+            { letter: "d", text: "Colitis" },
+        ],
+        correctAnswer: "b",
     },
 ];

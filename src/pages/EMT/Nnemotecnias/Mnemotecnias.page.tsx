@@ -128,7 +128,7 @@ export default function Mnemotecnias(){
                                     <li><strong>ABC:</strong> Airway (vía aérea), Breathing (respiración), Circulation (circulación).</li>
                                     <li><strong>SAMPLE:</strong> Signos/Síntomas, Alergias, Medicamentos, Pasado médico, Última comida, Eventos previos.</li>
                                     <li><strong>OPQRST:</strong> Inicio (Onset), Provocación, Calidad (Quality), Irradiación, Severidad, Tiempo.</li>
-                                    <li><strong>AVPU:</strong> Alerta, Responde a Voz, Responde a Dolor, Inconsciente (Unresponsive).</li>
+                                    <li><strong>AVDI:</strong> Alerta, Responde a Voz, Responde a Dolor, Inconsciente (Unresponsive).</li>
                                     <li><strong>DCAP-BTLS:</strong> Deformidades, Contusiones, Abrasiones, Punciones, Quemaduras (Burns), Sensibilidad (Tenderness), Laceraciones, Hinchazón (Swelling).</li>
                                     <li><strong>PEARL:</strong> Pupilas Iguales y Reactivas a la Luz.</li>
                                     <li><strong>AEIOU-TIPS:</strong> Causas comunes de alteración del estado mental: Alcohol, Epilepsia, Insulina, Sobredosis, Trauma, Infección, Psicógenos, Stroke (ACV).</li>
@@ -180,7 +180,7 @@ export default function Mnemotecnias(){
                                     </ul>
                                 </div>
                                 <div className="bg-gray-50 p-4 rounded-lg">
-                                    <h3 className="font-medium text-lg mb-2 text-gray-700">Ejemplo 4: Estado neurológico con AVPU</h3>
+                                    <h3 className="font-medium text-lg mb-2 text-gray-700">Ejemplo 4: Estado neurológico con AVDI</h3>
                                     <ul className="list-disc list-inside space-y-1 text-gray-700">
                                         <li><strong>A:</strong> ¿El paciente está alerta?</li>
                                         <li><strong>V:</strong> ¿Responde a la voz?</li>

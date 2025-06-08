@@ -121,7 +121,7 @@ export const visionMedicGeneralQuestions: Question[] = [
             { letter: "a", text: "SAMPLE" },
             { letter: "b", text: "APGAR" },
             { letter: "c", text: "GCS" },
-            { letter: "d", text: "AVPU" },
+            { letter: "d", text: "AVDI" },
         ],
         correctAnswer: "a",
     },
@@ -138,7 +138,7 @@ export const visionMedicGeneralQuestions: Question[] = [
     {
         question: "¿Qué herramienta evalúa características del dolor como su irradiación o severidad?",
         options: [
-            { letter: "a", text: "AVPU" },
+            { letter: "a", text: "AVDI" },
             { letter: "b", text: "SAMPLE" },
             { letter: "c", text: "OPQRST" },
             { letter: "d", text: "ABCDE" },
@@ -210,7 +210,7 @@ export const visionMedicGeneralQuestions: Question[] = [
         options: [
             { letter: "a", text: "SAMPLE" },
             { letter: "b", text: "GCS" },
-            { letter: "c", text: "AVPU" },
+            { letter: "c", text: "AVDI" },
             { letter: "d", text: "OPQRST" },
         ],
         correctAnswer: "d",

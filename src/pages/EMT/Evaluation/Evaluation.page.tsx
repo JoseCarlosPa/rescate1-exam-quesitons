@@ -6,7 +6,6 @@ import {faqData} from "./Evaluation.questions.ts";
 import {FaNotesMedical} from "react-icons/fa";
 import {IoReturnDownBack} from "react-icons/io5";
 import {MdQuiz} from "react-icons/md";
-import {TbNotebook} from "react-icons/tb";
 import {BsBookHalf} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
 import {useState} from "react";
@@ -51,18 +50,12 @@ export default function Evaluation(){
                             <PiChalkboardTeacher className="w-10 h-10 text-orange-500 mb-2"/>
                             <p className="text-center font-medium">Presentación</p>
                         </a>
-                        <button
-                            onClick={() => setShowQuickQuiz(!showQuickQuiz)}
-                            className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
-                            <TbNotebook className="w-10 h-10 text-orange-500 mb-2"/>
-                            <p className="text-center font-medium">Quiz Rápido</p>
-                        </button>
-                        <a href="https://www.easyauscultation.com/"
+                        <a href="https://drive.google.com/file/d/1ZLfoRXcQoyOmvRactfLobvZjLogyKY9S/view?usp=drive_link"
                            target="_blank"
                            rel="noopener noreferrer"
                            className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
                             <BsBookHalf className="w-10 h-10 text-orange-500 mb-2"/>
-                            <p className="text-center font-medium">Práctica Auscultación</p>
+                            <p className="text-center font-medium">Capitulo</p>
                         </a>
                     </div>
 
@@ -157,7 +150,7 @@ export default function Evaluation(){
                                     <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Evaluación Primaria</h2>
                                     <ul className="list-disc list-inside space-y-2">
                                         <li>Impresión general del paciente</li>
-                                        <li>Evaluación del nivel de conciencia (AVPU)</li>
+                                        <li>Evaluación del nivel de conciencia (AVDI)</li>
                                         <li>Valoración rápida de ABCDE:
                                             <ul className="list-disc ml-6">
                                                 <li><strong>A:</strong> Vía aérea y control de columna cervical</li>
@@ -205,7 +198,7 @@ export default function Evaluation(){
                                         <li><strong>SAMPLE:</strong> Signos y síntomas, Alergias, Medicamentos, Pasado médico, Última comida, Eventos previos.</li>
                                         <li><strong>OPQRST:</strong> Inicio, Provocación, Calidad, Radiación, Severidad, Tiempo (para dolor).</li>
                                         <li><strong>Glasgow Coma Scale (GCS):</strong> Valora el estado neurológico (respuesta ocular, verbal y motora).</li>
-                                        <li><strong>AVPU:</strong> Alerta, responde a Voz, responde a Dolor, No responde.</li>
+                                        <li><strong>AVDI:</strong> Alerta, responde a Voz, responde a Dolor, No responde.</li>
                                     </ul>
                                 </div>
                             </div>

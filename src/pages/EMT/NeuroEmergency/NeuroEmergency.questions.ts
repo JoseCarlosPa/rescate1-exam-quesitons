@@ -70,7 +70,7 @@ export const neurologicasQuestions: Question[] = [
         correctAnswer: "c",
     },
     {
-        question: "¿Qué indica una puntuación AVPU de 'P'?",
+        question: "¿Qué indica una puntuación AVDI de 'P'?",
         options: [
             { letter: "a", text: "El paciente está inconsciente" },
             { letter: "b", text: "El paciente responde solo al dolor" },
@@ -180,7 +180,7 @@ export const neurologicasQuestions: Question[] = [
         correctAnswer: "d",
     },
     {
-        question: "La escala AVPU se utiliza para:",
+        question: "La escala AVDI se utiliza para:",
         options: [
             { letter: "a", text: "Medir la presión arterial" },
             { letter: "b", text: "Evaluar la oxigenación cerebral" },

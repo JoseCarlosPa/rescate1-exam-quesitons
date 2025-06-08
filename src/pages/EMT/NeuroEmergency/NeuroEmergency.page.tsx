@@ -229,7 +229,7 @@ export default function NeuroEmergency() {
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td className="py-2 px-4 border font-medium">AVPU</td>
+                                                    <td className="py-2 px-4 border font-medium">AVDI</td>
                                                     <td className="py-2 px-4 border">Nivel de conciencia</td>
                                                     <td className="py-2 px-4 border">Alerta, Voz, Dolor, No responde</td>
                                                 </tr>
@@ -262,7 +262,7 @@ export default function NeuroEmergency() {
                                                 <li>Evaluación ABCDE</li>
                                                 <li>Control de vía aérea y ventilación</li>
                                                 <li>Monitorización de signos vitales</li>
-                                                <li>Evaluación neurológica rápida (AVPU, Glasgow)</li>
+                                                <li>Evaluación neurológica rápida (AVDI, Glasgow)</li>
                                             </ul>
                                         </div>
                                         <div>
