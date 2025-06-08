@@ -7,7 +7,6 @@ import {FaHeartPulse} from "react-icons/fa6";
 import {IoReturnDownBack} from "react-icons/io5";
 import {useState} from "react";
 import {MdQuiz} from "react-icons/md";
-import {TbNotebook} from "react-icons/tb";
 import {BsBookHalf} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
 
@@ -51,7 +50,7 @@ export default function CardioEmergency() {
                             <p className="text-center font-medium">Presentación</p>
                         </a>
                         
-                        <a href="https://www.ems1.com/ems-products/cardiac-care/" target="_blank" rel="noopener noreferrer"
+                        <a href="https://drive.google.com/file/d/1GMhJk8VQbxIrEDeyOj7zMY4fSikj40Qm/view?usp=drive_link" target="_blank" rel="noopener noreferrer"
                            className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
                             <BsBookHalf className="w-10 h-10 text-orange-500 mb-2" />
                             <p className="text-center font-medium">Capítulo</p>

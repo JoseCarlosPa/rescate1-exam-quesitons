@@ -2,210 +2,148 @@ import {Question} from "../../../question";
 
 export const faqData = [
     {
-        question: "¿Qué es un accidente cerebrovascular (ACV)?",
-        answer: "Es una interrupción del flujo sanguíneo al cerebro, ya sea por oclusión (isquémico) o por hemorragia (hemorrágico).",
+        question: "¿Qué es un **Evento Vascular Cerebral (EVC)**?",
+        answer: "Es una interrupción del flujo sanguíneo al cerebro, ya sea por oclusión de un vaso (isquémico) o por la ruptura de un vaso y hemorragia (hemorrágico).",
     },
     {
-        question: "¿Qué es la escala de Cincinnati?",
-        answer: "Es una herramienta prehospitalaria para identificar signos de ACV: caída facial, debilidad en brazo y alteración en el habla.",
+        question: "¿Qué es la **Escala de Cincinnati**?",
+        answer: "Es una herramienta prehospitalaria utilizada para la detección rápida de un posible EVC, evaluando tres signos clave: caída facial (parálisis facial), debilidad en un brazo (deriva del brazo) y alteraciones en el habla (lenguaje anormal).",
     },
     {
-        question: "¿Cuándo se considera un estado epiléptico?",
-        answer: "Cuando una convulsión dura más de 5 minutos o hay convulsiones repetidas sin recuperación de la conciencia.",
+        question: "¿Cuándo se considera un **estado epiléptico**?",
+        answer: "Se define como una convulsión que dura más de 5 minutos, o la ocurrencia de convulsiones repetidas sin recuperación completa de la conciencia entre cada evento. Es una emergencia médica.",
     },
     {
-        question: "¿Qué importancia tiene la glucosa en pacientes con alteración neurológica?",
-        answer: "La hipoglucemia puede simular un evento neurológico grave, por lo que debe descartarse temprano.",
+        question: "¿Qué importancia tiene la **medición de glucosa** en pacientes con alteración neurológica?",
+        answer: "La hipoglucemia (nivel bajo de azúcar en la sangre) puede simular los síntomas de un EVC o una convulsión, por lo que es fundamental descartarla temprano mediante un test de glucosa capilar en cualquier paciente con alteración del estado de conciencia o sospecha de emergencia neurológica.",
     },
     {
-        question: "¿Qué hacer ante un paciente con convulsión activa?",
-        answer: "Proteger la cabeza del paciente, no introducir objetos en la boca, mantener vía aérea y esperar a que termine para evaluar.",
+        question: "¿Qué acciones iniciales deben tomarse ante un paciente con **convulsión activa**?",
+        answer: "Lo principal es asegurar la seguridad del paciente: proteger la cabeza para evitar traumatismos, mover objetos peligrosos del entorno y no intentar restringir los movimientos. No se debe introducir ningún objeto en la boca. Una vez que la convulsión cese, se debe colocar al paciente en posición de recuperación y evaluar su vía aérea y respiración.",
     },
     {
-        question: "¿Qué puede causar un síncope?",
-        answer: "Problemas cardíacos, deshidratación, dolor intenso, ansiedad o disautonomía.",
+        question: "¿Qué puede causar un **síncope**?",
+        answer: "El síncope, o desmayo, es una pérdida súbita y temporal de la conciencia debido a una reducción transitoria del flujo sanguíneo al cerebro. Puede ser causado por problemas cardíacos, deshidratación severa, dolor intenso, ansiedad, disautonomía o ciertas medicaciones.",
+    },
+    {
+        question: "¿Cuáles son las **tres principales causas de cefalea** que requieren atención de emergencia?",
+        answer: "Aunque la mayoría de las cefaleas son benignas, aquellas que requieren atención de emergencia incluyen la cefalea asociada a un EVC (especialmente hemorrágico), la meningitis (infección de las membranas que rodean el cerebro y la médula espinal) y la cefalea de 'trueno' (la peor cefalea de la vida, de inicio súbito, que puede indicar una hemorragia subaracnoidea).",
+    },
+    {
+        question: "¿Cuál es la **diferencia clave entre un EVC isquémico y un EVC hemorrágico**?",
+        answer: "Un EVC isquémico ocurre cuando un coágulo bloquea el flujo de sangre a una parte del cerebro. Un EVC hemorrágico ocurre cuando un vaso sanguíneo se rompe dentro o alrededor del cerebro, causando sangrado. La diferenciación es crucial para el tratamiento, ya que los tratamientos son muy diferentes.",
     },
 ];
 
 
 export const neurologicasQuestions: Question[] = [
     {
-        question: "¿Cuál es la causa más común de accidente cerebrovascular (ACV)?",
+        question: "¿Cuál de los siguientes trastornos ocurre cuando el flujo sanguíneo a una parte particular del cerebro se corta por un bloqueo que daña el tejido?",
         options: [
-            { letter: "a", text: "Hemorragia cerebral" },
-            { letter: "b", text: "Trombosis oclusiva" },
-            { letter: "c", text: "Tumor cerebral" },
-            { letter: "d", text: "Traumatismo craneal" },
+            { letter: "a", text: "Evento vascular cerebral hemorrágico" },
+            { letter: "b", text: "Evento vascular cerebral isquémico" },
+            { letter: "c", text: "Convulsiones" },
+            { letter: "d", text: "Estado epiléptico" },
         ],
         correctAnswer: "b",
     },
     {
-        question: "Un síntoma común del ACV isquémico incluye:",
+        question: "¿Cuál es el nombre de la condición cuando hay debilidad en un lado del cuerpo después de un EVC?",
         options: [
-            { letter: "a", text: "Dolor torácico" },
-            { letter: "b", text: "Visión doble" },
-            { letter: "c", text: "Pérdida súbita de fuerza en un lado del cuerpo" },
-            { letter: "d", text: "Convulsiones tónico-clónicas" },
+            { letter: "a", text: "Afasia" },
+            { letter: "b", text: "Ataxia" },
+            { letter: "c", text: "Hemiparesia" },
+            { letter: "d", text: "Negligencia" },
         ],
         correctAnswer: "c",
     },
     {
-        question: "La escala de Cincinnati evalúa:",
+        question: "Un paciente experimentó una convulsión. ¿Qué criterios se deben cumplir para que este paciente tenga estado epiléptico?",
         options: [
-            { letter: "a", text: "La conciencia del paciente" },
-            { letter: "b", text: "La probabilidad de un traumatismo craneal" },
-            { letter: "c", text: "Signos de un posible ACV" },
-            { letter: "d", text: "Nivel de glucosa cerebral" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "Durante una convulsión generalizada activa, el primer paso del TAMP debe ser:",
-        options: [
-            { letter: "a", text: "Administrar glucosa oral" },
-            { letter: "b", text: "Restringir los movimientos del paciente" },
-            { letter: "c", text: "Proteger la cabeza del paciente y despejar el área" },
-            { letter: "d", text: "Dar ventilación con bolsa-válvula-mascarilla" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Qué indica una puntuación AVDI de 'P'?",
-        options: [
-            { letter: "a", text: "El paciente está inconsciente" },
-            { letter: "b", text: "El paciente responde solo al dolor" },
-            { letter: "c", text: "El paciente está alerta" },
-            { letter: "d", text: "El paciente responde solo a la voz" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "El estado epiléptico es una condición donde:",
-        options: [
-            { letter: "a", text: "El paciente tiene una convulsión febril" },
-            { letter: "b", text: "La convulsión dura más de 5 minutos o hay múltiples sin recuperación" },
-            { letter: "c", text: "Las convulsiones se presentan solo con fiebre" },
-            { letter: "d", text: "El paciente está en shock hipovolémico" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "La hipoglucemia puede simular:",
-        options: [
-            { letter: "a", text: "Una reacción alérgica" },
-            { letter: "b", text: "Un paro respiratorio" },
-            { letter: "c", text: "Una emergencia neurológica" },
-            { letter: "d", text: "Una fractura abierta" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "Un signo clásico del ACV en la escala de Cincinnati es:",
-        options: [
-            { letter: "a", text: "Movimientos respiratorios rápidos" },
-            { letter: "b", text: "Parálisis facial" },
-            { letter: "c", text: "Bradicardia" },
-            { letter: "d", text: "Dolor en pecho" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Qué nivel de conciencia requiere intervención urgente?",
-        options: [
-            { letter: "a", text: "Alerta" },
-            { letter: "b", text: "Responde a la voz" },
-            { letter: "c", text: "Responde al dolor" },
-            { letter: "d", text: "No responde" },
+            { letter: "a", text: "Una convulsión de más de 30 minutos" },
+            { letter: "b", text: "Una convulsión que fue precedida por un aura" },
+            { letter: "c", text: "Múltiples convulsiones con conciencia normal entre cada evento" },
+            { letter: "d", text: "Una convulsión que dura más de 5 minutos o convulsiones repetidas sin recuperación de la conciencia" },
         ],
         correctAnswer: "d",
     },
     {
-        question: "El síncope se define como:",
+        question: "¿Cuál de las siguientes es una causa metabólica de una convulsión?",
         options: [
-            { letter: "a", text: "Desmayo prolongado" },
-            { letter: "b", text: "Paro cardíaco reversible" },
-            { letter: "c", text: "Pérdida transitoria de la conciencia por bajo flujo cerebral" },
-            { letter: "d", text: "Estado epiléptico prolongado" },
+            { letter: "a", text: "Tumor cerebral" },
+            { letter: "b", text: "Traumatismo craneoencefálico" },
+            { letter: "c", text: "Hipoglucemia" },
+            { letter: "d", text: "Absceso cerebral" },
         ],
         correctAnswer: "c",
     },
     {
-        question: "Una de las causas más comunes de convulsiones en pacientes diabéticos es:",
+        question: "Este paciente parece estar sufriendo un EVC y una convulsión. ¿Qué condición se asemeja a un EVC y también puede causar convulsiones?",
         options: [
-            { letter: "a", text: "Hiperglucemia" },
-            { letter: "b", text: "Hipoglucemia" },
-            { letter: "c", text: "Insomnio" },
-            { letter: "d", text: "Estrés emocional" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "Ante un paciente con pérdida súbita de conciencia, el primer paso es:",
-        options: [
-            { letter: "a", text: "Administrar anticonvulsivos" },
-            { letter: "b", text: "Revisar vía aérea y signos vitales" },
-            { letter: "c", text: "Transportarlo de inmediato sin evaluación" },
-            { letter: "d", text: "Administrar oxígeno sin evaluación previa" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "El trauma craneoencefálico (TCE) puede ocasionar:",
-        options: [
-            { letter: "a", text: "Disnea súbita" },
-            { letter: "b", text: "Convulsiones, alteración del nivel de conciencia y vómitos" },
-            { letter: "c", text: "Dolor abdominal severo" },
-            { letter: "d", text: "Cianosis periférica" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "Un paciente con dificultad para hablar, parálisis facial y debilidad en un brazo probablemente sufre:",
-        options: [
-            { letter: "a", text: "Infarto al miocardio" },
-            { letter: "b", text: "Crisis hipertensiva" },
-            { letter: "c", text: "Accidente cerebrovascular" },
-            { letter: "d", text: "Hipotermia severa" },
+            { letter: "a", text: "Meningitis" },
+            { letter: "b", text: "Estado posictal" },
+            { letter: "c", text: "Hipoglucemia" },
+            { letter: "d", text: "Migraña" },
         ],
         correctAnswer: "c",
     },
     {
-        question: "¿Cuál de las siguientes NO es una causa común de convulsión?",
+        question: "¿Cuál es el primer paso en la evaluación de un paciente con sospecha de emergencia neurológica en el entorno prehospitalario?",
         options: [
-            { letter: "a", text: "Hipoglucemia" },
-            { letter: "b", text: "Fiebre en lactantes" },
-            { letter: "c", text: "Hipoxia" },
-            { letter: "d", text: "Hipertensión leve" },
+            { letter: "a", text: "Realizar una tomografía computarizada" },
+            { letter: "b", text: "Establecer la vía aérea y asegurar la ventilación" },
+            { letter: "c", text: "Administrar medicamentos anticonvulsivos" },
+            { letter: "d", text: "Obtener un historial clínico completo" },
+        ],
+        correctAnswer: "b",
+    },
+    {
+        question: "Un paciente con un EVC agudo debe ser transportado preferentemente a un centro médico que tenga la capacidad de ofrecer:",
+        options: [
+            { letter: "a", text: "Fisioterapia a largo plazo" },
+            { letter: "b", text: "Unidad de cuidados paliativos" },
+            { letter: "c", text: "Capacidades de tomografía y consulta neurológica especializada" },
+            { letter: "d", text: "Servicios de rehabilitación ocupacional" },
+        ],
+        correctAnswer: "c",
+    },
+    {
+        question: "¿Cuál de los siguientes no es un signo primario evaluado en la escala prehospitalaria de Cincinnati para EVC?",
+        options: [
+            { letter: "a", text: "Caída facial" },
+            { letter: "b", text: "Debilidad de la pierna" },
+            { letter: "c", text: "Debilidad del brazo" },
+            { letter: "d", text: "Alteración del habla" },
+        ],
+        correctAnswer: "b",
+    },
+    {
+        question: "En un paciente con cefalea severa, ¿cuál de los siguientes hallazgos sugiere una condición potencialmente mortal como meningitis?",
+        options: [
+            { letter: "a", text: "Sensibilidad a la luz" },
+            { letter: "b", text: "Náuseas y vómitos" },
+            { letter: "c", text: "Rigidez de nuca y fiebre" },
+            { letter: "d", text: "Dolor pulsátil en un lado de la cabeza" },
+        ],
+        correctAnswer: "c",
+    },
+    {
+        question: "Después de una convulsión, un paciente se encuentra en un estado de confusión y somnolencia. ¿Cómo se denomina este periodo?",
+        options: [
+            { letter: "a", text: "Periodo tónico" },
+            { letter: "b", text: "Fase clónica" },
+            { letter: "c", text: "Estado de ausencia" },
+            { letter: "d", text: "Estado posictal" },
         ],
         correctAnswer: "d",
-    },
-    {
-        question: "La escala AVDI se utiliza para:",
-        options: [
-            { letter: "a", text: "Medir la presión arterial" },
-            { letter: "b", text: "Evaluar la oxigenación cerebral" },
-            { letter: "c", text: "Valorar el nivel de conciencia" },
-            { letter: "d", text: "Diagnosticar síncope" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "El tratamiento prioritario en un paciente con convulsión activa es:",
-        options: [
-            { letter: "a", text: "Administrar medicamentos IM" },
-            { letter: "b", text: "Controlar vía aérea y proteger de lesiones" },
-            { letter: "c", text: "Aplicar compresas frías" },
-            { letter: "d", text: "Inmovilizar en tabla rígida" },
-        ],
-        correctAnswer: "b",
     },
     {
         question: "El test de glucosa capilar debe realizarse en pacientes con alteración de conciencia porque:",
         options: [
-            { letter: "a", text: "Es obligatorio en todo protocolo" },
-            { letter: "b", text: "Puede haber hipoglucemia no diagnosticada" },
-            { letter: "c", text: "Reduce la necesidad de oxígeno" },
-            { letter: "d", text: "Determina el nivel de estrés del paciente" },
+            { letter: "a", text: "Es obligatorio en todo protocolo." },
+            { letter: "b", text: "Puede haber hipoglucemia no diagnosticada que simule una emergencia neurológica." },
+            { letter: "c", text: "Reduce la necesidad de oxígeno." },
+            { letter: "d", text: "Determina el nivel de estrés del paciente." },
         ],
         correctAnswer: "b",
     },
@@ -224,9 +162,29 @@ export const neurologicasQuestions: Question[] = [
         options: [
             { letter: "a", text: "Hipoglucemia, TCE o ACV" },
             { letter: "b", text: "Broncoaspiración, fiebre o artritis" },
-            { letter: "c", text: "Hipotermia, deshidratación o picaduras" },
-            { letter: "d", text: "Dolor de espalda, fiebre o hiperglucemia" },
+            { letter: "c", text: "Fractura de fémur, apendicitis o otitis" },
+            { letter: "d", text: "Hipertensión controlada, alergias estacionales o gripe común" },
         ],
         correctAnswer: "a",
-    }
+    },
+    {
+        question: "¿Qué tipo de EVC se caracteriza por la ruptura de un vaso sanguíneo en el cerebro?",
+        options: [
+            { letter: "a", text: "EVC isquémico" },
+            { letter: "b", text: "Ataque isquémico transitorio (AIT)" },
+            { letter: "c", text: "EVC hemorrágico" },
+            { letter: "d", text: "Convulsión" },
+        ],
+        correctAnswer: "c",
+    },
+    {
+        question: "¿Cuál de los siguientes es un objetivo clave en el manejo prehospitalario de un paciente con sospecha de EVC?",
+        options: [
+            { letter: "a", text: "Administrar aspirina inmediatamente a todos los pacientes." },
+            { letter: "b", text: "Retrasar el transporte para realizar una evaluación exhaustiva en el lugar." },
+            { letter: "c", text: "Identificar rápidamente los signos y síntomas y transportar a un centro adecuado." },
+            { letter: "d", text: "Inducir el vómito para reducir la presión intracraneal." },
+        ],
+        correctAnswer: "c",
+    },
 ];

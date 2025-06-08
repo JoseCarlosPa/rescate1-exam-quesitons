@@ -2,330 +2,196 @@ import {Question} from "../../../question";
 
 export const faqData = [
     {
-        question: "¿Qué causa el dolor abdominal en emergencias gastrointestinales?",
-        answer: "Puede deberse a inflamación, obstrucción, isquemia o infecciones en órganos digestivos.",
+        question: "¿Qué tipos de dolor abdominal son comunes en emergencias gastrointestinales?",
+        answer: "El dolor abdominal puede ser visceral (difuso y mal localizado, como en distensión), parietal (agudo, localizado, empeora con el movimiento, como en peritonitis), o referido (percibido en un área diferente al origen, por ejemplo, dolor de vesícula en el hombro derecho)."
     },
     {
-        question: "¿Qué se debe evitar hacer con un paciente con dolor abdominal?",
-        answer: "Evitar dar líquidos, alimentos o medicamentos sin indicación médica.",
+        question: "¿Cuáles son las causas más frecuentes de hemorragia gastrointestinal superior?",
+        answer: "Las causas comunes incluyen úlceras pépticas, várices esofágicas (especialmente en pacientes con enfermedad hepática), esofagitis, y desgarros de Mallory-Weiss (debido a vómitos severos)."
     },
     {
-        question: "¿Qué puede indicar la presencia de sangre en el vómito (hematemesis)?",
-        answer: "Puede indicar una hemorragia gastrointestinal alta, como úlceras o varices esofágicas.",
+        question: "¿Cómo se manifiesta una hemorragia gastrointestinal inferior?",
+        answer: "La hemorragia gastrointestinal inferior se puede manifestar como hematoquecia (sangre roja brillante o marronácea en las heces) o melena (heces negras, alquitranadas y malolientes, si el sangrado es lento o abundante desde el colon derecho)."
     },
     {
-        question: "¿Qué se evalúa en el examen físico del abdomen?",
-        answer: "Se evalúan signos de distensión, sensibilidad localizada, rigidez y ruidos intestinales.",
+        question: "¿Qué síntomas sugieren una peritonitis?",
+        answer: "La peritonitis se caracteriza por dolor abdominal severo y generalizado, 'abdomen en tabla' (rigidez abdominal), náuseas, vómitos, fiebre y signos de shock. Es una emergencia médica grave."
     },
     {
-        question: "¿Cuál es la prioridad en una emergencia urológica como la retención urinaria?",
-        answer: "Identificar y aliviar el dolor, evaluar función renal y trasladar al hospital.",
+        question: "¿Cuál es el enfoque inicial en un paciente con dolor abdominal agudo?",
+        answer: "El enfoque inicial incluye asegurar la vía aérea, la respiración y la circulación (ABCs), evaluar los signos vitales, realizar una evaluación abdominal enfocada, y considerar el traslado rápido a un centro médico."
     },
     {
-        question: "¿Qué indica la presencia de melena en un paciente?",
-        answer: "Sangrado gastrointestinal, típicamente de origen alto (como estómago o duodeno).",
+        question: "¿Qué es la colecistitis y cómo se presenta?",
+        answer: "La colecistitis es la inflamación de la vesícula biliar, comúnmente causada por cálculos biliares. Se presenta con dolor intenso en el cuadrante superior derecho del abdomen, que puede irradiarse al hombro o espalda, náuseas, vómitos y fiebre."
     },
+    {
+        question: "¿Qué debe evitarse en el manejo prehospitalario de un paciente con dolor abdominal agudo?",
+        answer: "Generalmente, se debe evitar dar cualquier cosa por vía oral (alimentos, líquidos, medicamentos), administrar analgésicos potentes que puedan enmascarar los síntomas, o retrasar el transporte a un hospital."
+    },
+    {
+        question: "¿Qué es la melena y qué implica?",
+        answer: "Melena se refiere a heces negras, alquitranadas y malolientes, resultantes de la digestión de la sangre. Usualmente indica una hemorragia gastrointestinal superior, donde la sangre ha tenido tiempo de ser digerida por las enzimas intestinales."
+    },
+    {
+        question: "¿Qué signos vitales son clave para monitorear en emergencias gastrointestinales graves?",
+        answer: "La frecuencia cardíaca (taquicardia), la presión arterial (hipotensión), la frecuencia respiratoria y el estado de conciencia son cruciales, ya que pueden indicar hipovolemia o shock."
+    },
+    {
+        question: "¿Qué consideraciones especiales hay para pacientes con dispositivos de diálisis peritoneal o hemodiálisis?",
+        answer: "En pacientes con diálisis peritoneal, cualquier signo de infección en el sitio de inserción del catéter o líquido peritoneal turbio es una emergencia. En pacientes con hemodiálisis, se debe tener precaución con el sitio de la fístula o injerto (no tomar PA o venopunción en ese brazo) y estar atentos a desequilibrios electrolíticos."
+    }
 ];
 
 export const gastrointestinalUrologicQuestions: Question[] = [
     {
-        question: "¿Cuál de los siguientes síntomas sugiere una hemorragia gastrointestinal alta?",
+        question: "¿Cuál de los siguientes síntomas es más indicativo de una hemorragia gastrointestinal *inferior*?",
         options: [
-            { letter: "a", text: "Diarrea acuosa" },
-            { letter: "b", text: "Hematuria" },
-            { letter: "c", text: "Hematemesis" },
-            { letter: "d", text: "Dolor en el flanco derecho" },
+            { letter: "a", text: "Vómito en 'posos de café'" },
+            { letter: "b", text: "Melena" },
+            { letter: "c", text: "Hematoquecia" },
+            { letter: "d", text: "Hematemesis" },
         ],
         correctAnswer: "c",
     },
     {
-        question: "Un dolor abdominal súbito, intenso y localizado en la fosa iliaca derecha puede indicar:",
+        question: "Un paciente con dolor abdominal agudo presenta 'abdomen en tabla' a la palpación. Este hallazgo sugiere:",
         options: [
-            { letter: "a", text: "Apendicitis" },
-            { letter: "b", text: "Pancreatitis" },
-            { letter: "c", text: "Colecistitis" },
-            { letter: "d", text: "Gastritis" },
-        ],
-        correctAnswer: "a",
-    },
-    {
-        question: "El tratamiento prehospitalario para un paciente con dolor abdominal incluye:",
-        options: [
-            { letter: "a", text: "Dar líquidos orales" },
-            { letter: "b", text: "Administrar analgésicos" },
-            { letter: "c", text: "Mantener al paciente en posición de confort" },
-            { letter: "d", text: "Aplicar calor en el abdomen" },
+            { letter: "a", text: "Una obstrucción intestinal leve" },
+            { letter: "b", text: "Apéndice inflamado" },
+            { letter: "c", "text": "Peritonitis" },
+            { letter: "d", text: "Una úlcera duodenal" },
         ],
         correctAnswer: "c",
     },
     {
-        question: "¿Cuál es un signo potencial de peritonitis?",
+        question: "Durante la evaluación de un paciente con sospecha de sangrado gastrointestinal, ¿qué signo vital es el último en cambiar significativamente en el escenario de shock compensado?",
         options: [
-            { letter: "a", text: "Vómito con alimentos no digeridos" },
-            { letter: "b", text: "Distensión abdominal con dolor y rigidez" },
-            { letter: "c", text: "Náusea sin dolor" },
-            { letter: "d", text: "Micción frecuente" },
+            { letter: "a", text: "Frecuencia cardíaca" },
+            { letter: "b", text: "Frecuencia respiratoria" },
+            { letter: "c", text: "Presión arterial" },
+            { letter: "d", text: "Llenado capilar" },
+        ],
+        correctAnswer: "c",
+    },
+    {
+        question: "Un paciente con antecedentes de cirrosis hepática presenta vómito con sangre roja brillante. La causa más probable es:",
+        options: [
+            { letter: "a", text: "Gastritis aguda" },
+            { letter: "b", text: "Várices esofágicas rotas" },
+            { letter: "c", text: "Úlcera péptica" },
+            { letter: "d", text: "Diverticulitis" },
         ],
         correctAnswer: "b",
     },
     {
-        question: "La hematuria es un signo que puede indicar:",
+        question: "¿Qué tipo de dolor abdominal es difuso, poco localizado y suele describirse como retortijón o calambre?",
         options: [
-            { letter: "a", text: "Gastritis" },
-            { letter: "b", text: "Urolitiasis o trauma renal" },
-            { letter: "c", text: "Úlcera gástrica" },
+            { letter: "a", text: "Dolor parietal" },
+            { letter: "b", text: "Dolor referido" },
+            { letter: "c", "text": "Dolor visceral" },
+            { letter: "d", text: "Dolor somático" },
+        ],
+        correctAnswer: "c",
+    },
+    {
+        question: "La 'respuesta protectora' o 'guarding' en el examen abdominal de un paciente indica:",
+        options: [
+            { letter: "a", text: "Dolor leve sin relevancia clínica" },
+            { letter: "b", text: "Inflamación o irritación del peritoneo" },
+            { letter: "c", text: "Un calambre muscular inofensivo" },
+            { letter: "d", text: "Una reacción alérgica" },
+        ],
+        correctAnswer: "b",
+    },
+    {
+        question: "Un paciente con dolor intenso en el cuadrante superior derecho que se irradia al hombro derecho, náuseas y vómitos, probablemente presenta:",
+        options: [
+            { letter: "a", text: "Apéndicitis" },
+            { letter: "b", text: "Pancreatitis" },
+            { letter: "c", text: "Colecistitis aguda" },
+            { letter: "d", text: "Perforación de úlcera gástrica" },
+        ],
+        correctAnswer: "c",
+    },
+    {
+        question: "¿Cuál de las siguientes es una prioridad en el manejo prehospitalario de un paciente con sangrado gastrointestinal activo y signos de shock?",
+        options: [
+            { letter: "a", text: "Administrar antieméticos para controlar el vómito" },
+            { letter: "b", text: "Establecer dos vías intravenosas de grueso calibre y administrar líquidos" },
+            { letter: "c", text: "Ofrecer agua al paciente para hidratación" },
+            { letter: "d", text: "Realizar una palpación abdominal profunda para identificar la fuente del sangrado" },
+        ],
+        correctAnswer: "b",
+    },
+    {
+        question: "Un paciente con antecedentes de cálculos renales presenta dolor agudo e intermitente en el flanco que se irradia a la ingle. Este tipo de dolor es característico de:",
+        options: [
+            { letter: "a", text: "Cistitis" },
+            { letter: "b", text: "Pielonefritis" },
+            { letter: "c", "text": "Cólico renal" },
+            { letter: "d", text: "Epididimitis" },
+        ],
+        correctAnswer: "c",
+    },
+    {
+        question: "¿Cuál de las siguientes NO es una complicación común asociada con la diálisis peritoneal?",
+        options: [
+            { letter: "a", text: "Peritonitis" },
+            { letter: "b", text: "Hipotensión ortostática" },
+            { letter: "c", text: "Infección del sitio de salida del catéter" },
+            { letter: "d", text: "Hernias en la pared abdominal" },
+        ],
+        correctAnswer: "b", // La hipotensión ortostática es más común en hemodiálisis por la rápida remoción de fluidos.
+    },
+    {
+        question: "Al evaluar a un paciente con dolor abdominal, la ausencia de ruidos intestinales ('abdomen silencioso') puede indicar:",
+        options: [
+            { letter: "a", text: "Un tracto gastrointestinal saludable" },
+            { letter: "b", text: "Un aumento de la motilidad intestinal" },
+            { letter: "c", "text": "Una obstrucción intestinal o peritonitis" },
             { letter: "d", text: "Estreñimiento" },
         ],
-        correctAnswer: "b",
-    },
-    {
-        question: "El dolor en el flanco con irradiación hacia la ingle es característico de:",
-        options: [
-            { letter: "a", text: "Apendicitis" },
-            { letter: "b", text: "Infección urinaria" },
-            { letter: "c", text: "Cólico renal" },
-            { letter: "d", text: "Gastritis" },
-        ],
         correctAnswer: "c",
     },
     {
-        question: "¿Qué indica una melena (heces negras alquitranadas)?",
+        question: "Un desgarro de Mallory-Weiss es una causa de hemorragia gastrointestinal superior que se asocia típicamente con:",
         options: [
-            { letter: "a", text: "Sangrado digestivo bajo" },
-            { letter: "b", text: "Obstrucción intestinal" },
-            { letter: "c", text: "Sangrado digestivo alto" },
-            { letter: "d", text: "Diarrea infecciosa" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "En el examen físico abdominal, un signo de defensa involuntaria sugiere:",
-        options: [
-            { letter: "a", text: "Inflamación gástrica leve" },
-            { letter: "b", text: "Peritonitis" },
-            { letter: "c", text: "Estreñimiento" },
-            { letter: "d", text: "Obesidad abdominal" },
+            { letter: "a", text: "Uso prolongado de AINEs" },
+            { letter: "b", text: "Esfuerzo intenso al vomitar" },
+            { letter: "c", "text": "Enfermedad de Crohn" },
+            { letter: "d", text: "Infección por H. pylori" },
         ],
         correctAnswer: "b",
     },
     {
-        question: "¿Cuál de los siguientes hallazgos requiere traslado inmediato?",
+        question: "En un paciente con sospecha de pancreatitis, ¿dónde esperaría encontrar el dolor principal?",
         options: [
-            { letter: "a", text: "Distensión leve sin dolor" },
-            { letter: "b", text: "Dolor abdominal intermitente" },
-            { letter: "c", text: "Abdomen rígido con signos de shock" },
-            { letter: "d", text: "Náusea leve sin vómito" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "Una infección del tracto urinario puede producir todos estos síntomas EXCEPTO:",
-        options: [
-            { letter: "a", text: "Disuria" },
-            { letter: "b", text: "Dolor al orinar" },
-            { letter: "c", text: "Hematemesis" },
-            { letter: "d", text: "Fiebre" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Qué órgano se encuentra en el cuadrante superior derecho y puede causar dolor por inflamación?",
-        options: [
-            { letter: "a", text: "Apéndice" },
-            { letter: "b", text: "Colon sigmoide" },
-            { letter: "c", text: "Hígado" },
-            { letter: "d", text: "Vejiga" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "Una masa palpable pulsátil en el abdomen puede sugerir:",
-        options: [
-            { letter: "a", text: "Tumor intestinal" },
-            { letter: "b", text: "Aneurisma de aorta abdominal" },
-            { letter: "c", text: "Litiasis renal" },
-            { letter: "d", text: "Hernia inguinal" },
+            { letter: "a", text: "Cuadrante inferior derecho" },
+            { letter: "b", text: "Epigastrio, a menudo irradiado a la espalda" },
+            { letter: "c", "text": "Cuadrante superior derecho" },
+            { letter: "d", text: "Región suprapúbica" },
         ],
         correctAnswer: "b",
     },
     {
-        question: "¿Qué estructura se afecta en una colecistitis aguda?",
+        question: "¿Cuál de los siguientes NO es un signo de shock hipovolémico en un paciente con sangrado gastrointestinal?",
         options: [
-            { letter: "a", text: "Intestino delgado" },
-            { letter: "b", text: "Páncreas" },
-            { letter: "c", text: "Vesícula biliar" },
-            { letter: "d", text: "Estómago" },
+            { letter: "a", text: "Taquicardia" },
+            { letter: "b", text: "Hipotensión" },
+            { letter: "c", "text": "Piel caliente y rubicunda" },
+            { letter: "d", text: "Alteración del estado mental" },
         ],
         correctAnswer: "c",
     },
     {
-        question: "¿Qué es la disuria?",
+        question: "La retención urinaria aguda se caracteriza por:",
         options: [
-            { letter: "a", text: "Ausencia de orina" },
-            { letter: "b", text: "Dolor al orinar" },
-            { letter: "c", text: "Sangre en la orina" },
-            { letter: "d", text: "Incontinencia urinaria" },
+            { letter: "a", text: "Dolor al orinar y aumento de la frecuencia" },
+            { letter: "b", text: "Incapacidad para vaciar la vejiga y dolor suprapúbico intenso" },
+            { letter: "c", "text": "Aumento significativo de la producción de orina" },
+            { letter: "d", text: "Presencia de sangre en la orina sin dolor" },
         ],
         correctAnswer: "b",
-    },
-    {
-        question: "¿Cuál es el riesgo de aplicar calor en el abdomen de un paciente con dolor no diagnosticado?",
-        options: [
-            { letter: "a", text: "Relaja al paciente excesivamente" },
-            { letter: "b", text: "Puede enmascarar o agravar una condición subyacente" },
-            { letter: "c", text: "No hay riesgo si alivia el dolor" },
-            { letter: "d", text: "Mejora la circulación intestinal" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "La pancreatitis aguda puede causar dolor irradiado a:",
-        options: [
-            { letter: "a", text: "La mandíbula" },
-            { letter: "b", text: "La pierna izquierda" },
-            { letter: "c", text: "La espalda" },
-            { letter: "d", text: "El brazo derecho" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Qué signo puede indicar shock hipovolémico en un paciente con hemorragia digestiva?",
-        options: [
-            { letter: "a", text: "Bradicardia" },
-            { letter: "b", text: "Hipotensión y taquicardia" },
-            { letter: "c", text: "Fiebre" },
-            { letter: "d", text: "Hiperventilación con alcalosis" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "La apendicitis no tratada puede progresar a:",
-        options: [
-            { letter: "a", text: "Hernia umbilical" },
-            { letter: "b", text: "Hematemesis" },
-            { letter: "c", text: "Peritonitis" },
-            { letter: "d", text: "Enfermedad de Crohn" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Cuál es la maniobra más segura al evaluar el abdomen en un paciente con dolor severo?",
-        options: [
-            { letter: "a", text: "Palpación profunda en todos los cuadrantes" },
-            { letter: "b", text: "Palpación ligera progresiva desde el área menos dolorosa" },
-            { letter: "c", text: "Percusión abdominal vigorosa" },
-            { letter: "d", text: "Presión directa sobre el área más dolorosa" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "Una obstrucción intestinal puede manifestarse con:",
-        options: [
-            { letter: "a", text: "Evacuaciones normales" },
-            { letter: "b", text: "Ruidos intestinales normales" },
-            { letter: "c", text: "Vómitos y ausencia de evacuaciones" },
-            { letter: "d", text: "Disuria y hematuria" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Cuál es el signo clásico de apendicitis en etapas tempranas?",
-        options: [
-            { letter: "a", text: "Dolor en la parte inferior izquierda del abdomen" },
-            { letter: "b", text: "Dolor periumbilical que migra a la fosa iliaca derecha" },
-            { letter: "c", text: "Dolor torácico irradiado a brazo izquierdo" },
-            { letter: "d", text: "Hinchazón en el epigastrio" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Cuál de los siguientes síntomas puede indicar pancreatitis aguda?",
-        options: [
-            { letter: "a", text: "Dolor abdominal que mejora después de comer" },
-            { letter: "b", text: "Dolor abdominal superior irradiado a la espalda" },
-            { letter: "c", text: "Dolor que aparece solo durante la micción" },
-            { letter: "d", text: "Náuseas con sangrado rectal" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "La hematoquecia es una manifestación de:",
-        options: [
-            { letter: "a", text: "Hemorragia del tracto gastrointestinal inferior" },
-            { letter: "b", text: "Anemia nutricional" },
-            { letter: "c", text: "Vómito con sangre" },
-            { letter: "d", text: "Obstrucción intestinal" },
-        ],
-        correctAnswer: "a",
-    },
-    {
-        question: "¿Qué tipo de dolor es más común en los cólicos renales?",
-        options: [
-            { letter: "a", text: "Dolor constante y localizado en el epigastrio" },
-            { letter: "b", text: "Dolor sordo en la parte superior del abdomen" },
-            { letter: "c", text: "Dolor intermitente que irradia desde el flanco hacia la ingle" },
-            { letter: "d", text: "Dolor que mejora al cambiar de posición" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Qué indica la presencia de sangre en la orina (hematuria)?",
-        options: [
-            { letter: "a", text: "Es normal en pacientes jóvenes" },
-            { letter: "b", text: "Indica infección del tracto respiratorio" },
-            { letter: "c", text: "Puede indicar trauma renal o cálculo urinario" },
-            { letter: "d", text: "Es señal exclusiva de insuficiencia hepática" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "Un signo de abdomen agudo es:",
-        options: [
-            { letter: "a", text: "Dolor abdominal leve con fiebre baja" },
-            { letter: "b", text: "Rigidez abdominal involuntaria" },
-            { letter: "c", text: "Diarrea autolimitada sin dolor" },
-            { letter: "d", text: "Gas y distensión leve" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Cuál es una causa común de obstrucción intestinal en adultos mayores?",
-        options: [
-            { letter: "a", text: "Cólico renal" },
-            { letter: "b", text: "Hemorroides" },
-            { letter: "c", text: "Adherencias por cirugías previas" },
-            { letter: "d", text: "Infección urinaria" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Qué hallazgo requiere intervención urgente en un paciente con dolor abdominal?",
-        options: [
-            { letter: "a", text: "Vómito sin sangre" },
-            { letter: "b", text: "Hipotensión y piel fría" },
-            { letter: "c", text: "Flatulencia leve" },
-            { letter: "d", text: "Ausencia de fiebre" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "En caso de vómito con sangre roja brillante, se debe sospechar:",
-        options: [
-            { letter: "a", text: "Úlcera gástrica perforada" },
-            { letter: "b", text: "Hemorragia del intestino delgado" },
-            { letter: "c", text: "Hemorragia del tracto gastrointestinal superior" },
-            { letter: "d", text: "Hepatitis crónica" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Cuál es la prioridad en un paciente con signos de shock hipovolémico por hemorragia gastrointestinal?",
-        options: [
-            { letter: "a", text: "Administrar antiácidos" },
-            { letter: "b", text: "Transportar sin realizar intervención" },
-            { letter: "c", text: "Iniciar soporte vital básico y oxígeno suplementario" },
-            { letter: "d", text: "Pedir al paciente que ingiera líquidos" },
-        ],
-        correctAnswer: "c",
-    },
+    }
 ];

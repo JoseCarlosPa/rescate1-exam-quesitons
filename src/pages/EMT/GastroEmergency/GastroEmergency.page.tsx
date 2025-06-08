@@ -7,7 +7,6 @@ import {GiStomach} from "react-icons/gi";
 import {IoReturnDownBack} from "react-icons/io5";
 import {useState} from "react";
 import {MdQuiz} from "react-icons/md";
-import {TbNotebook} from "react-icons/tb";
 import {BsBookHalf} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
 
@@ -52,10 +51,7 @@ export default function GastroEmergency() {
                             <PiChalkboardTeacher className="w-10 h-10 text-orange-500 mb-2" />
                             <p className="text-center font-medium">Presentación</p>
                         </a>
-
-                        
-
-                        <a href="https://www.ems1.com/gastrointestinal-emergencies/"
+                        <a href="https://drive.google.com/file/d/18T_g5GGF53zlUk4dttnYHOVnWVUr577e/view?usp=drive_link"
                            target="_blank"
                            rel="noopener noreferrer"
                            className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
