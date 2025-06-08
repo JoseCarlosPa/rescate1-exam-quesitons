@@ -10,7 +10,7 @@ export default function Main() {
     return (
         <div className="">
             <div
-                className="flex flex-col items-center min-h-screen h-full  justify-center bg-gray-100 pb-12 md:px-0 px-4   p-4 ">
+                className="flex flex-col items-center min-h-screen h-full  justify-center bg-gradient-to-b from-orange-50 to-gray-100 pb-12 md:px-0 px-4   p-4 ">
                 <img src={logo}
                      alt="Logo" className="h-24 w-24 mb-4"/>
                 <p className="text-sm italic text-center">Generación 2025 Rescate 1: Esta plataforma fue hecha por y para los

@@ -50,37 +50,37 @@ function App() {
 
     return (
         <div
-            className="flex flex-col items-center min-h-screen h-full bg-gradient-to-b from-orange-50 to-gray-100 pb-16 md:px-0 p-4 ">
+            className="flex flex-col items-center min-h-screen h-full bg-gradient-to-b from-orange-50 to-gray-100 pb-16 p-4 ">
             <div className="flex flex-col items-center w-full max-w-3xl">
                 <img src={logo}
                      alt="Logo" className="h-28 w-28 mb-2 drop-shadow-lg rounded-full "/>
                 <p className="text-xs italic text-gray-500 mb-1 text-center">Generación 2025 Rescate 1: Esta plataforma fue hecha por y para los alumnos de la clase sábados R1 2025</p>
                 <p className="text-5xl font-extrabold mb-6 flex text-center mt-2 text-orange-500 tracking-tight drop-shadow">TAMP-B</p>
             </div>
-            <div className="grid md:grid-cols-5 grid-cols-2 gap-4 w-full max-w-4xl mb-2 mt-2">
+            <div className="grid md:grid-cols-3 lg:grid-cols-5 grid-cols-2 gap-4 w-full max-w-6xl mb-2 mt-2">
                 <NavLink to={AllRoutes.MAIN}
-                         className="flex items-center justify-center gap-2 bg-white shadow-md rounded-xl p-3 hover:bg-orange-100 border border-orange-200 transition duration-300 ease-in-out focus:ring-2 focus:ring-orange-300 outline-none">
+                         className="flex flex-col items-center justify-center  bg-white shadow-md rounded-xl p-3 hover:bg-orange-100 border border-orange-200 transition duration-300 ease-in-out focus:ring-2 focus:ring-orange-300 outline-none">
                     <IoReturnDownBack className="w-5 h-5 my-auto text-orange-400"  />
                     <p className="text-lg font-medium">Regresar</p>
                 </NavLink>
                 <NavLink to={AllRoutes.GLOSARY}
-                         className="flex items-center justify-center gap-2 bg-white shadow-md rounded-xl p-3 hover:bg-orange-100 border border-orange-200 transition duration-300 ease-in-out focus:ring-2 focus:ring-orange-300 outline-none">
+                         className="flex flex-col  items-center justify-center  bg-white shadow-md rounded-xl p-3 hover:bg-orange-100 border border-orange-200 transition duration-300 ease-in-out focus:ring-2 focus:ring-orange-300 outline-none">
                     <TbListLetters className="w-5 h-5 my-auto text-orange-400"  />
                     <p className="text-lg font-medium">Glosario</p>
                 </NavLink>
                 <button
                     onClick={() => setShowRandomQuestion(!showRandomQuestion)}
-                    className="cursor-pointer flex items-center justify-center gap-2 bg-white shadow-md rounded-xl p-3 hover:bg-orange-100 border border-orange-200 transition duration-300 ease-in-out focus:ring-2 focus:ring-orange-300 outline-none">
+                    className="cursor-pointer flex flex-col items-center justify-center bg-white shadow-md rounded-xl p-3 hover:bg-orange-100 border border-orange-200 transition duration-300 ease-in-out focus:ring-2 focus:ring-orange-300 outline-none">
                     <FaQuestion className="w-4 h-4 my-auto text-orange-400" />
                     <span className="text-lg font-medium">{showRandomQuestion ? 'Cerrar Pregunta aleatoria ' : 'Pregunta aleatoria'}</span>
                 </button>
                 <NavLink to={AllRoutes.STUDY_CASES}
-                         className="flex items-center justify-center gap-2 bg-white shadow-md rounded-xl p-3 hover:bg-orange-100 border border-orange-200 transition duration-300 ease-in-out focus:ring-2 focus:ring-orange-300 outline-none">
+                         className="flex flex-col  items-center justify-center bg-white shadow-md rounded-xl p-3 hover:bg-orange-100 border border-orange-200 transition duration-300 ease-in-out focus:ring-2 focus:ring-orange-300 outline-none">
                     <GoBook className="w-5 h-5 my-auto text-orange-400"  />
                     <p className="text-lg font-medium">Casos de estudio</p>
                 </NavLink>
                 <NavLink to={AllRoutes.ALOGIRTHMS}
-                         className="flex items-center justify-center gap-2 bg-white shadow-md rounded-xl p-3 hover:bg-orange-100 border border-orange-200 transition duration-300 ease-in-out focus:ring-2 focus:ring-orange-300 outline-none">
+                         className="flex flex-col  items-center justify-center bg-white shadow-md rounded-xl p-3 hover:bg-orange-100 border border-orange-200 transition duration-300 ease-in-out focus:ring-2 focus:ring-orange-300 outline-none">
                     <GoWorkflow className="w-5 h-5 my-auto text-orange-400"  />
                     <p className="text-lg font-medium truncate">Algoritmos/Protocolos</p>
                 </NavLink>
@@ -93,7 +93,7 @@ function App() {
 
             {loading ? <AiOutlineLoading3Quarters className="animate-spin h-20 w-20 text-orange-500 mt-8"/> : null}
 
-            <div className="grid md:grid-cols-4 grid-cols-2 gap-6 mt-12 w-full max-w-7xl ">
+            <div className="grid md:grid-cols-3 lg:grid-cols-4 grid-cols-2 gap-6 mt-12 w-full max-w-7xl ">
                 {leactionWithGrades.map((lection) => {
                     return (
                         <NavLink
