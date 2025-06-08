@@ -13,12 +13,14 @@ import {IoReturnDownBack} from "react-icons/io5";
 import {FaQuestion} from "react-icons/fa";
 import {TbListLetters} from "react-icons/tb";
 import {GoBook, GoWorkflow} from "react-icons/go";
+import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
 function App() {
 
     const {user} = useUserContext()
     const [leactionWithGrades, setLeactionWithGrades] = useState<tLection[]>([])
     const [showRandomQuestion, setShowRandomQuestion] = useState<boolean>(false)
+    const [searchTerm, setSearchTerm] = useState<string>("") // Nuevo estado para el término de búsqueda
     const {getUserExams, loading, setLoading} = useApp()
 
     useEffect(() => {
@@ -45,8 +47,13 @@ function App() {
             setLeactionWithGrades(lectionsWithGrades)
         }
         setLoading(false)
-    }, [user?.id])
+    }, [user?.id, getUserExams, setLoading])
 
+
+    // Filtrar lecciones basadas en el término de búsqueda
+    const filteredLections = leactionWithGrades.filter(lection =>
+        lection.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
     return (
         <div
@@ -56,6 +63,18 @@ function App() {
                      alt="Logo" className="h-28 w-28 mb-2 drop-shadow-lg rounded-full "/>
                 <p className="text-xs italic text-gray-500 mb-1 text-center">Generación 2025 Rescate 1: Esta plataforma fue hecha por y para los alumnos de la clase sábados R1 2025</p>
                 <p className="text-5xl font-extrabold mb-6 flex text-center mt-2 text-orange-500 tracking-tight drop-shadow">TAMP-B</p>
+            </div>
+            <div className="relative w-full max-w-md mb-6 mt-8">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <MagnifyingGlassIcon className="h-5 w-5 text-gray-400" />
+                </div>
+                <input
+                    type="text"
+                    placeholder="Buscar lección..."
+                    className="w-full p-3 pl-10 border border-orange-300 rounded-xl shadow-sm focus:ring-2 focus:ring-orange-400 outline-none transition duration-300 ease-in-out"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                />
             </div>
             <div className="grid md:grid-cols-3 lg:grid-cols-5 grid-cols-2 gap-4 w-full max-w-6xl mb-2 mt-2">
                 <NavLink to={AllRoutes.MAIN}
@@ -93,8 +112,9 @@ function App() {
 
             {loading ? <AiOutlineLoading3Quarters className="animate-spin h-20 w-20 text-orange-500 mt-8"/> : null}
 
+
             <div className="grid md:grid-cols-3 lg:grid-cols-4 grid-cols-2 gap-6 mt-12 w-full max-w-7xl ">
-                {leactionWithGrades.map((lection) => {
+                {filteredLections.map((lection) => { // Usar filteredLections en lugar de leactionWithGrades
                     return (
                         <NavLink
                             key={lection.id}
