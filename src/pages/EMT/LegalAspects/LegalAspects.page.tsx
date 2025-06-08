@@ -8,7 +8,6 @@ import {IoReturnDownBack} from "react-icons/io5";
 import {useState} from "react";
 import {MdQuiz} from "react-icons/md";
 import {PiChalkboardTeacher} from "react-icons/pi";
-import {TbNotebook} from "react-icons/tb";
 import {BsBookHalf} from "react-icons/bs";
 
 export default function LegalAspects() {
@@ -17,9 +16,8 @@ export default function LegalAspects() {
 
     return (
         <div className="min-h-screen bg-gray-50">
-            <div className="flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-white pb-12 md:px-0 px-4 p-4">
+            <div className="flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-white pb-12 px-4 p-4">
                 <div className="w-full max-w-7xl">
-                    {/* Cabecera */}
                     <header className="mb-8 text-center">
                         <div className="flex justify-center">
                             <IoMdBriefcase className="w-24 h-24 mb-1 text-orange-500" />
@@ -36,8 +34,7 @@ export default function LegalAspects() {
                         </div>
                     </header>
 
-                    {/* Menú rápido de recursos */}
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 max-w-4xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center mb-8 mx-auto max-w-5xl ">
                         <NavLink
                             to="/legal/exam"
                             className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
@@ -51,18 +48,12 @@ export default function LegalAspects() {
                             <PiChalkboardTeacher className="w-10 h-10 text-orange-500 mb-2" />
                             <p className="text-center font-medium">Presentación</p>
                         </a>
-                        <button
-                            onClick={() => setShowQuickQuiz(!showQuickQuiz)}
-                            className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
-                            <TbNotebook className="w-10 h-10 text-orange-500 mb-2" />
-                            <p className="text-center font-medium">Quiz Rápido</p>
-                        </button>
-                        <a href="https://www.ems1.com/ems-legal/"
+                        <a href="https://drive.google.com/file/d/185bZdYya7aQP9kIJvV-0xlBTRGgmjpoi/view?usp=drive_link"
                            target="_blank"
                            rel="noopener noreferrer"
                            className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
                             <BsBookHalf className="w-10 h-10 text-orange-500 mb-2" />
-                            <p className="text-center font-medium">Recursos EMS1</p>
+                            <p className="text-center font-medium">Capitulo</p>
                         </a>
                     </div>
 
@@ -78,7 +69,6 @@ export default function LegalAspects() {
                         </div>
                     )}
 
-                    {/* Navegación por pestañas */}
                     <div className="mb-6 border-b border-gray-200 max-w-5xl mx-auto">
                         <nav className="flex space-x-2 overflow-x-auto">
                             <button
@@ -120,7 +110,6 @@ export default function LegalAspects() {
                         </nav>
                     </div>
 
-                    {/* Contenido principal basado en pestañas */}
                     <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-sm p-6 mb-8">
                         {activeTab === 'overview' && (
                             <div className="space-y-6">
@@ -240,7 +229,6 @@ export default function LegalAspects() {
                         )}
                     </div>
 
-                    {/* FAQ Section */}
                     <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm mb-8">
                         <h2 className="text-3xl font-bold mb-6 text-center">Preguntas Frecuentes</h2>
                         <div className="space-y-4">
@@ -266,7 +254,6 @@ export default function LegalAspects() {
                         </div>
                     </section>
 
-                    {/* Referencias y Recursos */}
                     <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">
                         <h2 className="text-2xl font-bold mb-4">Referencias y recursos adicionales</h2>
                         <div className="space-y-4">
