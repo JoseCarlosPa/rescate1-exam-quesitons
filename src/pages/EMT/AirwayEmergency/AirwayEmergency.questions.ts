@@ -3,318 +3,56 @@ import {Question} from "../../../question";
 export const faqData = [
     {
         question: "¿Qué es una emergencia respiratoria?",
-        answer: "Es una situación donde el paciente no respira adecuadamente o no obtiene suficiente oxígeno.",
+        answer: "Es una situación donde el paciente no respira adecuadamente o no obtiene suficiente oxígeno para satisfacer las necesidades de su cuerpo.",
     },
     {
-        question: "¿Qué signos indican una obstrucción de vía aérea?",
-        answer: "Ronquidos, estridor, sibilancias, tos débil o ausencia de sonido respiratorio.",
+        question: "¿Qué signos clave indican una obstrucción de la vía aérea en un paciente consciente?",
+        answer: "Ronquidos, estridor (sonido agudo al inhalar), sibilancias (silbido al exhalar), tos débil o ausente, dificultad para hablar y cianosis (coloración azulada de piel/mucosas).",
     },
     {
-        question: "¿Cuál es la primera acción ante una obstrucción completa en paciente consciente?",
-        answer: "Realizar compresiones abdominales (maniobra de Heimlich).",
+        question: "¿Cuál es la primera acción ante una obstrucción completa de la vía aérea en un paciente consciente y adulto?",
+        answer: "Realizar compresiones abdominales, comúnmente conocidas como la maniobra de Heimlich, de manera enérgica y repetitiva hasta que el objeto sea expulsado o el paciente pierda el conocimiento.",
     },
     {
-        question: "¿Qué significa EPOC?",
-        answer: "Enfermedad Pulmonar Obstructiva Crónica.",
+        question: "¿Qué significa EPOC y cuáles son sus características principales?",
+        answer: "EPOC significa Enfermedad Pulmonar Obstructiva Crónica. Se caracteriza por una obstrucción persistente del flujo de aire en los pulmones, generalmente progresiva y asociada a una respuesta inflamatoria crónica de las vías respiratorias y el parénquima pulmonar, causada por la exposición significativa a partículas o gases nocivos (ej., tabaquismo).",
     },
     {
-        question: "¿Qué equipo puede utilizar el TAMP para asistir la ventilación?",
-        answer: "Bolsa-válvula-mascarilla (BVM) con reservorio de oxígeno.",
+        question: "¿Qué equipo puede utilizar el Técnico en Atención Médica Prehospitalaria (TAMP) para asistir la ventilación?",
+        answer: "Principalmente, la bolsa-válvula-mascarilla (BVM) con reservorio de oxígeno. Otros equipos incluyen cánulas orofaríngeas (OPA) o nasofaríngeas (NPA) para mantener la vía aérea permeable.",
     },
     {
         question: "¿Cuándo se administra oxígeno a alto flujo?",
-        answer: "En casos de dificultad respiratoria severa, trauma o hipoxia evidente.",
+        answer: "Se administra oxígeno a alto flujo en casos de dificultad respiratoria severa, hipoxia evidente (SpO2 < 94%), trauma mayor, shock o cualquier condición que comprometa gravemente la oxigenación del paciente.",
+    },
+    {
+        question: "¿Cuáles son las diferencias clave entre el asma y la EPOC en cuanto a su fisiopatología?",
+        answer: "El asma es una enfermedad inflamatoria crónica de las vías respiratorias caracterizada por hiperreactividad bronquial y obstrucción reversible del flujo de aire. La EPOC implica una obstrucción progresiva y generalmente irreversible del flujo de aire, con destrucción del parénquima pulmonar (enfisema) y/o inflamación crónica de los bronquios (bronquitis crónica).",
+    },
+    {
+        question: "¿Qué consideraciones especiales se deben tener al evaluar y manejar a pacientes geriátricos con dificultad respiratoria?",
+        answer: "Los pacientes geriátricos pueden presentar síntomas atípicos, tener múltiples comorbilidades que complican el cuadro, una menor reserva fisiológica y una respuesta disminuida a hipoxia. La evaluación debe ser minuciosa y el manejo cuidadoso, prestando atención a la hidratación y a los efectos secundarios de los medicamentos.",
     },
 ];
 
 export const respiratoryEmergenciesExam: Question[] = [
     {
-        question: "¿Cuál es una causa común de dificultad respiratoria en adultos mayores?",
+        question: "¿Cuál de las siguientes es una característica de la respiración adecuada en un adulto?",
         options: [
-            { letter: "a", text: "Asma" },
-            { letter: "b", text: "Enfisema" },
-            { letter: "c", text: "Bronquitis crónica" },
-            { letter: "d", text: "Todas las anteriores" },
-        ],
-        correctAnswer: "d",
-    },
-    {
-        question: "¿Qué signo es indicativo de una obstrucción parcial de la vía aérea?",
-        options: [
-            { letter: "a", text: "Silencio torácico" },
-            { letter: "b", text: "Ronquidos" },
-            { letter: "c", text: "Cianosis" },
-            { letter: "d", text: "Ausencia de esfuerzo respiratorio" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "Un paciente con sibilancias audibles y antecedentes de asma probablemente necesita:",
-        options: [
-            { letter: "a", text: "Oxígeno de bajo flujo" },
-            { letter: "b", text: "Ventilación con bolsa-válvula-mascarilla" },
-            { letter: "c", text: "Un broncodilatador" },
-            { letter: "d", text: "Intubación inmediata" },
+            { letter: "a", text: "Uso de músculos accesorios al respirar" },
+            { letter: "b", text: "Frecuencia respiratoria de 24 respiraciones/min" },
+            { letter: "c", text: "Sonidos respiratorios claros y uniformes" },
+            { letter: "d", text: "Respiración con labios fruncidos" },
         ],
         correctAnswer: "c",
     },
     {
-        question: "La hipoxia es una condición en la que:",
-        options: [
-            { letter: "a", text: "Hay exceso de dióxido de carbono en sangre" },
-            { letter: "b", text: "No hay suficiente oxígeno en los tejidos" },
-            { letter: "c", text: "Los pulmones colapsan por completo" },
-            { letter: "d", text: "El diafragma se paraliza" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "El tratamiento inmediato para una persona con obstrucción completa de la vía aérea consciente es:",
-        options: [
-            { letter: "a", text: "Ventilación con bolsa-válvula" },
-            { letter: "b", text: "Compresiones torácicas" },
-            { letter: "c", text: "Maniobras de desobstrucción (compresiones abdominales)" },
-            { letter: "d", text: "Administración de oxígeno" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Cuál es el principal estímulo respiratorio en un paciente con EPOC avanzado?",
-        options: [
-            { letter: "a", text: "Altos niveles de oxígeno" },
-            { letter: "b", text: "Niveles bajos de oxígeno (hipoxia)" },
-            { letter: "c", text: "Niveles elevados de CO2" },
-            { letter: "d", text: "Dolor torácico" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "Un sonido agudo al inspirar, generalmente causado por una obstrucción en la vía aérea superior, se llama:",
-        options: [
-            { letter: "a", text: "Estridor" },
-            { letter: "b", text: "Ronquido" },
-            { letter: "c", text: "Sibilancia" },
-            { letter: "d", text: "Crepitación" },
-        ],
-        correctAnswer: "a",
-    },
-    {
-        question: "¿Cuál es el nivel mínimo aceptable de saturación de oxígeno en un adulto sano?",
-        options: [
-            { letter: "a", text: "80%" },
-            { letter: "b", text: "85%" },
-            { letter: "c", text: "90%" },
-            { letter: "d", text: "95%" },
-        ],
-        correctAnswer: "d",
-    },
-    {
-        question: "El tratamiento con BVM está indicado cuando:",
-        options: [
-            { letter: "a", text: "El paciente está en paro cardíaco" },
-            { letter: "b", text: "Hay respiración agónica o inefectiva" },
-            { letter: "c", text: "El paciente no responde y tiene mala ventilación" },
-            { letter: "d", text: "Todas las anteriores" },
-        ],
-        correctAnswer: "d",
-    },
-    {
-        question: "La administración de oxígeno en pacientes con sospecha de infarto agudo al miocardio con saturación <94% debe ser:",
-        options: [
-            { letter: "a", text: "Inmediata y a alto flujo" },
-            { letter: "b", text: "Solo si tiene disnea o hipoxia evidente" },
-            { letter: "c", text: "Siempre con cánula nasal" },
-            { letter: "d", text: "Nunca indicada" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Cuál de los siguientes síntomas es típico de un edema agudo de pulmón?",
-        options: [
-            { letter: "a", text: "Sibilancias" },
-            { letter: "b", text: "Esputo rosado espumoso" },
-            { letter: "c", text: "Dolor torácico punzante" },
-            { letter: "d", text: "Fiebre" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "La obstrucción respiratoria en un niño puede deberse más comúnmente a:",
-        options: [
-            { letter: "a", text: "Asma" },
-            { letter: "b", text: "Atragantamiento con cuerpo extraño" },
-            { letter: "c", text: "Neumonía" },
-            { letter: "d", text: "Trauma craneal" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "Un paciente que solo emite sonidos guturales y no puede hablar probablemente tiene:",
-        options: [
-            { letter: "a", text: "Vía aérea permeable" },
-            { letter: "b", text: "Ansiedad leve" },
-            { letter: "c", text: "Obstrucción parcial o completa de la vía aérea" },
-            { letter: "d", text: "Crisis epiléptica" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "El uso de músculos accesorios al respirar indica:",
-        options: [
-            { letter: "a", text: "Respiración normal" },
-            { letter: "b", text: "Fatiga muscular" },
-            { letter: "c", text: "Dificultad respiratoria" },
-            { letter: "d", text: "Buen esfuerzo respiratorio" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Qué dispositivo se recomienda para administrar oxígeno en un paciente con disnea moderada y saturación de 89%?",
-        options: [
-            { letter: "a", text: "Cánula nasal a 2 L/min" },
-            { letter: "b", text: "Mascarilla sin reinhalación a 15 L/min" },
-            { letter: "c", text: "Mascarilla simple a 6 L/min" },
-            { letter: "d", text: "Ninguno, se observa solamente" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "Una causa de respiración rápida (taquipnea) puede ser:",
-        options: [
-            { letter: "a", text: "Fiebre" },
-            { letter: "b", text: "Acidosis metabólica" },
-            { letter: "c", text: "Ansiedad" },
-            { letter: "d", text: "Todas las anteriores" },
-        ],
-        correctAnswer: "d",
-    },
-    {
-        question: "¿Qué patología puede causar disminución unilateral del murmullo vesicular?",
-        options: [
-            { letter: "a", text: "Asma" },
-            { letter: "b", text: "Neumotórax" },
-            { letter: "c", text: "Edema pulmonar" },
-            { letter: "d", text: "Bronquitis crónica" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "Un paciente en paro respiratorio necesita:",
-        options: [
-            { letter: "a", text: "Oxígeno suplementario" },
-            { letter: "b", text: "Ventilación asistida inmediata" },
-            { letter: "c", text: "Reanimación cardiopulmonar sin ventilación" },
-            { letter: "d", text: "Evaluación con esfigmomanómetro" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Qué condición respiratoria se asocia frecuentemente con el uso de inhaladores broncodilatadores?",
-        options: [
-            { letter: "a", text: "Neumonía" },
-            { letter: "b", text: "Asma" },
-            { letter: "c", text: "Tuberculosis" },
-            { letter: "d", text: "Neumotórax" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "El estridor es más común en:",
-        options: [
-            { letter: "a", text: "Obstrucción de vía aérea inferior" },
-            { letter: "b", text: "Obstrucción de vía aérea superior" },
-            { letter: "c", text: "Neumonía avanzada" },
-            { letter: "d", text: "Asma severa" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "Un signo de insuficiencia respiratoria inminente en un niño es:",
-        options: [
-            { letter: "a", text: "Retracciones intercostales leves" },
-            { letter: "b", text: "Taquipnea leve" },
-            { letter: "c", text: "Bradipnea y letargo" },
-            { letter: "d", text: "Cianosis distal leve" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Cuál es la mejor posición para un paciente consciente con disnea severa?",
-        options: [
-            { letter: "a", text: "Decúbito supino" },
-            { letter: "b", text: "Decúbito lateral izquierdo" },
-            { letter: "c", text: "Posición de Fowler o semi-Fowler" },
-            { letter: "d", text: "Trendelemburg" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Qué herramienta ayuda a evaluar la oxigenación de un paciente en forma no invasiva?",
-        options: [
-            { letter: "a", text: "Glucómetro" },
-            { letter: "b", text: "Pulsioxímetro" },
-            { letter: "c", text: "Esfigmomanómetro" },
-            { letter: "d", text: "Electrocardiograma" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "La dificultad respiratoria súbita con dolor torácico y disminución unilateral de ruidos puede ser indicativa de:",
-        options: [
-            { letter: "a", text: "Edema pulmonar" },
-            { letter: "b", text: "Neumotórax espontáneo" },
-            { letter: "c", text: "Asma leve" },
-            { letter: "d", text: "Hipoglucemia" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "La cianosis peribucal indica:",
-        options: [
-            { letter: "a", text: "Buena perfusión" },
-            { letter: "b", text: "Hipoxia significativa" },
-            { letter: "c", text: "Temperatura corporal elevada" },
-            { letter: "d", text: "Hiperglucemia" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Qué acción debes tomar primero ante un paciente consciente con obstrucción grave de la vía aérea?",
-        options: [
-            { letter: "a", text: "Administrar respiraciones de rescate" },
-            { letter: "b", text: "Aplicar compresiones torácicas" },
-            { letter: "c", text: "Realizar maniobras de desobstrucción (compresiones abdominales)" },
-            { letter: "d", text: "Colocar al paciente en posición lateral" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Cuál de los siguientes signos indica una obstrucción completa de la vía aérea en un adulto?",
-        options: [
-            { letter: "a", text: "El paciente tose enérgicamente" },
-            { letter: "b", text: "Produce sonidos sibilantes" },
-            { letter: "c", text: "Está cianótico y no puede hablar" },
-            { letter: "d", text: "Respira con dificultad leve" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "El sonido de burbujeo o gorgoteo al respirar puede deberse a:",
-        options: [
-            { letter: "a", text: "Aire atrapado en pleura" },
-            { letter: "b", text: "Líquidos o secreciones en la vía aérea" },
-            { letter: "c", text: "Espasmo bronquial" },
-            { letter: "d", text: "Contracción del diafragma" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "Un paciente con respiraciones rápidas y superficiales probablemente presenta:",
+        question: "Un paciente presenta cianosis perioral y un esfuerzo respiratorio notable. Estos son signos de:",
         options: [
             { letter: "a", text: "Ventilación adecuada" },
             { letter: "b", text: "Hiperventilación efectiva" },
             { letter: "c", text: "Ventilación ineficaz" },
-            { letter: "d", text: "Paro respiratorio" },
+            { letter: "d", text: "Recuperación de la dificultad respiratoria" },
         ],
         correctAnswer: "c",
     },
@@ -323,9 +61,129 @@ export const respiratoryEmergenciesExam: Question[] = [
         options: [
             { letter: "a", text: "Detectar signos de intoxicación" },
             { letter: "b", text: "Determinar la necesidad de inmovilización espinal" },
-            { letter: "c", text: "Identificar problemas que comprometan la oxigenación y ventilación" },
-            { letter: "d", text: "Calcular el índice de masa corporal del paciente" },
+            { letter: "c", text: "Identificar problemas que comprometen la vida inmediatamente y tratarlos" },
+            { letter: "d", text: "Establecer un diagnóstico definitivo de la enfermedad subyacente" },
         ],
         correctAnswer: "c",
-    }
+    },
+    {
+        question: "El sonido de burbujeo o gorgoteo al respirar (roncus) puede deberse a:",
+        options: [
+            { letter: "a", text: "Aire atrapado en el espacio pleural" },
+            { letter: "b", text: "Líquidos o secreciones en la vía aérea superior o grandes bronquios" },
+            { letter: "c", text: "Espasmo bronquial de las vías aéreas pequeñas" },
+            { letter: "d", text: "Contracción excesiva del diafragma" },
+        ],
+        correctAnswer: "b",
+    },
+    {
+        question: "Un paciente asmático presenta sibilancias audibles y dificultad para hablar en frases completas. ¿Qué indica este hallazgo?",
+        options: [
+            { letter: "a", text: "El asma está bien controlada." },
+            { letter: "b", text: "Hay una acumulación de líquido en los alvéolos." },
+            { letter: "c", text: "Indica un estrechamiento significativo de las vías aéreas." },
+            { letter: "d", text: "Se debe a una infección viral leve." },
+        ],
+        correctAnswer: "c",
+    },
+    {
+        question: "¿Cuál de las siguientes condiciones es MENOS probable que cause sibilancias?",
+        options: [
+            { letter: "a", text: "Bronquitis" },
+            { letter: "b", text: "Enfisema" },
+            { letter: "c", text: "Epiglotitis" },
+            { letter: "d", text: "Asma" },
+        ],
+        correctAnswer: "c",
+    },
+    {
+        question: "Durante la administración de albuterol nebulizado, ¿cuál de los siguientes NO es un efecto secundario esperado?",
+        options: [
+            { letter: "a", text: "Aumento de la frecuencia cardíaca" },
+            { letter: "b", text: "Nerviosismo" },
+            { letter: "c", text: "Bradicardia severa" },
+            { letter: "d", text: "Temblores musculares" },
+        ],
+        correctAnswer: "c",
+    },
+    {
+        question: "Un paciente con EPOC presenta una exacerbación. Además de la dificultad respiratoria, ¿cuál es un signo común en estos pacientes debido a la retención crónica de CO2?",
+        options: [
+            { letter: "a", text: "Piel seca y caliente" },
+            { letter: "b", text: "Distensión venosa yugular" },
+            { letter: "c", text: "Dedos en palillo de tambor (acropaquia)" },
+            { letter: "d", text: "Respiración de Cheyne-Stokes" },
+        ],
+        correctAnswer: "c",
+    },
+    {
+        question: "En un paciente con posible edema pulmonar, ¿qué sonido respiratorio esperaría escuchar y cuál es su causa?",
+        options: [
+            { letter: "a", text: "Sibilancias, por espasmo bronquial" },
+            { letter: "b", text: "Estridor, por obstrucción de vía aérea superior" },
+            { letter: "c", text: "Crepitantes (estertores), por líquido en los alvéolos" },
+            { letter: "d", text: "Ronquidos, por relajación de la base de la lengua" },
+        ],
+        correctAnswer: "c",
+    },
+    {
+        question: "¿Cuál es la velocidad de flujo de oxígeno apropiada para un paciente con dificultad respiratoria severa que necesita alto flujo?",
+        options: [
+            { letter: "a", text: "2 L/min por cánula nasal" },
+            { letter: "b", text: "4 L/min por mascarilla simple" },
+            { letter: "c", "text": "10-15 L/min por mascarilla con reservorio no recirculante" },
+            { letter: "d", text: "6 L/min por cánula nasal" },
+        ],
+        correctAnswer: "c",
+    },
+    {
+        question: "Cuando se evalúa a un paciente con tos persistente y producción de esputo, ¿qué condición se debe considerar especialmente si hay antecedentes de tabaquismo crónico?",
+        options: [
+            { letter: "a", text: "Neumonía aguda" },
+            { letter: "b", text: "Asma bronquial" },
+            { letter: "c", text: "Bronquitis crónica (parte de EPOC)" },
+            { letter: "d", text: "Laringitis" },
+        ],
+        correctAnswer: "c",
+    },
+    {
+        question: "¿Cuál de las siguientes NO es una medida de manejo inicial para un paciente con dificultad respiratoria aguda?",
+        options: [
+            { letter: "a", text: "Asegurar una vía aérea permeable" },
+            { letter: "b", text: "Administrar oxígeno suplementario" },
+            { letter: "c", text: "Obtener un historial médico completo detallado antes de cualquier intervención" },
+            { letter: "d", text: "Posicionar al paciente para facilitar la respiración" },
+        ],
+        correctAnswer: "c",
+    },
+    {
+        question: "La tos perruna (tos 'de perro') y el estridor inspiratorio en un niño son signos clásicos de:",
+        options: [
+            { letter: "a", text: "Asma aguda" },
+            { letter: "b", text: "Bronquiolitis" },
+            { letter: "c", text: "Crup (laringotraqueobronquitis)" },
+            { letter: "d", text: "Neumonía bacteriana" },
+        ],
+        correctAnswer: "c",
+    },
+    {
+        question: "¿Cuál de las siguientes NO es una complicación potencial de la intubación endotraqueal?",
+        options: [
+            { letter: "a", text: "Intubación esofágica" },
+            { letter: "b", text: "Trauma dental o de las vías aéreas" },
+            { letter: "c", text: "Hipocapnia severa" },
+            { letter: "d", text: "Barotrauma pulmonar" },
+        ],
+        correctAnswer: "c",
+    },
+    {
+        question: "En un paciente con neumotórax espontáneo, ¿qué hallazgos esperaría encontrar en la evaluación primaria?",
+        options: [
+            { letter: "a", text: "Sonidos pulmonares aumentados bilateralmente" },
+            { letter: "b", text: "Desviación traqueal hacia el lado afectado" },
+            { letter: "c", text: "Dolor torácico súbito y disnea, con disminución o ausencia de ruidos pulmonares en el lado afectado" },
+            { letter: "d", text: "Crepitantes difusos en ambos campos pulmonares" },
+        ],
+        correctAnswer: "c",
+    },
 ];

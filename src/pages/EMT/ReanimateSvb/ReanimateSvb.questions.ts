@@ -2,334 +2,162 @@ import {Question} from "../../../question";
 
 export const faqData = [
     {
-        question: "¿Qué es el SVB?",
-        answer: "Son maniobras básicas para mantener circulación y oxigenación en pacientes en paro cardiorrespiratorio.",
+        question: "¿Qué es el SVB (Soporte Vital Básico)?",
+        answer: "El SVB se refiere a las acciones y maniobras iniciales que se realizan para mantener la vida de una persona en situaciones de emergencia médica, como un paro cardíaco o respiratorio. Se enfoca en la reanimación cardiopulmonar (RCP) y el uso temprano de un desfibrilador externo automático (DEA), sin necesidad de equipos invasivos."
     },
     {
-        question: "¿Qué componentes integran la cadena de supervivencia?",
-        answer: "Reconocimiento temprano, RCP inmediata, desfibrilación temprana, soporte avanzado y cuidados post-paro.",
+        question: "¿Cuáles son los componentes clave de la Cadena de Supervivencia de la AHA (American Heart Association)?",
+        answer: "La Cadena de Supervivencia para adultos fuera del hospital consta de cinco eslabones: 1) Reconocimiento inmediato del paro cardíaco y activación del sistema de respuesta a emergencias, 2) RCP temprana de alta calidad, 3) Desfibrilación rápida, 4) Servicios de emergencias médicas avanzados y transporte, y 5) Cuidados post-paro cardíaco integrados."
     },
     {
-        question: "¿Qué profundidad deben tener las compresiones en un adulto durante RCP?",
-        answer: "Al menos 5 cm.",
+        question: "¿Cuál es la profundidad y frecuencia recomendada para las compresiones torácicas en RCP en adultos?",
+        answer: "Las compresiones torácicas en adultos deben tener una profundidad de al menos 5 cm (2 pulgadas) y no más de 6 cm (2.4 pulgadas). La frecuencia ideal es de 100 a 120 compresiones por minuto."
     },
     {
-        question: "¿Cuál es la frecuencia ideal de compresiones en RCP en adultos?",
-        answer: "100 a 120 compresiones por minuto.",
+        question: "¿Por qué es crucial minimizar las interrupciones durante las compresiones torácicas?",
+        answer: "Minimizar las interrupciones en las compresiones torácicas es fundamental para mantener una perfusión adecuada al cerebro y al corazón. Cada interrupción reduce la presión de perfusión coronaria, lo que disminuye la probabilidad de éxito de la reanimación."
     },
     {
-        question: "¿Qué hacer primero al usar un DEA?",
-        answer: "Encenderlo y seguir las instrucciones de voz.",
+        question: "¿Cuándo se debe usar un Desfibrilador Externo Automático (DEA)?",
+        answer: "Un DEA debe usarse tan pronto como esté disponible en un paciente que se encuentre en paro cardíaco (inconsciente, sin respiración normal y sin pulso). La desfibrilación temprana es clave para revertir ritmos cardíacos letales como la fibrilación ventricular."
     },
     {
-        question: "¿Por qué es importante minimizar interrupciones en las compresiones?",
-        answer: "Para mantener la perfusión coronaria y cerebral.",
+        question: "¿Cuál es la técnica preferida para abrir la vía aérea en un paciente adulto con sospecha de trauma cervical?",
+        answer: "En un paciente adulto con sospecha de lesión en la columna cervical, la técnica preferida para abrir la vía aérea es la tracción mandibular (jaw thrust). Esta maniobra permite abrir la vía aérea con un movimiento mínimo del cuello."
     },
     {
-        question: "¿Qué prioridad tiene el uso del DEA en el paro súbito?",
-        answer: "Uso tan pronto como esté disponible.",
+        question: "¿Cuál es la relación compresión-ventilación para RCP de un solo reanimador en un adulto?",
+        answer: "La relación compresión-ventilación para RCP de un solo reanimador en un adulto es de 30 compresiones por cada 2 ventilaciones."
+    },
+    {
+        question: "¿Qué se debe hacer si el pecho del paciente está mojado antes de aplicar los parches del DEA?",
+        answer: "Si el pecho del paciente está mojado, debe secarse rápidamente antes de colocar los parches del DEA para asegurar una buena conductividad eléctrica y la adherencia de los parches."
+    },
+    {
+        question: "¿Qué es la posición de recuperación y cuándo se utiliza?",
+        answer: "La posición de recuperación se utiliza para pacientes inconscientes que respiran normalmente y tienen pulso. Ayuda a mantener la vía aérea permeable y previene la aspiración de vómito. Se debe colocar al paciente de lado, con la cabeza apoyada en un brazo y una pierna flexionada para mayor estabilidad."
     },
 ];
 
 export const svbQuestions: Question[] = [
     {
-        question: "¿Qué significa SVB?",
+        question: "¿Cuál es la principal diferencia entre el Soporte Vital Básico (SVB) y el Soporte Vital Avanzado (SVA)?",
         options: [
-            { letter: "a", text: "Sistema Vital Básico" },
-            { letter: "b", text: "Soporte Vital Básico" },
-            { letter: "c", text: "Soporte Vascular Básico" },
-            { letter: "d", text: "Salud Vital Básica" },
+            { letter: "a", text: "El SVB utiliza medicamentos inyectables, mientras que el SVA no." },
+            { letter: "b", text: "El SVB se enfoca en maniobras no invasivas, mientras que el SVA incluye procedimientos invasivos y farmacología." },
+            { letter: "c", text: "El SVB solo es realizado por personal médico, el SVA por paramédicos." },
+            { letter: "d", text: "El SVA se realiza siempre antes del SVB." },
         ],
         correctAnswer: "b",
     },
     {
-        question: "¿Cuál es la primera acción en la cadena de supervivencia?",
+        question: "¿Cuál de los siguientes es el primer paso crítico en la Cadena de Supervivencia de la AHA para un adulto en paro cardíaco fuera del hospital?",
         options: [
-            { letter: "a", text: "Administrar medicamentos" },
-            { letter: "b", text: "Reconocer el paro y activar EMS" },
-            { letter: "c", text: "Iniciar ventilaciones" },
-            { letter: "d", text: "Transportar inmediatamente" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Qué frecuencia deben tener las compresiones torácicas en adultos?",
-        options: [
-            { letter: "a", text: "60-80 por minuto" },
-            { letter: "b", text: "80-100 por minuto" },
-            { letter: "c", text: "100-120 por minuto" },
-            { letter: "d", text: "120-150 por minuto" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Qué profundidad debe alcanzar una compresión en adultos?",
-        options: [
-            { letter: "a", text: "2-3 cm" },
-            { letter: "b", text: "5-6 cm" },
-            { letter: "c", text: "8-10 cm" },
-            { letter: "d", text: "3-4 cm" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Qué acción permite el DEA al analizar al paciente?",
-        options: [
-            { letter: "a", text: "Detectar obstrucciones respiratorias" },
-            { letter: "b", text: "Identificar arritmias tratables por choque" },
-            { letter: "c", text: "Aplicar oxígeno" },
-            { letter: "d", text: "Medir saturación de oxígeno" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Qué debe hacerse al llegar un DEA a una escena de paro?",
-        options: [
-            { letter: "a", text: "Continuar solo RCP" },
-            { letter: "b", text: "Encender el DEA y seguir instrucciones" },
-            { letter: "c", text: "Administrar ventilaciones primero" },
-            { letter: "d", text: "Esperar a que llegue más ayuda" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Qué porcentaje de interrupciones en compresiones reduce la supervivencia?",
-        options: [
-            { letter: "a", text: "Más del 10%" },
-            { letter: "b", text: "Más del 20%" },
-            { letter: "c", text: "Más del 5%" },
-            { letter: "d", text: "Más del 50%" },
+            { letter: "a", text: "Activación del sistema de respuesta a emergencias y RCP de alta calidad." },
+            { letter: "b", text: "Desfibrilación rápida con un DEA." },
+            { letter: "c", text: "Administración de medicamentos avanzados." },
+            { letter: "d", text: "Transporte inmediato al hospital." },
         ],
         correctAnswer: "a",
     },
     {
-        question: "¿Qué importancia tiene una ventilación adecuada en SVB?",
+        question: "¿Cuál es la profundidad mínima y máxima recomendada para las compresiones torácicas en un adulto?",
         options: [
-            { letter: "a", text: "Incrementa la resistencia de las vías aéreas" },
-            { letter: "b", text: "Garantiza el intercambio de oxígeno y CO₂" },
-            { letter: "c", text: "Evita hipotensión arterial" },
-            { letter: "d", text: "Eleva la presión intracraneal" },
+            { letter: "a", text: "Mínimo 3 cm, máximo 4 cm." },
+            { letter: "b", text: "Mínimo 5 cm, máximo 6 cm." },
+            { letter: "c", text: "Mínimo 4 cm, máximo 5 cm." },
+            { letter: "d", text: "Mínimo 6 cm, máximo 7 cm." },
         ],
         correctAnswer: "b",
     },
     {
-        question: "¿Qué posición deben tener las manos al realizar compresiones en adultos?",
+        question: "¿Cuál es la frecuencia de compresiones torácicas recomendada para RCP en adultos?",
         options: [
-            { letter: "a", text: "Sobre el abdomen" },
-            { letter: "b", text: "Centro del tórax, en el esternón" },
-            { letter: "c", text: "Lateral al pecho" },
-            { letter: "d", text: "Sobre el ombligo" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Qué objetivo tiene minimizar las interrupciones durante RCP?",
-        options: [
-            { letter: "a", text: "Ahorrar energía al reanimador" },
-            { letter: "b", text: "Evitar fatiga muscular" },
-            { letter: "c", text: "Mantener la perfusión coronaria" },
-            { letter: "d", text: "Evitar hiperventilación" },
+            { letter: "a", text: "60 a 80 compresiones por minuto." },
+            { letter: "b", text: "80 a 100 compresiones por minuto." },
+            { letter: "c", text: "100 a 120 compresiones por minuto." },
+            { letter: "d", "text": "Más de 120 compresiones por minuto." },
         ],
         correctAnswer: "c",
     },
     {
-        question: "¿Qué ritmo es tratable con desfibrilación inmediata?",
+        question: "¿Qué acción se debe evitar durante la RCP para no reducir la efectividad de las compresiones torácicas?",
         options: [
-            { letter: "a", text: "Asistolia" },
-            { letter: "b", text: "Fibrilación ventricular" },
-            { letter: "c", text: "Bradicardia" },
-            { letter: "d", text: "Taquicardia sinusal" },
+            { letter: "a", text: "Permitir la descompresión completa del tórax después de cada compresión." },
+            { letter: "b", text: "Realizar compresiones a una frecuencia constante." },
+            { letter: "c", text: "Interrumpir las compresiones por más de 10 segundos para las ventilaciones o el DEA." },
+            { letter: "d", text: "Aplicar compresiones en el centro del tórax." },
+        ],
+        correctAnswer: "c",
+    },
+    {
+        question: "¿Cuándo es apropiado activar el sistema de respuesta a emergencias (llamar al 911/número local) en un adulto con sospecha de paro cardíaco?",
+        options: [
+            { letter: "a", text: "Después de 5 minutos de RCP." },
+            { letter: "b", text: "Inmediatamente después de determinar que el paciente no responde y no respira normalmente." },
+            { letter: "c", text: "Solo si hay un DEA disponible." },
+            { letter: "d", text: "Cuando el paciente presente distensión gástrica." },
         ],
         correctAnswer: "b",
     },
     {
-        question: "¿Qué se debe hacer si un paciente no responde y no respira normalmente?",
+        question: "¿Cuál es la relación compresión-ventilación para RCP de dos reanimadores en un niño?",
         options: [
-            { letter: "a", text: "Colocar en posición lateral" },
-            { letter: "b", text: "Activar EMS y empezar RCP" },
-            { letter: "c", text: "Administrar glucosa oral" },
-            { letter: "d", text: "Aplicar calor externo" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Qué se debe evitar durante el uso de un DEA?",
-        options: [
-            { letter: "a", text: "Tocar al paciente durante el análisis" },
-            { letter: "b", text: "Colocar los parches" },
-            { letter: "c", text: "Seguir instrucciones de voz" },
-            { letter: "d", text: "Revisar signos vitales" },
-        ],
-        correctAnswer: "a",
-    },
-    {
-        question: "¿Qué tamaño debe tener la profundidad de compresiones en un lactante?",
-        options: [
-            { letter: "a", text: "2 cm" },
-            { letter: "b", text: "4 cm o un tercio del diámetro torácico" },
-            { letter: "c", text: "6 cm" },
-            { letter: "d", text: "8 cm" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Cuál es la relación compresión-ventilación en RCP de un solo reanimador para adultos?",
-        options: [
-            { letter: "a", text: "15:2" },
-            { letter: "b", text: "30:2" },
+            { letter: "a", text: "30:2" },
+            { letter: "b", text: "15:2" },
             { letter: "c", text: "5:1" },
-            { letter: "d", text: "20:2" },
+            { letter: "d", text: "10:1" },
         ],
         correctAnswer: "b",
     },
     {
-        question: "¿Qué debes hacer inmediatamente después de un choque con el DEA?",
+        question: "¿Qué es lo primero que debe hacer un reanimador al encontrarse con una persona colapsada y aparentemente inconsciente?",
         options: [
-            { letter: "a", text: "Revisar el pulso" },
-            { letter: "b", text: "Continuar RCP empezando por compresiones" },
-            { letter: "c", text: "Aplicar otra descarga inmediata" },
-            { letter: "d", text: "Iniciar ventilaciones exclusivamente" },
+            { letter: "a", text: "Iniciar inmediatamente las compresiones torácicas." },
+            { letter: "b", text: "Buscar un DEA." },
+            { letter: "c", text: "Verificar la seguridad de la escena y evaluar la respuesta del paciente." },
+            { letter: "d", text: "Abrir la vía aérea y buscar signos de respiración." },
         ],
-        correctAnswer: "b",
+        correctAnswer: "c",
     },
     {
-        question: "¿Cuántas ventilaciones se deben dar después de cada 30 compresiones en adultos?",
+        question: "¿Qué puede indicar la distensión gástrica durante la RCP y por qué es peligrosa?",
         options: [
-            { letter: "a", text: "1 ventilación" },
-            { letter: "b", text: "2 ventilaciones" },
-            { letter: "c", text: "5 ventilaciones" },
-            { letter: "d", text: "10 ventilaciones" },
+            { letter: "a", text: "Indica una ventilación efectiva y es beneficiosa." },
+            { letter: "b", text: "Es un signo de que el paciente está recuperando la consciencia." },
+            { letter: "c", text: "Puede indicar una ventilación excesiva o inadecuada, aumentando el riesgo de regurgitación y aspiración pulmonar." },
+            { letter: "d", text: "Significa que las compresiones torácicas no son lo suficientemente profundas." },
         ],
-        correctAnswer: "b",
+        correctAnswer: "c",
     },
     {
-        question: "¿Qué debes hacer si un lactante tiene pulso menor de 60 lpm y signos de mala perfusión?",
+        question: "¿Cuándo se debe reevaluar al paciente en cuanto al regreso de las respiraciones y/o circulación durante la RCP?",
         options: [
-            { letter: "a", text: "Solo administrar oxígeno" },
-            { letter: "b", text: "Iniciar RCP" },
-            { letter: "c", text: "Colocar en posición lateral" },
-            { letter: "d", text: "Administrar líquidos orales" },
+            { letter: "a", text: "Cada 5 minutos." },
+            { letter: "b", text: "Cada 3 minutos." },
+            { letter: "c", text: "Aproximadamente cada 2 minutos o después de 5 ciclos de RCP." },
+            { letter: "d", text: "Solo cuando el DEA lo indique." },
         ],
-        correctAnswer: "b",
+        correctAnswer: "c",
     },
     {
-        question: "¿Qué indicación da el DEA cuando detecta un ritmo no desfibrilable?",
+        question: "¿Cuál es el pulso que se debe palpar para evaluar la circulación en un infante?",
         options: [
-            { letter: "a", text: "Administrar una descarga" },
-            { letter: "b", text: "Continuar RCP" },
-            { letter: "c", text: "Esperar" },
-            { letter: "d", text: "Retirar los parches" },
+            { letter: "a", text: "Carótida." },
+            { letter: "b", text: "Radial." },
+            { letter: "c", text: "Braquial." },
+            { letter: "d", text: "Femoral." },
         ],
-        correctAnswer: "b",
+        correctAnswer: "c",
     },
     {
-        question: "¿Qué es crucial hacer al realizar ventilaciones en RCP?",
+        question: "¿Cuál es el método preferido de remoción de un cuerpo extraño en un niño sin capacidad de respuesta y sin pulso?",
         options: [
-            { letter: "a", text: "Administrar grandes volúmenes de aire" },
-            { letter: "b", text: "Observar elevación del pecho" },
-            { letter: "c", text: "Aplicar presión sobre el abdomen" },
-            { letter: "d", text: "Administrar aire muy rápido" },
+            { letter: "a", text: "Palmadas en la espalda." },
+            { letter: "b", text: "Compresiones abdominales." },
+            { letter: "c", text: "Compresiones torácicas." },
+            { letter: "d", text: "Remoción manual a ciegas." },
         ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Qué representa la A en la evaluación inicial de SVB?",
-        options: [
-            { letter: "a", text: "Alerta" },
-            { letter: "b", text: "Abrir la vía aérea" },
-            { letter: "c", text: "Arritmia" },
-            { letter: "d", text: "Arteria" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Qué maniobra se utiliza para abrir la vía aérea en un paciente sin sospecha de trauma cervical?",
-        options: [
-            { letter: "a", text: "Tracción mandibular" },
-            { letter: "b", text: "Inclinación de cabeza y elevación del mentón" },
-            { letter: "c", text: "Compresión de tórax" },
-            { letter: "d", text: "Extensión cervical completa" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Cuál es la maniobra indicada para abrir la vía aérea en un trauma?",
-        options: [
-            { letter: "a", text: "Inclinación de cabeza y mentón" },
-            { letter: "b", text: "Tracción mandibular" },
-            { letter: "c", text: "Ventilación forzada" },
-            { letter: "d", text: "Compresión abdominal" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Qué debes evitar durante las ventilaciones para no generar insuflación gástrica?",
-        options: [
-            { letter: "a", text: "Ventilar lentamente y con poco volumen" },
-            { letter: "b", text: "Administrar aire rápido y fuerte" },
-            { letter: "c", text: "Cerrar la vía aérea" },
-            { letter: "d", text: "Suspender ventilaciones" },
-        ],
-        correctAnswer: "a",
-    },
-    {
-        question: "¿Qué frecuencia de ventilaciones debe mantenerse en paro respiratorio (solo ventilaciones)?",
-        options: [
-            { letter: "a", text: "Una cada 10 segundos" },
-            { letter: "b", text: "Una cada 5-6 segundos" },
-            { letter: "c", text: "Una cada 2 segundos" },
-            { letter: "d", text: "Una cada 15 segundos" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Cuál es el objetivo de usar un DEA en paro cardíaco?",
-        options: [
-            { letter: "a", text: "Iniciar masaje cardíaco" },
-            { letter: "b", text: "Restablecer un ritmo cardiaco efectivo" },
-            { letter: "c", text: "Realizar diagnóstico de muerte" },
-            { letter: "d", text: "Administrar medicamentos automáticamente" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Qué es un paro cardiorrespiratorio?",
-        options: [
-            { letter: "a", text: "Hipotensión severa" },
-            { letter: "b", text: "Ausencia de actividad respiratoria y circulatoria" },
-            { letter: "c", text: "Fiebre alta" },
-            { letter: "d", text: "Saturación de oxígeno normal" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Qué debe hacerse antes de colocar los parches del DEA si el pecho está mojado?",
-        options: [
-            { letter: "a", text: "Aplicar presión" },
-            { letter: "b", text: "Secarlo rápidamente" },
-            { letter: "c", text: "Esperar a que se seque solo" },
-            { letter: "d", text: "Iniciar masaje sin parches" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Qué error frecuente reduce la efectividad del SVB?",
-        options: [
-            { letter: "a", text: "Compresiones muy profundas" },
-            { letter: "b", text: "Interrupciones frecuentes en compresiones" },
-            { letter: "c", text: "Uso de DEA" },
-            { letter: "d", text: "Aplicar oxígeno" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Qué pasa si un DEA detecta fibrilación ventricular?",
-        options: [
-            { letter: "a", text: "Recomienda continuar solo RCP" },
-            { letter: "b", text: "Indica administrar descarga" },
-            { letter: "c", text: "Recomienda ventilaciones únicamente" },
-            { letter: "d", text: "Indica no hacer nada" },
-        ],
-        correctAnswer: "b",
-    },
+        correctAnswer: "c",
+    }
 ];
