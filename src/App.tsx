@@ -47,7 +47,7 @@ function App() {
             setLeactionWithGrades(lectionsWithGrades)
         }
         setLoading(false)
-    }, [user?.id, getUserExams, setLoading])
+    }, [user?.id])
 
 
     // Filtrar lecciones basadas en el término de búsqueda
