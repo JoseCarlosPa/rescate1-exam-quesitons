@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+import {useState, useEffect, useRef} from "react";
 import {Option, Question} from "../../question";
 import logo from "../../assets/logo.png";
 import {NavLink} from "react-router";
@@ -7,7 +7,7 @@ import {AllRoutes} from "../Router/Router.constants.ts";
 import {auth, db} from "../../firebase/firebaseConfig.ts";
 import {doc, getDoc, setDoc} from "firebase/firestore";
 import {AiOutlineLoading3Quarters} from "react-icons/ai";
-import {FaHome, FaArrowLeft, FaCheck, FaTimes, FaClock} from "react-icons/fa";
+import {FaHome, FaArrowLeft, FaCheck, FaTimes, FaClock, FaPrint} from "react-icons/fa";
 
 export default function Exam(props: ExamProps){
     const [answers, setAnswers] = useState<{ [index: number]: string }>({});
@@ -16,14 +16,19 @@ export default function Exam(props: ExamProps){
     const [timer, setTimer] = useState<number>(0);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
     const [showAllQuestions, setShowAllQuestions] = useState<boolean>(false);
+    const timerIntervalRef = useRef<number | null>(null);
 
     // Iniciar el temporizador cuando se monta el componente
     useEffect(() => {
-        const interval = setInterval(() => {
+        timerIntervalRef.current = window.setInterval(() => {
             setTimer(prevTimer => prevTimer + 1);
         }, 1000);
 
-        return () => clearInterval(interval);
+        return () => {
+            if (timerIntervalRef.current) {
+                clearInterval(timerIntervalRef.current);
+            }
+        };
     }, []);
 
     // Formatear el tiempo en hh:mm:ss
@@ -46,6 +51,12 @@ export default function Exam(props: ExamProps){
     };
 
     const handleSubmit = async () => {
+        // Detener el temporizador cuando se califica el examen
+        if (timerIntervalRef.current) {
+            clearInterval(timerIntervalRef.current);
+            timerIntervalRef.current = null;
+        }
+
         setSubmitted(true);
         const scoreS = Object.keys(answers).reduce((acc, key) => {
             const index = parseInt(key);
@@ -91,6 +102,12 @@ export default function Exam(props: ExamProps){
     const getOptionText = (q: Question, letter: string) => {
         return q.options.find((opt: Option) => opt.letter === letter)?.text || "";
     };
+
+    // Función para imprimir los resultados
+    const handlePrint = () => {
+        window.print();
+    };
+
     return (
         <div className="flex flex-col items-center justify-center bg-gradient-to-b from-blue-50 to-gray-100 min-h-screen w-full pb-12 px-4 md:px-8">
             {/* Cabecera */}
@@ -366,6 +383,14 @@ export default function Exam(props: ExamProps){
                                 <FaHome className="text-orange-500" />
                                 <span>Volver al inicio</span>
                             </NavLink>
+                            <button
+                                type="button"
+                                onClick={handlePrint}
+                                className="flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-md shadow-sm transition duration-300"
+                            >
+                                <FaPrint className="text-white" />
+                                <span>Imprimir resultados</span>
+                            </button>
                             <NavLink
                                 to={props.returnRoute}
                                 className="flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-md shadow-sm transition duration-300"
