@@ -4,8 +4,19 @@ import bls from "../../assets/bls.jpg";
 import phtl from "../../assets/phtls.jpg";
 import nudos from "../../assets/nudos.jpg";
 import netter from "../../assets/netter.webp";
+import acls from "../../assets/acls.avif";
+//import moore from "../../assets/moore.webp";
 
 export const resources = [
+    {
+        img: codes,
+        title: "Claves Rescate 1",
+        subtitle: "Claves utilizadas para comunicación",
+        edition: "2006",
+        editor: "Rescate 1",
+        category: "Referencia",
+        download: "https://drive.google.com/uc?export=download&id=1ToAaWjKVdXpQYgTZSD7E5lgrn688JMbv",
+    },
     {
         img: aaos,
         title: "Atención Prehospitalaria Básica",
@@ -17,14 +28,6 @@ export const resources = [
         link: { url: "https://www.aaos.org/", label: "Sitio web" },
     },
     {
-        img: codes,
-        title: "Claves Rescate 1",
-        subtitle: "Claves utilizadas para comunicación",
-        edition: "2006",
-        category: "Referencia",
-        download: "https://drive.google.com/uc?export=download&id=1ToAaWjKVdXpQYgTZSD7E5lgrn688JMbv",
-    },
-    {
         img: bls,
         title: "Soporte Vital Básico",
         subtitle: "American Heart Association",
@@ -32,6 +35,15 @@ export const resources = [
         category: "Manual",
         download: "https://drive.google.com/uc?export=download&id=1bCx4PrzkIiNuXz-Y4ZU0jM8UFvynoufL",
         link: { url: "https://shopcpr.heart.org/es/courses/bls", label: "Sitio web" },
+    },
+    {
+        img: acls,
+        title: "Soporte Vital Avanzado Cardiovascular",
+        subtitle: "American Heart Association",
+        edition: "2021",
+        category: "Manual",
+        download: "https://drive.google.com/uc?export=download&id=1hlodASdwD_tYP4DpKLKQCzD11r81NGZ",
+        link: { url: "https://shopcpr.heart.org/es/courses/acls", label: "Sitio web" },
     },
     {
         img: phtl,
@@ -42,12 +54,17 @@ export const resources = [
         download: "https://drive.google.com/uc?export=download&id=1J0PAh0nONBGmSpiYdyyjemKb-Ujx65fC",
         link: { url: "https://www.psglearning.com/es/phtls?srsltid=AfmBOorLGRrP95FMjmKsLpuMyQJA-dZGBP-GCCK5axFAL7XjcsSrsbGq", label: "Sitio web" },
     },
+    /*
     {
-        img: nudos,
-        title: "Nudos Básicos de Rescate y Descensos",
-        category: "Referencia",
-        download: "https://drive.google.com/uc?export=download&id=12rBumebSfvLmATWFMpGkbusxGobpnk8X",
+        img: moore,
+        title: "Anatomía con orientacion clínica",
+        subtitle: "Wolters Kluwer/Lippincott Williams & Wilkins",
+        edition: "8va edición 2018",
+        category: "Atlas",
+        download: "https://drive.google.com/uc?export=download&id=1w7Zmd73CK41ia1Lok0RYL4kdc4aK5hRV",
+        link: { url: "https://www.amazon.com.mx/Anatom%C3%83%C2%AD-orientaci%C3%83%C2%B3n-cl%C3%83%C2%ADnica-Spanish-Keith/dp/8417033637/ref=asc_df_8417033637?mcid=79e06a662b2c384092fcc0c76473e0ef&tag=gledskshopmx-20&linkCode=df0&hvadid=709881970557&hvpos=&hvnetw=g&hvrand=16981546940521121917&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1010149&hvtargid=pla-451867579848&psc=1&language=es_MX&gad_source=1", label: "Comprar" },
     },
+     */
     {
         img: netter,
         title: "Netter Atlas de Anatomía Humana",
@@ -57,5 +74,12 @@ export const resources = [
         download: "https://drive.google.com/uc?export=download&id=1w7Zmd73CK41ia1Lok0RYL4kdc4aK5hRV",
         link: { url: "https://www.amazon.com.mx/Netter-anatom%C3%ADa-humana-Abordaje-regional/dp/8413823986/ref=sr_1_1?__mk_es_MX=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=2LWDOLOA9WUX7&dib=eyJ2IjoiMSJ9.gkCj_-HZMdJkKvTwgd-BzlNH0bY9aRmYcShoRzuh3VbgUsFBGaivTESq9-l_l56vfK5XeqQRIl8vKYfh_W1Js2GqMzwSnVpF8-aDAvGMbXB4asHwKZokAPV9rAKknAXEq9nQr9cADfZoN91mgZ7-LlJO19X6fOAFi96tpomJKIAkp_faIf4aMmqdiN7Hd1byzWU8mHjWIAYWrR6o678BJEabsuBYO7Eolna-AQ40cVGOEau8FR-r_aqNNIA8_wxZhTFDKgJEI7-Hf2vjeLmM1w3aygDxwPcImzGoOpbE6rQ.ldXkP8YRQuCLMJ7kfO36x8IvTjHeGpBwhCMeVqkzsxw&dib_tag=se&keywords=Netter+Atlas+de+anatomia+humana&qid=1746026012&sprefix=netter+atlas+de+anatomia+humana,aps,390&sr=8-1&ufe=app_do:amzn1.fos.de93fa6a-174c-4df7-be7c-5bc8e9c5a71b", label: "Comprar" },
     },
+    {
+        img: nudos,
+        title: "Nudos Básicos de Rescate y Descensos",
+        category: "Referencia",
+        download: "https://drive.google.com/uc?export=download&id=12rBumebSfvLmATWFMpGkbusxGobpnk8X",
+    },
+
 ];
 
