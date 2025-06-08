@@ -3,309 +3,187 @@ import {Question} from "../../../question";
 export const faqData = [
     {
         question: "¿Qué es el trauma?",
-        answer: "Es una lesión física producida por una fuerza externa que puede poner en peligro la vida o causar discapacidad.",
+        answer: "Es una lesión física producida por una fuerza externa que puede poner en peligro la vida o causar discapacidad."
     },
     {
-        question: "¿Qué es el mecanismo de lesión (MOI)?",
-        answer: "Es la forma en que ocurre una lesión, como por colisión vehicular, caídas o heridas penetrantes.",
+        question: "¿Qué es el mecanismo de lesión (ML)?",
+        answer: "Es la forma en que ocurre una lesión, como por colisión vehicular, caídas, o heridas penetrantes. Comprenderlo ayuda a anticipar las lesiones."
     },
     {
         question: "¿Por qué es importante la cinemática del trauma?",
-        answer: "Porque ayuda a predecir lesiones internas que podrían no ser evidentes a simple vista.",
+        answer: "Porque permite al paramédico predecir la probabilidad y el tipo de lesiones internas, incluso si no son visibles, basándose en la energía involucrada en el incidente."
     },
     {
-        question: "¿Qué se evalúa en la evaluación primaria?",
-        answer: "Las amenazas inmediatas a la vida: Vía aérea, respiración, circulación, estado neurológico y exposición (ABCDE).",
+        question: "¿Qué se evalúa en la evaluación primaria de un paciente traumatizado?",
+        answer: "Se evalúan y manejan las amenazas inmediatas a la vida, siguiendo el mnemotécnico ABCDE: Vía aérea con control cervical, Respiración, Circulación y control de hemorragias, Déficit neurológico y Exposición/Entorno."
     },
     {
-        question: "¿Qué significa la 'hora dorada'?",
-        answer: "Es el tiempo crítico tras un trauma grave en el que la atención rápida puede mejorar significativamente la supervivencia.",
+        question: "¿Qué significa la 'hora dorada' en el manejo del trauma?",
+        answer: "Es el periodo crítico, generalmente la primera hora después de un trauma grave, durante el cual la intervención médica avanzada y el transporte rápido a un centro de trauma pueden mejorar drásticamente la supervivencia y reducir la morbilidad."
     },
     {
-        question: "¿Qué diferencia hay entre trauma contuso y penetrante?",
-        answer: "El contuso ocurre por golpes sin ruptura de la piel, mientras que el penetrante involucra heridas abiertas como por arma blanca o bala.",
+        question: "¿Cuál es la diferencia principal entre trauma contuso y penetrante?",
+        answer: "El trauma contuso ocurre por un impacto sin perforación o ruptura de la piel (ej. golpes, caídas), mientras que el trauma penetrante implica una interrupción de la integridad de la piel o membranas mucosas (ej. heridas por arma blanca o proyectil)."
     },
+    {
+        question: "¿Qué es el índice de sospecha?",
+        answer: "Es la capacidad de predecir o anticipar lesiones basándose en el mecanismo de lesión, entendiendo que pueden existir lesiones significativas que no son evidentes externamente."
+    },
+    {
+        question: "¿Cuándo se considera un transporte rápido a un centro de trauma?",
+        answer: "Se considera cuando hay hallazgos de evaluación que indican un trauma grave o inestable, como un Glasgow Coma Scale (GCS) bajo, hipotensión, dificultad respiratoria severa o mecanismos de lesión de alto riesgo."
+    }
 ];
 
 export const traumaGeneralQuestions: Question[] = [
     {
-        question: "¿Cuál es la principal causa de muerte en personas menores de 45 años?",
+        question: "¿Cuál es la principal causa de muerte en personas menores de 45 años en Estados Unidos, según el capítulo?",
         options: [
-            { letter: "a", text: "Cáncer" },
-            { letter: "b", text: "Trauma" },
-            { letter: "c", text: "Enfermedades cardíacas" },
-            { letter: "d", text: "Enfermedades respiratorias" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Qué significa MOI en trauma?",
-        options: [
-            { letter: "a", text: "Manejo operativo inmediato" },
-            { letter: "b", text: "Mecanismo de lesión" },
-            { letter: "c", text: "Medición de oxígeno intermitente" },
-            { letter: "d", text: "Modelo óptimo de intervención" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Qué componente de la evaluación primaria identifica lesiones que amenazan la vida?",
-        options: [
-            { letter: "a", text: "OPQRST" },
-            { letter: "b", text: "SAMPLE" },
-            { letter: "c", text: "ABCDE" },
-            { letter: "d", text: "GCS" },
+            { letter: "a", text: "Enfermedades cardíacas" },
+            { letter: "b", text: "Cáncer" },
+            { letter: "c", text: "Trauma" },
+            { letter: "d", text: "Accidentes cerebrovasculares" },
         ],
         correctAnswer: "c",
     },
     {
-        question: "¿Cuál de los siguientes NO es un ejemplo de trauma contuso?",
+        question: "¿Qué tipo de energía se transforma en daño tisular en un evento traumático?",
         options: [
-            { letter: "a", text: "Golpe en el abdomen con un bate" },
-            { letter: "b", text: "Colisión frontal vehicular" },
-            { letter: "c", text: "Caída desde una escalera" },
-            { letter: "d", text: "Herida por cuchillo" },
+            { letter: "a", text: "Energía potencial" },
+            { letter: "b", text: "Energía térmica" },
+            { letter: "c", text: "Energía cinética" },
+            { letter: "d", text: "Energía química" },
         ],
-        correctAnswer: "d",
+        correctAnswer: "c",
     },
     {
-        question: "La transferencia de energía cinética depende principalmente de:",
+        question: "Un paciente sufrió una caída desde una altura de 4 metros. ¿Qué tipo de trauma se esperaría predominantemente?",
+        options: [
+            { letter: "a", text: "Trauma penetrante" },
+            { letter: "b", text: "Trauma contuso" },
+            { letter: "c", text: "Trauma térmico" },
+            { letter: "d", text: "Trauma por explosión" },
+        ],
+        correctAnswer: "b",
+    },
+    {
+        question: "En un choque frontal de un vehículo, ¿qué patrón de lesión es común para un ocupante no restringido?",
+        options: [
+            { letter: "a", text: "Lesiones por latigazo cervical hacia atrás" },
+            { letter: "b", text: "Lesiones en la cabeza, cuello, tórax y abdomen por impacto contra el tablero o volante" },
+            { letter: "c", text: "Lesiones de extremidades inferiores por impacto lateral" },
+            { letter: "d", text: "Expulsión completa del vehículo sin lesiones internas" },
+        ],
+        correctAnswer: "b",
+    },
+    {
+        question: "¿Qué se debe considerar en la evaluación de una caída en pacientes pediátricos, además de la altura?",
+        options: [
+            { letter: "a", text: "El tipo de superficie de impacto" },
+            { letter: "b", text: "La edad del niño y la presencia de condiciones médicas preexistentes" },
+            { letter: "c", "text": "El color de la ropa que llevaba el niño" },
+            { letter: "d", text: "La distancia a la que fue proyectado el niño" },
+        ],
+        correctAnswer: "b", // Aunque el capítulo menciona la superficie, la edad y condiciones preexistentes son más específicas para pediátricos.
+    },
+    {
+        question: "¿Cuál es una característica del trauma penetrante de alta velocidad (ej. proyectil de rifle)?",
+        options: [
+            { letter: "a", text: "Suele causar una herida de entrada pequeña y una de salida grande." },
+            { letter: "b", text: "Genera una gran cavitación temporal y permanente." },
+            { letter: "c", text: "Las lesiones se limitan solo a la trayectoria directa del proyectil." },
+            { letter: "d", text: "Produce quemaduras extensas en la piel." },
+        ],
+        correctAnswer: "b",
+    },
+    {
+        question: "Un paciente presenta fracturas costales múltiples, contusión pulmonar y laceración hepática. ¿Cómo clasificaría este tipo de trauma?",
+        options: [
+            { letter: "a", text: "Trauma aislado" },
+            { letter: "b", text: "Trauma superficial" },
+            { letter: "c", text: "Trauma multisistémico" },
+            { letter: "d", text: "Trauma de tejidos blandos" },
+        ],
+        correctAnswer: "c",
+    },
+    {
+        question: "¿Cuál de los siguientes es un componente clave del 'Índice de Sospecha' en la evaluación de trauma?",
         options: [
             { letter: "a", text: "La edad del paciente" },
-            { letter: "b", text: "La distancia al hospital" },
-            { letter: "c", text: "La masa y velocidad del objeto" },
-            { letter: "d", text: "El tipo de ambulancia" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Qué lesión es más probable en una caída de altura significativa?",
-        options: [
-            { letter: "a", text: "Lesión en extremidades superiores" },
-            { letter: "b", text: "Lesión abdominal leve" },
-            { letter: "c", text: "Lesión espinal o pélvica" },
-            { letter: "d", text: "Esguince de tobillo" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "El uso de cinturón de seguridad puede reducir:",
-        options: [
-            { letter: "a", text: "Lesiones de tejidos blandos" },
-            { letter: "b", text: "Lesiones graves por desaceleración" },
-            { letter: "c", text: "Fracturas simples" },
-            { letter: "d", text: "Lesiones por inhalación" },
+            { letter: "b", text: "El mecanismo de lesión" },
+            { letter: "c", text: "El historial médico familiar" },
+            { letter: "d", text: "La hora del día en que ocurrió el incidente" },
         ],
         correctAnswer: "b",
     },
     {
-        question: "El principio de la 'hora dorada' implica que:",
+        question: "Según la Escala de Trauma Revisada (RTS), un puntaje alto indica:",
         options: [
-            { letter: "a", text: "El tratamiento puede retrasarse si hay tráfico" },
-            { letter: "b", text: "La evaluación secundaria debe durar una hora" },
-            { letter: "c", text: "El tratamiento definitivo dentro de una hora mejora la supervivencia" },
-            { letter: "d", text: "Una hora es suficiente para estabilizar al paciente en escena" },
+            { letter: "a", text: "Mayor gravedad de las lesiones." },
+            { letter: "b", text: "Menor probabilidad de supervivencia." },
+            { letter: "c", text: "Mejor pronóstico y menor gravedad." },
+            { letter: "d", text: "Necesidad de un centro de trauma Nivel III." },
+        ],
+        correctAnswer: "c", // Un RTS más alto indica un paciente con mejor pronóstico.
+    },
+    {
+        question: "¿Qué acción tiene la prioridad más alta en el manejo inicial de un paciente con trauma grave?",
+        options: [
+            { letter: "a", text: "Obtener un historial médico detallado." },
+            { letter: "b", text: "Realizar una evaluación secundaria completa." },
+            { letter: "c", text: "Controlar la vía aérea y la hemorragia grave." },
+            { letter: "d", text: "Esperar la llegada de soporte avanzado." },
         ],
         correctAnswer: "c",
     },
     {
-        question: "¿Cuál es el objetivo principal de la evaluación secundaria?",
+        question: "Un paciente es encontrado inconsciente después de ser atropellado por un vehículo. Su GCS es de 7 y presenta deformidad evidente en fémur. ¿Cumple criterios para transporte rápido?",
         options: [
-            { letter: "a", text: "Determinar la frecuencia respiratoria" },
-            { letter: "b", text: "Controlar la escena" },
-            { letter: "c", text: "Detectar todas las lesiones y obtener historia clínica" },
-            { letter: "d", text: "Verificar signos vitales únicamente" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "La evaluación del 'ABCDE' comienza con:",
-        options: [
-            { letter: "a", text: "Evaluación de dolor" },
-            { letter: "b", text: "Exposición del paciente" },
-            { letter: "c", text: "Vía aérea y control cervical" },
-            { letter: "d", text: "Control de sangrado externo" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "Una desaceleración rápida puede causar:",
-        options: [
-            { letter: "a", text: "Únicamente lesiones superficiales" },
-            { letter: "b", text: "Desgarros internos y hemorragias ocultas" },
-            { letter: "c", text: "Dolor de cabeza temporal" },
-            { letter: "d", text: "Reducción de signos vitales" },
+            { letter: "a", text: "No, porque la deformidad en el fémur no es una amenaza vital inmediata." },
+            { letter: "b", text: "Sí, debido al GCS bajo y el mecanismo de lesión de alto riesgo." },
+            { letter: "c", text: "Solo si hay hemorragia externa visible." },
+            { letter: "d", text: "Depende de la distancia al hospital más cercano." },
         ],
         correctAnswer: "b",
     },
     {
-        question: "En una colisión frontal, la lesión más común sin cinturón es:",
+        question: "¿Qué es el trauma multisistémico?",
         options: [
-            { letter: "a", text: "Traumatismo craneoencefálico leve" },
-            { letter: "b", text: "Lesión en manos" },
-            { letter: "c", text: "Impacto torácico y abdominal con el volante" },
-            { letter: "d", text: "Lesión de oído" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "El protocolo SAMPLE recopila información sobre:",
-        options: [
-            { letter: "a", text: "Signos vitales únicamente" },
-            { letter: "b", text: "Intervenciones médicas avanzadas" },
-            { letter: "c", text: "Historia médica relevante del paciente" },
-            { letter: "d", text: "Control ambiental de la escena" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Qué parte del cuerpo protege más órganos vitales de trauma contuso?",
-        options: [
-            { letter: "a", text: "Cráneo" },
-            { letter: "b", text: "Pelvis" },
-            { letter: "c", text: "Tórax" },
-            { letter: "d", text: "Columna vertebral" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "El término 'triaje' se refiere a:",
-        options: [
-            { letter: "a", text: "Transportar al paciente más cercano al hospital" },
-            { letter: "b", text: "Detener el sangrado en escena" },
-            { letter: "c", text: "Clasificar pacientes por gravedad" },
-            { letter: "d", text: "Aplicar vendajes" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "En trauma, la principal prioridad durante la evaluación inicial es:",
-        options: [
-            { letter: "a", text: "Historia médica completa" },
-            { letter: "b", text: "Radiografía inmediata" },
-            { letter: "c", text: "Identificar amenazas a la vida" },
-            { letter: "d", text: "Administrar analgésicos" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "Una caída desde una altura se considera grave si supera:",
-        options: [
-            { letter: "a", text: "1 metro" },
-            { letter: "b", text: "2 metros" },
-            { letter: "c", text: "3 veces la altura del paciente" },
-            { letter: "d", text: "La altura de una silla" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Cuál es el signo clásico de un neumotórax a tensión?",
-        options: [
-            { letter: "a", text: "Dolor en extremidades" },
-            { letter: "b", text: "Tráquea desviada" },
-            { letter: "c", text: "Fiebre súbita" },
-            { letter: "d", text: "Visión borrosa" },
+            { letter: "a", text: "Lesiones en una única extremidad." },
+            { letter: "b", text: "Lesiones que afectan dos o más sistemas corporales principales." },
+            { letter: "c", "text": "Un tipo de trauma psicológico." },
+            { letter: "d", text: "Una lesión que solo afecta la piel." },
         ],
         correctAnswer: "b",
     },
     {
-        question: "La regla de oro en trauma pediátrico es:",
+        question: "Para un paciente con trauma severo, ¿cuál es la consideración de transporte más apropiada según las guías de trauma?",
         options: [
-            { letter: "a", text: "Transportar sin evaluación previa" },
-            { letter: "b", text: "Tratar como adulto en miniatura" },
-            { letter: "c", text: "Evaluar con base en peso y talla" },
-            { letter: "d", text: "Tratarlo con base en el mecanismo de lesión y no subestimar el daño" },
-        ],
-        correctAnswer: "d",
-    },
-    {
-        question: "El sangrado arterial se caracteriza por:",
-        options: [
-            { letter: "a", text: "Sangrado oscuro y constante" },
-            { letter: "b", text: "Sangrado intermitente y lento" },
-            { letter: "c", text: "Flujo pulsátil y rojo brillante" },
-            { letter: "d", text: "Sangrado que se coagula rápidamente" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "El GCS se utiliza para evaluar:",
-        options: [
-            { letter: "a", text: "Lesiones musculares" },
-            { letter: "b", text: "Respuesta neurológica del paciente" },
-            { letter: "c", text: "Frecuencia cardíaca" },
-            { letter: "d", text: "Nivel de azúcar en sangre" },
+            { letter: "a", text: "Transportar al hospital más cercano, independientemente de sus capacidades." },
+            { letter: "b", text: "Transportar al centro de trauma más cercano que pueda proporcionar el nivel de atención adecuado." },
+            { letter: "c", text: "Esperar a que el paciente se estabilice antes de transportarlo." },
+            { letter: "d", text: "Contactar a la familia del paciente para decidir el destino." },
         ],
         correctAnswer: "b",
     },
     {
-        question: "Una lesión penetrante en el cuello puede comprometer:",
+        question: "¿Qué efecto secundario es común en un trauma por explosión debido a la onda expansiva primaria?",
         options: [
-            { letter: "a", text: "El páncreas" },
-            { letter: "b", text: "La columna lumbar" },
-            { letter: "c", text: "La vía aérea y vasos sanguíneos mayores" },
-            { letter: "d", text: "El nervio ciático" },
+            { letter: "a", text: "Fracturas de huesos largos." },
+            { letter: "b", text: "Quemaduras de tercer grado." },
+            { letter: "c", text: "Barotrauma (lesiones pulmonares, tímpano, etc.)." },
+            { letter: "d", text: "Cortes y laceraciones por escombros." },
         ],
         correctAnswer: "c",
     },
     {
-        question: "La evaluación continua del paciente incluye:",
+        question: "Un paramédico evalúa a un paciente involucrado en un accidente de motocicleta. ¿Qué tipo de información sobre el incidente es crucial para el índice de sospecha?",
         options: [
-            { letter: "a", text: "Tomar signos vitales cada 30 minutos" },
-            { letter: "b", text: "Solo repetir preguntas" },
-            { letter: "c", text: "Revalorar signos vitales, conciencia y lesiones" },
-            { letter: "d", text: "Esperar a que el paciente lo solicite" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Qué indica palidez y sudoración fría en paciente con trauma?",
-        options: [
-            { letter: "a", text: "Infección aguda" },
-            { letter: "b", text: "Estado de alerta" },
-            { letter: "c", text: "Hipoperfusión (shock)" },
-            { letter: "d", text: "Deshidratación leve" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Qué herramienta se usa para estabilizar la columna cervical?",
-        options: [
-            { letter: "a", text: "Férula" },
-            { letter: "b", text: "Collarín cervical" },
-            { letter: "c", text: "Vendaje elástico" },
-            { letter: "d", text: "Tabla espinal larga únicamente" },
+            { letter: "a", text: "La marca y modelo de la motocicleta." },
+            { letter: "b", text: "Si el paciente llevaba casco y el estado del mismo." },
+            { letter: "c", "text": "El color de la ropa del paciente." },
+            { letter: "d", text: "La hora exacta del accidente." },
         ],
         correctAnswer: "b",
     },
-    {
-        question: "El examen físico rápido se realiza en:",
-        options: [
-            { letter: "a", text: "Menos de 90 segundos" },
-            { letter: "b", text: "Menos de 5 minutos" },
-            { letter: "c", text: "10 a 15 minutos" },
-            { letter: "d", text: "Durante el traslado, sin tiempo definido" },
-        ],
-        correctAnswer: "a",
-    },
-    {
-        question: "¿Cuál es una indicación de trauma multisistémico?",
-        options: [
-            { letter: "a", text: "Herida leve en un brazo" },
-            { letter: "b", text: "Fractura aislada" },
-            { letter: "c", text: "Lesiones en dos o más sistemas del cuerpo" },
-            { letter: "d", text: "Dolor abdominal aislado" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Qué se debe hacer ante hemorragia externa grave?",
-        options: [
-            { letter: "a", text: "Cubrir con una gasa sin presión" },
-            { letter: "b", text: "Aplicar presión directa y vendaje" },
-            { letter: "c", text: "Lavar con agua y jabón" },
-            { letter: "d", text: "Esperar a que cese espontáneamente" },
-        ],
-        correctAnswer: "b",
-    }
 ];

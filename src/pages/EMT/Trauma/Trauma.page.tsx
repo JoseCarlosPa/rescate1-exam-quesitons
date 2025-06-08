@@ -7,7 +7,6 @@ import {FaCarCrash} from "react-icons/fa";
 import {IoReturnDownBack} from "react-icons/io5";
 import {useState} from "react";
 import {MdQuiz} from "react-icons/md";
-import {TbNotebook} from "react-icons/tb";
 import {BsBookHalf} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
 
@@ -37,7 +36,7 @@ export default function Trauma(){
                     </header>
 
                     {/* Menú rápido de recursos */}
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8 max-w-4xl mx-auto">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 max-w-4xl mx-auto">
                         <NavLink
                             to="/trauma/exam"
                             className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
@@ -61,6 +60,13 @@ export default function Trauma(){
                            className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
                             <BsBookHalf className="w-10 h-10 text-orange-500 mb-2" />
                             <p className="text-center font-medium">Recursos PHTLS</p>
+                        </a>
+                        <a href="https://drive.google.com/file/d/1WWdqHL8PZF7E3K3_Nsa74O7MMgEQBc2a/view?usp=drive_link" // Ejemplo, reemplazar con recurso relevante para trauma
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
+                            <BsBookHalf className="w-10 h-10 text-orange-500 mb-2" />
+                            <p className="text-center font-medium">Capítulo</p>
                         </a>
                     </div>
 
