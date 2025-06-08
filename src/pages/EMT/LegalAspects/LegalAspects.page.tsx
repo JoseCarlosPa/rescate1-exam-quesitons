@@ -39,7 +39,7 @@ export default function LegalAspects() {
                             to="/legal/exam"
                             className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
                             <MdQuiz className="w-10 h-10 text-orange-500 mb-2" />
-                            <p className="text-center font-medium">Examen Completo</p>
+                            <p className="text-center font-medium">Examen</p>
                         </NavLink>
                         <a href="https://docs.google.com/presentation/d/1a2LmZGb5lIg9ZN__5t0sspwiev13kUpj/edit?usp=sharing&ouid=107287742628985461156&rtpof=true&sd=true"
                            target="_blank"
@@ -53,7 +53,7 @@ export default function LegalAspects() {
                            rel="noopener noreferrer"
                            className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
                             <BsBookHalf className="w-10 h-10 text-orange-500 mb-2" />
-                            <p className="text-center font-medium">Capitulo</p>
+                            <p className="text-center font-medium">Capítulo</p>
                         </a>
                     </div>
 

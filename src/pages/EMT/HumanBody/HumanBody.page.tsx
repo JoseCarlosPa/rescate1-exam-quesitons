@@ -17,7 +17,7 @@ export default function HumanBody() {
 
     return (
         <div className="min-h-screen bg-gray-50">
-            <div className="flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-white pb-12 md:px-0 px-4 p-4">
+            <div className="flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-white pb-12 px-4 p-4">
                 <div className="w-full max-w-7xl">
                     {/* Cabecera */}
                     <header className="mb-8 text-center">
@@ -37,12 +37,12 @@ export default function HumanBody() {
                     </header>
 
                     {/* Menú rápido de recursos */}
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 max-w-4xl mx-auto">
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8 max-w-4xl mx-auto">
                         <NavLink
                             to="/human-body/exam"
                             className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
                             <MdQuiz className="w-10 h-10 text-orange-500 mb-2"/>
-                            <p className="text-center font-medium">Examen Completo</p>
+                            <p className="text-center font-medium">Examen</p>
                         </NavLink>
                         <a href="https://docs.google.com/presentation/d/1Rnfsa9yfGk1X8vWPptTCUSNO46Snf2nq/edit?usp=drive_link&ouid=107287742628985461156&rtpof=true&sd=true"
                            target="_blank"
@@ -62,7 +62,7 @@ export default function HumanBody() {
                            rel="noopener noreferrer"
                            className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
                             <BsBookHalf className="w-10 h-10 text-orange-500 mb-2"/>
-                            <p className="text-center font-medium">Recursos EMS1</p>
+                            <p className="text-center font-medium">Capítulo</p>
                         </a>
                     </div>
 

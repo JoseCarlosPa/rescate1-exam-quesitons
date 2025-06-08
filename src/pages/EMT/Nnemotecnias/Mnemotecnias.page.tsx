@@ -16,7 +16,7 @@ export default function Mnemotecnias(){
 
     return(
         <div className="min-h-screen bg-gray-50">
-            <div className="flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-white pb-12 md:px-0 px-4 p-4">
+            <div className="flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-white pb-12 px-4 p-4">
                 <div className="w-full max-w-7xl">
                     {/* Cabecera */}
                     <header className="mb-8 text-center">
@@ -50,12 +50,7 @@ export default function Mnemotecnias(){
                             <PiChalkboardTeacher className="w-10 h-10 text-orange-500 mb-2" />
                             <p className="text-center font-medium">Presentación</p>
                         </a>
-                        <button
-                            onClick={() => setShowQuickQuiz(!showQuickQuiz)}
-                            className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
-                            <TbNotebook className="w-10 h-10 text-orange-500 mb-2" />
-                            <p className="text-center font-medium">Quiz Rápido</p>
-                        </button>
+                        
                     </div>
 
                     {/* Quiz rápido */}

@@ -4,326 +4,70 @@ import {Question} from "../../../question";
 export const faqData = [
     {
         question: "¿Qué es el Sistema SEM?",
-        answer: "El Sistema de Emergencias Médicas (SEM) es un conjunto de servicios de atención médica prehospitalaria, que proporciona atención inmediata en el lugar del incidente y transporte adecuado a los centros de salud."
+        answer: "El Sistema de Servicios de Emergencias Médicas (SEM) es un conjunto de servicios de atención médica prehospitalaria coordinados, que proporciona atención inmediata en el lugar del incidente y transporte adecuado a los centros de salud."
     },
     {
         question: "¿Cómo se activa el Sistema SEM en caso de emergencia?",
-        answer: "Para activar el SEM, se debe llamar al número de emergencia 911, proporcionando detalles sobre la ubicación, el tipo de emergencia y la condición de la víctima. El centro de atención coordina el envío de recursos y da instrucciones iniciales."
+        answer: "Para activar el SEM, se debe llamar al número de emergencia (comúnmente 911 en muchas regiones), proporcionando detalles claros sobre la ubicación, el tipo de emergencia y la condición de la(s) víctima(s). El centro de atención coordina el envío de recursos y puede dar instrucciones iniciales para la atención prehospitalaria."
     },
     {
         question: "¿Qué tipos de recursos forman parte del Sistema SEM?",
-        answer: "El SEM incluye ambulancias equipadas con personal médico capacitado, centros de atención telefónica y un sistema de coordinación con otras entidades de emergencia como bomberos y seguridad pública."
+        answer: "El SEM incluye ambulancias equipadas con personal médico capacitado (paramédicos, Técnicos en Emergencias Médicas), centros de atención telefónica (despacho) y un sistema de coordinación con otras entidades de emergencia como bomberos, seguridad pública y hospitales."
     },
     {
         question: "¿Cuáles son las funciones principales del SEM?",
-        answer: "Las funciones principales del SEM incluyen la atención médica prehospitalaria, el transporte sanitario a hospitales y la coordinación con otras instituciones para una respuesta efectiva a las emergencias."
+        answer: "Las funciones principales del SEM incluyen la detección de emergencias, notificación, despacho de recursos, primera respuesta (atención médica prehospitalaria), transporte sanitario a hospitales y coordinación con otras instituciones para una respuesta efectiva a las emergencias, además de la investigación y mejora continua de la calidad."
     },
     {
         question: "¿Cómo está compuesto el personal del SEM?",
-        answer: "El personal del SEM está compuesto por paramédicos, médicos de urgencias, y técnicos especializados en atención prehospitalaria, quienes están capacitados para manejar emergencias médicas en el lugar del incidente y durante el traslado."
+        answer: "El personal del SEM puede estar compuesto por respondedores de emergencias médicas (REM), Técnicos en Emergencias Médicas (TEM), paramédicos y médicos de urgencias, cada uno con diferentes niveles de capacitación y responsabilidad."
     },
     {
-        question: "¿Cuáles son los protocolos que sigue el SEM para la atención de emergencias?",
-        answer: "El SEM sigue protocolos establecidos que incluyen la evaluación inicial del paciente, la estabilización en el lugar, y el traslado a un centro de salud cuando sea necesario. El personal de SEM puede dar instrucciones por teléfono hasta que la ambulancia llegue."
+        question: "¿Qué importancia tiene la mejora continua de la calidad (MCC) en el SEM?",
+        answer: "La mejora continua de la calidad es crucial en el SEM para garantizar la seguridad del paciente, identificar áreas de mejora en la atención, evaluar la efectividad de los protocolos y procedimientos, y asegurar que los servicios de emergencia sean lo más eficientes y efectivos posible."
     },
     {
-        question: "¿Qué importancia tiene la coordinación con otras entidades en el SEM?",
-        answer: "La coordinación con fuerzas de seguridad, bomberos y protección civil es crucial para garantizar una respuesta rápida y segura ante situaciones complejas, como accidentes de tráfico, incendios o desastres naturales."
+        question: "¿Por qué la investigación en SEM es fundamental para la evolución de la gestión del paciente?",
+        answer: "La investigación en SEM es fundamental porque proporciona la base para la toma de decisiones basada en la evidencia. Permite identificar las mejores prácticas, desarrollar nuevos tratamientos y protocolos, evaluar la efectividad de las intervenciones y mejorar continuamente la atención al paciente, lo que lleva a mejores resultados y a la evolución del campo de la atención prehospitalaria."
     },
     {
-        question: "¿Cómo se mejora la eficiencia del Sistema SEM?",
-        answer: "El SEM mejora su eficiencia mediante la evaluación constante de su desempeño, simulacros y capacitaciones continuas para su personal. También se implementan tecnologías de comunicación y sistemas de gestión para optimizar el tiempo de respuesta."
+        question: "¿Cuál es el objetivo principal del Sistema de Servicios de Emergencias Médicas (SEM)?",
+        answer: "El objetivo principal del Sistema de Servicios de Emergencias Médicas (SEM) es proporcionar atención médica de emergencia y transporte a los pacientes que lo necesitan, con el fin de reducir la mortalidad y la morbilidad por enfermedades y lesiones agudas."
     },
     {
-        question: "¿El SEM cubre emergencias en todo el país?",
-        answer: "Sí, el SEM está disponible en la mayoría de los estados de México a través del número de emergencia 911. Sin embargo, la cobertura y la calidad del servicio pueden variar según la ubicación geográfica."
+        question: "¿Qué papel juega la Health Insurance Portability and Accountability Act (HIPAA) en el SEM?",
+        answer: "La HIPAA limita la disponibilidad y el uso de la información médica del paciente, garantizando la privacidad y seguridad de sus datos de salud. En el SEM, esto significa que el personal debe proteger la confidencialidad de la información del paciente."
     },
     {
-        question: "¿Qué hacer si el SEM tarda en llegar a la escena de emergencia?",
-        answer: "Si el SEM tarda en llegar, el personal de emergencia o los testigos deben seguir las instrucciones dadas por el centro de atención y realizar la atención básica que sea posible, como la reanimación cardiopulmonar (RCP) si es necesario."
-    }
+        question: "¿Qué es la mejora continua de la calidad (MCC) y cómo se utiliza para ayudar a garantizar la seguridad de los pacientes?",
+        answer: "La mejora continua de la calidad (MCC) es un proceso de evaluación y mejora constante de los servicios y protocolos del SEM. Se utiliza para garantizar la seguridad del paciente mediante la identificación de errores, la implementación de cambios basados en la evidencia, la capacitación del personal y la revisión regular de los resultados, lo que permite corregir deficiencias y optimizar la atención."
+    },
+    {
+        question: "¿Por qué la investigación de SEM es una parte fundamental en la evolución de la gestión del paciente?",
+        answer: "La investigación de SEM es fundamental porque genera el conocimiento necesario para la toma de decisiones basada en la evidencia. Permite validar la efectividad de las intervenciones, desarrollar nuevas técnicas y tecnologías, y mejorar los protocolos de atención, lo que conduce a una evolución constante de la gestión del paciente, haciendo que la atención sea más eficaz y segura."
+    },
 ];
 
 export const semSystemQuestions: Question[] = [
     {
-        question: "¿Qué evento histórico impulsó los primeros esfuerzos en atención médica prehospitalaria organizada?",
+        question: "¿Cuál de los siguientes es un componente esencial del sistema SEM?",
         options: [
-            { letter: "a", text: "La Independencia de México" },
-            { letter: "b", text: "La Segunda Guerra Mundial" },
-            { letter: "c", text: "La Revolución Mexicana" },
-            { letter: "d", text: "La Guerra Civil Española" },
+            { letter: "a", text: "Centros comerciales" },
+            { letter: "b", text: "Centros de información" },
+            { letter: "c", text: "Educación pública" },
+            { letter: "d", text: "Investigación en marketing" },
         ],
-        correctAnswer: "b",
+        correctAnswer: "c", // Educación pública es un componente esencial según el capítulo.
     },
     {
-        question: "¿Qué institución fue fundada en 1910 relacionada con atención médica en México?",
+        question: "¿Cuál de estos NO es un nivel de capacitación de Proveedor de Atención Prehospitalaria (PAP)?",
         options: [
-            { letter: "a", text: "Instituto Mexicano del Seguro Social" },
-            { letter: "b", text: "Secretaría de Salud" },
-            { letter: "c", text: "Cruz Roja Mexicana" },
-            { letter: "d", text: "UNAM Facultad de Medicina" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Qué documento reveló las deficiencias en la atención prehospitalaria en EE.UU.?",
-        options: [
-            { letter: "a", text: "El libro naranja" },
-            { letter: "b", text: "EMS Agenda for the Future" },
-            { letter: "c", text: "Papel Blanco" },
-            { letter: "d", text: "Modelo Nacional del PAP" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Qué libro fue el primero en formar parte de la educación del PAP en 1971?",
-        options: [
-            { letter: "a", text: "Emergency Medical Response" },
-            { letter: "b", text: "Emergency Care and Transportation of the Sick and Injured" },
-            { letter: "c", text: "Manual de Urgencias Médicas" },
-            { letter: "d", text: "Atención Prehospitalaria Básica" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Cuál es el primer nivel de capacitación en SEM?",
-        options: [
-            { letter: "a", text: "Técnico en emergencias médicas" },
-            { letter: "b", text: "Técnico paramédico" },
-            { letter: "c", text: "Respondiente en emergencias médicas" },
-            { letter: "d", text: "Técnico avanzado" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Cuántas horas de entrenamiento requiere un REM?",
-        options: [
-            { letter: "a", text: "20 a 40 horas" },
-            { letter: "b", text: "40 a 60 horas" },
-            { letter: "c", text: "60 a 80 horas" },
-            { letter: "d", text: "80 a 100 horas" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Qué nivel de capacitación permite el uso de ventilación mecánica y ECG?",
-        options: [
-            { letter: "a", text: "Técnico básico" },
-            { letter: "b", text: "Técnico avanzado" },
-            { letter: "c", text: "Paramédico" },
-            { letter: "d", text: "Respondiente básico" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Cuál es el nivel más alto de formación en SEM?",
-        options: [
-            { letter: "a", text: "Técnico básico" },
-            { letter: "b", text: "Técnico avanzado" },
-            { letter: "c", text: "Respondiente" },
+            { letter: "a", text: "Técnico Básico en Urgencias" }, // El capítulo menciona "Técnico en emergencias médicas - Básico (TEM-B)"
+            { letter: "b", text: "Respondiente en Emergencias Médicas (REM)" },
+            { letter: "c", text: "Técnico en Emergencias Médicas (TEM)" },
             { letter: "d", text: "Paramédico" },
         ],
-        correctAnswer: "d",
-    },
-    {
-        question: "¿Cuál de los siguientes es un componente del sistema SEM?",
-        options: [
-            { letter: "a", text: "Sistema judicial" },
-            { letter: "b", text: "Dirección médica" },
-            { letter: "c", text: "Red eléctrica" },
-            { letter: "d", text: "Infraestructura vial" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Cuántos componentes tiene el sistema SEM?",
-        options: [
-            { letter: "a", text: "10" },
-            { letter: "b", text: "12" },
-            { letter: "c", text: "14" },
-            { letter: "d", text: "16" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Cuál es una función principal del Centro Regulador de Urgencias Médicas?",
-        options: [
-            { letter: "a", text: "Administrar hospitales privados" },
-            { letter: "b", text: "Coordinar recursos y unidades de emergencia" },
-            { letter: "c", text: "Capacitar a médicos generales" },
-            { letter: "d", text: "Distribuir medicamentos" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Qué institución puede participar de manera voluntaria en el SEM?",
-        options: [
-            { letter: "a", text: "Cruz Roja Mexicana" },
-            { letter: "b", text: "IMSS" },
-            { letter: "c", text: "ISSSTE" },
-            { letter: "d", text: "Secretaría de Salud" },
-        ],
-        correctAnswer: "a",
-    },
-    {
-        question: "¿Cuál NO es una función del Proveedor de Atención Prehospitalaria (PAP)?",
-        options: [
-            { letter: "a", text: "Atención al paciente" },
-            { letter: "b", text: "Mantenimiento de ambulancias" },
-            { letter: "c", text: "Seguimiento de protocolos médicos" },
-            { letter: "d", text: "Transporte de pacientes" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Qué atributo es esencial en un PAP?",
-        options: [
-            { letter: "a", text: "Capacidad de improvisación quirúrgica" },
-            { letter: "b", text: "Desempeño académico" },
-            { letter: "c", text: "Profesionalismo" },
-            { letter: "d", text: "Velocidad al conducir" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Qué incluye el bienestar del PAP según la OMS?",
-        options: [
-            { letter: "a", text: "Ausencia de lesiones físicas" },
-            { letter: "b", text: "Salud física, mental y social" },
-            { letter: "c", text: "Solo salud física" },
-            { letter: "d", text: "Disponibilidad de medicamentos" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Cuál es el orden recomendado de prioridades en una escena según el PAP?",
-        options: [
-            { letter: "a", text: "Paciente, escena, personal" },
-            { letter: "b", text: "Escena, paciente, personal" },
-            { letter: "c", text: "Personal, escena, paciente" },
-            { letter: "d", text: "Paciente, personal, escena" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Cuál es una señal de advertencia de estrés?",
-        options: [
-            { letter: "a", text: "Felicidad extrema" },
-            { letter: "b", text: "Aumento de productividad" },
-            { letter: "c", text: "Irritabilidad con compañeros" },
-            { letter: "d", text: "Aumento de peso saludable" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Qué estrategia ayuda a controlar el estrés en el PAP?",
-        options: [
-            { letter: "a", text: "Aislamiento social" },
-            { letter: "b", text: "Obsesionarse con los errores" },
-            { letter: "c", text: "Buscar ayuda profesional" },
-            { letter: "d", text: "Evitar hablar de emociones" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Qué debe hacerse ante la exposición a sangre del paciente?",
-        options: [
-            { letter: "a", text: "Ignorar y continuar con la atención" },
-            { letter: "b", text: "Reportar después del turno" },
-            { letter: "c", text: "Activar el plan de control de infecciones" },
-            { letter: "d", text: "Esperar síntomas" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Cuál es un paso después de la exposición a fluidos corporales?",
-        options: [
-            { letter: "a", text: "Esconder el incidente" },
-            { letter: "b", text: "Limpiar el área y reportar" },
-            { letter: "c", text: "Continuar con normalidad" },
-            { letter: "d", text: "Tomar una siesta" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Cuál es un equipo esencial para reducir riesgos en el SEM?",
-        options: [
-            { letter: "a", text: "Celular con GPS" },
-            { letter: "b", text: "Equipo de protección personal" },
-            { letter: "c", text: "Manual de procedimientos" },
-            { letter: "d", text: "Linterna de alta potencia" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Cuál NO es una respuesta común al estrés?",
-        options: [
-            { letter: "a", text: "Dolores musculares" },
-            { letter: "b", text: "Insomnio" },
-            { letter: "c", text: "Aumento de concentración" },
-            { letter: "d", text: "Irritabilidad" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Qué es el 'libro naranja' en SEM?",
-        options: [
-            { letter: "a", text: "Guía de farmacología avanzada" },
-            { letter: "b", text: "Manual de primeros auxilios básicos" },
-            { letter: "c", text: "Texto base para PAP publicado en 1971" },
-            { letter: "d", text: "Agenda de reuniones del SEM" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Qué documento estandariza los niveles educativos del SEM?",
-        options: [
-            { letter: "a", text: "Papel Blanco" },
-            { letter: "b", text: "Libro naranja" },
-            { letter: "c", text: "EMS Agenda for the Future" },
-            { letter: "d", text: "Código SEM" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Qué modelo establece habilidades mínimas por nivel del PAP?",
-        options: [
-            { letter: "a", text: "Modelo nacional de SEM" },
-            { letter: "b", text: "National EMS Scope of Practice Model" },
-            { letter: "c", text: "Manual de Procedimientos Clínicos" },
-            { letter: "d", text: "Reglamento de Emergencias Urbanas" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Qué componente del SEM se relaciona con campañas de RCP para la comunidad?",
-        options: [
-            { letter: "a", text: "Educación pública" },
-            { letter: "b", text: "Finanzas del sistema" },
-            { letter: "c", text: "Dirección médica" },
-            { letter: "d", text: "Evaluación" },
-        ],
-        correctAnswer: "a",
-    },
-    {
-        question: "¿Qué componente del SEM se encarga de revisar la calidad del servicio?",
-        options: [
-            { letter: "a", text: "Sistemas de información" },
-            { letter: "b", text: "Evaluación" },
-            { letter: "c", text: "Educación pública" },
-            { letter: "d", text: "Recursos humanos" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Cuál de estos NO es un nivel de capacitación del PAP?",
-        options: [
-            { letter: "a", text: "Técnico básico en urgencias" },
-            { letter: "b", text: "Respondiente en emergencias médicas" },
-            { letter: "c", text: "Técnico en emergencias médicas" },
-            { letter: "d", text: "Técnico paramédico" },
-        ],
-        correctAnswer: "a",
+        correctAnswer: "a", // "Técnico Básico en Urgencias" no es una denominación estándar de los 4 niveles presentados en el capítulo, que son REM, TEM, TEM-A (Avanzado) y Paramédico.
     },
     {
         question: "¿Cuál es una fuente de estrés común para el personal del SEM?",
@@ -339,10 +83,91 @@ export const semSystemQuestions: Question[] = [
         question: "¿Qué debe hacerse si los ojos fueron expuestos a fluidos corporales?",
         options: [
             { letter: "a", text: "Cubrir los ojos con gasas" },
-            { letter: "b", text: "Lavar con agua o solución salina" },
-            { letter: "c", text: "Aplicar antibiótico tópico" },
-            { letter: "d", text: "Esperar síntomas" },
+            { letter: "b", text: "Lavar con agua limpia por 20 minutos" },
+            { letter: "c", text: "Aplicar alcohol en gel" },
+            { letter: "d", text: "Ignorar la exposición" },
         ],
         correctAnswer: "b",
+    },
+    {
+        question: "¿Cuál de los siguientes es un ejemplo de prevención secundaria?",
+        options: [
+            { letter: "a", text: "Provisión de inmovilización de la columna cervical" },
+            { letter: "b", text: "Administración de vacunas" },
+            { letter: "c", text: "Vigilar las lesiones" },
+            { letter: "d", text: "Enseñar la seguridad en las escuelas" },
+        ],
+        correctAnswer: "a", // Según el capítulo, la inmovilización cervical es un ejemplo de prevención secundaria.
+    },
+    {
+        question: "¿Cuál de las siguientes NO es una función o responsabilidad apropiada de un Proveedor de Atención Prehospitalaria (PAP)?",
+        options: [
+            { letter: "a", text: "Realizar una evaluación del paciente." },
+            { letter: "b", text: "Mantener los estándares médicos y legales." },
+            { letter: "c", text: "Prestar asesoramiento jurídico a los pacientes." },
+            { letter: "d", text: "Garantizar y proteger la privacidad del paciente." },
+        ],
+        correctAnswer: "c",
+    },
+    {
+        question: "Un ejemplo de trabajo en equipo y diplomacia es:",
+        options: [
+            { letter: "a", text: "Usar su persona para proyectar un sentido de confianza." },
+            { letter: "b", text: "Ser capaz de comunicarse mientras respeta al que escucha." },
+            { letter: "c", text: "Colocar a otros en alta estima o importancia." },
+            { letter: "d", text: "Delegar múltiples tareas garantizando eficiencia y seguridad." },
+        ],
+        correctAnswer: "b",
+    },
+    {
+        question: "La Health Insurance Portability and Accountability Act (HIPAA):",
+        options: [
+            { letter: "a", text: "Permite a los pacientes viajar sin perder el seguro de salud." },
+            { letter: "b", text: "Exige que las compañías de seguros justifiquen la negación de la atención médica." },
+            { letter: "c", text: "Evita que un departamento de emergencias se niegue a atender a un paciente en condición crítica." },
+            { letter: "d", text: "Limita la disponibilidad de la información médica del paciente." },
+        ],
+        correctAnswer: "d",
+    },
+
+    {
+        question: "¿Cuál es el principal enfoque de la prevención primaria en el SEM?",
+        options: [
+            { letter: "a", text: "Reducir la gravedad de las lesiones existentes." },
+            { letter: "b", text: "Evitar que los eventos ocurran en primer lugar." },
+            { letter: "c", text: "Proporcionar tratamiento médico avanzado." },
+            { letter: "d", text: "Rehabilitación de pacientes." },
+        ],
+        correctAnswer: "b",
+    },
+    {
+        question: "¿Qué significa la 'toma de decisiones con base en la evidencia' en el contexto del SEM?",
+        options: [
+            { letter: "a", text: "Tomar decisiones basadas en la intuición personal." },
+            { letter: "b", text: "Aplicar tratamientos basándose en las últimas investigaciones científicas." },
+            { letter: "c", "text": "Decidir el tratamiento según la experiencia de un colega." },
+            { letter: "d", "text": "Usar solo el equipo disponible sin considerar otras opciones." }
+        ],
+        correctAnswer: "b"
+    },
+    {
+        question: "¿Qué papel juega la 'recopilación de datos' en la investigación del SEM?",
+        options: [
+            { letter: "a", text: "Permite adivinar los resultados." },
+            { letter: "b", text: "Proporciona información para fundamentar las decisiones y mejorar los sistemas." },
+            { letter: "c", text: "Es una tarea opcional que no afecta la calidad." },
+            { letter: "d", text: "Sirve únicamente para fines administrativos." }
+        ],
+        correctAnswer: "b"
+    },
+    {
+        question: "¿Qué establece la Americans with Disabilities Act (ADA) en relación con el empleo como PAP?",
+        options: [
+            { letter: "a", text: "Exige que todos los PAP sean físicamente capaces de levantar grandes pesos." },
+            { letter: "b", text: "Prohíbe a las personas con discapacidades trabajar en el SEM." },
+            { letter: "c", text: "Requiere que los empleadores hagan ajustes razonables para permitir que personas calificadas con discapacidades trabajen como PAP." },
+            { letter: "d", text: "No tiene ninguna aplicación en el ámbito del SEM." }
+        ],
+        correctAnswer: "c"
     }
 ];

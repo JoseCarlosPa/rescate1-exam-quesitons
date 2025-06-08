@@ -36,7 +36,7 @@ export default function Pharmacology(){
                     </header>
 
                     {/* Menú rápido de recursos */}
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 max-w-4xl mx-auto">
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8 max-w-4xl mx-auto">
                         <NavLink
                             to="/pharmacology/exam"
                             className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
@@ -50,12 +50,7 @@ export default function Pharmacology(){
                             <PiChalkboardTeacher className="w-10 h-10 text-orange-500 mb-2" />
                             <p className="text-center font-medium">Presentación</p>
                         </a>
-                        <button
-                            onClick={() => setShowQuickQuiz(!showQuickQuiz)}
-                            className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
-                            <TbNotebook className="w-10 h-10 text-orange-500 mb-2" />
-                            <p className="text-center font-medium">Quiz Rápido</p>
-                        </button>
+                        
                         <a href="https://www.medicamentosplm.com/Home/Medicamento/A/1"
                            target="_blank"
                            rel="noopener noreferrer"
