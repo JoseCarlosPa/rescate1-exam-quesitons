@@ -24,12 +24,62 @@ import {semSystemQuestions} from "./SEM/Sem.questions.ts";
 import {shockQuestions} from "./Shock/Shock.questions.ts";
 import {traumaGeneralQuestions} from "./Trauma/Trauma.questions.ts";
 import {hemorragiasQuestions} from "./Bleeding/Bleeding.questions.ts";
+import {faceAndNeckExamen} from "./FaceAndNeck/FaceAndNeck.questions.ts";
+import {softTissueExam} from "./SoftTissue/SoftTissue.questions.ts";
 
 export function getRandomQuestion() {
     const randomIndex = Math.floor(Math.random() * allQuestions.length);
     return allQuestions[randomIndex];
 }
 
+// create a function that get me N number of questions from each category
+export function getRandomQuestionsFromEachCategory(n: number): Question[] {
+    const categories = [
+        respiratoryEmergenciesExam,
+        airwayManagementQuestions,
+        cardiovascularQuestions,
+        communicationsQuestions,
+        endocrineHematologicQuestions,
+        patientAssessmentQuestions,
+        gastrointestinalUrologicQuestions,
+        generalExamQuestions,
+        humanBodyQuestions,
+        immobilizationQuestions,
+        legalQuestions,
+        lifeSpecQuestions,
+        medicationAdministrationQuestions,
+        medicTermsQuestions,
+        visionMedicGeneralQuestions,
+        megaQuestions,
+        neurologicasQuestions,
+        nemotecniasQuestions,
+        pharmacologyQuestions,
+        svbQuestions,
+        securityQuestions,
+        semSystemQuestions,
+        shockQuestions,
+        traumaGeneralQuestions,
+        hemorragiasQuestions,
+        faceAndNeckExamen,
+        softTissueExam
+    ];
+
+    const selectedQuestions: Question[] = [];
+
+    for (const category of categories) {
+        const randomIndices = new Set<number>();
+
+        while (randomIndices.size < n && randomIndices.size < category.length) {
+            randomIndices.add(Math.floor(Math.random() * category.length));
+        }
+
+        for (const index of randomIndices) {
+            selectedQuestions.push(category[index]);
+        }
+    }
+
+    return selectedQuestions;
+}
 
 export const allQuestions: Question[] = [
     ...respiratoryEmergenciesExam,
@@ -57,6 +107,9 @@ export const allQuestions: Question[] = [
     ...shockQuestions,
     ...traumaGeneralQuestions,
     ...hemorragiasQuestions,
+    ...faceAndNeckExamen,
+    ...softTissueExam,
+
 
 ]
 
