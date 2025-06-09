@@ -232,7 +232,9 @@ export const lections: tLection[] = [
         id: '28',
         title: 'Lesiones del tejido blando',
         icon: <CiMedicalCross className="w-12 h-12 mb-1 text-orange-500"/>,
-        route: AllRoutes.EMT,
+        route: AllRoutes.SOFT_TISSUE,
+        active: true,
+
     },
     {
         id: '29',

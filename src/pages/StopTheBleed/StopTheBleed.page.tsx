@@ -67,14 +67,6 @@ export default function StopTheBleed(){
                     >
                         <FaArrowLeft /> Regresar
                     </NavLink>
-
-                    <nav className="hidden md:flex space-x-4 text-sm overflow-x-auto pb-1">
-                        <a href="#introduccion" className="px-3 py-1 rounded-full bg-blue-100 text-blue-800 hover:bg-blue-200 transition">Introducción</a>
-                        <a href="#importancia" className="px-3 py-1 rounded-full bg-blue-100 text-blue-800 hover:bg-blue-200 transition">Importancia</a>
-                        <a href="#pasos" className="px-3 py-1 rounded-full bg-blue-100 text-blue-800 hover:bg-blue-200 transition">ABC</a>
-                        <a href="#kits" className="px-3 py-1 rounded-full bg-blue-100 text-blue-800 hover:bg-blue-200 transition">Kits</a>
-                        <a href="#entrenamiento" className="px-3 py-1 rounded-full bg-blue-100 text-blue-800 hover:bg-blue-200 transition">Entrenamiento</a>
-                    </nav>
                 </div>
             </div>
 

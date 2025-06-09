@@ -65,6 +65,8 @@ import StudyCase from "../StudyCase/StudyCase.page.tsx";
 import AlgorithmsAndProtocols from "../AlgorithmsAndProtocols/AlgorithmsAndProtocols.page.tsx";
 import FaceAndNeck from "../../pages/EMT/FaceAndNeck/FaceAndNeck.page.tsx";
 import {faceAndNeckExamen} from "../../pages/EMT/FaceAndNeck/FaceAndNeck.questions.ts";
+import {softTissueExam} from "../../pages/EMT/SoftTissue/SoftTissue.questions.ts";
+import SoftTissue from "../../pages/EMT/SoftTissue/SoftTissue.page.tsx";
 export default function Router(){
     return(
         <Suspense fallback={<div>Loading...</div>}>
@@ -125,6 +127,8 @@ export default function Router(){
                 <Route path={`${AllRoutes.BLEEDING}/exam`} element={<Exam returnRoute={AllRoutes.BLEEDING} name="Hemorragias" questions={hemorragiasQuestions} id={25}  />}/>
                 <Route path={AllRoutes.FACE_AND_NECK} element={<FaceAndNeck />}/>
                 <Route path={`${AllRoutes.FACE_AND_NECK}/exam`} element={<Exam returnRoute={AllRoutes.FACE_AND_NECK} name="Lesiones de cara y cuello" questions={faceAndNeckExamen} id={26}  />}/>
+                <Route path={AllRoutes.SOFT_TISSUE} element={<SoftTissue />}/>
+                <Route path={`${AllRoutes.SOFT_TISSUE}/exam`} element={<Exam returnRoute={AllRoutes.SOFT_TISSUE} name="Lesiones del tejido blando" questions={softTissueExam} id={27}  />}/>
 
                 <Route path={AllRoutes.LMS} element={<Lms /> }/>
                 <Route path={AllRoutes.BLS} element={<Bls />}/>
