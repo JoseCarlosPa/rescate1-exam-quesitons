@@ -216,13 +216,17 @@ export const lections: tLection[] = [
         id: '26',
         title: 'STOP THE BLEED',
         icon: <BsSignStopFill className="w-12 h-12 mb-1 text-orange-500"/>,
-        route: AllRoutes.EMT,
+        route: AllRoutes.STOP_THE_BLEED,
+        active: true,
+
     },
     {
         id: '27',
         title: 'Lesiones de cara y cuello',
         icon: <MdFace6 className="w-12 h-12 mb-1 text-orange-500"/>,
-        route: AllRoutes.EMT,
+        route: AllRoutes.FACE_AND_NECK,
+        active: true,
+
     },
     {
         id: '28',

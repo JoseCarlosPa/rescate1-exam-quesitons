@@ -63,6 +63,8 @@ import Bleeding from "../../pages/EMT/Bleeding/Bleeding.page.tsx";
 import {hemorragiasQuestions} from "../../pages/EMT/Bleeding/Bleeding.questions.ts";
 import StudyCase from "../StudyCase/StudyCase.page.tsx";
 import AlgorithmsAndProtocols from "../AlgorithmsAndProtocols/AlgorithmsAndProtocols.page.tsx";
+import FaceAndNeck from "../../pages/EMT/FaceAndNeck/FaceAndNeck.page.tsx";
+import {faceAndNeckExamen} from "../../pages/EMT/FaceAndNeck/FaceAndNeck.questions.ts";
 export default function Router(){
     return(
         <Suspense fallback={<div>Loading...</div>}>
@@ -121,6 +123,8 @@ export default function Router(){
                 <Route path={`${AllRoutes.IMMOBILIZATION}/exam`} element={<Exam returnRoute={AllRoutes.IMMOBILIZATION} name="Inmovilización" questions={immobilizationQuestions} id={24}  />}/>
                 <Route path={AllRoutes.BLEEDING} element={<Bleeding />}/>
                 <Route path={`${AllRoutes.BLEEDING}/exam`} element={<Exam returnRoute={AllRoutes.BLEEDING} name="Hemorragias" questions={hemorragiasQuestions} id={25}  />}/>
+                <Route path={AllRoutes.FACE_AND_NECK} element={<FaceAndNeck />}/>
+                <Route path={`${AllRoutes.FACE_AND_NECK}/exam`} element={<Exam returnRoute={AllRoutes.FACE_AND_NECK} name="Lesiones de cara y cuello" questions={faceAndNeckExamen} id={26}  />}/>
 
                 <Route path={AllRoutes.LMS} element={<Lms /> }/>
                 <Route path={AllRoutes.BLS} element={<Bls />}/>
