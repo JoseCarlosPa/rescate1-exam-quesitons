@@ -29,6 +29,7 @@ export enum AllRoutes {
     BLEEDING = "/bleeding",
     FACE_AND_NECK = "/face-and-neck",
     SOFT_TISSUE = "/soft-tissue",
+    HEAD_AND_COLUMN_INJURIES = "/head-and-column-injuries",
     BLS = "/bls",
     LMS = "/lms",
     STOP_THE_BLEED = "/stop-the-bleed",

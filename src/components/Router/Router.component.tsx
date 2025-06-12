@@ -67,6 +67,8 @@ import FaceAndNeck from "../../pages/EMT/FaceAndNeck/FaceAndNeck.page.tsx";
 import {faceAndNeckExamen} from "../../pages/EMT/FaceAndNeck/FaceAndNeck.questions.ts";
 import {softTissueExam} from "../../pages/EMT/SoftTissue/SoftTissue.questions.ts";
 import SoftTissue from "../../pages/EMT/SoftTissue/SoftTissue.page.tsx";
+import HeadAndColumnInjuries from "../../pages/EMT/HeadAndColumnInjuries/HeadAndColumnInjuries.page.tsx";
+import {headAndColumnInjuriesQuestions} from "../../pages/EMT/HeadAndColumnInjuries/HeadAndColumnInjuries.questions.ts";
 export default function Router(){
     return(
         <Suspense fallback={<div>Loading...</div>}>
@@ -128,7 +130,9 @@ export default function Router(){
                 <Route path={AllRoutes.FACE_AND_NECK} element={<FaceAndNeck />}/>
                 <Route path={`${AllRoutes.FACE_AND_NECK}/exam`} element={<Exam returnRoute={AllRoutes.FACE_AND_NECK} name="Lesiones de cara y cuello" questions={faceAndNeckExamen} id={26}  />}/>
                 <Route path={AllRoutes.SOFT_TISSUE} element={<SoftTissue />}/>
-                <Route path={`${AllRoutes.SOFT_TISSUE}/exam`} element={<Exam returnRoute={AllRoutes.SOFT_TISSUE} name="Lesiones del tejido blando" questions={softTissueExam} id={27}  />}/>
+                <Route path={`${AllRoutes.SOFT_TISSUE}/exam`} element={<Exam returnRoute={AllRoutes.HEAD_AND_COLUMN_INJURIES} name="Lesiones del tejido blando" questions={softTissueExam} id={27}  />}/>
+                <Route path={AllRoutes.HEAD_AND_COLUMN_INJURIES} element={<HeadAndColumnInjuries />}/>
+                <Route path={`${AllRoutes.HEAD_AND_COLUMN_INJURIES}/exam`} element={<Exam returnRoute={AllRoutes.HEAD_AND_COLUMN_INJURIES} name="Lesiones de caveza y columna vertebral" questions={headAndColumnInjuriesQuestions} id={28}  />}/>
 
                 <Route path={AllRoutes.LMS} element={<Lms /> }/>
                 <Route path={AllRoutes.BLS} element={<Bls />}/>
