@@ -247,7 +247,8 @@ export const lections: tLection[] = [
         id: '30',
         title: 'Lesiones del torax',
         icon: <GiTrenchBodyArmor className="w-12 h-12 mb-1 text-orange-500"/>,
-        route: AllRoutes.EMT,
+        route: AllRoutes.TORAX_INJURIES,
+        active: true,
     },
     {
         id: '31',

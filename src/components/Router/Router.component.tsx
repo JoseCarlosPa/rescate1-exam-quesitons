@@ -42,7 +42,9 @@ import {AllRoutes} from "./Router.constants.ts";
 import Login from "../../pages/Auth/Login/Login.page.tsx";
 import {visionMedicGeneralQuestions} from "../../pages/EMT/MedicVision/MedicVision.questions.ts";
 import MedicVision from "../../pages/EMT/MedicVision/MedicVision.page.tsx";
-import {respiratoryEmergenciesExam} from "../../pages/EMT/AirwayEmergency/AirwayEmergency.questions.ts";
+import {
+    respiratoryEmergenciesExam,
+} from "../../pages/EMT/AirwayEmergency/AirwayEmergency.questions.ts";
 import AirwayEmergency from "../../pages/EMT/AirwayEmergency/AirwayEmergency.page.tsx";
 import {cardiovascularQuestions} from "../../pages/EMT/CardioEmergency/CardioEmergency.questions.ts";
 import CardioEmergency from "../../pages/EMT/CardioEmergency/CardioEmergency.page.tsx";
@@ -69,6 +71,8 @@ import {softTissueExam} from "../../pages/EMT/SoftTissue/SoftTissue.questions.ts
 import SoftTissue from "../../pages/EMT/SoftTissue/SoftTissue.page.tsx";
 import HeadAndColumnInjuries from "../../pages/EMT/HeadAndColumnInjuries/HeadAndColumnInjuries.page.tsx";
 import {headAndColumnInjuriesQuestions} from "../../pages/EMT/HeadAndColumnInjuries/HeadAndColumnInjuries.questions.ts";
+import ToraxInjuries from "../../pages/EMT/ToraxInjuries/ToraxInjuries.page.tsx";
+import {toraxInjuriesQuestions} from "../../pages/EMT/ToraxInjuries/ToraxInjuries.questions.ts";
 export default function Router(){
     return(
         <Suspense fallback={<div>Loading...</div>}>
@@ -132,7 +136,9 @@ export default function Router(){
                 <Route path={AllRoutes.SOFT_TISSUE} element={<SoftTissue />}/>
                 <Route path={`${AllRoutes.SOFT_TISSUE}/exam`} element={<Exam returnRoute={AllRoutes.HEAD_AND_COLUMN_INJURIES} name="Lesiones del tejido blando" questions={softTissueExam} id={27}  />}/>
                 <Route path={AllRoutes.HEAD_AND_COLUMN_INJURIES} element={<HeadAndColumnInjuries />}/>
-                <Route path={`${AllRoutes.HEAD_AND_COLUMN_INJURIES}/exam`} element={<Exam returnRoute={AllRoutes.HEAD_AND_COLUMN_INJURIES} name="Lesiones de caveza y columna vertebral" questions={headAndColumnInjuriesQuestions} id={28}  />}/>
+                <Route path={`${AllRoutes.HEAD_AND_COLUMN_INJURIES}/exam`} element={<Exam returnRoute={AllRoutes.TORAX_INJURIES} name="Lesiones de caveza y columna vertebral" questions={headAndColumnInjuriesQuestions} id={28}  />}/>
+                <Route path={AllRoutes.TORAX_INJURIES} element={<ToraxInjuries />}/>
+                <Route path={`${AllRoutes.TORAX_INJURIES}/exam`} element={<Exam returnRoute={AllRoutes.TORAX_INJURIES} name="Lesiones del torax" questions={toraxInjuriesQuestions} id={29}  />}/>
 
                 <Route path={AllRoutes.LMS} element={<Lms /> }/>
                 <Route path={AllRoutes.BLS} element={<Bls />}/>
