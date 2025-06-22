@@ -1,0 +1,54 @@
+/* Print styles for GeneralExam component */
+@media print {
+  /* Hide navigation elements when printing */
+  nav, .print-hidden, button, .print:hidden {
+    display: none !important;
+  }
+  
+  /* Make sure the content is properly displayed in print mode */
+  body {
+    font-size: 12pt;
+    color: #000;
+    background-color: #fff;
+  }
+  
+  /* Ensure page breaks don't happen inside questions */
+  .print-break-inside-avoid {
+    page-break-inside: avoid;
+  }
+  
+  /* Add page breaks where needed */
+  .print-page-break-after {
+    page-break-after: always;
+  }
+  
+  /* Make sure the content takes full width */
+  .print-full-width {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0.5cm !important;
+  }
+  
+  /* Ensure good spacing */
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+  
+  /* Improve spacing for questions */
+  .question-item {
+    margin-bottom: 1.5em;
+    page-break-inside: avoid;
+  }
+  
+  /* Format exam header for printing */
+  .exam-header {
+    text-align: center;
+    margin-bottom: 1cm;
+  }
+  
+  /* Hide timer and controls */
+  .exam-controls {
+    display: none !important;
+  }
+}

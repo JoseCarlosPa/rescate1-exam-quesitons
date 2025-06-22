@@ -87,6 +87,76 @@ export function getRandomQuestionsFromEachCategory(n: number): Question[] {
     return selectedQuestions;
 }
 
+// Map of topic IDs to their question arrays
+export const topicQuestionsMap: Record<string, Question[]> = {
+    '2': legalQuestions,
+    '3': communicationsQuestions,
+    '4': semSystemQuestions,
+    '5': securityQuestions,
+    '6': medicTermsQuestions,
+    '7': humanBodyQuestions,
+    '8': lifeSpecQuestions,
+    '9': patientAssessmentQuestions,
+    '10': nemotecniasQuestions,
+    '11': airwayManagementQuestions,
+    '12': pharmacologyQuestions,
+    '13': medicationAdministrationQuestions,
+    '14': shockQuestions,
+    '15': svbQuestions,
+    '16': megaQuestions,
+    '17': visionMedicGeneralQuestions,
+    '18': respiratoryEmergenciesExam,
+    '19': cardiovascularQuestions,
+    '20': neurologicasQuestions,
+    '21': gastrointestinalUrologicQuestions,
+    '22': endocrineHematologicQuestions,
+    '23': traumaGeneralQuestions,
+    '24': immobilizationQuestions,
+    '25': hemorragiasQuestions,
+    '27': faceAndNeckExamen,
+    '28': softTissueExam,
+    '29': headAndColumnInjuriesQuestions,
+    '30': toraxInjuriesQuestions,
+    '31': feetInjuriesQuestions
+};
+
+// Function to get random questions from selected topics
+export function getQuestionsFromSelectedTopics(selectedTopics: {id: string, count: number}[]): Question[] {
+    const selectedQuestions: Question[] = [];
+    
+    for (const topic of selectedTopics) {
+        const questions = topicQuestionsMap[topic.id];
+        
+        if (questions && questions.length > 0) {
+            const count = Math.min(topic.count, questions.length);
+            const randomIndices = new Set<number>();
+            
+            // Get random indices for this topic
+            while (randomIndices.size < count) {
+                randomIndices.add(Math.floor(Math.random() * questions.length));
+            }
+            
+            // Add the randomly selected questions to our result
+            for (const index of randomIndices) {
+                selectedQuestions.push(questions[index]);
+            }
+        }
+    }
+    
+    // Shuffle the questions to mix them up
+    return shuffleArray(selectedQuestions);
+}
+
+// Helper function to shuffle an array (Fisher-Yates algorithm)
+function shuffleArray<T>(array: T[]): T[] {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
+}
+
 export const allQuestions: Question[] = [
     ...respiratoryEmergenciesExam,
     ...airwayManagementQuestions,
@@ -118,8 +188,6 @@ export const allQuestions: Question[] = [
     ...headAndColumnInjuriesQuestions,
     ...toraxInjuriesQuestions,
     ...feetInjuriesQuestions
-
-
 ]
 
 
