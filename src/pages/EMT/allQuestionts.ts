@@ -28,6 +28,7 @@ import {faceAndNeckExamen} from "./FaceAndNeck/FaceAndNeck.questions.ts";
 import {softTissueExam} from "./SoftTissue/SoftTissue.questions.ts";
 import {headAndColumnInjuriesQuestions} from "./HeadAndColumnInjuries/HeadAndColumnInjuries.questions.ts";
 import {toraxInjuriesQuestions} from "./ToraxInjuries/ToraxInjuries.questions.ts";
+import {feetInjuriesQuestions} from "./FeetInjuries/FeetInjuries.questions.ts";
 
 export function getRandomQuestion() {
     const randomIndex = Math.floor(Math.random() * allQuestions.length);
@@ -65,7 +66,8 @@ export function getRandomQuestionsFromEachCategory(n: number): Question[] {
         faceAndNeckExamen,
         softTissueExam,
         headAndColumnInjuriesQuestions,
-        toraxInjuriesQuestions
+        toraxInjuriesQuestions,
+        feetInjuriesQuestions
     ];
 
     const selectedQuestions: Question[] = [];
@@ -114,7 +116,8 @@ export const allQuestions: Question[] = [
     ...faceAndNeckExamen,
     ...softTissueExam,
     ...headAndColumnInjuriesQuestions,
-    ...toraxInjuriesQuestions
+    ...toraxInjuriesQuestions,
+    ...feetInjuriesQuestions
 
 
 ]

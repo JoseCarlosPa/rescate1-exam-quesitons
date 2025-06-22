@@ -73,6 +73,8 @@ import HeadAndColumnInjuries from "../../pages/EMT/HeadAndColumnInjuries/HeadAnd
 import {headAndColumnInjuriesQuestions} from "../../pages/EMT/HeadAndColumnInjuries/HeadAndColumnInjuries.questions.ts";
 import ToraxInjuries from "../../pages/EMT/ToraxInjuries/ToraxInjuries.page.tsx";
 import {toraxInjuriesQuestions} from "../../pages/EMT/ToraxInjuries/ToraxInjuries.questions.ts";
+import FeetInjuries from "../../pages/EMT/FeetInjuries/FeetInjuries.page.tsx";
+import {feetInjuriesQuestions} from "../../pages/EMT/FeetInjuries/FeetInjuries.questions.ts";
 export default function Router(){
     return(
         <Suspense fallback={<div>Loading...</div>}>
@@ -132,13 +134,15 @@ export default function Router(){
                 <Route path={AllRoutes.BLEEDING} element={<Bleeding />}/>
                 <Route path={`${AllRoutes.BLEEDING}/exam`} element={<Exam returnRoute={AllRoutes.BLEEDING} name="Hemorragias" questions={hemorragiasQuestions} id={25}  />}/>
                 <Route path={AllRoutes.FACE_AND_NECK} element={<FaceAndNeck />}/>
-                <Route path={`${AllRoutes.FACE_AND_NECK}/exam`} element={<Exam returnRoute={AllRoutes.FACE_AND_NECK} name="Lesiones de cara y cuello" questions={faceAndNeckExamen} id={26}  />}/>
+                <Route path={`${AllRoutes.FACE_AND_NECK}/exam`} element={<Exam returnRoute={AllRoutes.FACE_AND_NECK} name="Lesiones de cara y cuello" questions={faceAndNeckExamen} id={27}  />}/>
                 <Route path={AllRoutes.SOFT_TISSUE} element={<SoftTissue />}/>
-                <Route path={`${AllRoutes.SOFT_TISSUE}/exam`} element={<Exam returnRoute={AllRoutes.HEAD_AND_COLUMN_INJURIES} name="Lesiones del tejido blando" questions={softTissueExam} id={27}  />}/>
+                <Route path={`${AllRoutes.SOFT_TISSUE}/exam`} element={<Exam returnRoute={AllRoutes.HEAD_AND_COLUMN_INJURIES} name="Lesiones del tejido blando" questions={softTissueExam} id={28}  />}/>
                 <Route path={AllRoutes.HEAD_AND_COLUMN_INJURIES} element={<HeadAndColumnInjuries />}/>
-                <Route path={`${AllRoutes.HEAD_AND_COLUMN_INJURIES}/exam`} element={<Exam returnRoute={AllRoutes.TORAX_INJURIES} name="Lesiones de caveza y columna vertebral" questions={headAndColumnInjuriesQuestions} id={28}  />}/>
+                <Route path={`${AllRoutes.HEAD_AND_COLUMN_INJURIES}/exam`} element={<Exam returnRoute={AllRoutes.TORAX_INJURIES} name="Lesiones de caveza y columna vertebral" questions={headAndColumnInjuriesQuestions} id={29}  />}/>
                 <Route path={AllRoutes.TORAX_INJURIES} element={<ToraxInjuries />}/>
-                <Route path={`${AllRoutes.TORAX_INJURIES}/exam`} element={<Exam returnRoute={AllRoutes.TORAX_INJURIES} name="Lesiones del torax" questions={toraxInjuriesQuestions} id={29}  />}/>
+                <Route path={`${AllRoutes.TORAX_INJURIES}/exam`} element={<Exam returnRoute={AllRoutes.TORAX_INJURIES} name="Lesiones del torax" questions={toraxInjuriesQuestions} id={30}  />}/>
+                <Route path={AllRoutes.FEET_INJURIES} element={<FeetInjuries />}/>
+                <Route path={`${AllRoutes.FEET_INJURIES}/exam`} element={<Exam returnRoute={AllRoutes.FEET_INJURIES} name="Lesiones Ortopedicas" questions={feetInjuriesQuestions} id={31}  />}/>
 
                 <Route path={AllRoutes.LMS} element={<Lms /> }/>
                 <Route path={AllRoutes.BLS} element={<Bls />}/>

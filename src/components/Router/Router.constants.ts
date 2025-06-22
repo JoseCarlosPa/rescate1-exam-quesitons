@@ -31,6 +31,7 @@ export enum AllRoutes {
     SOFT_TISSUE = "/soft-tissue",
     HEAD_AND_COLUMN_INJURIES = "/head-and-column-injuries",
     TORAX_INJURIES = "/torax-injuries",
+    FEET_INJURIES = "/feet-injuries",
     BLS = "/bls",
     LMS = "/lms",
     STOP_THE_BLEED = "/stop-the-bleed",

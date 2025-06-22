@@ -254,7 +254,9 @@ export const lections: tLection[] = [
         id: '31',
         title: 'Lesiones ortopédicas',
         icon: <GiMorgueFeet className="w-12 h-12 mb-1 text-orange-500"/>,
-        route: AllRoutes.EMT,
+        route: AllRoutes.FEET_INJURIES,
+        active: true,
+
     },
     {
         id: '32',
