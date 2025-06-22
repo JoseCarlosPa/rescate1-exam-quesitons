@@ -130,7 +130,7 @@ export default function CardioEmergency() {
                                         Las emergencias cardiovasculares comprenden todas aquellas situaciones en las que el corazón o los vasos sanguíneos sufren una alteración aguda que pone en peligro la vida. Incluyen el paro cardíaco súbito, el síndrome coronario agudo (SCA), arritmias, insuficiencia cardíaca y shock cardiogénico.
                                     </p>
                                     <p className="text-gray-700 mt-2 leading-relaxed">
-                                        Según la AAOS (11ª edición), el reconocimiento temprano y la intervención rápida son fundamentales para mejorar la supervivencia. La cadena de supervivencia es clave en la atención prehospitalaria.
+                                        El reconocimiento temprano y la intervención rápida son fundamentales para mejorar la supervivencia. La cadena de supervivencia es clave en la atención prehospitalaria.
                                     </p>
                                 </div>
                                 <div>

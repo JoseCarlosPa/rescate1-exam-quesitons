@@ -134,7 +134,7 @@ export default function ToraxInjuries(){
                                         Las lesiones torácicas son traumatismos que afectan a la caja torácica, los órganos contenidos en ella (pulmones, corazón, grandes vasos) y las estructuras circundantes. Son potencialmente mortales, ya que pueden comprometer rápidamente la función respiratoria y circulatoria.
                                     </p>
                                     <p className="text-gray-700 mt-2 leading-relaxed">
-                                        Según la AAOS (11ª edición), las lesiones torácicas son una causa importante de mortalidad en trauma, siendo responsables del 25% de las muertes traumáticas. El reconocimiento y manejo prehospitalario adecuado puede ser determinante para la supervivencia.
+                                        Las lesiones torácicas son una causa importante de mortalidad en trauma, siendo responsables del 25% de las muertes traumáticas. El reconocimiento y manejo prehospitalario adecuado puede ser determinante para la supervivencia.
                                     </p>
                                 </div>
 
@@ -290,31 +290,73 @@ export default function ToraxInjuries(){
                         )}
 
                         {activeTab === 'treatment' && (
-                            <div className="space-y-6">
+                            <div className="space-y-8">
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Manejo básico de la vía aérea</h2>
+                                    <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2">Principios Generales de Manejo Prehospitalario</h2>
                                     <div className="grid md:grid-cols-2 gap-6">
                                         <div>
-                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Evaluación primaria (ABCDE)</h3>
+                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Evaluación Primaria Focalizada (XABCDE)</h3>
                                             <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                                <li><strong>A:</strong> Vía aérea con control cervical</li>
-                                                <li><strong>B:</strong> Evaluación torácica rápida: movimientos simétricos, heridas, crepitación, enfisema subcutáneo</li>
-                                                <li><strong>C:</strong> Circulación y control de hemorragias, valoración de shock</li>
-                                                <li><strong>D:</strong> Evaluación neurológica</li>
-                                                <li><strong>E:</strong> Exposición y entorno, evitar hipotermia</li>
+                                                <li><strong>X:</strong> Control de hemorragias externas exanguinantes (si aplica).</li>
+                                                <li><strong>A:</strong> Vía aérea permeable con control de columna cervical.</li>
+                                                <li><strong>B:</strong> Ventilación y oxigenación. Evaluar frecuencia, profundidad, simetría, ruidos respiratorios y buscar signos de lesiones específicas (heridas soplantes, movimiento paradójico).</li>
+                                                <li><strong>C:</strong> Circulación. Evaluar pulso, coloración de la piel, temperatura, llenado capilar y buscar signos de shock (hipotensión, taquicardia).</li>
+                                                <li><strong>D:</strong> Déficit neurológico (escala de Glasgow).</li>
+                                                <li><strong>E:</strong> Exposición completa del tórax, buscando lesiones y protegiendo de la hipotermia.</li>
                                             </ul>
                                         </div>
                                         <div>
-                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Signos y síntomas específicos</h3>
+                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Intervenciones Fundamentales</h3>
                                             <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                                <li>Disnea o dificultad respiratoria</li>
-                                                <li>Dolor torácico, especialmente al respirar</li>
-                                                <li>Desviación traqueal (emergencia inmediata)</li>
-                                                <li>Ingurgitación yugular</li>
-                                                <li>Ruidos respiratorios ausentes o disminuidos</li>
-                                                <li>Cianosis o palidez</li>
-                                                <li>Tono cardíaco apagado</li>
+                                                <li>Administración de oxígeno a alto flujo para mantener SpO₂ &gt; 94%.</li>
+                                                <li>Manejo avanzado de la vía aérea si es necesario (BVM, intubación).</li>
+                                                <li>Control de hemorragias visibles.</li>
+                                                <li>Monitorización continua de signos vitales (ECG, SpO₂, ETCO₂).</li>
+                                                <li>Traslado rápido y comunicación con el hospital receptor.</li>
                                             </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2">Manejo Específico de Lesiones Críticas</h2>
+                                    <div className="space-y-6">
+                                        <div className="p-4 bg-red-50 rounded-lg">
+                                            <h3 className="font-semibold text-lg text-red-800 mb-2">Neumotórax Abierto (Herida Torácica Aspirante)</h3>
+                                            <p className="text-gray-700"><strong>Objetivo:</strong> Sellar el defecto y prevenir el neumotórax a tensión.</p>
+                                            <ol className="list-decimal list-inside space-y-1 mt-2 text-gray-700">
+                                                <li>Sellar la herida con un apósito oclusivo comercial (parche torácico con válvula) o uno improvisado fijado en 3 lados.</li>
+                                                <li>Vigilar de cerca al paciente por si desarrolla un neumotórax a tensión. Si ocurre, levantar el apósito momentáneamente.</li>
+                                            </ol>
+                                        </div>
+                                        <div className="p-4 bg-red-50 rounded-lg">
+                                            <h3 className="font-semibold text-lg text-red-800 mb-2">Neumotórax a Tensión</h3>
+                                            <p className="text-gray-700"><strong>Objetivo:</strong> Liberar la presión del espacio pleural.</p>
+                                            <ol className="list-decimal list-inside space-y-1 mt-2 text-gray-700">
+                                                <li>Reconocimiento inmediato basado en signos clínicos: dificultad respiratoria severa, hipotensión, ingurgitación yugular, desviación traqueal (tardío).</li>
+                                                <li>Si la causa es un sello oclusivo, levantarlo momentáneamente.</li>
+                                                <li>Si el proveedor está autorizado (Paramédico), realizar descompresión torácica con aguja.</li>
+                                            </ol>
+                                        </div>
+                                        <div className="p-4 bg-yellow-50 rounded-lg">
+                                            <h3 className="font-semibold text-lg text-yellow-800 mb-2">Tórax Inestable (Volet Costal)</h3>
+                                            <p className="text-gray-700"><strong>Objetivo:</strong> Mejorar la ventilación y tratar el dolor.</p>
+                                            <ol className="list-decimal list-inside space-y-1 mt-2 text-gray-700">
+                                                <li>La principal amenaza es la contusión pulmonar subyacente, no el segmento inestable en sí.</li>
+                                                <li>Asegurar una oxigenación adecuada. La ventilación con presión positiva (BVM) es el tratamiento más efectivo para estabilizar el segmento desde adentro.</li>
+                                                <li>Evitar la inmovilización externa con objetos pesados o vendajes compresivos que restrinjan la respiración.</li>
+                                                <li>Manejo del dolor si está permitido por el protocolo.</li>
+                                            </ol>
+                                        </div>
+                                        <div className="p-4 bg-blue-50 rounded-lg">
+                                            <h3 className="font-semibold text-lg text-blue-800 mb-2">Hemotórax Masivo</h3>
+                                            <p className="text-gray-700"><strong>Objetivo:</strong> Tratar el shock hipovolémico y transporte rápido.</p>
+                                            <ol className="list-decimal list-inside space-y-1 mt-2 text-gray-700">
+                                                <li>El manejo prehospitalario es de soporte. No se puede drenar la sangre en el campo.</li>
+                                                <li>Tratar el shock con oxígeno a alto flujo.</li>
+                                                <li>Establecer acceso intravenoso (IV) o intraóseo (IO) y administrar fluidos según protocolo (hipotensión permisiva).</li>
+                                                <li>Transporte inmediato a un centro de trauma.</li>
+                                            </ol>
                                         </div>
                                     </div>
                                 </div>
@@ -326,157 +368,160 @@ export default function ToraxInjuries(){
                                 <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Casos clínicos para análisis</h2>
 
                                 <div className="p-5 bg-gray-50 rounded-lg shadow-sm mb-4">
-                                    <h3 className="text-xl font-semibold mb-2 text-orange-600">Caso 1: Asma severa</h3>
+                                    <h3 className="text-xl font-semibold mb-2 text-orange-600">Caso 1: Neumotórax Abierto</h3>
                                     <p className="italic text-gray-600 mb-4">
-                                        Mujer de 23 años con antecedente de asma. Tras exposición a alérgeno presenta disnea progresiva,
-                                        sibilancias audibles y uso de músculos accesorios. No puede completar frases.
+                                        Masculino de 25 años que sufre una herida por arma blanca en el hemitórax derecho durante una riña. A su llegada, lo encuentra consciente, con dificultad respiratoria y se escucha un sonido de "succión" proveniente de la herida.
                                     </p>
 
                                     <div className="mb-4">
                                         <h4 className="font-medium mb-2">Evaluación:</h4>
                                         <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                            <li>A: Vía aérea permeable con sibilancias</li>
-                                            <li>B: FR 28/min, SpO₂ 88%, uso de músculos accesorios</li>
-                                            <li>C: FC 125/min, TA 140/90 mmHg</li>
-                                            <li>D: Alerta, ansiosa</li>
-                                            <li>E: Sin hallazgos relevantes</li>
+                                            <li>A: Vía aérea permeable, habla con frases cortas.</li>
+                                            <li>B: FR 30/min, SpO₂ 91%, ruidos respiratorios disminuidos en hemitórax derecho, herida "soplante".</li>
+                                            <li>C: FC 120/min, TA 110/70 mmHg, piel pálida y fría.</li>
+                                            <li>D: Alerta, ansioso.</li>
+                                            <li>E: Herida penetrante de 3 cm en 4º espacio intercostal, línea medio-clavicular derecha.</li>
                                         </ul>
                                     </div>
 
                                     <div>
                                         <h4 className="font-medium mb-2">Manejo correcto:</h4>
                                         <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                            <li>Posición sentada</li>
-                                            <li>Oxígeno con mascarilla (10-15 L/min)</li>
-                                            <li>Broncodilatador (salbutamol) con cámara espaciadora</li>
-                                            <li>Monitorización continua</li>
-                                            <li>Traslado rápido a centro hospitalario</li>
+                                            <li>Administrar oxígeno a alto flujo con mascarilla no recirculante.</li>
+                                            <li>Sellar la herida con un parche torácico oclusivo con válvula (o un apósito oclusivo fijado en 3 lados).</li>
+                                            <li>Colocar al paciente en posición de comodidad, usualmente semisentado.</li>
+                                            <li>Monitorizar signos vitales y vigilar desarrollo de neumotórax a tensión.</li>
+                                            <li>Traslado rápido al hospital.</li>
                                         </ol>
                                     </div>
                                 </div>
 
                                 <div className="p-5 bg-gray-50 rounded-lg shadow-sm mb-4">
-                                    <h3 className="text-xl font-semibold mb-2 text-blue-600">Caso 2: Obstrucción de vía aérea</h3>
+                                    <h3 className="text-xl font-semibold mb-2 text-blue-600">Caso 2: Tórax Inestable</h3>
                                     <p className="italic text-gray-600 mb-4">
-                                        Hombre de 65 años que durante una comida súbitamente se levanta, lleva las manos al cuello y no puede hablar ni toser.
+                                        Conductor de 45 años involucrado en colisión frontal sin cinturón de seguridad. Impactó el tórax contra el volante. Se queja de dolor torácico intenso y "falta de aire".
                                     </p>
 
                                     <div className="mb-4">
                                         <h4 className="font-medium mb-2">Evaluación:</h4>
                                         <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                            <li>A: Obstrucción completa de vía aérea</li>
-                                            <li>B: No hay entrada de aire</li>
-                                            <li>C: Signos de buena perfusión inicial</li>
-                                            <li>D: Consciente, agitado</li>
-                                            <li>E: Signo universal de asfixia (manos al cuello)</li>
+                                            <li>A: Vía aérea permeable.</li>
+                                            <li>B: FR 28/min, respiraciones superficiales, se observa un segmento del tórax izquierdo que se hunde durante la inspiración (movimiento paradójico). Crepitación a la palpación.</li>
+                                            <li>C: FC 115/min, TA 100/60 mmHg.</li>
+                                            <li>D: Consciente, orientado, adolorido.</li>
+                                            <li>E: Equimosis grande en la pared torácica anterolateral izquierda.</li>
                                         </ul>
                                     </div>
 
                                     <div>
                                         <h4 className="font-medium mb-2">Manejo correcto:</h4>
                                         <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                            <li>Confirmar obstrucción completa (preguntando "¿se está atragantando?")</li>
-                                            <li>Realizar compresiones abdominales (maniobra de Heimlich)</li>
-                                            <li>Continuar hasta desobstrucción o pérdida de conciencia</li>
-                                            <li>Si pierde conciencia, iniciar RCP</li>
-                                            <li>Durante RCP, verificar cavidad oral antes de ventilaciones</li>
+                                            <li>Estabilización manual de la vía aérea y control cervical si se sospecha trauma espinal.</li>
+                                            <li>Administrar oxígeno a alto flujo. Considerar ventilación con presión positiva (BVM) si la respiración es inadecuada para estabilizar el segmento.</li>
+                                            <li>No colocar objetos pesados (ej. bolsas de arena) sobre el segmento inestable.</li>
+                                            <li>Monitorización continua de SpO₂ y estado ventilatorio.</li>
+                                            <li>Traslado urgente, notificando al hospital sobre la sospecha de tórax inestable.</li>
                                         </ol>
                                     </div>
                                 </div>
 
                                 <div className="p-5 bg-gray-50 rounded-lg shadow-sm">
-                                    <h3 className="text-xl font-semibold mb-2 text-green-600">Caso 3: EPOC exacerbado</h3>
+                                    <h3 className="text-xl font-semibold mb-2 text-green-600">Caso 3: Neumotórax a Tensión</h3>
                                     <p className="italic text-gray-600 mb-4">
-                                        Paciente masculino de 72 años con antecedente de EPOC y oxígeno domiciliario. Presenta aumento de disnea y
-                                        expectoración purulenta desde hace 3 días.
+                                        Durante el traslado del paciente del Caso 1, su estado se deteriora rápidamente. Presenta marcada ansiedad, cianosis peribucal y su dificultad respiratoria es extrema.
                                     </p>
 
                                     <div className="mb-4">
                                         <h4 className="font-medium mb-2">Evaluación:</h4>
                                         <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                            <li>A: Vía aérea permeable</li>
-                                            <li>B: FR 24/min, SpO₂ 84%, uso moderado de músculos accesorios</li>
-                                            <li>C: FC 110/min, TA 145/85 mmHg</li>
-                                            <li>D: Alerta, orientado</li>
-                                            <li>E: Temperatura 38.2°C, esputo verdoso</li>
+                                            <li>A: Vía aérea permeable.</li>
+                                            <li>B: FR 35/min, ruidos respiratorios ausentes en hemitórax derecho. SpO₂ cae a 82%.</li>
+                                            <li>C: FC 140/min, TA 80/50 mmHg, ingurgitación yugular visible.</li>
+                                            <li>D: Disminución del nivel de conciencia, agitado.</li>
+                                            <li>E: Desviación traqueal hacia el lado izquierdo (signo tardío).</li>
                                         </ul>
                                     </div>
 
                                     <div>
                                         <h4 className="font-medium mb-2">Manejo correcto:</h4>
                                         <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                            <li>Posición semisentada</li>
-                                            <li>Oxígeno controlado (iniciar a 2-3 L/min) para mantener SpO₂ 88-92%</li>
-                                            <li>Broncodilatador en nebulización o inhalador</li>
-                                            <li>Monitorización continua, vigilando nivel de conciencia</li>
-                                            <li>Traslado al hospital para tratamiento definitivo</li>
+                                            <li>¡Emergencia inmediata! Levantar momentáneamente una esquina del parche oclusivo para permitir que el aire atrapado escape ("eructar" el sello).</li>
+                                            <li>Si está capacitado y autorizado (nivel paramédico), realizar descompresión con aguja en el 2º espacio intercostal, línea medioclavicular, o 5º espacio intercostal, línea axilar anterior.</li>
+                                            <li>Reevaluar continuamente ABCs. Debería haber una mejora casi inmediata.</li>
+                                            <li>Notificar al hospital sobre el desarrollo de neumotórax a tensión y el procedimiento realizado.</li>
+                                            <li>Continuar traslado de emergencia.</li>
                                         </ol>
                                     </div>
                                 </div>
                             </div>
                         )}
+
+                        {/* FAQ Section */}
+                        <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm mb-8">
+                            <h2 className="text-3xl font-bold mb-6 text-center">Preguntas Frecuentes</h2>
+
+                            <div className="space-y-4">
+                                {faqData.map((faq, idx) => (
+                                    <Disclosure key={idx}>
+                                        {({ open }) => (
+                                            <div className="border rounded-lg overflow-hidden">
+                                                <Disclosure.Button className="flex w-full justify-between items-center bg-gray-100 px-4 py-3 text-left text-lg font-medium hover:bg-orange-100 transition">
+                                                    <span>{faq.question}</span>
+                                                    <ChevronUpIcon
+                                                        className={`${
+                                                            open ? "transform rotate-180" : ""
+                                                        } h-5 w-5 text-gray-500`}
+                                                    />
+                                                </Disclosure.Button>
+                                                <Disclosure.Panel className="px-4 pb-4 pt-2 text-gray-700">
+                                                    {faq.answer}
+                                                </Disclosure.Panel>
+                                            </div>
+                                        )}
+                                    </Disclosure>
+                                ))}
+                            </div>
+                        </section>
+
+                        {/* Referencias y Recursos */}
+                        <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">
+                            <h2 className="text-2xl font-bold mb-4">Referencias y recursos adicionales</h2>
+
+                            <div className="space-y-4">
+                                <div>
+                                    <h3 className="text-lg font-medium mb-2">Bibliografía principal</h3>
+                                    <ul className="list-disc list-inside space-y-2 text-gray-700">
+                                        <li>AAOS. (2021). <em>Emergencias Médicas Prehospitalarias</em> (11ª edición). Jones & Bartlett Learning.</li>
+                                        <li>American Heart Association. (2020). <em>Soporte Vital Básico y Avanzado</em>.</li>
+                                        <li>NAEMT. (2020). <em>PHTLS: Soporte Vital de Trauma Prehospitalario</em> (9ª edición).</li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <h3 className="text-lg font-medium mb-2">Recursos en línea</h3>
+                                    <ul className="list-disc list-inside space-y-2 text-gray-700">
+                                        <li><a href="https://www.ems1.com/airway-management/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">EMS1 - Artículos sobre manejo de vía aérea</a></li>
+                                        <li><a href="https://www.jems.com/patient-care/airway-respiratory/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">JEMS - Sección de cuidado respiratorio</a></li>
+                                        <li><a href="https://www.youtube.com/c/MedicTests" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">MedicTests - Canal de YouTube con videos educativos</a></li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <h3 className="text-lg font-medium mb-2">Aplicaciones recomendadas</h3>
+                                    <ul className="list-disc list-inside space-y-2 text-gray-700">
+                                        <li>Medscape - Referencias médicas y calculadoras</li>
+                                        <li>ALS Simulator - Escenarios de práctica</li>
+                                        <li>Paramedicine - Guías clínicas y medicamentos</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
                     </div>
 
-                    {/* FAQ Section */}
-                    <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm mb-8">
-                        <h2 className="text-3xl font-bold mb-6 text-center">Preguntas Frecuentes</h2>
-
-                        <div className="space-y-4">
-                            {faqData.map((faq, idx) => (
-                                <Disclosure key={idx}>
-                                    {({ open }) => (
-                                        <div className="border rounded-lg overflow-hidden">
-                                            <Disclosure.Button className="flex w-full justify-between items-center bg-gray-100 px-4 py-3 text-left text-lg font-medium hover:bg-orange-100 transition">
-                                                <span>{faq.question}</span>
-                                                <ChevronUpIcon
-                                                    className={`${
-                                                        open ? "transform rotate-180" : ""
-                                                    } h-5 w-5 text-gray-500`}
-                                                />
-                                            </Disclosure.Button>
-                                            <Disclosure.Panel className="px-4 pb-4 pt-2 text-gray-700">
-                                                {faq.answer}
-                                            </Disclosure.Panel>
-                                        </div>
-                                    )}
-                                </Disclosure>
-                            ))}
-                        </div>
-                    </section>
-
-                    {/* Referencias y Recursos */}
-                    <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">
-                        <h2 className="text-2xl font-bold mb-4">Referencias y recursos adicionales</h2>
-
-                        <div className="space-y-4">
-                            <div>
-                                <h3 className="text-lg font-medium mb-2">Bibliografía principal</h3>
-                                <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                    <li>AAOS. (2021). <em>Emergencias Médicas Prehospitalarias</em> (11ª edición). Jones & Bartlett Learning.</li>
-                                    <li>American Heart Association. (2020). <em>Soporte Vital Básico y Avanzado</em>.</li>
-                                    <li>NAEMT. (2020). <em>PHTLS: Soporte Vital de Trauma Prehospitalario</em> (9ª edición).</li>
-                                </ul>
-                            </div>
-
-                            <div>
-                                <h3 className="text-lg font-medium mb-2">Recursos en línea</h3>
-                                <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                    <li><a href="https://www.ems1.com/airway-management/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">EMS1 - Artículos sobre manejo de vía aérea</a></li>
-                                    <li><a href="https://www.jems.com/patient-care/airway-respiratory/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">JEMS - Sección de cuidado respiratorio</a></li>
-                                    <li><a href="https://www.youtube.com/c/MedicTests" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">MedicTests - Canal de YouTube con videos educativos</a></li>
-                                </ul>
-                            </div>
-
-                            <div>
-                                <h3 className="text-lg font-medium mb-2">Aplicaciones recomendadas</h3>
-                                <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                    <li>Medscape - Referencias médicas y calculadoras</li>
-                                    <li>ALS Simulator - Escenarios de práctica</li>
-                                    <li>Paramedicine - Guías clínicas y medicamentos</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </section>
+                    {/* Footer */}
+                    <footer className="mt-8 text-center text-gray-500 text-sm">
+                        <p>© 2023 - Todos los derechos reservados</p>
+                    </footer>
                 </div>
             </div>
         </div>

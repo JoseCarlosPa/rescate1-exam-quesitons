@@ -125,7 +125,7 @@ export default function Immobilization() {
                                         La inmovilización es el proceso mediante el cual se restringe el movimiento de una parte del cuerpo lesionada para prevenir daños adicionales, reducir el dolor y facilitar el traslado del paciente en el entorno prehospitalario.
                                     </p>
                                     <p className="text-gray-700 mt-2 leading-relaxed">
-                                        Según la AAOS (11ª edición), la inmovilización adecuada es esencial para prevenir la conversión de lesiones cerradas en abiertas y proteger estructuras neurovasculares durante el traslado del paciente.
+                                        La inmovilización adecuada es esencial para prevenir la conversión de lesiones cerradas en abiertas y proteger estructuras neurovasculares durante el traslado del paciente.
                                     </p>
                                 </div>
 

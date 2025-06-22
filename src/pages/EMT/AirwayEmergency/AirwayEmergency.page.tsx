@@ -133,7 +133,7 @@ export default function AirwayEmergency(){
                                         Incluyen desde obstrucción de la vía aérea hasta enfermedades crónicas como EPOC, asma, neumonía o edema pulmonar.
                                     </p>
                                     <p className="text-gray-700 mt-2 leading-relaxed">
-                                        Según la AAOS (11ª edición), las emergencias respiratorias son una de las principales causas de llamadas a los servicios de emergencia y constituyen una prioridad en la evaluación del paciente (ABCDE).
+                                        las emergencias respiratorias son una de las principales causas de llamadas a los servicios de emergencia y constituyen una prioridad en la evaluación del paciente (ABCDE).
                                     </p>
                                 </div>
 

@@ -124,7 +124,7 @@ export default function GastroEmergency() {
                                         Son afecciones que involucran órganos del sistema digestivo o del aparato urinario, que pueden representar emergencias potencialmente graves si no se identifican y tratan a tiempo. El dolor abdominal es el síntoma principal, pero pueden presentarse otros signos según el órgano afectado.
                                     </p>
                                     <p className="text-gray-700 mt-2 leading-relaxed">
-                                        Según la AAOS (11ª edición), las emergencias abdominales requieren una evaluación sistemática y un manejo prehospitalario enfocado en la estabilización y el traslado oportuno.
+                                        Las emergencias abdominales requieren una evaluación sistemática y un manejo prehospitalario enfocado en la estabilización y el traslado oportuno.
                                     </p>
                                 </div>
                                 <div>

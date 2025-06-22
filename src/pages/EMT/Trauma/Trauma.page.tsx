@@ -133,7 +133,7 @@ export default function Trauma(){
                                 <div>
                                     <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">¿Qué es el trauma?</h2>
                                     <p className="text-gray-700 leading-relaxed">
-                                        Según la AAOS (11ª edición), el trauma se define como una lesión física o herida infligida al cuerpo por una fuerza o violencia externa.
+                                        El trauma se define como una lesión física o herida infligida al cuerpo por una fuerza o violencia externa.
                                         Es una de las principales causas de muerte y discapacidad, especialmente en personas jóvenes. La atención prehospitalaria rápida y eficaz es crucial.
                                     </p>
                                 </div>

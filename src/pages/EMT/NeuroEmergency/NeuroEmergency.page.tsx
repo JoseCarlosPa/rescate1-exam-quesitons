@@ -124,7 +124,7 @@ export default function NeuroEmergency() {
                                         Las emergencias neurológicas son condiciones que afectan al sistema nervioso central y periférico, y pueden comprometer rápidamente la vida o causar discapacidad permanente. El reconocimiento temprano y la intervención prehospitalaria son clave para mejorar el pronóstico del paciente.
                                     </p>
                                     <p className="text-gray-700 mt-2 leading-relaxed">
-                                        Según la AAOS (11ª edición), las principales emergencias neurológicas incluyen el accidente cerebrovascular (ACV), convulsiones, estado epiléptico, traumatismo craneoencefálico (TCE) y síncope.
+                                        Las principales emergencias neurológicas incluyen el accidente cerebrovascular (ACV), convulsiones, estado epiléptico, traumatismo craneoencefálico (TCE) y síncope.
                                     </p>
                                 </div>
                                 <div>

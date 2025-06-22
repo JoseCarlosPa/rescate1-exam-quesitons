@@ -143,7 +143,7 @@ export default function HeadAndColumnInjuries(){
                                         Las lesiones de cabeza y columna vertebral son traumatismos que afectan al cráneo, el encéfalo, las vértebras y la médula espinal. Representan emergencias potencialmente graves que pueden causar discapacidad permanente o muerte si no se manejan adecuadamente.
                                     </p>
                                     <p className="text-gray-700 mt-2 leading-relaxed">
-                                        Según la AAOS (11ª edición), el manejo adecuado prehospitalario es crucial, ya que muchas lesiones secundarias ocurren durante el manejo inicial y el transporte, siendo prevenibles con técnicas adecuadas.
+                                        El manejo adecuado prehospitalario es crucial, ya que muchas lesiones secundarias ocurren durante el manejo inicial y el transporte, siendo prevenibles con técnicas adecuadas.
                                     </p>
                                 </div>
 

@@ -119,7 +119,7 @@ export default function EndocryEmergency(){
                                         Son condiciones que afectan al sistema hormonal (endocrino) y a la sangre (hematológico), y pueden poner en peligro la vida si no se reconocen y tratan rápidamente en el entorno prehospitalario.
                                     </p>
                                     <p className="text-gray-700 mt-2 leading-relaxed">
-                                        Según la AAOS (11ª edición), el reconocimiento temprano y la intervención adecuada son clave para mejorar el pronóstico del paciente.
+                                        El reconocimiento temprano y la intervención adecuada son clave para mejorar el pronóstico del paciente.
                                     </p>
                                 </div>
                                 <div>
