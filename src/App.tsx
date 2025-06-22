@@ -104,11 +104,16 @@ function App() {
                     <p className="text-sm md:text-lg font-medium truncate">Algoritmos/Protocolos</p>
                 </NavLink>
             </div>
-            {showRandomQuestion ? <div className="w-full flex justify-center items-center mt-4 animate-fade-in">
-                <div className="w-full md:w-1/2 lg:w-1/3 bg-white rounded-xl shadow-lg p-4 border border-orange-100">
-                    <RandomQuestion/>
+            {showRandomQuestion && (
+                <div className="fixed inset-0 bg-black bg-opacity-25 z-40 flex justify-center items-center p-4 backdrop-blur-[2px] animate-fadeIn">
+                    <div 
+                        className="w-full md:w-1/2 lg:w-1/3 max-h-[90vh] overflow-auto"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <RandomQuestion onClose={() => setShowRandomQuestion(false)} />
+                    </div>
                 </div>
-            </div> : null}
+            )}
 
             {loading ? <AiOutlineLoading3Quarters className="animate-spin h-20 w-20 text-orange-500 mt-8"/> : null}
 
