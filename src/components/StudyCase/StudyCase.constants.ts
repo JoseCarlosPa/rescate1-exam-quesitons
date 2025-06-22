@@ -1232,6 +1232,258 @@ export const caseStudies: CaseStudy[] = [
             { question: "En el manejo de una disección aórtica, ¿cuál es el objetivo principal con respecto a la presión arterial y la frecuencia cardíaca y por qué?" },
         ],
         references: ["Capítulo 16 - Emergencias cardiovasculares.pdf"],
-    }
+    },
+    {
+    "id": "iamcest-01",
+    "title": "Dolor torácico opresivo en adulto mayor",
+    "description": "Masculino de 65 años, diabético e hipertenso, presenta dolor torácico opresivo de inicio súbito desde hace 1 hora, que irradia a brazo izquierdo y mandíbula. Refiere náuseas y sudoración profusa.",
+    "initialAssessment": "Paciente consciente, orientado, con evidente facies de dolor. Piel pálida y fría. Se observa diaforesis marcada. Refiere no tener alergias conocidas.",
+    "vitalSigns": {
+        "FC": "105 lpm (pulso irregular)",
+        "TA": "150/90 mmHg",
+        "FR": "22 rpm",
+        "SpO2": "92% (aire ambiente)"
+    },
+    "findings": [
+        "Síndrome Coronario Agudo, probable Infarto Agudo de Miocardio con elevación del ST (IAMCEST).",
+        "Dolor torácico de origen cardiogénico.",
+        "Necesidad de monitorización cardíaca continua y traslado prioritario a un centro con capacidad de intervención coronaria percutánea (ICP)."
+    ],
+    "questions": [
+        { "question": "¿Cuáles son los componentes clave del tratamiento prehospitalario para un paciente con sospecha de IAMCEST?" },
+        { "question": "¿Por qué es crucial realizar un electrocardiograma (ECG) de 12 derivaciones de manera temprana en este paciente?" },
+        { "question": "¿Qué precauciones se deben tomar al administrar nitroglicerina a un paciente con dolor torácico?" }
+    ],
+    "references": [
+        "AAOS 11ª Edición - Capítulo de Emergencias Cardiovasculares."
+    ]
+    },
+    {
+    "id": "asma-severa-02",
+    "title": "Dificultad respiratoria aguda en paciente pediátrico",
+    "description": "Niña de 8 años con antecedentes de asma, presenta dificultad respiratoria severa que no mejora con su inhalador de rescate. Los padres refieren que ha estado con tos durante dos días. Presenta sibilancias audibles a distancia.",
+    "initialAssessment": "Paciente pediátrica sentada en posición de trípode, ansiosa. Uso visible de músculos accesorios para respirar. Aleteo nasal y retracción intercostal. Incapaz de hablar en oraciones completas.",
+    "vitalSigns": {
+        "FC": "130 lpm",
+        "TA": "100/65 mmHg",
+        "FR": "35 rpm",
+        "SpO2": "89% (aire ambiente)"
+    },
+    "findings": [
+        "Crisis asmática severa / Estatus asmático.",
+        "Insuficiencia respiratoria inminente.",
+        "Hipoxia moderada."
+    ],
+    "questions": [
+        { "question": "¿Qué hallazgos clínicos indican una crisis asmática que pone en peligro la vida?" },
+        { "question": "¿Cuál es el tratamiento farmacológico de primera línea en el manejo prehospitalario del asma severa?" },
+        { "question": "Explique la importancia de la administración de oxígeno y cómo se debe titular en este caso." }
+    ],
+    "references": [
+        "AAOS 11ª Edición - Capítulo de Emergencias Respiratorias."
+    ]
+},
+{
+    "id": "evc-isquemico-03",
+    "title": "Inicio súbito de debilidad facial y dificultad para hablar",
+    "description": "Mujer de 72 años encontrada por su familia con debilidad súbita en el lado derecho de la cara y el brazo. Presenta dificultad para articular palabras (disartria) y parece confundida. Los síntomas iniciaron hace aproximadamente 45 minutos.",
+    "initialAssessment": "Paciente consciente, pero desorientada en tiempo y lugar. Se observa asimetría facial con caída de la comisura labial derecha. Incapacidad para levantar el brazo derecho (hemiparesia). Pupilas isocóricas y reactivas.",
+    "vitalSigns": {
+        "FC": "90 lpm (rítmico)",
+        "TA": "180/100 mmHg",
+        "FR": "18 rpm",
+        "SpO2": "97% (aire ambiente)"
+    },
+    "findings": [
+        "Sospecha de Evento Vascular Cerebral (EVC) agudo.",
+        "Déficit neurológico focal (hemiparesia derecha, disartria).",
+        "Paciente dentro de la ventana de tiempo para terapia trombolítica."
+    ],
+    "questions": [
+        { "question": "¿Qué herramientas de evaluación prehospitalaria (escalas) se utilizan para identificar un posible EVC?" },
+        { "question": "¿Por qué es fundamental determinar la hora de inicio de los síntomas en un paciente con sospecha de EVC?" },
+        { "question": "¿Cuál es el manejo prioritario y el destino de traslado para este tipo de paciente?" }
+    ],
+    "references": [
+        "AAOS 11ª Edición - Capítulo de Emergencias Neurológicas."
+    ]
+},
+{
+    "id": "anafilaxia-04",
+    "title": "Reacción alérgica severa tras picadura de abeja",
+    "description": "Hombre de 40 años sufre picadura de abeja en el cuello mientras trabajaba en su jardín. A los pocos minutos, desarrolla urticaria generalizada, hinchazón de labios y lengua, y siente que se le cierra la garganta.",
+    "initialAssessment": "Paciente ansioso, con voz ronca y estridor inspiratorio audible. Presenta edema facial y urticaria en tronco y extremidades. Dificultad para respirar evidente.",
+    "vitalSigns": {
+        "FC": "125 lpm",
+        "TA": "88/50 mmHg",
+        "FR": "28 rpm",
+        "SpO2": "91% (aire ambiente)"
+    },
+    "findings": [
+        "Anafilaxia con compromiso de la vía aérea y cardiovascular.",
+        "Choque anafiláctico.",
+        "Necesidad inmediata de administración de epinefrina."
+    ],
+    "questions": [
+        { "question": "¿Cuáles son los criterios para diagnosticar anafilaxia en el entorno prehospitalario?" },
+        { "question": "Describa la dosis, vía de administración y mecanismo de acción de la epinefrina en la anafilaxia." },
+        { "question": "¿Qué otros tratamientos, además de la epinefrina, son importantes en el manejo de la anafilaxia severa?" }
+    ],
+    "references": [
+        "AAOS 11ª Edición - Capítulo de Reacciones Alérgicas y Anafilaxia."
+    ]
+},
+{
+    "id": "hipoglucemia-05",
+    "title": "Alteración del estado mental en paciente diabético",
+    "description": "Se solicita una ambulancia para un hombre de 55 años, conocido por ser diabético tipo 1, encontrado por su esposa inconsciente en la cama. Refiere que se administró su insulina pero no ha comido.",
+    "initialAssessment": "Paciente masculino inconsciente, no responde a estímulos verbales ni dolorosos. Piel pálida, fría y diaforética. Respiración superficial y rápida. No hay evidencia de trauma.",
+    "vitalSigns": {
+        "FC": "110 lpm",
+        "TA": "105/60 mmHg",
+        "FR": "24 rpm",
+        "SpO2": "98% (aire ambiente)",
+        "Glucemia Capilar": "35 mg/dL"
+    },
+    "findings": [
+        "Hipoglucemia severa.",
+        "Alteración del estado de conciencia secundario a neuroglucopenia.",
+        "Riesgo de daño cerebral si no se revierte rápidamente."
+    ],
+    "questions": [
+        { "question": "¿Por qué un paciente con hipoglucemia severa puede presentar signos neurológicos focales o convulsiones?" },
+        { "question": "¿Cuál es el tratamiento de elección para un paciente inconsciente con hipoglucemia severa y cómo se administra?" },
+        { "question": "¿Qué se debe hacer después de que el paciente recupere la conciencia tras el tratamiento?" }
+    ],
+    "references": [
+        "AAOS 11ª Edición - Capítulo de Emergencias Diabéticas."
+    ]
+},
+{
+    "id": "sobredosis-opioides-06",
+    "title": "Depresión respiratoria en adulto joven",
+    "description": "Joven de 24 años encontrado inconsciente en un baño público. Amigos refieren que podría haber consumido heroína. En la escena se observa parafernalia para uso de drogas intravenosas.",
+    "initialAssessment": "Paciente cianótico, no responde. Se observa miosis puntiforme bilateral. Respiraciones agónicas, de 4 a 6 por minuto. Pulso radial débil y filiforme.",
+    "vitalSigns": {
+        "FC": "50 lpm",
+        "TA": "80/40 mmHg",
+        "FR": "4 rpm",
+        "SpO2": "75% (aire ambiente)"
+    },
+    "findings": [
+        "Sobredosis de opioides.",
+        "Depresión respiratoria severa y paro respiratorio inminente.",
+        "Hipoxia y bradicardia secundarias."
+    ],
+    "questions": [
+        { "question": "¿Cuál es la tríada clásica de una sobredosis de opioides?" },
+        { "question": "Describa el manejo inicial de la vía aérea y la ventilación antes de administrar el antídoto." },
+        { "question": "¿Cuál es el fármaco revertor, su vía de administración preferida en el ámbito prehospitalario y qué se debe anticipar después de su administración?" }
+    ],
+    "references": [
+        "AAOS 11ª Edición - Capítulo de Emergencias Toxicológicas."
+    ]
+},
+{
+    "id": "tce-severo-07",
+    "title": "Caída de altura con alteración de conciencia",
+    "description": "Trabajador de la construcción de 35 años cae de un andamio de aproximadamente 6 metros de altura. No llevaba casco. Presenta pérdida de conciencia inicial, seguida de un periodo de lucidez y posterior deterioro neurológico.",
+    "initialAssessment": "Paciente masculino con respuesta motora de decorticación al estímulo doloroso. Emite sonidos incomprensibles y no abre los ojos. Se observa una herida en la región temporal derecha y otorragia del mismo lado. Restricción de movimiento espinal en progreso.",
+    "vitalSigns": {
+        "FC": "55 lpm",
+        "TA": "190/110 mmHg",
+        "FR": "12 rpm (patrón irregular)",
+        "SpO2": "90% (con O2 a 15L/min)"
+    },
+    "findings": [
+        "Traumatismo Craneoencefálico (TCE) severo (Glasgow de 5).",
+        "Sospecha de hematoma epidural por el intervalo lúcido.",
+        "Signos de hipertensión intracraneal (Tríada de Cushing)."
+    ],
+    "questions": [
+        { "question": "Explique los componentes de la Tríada de Cushing y su significado clínico en el TCE." },
+        { "question": "¿Cuál es el manejo prioritario de la vía aérea en un paciente con TCE severo y Glasgow bajo?" },
+        { "question": "¿Cómo se debe manejar la presión arterial y la oxigenación para prevenir lesiones secundarias en el cerebro?" }
+    ],
+    "references": [
+        "AAOS 11ª Edición - Capítulo de Trauma Craneoencefálico."
+    ]
+},
+{
+    "id": "neumotorax-tension-08",
+    "title": "Dolor torácico y disnea tras herida punzante",
+    "description": "Hombre de 28 años involucrado en una riña, sufre una herida por arma blanca en el hemitórax derecho, a nivel del 4º espacio intercostal. Presenta dolor agudo y dificultad respiratoria que empeora rápidamente.",
+    "initialAssessment": "Paciente ansioso, con dificultad respiratoria severa. Ausencia unilateral de ruidos respiratorios en el hemitórax derecho. Hiperresonancia a la percusión en el mismo lado. Se observa ingurgitación yugular y desviación de la tráquea hacia el lado izquierdo.",
+    "vitalSigns": {
+        "FC": "140 lpm",
+        "TA": "85/55 mmHg",
+        "FR": "38 rpm",
+        "SpO2": "85% (aire ambiente)"
+    },
+    "findings": [
+        "Neumotórax a tensión derecho.",
+        "Choque obstructivo.",
+        "Necesidad de descompresión torácica inmediata."
+    ],
+    "questions": [
+        { "question": "¿Cuáles son los signos y síntomas cardinales que diferencian un neumotórax simple de uno a tensión?" },
+        { "question": "Describa el procedimiento de descompresión con aguja, incluyendo el punto de inserción anatómico correcto." },
+        { "question": "¿Qué cambios en los signos vitales se esperan inmediatamente después de una descompresión exitosa?" }
+    ],
+    "references": [
+        "AAOS 11ª Edición - Capítulo de Trauma Torácico."
+    ]
+},
+{
+    "id": "quemadura-electrica-09",
+    "title": "Lesión por electrocución en trabajador de línea eléctrica",
+    "description": "Masculino de 42 años recibe descarga de una línea de alto voltaje. Fue lanzado varios metros. Se aseguró la escena y se cortó la corriente. El paciente está desorientado.",
+    "initialAssessment": "Paciente confuso, responde a órdenes simples. Presenta quemaduras de entrada en mano derecha y de salida en pie izquierdo, ambas carbonizadas y de espesor total. Se sospecha trauma cerrado por la caída. Se inmoviliza la columna cervical.",
+    "vitalSigns": {
+        "FC": "130 lpm (con extrasístoles ventriculares en monitor)",
+        "TA": "100/70 mmHg",
+        "FR": "22 rpm",
+        "SpO2": "99% (con O2 a 15L/min)"
+    },
+    "findings": [
+        "Quemadura eléctrica de alto voltaje.",
+        "Arritmias cardíacas.",
+        "Alto riesgo de rabdomiólisis y daño renal agudo.",
+        "Traumatismo cerrado asociado por la caída."
+    ],
+    "questions": [
+        { "question": "¿Por qué las quemaduras eléctricas son a menudo más graves de lo que aparentan en la superficie de la piel?" },
+        { "question": "¿Cuál es la importancia de la monitorización cardíaca continua en un paciente con electrocución de alto voltaje?" },
+        { "question": "Explique el fundamento para iniciar una reposición agresiva de líquidos intravenosos en este tipo de quemadura." }
+    ],
+    "references": [
+        "AAOS 11ª Edición - Capítulo de Lesiones por Quemaduras."
+    ]
+},
+{
+    "id": "parto-emergencia-10",
+    "title": "Atención de parto inminente en domicilio",
+    "description": "Llamada por mujer de 28 años, G3 P2, con 39 semanas de gestación. Presenta contracciones cada 2 minutos y siente una fuerte necesidad de pujar. La fuente se rompió hace 10 minutos. El hospital está a 30 minutos de distancia.",
+    "initialAssessment": "Paciente en trabajo de parto activo, se observa coronamiento de la cabeza fetal durante una contracción. La atención del parto en el lugar es inevitable. Se prepara el equipo de obstetricia.",
+    "vitalSigns": {
+        "FC": "100 lpm",
+        "TA": "120/75 mmHg",
+        "FR": "20 rpm",
+        "SpO2": "98% (aire ambiente)"
+    },
+    "findings": [
+        "Parto inminente en el segundo período del trabajo de parto.",
+        "Necesidad de asistir el parto fuera del hospital.",
+        "Preparación para posible reanimación neonatal."
+    ],
+    "questions": [
+        { "question": "Describa los pasos clave para asistir un parto normal no complicado en el entorno prehospitalario." },
+        { "question": "¿Cuáles son las tres preguntas críticas que se deben hacer inmediatamente después del nacimiento para evaluar la necesidad de reanimación neonatal?" },
+        { "question": "Si un recién nacido presenta apnea y flacidez, ¿cuáles son los pasos iniciales y más importantes de la reanimación?" }
+    ],
+    "references": [
+        "AAOS 11ª Edición - Capítulo de Obstetricia y Atención Neonatal."
+    ]
+}
 
 ]
