@@ -5,7 +5,6 @@ import {
     FaCarCrash, FaChild, FaFireAlt,
     FaHandHoldingMedical,
     FaHeadSideMask,
-    FaLaptopMedical,
     FaNotesMedical,
     FaQrcode, FaWineBottle
 } from "react-icons/fa";
@@ -24,6 +23,7 @@ import {SiSpine} from "react-icons/si";
 import {PiBabyBold, PiBrainFill} from "react-icons/pi";
 import {AiOutlineWoman} from "react-icons/ai";
 import {IoWoman} from "react-icons/io5";
+import {GrTest} from "react-icons/gr";
 
 export type tLection = {
     id: string,
@@ -39,8 +39,8 @@ export type tLection = {
 export const lections: tLection[] = [
     {
         id: '1',
-        title: 'Examen General (1er Parcial)',
-        icon: <FaLaptopMedical className="w-12 h-12 mb-1 text-orange-500"/>,
+        title: 'Generar Examen',
+        icon: <GrTest className="w-12 h-12 mb-1 text-orange-500"/>,
         route: AllRoutes.GENERAL,
         active: true,
     },
