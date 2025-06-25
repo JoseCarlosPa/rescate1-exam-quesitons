@@ -276,7 +276,8 @@ export const lections: tLection[] = [
         id: '34',
         title: 'Toxicología',
         icon: <FaWineBottle className="w-12 h-12 mb-1 text-orange-500"/>,
-        route: AllRoutes.EMT,
+        route: AllRoutes.TOXICOLOGY,
+        active: true,
     },
     {
         id: '35',

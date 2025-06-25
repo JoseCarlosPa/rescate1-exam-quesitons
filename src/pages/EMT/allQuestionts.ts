@@ -31,6 +31,7 @@ import {toraxInjuriesQuestions} from "./ToraxInjuries/ToraxInjuries.questions.ts
 import {feetInjuriesQuestions} from "./FeetInjuries/FeetInjuries.questions.ts";
 import {abdoBeniInjuriesQuestions} from "./AbdoGeniInjuries/AbdoGeniInjuries.questions.ts";
 import {inmunologieQuestions} from "./InmunologyEmergencies/InmunologyEmergencies.questions.ts";
+import {toxicologyQuestions} from "./Toxicology/Toxicology.questions.ts";
 
 export function getRandomQuestion() {
     const randomIndex = Math.floor(Math.random() * allQuestions.length);
@@ -71,7 +72,8 @@ export function getRandomQuestionsFromEachCategory(n: number): Question[] {
         toraxInjuriesQuestions,
         feetInjuriesQuestions,
         abdoBeniInjuriesQuestions,
-        inmunologieQuestions
+        inmunologieQuestions,
+        toxicologyQuestions
     ];
 
     const selectedQuestions: Question[] = [];
@@ -123,7 +125,8 @@ export const topicQuestionsMap: Record<string, Question[]> = {
     '30': toraxInjuriesQuestions,
     '31': feetInjuriesQuestions,
     '32': abdoBeniInjuriesQuestions,
-    '33': inmunologieQuestions
+    '33': inmunologieQuestions,
+    '34': toxicologyQuestions
 };
 
 // Function to get random questions from selected topics
@@ -195,7 +198,8 @@ export const allQuestions: Question[] = [
     ...toraxInjuriesQuestions,
     ...feetInjuriesQuestions,
     ...abdoBeniInjuriesQuestions,
-    ...inmunologieQuestions
+    ...inmunologieQuestions,
+    ...toxicologyQuestions
 ]
 
 

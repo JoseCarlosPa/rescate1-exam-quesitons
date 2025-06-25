@@ -2,16 +2,17 @@ import {NavLink} from "react-router";
 import {AllRoutes} from "../../../components/Router/Router.constants.ts";
 import {Disclosure} from "@headlessui/react";
 import {ChevronUpIcon} from "@heroicons/react/16/solid";
-import {faqData} from "./AirwayEmergency.questions.ts";
-import {FaMaskVentilator} from "react-icons/fa6";
+import {faqData} from "./Toxicology.questions.ts";
 import {IoReturnDownBack} from "react-icons/io5";
 import {useState} from "react";
 import {MdQuiz} from "react-icons/md";
 import {BsBookHalf} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
+import {FaWineBottle} from "react-icons/fa";
 
-export default function AirwayEmergency(){
-    const [activeTab, setActiveTab] = useState<'overview' | 'anatomy' | 'treatment' | 'practice'>('overview');
+export default function Toxicology(){
+    // Cambiar el tipo de activeTab para coincidir con los nuevos tabs
+    const [activeTab, setActiveTab] = useState<'intro' | 'principles' | 'management' | 'cases'>('intro');
     const [showQuickQuiz, setShowQuickQuiz] = useState(false);
 
     return(
@@ -21,10 +22,10 @@ export default function AirwayEmergency(){
                     {/* Cabecera */}
                     <header className="mb-8 text-center">
                         <div className="flex justify-center">
-                            <FaMaskVentilator className="w-24 h-24 mb-1 text-orange-500" />
+                            <FaWineBottle className="w-24 h-24 mb-1 text-orange-500" />
                         </div>
-                        <h1 className="text-5xl font-bold mb-2 text-center">Emergencias Respiratorias</h1>
-                        <p className="text-sm italic mb-4">Alumnos Generación 2025 Sábados Rescate 1</p>
+                        <h1 className="text-5xl font-bold mb-2 text-center">Toxicología</h1>
+                        <p className="text-sm italic mb-4">Basado en AAOS 11ª Edición - Alumnos Generación 2025 Sábados Rescate 1</p>
                         <div className="flex justify-center">
                             <NavLink
                                 to={AllRoutes.EMT}
@@ -36,14 +37,13 @@ export default function AirwayEmergency(){
                     </header>
 
                     {/* Menú rápido de recursos */}
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 max-w-4xl mx-auto">
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8 max-w-4xl mx-auto">
                         <NavLink
-                            to="/airway-emergency/exam"
+                            to="/toxicology/exam"
                             className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
                             <MdQuiz className="w-10 h-10 text-orange-500 mb-2" />
                             <p className="text-center font-medium">Examen</p>
                         </NavLink>
-
                         <a href="https://docs.google.com/presentation/d/1hA3-7Yh-8XEeliOwZYnRbLHdM8KQ8_Vi/edit?usp=drive_link&ouid=107287742628985461156&rtpof=true&sd=true"
                            target="_blank"
                            rel="noopener noreferrer"
@@ -51,15 +51,7 @@ export default function AirwayEmergency(){
                             <PiChalkboardTeacher className="w-10 h-10 text-orange-500 mb-2" />
                             <p className="text-center font-medium">Presentación</p>
                         </a>
-
-                        <a href="https://www.jems.com/patient-care/airway-respiratory/"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
-                            <BsBookHalf className="w-10 h-10 text-orange-500 mb-2" />
-                            <p className="text-center font-medium">Recursos JEMS</p>
-                        </a>
-                        <a href="https://drive.google.com/file/d/119EtY1BRKxtaDuRTYmPxWhNiDmg0BEuQ/view?usp=drive_link"
+                        <a href="https://drive.google.com/file/d/1t313YIiaxBoZCTMtrr-yYnOTQqJacCQh/view?usp=drive_link"
                            target="_blank"
                            rel="noopener noreferrer"
                            className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
@@ -84,191 +76,177 @@ export default function AirwayEmergency(){
                     <div className="mb-6 border-b border-gray-200 max-w-5xl mx-auto">
                         <nav className="flex space-x-2 overflow-x-auto">
                             <button
-                                onClick={() => setActiveTab('overview')}
+                                onClick={() => setActiveTab('intro')}
                                 className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
-                                    activeTab === 'overview' 
+                                    activeTab === 'intro' 
                                         ? 'border-orange-500 text-orange-600' 
                                         : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                                 }`}>
-                                Generalidades
+                                Introducción
                             </button>
                             <button
-                                onClick={() => setActiveTab('anatomy')}
+                                onClick={() => setActiveTab('principles')}
                                 className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
-                                    activeTab === 'anatomy' 
+                                    activeTab === 'principles' 
                                         ? 'border-orange-500 text-orange-600' 
                                         : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                                 }`}>
-                                Anatomía y Fisiología
+                                Principios de Toxicología
                             </button>
                             <button
-                                onClick={() => setActiveTab('treatment')}
+                                onClick={() => setActiveTab('management')}
                                 className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
-                                    activeTab === 'treatment' 
+                                    activeTab === 'management' 
                                         ? 'border-orange-500 text-orange-600' 
                                         : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                                 }`}>
-                                Manejo y Tratamiento
+                                Manejo Prehospitalario
                             </button>
                             <button
-                                onClick={() => setActiveTab('practice')}
+                                onClick={() => setActiveTab('cases')}
                                 className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
-                                    activeTab === 'practice' 
+                                    activeTab === 'cases' 
                                         ? 'border-orange-500 text-orange-600' 
                                         : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                                 }`}>
-                                Casos Clínicos
+                                Escenarios Clínicos
                             </button>
                         </nav>
                     </div>
 
                     {/* Contenido principal basado en pestañas */}
                     <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-sm p-6 mb-8">
-                        {activeTab === 'overview' && (
+                        {activeTab === 'intro' && (
                             <div className="space-y-6">
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">¿Qué son las emergencias respiratorias?</h2>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">¿Qué es la toxicología?</h2>
                                     <p className="text-gray-700 leading-relaxed">
-                                        Las emergencias respiratorias son condiciones en las que el cuerpo no recibe suficiente oxígeno, lo que puede resultar en hipoxia, hipoxemia o paro respiratorio si no se actúa a tiempo.
-                                        Incluyen desde obstrucción de la vía aérea hasta enfermedades crónicas como EPOC, asma, neumonía o edema pulmonar.
+                                        La toxicología es la ciencia que estudia los efectos adversos de sustancias químicas sobre los organismos vivos. En el ámbito prehospitalario, se enfoca en la identificación, evaluación y manejo de pacientes expuestos a tóxicos, incluyendo medicamentos, drogas, productos del hogar, plantas y animales venenosos.
                                     </p>
                                     <p className="text-gray-700 mt-2 leading-relaxed">
-                                        las emergencias respiratorias son una de las principales causas de llamadas a los servicios de emergencia y constituyen una prioridad en la evaluación del paciente (ABCDE).
+                                        Las intoxicaciones pueden ser accidentales, intencionales o laborales, y constituyen una causa frecuente de consulta en los servicios de emergencia.
                                     </p>
                                 </div>
-
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Signos y síntomas comunes</h2>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Clasificación de los tóxicos</h2>
                                     <div className="grid md:grid-cols-2 gap-4">
                                         <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                            <li>Dificultad para respirar (disnea)</li>
-                                            <li>Ruidos respiratorios anormales (sibilancias, estridor, ronquidos)</li>
-                                            <li>Cianosis (coloración azulada)</li>
-                                            <li>Taquipnea o bradipnea</li>
-                                            <li>Uso de músculos accesorios para respirar</li>
+                                            <li>Medicamentos (analgésicos, psicotrópicos, etc.)</li>
+                                            <li>Drogas de abuso (opioides, cocaína, etc.)</li>
+                                            <li>Productos del hogar (limpiadores, pesticidas)</li>
+                                            <li>Plantas y hongos tóxicos</li>
                                         </ul>
                                         <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                            <li>Retracciones intercostales o supraclaviculares</li>
-                                            <li>Alteración del nivel de conciencia</li>
-                                            <li>Posición de trípode</li>
-                                            <li>Incapacidad para hablar en frases completas</li>
-                                            <li>Ansiedad o sensación de muerte inminente</li>
+                                            <li>Metales pesados (plomo, mercurio)</li>
+                                            <li>Gases y vapores (monóxido de carbono, cianuro)</li>
+                                            <li>Venenos animales (serpientes, insectos)</li>
+                                            <li>Alcoholes y solventes</li>
                                         </ul>
                                     </div>
                                 </div>
-
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Patologías frecuentes</h2>
-                                    <div className="grid md:grid-cols-2 gap-6">
-                                        <div className="bg-orange-50 p-4 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-orange-700">Obstructivas</h3>
-                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                                <li>Asma</li>
-                                                <li>EPOC (enfisema y bronquitis crónica)</li>
-                                                <li>Obstrucción de vía aérea por cuerpo extraño</li>
-                                                <li>Bronquiolitis (en niños)</li>
-                                            </ul>
-                                        </div>
-                                        <div className="bg-blue-50 p-4 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-blue-700">Restrictivas</h3>
-                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                                <li>Neumonía</li>
-                                                <li>Edema pulmonar</li>
-                                                <li>Neumotórax</li>
-                                                <li>Derrame pleural</li>
-                                                <li>Síndrome de distrés respiratorio</li>
-                                            </ul>
-                                        </div>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Signos y síntomas generales de intoxicación</h2>
+                                    <div className="grid md:grid-cols-2 gap-4">
+                                        <ul className="list-disc list-inside space-y-2 text-gray-700">
+                                            <li>Alteración del estado mental (confusión, coma)</li>
+                                            <li>Náusea, vómito</li>
+                                            <li>Convulsiones</li>
+                                            <li>Alteraciones respiratorias (bradipnea, taquipnea)</li>
+                                            <li>Arritmias cardíacas</li>
+                                        </ul>
+                                        <ul className="list-disc list-inside space-y-2 text-gray-700">
+                                            <li>Miosis o midriasis</li>
+                                            <li>Piel húmeda o seca, enrojecida o pálida</li>
+                                            <li>Olor inusual en aliento o ropa</li>
+                                            <li>Quemaduras en boca o labios</li>
+                                            <li>Otros según el tóxico específico</li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
                         )}
 
-                        {activeTab === 'anatomy' && (
+                        {activeTab === 'principles' && (
                             <div className="space-y-6">
-                                <div className="flex flex-col md:flex-row gap-6 items-center mb-6">
-                                    <div className="md:w-1/2">
-                                        <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Anatomía de la vía aérea</h2>
-                                        <p className="text-gray-700 leading-relaxed">
-                                            La vía aérea se divide en superior e inferior:
-                                        </p>
-                                        <ul className="list-disc list-inside space-y-2 mt-2 text-gray-700">
-                                            <li><strong>Vía aérea superior:</strong> Nariz, boca, faringe y laringe hasta las cuerdas vocales.</li>
-                                            <li><strong>Vía aérea inferior:</strong> Tráquea, bronquios, bronquiolos y alvéolos.</li>
-                                        </ul>
-                                        <p className="text-gray-700 mt-4">
-                                            Los pulmones son los órganos principales del sistema respiratorio, formados por lóbulos (3 en el derecho, 2 en el izquierdo) y recubiertos por la pleura.
-                                        </p>
-                                    </div>
-                                    <div className="md:w-1/2 flex justify-center">
-                                        <img
-                                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Respiratory_system_complete_es.svg/500px-Respiratory_system_complete_es.svg.png"
-                                            alt="Anatomía del sistema respiratorio"
-                                            className="rounded-lg shadow-md max-w-full h-auto"
-                                        />
-                                    </div>
-                                </div>
-
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Fisiología respiratoria</h2>
-                                    <div className="grid md:grid-cols-2 gap-6">
-                                        <div>
-                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Ventilación</h3>
-                                            <p className="text-gray-700 leading-relaxed">
-                                                Es el proceso mecánico de mover el aire hacia dentro y fuera de los pulmones. Requiere:
-                                            </p>
-                                            <ul className="list-disc list-inside space-y-1 mt-2 text-gray-700">
-                                                <li>Vía aérea permeable</li>
-                                                <li>Diafragma y músculos intercostales funcionales</li>
-                                                <li>Caja torácica íntegra</li>
-                                                <li>Control neurológico adecuado</li>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Respiración celular</h3>
-                                            <p className="text-gray-700 leading-relaxed">
-                                                Es el intercambio gaseoso a nivel alveolar:
-                                            </p>
-                                            <ul className="list-disc list-inside space-y-1 mt-2 text-gray-700">
-                                                <li>El oxígeno pasa de los alvéolos a la sangre</li>
-                                                <li>El CO₂ pasa de la sangre a los alvéolos</li>
-                                                <li>Requiere membrana alvéolo-capilar intacta</li>
-                                                <li>Dependiente de gradientes de presión parcial</li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Principios generales de toxicología</h2>
+                                    <p className="text-gray-700 leading-relaxed">
+                                        El efecto de un tóxico depende de la dosis, vía de entrada, tiempo de exposición y características del paciente. Los mecanismos de toxicidad incluyen alteración enzimática, daño celular directo, hipoxia, y alteraciones en el sistema nervioso.
+                                    </p>
                                 </div>
-
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Valores normales y evaluación</h2>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Vías de exposición</h2>
+                                    <ul className="list-disc list-inside space-y-2 text-gray-700">
+                                        <li>Oral (ingestión)</li>
+                                        <li>Inhalatoria</li>
+                                        <li>Dérmica o mucosa</li>
+                                        <li>Parenteral (inyección, mordedura, picadura)</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Evaluación inicial del paciente intoxicado</h2>
+                                    <ul className="list-disc list-inside space-y-2 text-gray-700">
+                                        <li>Seguridad de la escena y del personal</li>
+                                        <li>Evaluación ABCDE</li>
+                                        <li>Identificación del tóxico (envases, testigos, historia clínica)</li>
+                                        <li>Valoración de signos vitales y estado neurológico</li>
+                                        <li>Búsqueda de pistas físicas (olor, lesiones, residuos)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        )}
+
+                        {activeTab === 'management' && (
+                            <div className="space-y-6">
+                                <div>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Manejo prehospitalario de intoxicaciones</h2>
+                                    <ul className="list-disc list-inside space-y-2 text-gray-700">
+                                        <li>Garantizar la seguridad del rescatista y la escena</li>
+                                        <li>Soporte vital básico y avanzado según necesidad</li>
+                                        <li>Descontaminación (retirar ropa, irrigar piel/mucosas)</li>
+                                        <li>Evitar provocar el vómito salvo indicación médica</li>
+                                        <li>Administrar oxígeno si hay hipoxia</li>
+                                        <li>Monitorización continua</li>
+                                        <li>Identificar antídotos específicos si están indicados (ej. naloxona, carbón activado, atropina)</li>
+                                        <li>Traslado rápido a centro hospitalario</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Antídotos y medidas específicas</h2>
                                     <div className="overflow-x-auto">
                                         <table className="min-w-full bg-white">
                                             <thead>
                                                 <tr className="bg-gray-100">
-                                                    <th className="py-2 px-4 border">Parámetro</th>
-                                                    <th className="py-2 px-4 border">Adultos</th>
-                                                    <th className="py-2 px-4 border">Niños</th>
-                                                    <th className="py-2 px-4 border">Lactantes</th>
+                                                    <th className="py-2 px-4 border">Tóxico</th>
+                                                    <th className="py-2 px-4 border">Antídoto/Medida</th>
+                                                    <th className="py-2 px-4 border">Comentarios</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td className="py-2 px-4 border font-medium">Frecuencia respiratoria</td>
-                                                    <td className="py-2 px-4 border">12-20/min</td>
-                                                    <td className="py-2 px-4 border">15-30/min</td>
-                                                    <td className="py-2 px-4 border">25-50/min</td>
+                                                    <td className="py-2 px-4 border">Opioides</td>
+                                                    <td className="py-2 px-4 border">Naloxona</td>
+                                                    <td className="py-2 px-4 border">Administrar si hay depresión respiratoria</td>
                                                 </tr>
                                                 <tr>
-                                                    <td className="py-2 px-4 border font-medium">Saturación O₂</td>
-                                                    <td className="py-2 px-4 border">≥95%</td>
-                                                    <td className="py-2 px-4 border">≥95%</td>
-                                                    <td className="py-2 px-4 border">≥95%</td>
+                                                    <td className="py-2 px-4 border">Benzodiacepinas</td>
+                                                    <td className="py-2 px-4 border">Flumazenil (uso hospitalario)</td>
+                                                    <td className="py-2 px-4 border">Precaución: riesgo de convulsiones</td>
                                                 </tr>
                                                 <tr>
-                                                    <td className="py-2 px-4 border font-medium">Volumen corriente</td>
-                                                    <td className="py-2 px-4 border">6-8 ml/kg</td>
-                                                    <td className="py-2 px-4 border">6-8 ml/kg</td>
-                                                    <td className="py-2 px-4 border">6-8 ml/kg</td>
+                                                    <td className="py-2 px-4 border">Paracetamol</td>
+                                                    <td className="py-2 px-4 border">N-acetilcisteína</td>
+                                                    <td className="py-2 px-4 border">Efectivo si se administra temprano</td>
+                                                </tr>
+                                                <tr>
+                                                    <td className="py-2 px-4 border">Organofosforados</td>
+                                                    <td className="py-2 px-4 border">Atropina + pralidoxima</td>
+                                                    <td className="py-2 px-4 border">Atropina disponible prehospitalario</td>
+                                                </tr>
+                                                <tr>
+                                                    <td className="py-2 px-4 border">Monóxido de carbono</td>
+                                                    <td className="py-2 px-4 border">Oxígeno al 100%</td>
+                                                    <td className="py-2 px-4 border">Traslado urgente</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -277,214 +255,76 @@ export default function AirwayEmergency(){
                             </div>
                         )}
 
-                        {activeTab === 'treatment' && (
+                        {activeTab === 'cases' && (
                             <div className="space-y-6">
-                                <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Manejo básico de la vía aérea</h2>
-                                    <div className="grid md:grid-cols-2 gap-6">
-                                        <div>
-                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Técnicas manuales</h3>
-                                            <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                                <li><strong>Maniobra frente-mentón:</strong> Estándar para abrir vía aérea</li>
-                                                <li><strong>Elevación mandibular:</strong> Indicada en trauma</li>
-                                                <li><strong>Posicionamiento:</strong> Posición de recuperación en pacientes inconscientes</li>
-                                                <li><strong>Aspiración:</strong> Eliminar secreciones o cuerpos extraños</li>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Dispositivos básicos</h3>
-                                            <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                                <li><strong>Cánulas orofaríngeas:</strong> Evitan la caída de la lengua</li>
-                                                <li><strong>Cánulas nasofaríngeas:</strong> Útiles en pacientes semiconscientes</li>
-                                                <li><strong>BVM (bolsa-válvula-mascarilla):</strong> Para ventilación asistida</li>
-                                                <li><strong>Mascarillas de oxígeno:</strong> Simple, con reservorio, etc.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Administración de oxígeno</h2>
-                                    <div className="overflow-x-auto">
-                                        <table className="min-w-full bg-white">
-                                            <thead>
-                                                <tr className="bg-gray-100">
-                                                    <th className="py-2 px-4 border">Dispositivo</th>
-                                                    <th className="py-2 px-4 border">FiO₂ aproximada</th>
-                                                    <th className="py-2 px-4 border">Flujo (L/min)</th>
-                                                    <th className="py-2 px-4 border">Indicaciones</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td className="py-2 px-4 border">Cánula nasal</td>
-                                                    <td className="py-2 px-4 border">24-44%</td>
-                                                    <td className="py-2 px-4 border">1-6</td>
-                                                    <td className="py-2 px-4 border">Hipoxia leve, EPOC</td>
-                                                </tr>
-                                                <tr>
-                                                    <td className="py-2 px-4 border">Mascarilla simple</td>
-                                                    <td className="py-2 px-4 border">35-50%</td>
-                                                    <td className="py-2 px-4 border">5-10</td>
-                                                    <td className="py-2 px-4 border">Hipoxia moderada</td>
-                                                </tr>
-                                                <tr>
-                                                    <td className="py-2 px-4 border">Mascarilla con reservorio</td>
-                                                    <td className="py-2 px-4 border">60-95%</td>
-                                                    <td className="py-2 px-4 border">10-15</td>
-                                                    <td className="py-2 px-4 border">Hipoxia severa, trauma</td>
-                                                </tr>
-                                                <tr>
-                                                    <td className="py-2 px-4 border">BVM con reservorio</td>
-                                                    <td className="py-2 px-4 border">90-100%</td>
-                                                    <td className="py-2 px-4 border">15</td>
-                                                    <td className="py-2 px-4 border">Ventilación asistida</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Manejo específico por patologías</h2>
-                                    <div className="space-y-4">
-                                        <div className="p-4 bg-orange-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-orange-700">Obstrucción de vía aérea</h3>
-                                            <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                                <li>Identifica obstrucción parcial vs. completa</li>
-                                                <li>En obstrucción parcial con buena ventilación: permita que el paciente tosa</li>
-                                                <li>En obstrucción completa en adulto/niño consciente: compresiones abdominales (Heimlich)</li>
-                                                <li>En obstrucción completa en lactante consciente: golpes en espalda y compresiones torácicas</li>
-                                                <li>En paciente inconsciente: iniciar RCP</li>
-                                            </ol>
-                                        </div>
-
-                                        <div className="p-4 bg-blue-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-blue-700">Asma</h3>
-                                            <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                                <li>Posición cómoda (generalmente sentado)</li>
-                                                <li>Oxígeno para mantener saturación ≥94%</li>
-                                                <li>Broncodilatadores inhalados (salbutamol)</li>
-                                                <li>Considerar esteroides según protocolos locales</li>
-                                                <li>Monitorización continua y reevaluación</li>
-                                            </ol>
-                                        </div>
-
-                                        <div className="p-4 bg-green-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-green-700">EPOC</h3>
-                                            <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                                <li>Oxígeno controlado (mantener SpO₂ 88-92%)</li>
-                                                <li>Broncodilatadores inhalados</li>
-                                                <li>Evaluar necesidad de ventilación no invasiva</li>
-                                                <li>Traslado en posición semisentada</li>
-                                                <li>Precaución: la hipoxia es su estímulo respiratorio principal</li>
-                                            </ol>
-                                        </div>
-
-                                        <div className="p-4 bg-red-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-red-700">Edema pulmonar</h3>
-                                            <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                                <li>Posición sentada con piernas colgando</li>
-                                                <li>Oxígeno a alto flujo</li>
-                                                <li>CPAP si está disponible y hay indicación</li>
-                                                <li>Considerar nitroglicerina (si PAS mayor 100 mmHg)</li>
-                                                <li>Tratamiento rápido y traslado inmediato</li>
-                                            </ol>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        )}
-
-                        {activeTab === 'practice' && (
-                            <div className="space-y-6">
-                                <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Casos clínicos para análisis</h2>
-
-                                <div className="p-5 bg-gray-50 rounded-lg shadow-sm mb-4">
-                                    <h3 className="text-xl font-semibold mb-2 text-orange-600">Caso 1: Asma severa</h3>
+                                <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Escenarios clínicos para análisis</h2>
+                                <div className="p-5 bg-orange-50 rounded-lg shadow-sm mb-4">
+                                    <h3 className="text-xl font-semibold mb-2 text-orange-600">Caso 1: Intoxicación por paracetamol</h3>
                                     <p className="italic text-gray-600 mb-4">
-                                        Mujer de 23 años con antecedente de asma. Tras exposición a alérgeno presenta disnea progresiva,
-                                        sibilancias audibles y uso de músculos accesorios. No puede completar frases.
+                                        Mujer de 19 años ingiere 20 tabletas de paracetamol en intento autolítico. Acude 2 horas después, asintomática.
                                     </p>
-
                                     <div className="mb-4">
                                         <h4 className="font-medium mb-2">Evaluación:</h4>
                                         <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                            <li>A: Vía aérea permeable con sibilancias</li>
-                                            <li>B: FR 28/min, SpO₂ 88%, uso de músculos accesorios</li>
-                                            <li>C: FC 125/min, TA 140/90 mmHg</li>
-                                            <li>D: Alerta, ansiosa</li>
-                                            <li>E: Sin hallazgos relevantes</li>
+                                            <li>ABC normales</li>
+                                            <li>Sin síntomas iniciales</li>
+                                            <li>Antecedente claro de ingesta</li>
                                         </ul>
                                     </div>
-
                                     <div>
                                         <h4 className="font-medium mb-2">Manejo correcto:</h4>
                                         <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                            <li>Posición sentada</li>
-                                            <li>Oxígeno con mascarilla (10-15 L/min)</li>
-                                            <li>Broncodilatador (salbutamol) con cámara espaciadora</li>
-                                            <li>Monitorización continua</li>
-                                            <li>Traslado rápido a centro hospitalario</li>
+                                            <li>Evaluación ABCDE</li>
+                                            <li>Monitorización</li>
+                                            <li>Considerar carbón activado si han pasado menos de 2 horas</li>
+                                            <li>Traslado urgente para valoración y N-acetilcisteína</li>
                                         </ol>
                                     </div>
                                 </div>
-
-                                <div className="p-5 bg-gray-50 rounded-lg shadow-sm mb-4">
-                                    <h3 className="text-xl font-semibold mb-2 text-blue-600">Caso 2: Obstrucción de vía aérea</h3>
+                                <div className="p-5 bg-blue-50 rounded-lg shadow-sm mb-4">
+                                    <h3 className="text-xl font-semibold mb-2 text-blue-600">Caso 2: Intoxicación por monóxido de carbono</h3>
                                     <p className="italic text-gray-600 mb-4">
-                                        Hombre de 65 años que durante una comida súbitamente se levanta, lleva las manos al cuello y no puede hablar ni toser.
+                                        Familia encontrada inconsciente en casa con calefacción de gas encendida y ventilación deficiente.
                                     </p>
-
                                     <div className="mb-4">
                                         <h4 className="font-medium mb-2">Evaluación:</h4>
                                         <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                            <li>A: Obstrucción completa de vía aérea</li>
-                                            <li>B: No hay entrada de aire</li>
-                                            <li>C: Signos de buena perfusión inicial</li>
-                                            <li>D: Consciente, agitado</li>
-                                            <li>E: Signo universal de asfixia (manos al cuello)</li>
+                                            <li>Alteración del estado de conciencia</li>
+                                            <li>Taquicardia, taquipnea</li>
+                                            <li>Piel rosada o normal</li>
+                                            <li>Ambiente con olor a gas</li>
                                         </ul>
                                     </div>
-
                                     <div>
                                         <h4 className="font-medium mb-2">Manejo correcto:</h4>
                                         <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                            <li>Confirmar obstrucción completa (preguntando "¿se está atragantando?")</li>
-                                            <li>Realizar compresiones abdominales (maniobra de Heimlich)</li>
-                                            <li>Continuar hasta desobstrucción o pérdida de conciencia</li>
-                                            <li>Si pierde conciencia, iniciar RCP</li>
-                                            <li>Durante RCP, verificar cavidad oral antes de ventilaciones</li>
+                                            <li>Retirar a la familia del ambiente tóxico</li>
+                                            <li>Administrar oxígeno al 100%</li>
+                                            <li>Monitorización y traslado urgente</li>
                                         </ol>
                                     </div>
                                 </div>
-
-                                <div className="p-5 bg-gray-50 rounded-lg shadow-sm">
-                                    <h3 className="text-xl font-semibold mb-2 text-green-600">Caso 3: EPOC exacerbado</h3>
+                                <div className="p-5 bg-green-50 rounded-lg shadow-sm">
+                                    <h3 className="text-xl font-semibold mb-2 text-green-600">Caso 3: Intoxicación por opioides</h3>
                                     <p className="italic text-gray-600 mb-4">
-                                        Paciente masculino de 72 años con antecedente de EPOC y oxígeno domiciliario. Presenta aumento de disnea y
-                                        expectoración purulenta desde hace 3 días.
+                                        Hombre de 28 años hallado inconsciente, con miosis marcada y respiración superficial. Se encuentra jeringa cerca.
                                     </p>
-
                                     <div className="mb-4">
                                         <h4 className="font-medium mb-2">Evaluación:</h4>
                                         <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                            <li>A: Vía aérea permeable</li>
-                                            <li>B: FR 24/min, SpO₂ 84%, uso moderado de músculos accesorios</li>
-                                            <li>C: FC 110/min, TA 145/85 mmHg</li>
-                                            <li>D: Alerta, orientado</li>
-                                            <li>E: Temperatura 38.2°C, esputo verdoso</li>
+                                            <li>Vía aérea permeable</li>
+                                            <li>Bradipnea, hipoventilación</li>
+                                            <li>Miosis</li>
+                                            <li>Sin respuesta verbal</li>
                                         </ul>
                                     </div>
-
                                     <div>
                                         <h4 className="font-medium mb-2">Manejo correcto:</h4>
                                         <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                            <li>Posición semisentada</li>
-                                            <li>Oxígeno controlado (iniciar a 2-3 L/min) para mantener SpO₂ 88-92%</li>
-                                            <li>Broncodilatador en nebulización o inhalador</li>
-                                            <li>Monitorización continua, vigilando nivel de conciencia</li>
-                                            <li>Traslado al hospital para tratamiento definitivo</li>
+                                            <li>Soporte vital básico</li>
+                                            <li>Administrar naloxona si está disponible</li>
+                                            <li>Oxígeno suplementario</li>
+                                            <li>Monitorización y traslado</li>
                                         </ol>
                                     </div>
                                 </div>
@@ -495,7 +335,6 @@ export default function AirwayEmergency(){
                     {/* FAQ Section */}
                     <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm mb-8">
                         <h2 className="text-3xl font-bold mb-6 text-center">Preguntas Frecuentes</h2>
-
                         <div className="space-y-4">
                             {faqData.map((faq, idx) => (
                                 <Disclosure key={idx}>
@@ -522,31 +361,28 @@ export default function AirwayEmergency(){
                     {/* Referencias y Recursos */}
                     <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">
                         <h2 className="text-2xl font-bold mb-4">Referencias y recursos adicionales</h2>
-
                         <div className="space-y-4">
                             <div>
                                 <h3 className="text-lg font-medium mb-2">Bibliografía principal</h3>
                                 <ul className="list-disc list-inside space-y-2 text-gray-700">
                                     <li>AAOS. (2021). <em>Emergencias Médicas Prehospitalarias</em> (11ª edición). Jones & Bartlett Learning.</li>
-                                    <li>American Heart Association. (2020). <em>Soporte Vital Básico y Avanzado</em>.</li>
-                                    <li>NAEMT. (2020). <em>PHTLS: Soporte Vital de Trauma Prehospitalario</em> (9ª edición).</li>
+                                    <li>Goldfrank's Toxicologic Emergencies (11th Ed.)</li>
+                                    <li>Manual de Toxicología Clínica - SEUP</li>
                                 </ul>
                             </div>
-
                             <div>
                                 <h3 className="text-lg font-medium mb-2">Recursos en línea</h3>
                                 <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                    <li><a href="https://www.ems1.com/airway-management/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">EMS1 - Artículos sobre manejo de vía aérea</a></li>
-                                    <li><a href="https://www.jems.com/patient-care/airway-respiratory/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">JEMS - Sección de cuidado respiratorio</a></li>
-                                    <li><a href="https://www.youtube.com/c/MedicTests" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">MedicTests - Canal de YouTube con videos educativos</a></li>
+                                    <li><a href="https://www.poison.org/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Poison Control - Información para intoxicaciones</a></li>
+                                    <li><a href="https://www.cdc.gov/niosh/topics/toxicology/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">CDC - Temas de toxicología</a></li>
+                                    <li><a href="https://www.ems1.com/toxicology/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">EMS1 - Artículos de toxicología</a></li>
                                 </ul>
                             </div>
-
                             <div>
                                 <h3 className="text-lg font-medium mb-2">Aplicaciones recomendadas</h3>
                                 <ul className="list-disc list-inside space-y-2 text-gray-700">
                                     <li>Medscape - Referencias médicas y calculadoras</li>
-                                    <li>ALS Simulator - Escenarios de práctica</li>
+                                    <li>ToxApp - Guía rápida de tóxicos y antídotos</li>
                                     <li>Paramedicine - Guías clínicas y medicamentos</li>
                                 </ul>
                             </div>
