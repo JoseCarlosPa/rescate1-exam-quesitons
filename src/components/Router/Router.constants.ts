@@ -33,6 +33,7 @@ export enum AllRoutes {
     TORAX_INJURIES = "/torax-injuries",
     FEET_INJURIES = "/feet-injuries",
     ABDO_GENI_INJURIES = "/abdo-geni-injuries",
+    INMUNO_EMERGENCY = "/inmuno-emergency",
     BLS = "/bls",
     LMS = "/lms",
     STOP_THE_BLEED = "/stop-the-bleed",

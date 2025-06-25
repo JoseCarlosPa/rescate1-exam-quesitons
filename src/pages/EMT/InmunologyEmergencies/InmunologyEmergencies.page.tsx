@@ -2,16 +2,16 @@ import {NavLink} from "react-router";
 import {AllRoutes} from "../../../components/Router/Router.constants.ts";
 import {Disclosure} from "@headlessui/react";
 import {ChevronUpIcon} from "@heroicons/react/16/solid";
-import {faqData} from "./AirwayEmergency.questions.ts";
-import {FaMaskVentilator} from "react-icons/fa6";
+import {faqData} from "./InmunologyEmergencies.questions.ts";
 import {IoReturnDownBack} from "react-icons/io5";
 import {useState} from "react";
 import {MdQuiz} from "react-icons/md";
 import {BsBookHalf} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
+import {FaBacteria} from "react-icons/fa";
 
-export default function AirwayEmergency(){
-    const [activeTab, setActiveTab] = useState<'overview' | 'anatomy' | 'treatment' | 'practice'>('overview');
+export default function InmunologyEmergencies(){
+    const [activeTab, setActiveTab] = useState<'general' | 'physiology' | 'management' | 'cases'>('general');
     const [showQuickQuiz, setShowQuickQuiz] = useState(false);
 
     return(
@@ -21,10 +21,10 @@ export default function AirwayEmergency(){
                     {/* Cabecera */}
                     <header className="mb-8 text-center">
                         <div className="flex justify-center">
-                            <FaMaskVentilator className="w-24 h-24 mb-1 text-orange-500" />
+                            <FaBacteria className="w-24 h-24 mb-1 text-orange-500" />
                         </div>
-                        <h1 className="text-5xl font-bold mb-2 text-center">Emergencias Respiratorias</h1>
-                        <p className="text-sm italic mb-4">Alumnos Generación 2025 Sábados Rescate 1</p>
+                        <h1 className="text-5xl font-bold mb-2 text-center">Emergencias Inmunológicas</h1>
+                        <p className="text-sm italic mb-4">Basado en AAOS 11ª Edición - Atención Médica Prehospitalaria</p>
                         <div className="flex justify-center">
                             <NavLink
                                 to={AllRoutes.EMT}
@@ -36,9 +36,9 @@ export default function AirwayEmergency(){
                     </header>
 
                     {/* Menú rápido de recursos */}
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 max-w-4xl mx-auto">
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8 max-w-4xl mx-auto">
                         <NavLink
-                            to="/airway-emergency/exam"
+                            to={`${AllRoutes.INMUNO_EMERGENCY}/exam`}
                             className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
                             <MdQuiz className="w-10 h-10 text-orange-500 mb-2" />
                             <p className="text-center font-medium">Examen</p>
@@ -51,15 +51,7 @@ export default function AirwayEmergency(){
                             <PiChalkboardTeacher className="w-10 h-10 text-orange-500 mb-2" />
                             <p className="text-center font-medium">Presentación</p>
                         </a>
-
-                        <a href="https://www.jems.com/patient-care/airway-respiratory/"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
-                            <BsBookHalf className="w-10 h-10 text-orange-500 mb-2" />
-                            <p className="text-center font-medium">Recursos JEMS</p>
-                        </a>
-                        <a href="https://drive.google.com/file/d/119EtY1BRKxtaDuRTYmPxWhNiDmg0BEuQ/view?usp=drive_link"
+                        <a href="https://drive.google.com/file/d/1dAOAb1_lf5dCRanA_eszIrQASSC11Krs/view?usp=drive_link"
                            target="_blank"
                            rel="noopener noreferrer"
                            className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
@@ -84,36 +76,36 @@ export default function AirwayEmergency(){
                     <div className="mb-6 border-b border-gray-200 max-w-5xl mx-auto">
                         <nav className="flex space-x-2 overflow-x-auto">
                             <button
-                                onClick={() => setActiveTab('overview')}
+                                onClick={() => setActiveTab('general')}
                                 className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
-                                    activeTab === 'overview' 
+                                    activeTab === 'general' 
                                         ? 'border-orange-500 text-orange-600' 
                                         : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                                 }`}>
                                 Generalidades
                             </button>
                             <button
-                                onClick={() => setActiveTab('anatomy')}
+                                onClick={() => setActiveTab('physiology')}
                                 className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
-                                    activeTab === 'anatomy' 
+                                    activeTab === 'physiology' 
                                         ? 'border-orange-500 text-orange-600' 
                                         : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                                 }`}>
-                                Anatomía y Fisiología
+                                Fisiopatología y Anatomía
                             </button>
                             <button
-                                onClick={() => setActiveTab('treatment')}
+                                onClick={() => setActiveTab('management')}
                                 className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
-                                    activeTab === 'treatment' 
+                                    activeTab === 'management' 
                                         ? 'border-orange-500 text-orange-600' 
                                         : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                                 }`}>
-                                Manejo y Tratamiento
+                                Manejo Prehospitalario
                             </button>
                             <button
-                                onClick={() => setActiveTab('practice')}
+                                onClick={() => setActiveTab('cases')}
                                 className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
-                                    activeTab === 'practice' 
+                                    activeTab === 'cases' 
                                         ? 'border-orange-500 text-orange-600' 
                                         : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                                 }`}>
@@ -124,59 +116,53 @@ export default function AirwayEmergency(){
 
                     {/* Contenido principal basado en pestañas */}
                     <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-sm p-6 mb-8">
-                        {activeTab === 'overview' && (
+                        {activeTab === 'general' && (
                             <div className="space-y-6">
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">¿Qué son las emergencias respiratorias?</h2>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">¿Qué son las emergencias inmunológicas?</h2>
                                     <p className="text-gray-700 leading-relaxed">
-                                        Las emergencias respiratorias son condiciones en las que el cuerpo no recibe suficiente oxígeno, lo que puede resultar en hipoxia, hipoxemia o paro respiratorio si no se actúa a tiempo.
-                                        Incluyen desde obstrucción de la vía aérea hasta enfermedades crónicas como EPOC, asma, neumonía o edema pulmonar.
+                                        Las emergencias inmunológicas son reacciones graves del sistema inmunitario, como la anafilaxia, que pueden poner en peligro la vida si no se tratan de inmediato. Estas emergencias suelen ser desencadenadas por alérgenos (alimentos, medicamentos, picaduras, etc.) y requieren intervención prehospitalaria rápida.
                                     </p>
                                     <p className="text-gray-700 mt-2 leading-relaxed">
-                                        las emergencias respiratorias son una de las principales causas de llamadas a los servicios de emergencia y constituyen una prioridad en la evaluación del paciente (ABCDE).
+                                        La anafilaxia es la forma más grave y puede causar dificultad respiratoria, shock y paro cardíaco. El reconocimiento temprano y el tratamiento inmediato son esenciales para salvar vidas.
                                     </p>
                                 </div>
-
                                 <div>
                                     <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Signos y síntomas comunes</h2>
                                     <div className="grid md:grid-cols-2 gap-4">
                                         <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                            <li>Dificultad para respirar (disnea)</li>
-                                            <li>Ruidos respiratorios anormales (sibilancias, estridor, ronquidos)</li>
-                                            <li>Cianosis (coloración azulada)</li>
-                                            <li>Taquipnea o bradipnea</li>
-                                            <li>Uso de músculos accesorios para respirar</li>
+                                            <li>Urticaria, enrojecimiento o hinchazón de piel y mucosas</li>
+                                            <li>Dificultad para respirar, sibilancias, estridor</li>
+                                            <li>Edema de labios, lengua o glotis</li>
+                                            <li>Taquicardia, hipotensión</li>
+                                            <li>Náusea, vómito, dolor abdominal</li>
                                         </ul>
                                         <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                            <li>Retracciones intercostales o supraclaviculares</li>
-                                            <li>Alteración del nivel de conciencia</li>
-                                            <li>Posición de trípode</li>
-                                            <li>Incapacidad para hablar en frases completas</li>
-                                            <li>Ansiedad o sensación de muerte inminente</li>
+                                            <li>Mareos, síncope</li>
+                                            <li>Ansiedad, sensación de muerte inminente</li>
+                                            <li>Disminución del nivel de conciencia</li>
+                                            <li>Choque (shock) anafiláctico</li>
+                                            <li>Prurito generalizado</li>
                                         </ul>
                                     </div>
                                 </div>
-
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Patologías frecuentes</h2>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Causas frecuentes</h2>
                                     <div className="grid md:grid-cols-2 gap-6">
                                         <div className="bg-orange-50 p-4 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-orange-700">Obstructivas</h3>
+                                            <h3 className="font-medium text-lg mb-2 text-orange-700">Alimentos</h3>
                                             <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                                <li>Asma</li>
-                                                <li>EPOC (enfisema y bronquitis crónica)</li>
-                                                <li>Obstrucción de vía aérea por cuerpo extraño</li>
-                                                <li>Bronquiolitis (en niños)</li>
+                                                <li>Maní, nueces, mariscos, leche, huevo</li>
+                                                <li>Frutas y otros alérgenos alimentarios</li>
                                             </ul>
                                         </div>
                                         <div className="bg-blue-50 p-4 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-blue-700">Restrictivas</h3>
+                                            <h3 className="font-medium text-lg mb-2 text-blue-700">Medicamentos y otros</h3>
                                             <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                                <li>Neumonía</li>
-                                                <li>Edema pulmonar</li>
-                                                <li>Neumotórax</li>
-                                                <li>Derrame pleural</li>
-                                                <li>Síndrome de distrés respiratorio</li>
+                                                <li>Antibióticos (penicilinas, cefalosporinas)</li>
+                                                <li>AINES, analgésicos</li>
+                                                <li>Picaduras de insectos</li>
+                                                <li>Látex</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -184,91 +170,74 @@ export default function AirwayEmergency(){
                             </div>
                         )}
 
-                        {activeTab === 'anatomy' && (
+                        {activeTab === 'physiology' && (
                             <div className="space-y-6">
                                 <div className="flex flex-col md:flex-row gap-6 items-center mb-6">
                                     <div className="md:w-1/2">
-                                        <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Anatomía de la vía aérea</h2>
+                                        <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Sistema inmunológico y reacción alérgica</h2>
                                         <p className="text-gray-700 leading-relaxed">
-                                            La vía aérea se divide en superior e inferior:
+                                            El sistema inmunológico protege al cuerpo de agentes externos. En las reacciones alérgicas, el sistema responde de forma exagerada a sustancias normalmente inofensivas (alérgenos), liberando histamina y otros mediadores que causan los síntomas.
                                         </p>
                                         <ul className="list-disc list-inside space-y-2 mt-2 text-gray-700">
-                                            <li><strong>Vía aérea superior:</strong> Nariz, boca, faringe y laringe hasta las cuerdas vocales.</li>
-                                            <li><strong>Vía aérea inferior:</strong> Tráquea, bronquios, bronquiolos y alvéolos.</li>
+                                            <li><strong>Fase de sensibilización:</strong> Exposición inicial al alérgeno, producción de IgE</li>
+                                            <li><strong>Fase de reacción:</strong> Nueva exposición, liberación masiva de mediadores</li>
                                         </ul>
-                                        <p className="text-gray-700 mt-4">
-                                            Los pulmones son los órganos principales del sistema respiratorio, formados por lóbulos (3 en el derecho, 2 en el izquierdo) y recubiertos por la pleura.
-                                        </p>
                                     </div>
                                     <div className="md:w-1/2 flex justify-center">
                                         <img
-                                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Respiratory_system_complete_es.svg/500px-Respiratory_system_complete_es.svg.png"
-                                            alt="Anatomía del sistema respiratorio"
+                                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Allergic_reaction_es.svg/500px-Allergic_reaction_es.svg.png"
+                                            alt="Reacción alérgica"
                                             className="rounded-lg shadow-md max-w-full h-auto"
                                         />
                                     </div>
                                 </div>
-
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Fisiología respiratoria</h2>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Anafilaxia: fisiopatología</h2>
                                     <div className="grid md:grid-cols-2 gap-6">
                                         <div>
-                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Ventilación</h3>
+                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Mecanismos</h3>
                                             <p className="text-gray-700 leading-relaxed">
-                                                Es el proceso mecánico de mover el aire hacia dentro y fuera de los pulmones. Requiere:
+                                                La anafilaxia es una reacción sistémica grave, mediada por IgE, que provoca vasodilatación, broncoconstricción y aumento de la permeabilidad capilar.
                                             </p>
                                             <ul className="list-disc list-inside space-y-1 mt-2 text-gray-700">
-                                                <li>Vía aérea permeable</li>
-                                                <li>Diafragma y músculos intercostales funcionales</li>
-                                                <li>Caja torácica íntegra</li>
-                                                <li>Control neurológico adecuado</li>
+                                                <li>Vasodilatación → hipotensión</li>
+                                                <li>Broncoconstricción → dificultad respiratoria</li>
+                                                <li>Edema de glotis y vías aéreas</li>
+                                                <li>Shock distributivo</li>
                                             </ul>
                                         </div>
                                         <div>
-                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Respiración celular</h3>
-                                            <p className="text-gray-700 leading-relaxed">
-                                                Es el intercambio gaseoso a nivel alveolar:
-                                            </p>
+                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Manifestaciones clínicas</h3>
                                             <ul className="list-disc list-inside space-y-1 mt-2 text-gray-700">
-                                                <li>El oxígeno pasa de los alvéolos a la sangre</li>
-                                                <li>El CO₂ pasa de la sangre a los alvéolos</li>
-                                                <li>Requiere membrana alvéolo-capilar intacta</li>
-                                                <li>Dependiente de gradientes de presión parcial</li>
+                                                <li>Inicio súbito (minutos a 2 horas tras exposición)</li>
+                                                <li>Compromiso cutáneo, respiratorio, cardiovascular y/o digestivo</li>
+                                                <li>Puede progresar rápidamente a paro respiratorio/cardiaco</li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
-
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Valores normales y evaluación</h2>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Evaluación prehospitalaria</h2>
                                     <div className="overflow-x-auto">
                                         <table className="min-w-full bg-white">
                                             <thead>
                                                 <tr className="bg-gray-100">
                                                     <th className="py-2 px-4 border">Parámetro</th>
-                                                    <th className="py-2 px-4 border">Adultos</th>
-                                                    <th className="py-2 px-4 border">Niños</th>
-                                                    <th className="py-2 px-4 border">Lactantes</th>
+                                                    <th className="py-2 px-4 border">Valor esperado</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
                                                     <td className="py-2 px-4 border font-medium">Frecuencia respiratoria</td>
-                                                    <td className="py-2 px-4 border">12-20/min</td>
-                                                    <td className="py-2 px-4 border">15-30/min</td>
-                                                    <td className="py-2 px-4 border">25-50/min</td>
+                                                    <td className="py-2 px-4 border">Elevada o irregular</td>
+                                                </tr>
+                                                <tr>
+                                                    <td className="py-2 px-4 border font-medium">Presión arterial</td>
+                                                    <td className="py-2 px-4 border">Disminuida (hipotensión)</td>
                                                 </tr>
                                                 <tr>
                                                     <td className="py-2 px-4 border font-medium">Saturación O₂</td>
-                                                    <td className="py-2 px-4 border">≥95%</td>
-                                                    <td className="py-2 px-4 border">≥95%</td>
-                                                    <td className="py-2 px-4 border">≥95%</td>
-                                                </tr>
-                                                <tr>
-                                                    <td className="py-2 px-4 border font-medium">Volumen corriente</td>
-                                                    <td className="py-2 px-4 border">6-8 ml/kg</td>
-                                                    <td className="py-2 px-4 border">6-8 ml/kg</td>
-                                                    <td className="py-2 px-4 border">6-8 ml/kg</td>
+                                                    <td className="py-2 px-4 border">Baja (&lt;94%)</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -277,118 +246,84 @@ export default function AirwayEmergency(){
                             </div>
                         )}
 
-                        {activeTab === 'treatment' && (
+                        {activeTab === 'management' && (
                             <div className="space-y-6">
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Manejo básico de la vía aérea</h2>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Manejo prehospitalario de la anafilaxia</h2>
                                     <div className="grid md:grid-cols-2 gap-6">
                                         <div>
-                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Técnicas manuales</h3>
+                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Evaluación inicial</h3>
                                             <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                                <li><strong>Maniobra frente-mentón:</strong> Estándar para abrir vía aérea</li>
-                                                <li><strong>Elevación mandibular:</strong> Indicada en trauma</li>
-                                                <li><strong>Posicionamiento:</strong> Posición de recuperación en pacientes inconscientes</li>
-                                                <li><strong>Aspiración:</strong> Eliminar secreciones o cuerpos extraños</li>
+                                                <li>Evaluar ABCDE (vía aérea, respiración, circulación, estado neurológico, exposición)</li>
+                                                <li>Identificar signos de anafilaxia</li>
+                                                <li>Retirar alérgeno si es posible</li>
+                                                <li>Solicitar ayuda avanzada</li>
                                             </ul>
                                         </div>
                                         <div>
-                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Dispositivos básicos</h3>
+                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Tratamiento inmediato</h3>
                                             <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                                <li><strong>Cánulas orofaríngeas:</strong> Evitan la caída de la lengua</li>
-                                                <li><strong>Cánulas nasofaríngeas:</strong> Útiles en pacientes semiconscientes</li>
-                                                <li><strong>BVM (bolsa-válvula-mascarilla):</strong> Para ventilación asistida</li>
-                                                <li><strong>Mascarillas de oxígeno:</strong> Simple, con reservorio, etc.</li>
+                                                <li><strong>Adrenalina IM (0.3-0.5 mg en adultos, 0.01 mg/kg en niños)</strong></li>
+                                                <li>Oxígeno suplementario</li>
+                                                <li>Colocar al paciente en decúbito supino con piernas elevadas</li>
+                                                <li>Acceso IV si es posible</li>
+                                                <li>Monitorización continua</li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
-
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Administración de oxígeno</h2>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Medicamentos y dispositivos</h2>
                                     <div className="overflow-x-auto">
                                         <table className="min-w-full bg-white">
                                             <thead>
                                                 <tr className="bg-gray-100">
-                                                    <th className="py-2 px-4 border">Dispositivo</th>
-                                                    <th className="py-2 px-4 border">FiO₂ aproximada</th>
-                                                    <th className="py-2 px-4 border">Flujo (L/min)</th>
+                                                    <th className="py-2 px-4 border">Medicamento</th>
+                                                    <th className="py-2 px-4 border">Dosis</th>
+                                                    <th className="py-2 px-4 border">Vía</th>
                                                     <th className="py-2 px-4 border">Indicaciones</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td className="py-2 px-4 border">Cánula nasal</td>
-                                                    <td className="py-2 px-4 border">24-44%</td>
-                                                    <td className="py-2 px-4 border">1-6</td>
-                                                    <td className="py-2 px-4 border">Hipoxia leve, EPOC</td>
+                                                    <td className="py-2 px-4 border">Adrenalina (epinefrina)</td>
+                                                    <td className="py-2 px-4 border">0.3-0.5 mg IM (adulto)</td>
+                                                    <td className="py-2 px-4 border">Intramuscular</td>
+                                                    <td className="py-2 px-4 border">Anafilaxia</td>
                                                 </tr>
                                                 <tr>
-                                                    <td className="py-2 px-4 border">Mascarilla simple</td>
-                                                    <td className="py-2 px-4 border">35-50%</td>
-                                                    <td className="py-2 px-4 border">5-10</td>
-                                                    <td className="py-2 px-4 border">Hipoxia moderada</td>
+                                                    <td className="py-2 px-4 border">Antihistamínicos</td>
+                                                    <td className="py-2 px-4 border">Según protocolo</td>
+                                                    <td className="py-2 px-4 border">Oral/IV</td>
+                                                    <td className="py-2 px-4 border">Síntomas cutáneos</td>
                                                 </tr>
                                                 <tr>
-                                                    <td className="py-2 px-4 border">Mascarilla con reservorio</td>
-                                                    <td className="py-2 px-4 border">60-95%</td>
-                                                    <td className="py-2 px-4 border">10-15</td>
-                                                    <td className="py-2 px-4 border">Hipoxia severa, trauma</td>
-                                                </tr>
-                                                <tr>
-                                                    <td className="py-2 px-4 border">BVM con reservorio</td>
-                                                    <td className="py-2 px-4 border">90-100%</td>
-                                                    <td className="py-2 px-4 border">15</td>
-                                                    <td className="py-2 px-4 border">Ventilación asistida</td>
+                                                    <td className="py-2 px-4 border">Corticoides</td>
+                                                    <td className="py-2 px-4 border">Según protocolo</td>
+                                                    <td className="py-2 px-4 border">IV/IM</td>
+                                                    <td className="py-2 px-4 border">Prevención de recaídas</td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
-
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Manejo específico por patologías</h2>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Consideraciones especiales</h2>
                                     <div className="space-y-4">
                                         <div className="p-4 bg-orange-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-orange-700">Obstrucción de vía aérea</h3>
+                                            <h3 className="font-medium text-lg mb-2 text-orange-700">Pacientes con dispositivos autoinyectores</h3>
                                             <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                                <li>Identifica obstrucción parcial vs. completa</li>
-                                                <li>En obstrucción parcial con buena ventilación: permita que el paciente tosa</li>
-                                                <li>En obstrucción completa en adulto/niño consciente: compresiones abdominales (Heimlich)</li>
-                                                <li>En obstrucción completa en lactante consciente: golpes en espalda y compresiones torácicas</li>
-                                                <li>En paciente inconsciente: iniciar RCP</li>
+                                                <li>Permitir y asistir al paciente a usar su autoinyector (EpiPen, etc.)</li>
+                                                <li>Administrar una segunda dosis si no hay mejoría en 5-15 minutos</li>
+                                                <li>Transportar siempre a un centro hospitalario</li>
                                             </ol>
                                         </div>
-
                                         <div className="p-4 bg-blue-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-blue-700">Asma</h3>
+                                            <h3 className="font-medium text-lg mb-2 text-blue-700">Manejo del shock anafiláctico</h3>
                                             <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                                <li>Posición cómoda (generalmente sentado)</li>
-                                                <li>Oxígeno para mantener saturación ≥94%</li>
-                                                <li>Broncodilatadores inhalados (salbutamol)</li>
-                                                <li>Considerar esteroides según protocolos locales</li>
-                                                <li>Monitorización continua y reevaluación</li>
-                                            </ol>
-                                        </div>
-
-                                        <div className="p-4 bg-green-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-green-700">EPOC</h3>
-                                            <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                                <li>Oxígeno controlado (mantener SpO₂ 88-92%)</li>
-                                                <li>Broncodilatadores inhalados</li>
-                                                <li>Evaluar necesidad de ventilación no invasiva</li>
-                                                <li>Traslado en posición semisentada</li>
-                                                <li>Precaución: la hipoxia es su estímulo respiratorio principal</li>
-                                            </ol>
-                                        </div>
-
-                                        <div className="p-4 bg-red-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-red-700">Edema pulmonar</h3>
-                                            <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                                <li>Posición sentada con piernas colgando</li>
-                                                <li>Oxígeno a alto flujo</li>
-                                                <li>CPAP si está disponible y hay indicación</li>
-                                                <li>Considerar nitroglicerina (si PAS mayor 100 mmHg)</li>
-                                                <li>Tratamiento rápido y traslado inmediato</li>
+                                                <li>Administrar líquidos IV si hay hipotensión</li>
+                                                <li>Monitorizar signos vitales y nivel de conciencia</li>
+                                                <li>Preparar para soporte avanzado si es necesario</li>
                                             </ol>
                                         </div>
                                     </div>
@@ -396,95 +331,81 @@ export default function AirwayEmergency(){
                             </div>
                         )}
 
-                        {activeTab === 'practice' && (
+                        {activeTab === 'cases' && (
                             <div className="space-y-6">
                                 <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Casos clínicos para análisis</h2>
-
                                 <div className="p-5 bg-gray-50 rounded-lg shadow-sm mb-4">
-                                    <h3 className="text-xl font-semibold mb-2 text-orange-600">Caso 1: Asma severa</h3>
+                                    <h3 className="text-xl font-semibold mb-2 text-orange-600">Caso 1: Anafilaxia por alimento</h3>
                                     <p className="italic text-gray-600 mb-4">
-                                        Mujer de 23 años con antecedente de asma. Tras exposición a alérgeno presenta disnea progresiva,
-                                        sibilancias audibles y uso de músculos accesorios. No puede completar frases.
+                                        Mujer de 19 años, tras ingerir mariscos, presenta urticaria generalizada, dificultad respiratoria y edema facial. TA 85/50 mmHg, FC 120/min, SpO₂ 89%.
                                     </p>
-
                                     <div className="mb-4">
                                         <h4 className="font-medium mb-2">Evaluación:</h4>
                                         <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                            <li>A: Vía aérea permeable con sibilancias</li>
-                                            <li>B: FR 28/min, SpO₂ 88%, uso de músculos accesorios</li>
-                                            <li>C: FC 125/min, TA 140/90 mmHg</li>
-                                            <li>D: Alerta, ansiosa</li>
-                                            <li>E: Sin hallazgos relevantes</li>
+                                            <li>A: Edema de glotis, dificultad para hablar</li>
+                                            <li>B: Sibilancias, taquipnea, SpO₂ baja</li>
+                                            <li>C: Taquicardia, hipotensión</li>
+                                            <li>D: Ansiosa, alerta</li>
+                                            <li>E: Urticaria, prurito</li>
                                         </ul>
                                     </div>
-
                                     <div>
                                         <h4 className="font-medium mb-2">Manejo correcto:</h4>
                                         <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                            <li>Posición sentada</li>
-                                            <li>Oxígeno con mascarilla (10-15 L/min)</li>
-                                            <li>Broncodilatador (salbutamol) con cámara espaciadora</li>
-                                            <li>Monitorización continua</li>
-                                            <li>Traslado rápido a centro hospitalario</li>
+                                            <li>Administrar adrenalina IM de inmediato</li>
+                                            <li>Oxígeno suplementario</li>
+                                            <li>Colocar en decúbito supino con piernas elevadas</li>
+                                            <li>Monitorización y traslado urgente</li>
                                         </ol>
                                     </div>
                                 </div>
-
                                 <div className="p-5 bg-gray-50 rounded-lg shadow-sm mb-4">
-                                    <h3 className="text-xl font-semibold mb-2 text-blue-600">Caso 2: Obstrucción de vía aérea</h3>
+                                    <h3 className="text-xl font-semibold mb-2 text-blue-600">Caso 2: Reacción a picadura de abeja</h3>
                                     <p className="italic text-gray-600 mb-4">
-                                        Hombre de 65 años que durante una comida súbitamente se levanta, lleva las manos al cuello y no puede hablar ni toser.
+                                        Hombre de 45 años, tras picadura de abeja, desarrolla rápidamente dificultad respiratoria, ronquera y urticaria. TA 90/60 mmHg, FC 110/min.
                                     </p>
-
                                     <div className="mb-4">
                                         <h4 className="font-medium mb-2">Evaluación:</h4>
                                         <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                            <li>A: Obstrucción completa de vía aérea</li>
-                                            <li>B: No hay entrada de aire</li>
-                                            <li>C: Signos de buena perfusión inicial</li>
-                                            <li>D: Consciente, agitado</li>
-                                            <li>E: Signo universal de asfixia (manos al cuello)</li>
+                                            <li>A: Edema de lengua y labios</li>
+                                            <li>B: Estridor, dificultad respiratoria</li>
+                                            <li>C: Hipotensión, taquicardia</li>
+                                            <li>D: Alerta, ansioso</li>
+                                            <li>E: Urticaria en tronco y extremidades</li>
                                         </ul>
                                     </div>
-
                                     <div>
                                         <h4 className="font-medium mb-2">Manejo correcto:</h4>
                                         <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                            <li>Confirmar obstrucción completa (preguntando "¿se está atragantando?")</li>
-                                            <li>Realizar compresiones abdominales (maniobra de Heimlich)</li>
-                                            <li>Continuar hasta desobstrucción o pérdida de conciencia</li>
-                                            <li>Si pierde conciencia, iniciar RCP</li>
-                                            <li>Durante RCP, verificar cavidad oral antes de ventilaciones</li>
+                                            <li>Administrar adrenalina IM</li>
+                                            <li>Oxígeno</li>
+                                            <li>Retirar aguijón si es visible</li>
+                                            <li>Monitorización y traslado</li>
                                         </ol>
                                     </div>
                                 </div>
-
                                 <div className="p-5 bg-gray-50 rounded-lg shadow-sm">
-                                    <h3 className="text-xl font-semibold mb-2 text-green-600">Caso 3: EPOC exacerbado</h3>
+                                    <h3 className="text-xl font-semibold mb-2 text-green-600">Caso 3: Reacción medicamentosa</h3>
                                     <p className="italic text-gray-600 mb-4">
-                                        Paciente masculino de 72 años con antecedente de EPOC y oxígeno domiciliario. Presenta aumento de disnea y
-                                        expectoración purulenta desde hace 3 días.
+                                        Paciente masculino de 60 años, tras recibir antibiótico, presenta prurito, urticaria, disnea y confusión. TA 80/40 mmHg, FC 130/min.
                                     </p>
-
                                     <div className="mb-4">
                                         <h4 className="font-medium mb-2">Evaluación:</h4>
                                         <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                            <li>A: Vía aérea permeable</li>
-                                            <li>B: FR 24/min, SpO₂ 84%, uso moderado de músculos accesorios</li>
-                                            <li>C: FC 110/min, TA 145/85 mmHg</li>
-                                            <li>D: Alerta, orientado</li>
-                                            <li>E: Temperatura 38.2°C, esputo verdoso</li>
+                                            <li>A: Vía aérea comprometida</li>
+                                            <li>B: Sibilancias, hipoxia</li>
+                                            <li>C: Shock, taquicardia</li>
+                                            <li>D: Confuso</li>
+                                            <li>E: Urticaria, eritema</li>
                                         </ul>
                                     </div>
-
                                     <div>
                                         <h4 className="font-medium mb-2">Manejo correcto:</h4>
                                         <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                            <li>Posición semisentada</li>
-                                            <li>Oxígeno controlado (iniciar a 2-3 L/min) para mantener SpO₂ 88-92%</li>
-                                            <li>Broncodilatador en nebulización o inhalador</li>
-                                            <li>Monitorización continua, vigilando nivel de conciencia</li>
-                                            <li>Traslado al hospital para tratamiento definitivo</li>
+                                            <li>Adrenalina IM</li>
+                                            <li>Oxígeno</li>
+                                            <li>Líquidos IV</li>
+                                            <li>Monitorización y traslado urgente</li>
                                         </ol>
                                     </div>
                                 </div>
@@ -536,9 +457,9 @@ export default function AirwayEmergency(){
                             <div>
                                 <h3 className="text-lg font-medium mb-2">Recursos en línea</h3>
                                 <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                    <li><a href="https://www.ems1.com/airway-management/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">EMS1 - Artículos sobre manejo de vía aérea</a></li>
-                                    <li><a href="https://www.jems.com/patient-care/airway-respiratory/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">JEMS - Sección de cuidado respiratorio</a></li>
-                                    <li><a href="https://www.youtube.com/c/MedicTests" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">MedicTests - Canal de YouTube con videos educativos</a></li>
+                                    <li><a href="https://www.ems1.com/allergy-anaphylaxis/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">EMS1 - Artículos sobre anafilaxia y alergias</a></li>
+                                    <li><a href="https://www.jems.com/patient-care/allergy-anaphylaxis/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">JEMS - Sección de alergias y anafilaxia</a></li>
+                                    <li><a href="https://www.youtube.com/c/MedicTests" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">MedicTests - Videos educativos sobre emergencias</a></li>
                                 </ul>
                             </div>
 

@@ -77,6 +77,8 @@ import FeetInjuries from "../../pages/EMT/FeetInjuries/FeetInjuries.page.tsx";
 import {feetInjuriesQuestions} from "../../pages/EMT/FeetInjuries/FeetInjuries.questions.ts";
 import {abdoBeniInjuriesQuestions} from "../../pages/EMT/AbdoGeniInjuries/AbdoGeniInjuries.questions.ts";
 import AbdoGeniInjuries from "../../pages/EMT/AbdoGeniInjuries/AbdoGeniInjuries.page.tsx";
+import {inmunologieQuestions} from "../../pages/EMT/InmunologyEmergencies/InmunologyEmergencies.questions.ts";
+import InmunologyEmergencies from "../../pages/EMT/InmunologyEmergencies/InmunologyEmergencies.page.tsx";
 export default function Router(){
     return(
         <Suspense fallback={<div>Loading...</div>}>
@@ -147,6 +149,8 @@ export default function Router(){
                 <Route path={`${AllRoutes.FEET_INJURIES}/exam`} element={<Exam returnRoute={AllRoutes.FEET_INJURIES} name="Lesiones Ortopedicas" questions={feetInjuriesQuestions} id={31}  />}/>
                 <Route path={AllRoutes.ABDO_GENI_INJURIES} element={<AbdoGeniInjuries />}/>
                 <Route path={`${AllRoutes.ABDO_GENI_INJURIES}/exam`} element={<Exam returnRoute={AllRoutes.ABDO_GENI_INJURIES} name="Lesiones Abdominales y genitourinarias" questions={abdoBeniInjuriesQuestions} id={32}  />}/>
+                <Route path={AllRoutes.INMUNO_EMERGENCY} element={<InmunologyEmergencies />}/>
+                <Route path={`${AllRoutes.INMUNO_EMERGENCY}/exam`} element={<Exam returnRoute={AllRoutes.INMUNO_EMERGENCY} name="Emergencias inmunologicas" questions={inmunologieQuestions} id={33}  />}/>
 
                 <Route path={AllRoutes.LMS} element={<Lms /> }/>
                 <Route path={AllRoutes.BLS} element={<Bls />}/>

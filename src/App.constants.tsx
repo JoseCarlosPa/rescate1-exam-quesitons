@@ -269,7 +269,8 @@ export const lections: tLection[] = [
         id: '33',
         title: 'Emergencias inmunologicas',
         icon: <FaBacteria className="w-12 h-12 mb-1 text-orange-500"/>,
-        route: AllRoutes.EMT,
+        route: AllRoutes.INMUNO_EMERGENCY,
+        active: true,
     },
     {
         id: '34',

@@ -29,6 +29,8 @@ import {softTissueExam} from "./SoftTissue/SoftTissue.questions.ts";
 import {headAndColumnInjuriesQuestions} from "./HeadAndColumnInjuries/HeadAndColumnInjuries.questions.ts";
 import {toraxInjuriesQuestions} from "./ToraxInjuries/ToraxInjuries.questions.ts";
 import {feetInjuriesQuestions} from "./FeetInjuries/FeetInjuries.questions.ts";
+import {abdoBeniInjuriesQuestions} from "./AbdoGeniInjuries/AbdoGeniInjuries.questions.ts";
+import {inmunologieQuestions} from "./InmunologyEmergencies/InmunologyEmergencies.questions.ts";
 
 export function getRandomQuestion() {
     const randomIndex = Math.floor(Math.random() * allQuestions.length);
@@ -67,7 +69,9 @@ export function getRandomQuestionsFromEachCategory(n: number): Question[] {
         softTissueExam,
         headAndColumnInjuriesQuestions,
         toraxInjuriesQuestions,
-        feetInjuriesQuestions
+        feetInjuriesQuestions,
+        abdoBeniInjuriesQuestions,
+        inmunologieQuestions
     ];
 
     const selectedQuestions: Question[] = [];
@@ -117,7 +121,9 @@ export const topicQuestionsMap: Record<string, Question[]> = {
     '28': softTissueExam,
     '29': headAndColumnInjuriesQuestions,
     '30': toraxInjuriesQuestions,
-    '31': feetInjuriesQuestions
+    '31': feetInjuriesQuestions,
+    '32': abdoBeniInjuriesQuestions,
+    '33': inmunologieQuestions
 };
 
 // Function to get random questions from selected topics
@@ -187,7 +193,9 @@ export const allQuestions: Question[] = [
     ...softTissueExam,
     ...headAndColumnInjuriesQuestions,
     ...toraxInjuriesQuestions,
-    ...feetInjuriesQuestions
+    ...feetInjuriesQuestions,
+    ...abdoBeniInjuriesQuestions,
+    ...inmunologieQuestions
 ]
 
 
