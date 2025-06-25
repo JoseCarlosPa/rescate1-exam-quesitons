@@ -262,7 +262,8 @@ export const lections: tLection[] = [
         id: '32',
         title: 'Lesiones abdominales y genitourinarias',
         icon: <CiMedicalCross className="w-12 h-12 mb-1 text-orange-500"/>,
-        route: AllRoutes.EMT,
+        route: AllRoutes.ABDO_GENI_INJURIES,
+        active: true,
     },
     {
         id: '33',

@@ -2,187 +2,138 @@ import {Question} from "../../../question";
 
 export const faqData = [
     {
-        question: "¿Qué es una emergencia respiratoria?",
-        answer: "Es una situación donde el paciente no respira adecuadamente o no obtiene suficiente oxígeno para satisfacer las necesidades de su cuerpo.",
+        question: "¿Cuál es la principal diferencia entre los órganos sólidos y los órganos huecos del abdomen?",
+        answer: "Los órganos sólidos (como el hígado, bazo, riñones y páncreas) contienen una gran cantidad de vasos sanguíneos, por lo que su lesión suele provocar una hemorragia severa y shock. Los órganos huecos (como el estómago, intestinos y vejiga) contienen diversas sustancias que, al derramarse por una ruptura, causan peritonitis (una grave inflamación e infección de la cavidad abdominal).",
     },
     {
-        question: "¿Qué signos clave indican una obstrucción de la vía aérea en un paciente consciente?",
-        answer: "Ronquidos, estridor (sonido agudo al inhalar), sibilancias (silbido al exhalar), tos débil o ausente, dificultad para hablar y cianosis (coloración azulada de piel/mucosas).",
+        question: "¿Qué es una evisceración y cómo debe manejarse?",
+        answer: "Una evisceración es la protrusión de órganos abdominales a través de una herida abierta. No se debe intentar reintroducir los órganos. El manejo correcto es cubrirlos con un apósito estéril grande y húmedo, y luego colocar un apósito oclusivo por encima para mantener la humedad y el calor. El paciente debe ser transportado rápidamente.",
     },
     {
-        question: "¿Cuál es la primera acción ante una obstrucción completa de la vía aérea en un paciente consciente y adulto?",
-        answer: "Realizar compresiones abdominales, comúnmente conocidas como la maniobra de Heimlich, de manera enérgica y repetitiva hasta que el objeto sea expulsado o el paciente pierda el conocimiento.",
+        question: "Mencione un órgano importante en cada uno de los cuatro cuadrantes abdominales.",
+        answer: "• Cuadrante Superior Derecho (CSD): Hígado. \n• Cuadrante Superior Izquierdo (CSI): Bazo. \n• Cuadrante Inferior Derecho (CID): Apéndice. \n• Cuadrante Inferior Izquierdo (CII): Colon sigmoide.",
     },
     {
-        question: "¿Qué significa EPOC y cuáles son sus características principales?",
-        answer: "EPOC significa Enfermedad Pulmonar Obstructiva Crónica. Se caracteriza por una obstrucción persistente del flujo de aire en los pulmones, generalmente progresiva y asociada a una respuesta inflamatoria crónica de las vías respiratorias y el parénquima pulmonar, causada por la exposición significativa a partículas o gases nocivos (ej., tabaquismo).",
+        question: "¿Qué es el signo de Kehr y qué lesión puede indicar?",
+        answer: "El signo de Kehr es un dolor referido al hombro izquierdo. Es un signo clásico de irritación del diafragma, comúnmente causado por una hemorragia proveniente de una ruptura del bazo.",
     },
     {
-        question: "¿Qué equipo puede utilizar el Técnico en Atención Médica Prehospitalaria (TAMP) para asistir la ventilación?",
-        answer: "Principalmente, la bolsa-válvula-mascarilla (BVM) con reservorio de oxígeno. Otros equipos incluyen cánulas orofaríngeas (OPA) o nasofaríngeas (NPA) para mantener la vía aérea permeable.",
+        question: "¿Qué es el espacio retroperitoneal?",
+        answer: "Es el área anatómica ubicada detrás de la cavidad abdominal. Contiene órganos importantes como los riñones, el páncreas y grandes vasos como la aorta y la vena cava. Las lesiones en esta área pueden causar hemorragias masivas que son difíciles de detectar.",
     },
     {
-        question: "¿Cuándo se administra oxígeno a alto flujo?",
-        answer: "Se administra oxígeno a alto flujo en casos de dificultad respiratoria severa, hipoxia evidente (SpO2 < 94%), trauma mayor, shock o cualquier condición que comprometa gravemente la oxigenación del paciente.",
+        question: "¿Cuál es el principal signo de una lesión renal o del sistema urinario?",
+        answer: "La hematuria, o sangre en la orina, es el signo más común de una lesión en los riñones o la vejiga. También puede haber dolor en el flanco (la parte baja de la espalda y los costados).",
     },
     {
-        question: "¿Cuáles son las diferencias clave entre el asma y la EPOC en cuanto a su fisiopatología?",
-        answer: "El asma es una enfermedad inflamatoria crónica de las vías respiratorias caracterizada por hiperreactividad bronquial y obstrucción reversible del flujo de aire. La EPOC implica una obstrucción progresiva y generalmente irreversible del flujo de aire, con destrucción del parénquima pulmonar (enfisema) y/o inflamación crónica de los bronquios (bronquitis crónica).",
+        question: "En un traumatismo cerrado de abdomen, ¿cuál es el órgano más frecuentemente lesionado?",
+        answer: "El bazo es el órgano más comúnmente lesionado en traumatismos abdominales cerrados, seguido por el hígado. Ambos pueden sangrar profusamente.",
     },
     {
-        question: "¿Qué consideraciones especiales se deben tener al evaluar y manejar a pacientes geriátricos con dificultad respiratoria?",
-        answer: "Los pacientes geriátricos pueden presentar síntomas atípicos, tener múltiples comorbilidades que complican el cuadro, una menor reserva fisiológica y una respuesta disminuida a hipoxia. La evaluación debe ser minuciosa y el manejo cuidadoso, prestando atención a la hidratación y a los efectos secundarios de los medicamentos.",
+        question: "Al evaluar un abdomen, ¿qué significan los términos 'defensa' (guarding) y 'rigidez'?",
+        answer: "La 'defensa' es la contracción voluntaria de los músculos abdominales por parte del paciente para evitar el dolor durante la palpación. La 'rigidez' (o 'abdomen en tabla') es una contracción involuntaria y persistente de los músculos abdominales, y es un signo de irritación peritoneal significativa.",
     },
 ];
 
-export const respiratoryEmergenciesExam: Question[] = [
+
+export const abdoBeniInjuriesQuestions: Question[] = [
     {
-        question: "¿Cuál de las siguientes es una característica de la respiración adecuada en un adulto?",
+        question: "Un paciente que sufrió un impacto con el volante en un choque vehicular se queja de dolor severo en el cuadrante superior izquierdo del abdomen y en el hombro izquierdo. ¿Qué lesión es más probable?",
         options: [
-            { letter: "a", text: "Uso de músculos accesorios al respirar" },
-            { letter: "b", text: "Frecuencia respiratoria de 24 respiraciones/min" },
-            { letter: "c", text: "Sonidos respiratorios claros y uniformes" },
-            { letter: "d", text: "Respiración con labios fruncidos" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "Un paciente presenta cianosis perioral y un esfuerzo respiratorio notable. Estos son signos de:",
-        options: [
-            { letter: "a", text: "Ventilación adecuada" },
-            { letter: "b", text: "Hiperventilación efectiva" },
-            { letter: "c", text: "Ventilación ineficaz" },
-            { letter: "d", text: "Recuperación de la dificultad respiratoria" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Cuál es el objetivo principal de la evaluación respiratoria durante la valoración primaria (ABCDE)?",
-        options: [
-            { letter: "a", text: "Detectar signos de intoxicación" },
-            { letter: "b", text: "Determinar la necesidad de inmovilización espinal" },
-            { letter: "c", text: "Identificar problemas que comprometen la vida inmediatamente y tratarlos" },
-            { letter: "d", text: "Establecer un diagnóstico definitivo de la enfermedad subyacente" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "El sonido de burbujeo o gorgoteo al respirar (roncus) puede deberse a:",
-        options: [
-            { letter: "a", text: "Aire atrapado en el espacio pleural" },
-            { letter: "b", text: "Líquidos o secreciones en la vía aérea superior o grandes bronquios" },
-            { letter: "c", text: "Espasmo bronquial de las vías aéreas pequeñas" },
-            { letter: "d", text: "Contracción excesiva del diafragma" },
+            { letter: "a", text: "Laceración hepática" },
+            { letter: "b", text: "Ruptura de bazo" },
+            { letter: "c", text: "Fractura de las costillas inferiores derechas" },
+            { letter: "d", text: "Contusión pancreática" },
         ],
         correctAnswer: "b",
     },
     {
-        question: "Un paciente asmático presenta sibilancias audibles y dificultad para hablar en frases completas. ¿Qué indica este hallazgo?",
+        question: "Usted atiende a un paciente con una herida por arma blanca en el abdomen, con un asa intestinal visible. El tratamiento adecuado incluye:",
         options: [
-            { letter: "a", text: "El asma está bien controlada." },
-            { letter: "b", text: "Hay una acumulación de líquido en los alvéolos." },
-            { letter: "c", text: "Indica un estrechamiento significativo de las vías aéreas." },
-            { letter: "d", text: "Se debe a una infección viral leve." },
+            { letter: "a", text: "Intentar reintroducir suavemente el intestino en la cavidad abdominal" },
+            { letter: "b", text: "Cubrir la herida con un apósito estéril húmedo y luego uno oclusivo" },
+            { letter: "c", text: "Aplicar un vendaje compresivo apretado para controlar la hemorragia" },
+            { letter: "d", text: "Lavar la herida y el intestino con solución salina antes de cubrir" },
+        ],
+        correctAnswer: "b",
+    },
+    {
+        question: "La lesión de un órgano hueco, como el intestino delgado, tiene más probabilidades de causar:",
+        options: [
+            { letter: "a", text: "Hemorragia masiva y shock hipovolémico" },
+            { letter: "b", text: "Peritonitis debido al derrame de contenido bacteriano" },
+            { letter: "c", text: "Una contusión cardíaca por la fuerza del impacto" },
+            { letter: "d", text: "Insuficiencia renal aguda" },
+        ],
+        correctAnswer: "b",
+    },
+    {
+        question: "Un paciente con traumatismo cerrado de abdomen presenta equimosis alrededor del ombligo (signo de Cullen). Este hallazgo tardío es indicativo de:",
+        options: [
+            { letter: "a", text: "Una úlcera gástrica perforada" },
+            { letter: "b", text: "Una fractura pélvica" },
+            { letter: "c", text: "Sangrado retroperitoneal" },
+            { letter: "d", text: "Una laceración superficial de la pared abdominal" },
         ],
         correctAnswer: "c",
     },
     {
-        question: "¿Cuál de las siguientes condiciones es MENOS probable que cause sibilancias?",
+        question: "El hígado se encuentra predominantemente en el:",
         options: [
-            { letter: "a", text: "Bronquitis" },
-            { letter: "b", text: "Enfisema" },
-            { letter: "c", text: "Epiglotitis" },
-            { letter: "d", text: "Asma" },
+            { letter: "a", text: "Cuadrante superior derecho" },
+            { letter: "b", text: "Cuadrante superior izquierdo" },
+            { letter: "c", text: "Cuadrante inferior derecho" },
+            { letter: "d", text: "Cuadrante inferior izquierdo" },
+        ],
+        correctAnswer: "a",
+    },
+    {
+        question: "Al tratar a un paciente con un objeto grande empalado en el abdomen, la acción correcta es:",
+        options: [
+            { letter: "a", text: "Retirar el objeto cuidadosamente para evaluar la profundidad de la herida" },
+            { letter: "b", text: "Cortar el objeto a ras de la piel para facilitar el transporte" },
+            { letter: "c", text: "Estabilizar el objeto en su lugar con apósitos voluminosos y no moverlo" },
+            { letter: "d", text: "Mover el objeto para determinar si hay sangrado activo" },
         ],
         correctAnswer: "c",
     },
     {
-        question: "Durante la administración de albuterol nebulizado, ¿cuál de los siguientes NO es un efecto secundario esperado?",
+        question: "Un hombre presenta una avulsión completa del pene. El manejo de la parte amputada debe incluir:",
         options: [
-            { letter: "a", text: "Aumento de la frecuencia cardíaca" },
-            { letter: "b", text: "Nerviosismo" },
-            { letter: "c", text: "Bradicardia severa" },
-            { letter: "d", text: "Temblores musculares" },
+            { letter: "a", text: "Colocarla directamente en hielo para su preservación" },
+            { letter: "b", text: "Envolverla en un apósito estéril, colocarla en una bolsa de plástico y mantenerla fría" },
+            { letter: "c", text: "Desecharla ya que no es posible re-implantarla" },
+            { letter: "d", text: "Sumergirla en solución salina estéril a temperatura ambiente" },
+        ],
+        correctAnswer: "b",
+    },
+    {
+        question: "En una paciente embarazada que sufre un traumatismo abdominal, una de las mayores preocupaciones es la separación prematura de la placenta de la pared uterina, una condición conocida como:",
+        options: [
+            { letter: "a", text: "Placenta previa" },
+            { letter: "b", text: "Embarazo ectópico" },
+            { letter: "c", text: "Ruptura uterina" },
+            { letter: "d", text: "Abruptio placentae (desprendimiento prematuro de placenta)" },
+        ],
+        correctAnswer: "d",
+    },
+    {
+        question: "Un paciente golpeado en el flanco derecho con un bate de béisbol presenta hematuria. ¿Qué órgano es más probable que esté lesionado?",
+        options: [
+            { letter: "a", text: "El bazo" },
+            { letter: "b", text: "El estómago" },
+            { letter: "c", text: "El riñón derecho" },
+            { letter: "d", text: "El apéndice" },
         ],
         correctAnswer: "c",
     },
     {
-        question: "Un paciente con EPOC presenta una exacerbación. Además de la dificultad respiratoria, ¿cuál es un signo común en estos pacientes debido a la retención crónica de CO2?",
+        question: "La principal causa de muerte por lesiones abdominales en el entorno prehospitalario es:",
         options: [
-            { letter: "a", text: "Piel seca y caliente" },
-            { letter: "b", text: "Distensión venosa yugular" },
-            { letter: "c", text: "Dedos en palillo de tambor (acropaquia)" },
-            { letter: "d", text: "Respiración de Cheyne-Stokes" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "En un paciente con posible edema pulmonar, ¿qué sonido respiratorio esperaría escuchar y cuál es su causa?",
-        options: [
-            { letter: "a", text: "Sibilancias, por espasmo bronquial" },
-            { letter: "b", text: "Estridor, por obstrucción de vía aérea superior" },
-            { letter: "c", text: "Crepitantes (estertores), por líquido en los alvéolos" },
-            { letter: "d", text: "Ronquidos, por relajación de la base de la lengua" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Cuál es la velocidad de flujo de oxígeno apropiada para un paciente con dificultad respiratoria severa que necesita alto flujo?",
-        options: [
-            { letter: "a", text: "2 L/min por cánula nasal" },
-            { letter: "b", text: "4 L/min por mascarilla simple" },
-            { letter: "c", "text": "10-15 L/min por mascarilla con reservorio no recirculante" },
-            { letter: "d", text: "6 L/min por cánula nasal" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "Cuando se evalúa a un paciente con tos persistente y producción de esputo, ¿qué condición se debe considerar especialmente si hay antecedentes de tabaquismo crónico?",
-        options: [
-            { letter: "a", text: "Neumonía aguda" },
-            { letter: "b", text: "Asma bronquial" },
-            { letter: "c", text: "Bronquitis crónica (parte de EPOC)" },
-            { letter: "d", text: "Laringitis" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Cuál de las siguientes NO es una medida de manejo inicial para un paciente con dificultad respiratoria aguda?",
-        options: [
-            { letter: "a", text: "Asegurar una vía aérea permeable" },
-            { letter: "b", text: "Administrar oxígeno suplementario" },
-            { letter: "c", text: "Obtener un historial médico completo detallado antes de cualquier intervención" },
-            { letter: "d", text: "Posicionar al paciente para facilitar la respiración" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "La tos perruna (tos 'de perro') y el estridor inspiratorio en un niño son signos clásicos de:",
-        options: [
-            { letter: "a", text: "Asma aguda" },
-            { letter: "b", text: "Bronquiolitis" },
-            { letter: "c", text: "Crup (laringotraqueobronquitis)" },
-            { letter: "d", text: "Neumonía bacteriana" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "¿Cuál de las siguientes NO es una complicación potencial de la intubación endotraqueal?",
-        options: [
-            { letter: "a", text: "Intubación esofágica" },
-            { letter: "b", text: "Trauma dental o de las vías aéreas" },
-            { letter: "c", text: "Hipocapnia severa" },
-            { letter: "d", text: "Barotrauma pulmonar" },
-        ],
-        correctAnswer: "c",
-    },
-    {
-        question: "En un paciente con neumotórax espontáneo, ¿qué hallazgos esperaría encontrar en la evaluación primaria?",
-        options: [
-            { letter: "a", text: "Sonidos pulmonares aumentados bilateralmente" },
-            { letter: "b", text: "Desviación traqueal hacia el lado afectado" },
-            { letter: "c", text: "Dolor torácico súbito y disnea, con disminución o ausencia de ruidos pulmonares en el lado afectado" },
-            { letter: "d", text: "Crepitantes difusos en ambos campos pulmonares" },
+            { letter: "a", text: "La infección por peritonitis" },
+            { letter: "b", text: "La obstrucción intestinal" },
+            { letter: "c", text: "La hemorragia y el shock hipovolémico" },
+            { letter: "d", text: "El dolor severo que causa síncope" },
         ],
         correctAnswer: "c",
     },

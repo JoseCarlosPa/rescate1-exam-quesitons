@@ -1,29 +1,29 @@
-import {NavLink} from "react-router";
-import {AllRoutes} from "../../../components/Router/Router.constants.ts";
-import {Disclosure} from "@headlessui/react";
-import {ChevronUpIcon} from "@heroicons/react/16/solid";
-import {faqData} from "./AirwayEmergency.questions.ts";
-import {FaMaskVentilator} from "react-icons/fa6";
-import {IoReturnDownBack} from "react-icons/io5";
-import {useState} from "react";
-import {MdQuiz} from "react-icons/md";
-import {BsBookHalf} from "react-icons/bs";
-import {PiChalkboardTeacher} from "react-icons/pi";
+import { NavLink } from "react-router";
+import { AllRoutes } from "../../../components/Router/Router.constants.ts";
+import { Disclosure } from "@headlessui/react";
+import { ChevronUpIcon } from "@heroicons/react/16/solid";
+import { faqData } from "./AbdoGeniInjuries.questions.ts";
+import { IoReturnDownBack } from "react-icons/io5";
+import { useState } from "react";
+import { MdQuiz } from "react-icons/md";
+import { BsBookHalf } from "react-icons/bs";
+import { PiChalkboardTeacher } from "react-icons/pi";
+import { CiMedicalCross } from "react-icons/ci";
 
-export default function AirwayEmergency(){
+export default function AbdoGeniInjuries() {
     const [activeTab, setActiveTab] = useState<'overview' | 'anatomy' | 'treatment' | 'practice'>('overview');
     const [showQuickQuiz, setShowQuickQuiz] = useState(false);
 
-    return(
+    return (
         <div className="min-h-screen bg-gray-50">
             <div className="flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-white pb-12 px-4 p-4">
                 <div className="w-full max-w-7xl">
                     {/* Cabecera */}
                     <header className="mb-8 text-center">
                         <div className="flex justify-center">
-                            <FaMaskVentilator className="w-24 h-24 mb-1 text-orange-500" />
+                            <CiMedicalCross className="w-24 h-24 mb-1 text-orange-500" />
                         </div>
-                        <h1 className="text-5xl font-bold mb-2 text-center">Emergencias Respiratorias</h1>
+                        <h1 className="text-5xl font-bold mb-2 text-center">Lesiones abdominales y genitourinarias</h1>
                         <p className="text-sm italic mb-4">Alumnos Generación 2025 Sábados Rescate 1</p>
                         <div className="flex justify-center">
                             <NavLink
@@ -36,33 +36,25 @@ export default function AirwayEmergency(){
                     </header>
 
                     {/* Menú rápido de recursos */}
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 max-w-4xl mx-auto">
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8 max-w-4xl mx-auto">
                         <NavLink
-                            to="/airway-emergency/exam"
+                            to={`${AllRoutes.ABDO_GENI_INJURIES}/exam`}
                             className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
                             <MdQuiz className="w-10 h-10 text-orange-500 mb-2" />
                             <p className="text-center font-medium">Examen</p>
                         </NavLink>
 
                         <a href="https://docs.google.com/presentation/d/1hA3-7Yh-8XEeliOwZYnRbLHdM8KQ8_Vi/edit?usp=drive_link&ouid=107287742628985461156&rtpof=true&sd=true"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
                             <PiChalkboardTeacher className="w-10 h-10 text-orange-500 mb-2" />
                             <p className="text-center font-medium">Presentación</p>
                         </a>
-
-                        <a href="https://www.jems.com/patient-care/airway-respiratory/"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
-                            <BsBookHalf className="w-10 h-10 text-orange-500 mb-2" />
-                            <p className="text-center font-medium">Recursos JEMS</p>
-                        </a>
-                        <a href="https://drive.google.com/file/d/119EtY1BRKxtaDuRTYmPxWhNiDmg0BEuQ/view?usp=drive_link"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
+                        <a href="https://drive.google.com/file/d/1qc1Y1h4Vhe90OGsIonMFQ1aSPp5fRBB4/view?usp=drive_link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
                             <BsBookHalf className="w-10 h-10 text-orange-500 mb-2" />
                             <p className="text-center font-medium">Capítulo</p>
                         </a>
@@ -85,38 +77,34 @@ export default function AirwayEmergency(){
                         <nav className="flex space-x-2 overflow-x-auto">
                             <button
                                 onClick={() => setActiveTab('overview')}
-                                className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
-                                    activeTab === 'overview' 
-                                        ? 'border-orange-500 text-orange-600' 
+                                className={`py-3 px-4 font-medium text-sm border-b-2 transition ${activeTab === 'overview'
+                                        ? 'border-orange-500 text-orange-600'
                                         : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                                }`}>
+                                    }`}>
                                 Generalidades
                             </button>
                             <button
                                 onClick={() => setActiveTab('anatomy')}
-                                className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
-                                    activeTab === 'anatomy' 
-                                        ? 'border-orange-500 text-orange-600' 
+                                className={`py-3 px-4 font-medium text-sm border-b-2 transition ${activeTab === 'anatomy'
+                                        ? 'border-orange-500 text-orange-600'
                                         : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                                }`}>
+                                    }`}>
                                 Anatomía y Fisiología
                             </button>
                             <button
                                 onClick={() => setActiveTab('treatment')}
-                                className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
-                                    activeTab === 'treatment' 
-                                        ? 'border-orange-500 text-orange-600' 
+                                className={`py-3 px-4 font-medium text-sm border-b-2 transition ${activeTab === 'treatment'
+                                        ? 'border-orange-500 text-orange-600'
                                         : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                                }`}>
-                                Manejo y Tratamiento
+                                    }`}>
+                                Manejo Prehospitalario
                             </button>
                             <button
                                 onClick={() => setActiveTab('practice')}
-                                className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
-                                    activeTab === 'practice' 
-                                        ? 'border-orange-500 text-orange-600' 
+                                className={`py-3 px-4 font-medium text-sm border-b-2 transition ${activeTab === 'practice'
+                                        ? 'border-orange-500 text-orange-600'
                                         : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                                }`}>
+                                    }`}>
                                 Casos Clínicos
                             </button>
                         </nav>
@@ -127,56 +115,54 @@ export default function AirwayEmergency(){
                         {activeTab === 'overview' && (
                             <div className="space-y-6">
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">¿Qué son las emergencias respiratorias?</h2>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">¿Qué son las lesiones abdominales y genitourinarias?</h2>
                                     <p className="text-gray-700 leading-relaxed">
-                                        Las emergencias respiratorias son condiciones en las que el cuerpo no recibe suficiente oxígeno, lo que puede resultar en hipoxia, hipoxemia o paro respiratorio si no se actúa a tiempo.
-                                        Incluyen desde obstrucción de la vía aérea hasta enfermedades crónicas como EPOC, asma, neumonía o edema pulmonar.
+                                        Las lesiones abdominales y genitourinarias comprenden un grupo de emergencias traumáticas que afectan los órganos internos del abdomen y el sistema genitourinario. Estas lesiones pueden ser resultado de traumatismos cerrados (como accidentes automovilísticos o caídas) o penetrantes (heridas por arma blanca o de fuego), y representan una causa importante de morbilidad y mortalidad en el ámbito prehospitalario.
                                     </p>
                                     <p className="text-gray-700 mt-2 leading-relaxed">
-                                        las emergencias respiratorias son una de las principales causas de llamadas a los servicios de emergencia y constituyen una prioridad en la evaluación del paciente (ABCDE).
+                                        El reconocimiento temprano y el manejo adecuado son fundamentales para prevenir complicaciones graves como hemorragia interna, shock, peritonitis e insuficiencia orgánica.
                                     </p>
                                 </div>
-
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Signos y síntomas comunes</h2>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Signos y síntomas de alarma</h2>
                                     <div className="grid md:grid-cols-2 gap-4">
                                         <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                            <li>Dificultad para respirar (disnea)</li>
-                                            <li>Ruidos respiratorios anormales (sibilancias, estridor, ronquidos)</li>
-                                            <li>Cianosis (coloración azulada)</li>
-                                            <li>Taquipnea o bradipnea</li>
-                                            <li>Uso de músculos accesorios para respirar</li>
+                                            <li>Dolor abdominal localizado o difuso</li>
+                                            <li>Distensión abdominal</li>
+                                            <li>Rigidez o defensa muscular</li>
+                                            <li>Hematuria (sangre en orina)</li>
+                                            <li>Hematomas en flancos o región periumbilical</li>
                                         </ul>
                                         <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                            <li>Retracciones intercostales o supraclaviculares</li>
-                                            <li>Alteración del nivel de conciencia</li>
-                                            <li>Posición de trípode</li>
-                                            <li>Incapacidad para hablar en frases completas</li>
-                                            <li>Ansiedad o sensación de muerte inminente</li>
+                                            <li>Signos de shock (palidez, diaforesis, taquicardia, hipotensión)</li>
+                                            <li>Heridas penetrantes o evisceración</li>
+                                            <li>Vómito con sangre (hematemesis)</li>
+                                            <li>Disuria o dificultad para orinar</li>
+                                            <li>Lesiones visibles en genitales o periné</li>
                                         </ul>
                                     </div>
                                 </div>
-
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Patologías frecuentes</h2>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Tipos frecuentes de lesiones</h2>
                                     <div className="grid md:grid-cols-2 gap-6">
                                         <div className="bg-orange-50 p-4 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-orange-700">Obstructivas</h3>
+                                            <h3 className="font-medium text-lg mb-2 text-orange-700">Abdominales</h3>
                                             <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                                <li>Asma</li>
-                                                <li>EPOC (enfisema y bronquitis crónica)</li>
-                                                <li>Obstrucción de vía aérea por cuerpo extraño</li>
-                                                <li>Bronquiolitis (en niños)</li>
+                                                <li>Lesión de bazo</li>
+                                                <li>Lesión hepática</li>
+                                                <li>Lesión intestinal</li>
+                                                <li>Lesión de grandes vasos</li>
+                                                <li>Perforación gástrica o intestinal</li>
                                             </ul>
                                         </div>
                                         <div className="bg-blue-50 p-4 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-blue-700">Restrictivas</h3>
+                                            <h3 className="font-medium text-lg mb-2 text-blue-700">Genitourinarias</h3>
                                             <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                                <li>Neumonía</li>
-                                                <li>Edema pulmonar</li>
-                                                <li>Neumotórax</li>
-                                                <li>Derrame pleural</li>
-                                                <li>Síndrome de distrés respiratorio</li>
+                                                <li>Lesión renal</li>
+                                                <li>Lesión vesical (vejiga)</li>
+                                                <li>Lesión uretral</li>
+                                                <li>Lesión testicular o escrotal</li>
+                                                <li>Lesión vulvar o vaginal</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -188,87 +174,80 @@ export default function AirwayEmergency(){
                             <div className="space-y-6">
                                 <div className="flex flex-col md:flex-row gap-6 items-center mb-6">
                                     <div className="md:w-1/2">
-                                        <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Anatomía de la vía aérea</h2>
+                                        <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Anatomía relevante</h2>
                                         <p className="text-gray-700 leading-relaxed">
-                                            La vía aérea se divide en superior e inferior:
+                                            El abdomen se divide en cuatro cuadrantes y contiene órganos sólidos (hígado, bazo, riñones, páncreas) y órganos huecos (estómago, intestinos, vejiga). El retroperitoneo alberga estructuras como los riñones, grandes vasos y parte del páncreas.
                                         </p>
                                         <ul className="list-disc list-inside space-y-2 mt-2 text-gray-700">
-                                            <li><strong>Vía aérea superior:</strong> Nariz, boca, faringe y laringe hasta las cuerdas vocales.</li>
-                                            <li><strong>Vía aérea inferior:</strong> Tráquea, bronquios, bronquiolos y alvéolos.</li>
+                                            <li><strong>Órganos sólidos:</strong> Mayor riesgo de hemorragia interna</li>
+                                            <li><strong>Órganos huecos:</strong> Riesgo de peritonitis por derrame de contenido</li>
+                                            <li><strong>Genitourinario:</strong> Riñones, uréteres, vejiga, uretra, órganos reproductores</li>
                                         </ul>
                                         <p className="text-gray-700 mt-4">
-                                            Los pulmones son los órganos principales del sistema respiratorio, formados por lóbulos (3 en el derecho, 2 en el izquierdo) y recubiertos por la pleura.
+                                            Las lesiones pueden afectar uno o varios órganos, y la localización del dolor puede orientar el diagnóstico.
                                         </p>
                                     </div>
                                     <div className="md:w-1/2 flex justify-center">
                                         <img
-                                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Respiratory_system_complete_es.svg/500px-Respiratory_system_complete_es.svg.png"
-                                            alt="Anatomía del sistema respiratorio"
+                                            src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Gray1220-es.png"
+                                            alt="Anatomía abdominal y genitourinaria"
                                             className="rounded-lg shadow-md max-w-full h-auto"
                                         />
                                     </div>
                                 </div>
-
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Fisiología respiratoria</h2>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Fisiopatología del trauma abdominal</h2>
                                     <div className="grid md:grid-cols-2 gap-6">
                                         <div>
-                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Ventilación</h3>
+                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Trauma cerrado</h3>
                                             <p className="text-gray-700 leading-relaxed">
-                                                Es el proceso mecánico de mover el aire hacia dentro y fuera de los pulmones. Requiere:
+                                                Generalmente causado por golpes directos, accidentes vehiculares o caídas. Puede provocar hemorragia interna sin signos externos evidentes.
                                             </p>
                                             <ul className="list-disc list-inside space-y-1 mt-2 text-gray-700">
-                                                <li>Vía aérea permeable</li>
-                                                <li>Diafragma y músculos intercostales funcionales</li>
-                                                <li>Caja torácica íntegra</li>
-                                                <li>Control neurológico adecuado</li>
+                                                <li>Lesión de órganos sólidos (bazo, hígado, riñón)</li>
+                                                <li>Desgarros vasculares</li>
+                                                <li>Hematomas retroperitoneales</li>
                                             </ul>
                                         </div>
                                         <div>
-                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Respiración celular</h3>
+                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Trauma penetrante</h3>
                                             <p className="text-gray-700 leading-relaxed">
-                                                Es el intercambio gaseoso a nivel alveolar:
+                                                Producido por objetos punzocortantes o proyectiles. Mayor riesgo de perforación de órganos huecos y evisceración.
                                             </p>
                                             <ul className="list-disc list-inside space-y-1 mt-2 text-gray-700">
-                                                <li>El oxígeno pasa de los alvéolos a la sangre</li>
-                                                <li>El CO₂ pasa de la sangre a los alvéolos</li>
-                                                <li>Requiere membrana alvéolo-capilar intacta</li>
-                                                <li>Dependiente de gradientes de presión parcial</li>
+                                                <li>Heridas por arma blanca</li>
+                                                <li>Heridas por arma de fuego</li>
+                                                <li>Evisceración</li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
-
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Valores normales y evaluación</h2>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Evaluación prehospitalaria</h2>
                                     <div className="overflow-x-auto">
                                         <table className="min-w-full bg-white">
                                             <thead>
                                                 <tr className="bg-gray-100">
                                                     <th className="py-2 px-4 border">Parámetro</th>
-                                                    <th className="py-2 px-4 border">Adultos</th>
-                                                    <th className="py-2 px-4 border">Niños</th>
-                                                    <th className="py-2 px-4 border">Lactantes</th>
+                                                    <th className="py-2 px-4 border">Hallazgos clave</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td className="py-2 px-4 border font-medium">Frecuencia respiratoria</td>
-                                                    <td className="py-2 px-4 border">12-20/min</td>
-                                                    <td className="py-2 px-4 border">15-30/min</td>
-                                                    <td className="py-2 px-4 border">25-50/min</td>
+                                                    <td className="py-2 px-4 border font-medium">Inspección</td>
+                                                    <td className="py-2 px-4 border">Heridas, hematomas, distensión, evisceración</td>
                                                 </tr>
                                                 <tr>
-                                                    <td className="py-2 px-4 border font-medium">Saturación O₂</td>
-                                                    <td className="py-2 px-4 border">≥95%</td>
-                                                    <td className="py-2 px-4 border">≥95%</td>
-                                                    <td className="py-2 px-4 border">≥95%</td>
+                                                    <td className="py-2 px-4 border font-medium">Palpación</td>
+                                                    <td className="py-2 px-4 border">Dolor, defensa, rigidez, crepitación</td>
                                                 </tr>
                                                 <tr>
-                                                    <td className="py-2 px-4 border font-medium">Volumen corriente</td>
-                                                    <td className="py-2 px-4 border">6-8 ml/kg</td>
-                                                    <td className="py-2 px-4 border">6-8 ml/kg</td>
-                                                    <td className="py-2 px-4 border">6-8 ml/kg</td>
+                                                    <td className="py-2 px-4 border font-medium">Percusión</td>
+                                                    <td className="py-2 px-4 border">Timpanismo, matidez</td>
+                                                </tr>
+                                                <tr>
+                                                    <td className="py-2 px-4 border font-medium">Genitourinario</td>
+                                                    <td className="py-2 px-4 border">Hematuria, sangre en meato uretral, lesiones genitales</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -280,115 +259,97 @@ export default function AirwayEmergency(){
                         {activeTab === 'treatment' && (
                             <div className="space-y-6">
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Manejo básico de la vía aérea</h2>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Manejo prehospitalario inicial</h2>
                                     <div className="grid md:grid-cols-2 gap-6">
                                         <div>
-                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Técnicas manuales</h3>
+                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Valoración y prioridades</h3>
                                             <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                                <li><strong>Maniobra frente-mentón:</strong> Estándar para abrir vía aérea</li>
-                                                <li><strong>Elevación mandibular:</strong> Indicada en trauma</li>
-                                                <li><strong>Posicionamiento:</strong> Posición de recuperación en pacientes inconscientes</li>
-                                                <li><strong>Aspiración:</strong> Eliminar secreciones o cuerpos extraños</li>
+                                                <li>Evaluación ABCDE y control de hemorragias externas</li>
+                                                <li>Oxigenoterapia si hay signos de shock</li>
+                                                <li>Colocar al paciente en posición supina con piernas elevadas si hay hipotensión</li>
+                                                <li>Evitar dar líquidos por vía oral</li>
+                                                <li>Monitorización de signos vitales</li>
                                             </ul>
                                         </div>
                                         <div>
-                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Dispositivos básicos</h3>
+                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Intervenciones específicas</h3>
                                             <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                                <li><strong>Cánulas orofaríngeas:</strong> Evitan la caída de la lengua</li>
-                                                <li><strong>Cánulas nasofaríngeas:</strong> Útiles en pacientes semiconscientes</li>
-                                                <li><strong>BVM (bolsa-válvula-mascarilla):</strong> Para ventilación asistida</li>
-                                                <li><strong>Mascarillas de oxígeno:</strong> Simple, con reservorio, etc.</li>
+                                                <li>En evisceración: cubrir vísceras con apósitos húmedos estériles</li>
+                                                <li>No intentar reintroducir órganos eviscerados</li>
+                                                <li>En heridas penetrantes: no retirar objetos incrustados</li>
+                                                <li>Inmovilización de pelvis si hay sospecha de fractura</li>
+                                                <li>Rápido traslado a centro hospitalario</li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
-
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Administración de oxígeno</h2>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Tabla de intervenciones y consideraciones</h2>
                                     <div className="overflow-x-auto">
                                         <table className="min-w-full bg-white">
                                             <thead>
                                                 <tr className="bg-gray-100">
-                                                    <th className="py-2 px-4 border">Dispositivo</th>
-                                                    <th className="py-2 px-4 border">FiO₂ aproximada</th>
-                                                    <th className="py-2 px-4 border">Flujo (L/min)</th>
-                                                    <th className="py-2 px-4 border">Indicaciones</th>
+                                                    <th className="py-2 px-4 border">Situación</th>
+                                                    <th className="py-2 px-4 border">Intervención</th>
+                                                    <th className="py-2 px-4 border">Consideraciones</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td className="py-2 px-4 border">Cánula nasal</td>
-                                                    <td className="py-2 px-4 border">24-44%</td>
-                                                    <td className="py-2 px-4 border">1-6</td>
-                                                    <td className="py-2 px-4 border">Hipoxia leve, EPOC</td>
+                                                    <td className="py-2 px-4 border">Evisceración</td>
+                                                    <td className="py-2 px-4 border">Cubrir con apósito húmedo estéril</td>
+                                                    <td className="py-2 px-4 border">No reintroducir órganos, evitar hipotermia</td>
                                                 </tr>
                                                 <tr>
-                                                    <td className="py-2 px-4 border">Mascarilla simple</td>
-                                                    <td className="py-2 px-4 border">35-50%</td>
-                                                    <td className="py-2 px-4 border">5-10</td>
-                                                    <td className="py-2 px-4 border">Hipoxia moderada</td>
+                                                    <td className="py-2 px-4 border">Herida penetrante</td>
+                                                    <td className="py-2 px-4 border">No retirar objeto, estabilizar</td>
+                                                    <td className="py-2 px-4 border">Traslado urgente</td>
                                                 </tr>
                                                 <tr>
-                                                    <td className="py-2 px-4 border">Mascarilla con reservorio</td>
-                                                    <td className="py-2 px-4 border">60-95%</td>
-                                                    <td className="py-2 px-4 border">10-15</td>
-                                                    <td className="py-2 px-4 border">Hipoxia severa, trauma</td>
+                                                    <td className="py-2 px-4 border">Hematuria</td>
+                                                    <td className="py-2 px-4 border">Monitorizar, traslado</td>
+                                                    <td className="py-2 px-4 border">Sospechar lesión renal o vesical</td>
                                                 </tr>
                                                 <tr>
-                                                    <td className="py-2 px-4 border">BVM con reservorio</td>
-                                                    <td className="py-2 px-4 border">90-100%</td>
-                                                    <td className="py-2 px-4 border">15</td>
-                                                    <td className="py-2 px-4 border">Ventilación asistida</td>
+                                                    <td className="py-2 px-4 border">Shock</td>
+                                                    <td className="py-2 px-4 border">Oxígeno, posición supina, traslado rápido</td>
+                                                    <td className="py-2 px-4 border">Evitar hipotermia, monitorizar</td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
-
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Manejo específico por patologías</h2>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Manejo según tipo de lesión</h2>
                                     <div className="space-y-4">
                                         <div className="p-4 bg-orange-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-orange-700">Obstrucción de vía aérea</h3>
+                                            <h3 className="font-medium text-lg mb-2 text-orange-700">Trauma cerrado</h3>
                                             <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                                <li>Identifica obstrucción parcial vs. completa</li>
-                                                <li>En obstrucción parcial con buena ventilación: permita que el paciente tosa</li>
-                                                <li>En obstrucción completa en adulto/niño consciente: compresiones abdominales (Heimlich)</li>
-                                                <li>En obstrucción completa en lactante consciente: golpes en espalda y compresiones torácicas</li>
-                                                <li>En paciente inconsciente: iniciar RCP</li>
+                                                <li>Evaluar mecanismo de lesión y signos de hemorragia interna</li>
+                                                <li>Monitorizar signos vitales y nivel de conciencia</li>
+                                                <li>Oxígeno suplementario si hay hipoxia</li>
+                                                <li>Evitar movimientos bruscos</li>
+                                                <li>Traslado inmediato</li>
                                             </ol>
                                         </div>
-
                                         <div className="p-4 bg-blue-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-blue-700">Asma</h3>
+                                            <h3 className="font-medium text-lg mb-2 text-blue-700">Trauma penetrante</h3>
                                             <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                                <li>Posición cómoda (generalmente sentado)</li>
-                                                <li>Oxígeno para mantener saturación ≥94%</li>
-                                                <li>Broncodilatadores inhalados (salbutamol)</li>
-                                                <li>Considerar esteroides según protocolos locales</li>
-                                                <li>Monitorización continua y reevaluación</li>
+                                                <li>No retirar objetos incrustados</li>
+                                                <li>Control de hemorragia externa</li>
+                                                <li>Cubrir heridas abiertas</li>
+                                                <li>Evitar presión directa sobre órganos eviscerados</li>
+                                                <li>Traslado urgente</li>
                                             </ol>
                                         </div>
-
                                         <div className="p-4 bg-green-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-green-700">EPOC</h3>
+                                            <h3 className="font-medium text-lg mb-2 text-green-700">Lesión genitourinaria</h3>
                                             <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                                <li>Oxígeno controlado (mantener SpO₂ 88-92%)</li>
-                                                <li>Broncodilatadores inhalados</li>
-                                                <li>Evaluar necesidad de ventilación no invasiva</li>
-                                                <li>Traslado en posición semisentada</li>
-                                                <li>Precaución: la hipoxia es su estímulo respiratorio principal</li>
-                                            </ol>
-                                        </div>
-
-                                        <div className="p-4 bg-red-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-red-700">Edema pulmonar</h3>
-                                            <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                                <li>Posición sentada con piernas colgando</li>
-                                                <li>Oxígeno a alto flujo</li>
-                                                <li>CPAP si está disponible y hay indicación</li>
-                                                <li>Considerar nitroglicerina (si PAS mayor 100 mmHg)</li>
-                                                <li>Tratamiento rápido y traslado inmediato</li>
+                                                <li>Buscar sangre en orina o meato uretral</li>
+                                                <li>No colocar sonda urinaria si hay sospecha de lesión uretral</li>
+                                                <li>Control local de hemorragia</li>
+                                                <li>Proteger genitales lesionados con apósitos estériles</li>
+                                                <li>Traslado a centro especializado</li>
                                             </ol>
                                         </div>
                                     </div>
@@ -399,92 +360,81 @@ export default function AirwayEmergency(){
                         {activeTab === 'practice' && (
                             <div className="space-y-6">
                                 <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Casos clínicos para análisis</h2>
-
                                 <div className="p-5 bg-gray-50 rounded-lg shadow-sm mb-4">
-                                    <h3 className="text-xl font-semibold mb-2 text-orange-600">Caso 1: Asma severa</h3>
+                                    <h3 className="text-xl font-semibold mb-2 text-orange-600">Caso 1: Trauma abdominal cerrado</h3>
                                     <p className="italic text-gray-600 mb-4">
-                                        Mujer de 23 años con antecedente de asma. Tras exposición a alérgeno presenta disnea progresiva,
-                                        sibilancias audibles y uso de músculos accesorios. No puede completar frases.
+                                        Hombre de 30 años, motociclista, sufre accidente y presenta dolor abdominal intenso, palidez y taquicardia. No hay heridas externas evidentes.
                                     </p>
-
-                                    <div className="mb-4">
-                                        <h4 className="font-medium mb-2">Evaluación:</h4>
-                                        <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                            <li>A: Vía aérea permeable con sibilancias</li>
-                                            <li>B: FR 28/min, SpO₂ 88%, uso de músculos accesorios</li>
-                                            <li>C: FC 125/min, TA 140/90 mmHg</li>
-                                            <li>D: Alerta, ansiosa</li>
-                                            <li>E: Sin hallazgos relevantes</li>
-                                        </ul>
-                                    </div>
-
-                                    <div>
-                                        <h4 className="font-medium mb-2">Manejo correcto:</h4>
-                                        <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                            <li>Posición sentada</li>
-                                            <li>Oxígeno con mascarilla (10-15 L/min)</li>
-                                            <li>Broncodilatador (salbutamol) con cámara espaciadora</li>
-                                            <li>Monitorización continua</li>
-                                            <li>Traslado rápido a centro hospitalario</li>
-                                        </ol>
-                                    </div>
-                                </div>
-
-                                <div className="p-5 bg-gray-50 rounded-lg shadow-sm mb-4">
-                                    <h3 className="text-xl font-semibold mb-2 text-blue-600">Caso 2: Obstrucción de vía aérea</h3>
-                                    <p className="italic text-gray-600 mb-4">
-                                        Hombre de 65 años que durante una comida súbitamente se levanta, lleva las manos al cuello y no puede hablar ni toser.
-                                    </p>
-
-                                    <div className="mb-4">
-                                        <h4 className="font-medium mb-2">Evaluación:</h4>
-                                        <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                            <li>A: Obstrucción completa de vía aérea</li>
-                                            <li>B: No hay entrada de aire</li>
-                                            <li>C: Signos de buena perfusión inicial</li>
-                                            <li>D: Consciente, agitado</li>
-                                            <li>E: Signo universal de asfixia (manos al cuello)</li>
-                                        </ul>
-                                    </div>
-
-                                    <div>
-                                        <h4 className="font-medium mb-2">Manejo correcto:</h4>
-                                        <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                            <li>Confirmar obstrucción completa (preguntando "¿se está atragantando?")</li>
-                                            <li>Realizar compresiones abdominales (maniobra de Heimlich)</li>
-                                            <li>Continuar hasta desobstrucción o pérdida de conciencia</li>
-                                            <li>Si pierde conciencia, iniciar RCP</li>
-                                            <li>Durante RCP, verificar cavidad oral antes de ventilaciones</li>
-                                        </ol>
-                                    </div>
-                                </div>
-
-                                <div className="p-5 bg-gray-50 rounded-lg shadow-sm">
-                                    <h3 className="text-xl font-semibold mb-2 text-green-600">Caso 3: EPOC exacerbado</h3>
-                                    <p className="italic text-gray-600 mb-4">
-                                        Paciente masculino de 72 años con antecedente de EPOC y oxígeno domiciliario. Presenta aumento de disnea y
-                                        expectoración purulenta desde hace 3 días.
-                                    </p>
-
                                     <div className="mb-4">
                                         <h4 className="font-medium mb-2">Evaluación:</h4>
                                         <ul className="list-disc list-inside space-y-1 text-gray-700">
                                             <li>A: Vía aérea permeable</li>
-                                            <li>B: FR 24/min, SpO₂ 84%, uso moderado de músculos accesorios</li>
-                                            <li>C: FC 110/min, TA 145/85 mmHg</li>
-                                            <li>D: Alerta, orientado</li>
-                                            <li>E: Temperatura 38.2°C, esputo verdoso</li>
+                                            <li>B: FR 24/min, SpO₂ 96%</li>
+                                            <li>C: FC 120/min, TA 90/60 mmHg, piel fría y sudorosa</li>
+                                            <li>D: Alerta, ansioso</li>
+                                            <li>E: Dolor y distensión abdominal, sin heridas visibles</li>
                                         </ul>
                                     </div>
-
                                     <div>
                                         <h4 className="font-medium mb-2">Manejo correcto:</h4>
                                         <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                            <li>Posición semisentada</li>
-                                            <li>Oxígeno controlado (iniciar a 2-3 L/min) para mantener SpO₂ 88-92%</li>
-                                            <li>Broncodilatador en nebulización o inhalador</li>
-                                            <li>Monitorización continua, vigilando nivel de conciencia</li>
-                                            <li>Traslado al hospital para tratamiento definitivo</li>
+                                            <li>Oxígeno suplementario</li>
+                                            <li>Monitorización continua</li>
+                                            <li>Evitar líquidos por vía oral</li>
+                                            <li>Traslado urgente a hospital</li>
+                                            <li>Evitar hipotermia</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                                <div className="p-5 bg-gray-50 rounded-lg shadow-sm mb-4">
+                                    <h3 className="text-xl font-semibold mb-2 text-blue-600">Caso 2: Evisceración abdominal</h3>
+                                    <p className="italic text-gray-600 mb-4">
+                                        Mujer de 25 años, herida por arma blanca en abdomen, presenta vísceras expuestas y sangrado moderado.
+                                    </p>
+                                    <div className="mb-4">
+                                        <h4 className="font-medium mb-2">Evaluación:</h4>
+                                        <ul className="list-disc list-inside space-y-1 text-gray-700">
+                                            <li>A: Vía aérea permeable</li>
+                                            <li>B: FR 22/min, SpO₂ 98%</li>
+                                            <li>C: FC 110/min, TA 100/70 mmHg</li>
+                                            <li>D: Alerta, orientada</li>
+                                            <li>E: Evisceración, sangrado activo</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 className="font-medium mb-2">Manejo correcto:</h4>
+                                        <ol className="list-decimal list-inside space-y-1 text-gray-700">
+                                            <li>Cubrir vísceras con apósito húmedo estéril</li>
+                                            <li>No reintroducir órganos</li>
+                                            <li>Control de hemorragia externa</li>
+                                            <li>Monitorización y traslado urgente</li>
+                                            <li>Evitar hipotermia</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                                <div className="p-5 bg-gray-50 rounded-lg shadow-sm">
+                                    <h3 className="text-xl font-semibold mb-2 text-green-600">Caso 3: Lesión genitourinaria</h3>
+                                    <p className="italic text-gray-600 mb-4">
+                                        Adolescente de 16 años, accidente en bicicleta, presenta dolor en región lumbar y hematuria visible tras el evento.
+                                    </p>
+                                    <div className="mb-4">
+                                        <h4 className="font-medium mb-2">Evaluación:</h4>
+                                        <ul className="list-disc list-inside space-y-1 text-gray-700">
+                                            <li>A: Vía aérea permeable</li>
+                                            <li>B: FR 20/min, SpO₂ 99%</li>
+                                            <li>C: FC 105/min, TA 110/75 mmHg</li>
+                                            <li>D: Alerta, orientado</li>
+                                            <li>E: Hematuria, dolor lumbar, sin heridas externas</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 className="font-medium mb-2">Manejo correcto:</h4>
+                                        <ol className="list-decimal list-inside space-y-1 text-gray-700">
+                                            <li>Monitorización de signos vitales</li>
+                                            <li>No colocar sonda urinaria</li>
+                                            <li>Oxígeno si hay signos de shock</li>
+                                            <li>Traslado a hospital</li>
+                                            <li>Evitar manipulación innecesaria</li>
                                         </ol>
                                     </div>
                                 </div>
@@ -504,9 +454,8 @@ export default function AirwayEmergency(){
                                             <Disclosure.Button className="flex w-full justify-between items-center bg-gray-100 px-4 py-3 text-left text-lg font-medium hover:bg-orange-100 transition">
                                                 <span>{faq.question}</span>
                                                 <ChevronUpIcon
-                                                    className={`${
-                                                        open ? "transform rotate-180" : ""
-                                                    } h-5 w-5 text-gray-500`}
+                                                    className={`${open ? "transform rotate-180" : ""
+                                                        } h-5 w-5 text-gray-500`}
                                                 />
                                             </Disclosure.Button>
                                             <Disclosure.Panel className="px-4 pb-4 pt-2 text-gray-700">
@@ -522,7 +471,6 @@ export default function AirwayEmergency(){
                     {/* Referencias y Recursos */}
                     <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">
                         <h2 className="text-2xl font-bold mb-4">Referencias y recursos adicionales</h2>
-
                         <div className="space-y-4">
                             <div>
                                 <h3 className="text-lg font-medium mb-2">Bibliografía principal</h3>
@@ -532,16 +480,14 @@ export default function AirwayEmergency(){
                                     <li>NAEMT. (2020). <em>PHTLS: Soporte Vital de Trauma Prehospitalario</em> (9ª edición).</li>
                                 </ul>
                             </div>
-
                             <div>
                                 <h3 className="text-lg font-medium mb-2">Recursos en línea</h3>
                                 <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                    <li><a href="https://www.ems1.com/airway-management/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">EMS1 - Artículos sobre manejo de vía aérea</a></li>
-                                    <li><a href="https://www.jems.com/patient-care/airway-respiratory/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">JEMS - Sección de cuidado respiratorio</a></li>
+                                    <li><a href="https://www.ems1.com/trauma-care/abdominal-trauma/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">EMS1 - Artículos sobre trauma abdominal</a></li>
+                                    <li><a href="https://www.jems.com/patient-care/trauma/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">JEMS - Sección de trauma</a></li>
                                     <li><a href="https://www.youtube.com/c/MedicTests" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">MedicTests - Canal de YouTube con videos educativos</a></li>
                                 </ul>
                             </div>
-
                             <div>
                                 <h3 className="text-lg font-medium mb-2">Aplicaciones recomendadas</h3>
                                 <ul className="list-disc list-inside space-y-2 text-gray-700">
