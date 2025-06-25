@@ -947,30 +947,6 @@ export const caseStudies: CaseStudy[] = [
         references: ["AAOS 11ª Edición - Capítulo de shock y trauma de columna."],
     },
     {
-        id: "hemorragia-rectal-38",
-        title: "Sangrado rectal abundante en paciente anciano",
-        description:
-            "Hombre de 74 años refiere sangrado rectal abundante y mareo. Tiene historia de hemorroides y toma aspirina diaria.",
-        initialAssessment:
-            "Consciente, pálido, TA baja, sangrado activo por recto. Niega dolor abdominal.",
-        vitalSigns: {
-            FC: "118 lpm",
-            TA: "90/54 mmHg",
-            SpO2: "97%",
-        },
-        findings: [
-            "Sangrado digestivo bajo con hipoperfusión",
-            "Riesgo de choque hipovolémico",
-            "Oxígeno, posición supina y traslado urgente",
-        ],
-        questions: [
-            { question: "¿Cómo identificas la necesidad urgente de traslado en sangrado gastrointestinal?" },
-            { question: "¿Qué medicamentos aumentan el riesgo de hemorragia digestiva?" },
-            { question: "¿Qué signos clínicos orientan hacia shock hipovolémico en adultos mayores?" },
-        ],
-        references: ["AAOS 11ª Edición - Capítulo de emergencias gastrointestinales y geriátricas."],
-    },
-    {
         id: "traumatismo-craneoencefalico-15",
         title: "Caída de altura con lesión espinal",
         description:
@@ -1483,6 +1459,133 @@ export const caseStudies: CaseStudy[] = [
     ],
     "references": [
         "AAOS 11ª Edición - Capítulo de Obstetricia y Atención Neonatal."
+    ]
+},
+{
+    "id": "sepsis-urinaria-11",
+    "title": "Fiebre y alteración del estado mental en anciana",
+    "description": "Mujer de 82 años residente de un asilo, con sonda urinaria permanente. El personal reporta que desde la mañana está letárgica, no quiere comer y tiene la piel caliente. Refieren que la orina en la bolsa colectora es turbia y de mal olor.",
+    "initialAssessment": "Paciente somnolienta, responde a estímulos verbales pero está desorientada en tiempo y lugar. Piel enrojecida, caliente y seca al tacto. No hay signos de trauma. Taquipnea evidente.",
+    "vitalSigns": {
+        "FC": "115 lpm",
+        "TA": "85/45 mmHg",
+        "FR": "28 rpm",
+        "SpO2": "93% (aire ambiente)",
+        "Temp": "39.1 °C"
+    },
+    "findings": [
+        "Sospecha de sepsis severa, probable foco infeccioso urinario (urosepsis).",
+        "Choque séptico manifestado por hipotensión y alteración del estado mental.",
+        "Necesidad de alerta por sepsis en el hospital receptor y manejo agresivo de líquidos."
+    ],
+    "questions": [
+        { "question": "¿Cuáles son los criterios (como qSOFA) que se pueden usar en el campo para identificar a un paciente con alto riesgo de sepsis?" },
+        { "question": "Explique la fisiopatología del choque séptico y por qué causa hipotensión." },
+        { "question": "¿Cuál es la importancia de la administración temprana de líquidos intravenosos y oxígeno en el manejo prehospitalario de la sepsis?" }
+    ],
+    "references": [
+        "AAOS 11ª Edición - Capítulo de Enfermedades Infecciosas."
+    ]
+},
+{
+    "id": "estatus-epileptico-12",
+    "title": "Convulsiones continuas en paciente adulto",
+    "description": "Hombre de 30 años con antecedentes de epilepsia mal controlada. Su familia llama porque ha tenido una convulsión tónico-clónica generalizada que ha durado más de 5 minutos sin recuperar la conciencia.",
+    "initialAssessment": "Paciente en el suelo con movimientos tónico-clónicos activos en las cuatro extremidades. Cianosis peribucal. Salivación excesiva. No responde a ningún estímulo. La escena es segura.",
+    "vitalSigns": {
+        "FC": "140 lpm",
+        "TA": "160/95 mmHg",
+        "FR": "Irregular/Apneica durante la convulsión",
+        "SpO2": "84% (durante la actividad convulsiva)"
+    },
+    "findings": [
+        "Estatus epiléptico.",
+        "Riesgo elevado de hipoxia cerebral y broncoaspiración.",
+        "Necesidad de manejo farmacológico inmediato para detener la convulsión y asegurar la vía aérea."
+    ],
+    "questions": [
+        { "question": "¿Cuál es la definición de estatus epiléptico y por qué es una emergencia médica que amenaza la vida?" },
+        { "question": "Describa el manejo inicial de la vía aérea en un paciente con convulsiones activas." },
+        { "question": "¿Qué clase de medicamentos se utilizan para tratar el estatus epiléptico en el entorno prehospitalario y cuáles son sus vías de administración?" }
+    ],
+    "references": [
+        "AAOS 11ª Edición - Capítulo de Emergencias Neurológicas."
+    ]
+},
+{
+    "id": "aaa-roto-13",
+    "title": "Dolor abdominal y de espalda súbito con síncope",
+    "description": "Hombre de 70 años con historial de tabaquismo e hipertensión, se desploma en su casa. Al recuperar la conciencia, se queja de un dolor abdominal y de espalda insoportable, descrito como 'desgarrador'.",
+    "initialAssessment": "Paciente pálido, diaforético y ansioso. Pulso periférico apenas palpable. Abdomen distendido y sensible a la palpación. Es posible palpar una masa pulsátil en la región periumbilical.",
+    "vitalSigns": {
+        "FC": "128 lpm (filiforme)",
+        "TA": "80/50 mmHg",
+        "FR": "26 rpm (superficial)",
+        "SpO2": "92% (con O2 a 15L/min)"
+    },
+    "findings": [
+        "Sospecha de ruptura de Aneurisma de Aorta Abdominal (AAA).",
+        "Choque hipovolémico severo de origen hemorrágico.",
+        "Paciente en estado crítico que requiere traslado inmediato a un centro con capacidad quirúrgica vascular."
+    ],
+    "questions": [
+        { "question": "¿Cuál es la tríada clásica de síntomas de una ruptura de AAA?" },
+        { "question": "¿Por qué es controvertida la reanimación con grandes volúmenes de líquidos (hipotensión permisiva) en este tipo de pacientes?" },
+        { "question": "¿Qué acciones deben ser prioritarias y cuáles deben evitarse (ej. palpación abdominal vigorosa) durante el manejo prehospitalario?" }
+    ],
+    "references": [
+        "AAOS 11ª Edición - Capítulo de Emergencias Cardiovasculares y Capítulo de Trauma Abdominal."
+    ]
+},
+{
+    "id": "golpe-de-calor-14",
+    "title": "Colapso de un atleta durante una maratón",
+    "description": "Corredora de 25 años colapsa cerca de la línea de meta durante una maratón en un día caluroso y húmedo. Los organizadores del evento solicitan ayuda al encontrarla inconsciente.",
+    "initialAssessment": "Paciente femenina inconsciente, no responde a estímulos dolorosos. Piel extremadamente caliente al tacto, enrojecida y seca (cese de la sudoración). Respiraciones rápidas y superficiales. Se retira del ambiente caluroso de inmediato.",
+    "vitalSigns": {
+        "FC": "150 lpm",
+        "TA": "90/55 mmHg",
+        "FR": "32 rpm",
+        "SpO2": "95% (aire ambiente)",
+        "Temp": "41.5 °C (rectal)"
+    },
+    "findings": [
+        "Golpe de calor por esfuerzo, una emergencia médica verdadera.",
+        "Disfunción del sistema nervioso central (inconsciencia).",
+        "Falla multiorgánica inminente si no se inicia un enfriamiento rápido y agresivo."
+    ],
+    "questions": [
+        { "question": "¿Cuál es la diferencia fisiopatológica clave entre el agotamiento por calor y el golpe de calor?" },
+        { "question": "¿Cuál es el método de enfriamiento más efectivo que se puede iniciar en el campo para un paciente con golpe de calor?" },
+        { "question": "¿Por qué los medicamentos antipiréticos (como el paracetamol o el ibuprofeno) no son efectivos para tratar la hipertermia en un golpe de calor?" }
+    ],
+    "references": [
+        "AAOS 11ª Edición - Capítulo de Emergencias Ambientales."
+    ]
+},
+{
+    "id": "fractura-pelvis-15",
+    "title": "Dolor pélvico severo tras accidente de motocicleta",
+    "description": "Motociclista de 22 años impacta a alta velocidad contra un vehículo. Es encontrado en el suelo quejándose de un dolor intenso en la cadera y la pelvis, e incapacidad para mover las piernas.",
+    "initialAssessment": "Paciente consciente, orientado, con dolor severo (10/10). Deformidad y crepitación a la compresión suave de la pelvis (inestabilidad pélvica). No hay hemorragia externa evidente, pero se sospecha sangrado interno masivo. Se observan abrasiones en el abdomen y las extremidades inferiores.",
+    "vitalSigns": {
+        "FC": "135 lpm",
+        "TA": "88/60 mmHg",
+        "FR": "28 rpm",
+        "SpO2": "96% (con O2)"
+    },
+    "findings": [
+        "Traumatismo de alta energía con fractura de pelvis inestable (libro abierto).",
+        "Choque hipovolémico secundario a hemorragia pélvica.",
+        "Alto riesgo de lesiones asociadas en órganos abdominales y genitourinarios."
+    ],
+    "questions": [
+        { "question": "¿Por qué una fractura de pelvis inestable puede causar una hemorragia potencialmente mortal?" },
+        { "question": "Describa la técnica correcta para la estabilización pélvica en el campo utilizando un dispositivo comercial o una sábana." },
+        { "question": "¿Cuál es el objetivo principal del manejo prehospitalario en un paciente con este tipo de lesión?" }
+    ],
+    "references": [
+        "AAOS 11ª Edición - Capítulo de Trauma Musculoesquelético."
     ]
 }
 
