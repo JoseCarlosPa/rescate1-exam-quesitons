@@ -158,7 +158,7 @@ export default function Router(){
                 <Route path={AllRoutes.TOXICOLOGY} element={<Toxicology />}/>
                 <Route path={`${AllRoutes.TOXICOLOGY}/exam`} element={<Exam returnRoute={AllRoutes.TOXICOLOGY} name="Toxicologia" questions={toxicologyQuestions} id={34}  />}/>
                 <Route path={AllRoutes.AMBIENTAL_EMERGENCIES} element={<AmbientalEmergencies />}/>
-                <Route path={`${AllRoutes.AMBIENTAL_EMERGENCIES}/exam`} element={<Exam returnRoute={AllRoutes.AMBIENTAL_EMERGENCIES} name="Toxicologia" questions={environmentalEmergencyQuestions} id={35}  />}/>
+                <Route path={`${AllRoutes.AMBIENTAL_EMERGENCIES}/exam`} element={<Exam returnRoute={AllRoutes.AMBIENTAL_EMERGENCIES} name="Emergencias Ambientales" questions={environmentalEmergencyQuestions} id={35}  />}/>
 
                 <Route path={AllRoutes.LMS} element={<Lms /> }/>
                 <Route path={AllRoutes.BLS} element={<Bls />}/>
