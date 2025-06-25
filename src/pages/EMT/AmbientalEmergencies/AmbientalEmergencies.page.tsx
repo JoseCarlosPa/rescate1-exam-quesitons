@@ -349,35 +349,27 @@ export default function AmbientalEmergencies() {
                     </div>
 
                     {/* FAQ Section */}
-                    <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm mb-8">
-                        <h2 className="text-3xl font-bold mb-6 text-center">Preguntas Frecuentes</h2>
-                        <div className="space-y-4">
-                            {[{
-                                question: '¿Cuál es la diferencia entre agotamiento por calor y golpe de calor?',
-                                answer: 'El agotamiento por calor es menos grave y se caracteriza por sudoración abundante, debilidad y náuseas. El golpe de calor es una emergencia vital, con alteración del estado mental y piel caliente y seca.'
-                            }, {
-                                question: '¿Qué hacer ante una mordedura de serpiente?',
-                                answer: 'Inmovilizar la extremidad, evitar succionar o cortar la herida y trasladar al paciente para manejo especializado y antiveneno.'
-                            }, {
-                                question: '¿Cómo prevenir intoxicaciones por monóxido de carbono?',
-                                answer: 'Mantener ventilados los espacios cerrados, revisar instalaciones de gas y evitar el uso de braseros o estufas en lugares sin ventilación.'
-                            }].map((faq, idx) => (
-                                <Disclosure key={idx}>
-                                    {({ open }) => (
-                                        <div className="border rounded-lg overflow-hidden">
-                                            <Disclosure.Button className="flex w-full justify-between items-center bg-gray-100 px-4 py-3 text-left text-lg font-medium hover:bg-orange-100 transition">
-                                                <span>{faq.question}</span>
-                                                <ChevronUpIcon className={`${open ? "transform rotate-180" : ""} h-5 w-5 text-gray-500`} />
-                                            </Disclosure.Button>
-                                            <Disclosure.Panel className="px-4 pb-4 pt-2 text-gray-700">
-                                                {faq.answer}
-                                            </Disclosure.Panel>
-                                        </div>
-                                    )}
-                                </Disclosure>
-                            ))}
-                        </div>
-                    </section>
+                    <div className="space-y-4">
+                        {faqData.map((faq, idx) => (
+                            <Disclosure key={idx}>
+                                {({ open }) => (
+                                    <div className="border rounded-lg overflow-hidden">
+                                        <Disclosure.Button className="flex w-full justify-between items-center bg-gray-100 px-4 py-3 text-left text-lg font-medium hover:bg-orange-100 transition">
+                                            <span>{faq.question}</span>
+                                            <ChevronUpIcon
+                                                className={`${
+                                                    open ? "transform rotate-180" : ""
+                                                } h-5 w-5 text-gray-500`}
+                                            />
+                                        </Disclosure.Button>
+                                        <Disclosure.Panel className="px-4 pb-4 pt-2 text-gray-700">
+                                            {faq.answer}
+                                        </Disclosure.Panel>
+                                    </div>
+                                )}
+                            </Disclosure>
+                        ))}
+                    </div>
 
                     {/* Referencias y Recursos */}
                     <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">
