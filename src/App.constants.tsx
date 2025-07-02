@@ -337,7 +337,8 @@ export const lections: tLection[] = [
         id: '42',
         title: 'Operaciones de transporte',
         icon: <FaTruckMedical className="w-12 h-12 mb-1 text-orange-500"/>,
-        route: AllRoutes.EMT,
+        route: AllRoutes.TRANSPORT_OPERATIONS,
+        active: true,
     },
     {
         id: '43',
@@ -347,12 +348,6 @@ export const lections: tLection[] = [
     },
     {
         id: '44',
-        title: 'Un abordaje de equipo para la atención medica',
-        icon: <CiMedicalCross className="w-12 h-12 mb-1 text-orange-500"/>,
-        route: AllRoutes.EMT,
-    },
-    {
-        id: '45',
         title: 'Respuesta al terrorismo y manejo de desastres',
         icon: <FaBomb className="w-12 h-12 mb-1 text-orange-500"/>,
         route: AllRoutes.EMT,

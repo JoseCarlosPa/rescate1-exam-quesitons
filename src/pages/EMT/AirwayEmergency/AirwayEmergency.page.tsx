@@ -38,7 +38,7 @@ export default function AirwayEmergency(){
                     {/* Menú rápido de recursos */}
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 max-w-4xl mx-auto">
                         <NavLink
-                            to="/airway-emergency/exam"
+                            to={`${AllRoutes.AIRWAY_EMERGENCY}/exam`}
                             className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
                             <MdQuiz className="w-10 h-10 text-orange-500 mb-2" />
                             <p className="text-center font-medium">Examen</p>

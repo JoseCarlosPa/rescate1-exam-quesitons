@@ -177,21 +177,21 @@ export default function StudyCase(){
                 <div className="flex gap-3">
                     <button
                         onClick={() => setShowCaseSelector(true)}
-                        className="flex md:flex-row flex-col items-center gap-2 text-sm bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition shadow-md"
+                        className="flex md:flex-row flex-col cursor-pointer items-center gap-2 text-sm bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition shadow-md"
                     >
                         <FaSearch className="w-4 h-4" />
                         <span>Buscar casos</span>
                     </button>
                     <button
                         onClick={loadRandomCase}
-                        className="flex md:flex-row flex-col items-center gap-2 text-sm bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition shadow-md"
+                        className="flex md:flex-row flex-col cursor-pointer items-center gap-2 text-sm bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition shadow-md"
                     >
                         <IoMdRefresh className="w-5 h-5" />
                         <span>Nuevo caso</span>
                     </button>
                     <button
                         onClick={downloadPDF}
-                        className="flex md:flex-row flex-col items-center gap-2 text-sm bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition shadow-md"
+                        className="flex md:flex-row flex-col cursor-pointer items-center gap-2 text-sm bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition shadow-md"
                     >
                         <FaFilePdf className="w-5 h-5" />
                         <span>Descargar PDF</span>
