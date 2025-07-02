@@ -351,6 +351,7 @@ export const lections: tLection[] = [
         id: '44',
         title: 'Respuesta al terrorismo y manejo de desastres',
         icon: <FaBomb className="w-12 h-12 mb-1 text-orange-500"/>,
-        route: AllRoutes.EMT,
+        route: AllRoutes.TERRORIST_MANAGEMENT,
+        active: true,
     },
 ]

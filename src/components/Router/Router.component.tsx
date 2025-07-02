@@ -99,6 +99,8 @@ import {transportOperationsQuestions} from "../../pages/EMT/TransportOperations/
 import TransportOperations from "../../pages/EMT/TransportOperations/TransportOperations.page.tsx";
 import IncidentManage from "../../pages/EMT/IncidentManage/IncidentManage.page.tsx";
 import {incidentManageQuestions} from "../../pages/EMT/IncidentManage/IncidentManage.questions.ts";
+import TerroristManage from "../../pages/EMT/TerroristManage/TerroristManage.page.tsx";
+import {terroristManageQuestions} from "../../pages/EMT/TerroristManage/TerroristManage.questions.ts";
 export default function Router(){
     return(
         <Suspense fallback={<div>Loading...</div>}>
@@ -191,6 +193,10 @@ export default function Router(){
                 <Route path={`${AllRoutes.TRANSPORT_OPERATIONS}/exam`} element={<Exam returnRoute={AllRoutes.TRANSPORT_OPERATIONS} name="Operaciones de transporte" questions={transportOperationsQuestions} id={42}  />}/>
                 <Route path={AllRoutes.INCIDENT_MANAGEMENT} element={<IncidentManage />}/>
                 <Route path={`${AllRoutes.INCIDENT_MANAGEMENT}/exam`} element={<Exam returnRoute={AllRoutes.INCIDENT_MANAGEMENT} name="Manejo de incidentes" questions={incidentManageQuestions} id={43}  />}/>
+                <Route path={AllRoutes.INCIDENT_MANAGEMENT} element={<IncidentManage />}/>
+                <Route path={`${AllRoutes.INCIDENT_MANAGEMENT}/exam`} element={<Exam returnRoute={AllRoutes.INCIDENT_MANAGEMENT} name="Manejo de incidentes" questions={incidentManageQuestions} id={43}  />}/>
+                <Route path={AllRoutes.TERRORIST_MANAGEMENT} element={<TerroristManage />}/>
+                <Route path={`${AllRoutes.TERRORIST_MANAGEMENT}/exam`} element={<Exam returnRoute={AllRoutes.TERRORIST_MANAGEMENT} name="Respuesta al terrorismo y manejo de desastres" questions={terroristManageQuestions} id={44}  />}/>
 
                 <Route path={AllRoutes.LMS} element={<Lms /> }/>
                 <Route path={AllRoutes.BLS} element={<Bls />}/>
