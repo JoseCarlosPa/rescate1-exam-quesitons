@@ -83,6 +83,8 @@ import {toxicologyQuestions} from "../../pages/EMT/Toxicology/Toxicology.questio
 import Toxicology from "../../pages/EMT/Toxicology/Toxicology.page.tsx";
 import {environmentalEmergencyQuestions} from "../../pages/EMT/AmbientalEmergencies/AmbientalEmergencies.questions.ts";
 import AmbientalEmergencies from "../../pages/EMT/AmbientalEmergencies/AmbientalEmergencies.page.tsx";
+import {psiquiatricQuestions} from "../../pages/EMT/PsiquiatricEmergencies/PsiquiatricEmergencies.questions.ts";
+import PsiquiatricEmergencies from "../../pages/EMT/PsiquiatricEmergencies/PsiquiatricEmergencies.page.tsx";
 export default function Router(){
     return(
         <Suspense fallback={<div>Loading...</div>}>
@@ -159,6 +161,8 @@ export default function Router(){
                 <Route path={`${AllRoutes.TOXICOLOGY}/exam`} element={<Exam returnRoute={AllRoutes.TOXICOLOGY} name="Toxicologia" questions={toxicologyQuestions} id={34}  />}/>
                 <Route path={AllRoutes.AMBIENTAL_EMERGENCIES} element={<AmbientalEmergencies />}/>
                 <Route path={`${AllRoutes.AMBIENTAL_EMERGENCIES}/exam`} element={<Exam returnRoute={AllRoutes.AMBIENTAL_EMERGENCIES} name="Emergencias Ambientales" questions={environmentalEmergencyQuestions} id={35}  />}/>
+                <Route path={AllRoutes.PSIQUIATRIC_EMERGENCY} element={<PsiquiatricEmergencies />}/>
+                <Route path={`${AllRoutes.PSIQUIATRIC_EMERGENCY}/exam`} element={<Exam returnRoute={AllRoutes.PSIQUIATRIC_EMERGENCY} name="Emergencias Psiquiatricas" questions={psiquiatricQuestions} id={36}  />}/>
 
                 <Route path={AllRoutes.LMS} element={<Lms /> }/>
                 <Route path={AllRoutes.BLS} element={<Bls />}/>

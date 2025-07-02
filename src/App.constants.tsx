@@ -290,7 +290,9 @@ export const lections: tLection[] = [
         id: '36',
         title: 'Emergencias psiquiátricas',
         icon: <PiBrainFill className="w-12 h-12 mb-1 text-orange-500"/>,
-        route: AllRoutes.EMT,
+        route: AllRoutes.PSIQUIATRIC_EMERGENCY,
+        active: true,
+
     },
     {
         id: '37',
