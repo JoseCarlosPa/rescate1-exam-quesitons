@@ -38,7 +38,7 @@ export default function SEO({
 
   // Configuración base del sitio
   const siteName = 'Alumnos R1 Gen 2025 | EMT Exam';
-  const baseUrl = 'https://emtexam.vercel.app';
+  const baseUrl = 'https://rescate1-examenes.web.app';
   const currentUrl = url || `${baseUrl}${location.pathname}`;
   const defaultDescription = 'Plataforma educativa para estudiantes de Técnico en Urgencias Médicas. Aprende atención prehospitalaria con contenido basado en AAOS y estándares internacionales.';
   const defaultKeywords = 'EMT, atención prehospitalaria, urgencias médicas, rescate, primeros auxilios, AAOS, medicina de emergencia, técnico en urgencias médicas, paramédico, SVB, soporte vital básico';

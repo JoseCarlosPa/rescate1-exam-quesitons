@@ -31,7 +31,7 @@ export default function SchemaEducational({
     "provider": {
       "@type": "Organization",
       "name": "Alumnos Rescate 1",
-      "url": "https://emtexam.vercel.app"
+      "url": "https://rescate1-examenes.web.app"
     },
     "educationalLevel": educationalLevel,
     "learningResourceType": [learningResourceType, "presentation", "assessment", "textbook"],

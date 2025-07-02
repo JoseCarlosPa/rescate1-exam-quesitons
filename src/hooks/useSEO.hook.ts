@@ -37,7 +37,7 @@ export const useSEO = (options: UseSEOOptions = {}) => {
 
     // Configuración base
     const siteName = 'Alumnos R1 Gen 2025 | EMT Exam';
-    const baseUrl = 'https://emtexam.vercel.app';
+    const baseUrl = 'https://rescate1-examenes.web.app';
     const currentUrl = `${baseUrl}${location.pathname}`;
     
     // Función helper para actualizar meta tags

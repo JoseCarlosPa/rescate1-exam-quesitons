@@ -7,7 +7,7 @@ interface SitemapURL {
   lastMod?: string;
 }
 
-const baseUrl = 'https://emtexam.vercel.app';
+const baseUrl = 'https://rescate1-examenes.web.app';
 const currentDate = new Date().toISOString();
 
 export const sitemapConfig: SitemapURL[] = [
