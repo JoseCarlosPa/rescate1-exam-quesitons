@@ -43,7 +43,7 @@ export default function Resources() {
                     </select>
                 </div>
             </div>
-            <div className="grid md:grid-cols-5 sm:grid-cols-2 grid-cols-1 gap-10 mt-6">
+            <div className="grid 2xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-10 mt-6">
                 {filtered.length === 0 && (
                     <div className="col-span-full text-center text-gray-500 text-xl">No se encontraron recursos.</div>
                 )}

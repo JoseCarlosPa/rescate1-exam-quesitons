@@ -6,7 +6,14 @@ interface ToolsModalProps {
     onClose: () => void;
 }
 
-type Tool = 'shock-index' | 'bmi' | 'drug-calculator' | 'map-calculator' | 'glasgow-scale';
+type Tool =
+  | 'shock-index'
+  | 'bmi'
+  | 'drug-calculator'
+  | 'map-calculator'
+  | 'glasgow-scale'
+  | 'cincinnati-scale'
+  | 'parkland-rule';
 
 const ToolsModal: React.FC<ToolsModalProps> = ({ onClose }) => {
     const [selectedTool, setSelectedTool] = useState<Tool | null>(null);
@@ -52,6 +59,22 @@ const ToolsModal: React.FC<ToolsModalProps> = ({ onClose }) => {
         unit: '',
         route: '',
         instructions: ''
+    });
+
+    // Escala de Cincinnati
+    const [cincinnati, setCincinnati] = useState({
+      facial: '',
+      arm: '',
+      speech: '',
+      result: '',
+    });
+
+    // Regla de Parkland
+    const [parkland, setParkland] = useState({
+      weight: '',
+      tbsa: '',
+      result: null as number | null,
+      instructions: '',
     });
 
     const calculateShockIndex = () => {
@@ -155,6 +178,33 @@ const ToolsModal: React.FC<ToolsModalProps> = ({ onClose }) => {
         }
     };
 
+    const calculateCincinnati = () => {
+      const { facial, arm, speech } = cincinnati;
+      let positives = 0;
+      if (facial === 'yes') positives++;
+      if (arm === 'yes') positives++;
+      if (speech === 'yes') positives++;
+      let result = '';
+      if (positives === 0) result = 'No hay signos de ACV.';
+      else if (positives === 1) result = 'Un signo: posible ACV, evaluar más.';
+      else if (positives === 2) result = 'Dos signos: alta sospecha de ACV.';
+      else result = 'Tres signos: ACV muy probable, activar código ictus.';
+      setCincinnati({ ...cincinnati, result });
+    };
+
+    const calculateParkland = () => {
+      const weight = parseFloat(parkland.weight);
+      const tbsa = parseFloat(parkland.tbsa);
+      if (weight && tbsa) {
+        const total = weight * tbsa * 4;
+        setParkland({
+          ...parkland,
+          result: total,
+          instructions: `Administrar ${total / 2} mL en las primeras 8 horas y ${total / 2} mL en las siguientes 16 horas.`,
+        });
+      }
+    };
+
     const tools = [
         {
             id: 'shock-index' as Tool,
@@ -185,7 +235,19 @@ const ToolsModal: React.FC<ToolsModalProps> = ({ onClose }) => {
             name: 'Escala de Glasgow',
             icon: <FaBrain className="w-6 h-6" />,
             description: 'Evalúa el nivel de conciencia'
-        }
+        },
+        {
+            id: 'cincinnati-scale' as Tool,
+            name: 'Escala de Cincinnati',
+            icon: <FaBrain className="w-6 h-6" />,
+            description: 'Evaluación rápida de ACV',
+        },
+        {
+            id: 'parkland-rule' as Tool,
+            name: 'Regla de Parkland',
+            icon: <FaCalculator className="w-6 h-6" />,
+            description: 'Cálculo de líquidos en quemaduras',
+        },
     ];
 
     const renderToolContent = () => {
@@ -393,13 +455,17 @@ const ToolsModal: React.FC<ToolsModalProps> = ({ onClose }) => {
                                     <label className="block text-sm font-medium text-gray-700 mb-1">
                                         Medicamento
                                     </label>
-                                    <input
-                                        type="text"
+                                    <select
                                         value={dosageCalc.medication}
                                         onChange={(e) => setDosageCalc({...dosageCalc, medication: e.target.value})}
                                         className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 outline-none"
-                                        placeholder="Epinefrina"
-                                    />
+                                    >
+                                        <option value="">Selecciona un medicamento</option>
+                                        <option value="epinefrina">Epinefrina</option>
+                                        <option value="atropina">Atropina</option>
+                                        <option value="amiodarona">Amiodarona</option>
+                                        <option value="dextrosa">Dextrosa</option>
+                                    </select>
                                 </div>
                             </div>
 
@@ -651,6 +717,127 @@ const ToolsModal: React.FC<ToolsModalProps> = ({ onClose }) => {
                             </div>
                         </div>
                     </div>
+                );
+
+            case 'cincinnati-scale':
+                return (
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-orange-600">Escala de Cincinnati</h3>
+                    <p className="text-sm text-gray-600 mb-2">Evalúa signos de ACV prehospitalario.</p>
+                    <div className="space-y-2">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Parálisis facial
+                          <span className="block text-xs text-gray-500">(Pida al paciente sonreír o mostrar los dientes)</span>
+                        </label>
+                        <select value={cincinnati.facial} onChange={e => setCincinnati({ ...cincinnati, facial: e.target.value })} className="w-full p-2 border border-gray-300 rounded-lg">
+                          <option value="">Seleccionar</option>
+                          <option value="yes">Presente</option>
+                          <option value="no">Ausente</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Debilidad de brazo
+                          <span className="block text-xs text-gray-500">(Pida al paciente levantar ambos brazos por 10 segundos)</span>
+                        </label>
+                        <select value={cincinnati.arm} onChange={e => setCincinnati({ ...cincinnati, arm: e.target.value })} className="w-full p-2 border border-gray-300 rounded-lg">
+                          <option value="">Seleccionar</option>
+                          <option value="yes">Presente</option>
+                          <option value="no">Ausente</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Alteración del habla
+                          <span className="block text-xs text-gray-500">(Pida repetir: "El cielo es azul en Cincinnati")</span>
+                        </label>
+                        <select value={cincinnati.speech} onChange={e => setCincinnati({ ...cincinnati, speech: e.target.value })} className="w-full p-2 border border-gray-300 rounded-lg">
+                          <option value="">Seleccionar</option>
+                          <option value="yes">Presente</option>
+                          <option value="no">Ausente</option>
+                        </select>
+                      </div>
+                    </div>
+                    <button onClick={calculateCincinnati} className="w-full bg-orange-500 text-white py-2 px-4 rounded-lg hover:bg-orange-600">
+                      Evaluar
+                    </button>
+                    {cincinnati.result && (
+                      <div className="bg-orange-50 p-4 rounded-lg border border-orange-200 mt-2">
+                        <p className="text-orange-800 font-semibold">{cincinnati.result}</p>
+                        {cincinnati.result.includes('posible ACV') && (
+                          <div className="mt-2 text-xs text-yellow-700">
+                            <p><strong>¿Qué hacer?</strong></p>
+                            <ul className="list-disc ml-5">
+                              <li>Repetir la evaluación y buscar otros signos neurológicos.</li>
+                              <li>Consultar con un médico o activar protocolo de ACV si hay duda.</li>
+                              <li>Monitorear signos vitales y nivel de conciencia.</li>
+                              <li>Valorar glucosa capilar (descartar hipoglucemia).</li>
+                            </ul>
+                          </div>
+                        )}
+                        {cincinnati.result.includes('alta sospecha') && (
+                          <div className="mt-2 text-xs text-orange-700">
+                            <p><strong>Recomendaciones:</strong></p>
+                            <ul className="list-disc ml-5">
+                              <li>Activar código ictus y trasladar de inmediato a centro especializado.</li>
+                              <li>Notificar al hospital receptor.</li>
+                              <li>Oxígeno suplementario si está indicado.</li>
+                              <li>No administrar alimentos, líquidos ni medicamentos por vía oral.</li>
+                              <li>Monitorear y documentar evolución.</li>
+                            </ul>
+                          </div>
+                        )}
+                        {cincinnati.result.includes('muy probable') && (
+                          <div className="mt-2 text-xs text-red-700">
+                            <p><strong>¡Emergencia!</strong> Traslado urgente a centro con unidad de ACV.</p>
+                            <ul className="list-disc ml-5">
+                              <li>Activar código ictus.</li>
+                              <li>Notificar y preparar traslado inmediato.</li>
+                              <li>Monitorear vía aérea, ventilación y circulación.</li>
+                              <li>Oxígeno si está indicado.</li>
+                              <li>Evitar retrasos en la atención.</li>
+                            </ul>
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                );
+              case 'parkland-rule':
+                return (
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-orange-600">Regla de Parkland</h3>
+                    <p className="text-sm text-gray-600 mb-2">Calcula la reposición de líquidos en quemaduras graves.</p>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Peso (kg)</label>
+                        <input type="number" value={parkland.weight} onChange={e => setParkland({ ...parkland, weight: e.target.value })} className="w-full p-2 border border-gray-300 rounded-lg" placeholder="70" />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">% SCQ (Superficie Corporal Quemada)</label>
+                        <input type="number" value={parkland.tbsa} onChange={e => setParkland({ ...parkland, tbsa: e.target.value })} className="w-full p-2 border border-gray-300 rounded-lg" placeholder="30" />
+                      </div>
+                    </div>
+                    <div className="bg-gray-50 p-3 rounded text-xs mt-2">
+                      <p className="font-semibold text-orange-700 mb-1">Guía rápida para estimar %SCQ (Regla de los 9):</p>
+                      <ul className="list-disc ml-5">
+                        <li>Cabeza y cuello: 9%</li>
+                        <li>Tronco anterior: 18%</li>
+                        <li>Tronco posterior: 18%</li>
+                        <li>Cada brazo: 9%</li>
+                        <li>Cada pierna: 18%</li>
+                        <li>Área genital: 1%</li>
+                      </ul>
+                      <p className="mt-2">En niños, la cabeza representa más porcentaje y las piernas menos. Usa tablas específicas si es posible.</p>
+                    </div>
+                    <button onClick={calculateParkland} className="w-full bg-orange-500 text-white py-2 px-4 rounded-lg hover:bg-orange-600 mt-2">
+                      Calcular
+                    </button>
+                    {parkland.result !== null && (
+                      <div className="bg-orange-50 p-4 rounded-lg border border-orange-200 mt-2">
+                        <p className="text-orange-800 font-semibold">Total: {parkland.result} mL</p>
+                        <p className="text-orange-700">{parkland.instructions}</p>
+                      </div>
+                    )}
+                  </div>
                 );
 
             default:
