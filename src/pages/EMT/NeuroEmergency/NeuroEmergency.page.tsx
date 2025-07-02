@@ -9,8 +9,15 @@ import {useState} from "react";
 import {MdQuiz} from "react-icons/md";
 import {BsBookHalf} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
+import { useSEO } from "../../../hooks/useSEO.hook.ts";
 
 export default function NeuroEmergency() {
+    // SEO específico para emergencias neurológicas
+    useSEO({
+        publishedTime: '2025-01-15T10:00:00Z',
+        modifiedTime: new Date().toISOString()
+    });
+
     const [activeTab, setActiveTab] = useState<'overview' | 'anatomy' | 'treatment' | 'practice'>('overview');
     const [showQuickQuiz, setShowQuickQuiz] = useState(false);
 

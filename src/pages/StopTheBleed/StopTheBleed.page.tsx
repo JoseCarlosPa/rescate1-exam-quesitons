@@ -8,6 +8,7 @@ import pres from '../../assets/pres.png'
 import empac from '../../assets/empac.jpg'
 import torni from '../../assets/torni.jpg'
 import pack from '../../assets/pack.jpg'
+import SEOWrapper from "../../components/SEOWrapper/SEOWrapper.component.tsx";
 
 // Definimos un tipo para nuestras secciones
 type SectionName = 'introduccion' | 'importancia' | 'pasosClave' | 'kits' | 'entrenamiento' | 'legal' | 'recursos';
@@ -44,7 +45,17 @@ export default function StopTheBleed(){
     };
 
     return (
-        <div className="bg-gray-100 min-h-screen">
+        <SEOWrapper
+            title="Stop the Bleed® - Control de Hemorragias | EMT EXAM"
+            description="Aprende Stop the Bleed: técnicas de control de hemorragias, uso de torniquetes, vendajes de presión y hemostáticos para salvar vidas."
+            keywords="stop the bleed, control hemorragias, torniquete, hemostáticos, vendaje presión, primeros auxilios, sangrado"
+            section="stopthebleed"
+            difficulty="Intermediate"
+            timeRequired="PT45M"
+            educationalLevel="Technical"
+            includeEducationalSchema={true}
+        >
+            <div className="bg-gray-100 min-h-screen">
             {/* Hero Section */}
             <header className="bg-gradient-to-r from-blue-900 to-blue-700 text-white p-8 shadow-lg">
                 <div className="container mx-auto">
@@ -523,5 +534,6 @@ export default function StopTheBleed(){
                 </section>
             </main>
         </div>
+        </SEOWrapper>
     );
 }

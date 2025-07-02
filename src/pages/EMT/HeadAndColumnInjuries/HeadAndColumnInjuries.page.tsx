@@ -9,8 +9,15 @@ import {MdQuiz} from "react-icons/md";
 import {BsBookHalf} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
 import {SiSpine} from "react-icons/si";
+import { useSEO } from "../../../hooks/useSEO.hook.ts";
 
 export default function HeadAndColumnInjuries(){
+    // SEO específico para lesiones de cabeza y columna
+    useSEO({
+        publishedTime: '2025-01-15T10:00:00Z',
+        modifiedTime: new Date().toISOString()
+    });
+
     const [activeTab, setActiveTab] = useState<'overview' | 'anatomy' | 'assessment' | 'management' | 'practice'>('overview');
     const [showQuickQuiz, setShowQuickQuiz] = useState(false);
 

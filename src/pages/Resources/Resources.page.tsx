@@ -2,6 +2,7 @@ import { FaDownload } from "react-icons/fa";
 import { NavLink } from "react-router";
 import React from "react";
 import { resources as resourcesList } from "./Resources.constants";
+import SEOWrapper from "../../components/SEOWrapper/SEOWrapper.component.tsx";
 
 export default function Resources() {
     const [search, setSearch] = React.useState("");
@@ -15,7 +16,17 @@ export default function Resources() {
         (r.edition?.toLowerCase() ?? "").includes(search.toLowerCase()))
     );
     return (
-        <div className="flex flex-col min-h-screen bg-gradient-to-br from-orange-50 to-gray-200 pb-12 md:p-12 px-4 p-4">
+        <SEOWrapper
+            title="Recursos y Libros para EMT - Material de Estudio | EMT EXAM"
+            description="Biblioteca de recursos educativos para técnicos en urgencias médicas: libros, manuales, protocolos y material de estudio actualizado."
+            keywords="recursos emt, libros emergencias médicas, manuales técnico urgencias, protocolos médicos, material estudio"
+            section="resources"
+            difficulty="Beginner"
+            timeRequired="PT15M"
+            educationalLevel="Technical"
+            includeEducationalSchema={true}
+        >
+            <div className="flex flex-col min-h-screen bg-gradient-to-br from-orange-50 to-gray-200 pb-12 md:p-12 px-4 p-4">
             <div className="flex flex-col justify-center items-center mb-8">
                 <p className="text-5xl font-extrabold mb-2 text-orange-600 drop-shadow text-center">Recursos y Libros</p>
                 <p className="text-base italic text-gray-600 mb-4">Alumnos Generación 2025 Sábados Rescate 1</p>
@@ -80,6 +91,7 @@ export default function Resources() {
                 ))}
             </div>
         </div>
+        </SEOWrapper>
     );
 }
 

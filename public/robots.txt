@@ -1,0 +1,74 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://rescate1-examenes.web.app/sitemap.xml
+
+# Disallow admin or private areas if any
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow all search engines to crawl images
+User-agent: *
+Allow: /assets/
+Allow: /estrella-de-la-vida.png
+Allow: /manifest.json
+
+# Google specific
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bing specific  
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Encourage crawling of important content
+Allow: /general
+Allow: /legal
+Allow: /communications
+Allow: /sem
+Allow: /security-of-personal
+Allow: /medic-terms
+Allow: /human-body
+Allow: /life-spec
+Allow: /evaluation
+Allow: /mnemotecnias
+Allow: /airway-manage
+Allow: /pharmacology
+Allow: /med-admin
+Allow: /shock
+Allow: /reanimate-svb
+Allow: /mega
+Allow: /medic-vision
+Allow: /airway-emergency
+Allow: /cardio-emergency
+Allow: /neuro-emergency
+Allow: /gastro-emergency
+Allow: /endocrine-emergency
+Allow: /trauma
+Allow: /inmobilization
+Allow: /bleeding
+Allow: /stop-the-bleed
+Allow: /face-and-neck
+Allow: /soft-tissue
+Allow: /head-and-column-injuries
+Allow: /torax-injuries
+Allow: /feet-injuries
+Allow: /abdo-geni-injuries
+Allow: /inmuno-emergency
+Allow: /toxicology
+Allow: /ambiental-emergencies
+Allow: /psychiatric-emergency
+Allow: /gine-emergency
+Allow: /obstetric-care
+Allow: /pediatric-emergencies
+Allow: /geriatric-emergencies
+Allow: /special-needs-pacient
+Allow: /transport-operations
+Allow: /incident-management
+Allow: /terrorist-management
+Allow: /bls
+Allow: /lms
+Allow: /resources

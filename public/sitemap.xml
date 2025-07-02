@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Página principal -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Examen general -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/general</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Aspectos legales -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/legal</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Comunicaciones -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/communications</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Sistemas SEM -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/sem</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Seguridad del personal -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/security-of-personal</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Terminología médica -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/medic-terms</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Cuerpo humano -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/human-body</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Esperanza de vida -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/life-spec</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Evaluación del paciente -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/evaluation</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Mnemotecnias -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/mnemotecnias</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Manejo vía aérea -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/airway-manage</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Farmacología -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/pharmacology</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Administración medicamentos -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/med-admin</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Shock -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/shock</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Reanimación SVB -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/reanimate-svb</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Código MEGA -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/mega</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Visión médica general -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/medic-vision</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Emergencias respiratorias -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/airway-emergency</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Emergencias cardiovasculares -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/cardio-emergency</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Emergencias neurológicas -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/neuro-emergency</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Emergencias gastrointestinales -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/gastro-emergency</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Emergencias endocrinas -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/endocrine-emergency</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Trauma general -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/trauma</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Inmovilización -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/inmobilization</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Hemorragia -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/bleeding</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Stop the Bleed -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/stop-the-bleed</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Lesiones cara y cuello -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/face-and-neck</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Tejido blando -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/soft-tissue</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Lesiones cabeza y columna -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/head-and-column-injuries</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Lesiones tórax -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/torax-injuries</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Lesiones ortopédicas -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/feet-injuries</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Lesiones abdominales -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/abdo-geni-injuries</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Emergencias inmunológicas -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/inmuno-emergency</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Toxicología -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/toxicology</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Emergencias ambientales -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/ambiental-emergencies</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Emergencias psiquiátricas -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/psychiatric-emergency</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Emergencias ginecológicas -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/gine-emergency</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Cuidados obstétricos -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/obstetric-care</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Emergencias pediátricas -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/pediatric-emergencies</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Emergencias geriátricas -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/geriatric-emergencies</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Pacientes necesidades especiales -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/special-needs-pacient</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Operaciones de transporte -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/transport-operations</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Manejo de incidentes -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/incident-management</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Terrorismo y desastres -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/terrorist-management</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- BLS -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/bls</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- LMS -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/lms</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Recursos -->
+  <url>
+    <loc>https://rescate1-examenes.web.app/resources</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

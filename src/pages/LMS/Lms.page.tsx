@@ -2,6 +2,7 @@ import { temasLSM } from "./Lms.constants.ts";
 import { NavLink } from "react-router";
 import { FaHandScissors, FaSearch, FaArrowLeft } from "react-icons/fa";
 import { useState } from "react";
+import SEOWrapper from "../../components/SEOWrapper/SEOWrapper.component.tsx";
 
 export default function Lms() {
     const [searchTerm, setSearchTerm] = useState("");
@@ -19,7 +20,17 @@ export default function Lms() {
     });
 
     return (
-        <div className="flex flex-col min-h-screen bg-gray-100 pb-12">
+        <SEOWrapper
+            title="Lengua de Señas Mexicana (LSM) - Aprende LSM | EMT EXAM"
+            description="Curso básico de Lengua de Señas Mexicana (LSM) para personal de emergencias médicas. Aprende comunicación básica con pacientes sordos."
+            keywords="lengua de señas mexicana, lsm, comunicación sorda, emergencias médicas, atención pacientes sordos"
+            section="lms"
+            difficulty="Beginner"
+            timeRequired="PT90M"
+            educationalLevel="Technical"
+            includeEducationalSchema={true}
+        >
+            <div className="flex flex-col min-h-screen bg-gray-100 pb-12">
             <div className="bg-gradient-to-r from-gray-400 to-gray-600 text-white py-8 px-4 md:px-8 shadow-lg">
                 <div className="container mx-auto">
                     <div className="flex justify-center mb-4">
@@ -143,6 +154,7 @@ export default function Lms() {
                 </div>
             </section>
         </div>
+        </SEOWrapper>
     );
 }
 

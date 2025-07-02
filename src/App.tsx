@@ -15,8 +15,16 @@ import {FaQuestion, FaTools} from "react-icons/fa";
 import {TbListLetters} from "react-icons/tb";
 import {GoBook, GoWorkflow} from "react-icons/go";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import { useSEO } from "./hooks/useSEO.hook.ts";
 
 function App() {
+    // SEO para página principal
+    useSEO({
+        dynamicTitle: 'Plataforma de Estudio EMT - Alumnos Rescate 1',
+        dynamicDescription: 'Plataforma educativa completa para estudiantes de Técnico en Urgencias Médicas. Estudia atención prehospitalaria con contenido basado en AAOS, exámenes interactivos y recursos didácticos.',
+        dynamicKeywords: 'EMT, técnico urgencias médicas, atención prehospitalaria, estudios medicina emergencia, AAOS, rescate, primeros auxilios',
+        type: 'website'
+    });
 
     const {user} = useUserContext()
     const [leactionWithGrades, setLeactionWithGrades] = useState<tLection[]>([])

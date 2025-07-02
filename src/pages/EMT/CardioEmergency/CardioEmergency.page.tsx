@@ -9,12 +9,23 @@ import {useState} from "react";
 import {MdQuiz} from "react-icons/md";
 import {BsBookHalf} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
+import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
 
 export default function CardioEmergency() {
     const [activeTab, setActiveTab] = useState<'overview' | 'anatomy' | 'treatment' | 'practice' | 'diseases'>('overview');
     const [showQuickQuiz, setShowQuickQuiz] = useState(false);
     return(
-        <div className="min-h-screen bg-gray-50">
+        <SEOWrapper
+            title="Emergencias Cardiovasculares - Infarto, Arritmias | EMT EXAM"
+            description="Guía completa de emergencias cardiovasculares para EMT: infarto agudo de miocardio, arritmias, angina, síncope y protocolo de manejo."
+            keywords="emergencias cardiovasculares, infarto miocardio, arritmias, angina, síncope, ecg, fibrilación"
+            section="cardio-emergency"
+            difficulty="Advanced"
+            timeRequired="PT75M"
+            educationalLevel="Technical"
+            includeEducationalSchema={true}
+        >
+            <div className="min-h-screen bg-gray-50">
             <div className="flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-white pb-12 px-4 p-4">
                 <div className="w-full max-w-7xl">
                     {/* Cabecera */}
@@ -381,6 +392,7 @@ export default function CardioEmergency() {
                 </div>
             </div>
         </div>
+        </SEOWrapper>
     );
 }
 

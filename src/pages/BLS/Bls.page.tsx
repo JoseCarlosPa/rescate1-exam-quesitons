@@ -23,6 +23,7 @@ import heim from '../../assets/heim.webp'
 import { NavLink } from "react-router";
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import SEOWrapper from "../../components/SEOWrapper/SEOWrapper.component.tsx";
 
 // Tipos para la tabla de contenidos
 interface TOCItem {
@@ -239,7 +240,17 @@ export default function Bls() {
     }, []);
 
     return (
-        <div className="bg-gray-50 min-h-screen font-sans">
+        <SEOWrapper
+            title="BLS (Basic Life Support) - Soporte Vital Básico | EMT EXAM"
+            description="Aprende BLS paso a paso: RCP, uso del AED, desfibrilador, cadena de supervivencia y maniobra de Heimlich. Guía completa de soporte vital básico."
+            keywords="bls, soporte vital básico, rcp, reanimación cardiopulmonar, aed, desfibrilador, heimlich, cadena supervivencia"
+            section="bls"
+            difficulty="Intermediate"
+            timeRequired="PT60M"
+            educationalLevel="Technical"
+            includeEducationalSchema={true}
+        >
+            <div className="bg-gray-50 min-h-screen font-sans">
             <header className="bg-gradient-to-r from-red-700 to-red-600 text-white p-6 shadow-lg">
                 <div className="container mx-auto flex items-center justify-center gap-4">
                     <motion.div
@@ -873,6 +884,7 @@ export default function Bls() {
             {/* Botón de volver arriba */}
             <ScrollToTopButton />
         </div>
+        </SEOWrapper>
     );
 }
 
