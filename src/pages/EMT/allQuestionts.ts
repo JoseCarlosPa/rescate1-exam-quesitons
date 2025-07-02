@@ -36,6 +36,7 @@ import {environmentalEmergencyQuestions} from "./AmbientalEmergencies/AmbientalE
 import {psiquiatricQuestions} from "./PsiquiatricEmergencies/PsiquiatricEmergencies.questions.ts";
 import {gineQuestions} from "./GineEmergencies/GineEmergencies.questions.ts";
 import {obstetricQuestions} from "./ObstreticCare/ObstreticCare.questions.ts";
+import {pediatricQuestions} from "./PediatricEmergencies/PediatricEmergencies.questions.ts";
 
 export function getRandomQuestion() {
     const randomIndex = Math.floor(Math.random() * allQuestions.length);
@@ -81,7 +82,8 @@ export function getRandomQuestionsFromEachCategory(n: number): Question[] {
         environmentalEmergencyQuestions,
         psiquiatricQuestions,
         gineQuestions,
-        obstetricQuestions
+        obstetricQuestions,
+        pediatricQuestions
     ];
 
     const selectedQuestions: Question[] = [];
@@ -139,6 +141,7 @@ export const topicQuestionsMap: Record<string, Question[]> = {
     '36': psiquiatricQuestions,
     '37': gineQuestions,
     '38': obstetricQuestions,
+    '39': pediatricQuestions
 };
 
 // Function to get random questions from selected topics
@@ -215,7 +218,8 @@ export const allQuestions: Question[] = [
     ...environmentalEmergencyQuestions,
     ...psiquiatricQuestions,
     ...gineQuestions,
-    ...obstetricQuestions
+    ...obstetricQuestions,
+    ...pediatricQuestions
 ]
 
 
