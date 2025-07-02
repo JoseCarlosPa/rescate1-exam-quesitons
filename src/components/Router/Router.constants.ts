@@ -40,6 +40,7 @@ export enum AllRoutes {
     GINE_EMERGENCY = "/gine-emergency",
     OBSTETRIC_CARE = "/obstetric-care",
     PEDIATRIC_EMERGENCIES = "/pediatric-emergencies",
+    GERIATRIC_EMERGENCIES = "/geriatric-emergencies",
     BLS = "/bls",
     LMS = "/lms",
     STOP_THE_BLEED = "/stop-the-bleed",

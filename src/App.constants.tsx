@@ -321,7 +321,9 @@ export const lections: tLection[] = [
         id: '40',
         title: 'Emergencias geriátricas',
         icon: <FaPersonCane className="w-12 h-12 mb-1 text-orange-500"/>,
-        route: AllRoutes.EMT,
+        route: AllRoutes.GERIATRIC_EMERGENCIES,
+        active: true,
+
     },
     {
         id: '41',
