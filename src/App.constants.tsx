@@ -22,7 +22,6 @@ import {BsSignStopFill} from "react-icons/bs";
 import {SiSpine} from "react-icons/si";
 import {PiBabyBold, PiBrainFill} from "react-icons/pi";
 import {AiOutlineWoman} from "react-icons/ai";
-import {IoWoman} from "react-icons/io5";
 import {GrTest} from "react-icons/gr";
 
 export type tLection = {
@@ -312,48 +311,44 @@ export const lections: tLection[] = [
     },
     {
         id: '39',
-        title: 'Práctica parto',
-        icon: <IoWoman className="w-12 h-12 mb-1 text-orange-500"/>,
-        route: AllRoutes.EMT,
+        title: 'Emergencias pediátricas',
+        icon: <FaChild className="w-12 h-12 mb-1 text-orange-500"/>,
+        route: AllRoutes.PEDIATRIC_EMERGENCIES,
+        active: true,
+
     },
     {
         id: '40',
-        title: 'Emergencias pediátricas',
-        icon: <FaChild className="w-12 h-12 mb-1 text-orange-500"/>,
-        route: AllRoutes.EMT,
-    },
-    {
-        id: '41',
         title: 'Emergencias geriátricas',
         icon: <FaPersonCane className="w-12 h-12 mb-1 text-orange-500"/>,
         route: AllRoutes.EMT,
     },
     {
-        id: '42',
+        id: '41',
         title: 'Pacientes con necesidades especiales',
         icon: <TbDisabled className="w-12 h-12 mb-1 text-orange-500"/>,
         route: AllRoutes.EMT,
     },
     {
-        id: '43',
+        id: '42',
         title: 'Operaciones de transporte',
         icon: <FaTruckMedical className="w-12 h-12 mb-1 text-orange-500"/>,
         route: AllRoutes.EMT,
     },
     {
-        id: '44',
+        id: '43',
         title: 'Manejo de incidentes',
         icon: <MdOutlineFireTruck className="w-12 h-12 mb-1 text-orange-500"/>,
         route: AllRoutes.EMT,
     },
     {
-        id: '45',
+        id: '44',
         title: 'Un abordaje de equipo para la atención medica',
         icon: <CiMedicalCross className="w-12 h-12 mb-1 text-orange-500"/>,
         route: AllRoutes.EMT,
     },
     {
-        id: '46',
+        id: '45',
         title: 'Respuesta al terrorismo y manejo de desastres',
         icon: <FaBomb className="w-12 h-12 mb-1 text-orange-500"/>,
         route: AllRoutes.EMT,
