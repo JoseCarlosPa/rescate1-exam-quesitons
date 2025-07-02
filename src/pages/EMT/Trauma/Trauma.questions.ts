@@ -1,189 +1,141 @@
 import {Question} from "../../../question";
 
+
 export const faqData = [
     {
-        question: "¿Qué es el trauma?",
-        answer: "Es una lesión física producida por una fuerza externa que puede poner en peligro la vida o causar discapacidad."
+        question: "¿Qué es el 'mecanismo de lesión' (ML) y el 'índice de sospecha'?",
+        answer: "El Mecanismo de Lesión describe las fuerzas que actuaron sobre el cuerpo para causar una lesión. El Índice de Sospecha es la conciencia y preocupación del paramédico por la existencia de lesiones potencialmente graves y no visibles, basándose en la evaluación del ML.",
     },
     {
-        question: "¿Qué es el mecanismo de lesión (ML)?",
-        answer: "Es la forma en que ocurre una lesión, como por colisión vehicular, caídas, o heridas penetrantes. Comprenderlo ayuda a anticipar las lesiones."
+        question: "¿Cuál es la diferencia entre un traumatismo cerrado y uno penetrante?",
+        answer: "Un traumatismo cerrado es una lesión por impacto que no rompe la piel, como en un choque de auto o una caída. Un traumatismo penetrante es una lesión que perfora la piel y daña los tejidos subyacentes, como una herida por cuchillo o bala.",
     },
     {
-        question: "¿Por qué es importante la cinemática del trauma?",
-        answer: "Porque permite al paramédico predecir la probabilidad y el tipo de lesiones internas, incluso si no son visibles, basándose en la energía involucrada en el incidente."
+        question: "Según la física del trauma, ¿qué factor es más importante en la gravedad de una lesión: la masa o la velocidad?",
+        answer: "La velocidad es mucho más importante. La energía cinética, que es la energía de un objeto en movimiento, se calcula como ½ de la masa por la velocidad al cuadrado ($$E_c = \\frac{1}{2}mv^2$$). Esto significa que al duplicar la velocidad, la energía (y el potencial de daño) se cuadruplica.",
     },
     {
-        question: "¿Qué se evalúa en la evaluación primaria de un paciente traumatizado?",
-        answer: "Se evalúan y manejan las amenazas inmediatas a la vida, siguiendo el mnemotécnico ABCDE: Vía aérea con control cervical, Respiración, Circulación y control de hemorragias, Déficit neurológico y Exposición/Entorno."
+        question: "Describa las 'tres colisiones' que ocurren en un accidente automovilístico.",
+        answer: "1. La colisión del vehículo contra otro objeto. \n2. La colisión del ocupante contra el interior del vehículo. \n3. La colisión de los órganos internos del ocupante contra las estructuras sólidas del cuerpo (huesos, cráneo).",
     },
     {
-        question: "¿Qué significa la 'hora dorada' en el manejo del trauma?",
-        answer: "Es el periodo crítico, generalmente la primera hora después de un trauma grave, durante el cual la intervención médica avanzada y el transporte rápido a un centro de trauma pueden mejorar drásticamente la supervivencia y reducir la morbilidad."
+        question: "¿Cuáles son los cuatro tipos de lesiones por explosión?",
+        answer: "• Lesión primaria: Causada por la onda expansiva de la explosión (daña órganos llenos de aire). \n• Lesión secundaria: Causada por fragmentos y escombros que vuelan. \n• Lesión terciaria: Causada cuando la persona es arrojada por la fuerza de la explosión. \n• Lesión cuaternaria: Otras lesiones (quemaduras, inhalación de tóxicos, etc.).",
     },
     {
-        question: "¿Cuál es la diferencia principal entre trauma contuso y penetrante?",
-        answer: "El trauma contuso ocurre por un impacto sin perforación o ruptura de la piel (ej. golpes, caídas), mientras que el trauma penetrante implica una interrupción de la integridad de la piel o membranas mucosas (ej. heridas por arma blanca o proyectil)."
+        question: "¿Qué es el 'Período Dorado' (Golden Hour) en el manejo del trauma?",
+        answer: "Es el período de tiempo después de una lesión traumática durante el cual existe la mayor probabilidad de que el tratamiento médico y quirúrgico rápido prevenga la muerte. Aunque no son exactamente 60 minutos, enfatiza la necesidad de un transporte rápido al centro adecuado.",
     },
     {
-        question: "¿Qué es el índice de sospecha?",
-        answer: "Es la capacidad de predecir o anticipar lesiones basándose en el mecanismo de lesión, entendiendo que pueden existir lesiones significativas que no son evidentes externamente."
+        question: "¿Qué es la cavitación en el contexto de un traumatismo penetrante?",
+        answer: "La cavitación es el daño causado por la onda de presión que se forma alrededor de un proyectil de mediana o alta velocidad a medida que atraviesa el cuerpo. Esta onda expansiva puede dañar tejidos que no están en el camino directo del proyectil.",
     },
     {
-        question: "¿Cuándo se considera un transporte rápido a un centro de trauma?",
-        answer: "Se considera cuando hay hallazgos de evaluación que indican un trauma grave o inestable, como un Glasgow Coma Scale (GCS) bajo, hipotensión, dificultad respiratoria severa o mecanismos de lesión de alto riesgo."
-    }
+        question: "¿Cuáles son algunos criterios para considerar el transporte rápido a un centro de trauma?",
+        answer: "Los criterios se basan en la fisiología (hipotensión, GCS < 14), la anatomía de la lesión (heridas penetrantes en torso, tórax inestable) y el mecanismo de lesión (caída de gran altura, eyección del vehículo, muerte de otro ocupante en el mismo vehículo).",
+    },
 ];
+
 
 export const traumaGeneralQuestions: Question[] = [
     {
-        question: "¿Cuál es la principal causa de muerte en personas menores de 45 años en Estados Unidos, según el capítulo?",
+        question: "Un conductor que no llevaba cinturón de seguridad sufre una colisión frontal. Golpea el volante con el pecho. Siguiendo el concepto de las 'tres colisiones', la lesión del corazón contra el esternón sería la colisión de tipo:",
         options: [
-            { letter: "a", text: "Enfermedades cardíacas" },
-            { letter: "b", text: "Cáncer" },
-            { letter: "c", text: "Trauma" },
-            { letter: "d", text: "Accidentes cerebrovasculares" },
+            { letter: "a", text: "Primera" },
+            { letter: "b", text: "Segunda" },
+            { letter: "c", text: "Tercera" },
+            { letter: "d", text: "Cuarta" },
         ],
         correctAnswer: "c",
     },
     {
-        question: "¿Qué tipo de energía se transforma en daño tisular en un evento traumático?",
+        question: "Un paciente que fue arrojado contra una pared por la fuerza de una explosión cercana sufre una fractura de fémur. Este tipo de lesión se clasifica como:",
         options: [
-            { letter: "a", text: "Energía potencial" },
-            { letter: "b", text: "Energía térmica" },
-            { letter: "c", text: "Energía cinética" },
-            { letter: "d", text: "Energía química" },
+            { letter: "a", text: "Lesión primaria por explosión" },
+            { letter: "b", text: "Lesión secundaria por explosión" },
+            { letter: "c", text: "Lesión terciaria por explosión" },
+            { letter: "d", text: "Lesión cuaternaria por explosión" },
         ],
         correctAnswer: "c",
     },
     {
-        question: "Un paciente sufrió una caída desde una altura de 4 metros. ¿Qué tipo de trauma se esperaría predominantemente?",
+        question: "¿Cuál de los siguientes pacientes cumple con los criterios de mecanismo de lesión para ser transportado a un centro de trauma?",
         options: [
-            { letter: "a", text: "Trauma penetrante" },
-            { letter: "b", text: "Trauma contuso" },
-            { letter: "c", text: "Trauma térmico" },
-            { letter: "d", text: "Trauma por explosión" },
+            { letter: "a", text: "Un peatón golpeado por un coche a baja velocidad con una abrasión en la rodilla" },
+            { letter: "b", text: "Un adulto que se cayó desde una altura de 7 metros (aprox. 23 pies)" },
+            { letter: "c", text: "Un motociclista que derrapó a baja velocidad y tiene un esguince de tobillo" },
+            { letter: "d", text: "Un pasajero en una colisión menor sin quejas de dolor" },
         ],
         correctAnswer: "b",
     },
     {
-        question: "En un choque frontal de un vehículo, ¿qué patrón de lesión es común para un ocupante no restringido?",
+        question: "En un choque lateral (impacto en 'T'), el conductor tiene un alto índice de sospecha para lesiones en:",
         options: [
-            { letter: "a", text: "Lesiones por latigazo cervical hacia atrás" },
-            { letter: "b", text: "Lesiones en la cabeza, cuello, tórax y abdomen por impacto contra el tablero o volante" },
-            { letter: "c", text: "Lesiones de extremidades inferiores por impacto lateral" },
-            { letter: "d", text: "Expulsión completa del vehículo sin lesiones internas" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "¿Qué se debe considerar en la evaluación de una caída en pacientes pediátricos, además de la altura?",
-        options: [
-            { letter: "a", text: "El tipo de superficie de impacto" },
-            { letter: "b", text: "La edad del niño y la presencia de condiciones médicas preexistentes" },
-            { letter: "c", "text": "El color de la ropa que llevaba el niño" },
-            { letter: "d", text: "La distancia a la que fue proyectado el niño" },
-        ],
-        correctAnswer: "b", // Aunque el capítulo menciona la superficie, la edad y condiciones preexistentes son más específicas para pediátricos.
-    },
-    {
-        question: "¿Cuál es una característica del trauma penetrante de alta velocidad (ej. proyectil de rifle)?",
-        options: [
-            { letter: "a", text: "Suele causar una herida de entrada pequeña y una de salida grande." },
-            { letter: "b", text: "Genera una gran cavitación temporal y permanente." },
-            { letter: "c", text: "Las lesiones se limitan solo a la trayectoria directa del proyectil." },
-            { letter: "d", text: "Produce quemaduras extensas en la piel." },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "Un paciente presenta fracturas costales múltiples, contusión pulmonar y laceración hepática. ¿Cómo clasificaría este tipo de trauma?",
-        options: [
-            { letter: "a", text: "Trauma aislado" },
-            { letter: "b", text: "Trauma superficial" },
-            { letter: "c", text: "Trauma multisistémico" },
-            { letter: "d", text: "Trauma de tejidos blandos" },
+            { letter: "a", text: "La columna cervical por hiperextensión" },
+            { letter: "b", text: "Las extremidades inferiores por el 'mecanismo de bolsa de papel'" },
+            { letter: "c", text: "El lado del cuerpo que recibió el impacto, incluyendo cuello, tórax y pelvis" },
+            { letter: "d", text: "El cráneo por golpear el parabrisas" },
         ],
         correctAnswer: "c",
     },
     {
-        question: "¿Cuál de los siguientes es un componente clave del 'Índice de Sospecha' en la evaluación de trauma?",
+        question: "La principal diferencia en el potencial de lesión entre una herida por cuchillo y una herida por un rifle de alta velocidad es:",
         options: [
-            { letter: "a", text: "La edad del paciente" },
-            { letter: "b", text: "El mecanismo de lesión" },
-            { letter: "c", text: "El historial médico familiar" },
-            { letter: "d", text: "La hora del día en que ocurrió el incidente" },
-        ],
-        correctAnswer: "b",
-    },
-    {
-        question: "Según la Escala de Trauma Revisada (RTS), un puntaje alto indica:",
-        options: [
-            { letter: "a", text: "Mayor gravedad de las lesiones." },
-            { letter: "b", text: "Menor probabilidad de supervivencia." },
-            { letter: "c", text: "Mejor pronóstico y menor gravedad." },
-            { letter: "d", text: "Necesidad de un centro de trauma Nivel III." },
-        ],
-        correctAnswer: "c", // Un RTS más alto indica un paciente con mejor pronóstico.
-    },
-    {
-        question: "¿Qué acción tiene la prioridad más alta en el manejo inicial de un paciente con trauma grave?",
-        options: [
-            { letter: "a", text: "Obtener un historial médico detallado." },
-            { letter: "b", text: "Realizar una evaluación secundaria completa." },
-            { letter: "c", text: "Controlar la vía aérea y la hemorragia grave." },
-            { letter: "d", text: "Esperar la llegada de soporte avanzado." },
+            { letter: "a", text: "El riesgo de infección" },
+            { letter: "b", text: "La presencia de una herida de entrada y salida" },
+            { letter: "c", text: "El daño adicional causado por la cavitación del proyectil de alta velocidad" },
+            { letter: "d", text: "La probabilidad de que el objeto se quede alojado" },
         ],
         correctAnswer: "c",
     },
     {
-        question: "Un paciente es encontrado inconsciente después de ser atropellado por un vehículo. Su GCS es de 7 y presenta deformidad evidente en fémur. ¿Cumple criterios para transporte rápido?",
+        question: "Un paciente es apuñalado en el abdomen con un picahielo. ¿Cuál es su principal preocupación con respecto a esta herida?",
         options: [
-            { letter: "a", text: "No, porque la deformidad en el fémur no es una amenaza vital inmediata." },
-            { letter: "b", text: "Sí, debido al GCS bajo y el mecanismo de lesión de alto riesgo." },
-            { letter: "c", text: "Solo si hay hemorragia externa visible." },
-            { letter: "d", text: "Depende de la distancia al hospital más cercano." },
+            { letter: "a", text: "La hemorragia externa suele ser masiva" },
+            { letter: "b", text: "El daño interno puede ser mucho mayor de lo que sugiere la pequeña herida externa" },
+            { letter: "c", text: "El riesgo de tétanos es extremadamente alto" },
+            { letter: "d", "text": "Este tipo de herida siempre causa evisceración" },
         ],
         correctAnswer: "b",
     },
     {
-        question: "¿Qué es el trauma multisistémico?",
+        question: "La ruptura del tímpano por la onda de presión de una explosión es un ejemplo de una lesión:",
         options: [
-            { letter: "a", text: "Lesiones en una única extremidad." },
-            { letter: "b", text: "Lesiones que afectan dos o más sistemas corporales principales." },
-            { letter: "c", "text": "Un tipo de trauma psicológico." },
-            { letter: "d", text: "Una lesión que solo afecta la piel." },
+            { letter: "a", text: "Primaria" },
+            { letter: "b", text: "Secundaria" },
+            { letter: "c", text: "Terciaria" },
+            { letter: "d", text: "Cuaternaria" },
+        ],
+        correctAnswer: "a",
+    },
+    {
+        question: "Al evaluar la escena de una caída, ¿qué factor es MENOS importante para predecir la gravedad de las lesiones?",
+        options: [
+            { letter: "a", text: "La altura desde la que cayó el paciente" },
+            { letter: "b", text: "La hora del día en que ocurrió la caída" },
+            { letter: "c", text: "La parte del cuerpo que impactó primero" },
+            { letter: "d", text: "El tipo de superficie sobre la que aterrizó el paciente" },
         ],
         correctAnswer: "b",
     },
     {
-        question: "Para un paciente con trauma severo, ¿cuál es la consideración de transporte más apropiada según las guías de trauma?",
+        question: "El concepto de 'índice de sospecha' es más útil para el paramédico porque:",
         options: [
-            { letter: "a", text: "Transportar al hospital más cercano, independientemente de sus capacidades." },
-            { letter: "b", text: "Transportar al centro de trauma más cercano que pueda proporcionar el nivel de atención adecuado." },
-            { letter: "c", text: "Esperar a que el paciente se estabilice antes de transportarlo." },
-            { letter: "d", text: "Contactar a la familia del paciente para decidir el destino." },
+            { letter: "a", text: "Permite diagnosticar fracturas sin necesidad de rayos X" },
+            { letter: "b", text: "Ayuda a anticipar y buscar lesiones que no son inmediatamente obvias" },
+            { letter: "c", text: "Determina la culpabilidad en un accidente automovilístico" },
+            { letter: "d", text: "Justifica no realizar una evaluación completa si el mecanismo es leve" },
         ],
         correctAnswer: "b",
     },
     {
-        question: "¿Qué efecto secundario es común en un trauma por explosión debido a la onda expansiva primaria?",
+        question: "Un trauma multisistémico se define como:",
         options: [
-            { letter: "a", text: "Fracturas de huesos largos." },
-            { letter: "b", text: "Quemaduras de tercer grado." },
-            { letter: "c", text: "Barotrauma (lesiones pulmonares, tímpano, etc.)." },
-            { letter: "d", text: "Cortes y laceraciones por escombros." },
+            { letter: "a", text: "Una lesión que requiere intervención quirúrgica" },
+            { letter: "b", text: "Cualquier fractura de un hueso largo" },
+            { letter: "c", text: "Una o más lesiones que afectan a más de un sistema corporal" },
+            { letter: "d", text: "Cualquier traumatismo que ocurra en un paciente mayor de 65 años" },
         ],
         correctAnswer: "c",
-    },
-    {
-        question: "Un paramédico evalúa a un paciente involucrado en un accidente de motocicleta. ¿Qué tipo de información sobre el incidente es crucial para el índice de sospecha?",
-        options: [
-            { letter: "a", text: "La marca y modelo de la motocicleta." },
-            { letter: "b", text: "Si el paciente llevaba casco y el estado del mismo." },
-            { letter: "c", "text": "El color de la ropa del paciente." },
-            { letter: "d", text: "La hora exacta del accidente." },
-        ],
-        correctAnswer: "b",
     },
 ];
