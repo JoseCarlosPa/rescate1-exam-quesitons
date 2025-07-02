@@ -37,6 +37,7 @@ export enum AllRoutes {
     TOXICOLOGY = "/toxicology",
     AMBIENTAL_EMERGENCIES = "/ambiental-emergencies",
     PSIQUIATRIC_EMERGENCY = "/psychiatric-emergency",
+    GINE_EMERGENCY = "/gine-emergency",
     BLS = "/bls",
     LMS = "/lms",
     STOP_THE_BLEED = "/stop-the-bleed",
