@@ -34,7 +34,7 @@ export default defineConfig({
         name: 'Alumnos R1 Gen 2025 | Examen Prueba',
         short_name: 'EMT Exam',
         description: 'Aplicación de estudio para Alumnos Rescate 1 | Gen 2025',
-        theme_color: '#4a90e2',
+        theme_color: '#ff6900',
         icons: [
           {
             src: '/estrella-de-la-vida.png',
