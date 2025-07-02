@@ -329,7 +329,9 @@ export const lections: tLection[] = [
         id: '41',
         title: 'Pacientes con necesidades especiales',
         icon: <TbDisabled className="w-12 h-12 mb-1 text-orange-500"/>,
-        route: AllRoutes.EMT,
+        route: AllRoutes.SPECIAL_NEEDS_PACIENT,
+        active: true,
+
     },
     {
         id: '42',

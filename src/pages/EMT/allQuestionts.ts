@@ -38,6 +38,7 @@ import {gineQuestions} from "./GineEmergencies/GineEmergencies.questions.ts";
 import {obstetricQuestions} from "./ObstreticCare/ObstreticCare.questions.ts";
 import {pediatricQuestions} from "./PediatricEmergencies/PediatricEmergencies.questions.ts";
 import {geriatricQuestions} from "./GeriatricEmergencies/GeriatricEmergencies.questions.ts";
+import {specialNeedsPacientQuestions} from "./SpecialNeedsPacient/SpecialNeedsPacient.questions.ts";
 
 export function getRandomQuestion() {
     const randomIndex = Math.floor(Math.random() * allQuestions.length);
@@ -85,7 +86,8 @@ export function getRandomQuestionsFromEachCategory(n: number): Question[] {
         gineQuestions,
         obstetricQuestions,
         pediatricQuestions,
-        geriatricQuestions
+        geriatricQuestions,
+        specialNeedsPacientQuestions
     ];
 
     const selectedQuestions: Question[] = [];
@@ -144,7 +146,8 @@ export const topicQuestionsMap: Record<string, Question[]> = {
     '37': gineQuestions,
     '38': obstetricQuestions,
     '39': pediatricQuestions,
-    '40': geriatricQuestions
+    '40': geriatricQuestions,
+    '41': specialNeedsPacientQuestions
 };
 
 // Function to get random questions from selected topics
@@ -223,7 +226,8 @@ export const allQuestions: Question[] = [
     ...gineQuestions,
     ...obstetricQuestions,
     ...pediatricQuestions,
-    ...geriatricQuestions
+    ...geriatricQuestions,
+    ...specialNeedsPacientQuestions
 ]
 
 

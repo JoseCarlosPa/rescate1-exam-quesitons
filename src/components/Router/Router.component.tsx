@@ -93,6 +93,8 @@ import PediatricEmergencies from "../../pages/EMT/PediatricEmergencies/Pediatric
 import {pediatricQuestions} from "../../pages/EMT/PediatricEmergencies/PediatricEmergencies.questions.ts";
 import GeriatricEmergencies from "../../pages/EMT/GeriatricEmergencies/GeriatricEmergencies.page.tsx";
 import {geriatricQuestions} from "../../pages/EMT/GeriatricEmergencies/GeriatricEmergencies.questions.ts";
+import {specialNeedsPacientQuestions} from "../../pages/EMT/SpecialNeedsPacient/SpecialNeedsPacient.questions.ts";
+import SpecialNeedsPacient from "../../pages/EMT/SpecialNeedsPacient/SpecialNeedsPacient.page.tsx";
 export default function Router(){
     return(
         <Suspense fallback={<div>Loading...</div>}>
@@ -179,6 +181,8 @@ export default function Router(){
                 <Route path={`${AllRoutes.PEDIATRIC_EMERGENCIES}/exam`} element={<Exam returnRoute={AllRoutes.PEDIATRIC_EMERGENCIES} name="Emergencias pediátricas" questions={pediatricQuestions} id={39}  />}/>
                 <Route path={AllRoutes.GERIATRIC_EMERGENCIES} element={<GeriatricEmergencies />}/>
                 <Route path={`${AllRoutes.GERIATRIC_EMERGENCIES}/exam`} element={<Exam returnRoute={AllRoutes.GERIATRIC_EMERGENCIES} name="Emergencias Geriatricas" questions={geriatricQuestions} id={40}  />}/>
+                <Route path={AllRoutes.SPECIAL_NEEDS_PACIENT} element={<SpecialNeedsPacient />}/>
+                <Route path={`${AllRoutes.SPECIAL_NEEDS_PACIENT}/exam`} element={<Exam returnRoute={AllRoutes.SPECIAL_NEEDS_PACIENT} name="Pacientes con necesidades especiales" questions={specialNeedsPacientQuestions} id={41}  />}/>
 
                 <Route path={AllRoutes.LMS} element={<Lms /> }/>
                 <Route path={AllRoutes.BLS} element={<Bls />}/>
