@@ -6,7 +6,7 @@
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#ffffff",
-  "theme_color": "#4a90e2",
+  "theme_color": "#ff6900",
   "categories": ["education", "medical", "training"],
   "lang": "es-MX",
   "dir": "ltr",
