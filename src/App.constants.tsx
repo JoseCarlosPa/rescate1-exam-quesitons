@@ -306,7 +306,9 @@ export const lections: tLection[] = [
         id: '38',
         title: 'Cuidados obstétricos y neonatales',
         icon: <PiBabyBold className="w-12 h-12 mb-1 text-orange-500"/>,
-        route: AllRoutes.EMT,
+        route: AllRoutes.OBSTETRIC_CARE,
+        active: true,
+
     },
     {
         id: '39',
