@@ -9,8 +9,9 @@ import useApp from "./App.hook.ts";
 import {MdOutlineGrade} from "react-icons/md";
 import {AiOutlineLoading3Quarters} from "react-icons/ai";
 import RandomQuestion from "./components/RandomQuestion/RandomQuestion.component.tsx";
+import ToolsModal from "./components/ToolsModal/ToolsModal.component.tsx";
 import {IoReturnDownBack} from "react-icons/io5";
-import {FaQuestion} from "react-icons/fa";
+import {FaQuestion, FaTools} from "react-icons/fa";
 import {TbListLetters} from "react-icons/tb";
 import {GoBook, GoWorkflow} from "react-icons/go";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
@@ -20,6 +21,7 @@ function App() {
     const {user} = useUserContext()
     const [leactionWithGrades, setLeactionWithGrades] = useState<tLection[]>([])
     const [showRandomQuestion, setShowRandomQuestion] = useState<boolean>(false)
+    const [showToolsModal, setShowToolsModal] = useState<boolean>(false)
     const [searchTerm, setSearchTerm] = useState<string>("") // Nuevo estado para el término de búsqueda
     const {getUserExams, loading, setLoading} = useApp()
 
@@ -76,7 +78,7 @@ function App() {
                     onChange={(e) => setSearchTerm(e.target.value)}
                 />
             </div>
-            <div className="grid md:grid-cols-3 lg:grid-cols-5 grid-cols-2 gap-4 w-full max-w-6xl mb-2 mt-2">
+            <div className="grid md:grid-cols-3 lg:grid-cols-6 grid-cols-2 gap-4 w-full  max-w-7xl mb-2 mt-2">
                 <NavLink to={AllRoutes.MAIN}
                          className="flex flex-col items-center justify-center  bg-white shadow-md rounded-xl p-3 hover:bg-orange-100 border border-orange-200 transition duration-300 ease-in-out focus:ring-2 focus:ring-orange-300 outline-none">
                     <IoReturnDownBack className="w-5 h-5 my-auto text-orange-400"  />
@@ -103,16 +105,30 @@ function App() {
                     <GoWorkflow className="w-5 h-5 my-auto text-orange-400"  />
                     <p className="text-sm md:text-lg font-medium truncate">Algoritmos/Protocolos</p>
                 </NavLink>
+                <button
+                    onClick={() => setShowToolsModal(true)}
+                    className="cursor-pointer flex flex-col items-center justify-center bg-white shadow-md rounded-xl p-3 hover:bg-orange-100 border border-orange-200 transition duration-300 ease-in-out focus:ring-2 focus:ring-orange-300 outline-none">
+                    <FaTools className="w-4 h-4 my-auto text-orange-400" />
+                    <span className="text-lg font-medium">Herramientas</span>
+                </button>
             </div>
             {showRandomQuestion && (
-                <div className="fixed inset-0 bg-black bg-opacity-25 z-40 flex justify-center items-center p-4 backdrop-blur-[2px] animate-fadeIn">
-                    <div 
+                <div className="fixed inset-0 bg-black/20 bg-opacity-25 z-40 flex justify-center items-center p-4 backdrop-blur-[2px] animate-fadeIn">
+                    <div
                         className="w-full md:w-1/2 lg:w-1/3 max-h-[90vh] overflow-auto"
                         onClick={(e) => e.stopPropagation()}
                     >
                         <RandomQuestion onClose={() => setShowRandomQuestion(false)} />
                     </div>
                 </div>
+            )}
+            {showToolsModal && (
+                    <div
+                        className="w-full md:w-1/2 lg:w-1/3 max-h-[90vh] overflow-auto"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <ToolsModal onClose={() => setShowToolsModal(false)} />
+                    </div>
             )}
 
             {loading ? <AiOutlineLoading3Quarters className="animate-spin h-20 w-20 text-orange-500 mt-8"/> : null}

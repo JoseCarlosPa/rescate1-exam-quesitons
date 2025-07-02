@@ -35,9 +35,9 @@ export const caseStudies: CaseStudy[] = [
             "Requiere descompresión torácica con aguja de forma inmediata.",
         ],
         questions: [
-            { question: "¿Qué hallazgo clínico es el más indicativo de un neumotórax a tensión en este paciente?" },
-            { question: "¿Por qué mejoran la presión arterial y la frecuencia cardíaca después de la descompresión torácica?" },
-            { question: "¿Cuál es el manejo inicial prioritario para la fractura expuesta?" },
+            {question: "¿Qué hallazgo clínico es el más indicativo de un neumotórax a tensión en este paciente?"},
+            {question: "¿Por qué mejoran la presión arterial y la frecuencia cardíaca después de la descompresión torácica?"},
+            {question: "¿Cuál es el manejo inicial prioritario para la fractura expuesta?"},
         ],
         references: ["Capítulo 12 - Shock.pdf"],
     },
@@ -60,15 +60,15 @@ export const caseStudies: CaseStudy[] = [
             "Se sospecha sobredosis múltiple",
         ],
         questions: [
-            { question: "¿Cuáles son los componentes de la evaluación del paciente?" },
-            { question: "¿Cómo varía la evaluación si el paciente está enfermo o lesionado?" },
-            { question: "¿Está indicada la inmovilización de columna? ¿Por qué?" },
-            { question: "¿Cuál hallazgo requiere atención inmediata?" },
-            { question: "¿Requiere tratamiento adicional en la escena? ¿Cuál?" },
-            { question: "¿Debe esperar otra unidad o trasladar de inmediato? ¿Por qué?" },
-            { question: "¿Cambió la condición del paciente durante la atención? ¿Cómo responder a ello?" },
-            { question: "¿Qué elementos de la historia SAMPLE pueden obtenerse sin que el paciente responda?" },
-            { question: "¿Por qué es importante reevaluar constantemente?" },
+            {question: "¿Cuáles son los componentes de la evaluación del paciente?"},
+            {question: "¿Cómo varía la evaluación si el paciente está enfermo o lesionado?"},
+            {question: "¿Está indicada la inmovilización de columna? ¿Por qué?"},
+            {question: "¿Cuál hallazgo requiere atención inmediata?"},
+            {question: "¿Requiere tratamiento adicional en la escena? ¿Cuál?"},
+            {question: "¿Debe esperar otra unidad o trasladar de inmediato? ¿Por qué?"},
+            {question: "¿Cambió la condición del paciente durante la atención? ¿Cómo responder a ello?"},
+            {question: "¿Qué elementos de la historia SAMPLE pueden obtenerse sin que el paciente responda?"},
+            {question: "¿Por qué es importante reevaluar constantemente?"},
         ],
         references: [
             "AAOS Atención Prehospitalaria Básica, 11ª Edición - Capítulos de evaluación primaria, evaluación médica y emergencias por sobredosis.",
@@ -93,9 +93,9 @@ export const caseStudies: CaseStudy[] = [
             "Sin antecedentes claros disponibles en el lugar",
         ],
         questions: [
-            { question: "¿Cuál es la intervención inmediata indicada para este paciente?" },
-            { question: "¿Cómo afecta la hipoglucemia el estado mental del paciente?" },
-            { question: "¿Qué protocolo seguir si el paciente no responde a glucosa oral?" },
+            {question: "¿Cuál es la intervención inmediata indicada para este paciente?"},
+            {question: "¿Cómo afecta la hipoglucemia el estado mental del paciente?"},
+            {question: "¿Qué protocolo seguir si el paciente no responde a glucosa oral?"},
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de emergencias endocrinas.",
@@ -120,9 +120,9 @@ export const caseStudies: CaseStudy[] = [
             "Riesgo de agotamiento respiratorio",
         ],
         questions: [
-            { question: "¿Qué indicaciones hay para administrar salbutamol en nebulización?" },
-            { question: "¿Cuándo se debe asistir la ventilación de un paciente asmático?" },
-            { question: "¿Qué signos indican inminente fallo respiratorio?" },
+            {question: "¿Qué indicaciones hay para administrar salbutamol en nebulización?"},
+            {question: "¿Cuándo se debe asistir la ventilación de un paciente asmático?"},
+            {question: "¿Qué signos indican inminente fallo respiratorio?"},
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de emergencias respiratorias.",
@@ -146,9 +146,9 @@ export const caseStudies: CaseStudy[] = [
             "Evaluación neurológica continua es clave",
         ],
         questions: [
-            { question: "¿Cuándo está indicada la inmovilización espinal completa?" },
-            { question: "¿Qué signos indican lesión medular?" },
-            { question: "¿Cómo evalúas función motora y sensitiva en escena?" },
+            {question: "¿Cuándo está indicada la inmovilización espinal completa?"},
+            {question: "¿Qué signos indican lesión medular?"},
+            {question: "¿Cómo evalúas función motora y sensitiva en escena?"},
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de trauma músculo-esquelético e inmovilización.",
@@ -172,9 +172,9 @@ export const caseStudies: CaseStudy[] = [
             "Asistencia con nitroglicerina si no hay contraindicaciones",
         ],
         questions: [
-            { question: "¿Qué medicamentos puedes administrar en sospecha de IAM?" },
-            { question: "¿Qué datos electrocardiográficos o clínicos deben reportarse al hospital?" },
-            { question: "¿Cómo evalúas el dolor torácico de manera sistemática?" },
+            {question: "¿Qué medicamentos puedes administrar en sospecha de IAM?"},
+            {question: "¿Qué datos electrocardiográficos o clínicos deben reportarse al hospital?"},
+            {question: "¿Cómo evalúas el dolor torácico de manera sistemática?"},
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de emergencias cardiovasculares.",
@@ -198,9 +198,9 @@ export const caseStudies: CaseStudy[] = [
             "Control de sangrado postparto materno",
         ],
         questions: [
-            { question: "¿Cuáles son los pasos clave para un parto asistido en el campo?" },
-            { question: "¿Cómo evalúas al recién nacido con APGAR?" },
-            { question: "¿Qué hacer en caso de hemorragia postparto?" },
+            {question: "¿Cuáles son los pasos clave para un parto asistido en el campo?"},
+            {question: "¿Cómo evalúas al recién nacido con APGAR?"},
+            {question: "¿Qué hacer en caso de hemorragia postparto?"},
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de emergencias obstétricas y neonatales.",
@@ -224,9 +224,9 @@ export const caseStudies: CaseStudy[] = [
             "Importancia de monitorización continua",
         ],
         questions: [
-            { question: "¿Por qué una quemadura eléctrica puede causar daño interno severo sin lesión externa visible?" },
-            { question: "¿Cuál es el riesgo cardíaco asociado a este tipo de trauma?" },
-            { question: "¿Qué medidas debes tomar si no tienes un monitor cardíaco disponible?" },
+            {question: "¿Por qué una quemadura eléctrica puede causar daño interno severo sin lesión externa visible?"},
+            {question: "¿Cuál es el riesgo cardíaco asociado a este tipo de trauma?"},
+            {question: "¿Qué medidas debes tomar si no tienes un monitor cardíaco disponible?"},
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de emergencias ambientales y trauma eléctrico.",
@@ -250,9 +250,9 @@ export const caseStudies: CaseStudy[] = [
             "Riesgo de edema pulmonar secundario",
         ],
         questions: [
-            { question: "¿Cuál es la prioridad en un caso de ahogamiento pediátrico?" },
-            { question: "¿Qué signos indican que el paciente podría desarrollar complicaciones como edema pulmonar?" },
-            { question: "¿Qué precauciones especiales debes tener en niños después de un rescate acuático?" },
+            {question: "¿Cuál es la prioridad en un caso de ahogamiento pediátrico?"},
+            {question: "¿Qué signos indican que el paciente podría desarrollar complicaciones como edema pulmonar?"},
+            {question: "¿Qué precauciones especiales debes tener en niños después de un rescate acuático?"},
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de emergencias pediátricas y ambientales.",
@@ -276,9 +276,9 @@ export const caseStudies: CaseStudy[] = [
             "Necesidad de notificación obligatoria a autoridades",
         ],
         questions: [
-            { question: "¿Qué señales deben hacerte sospechar de abuso en adultos mayores?" },
-            { question: "¿Cómo debes documentar este tipo de incidentes?" },
-            { question: "¿Cuál es tu obligación legal como proveedor prehospitalario?" },
+            {question: "¿Qué señales deben hacerte sospechar de abuso en adultos mayores?"},
+            {question: "¿Cómo debes documentar este tipo de incidentes?"},
+            {question: "¿Cuál es tu obligación legal como proveedor prehospitalario?"},
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de emergencias geriátricas y consideraciones éticas/legales.",
@@ -302,9 +302,9 @@ export const caseStudies: CaseStudy[] = [
             "Requiere inmovilización con férula tracción",
         ],
         questions: [
-            { question: "¿Qué peligros tiene una fractura de fémur si no se trata a tiempo?" },
-            { question: "¿Cómo se evalúa la circulación distal en una extremidad lesionada?" },
-            { question: "¿Cuándo está indicada la férula de tracción?" },
+            {question: "¿Qué peligros tiene una fractura de fémur si no se trata a tiempo?"},
+            {question: "¿Cómo se evalúa la circulación distal en una extremidad lesionada?"},
+            {question: "¿Cuándo está indicada la férula de tracción?"},
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de trauma músculo-esquelético e inmovilización.",
@@ -354,9 +354,9 @@ export const caseStudies: CaseStudy[] = [
             "Oxígeno de alto flujo y monitorización",
         ],
         questions: [
-            { question: "¿Cuáles son los signos clave de una anafilaxia?" },
-            { question: "¿Qué dosis y vía se recomienda para la adrenalina en adulto?" },
-            { question: "¿Qué hacer si no hay mejoría tras la primera dosis?" },
+            {question: "¿Cuáles son los signos clave de una anafilaxia?"},
+            {question: "¿Qué dosis y vía se recomienda para la adrenalina en adulto?"},
+            {question: "¿Qué hacer si no hay mejoría tras la primera dosis?"},
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de emergencias alérgicas y anafilaxia.",
@@ -380,9 +380,9 @@ export const caseStudies: CaseStudy[] = [
             "Necesidad de traslado urgente y posible cámara hiperbárica",
         ],
         questions: [
-            { question: "¿Por qué el oxímetro puede dar falsos positivos en estas situaciones?" },
-            { question: "¿Qué gas impide la correcta oxigenación en sangre en este caso?" },
-            { question: "¿Cuál es el tratamiento inicial en el entorno prehospitalario?" },
+            {question: "¿Por qué el oxímetro puede dar falsos positivos en estas situaciones?"},
+            {question: "¿Qué gas impide la correcta oxigenación en sangre en este caso?"},
+            {question: "¿Cuál es el tratamiento inicial en el entorno prehospitalario?"},
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de emergencias tóxicas y ambientales.",
@@ -407,9 +407,9 @@ export const caseStudies: CaseStudy[] = [
             "Necesita recalentamiento pasivo + oxígeno",
         ],
         questions: [
-            { question: "¿Qué precauciones debes tener al movilizar a un paciente con hipotermia?" },
-            { question: "¿Cómo clasificas la severidad de la hipotermia según la temperatura?" },
-            { question: "¿Qué diferencia hay entre recalentamiento pasivo y activo?" },
+            {question: "¿Qué precauciones debes tener al movilizar a un paciente con hipotermia?"},
+            {question: "¿Cómo clasificas la severidad de la hipotermia según la temperatura?"},
+            {question: "¿Qué diferencia hay entre recalentamiento pasivo y activo?"},
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de emergencias ambientales.",
@@ -433,9 +433,9 @@ export const caseStudies: CaseStudy[] = [
             "Necesita traslado urgente a centro con cirugía",
         ],
         questions: [
-            { question: "¿Qué hallazgos sugieren una hemorragia interna en una paciente en edad fértil?" },
-            { question: "¿Por qué es crítica la evaluación obstétrica incluso si no hay sangrado vaginal?" },
-            { question: "¿Cuál es el tratamiento inicial prehospitalario ante sospecha de embarazo ectópico?" },
+            {question: "¿Qué hallazgos sugieren una hemorragia interna en una paciente en edad fértil?"},
+            {question: "¿Por qué es crítica la evaluación obstétrica incluso si no hay sangrado vaginal?"},
+            {question: "¿Cuál es el tratamiento inicial prehospitalario ante sospecha de embarazo ectópico?"},
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de emergencias ginecológicas.",
@@ -484,9 +484,9 @@ export const caseStudies: CaseStudy[] = [
             "Riesgo de paro respiratorio si no se resuelve rápidamente",
         ],
         questions: [
-            { question: "¿Cómo diferencias una obstrucción parcial de una completa?" },
-            { question: "¿Cuál es el procedimiento adecuado para pacientes conscientes con obstrucción completa?" },
-            { question: "¿Qué hacer si el paciente pierde la conciencia?" },
+            {question: "¿Cómo diferencias una obstrucción parcial de una completa?"},
+            {question: "¿Cuál es el procedimiento adecuado para pacientes conscientes con obstrucción completa?"},
+            {question: "¿Qué hacer si el paciente pierde la conciencia?"},
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de manejo de la vía aérea.",
@@ -510,9 +510,9 @@ export const caseStudies: CaseStudy[] = [
             "Riesgo de shock hipovolémico",
         ],
         questions: [
-            { question: "¿Qué tipo de apósito se usa para cubrir evisceraciones?" },
-            { question: "¿Por qué no se deben reintroducir órganos eviscerados?" },
-            { question: "¿Cuál es la prioridad en el manejo de esta herida?" },
+            {question: "¿Qué tipo de apósito se usa para cubrir evisceraciones?"},
+            {question: "¿Por qué no se deben reintroducir órganos eviscerados?"},
+            {question: "¿Cuál es la prioridad en el manejo de esta herida?"},
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de trauma abdominal.",
@@ -537,9 +537,9 @@ export const caseStudies: CaseStudy[] = [
             "Monitorear respiración y nivel de conciencia",
         ],
         questions: [
-            { question: "¿Qué características indican convulsión febril simple?" },
-            { question: "¿Cuáles son las indicaciones para traslado urgente?" },
-            { question: "¿Qué debe hacer el personal prehospitalario tras una convulsión resuelta?" },
+            {question: "¿Qué características indican convulsión febril simple?"},
+            {question: "¿Cuáles son las indicaciones para traslado urgente?"},
+            {question: "¿Qué debe hacer el personal prehospitalario tras una convulsión resuelta?"},
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de emergencias pediátricas y neurológicas.",
@@ -563,9 +563,9 @@ export const caseStudies: CaseStudy[] = [
             "Tratamiento sintomático y monitorización",
         ],
         questions: [
-            { question: "¿Qué signos pueden indicar complicaciones asociadas a fractura de costillas?" },
-            { question: "¿Cómo diferencias un dolor musculoesquelético de un problema pulmonar?" },
-            { question: "¿Qué intervenciones son apropiadas en campo?" },
+            {question: "¿Qué signos pueden indicar complicaciones asociadas a fractura de costillas?"},
+            {question: "¿Cómo diferencias un dolor musculoesquelético de un problema pulmonar?"},
+            {question: "¿Qué intervenciones son apropiadas en campo?"},
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de trauma torácico.",
@@ -589,9 +589,9 @@ export const caseStudies: CaseStudy[] = [
             "Monitorear respiración y nivel de conciencia",
         ],
         questions: [
-            { question: "¿Qué intervenciones debes realizar para proteger la vía aérea?" },
-            { question: "¿Qué complicaciones puede presentar un paciente intoxicado por alcohol?" },
-            { question: "¿Cómo se debe posicionar al paciente si no responde?" },
+            {question: "¿Qué intervenciones debes realizar para proteger la vía aérea?"},
+            {question: "¿Qué complicaciones puede presentar un paciente intoxicado por alcohol?"},
+            {question: "¿Cómo se debe posicionar al paciente si no responde?"},
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de emergencias tóxicas.",
@@ -616,9 +616,9 @@ export const caseStudies: CaseStudy[] = [
             "Requiere enfriamiento activo inmediato",
         ],
         questions: [
-            { question: "¿Qué diferencia hay entre agotamiento por calor y golpe de calor?" },
-            { question: "¿Cuál es el tratamiento prehospitalario inicial más efectivo?" },
-            { question: "¿Qué signos indican deterioro neurológico por hipertermia?" },
+            {question: "¿Qué diferencia hay entre agotamiento por calor y golpe de calor?"},
+            {question: "¿Cuál es el tratamiento prehospitalario inicial más efectivo?"},
+            {question: "¿Qué signos indican deterioro neurológico por hipertermia?"},
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de emergencias ambientales.",
@@ -642,9 +642,9 @@ export const caseStudies: CaseStudy[] = [
             "Evaluación neurológica periódica en traslado",
         ],
         questions: [
-            { question: "¿Qué criterios indican necesidad de inmovilización espinal completa?" },
-            { question: "¿Cómo se moviliza un paciente con dolor lumbar severo?" },
-            { question: "¿Por qué se debe reevaluar función neurológica durante el traslado?" },
+            {question: "¿Qué criterios indican necesidad de inmovilización espinal completa?"},
+            {question: "¿Cómo se moviliza un paciente con dolor lumbar severo?"},
+            {question: "¿Por qué se debe reevaluar función neurológica durante el traslado?"},
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de trauma musculoesquelético e inmovilización.",
@@ -668,9 +668,9 @@ export const caseStudies: CaseStudy[] = [
             "Riesgo de shock hipovolémico",
         ],
         questions: [
-            { question: "¿Cuándo está indicado el uso de torniquete?" },
-            { question: "¿Qué signos indican que el paciente está entrando en shock?" },
-            { question: "¿Qué documentación debe realizarse si se aplica torniquete?" },
+            {question: "¿Cuándo está indicado el uso de torniquete?"},
+            {question: "¿Qué signos indican que el paciente está entrando en shock?"},
+            {question: "¿Qué documentación debe realizarse si se aplica torniquete?"},
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de hemorragias y control de sangrado.",
@@ -695,9 +695,9 @@ export const caseStudies: CaseStudy[] = [
             "Aplicar compresas frías y trasladar",
         ],
         questions: [
-            { question: "¿Qué signos indican una progresión sistémica de la picadura?" },
-            { question: "¿Qué medidas iniciales deben tomarse en campo?" },
-            { question: "¿Cuándo se considera urgente el traslado hospitalario?" },
+            {question: "¿Qué signos indican una progresión sistémica de la picadura?"},
+            {question: "¿Qué medidas iniciales deben tomarse en campo?"},
+            {question: "¿Cuándo se considera urgente el traslado hospitalario?"},
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de emergencias ambientales y tóxicas.",
@@ -721,9 +721,9 @@ export const caseStudies: CaseStudy[] = [
             "Uso de DEA si disponible tras primeros ciclos",
         ],
         questions: [
-            { question: "¿Qué modificaciones haces a la RCP en un ahogado?" },
-            { question: "¿Cuál es la secuencia ideal de intervención en este caso?" },
-            { question: "¿Qué hacer si el paciente presenta vómito durante la RCP?" },
+            {question: "¿Qué modificaciones haces a la RCP en un ahogado?"},
+            {question: "¿Cuál es la secuencia ideal de intervención en este caso?"},
+            {question: "¿Qué hacer si el paciente presenta vómito durante la RCP?"},
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de paro cardíaco y emergencias respiratorias.",
@@ -748,9 +748,9 @@ export const caseStudies: CaseStudy[] = [
             "Necesita hidratación y traslado inmediato",
         ],
         questions: [
-            { question: "¿Qué síntomas clínicos ayudan a diferenciar hiperglucemia de hipoglucemia?" },
-            { question: "¿Qué complicaciones puede generar una hiperglucemia mantenida?" },
-            { question: "¿Cuál es tu prioridad en el tratamiento prehospitalario?" },
+            {question: "¿Qué síntomas clínicos ayudan a diferenciar hiperglucemia de hipoglucemia?"},
+            {question: "¿Qué complicaciones puede generar una hiperglucemia mantenida?"},
+            {question: "¿Cuál es tu prioridad en el tratamiento prehospitalario?"},
         ],
         references: ["AAOS 11ª Edición - Capítulo de emergencias endocrinas."],
     },
@@ -772,9 +772,9 @@ export const caseStudies: CaseStudy[] = [
             "Requiere traslado inmediato a ginecología",
         ],
         questions: [
-            { question: "¿Qué signos hacen sospechar un aborto incompleto?" },
-            { question: "¿Qué cuidados emocionales debes ofrecer a esta paciente?" },
-            { question: "¿Cómo se debe manejar el tejido expulsado?" },
+            {question: "¿Qué signos hacen sospechar un aborto incompleto?"},
+            {question: "¿Qué cuidados emocionales debes ofrecer a esta paciente?"},
+            {question: "¿Cómo se debe manejar el tejido expulsado?"},
         ],
         references: ["AAOS 11ª Edición - Capítulo de emergencias ginecológicas."],
     },
@@ -796,9 +796,9 @@ export const caseStudies: CaseStudy[] = [
             "Evitar ocluir ambos lados del cuello",
         ],
         questions: [
-            { question: "¿Qué complicaciones pueden surgir al manipular heridas cervicales?" },
-            { question: "¿Qué debe evitarse al aplicar presión en el cuello?" },
-            { question: "¿Qué signos clínicos indican compromiso de vía aérea?" },
+            {question: "¿Qué complicaciones pueden surgir al manipular heridas cervicales?"},
+            {question: "¿Qué debe evitarse al aplicar presión en el cuello?"},
+            {question: "¿Qué signos clínicos indican compromiso de vía aérea?"},
         ],
         references: ["AAOS 11ª Edición - Capítulo de trauma de cuello y vía aérea."],
     },
@@ -820,9 +820,9 @@ export const caseStudies: CaseStudy[] = [
             "Descartar causas orgánicas antes de concluir diagnóstico psicológico",
         ],
         questions: [
-            { question: "¿Qué diferencia hay entre un ataque de pánico y un IAM?" },
-            { question: "¿Qué estrategias puedes usar para tranquilizar a la paciente?" },
-            { question: "¿Por qué es importante tomar signos vitales y glucosa aunque parezca 'solo ansiedad'?" },
+            {question: "¿Qué diferencia hay entre un ataque de pánico y un IAM?"},
+            {question: "¿Qué estrategias puedes usar para tranquilizar a la paciente?"},
+            {question: "¿Por qué es importante tomar signos vitales y glucosa aunque parezca 'solo ansiedad'?"},
         ],
         references: ["AAOS 11ª Edición - Capítulo de emergencias psiquiátricas."],
     },
@@ -844,9 +844,9 @@ export const caseStudies: CaseStudy[] = [
             "Uso de DEA pediátrico si disponible",
         ],
         questions: [
-            { question: "¿Cuál es la relación compresiones:ventilaciones en RCP de lactantes con 2 rescatistas?" },
-            { question: "¿Qué debes tener en cuenta al usar un DEA en pediátricos?" },
-            { question: "¿Qué diferencia hay entre paro primario respiratorio y cardíaco en niños?" },
+            {question: "¿Cuál es la relación compresiones:ventilaciones en RCP de lactantes con 2 rescatistas?"},
+            {question: "¿Qué debes tener en cuenta al usar un DEA en pediátricos?"},
+            {question: "¿Qué diferencia hay entre paro primario respiratorio y cardíaco en niños?"},
         ],
         references: ["AAOS 11ª Edición - Capítulo de emergencias pediátricas y RCP."],
     },
@@ -868,9 +868,9 @@ export const caseStudies: CaseStudy[] = [
             "Evaluar pulso, sensibilidad y movimiento distal",
         ],
         questions: [
-            { question: "¿Qué diferencias clínicas hay entre una luxación y una fractura?" },
-            { question: "¿Por qué no se recomienda reducir la luxación en el campo?" },
-            { question: "¿Qué técnicas de inmovilización son seguras para el hombro?" },
+            {question: "¿Qué diferencias clínicas hay entre una luxación y una fractura?"},
+            {question: "¿Por qué no se recomienda reducir la luxación en el campo?"},
+            {question: "¿Qué técnicas de inmovilización son seguras para el hombro?"},
         ],
         references: ["AAOS 11ª Edición - Capítulo de trauma músculo-esquelético."],
     },
@@ -892,9 +892,9 @@ export const caseStudies: CaseStudy[] = [
             "Posible necesidad de taponamiento posterior en hospital",
         ],
         questions: [
-            { question: "¿Qué técnica es más efectiva para controlar epistaxis anterior?" },
-            { question: "¿Qué factores aumentan el riesgo de hemorragia nasal severa?" },
-            { question: "¿Por qué es peligrosa la epistaxis en pacientes anticoagulados?" },
+            {question: "¿Qué técnica es más efectiva para controlar epistaxis anterior?"},
+            {question: "¿Qué factores aumentan el riesgo de hemorragia nasal severa?"},
+            {question: "¿Por qué es peligrosa la epistaxis en pacientes anticoagulados?"},
         ],
         references: ["AAOS 11ª Edición - Capítulo de hemorragias y emergencias médicas."],
     },
@@ -916,9 +916,9 @@ export const caseStudies: CaseStudy[] = [
             "Evaluar con APGAR y trasladar a centro con neonatal",
         ],
         questions: [
-            { question: "¿Qué parámetros se evalúan en la escala de APGAR?" },
-            { question: "¿Cuándo está indicada la ventilación con BVM en neonatos?" },
-            { question: "¿Qué condiciones pueden causar dificultad respiratoria neonatal?" },
+            {question: "¿Qué parámetros se evalúan en la escala de APGAR?"},
+            {question: "¿Cuándo está indicada la ventilación con BVM en neonatos?"},
+            {question: "¿Qué condiciones pueden causar dificultad respiratoria neonatal?"},
         ],
         references: ["AAOS 11ª Edición - Capítulo de emergencias obstétricas y neonatales."],
     },
@@ -940,9 +940,9 @@ export const caseStudies: CaseStudy[] = [
             "Inmovilización espinal + oxígeno + monitoreo estrecho",
         ],
         questions: [
-            { question: "¿Qué diferencia al shock neurogénico de otros tipos de shock?" },
-            { question: "¿Por qué puede haber piel caliente en estado de shock?" },
-            { question: "¿Qué prioridad tiene el control de la vía aérea en lesiones medulares?" },
+            {question: "¿Qué diferencia al shock neurogénico de otros tipos de shock?"},
+            {question: "¿Por qué puede haber piel caliente en estado de shock?"},
+            {question: "¿Qué prioridad tiene el control de la vía aérea en lesiones medulares?"},
         ],
         references: ["AAOS 11ª Edición - Capítulo de shock y trauma de columna."],
     },
@@ -965,9 +965,9 @@ export const caseStudies: CaseStudy[] = [
             "Riesgo de hipotermia a pesar de la piel caliente.",
         ],
         questions: [
-            { question: "¿Qué diferencia al shock neurogénico de otros tipos de shock en cuanto a los signos vitales?" },
-            { question: "¿Por qué puede haber piel caliente y seca en un estado de shock distributivo como este?" },
-            { question: "¿Qué prioridad tiene el control de la vía aérea y la ventilación en lesiones medulares altas?" },
+            {question: "¿Qué diferencia al shock neurogénico de otros tipos de shock en cuanto a los signos vitales?"},
+            {question: "¿Por qué puede haber piel caliente y seca en un estado de shock distributivo como este?"},
+            {question: "¿Qué prioridad tiene el control de la vía aérea y la ventilación en lesiones medulares altas?"},
         ],
         references: ["Capítulo 12 - Shock.pdf", "Capítulo 17 - Emergencias Neurologicas.pdf"],
     },
@@ -990,9 +990,9 @@ export const caseStudies: CaseStudy[] = [
             "El uso de aspirina y anticoagulantes contribuye a la severidad del sangrado.",
         ],
         questions: [
-            { question: "¿Qué signos y síntomas indican la necesidad de un traslado urgente en un sangrado gastrointestinal?" },
-            { question: "¿Qué tipo de medicamentos aumentan significativamente el riesgo de hemorragia digestiva?" },
-            { question: "¿Por qué los adultos mayores pueden descompensarse más rápido en un shock hipovolémico?" },
+            {question: "¿Qué signos y síntomas indican la necesidad de un traslado urgente en un sangrado gastrointestinal?"},
+            {question: "¿Qué tipo de medicamentos aumentan significativamente el riesgo de hemorragia digestiva?"},
+            {question: "¿Por qué los adultos mayores pueden descompensarse más rápido en un shock hipovolémico?"},
         ],
         references: ["Capítulo 12 - Shock.pdf", "Capítulo 18 - Emergencias gastrointestinales y urologicas.pdf"],
     },
@@ -1013,9 +1013,9 @@ export const caseStudies: CaseStudy[] = [
             "Requiere monitorización cardíaca y manejo inmediato del dolor y la isquemia.",
         ],
         questions: [
-            { question: "¿Cuáles son las acciones prioritarias de manejo para este paciente según los protocolos de SCA?" },
-            { question: "¿Por qué es crucial administrar aspirina en este escenario y cuál es la dosis recomendada?" },
-            { question: "¿Qué contraindicaciones se deben verificar antes de administrar nitroglicerina?" },
+            {question: "¿Cuáles son las acciones prioritarias de manejo para este paciente según los protocolos de SCA?"},
+            {question: "¿Por qué es crucial administrar aspirina en este escenario y cuál es la dosis recomendada?"},
+            {question: "¿Qué contraindicaciones se deben verificar antes de administrar nitroglicerina?"},
         ],
         references: ["Capítulo 16 - Emergencias cardiovasculares.pdf"],
     },
@@ -1036,9 +1036,9 @@ export const caseStudies: CaseStudy[] = [
             "Hipoxia a pesar de la taquipnea.",
         ],
         questions: [
-            { question: "¿Qué hallazgo auscultatorio podría indicar un empeoramiento crítico en este paciente (un 'tórax silencioso')?" },
-            { question: "¿Cuál es el tratamiento farmacológico de primera línea en esta situación y cómo se administra?" },
-            { question: "Si la SpO2 del paciente no mejora con oxígeno suplementario, ¿qué indica esto sobre la gravedad de la obstrucción?" },
+            {question: "¿Qué hallazgo auscultatorio podría indicar un empeoramiento crítico en este paciente (un 'tórax silencioso')?"},
+            {question: "¿Cuál es el tratamiento farmacológico de primera línea en esta situación y cómo se administra?"},
+            {question: "Si la SpO2 del paciente no mejora con oxígeno suplementario, ¿qué indica esto sobre la gravedad de la obstrucción?"},
         ],
         references: ["Capítulo 15 - Emergencias respiratorias.pdf"],
     },
@@ -1060,9 +1060,9 @@ export const caseStudies: CaseStudy[] = [
             "El tiempo de inicio ('última vez vista normal') es crucial para el tratamiento hospitalario (trombólisis).",
         ],
         questions: [
-            { question: "¿Por qué es fundamental medir la glucemia capilar en todo paciente con sospecha de EVC?" },
-            { question: "Utilizando la escala de Cincinnati (o FAST/BE-FAST), ¿qué componentes evalúa y cómo los aplicaría en esta paciente?" },
-            { question: "¿Cuál es la prioridad absoluta en el manejo prehospitalario de un paciente en la ventana terapéutica para trombólisis?" },
+            {question: "¿Por qué es fundamental medir la glucemia capilar en todo paciente con sospecha de EVC?"},
+            {question: "Utilizando la escala de Cincinnati (o FAST/BE-FAST), ¿qué componentes evalúa y cómo los aplicaría en esta paciente?"},
+            {question: "¿Cuál es la prioridad absoluta en el manejo prehospitalario de un paciente en la ventana terapéutica para trombólisis?"},
         ],
         references: ["Capítulo 17 - Emergencias Neurologicas.pdf"],
     },
@@ -1084,9 +1084,9 @@ export const caseStudies: CaseStudy[] = [
             "Vía aérea comprometida debido al bajo nivel de conciencia.",
         ],
         questions: [
-            { question: "¿Cuál es la diferencia en la presentación clínica (piel, aliento, inicio) entre la hipoglucemia y la hiperglucemia (cetoacidosis diabética)?" },
-            { question: "¿Cuál es el tratamiento indicado para un paciente hipoglucémico inconsciente y cómo se administra de forma segura?" },
-            { question: "¿Qué harías si no tuvieras acceso IV inmediato en este paciente?" },
+            {question: "¿Cuál es la diferencia en la presentación clínica (piel, aliento, inicio) entre la hipoglucemia y la hiperglucemia (cetoacidosis diabética)?"},
+            {question: "¿Cuál es el tratamiento indicado para un paciente hipoglucémico inconsciente y cómo se administra de forma segura?"},
+            {question: "¿Qué harías si no tuvieras acceso IV inmediato en este paciente?"},
         ],
         references: ["Capítulo 19 - Emergencias endocrinas y hematologicas.pdf"],
     },
@@ -1107,9 +1107,9 @@ export const caseStudies: CaseStudy[] = [
             "Hipotensión severa secundaria a la vasodilatación masiva.",
         ],
         questions: [
-            { question: "¿Cuál es el medicamento de primera línea para la anafilaxia y cuál es su mecanismo de acción principal?" },
-            { question: "¿Por qué la hipotensión es un signo tan ominoso en la anafilaxia?" },
-            { question: "Además de la epinefrina, ¿qué otras intervenciones son importantes en el manejo prehospitalario de este paciente?" },
+            {question: "¿Cuál es el medicamento de primera línea para la anafilaxia y cuál es su mecanismo de acción principal?"},
+            {question: "¿Por qué la hipotensión es un signo tan ominoso en la anafilaxia?"},
+            {question: "Además de la epinefrina, ¿qué otras intervenciones son importantes en el manejo prehospitalario de este paciente?"},
         ],
         references: ["Capítulo 12 - Shock.pdf", "Capítulo 15 - Emergencias respiratorias.pdf"],
     },
@@ -1131,9 +1131,9 @@ export const caseStudies: CaseStudy[] = [
             "El esputo rosado y espumoso es patognomónico de edema pulmonar.",
         ],
         questions: [
-            { question: "¿Cuál es la fisiopatología del edema agudo de pulmón en un paciente con ICC?" },
-            { question: "¿Qué beneficios puede aportar la ventilación con presión positiva (CPAP) en este escenario?" },
-            { question: "¿Por qué el paciente no tolera estar acostado (ortopnea)?" },
+            {question: "¿Cuál es la fisiopatología del edema agudo de pulmón en un paciente con ICC?"},
+            {question: "¿Qué beneficios puede aportar la ventilación con presión positiva (CPAP) en este escenario?"},
+            {question: "¿Por qué el paciente no tolera estar acostado (ortopnea)?"},
         ],
         references: ["Capítulo 16 - Emergencias cardiovasculares.pdf", "Capítulo 15 - Emergencias respiratorias.pdf"],
     },
@@ -1155,9 +1155,9 @@ export const caseStudies: CaseStudy[] = [
             "Vía aérea permeable, pero con riesgo de aspiración por el nivel de conciencia.",
         ],
         questions: [
-            { question: "¿Cuáles son las prioridades de evaluación y manejo en un paciente en estado postictal?" },
-            { question: "¿Qué hallazgos durante la evaluación podrían indicar una causa traumática de la convulsión?" },
-            { question: "Si el paciente comenzara a convulsionar nuevamente antes de recuperar la conciencia, ¿cómo se llamaría esta condición y por qué es una emergencia crítica?" },
+            {question: "¿Cuáles son las prioridades de evaluación y manejo en un paciente en estado postictal?"},
+            {question: "¿Qué hallazgos durante la evaluación podrían indicar una causa traumática de la convulsión?"},
+            {question: "Si el paciente comenzara a convulsionar nuevamente antes de recuperar la conciencia, ¿cómo se llamaría esta condición y por qué es una emergencia crítica?"},
         ],
         references: ["Capítulo 17 - Emergencias Neurologicas.pdf"],
     },
@@ -1179,9 +1179,9 @@ export const caseStudies: CaseStudy[] = [
             "Las respiraciones de Kussmaul son un intento del cuerpo por compensar la acidosis metabólica.",
         ],
         questions: [
-            { question: "¿Qué significan las '3 P' (polidipsia, polifagia, poliuria) en el contexto de la diabetes no controlada?" },
-            { question: "¿Por qué un paciente con CAD presenta hipotensión y taquicardia?" },
-            { question: "Explique el propósito fisiológico de las respiraciones de Kussmaul." },
+            {question: "¿Qué significan las '3 P' (polidipsia, polifagia, poliuria) en el contexto de la diabetes no controlada?"},
+            {question: "¿Por qué un paciente con CAD presenta hipotensión y taquicardia?"},
+            {question: "Explique el propósito fisiológico de las respiraciones de Kussmaul."},
         ],
         references: ["Capítulo 19 - Emergencias endocrinas y hematologicas.pdf"],
     },
@@ -1203,390 +1203,574 @@ export const caseStudies: CaseStudy[] = [
             "El déficit de pulso y la diferencia de presión arterial entre ambos brazos (pulso paradójico) son signos clave.",
         ],
         questions: [
-            { question: "¿Por qué este cuadro clínico es una contraindicación para la administración de aspirina, a diferencia de un infarto?" },
-            { question: "¿Cuál es la importancia de identificar una diferencia de presión arterial mayor a 20 mmHg entre las extremidades?" },
-            { question: "En el manejo de una disección aórtica, ¿cuál es el objetivo principal con respecto a la presión arterial y la frecuencia cardíaca y por qué?" },
+            {question: "¿Por qué este cuadro clínico es una contraindicación para la administración de aspirina, a diferencia de un infarto?"},
+            {question: "¿Cuál es la importancia de identificar una diferencia de presión arterial mayor a 20 mmHg entre las extremidades?"},
+            {question: "En el manejo de una disección aórtica, ¿cuál es el objetivo principal con respecto a la presión arterial y la frecuencia cardíaca y por qué?"},
         ],
         references: ["Capítulo 16 - Emergencias cardiovasculares.pdf"],
     },
     {
-    "id": "iamcest-01",
-    "title": "Dolor torácico opresivo en adulto mayor",
-    "description": "Masculino de 65 años, diabético e hipertenso, presenta dolor torácico opresivo de inicio súbito desde hace 1 hora, que irradia a brazo izquierdo y mandíbula. Refiere náuseas y sudoración profusa.",
-    "initialAssessment": "Paciente consciente, orientado, con evidente facies de dolor. Piel pálida y fría. Se observa diaforesis marcada. Refiere no tener alergias conocidas.",
-    "vitalSigns": {
-        "FC": "105 lpm (pulso irregular)",
-        "TA": "150/90 mmHg",
-        "FR": "22 rpm",
-        "SpO2": "92% (aire ambiente)"
-    },
-    "findings": [
-        "Síndrome Coronario Agudo, probable Infarto Agudo de Miocardio con elevación del ST (IAMCEST).",
-        "Dolor torácico de origen cardiogénico.",
-        "Necesidad de monitorización cardíaca continua y traslado prioritario a un centro con capacidad de intervención coronaria percutánea (ICP)."
-    ],
-    "questions": [
-        { "question": "¿Cuáles son los componentes clave del tratamiento prehospitalario para un paciente con sospecha de IAMCEST?" },
-        { "question": "¿Por qué es crucial realizar un electrocardiograma (ECG) de 12 derivaciones de manera temprana en este paciente?" },
-        { "question": "¿Qué precauciones se deben tomar al administrar nitroglicerina a un paciente con dolor torácico?" }
-    ],
-    "references": [
-        "AAOS 11ª Edición - Capítulo de Emergencias Cardiovasculares."
-    ]
+        "id": "iamcest-01",
+        "title": "Dolor torácico opresivo en adulto mayor",
+        "description": "Masculino de 65 años, diabético e hipertenso, presenta dolor torácico opresivo de inicio súbito desde hace 1 hora, que irradia a brazo izquierdo y mandíbula. Refiere náuseas y sudoración profusa.",
+        "initialAssessment": "Paciente consciente, orientado, con evidente facies de dolor. Piel pálida y fría. Se observa diaforesis marcada. Refiere no tener alergias conocidas.",
+        "vitalSigns": {
+            "FC": "105 lpm (pulso irregular)",
+            "TA": "150/90 mmHg",
+            "FR": "22 rpm",
+            "SpO2": "92% (aire ambiente)"
+        },
+        "findings": [
+            "Síndrome Coronario Agudo, probable Infarto Agudo de Miocardio con elevación del ST (IAMCEST).",
+            "Dolor torácico de origen cardiogénico.",
+            "Necesidad de monitorización cardíaca continua y traslado prioritario a un centro con capacidad de intervención coronaria percutánea (ICP)."
+        ],
+        "questions": [
+            {"question": "¿Cuáles son los componentes clave del tratamiento prehospitalario para un paciente con sospecha de IAMCEST?"},
+            {"question": "¿Por qué es crucial realizar un electrocardiograma (ECG) de 12 derivaciones de manera temprana en este paciente?"},
+            {"question": "¿Qué precauciones se deben tomar al administrar nitroglicerina a un paciente con dolor torácico?"}
+        ],
+        "references": [
+            "AAOS 11ª Edición - Capítulo de Emergencias Cardiovasculares."
+        ]
     },
     {
-    "id": "asma-severa-02",
-    "title": "Dificultad respiratoria aguda en paciente pediátrico",
-    "description": "Niña de 8 años con antecedentes de asma, presenta dificultad respiratoria severa que no mejora con su inhalador de rescate. Los padres refieren que ha estado con tos durante dos días. Presenta sibilancias audibles a distancia.",
-    "initialAssessment": "Paciente pediátrica sentada en posición de trípode, ansiosa. Uso visible de músculos accesorios para respirar. Aleteo nasal y retracción intercostal. Incapaz de hablar en oraciones completas.",
-    "vitalSigns": {
-        "FC": "130 lpm",
-        "TA": "100/65 mmHg",
-        "FR": "35 rpm",
-        "SpO2": "89% (aire ambiente)"
+        "id": "asma-severa-02",
+        "title": "Dificultad respiratoria aguda en paciente pediátrico",
+        "description": "Niña de 8 años con antecedentes de asma, presenta dificultad respiratoria severa que no mejora con su inhalador de rescate. Los padres refieren que ha estado con tos durante dos días. Presenta sibilancias audibles a distancia.",
+        "initialAssessment": "Paciente pediátrica sentada en posición de trípode, ansiosa. Uso visible de músculos accesorios para respirar. Aleteo nasal y retracción intercostal. Incapaz de hablar en oraciones completas.",
+        "vitalSigns": {
+            "FC": "130 lpm",
+            "TA": "100/65 mmHg",
+            "FR": "35 rpm",
+            "SpO2": "89% (aire ambiente)"
+        },
+        "findings": [
+            "Crisis asmática severa / Estatus asmático.",
+            "Insuficiencia respiratoria inminente.",
+            "Hipoxia moderada."
+        ],
+        "questions": [
+            {"question": "¿Qué hallazgos clínicos indican una crisis asmática que pone en peligro la vida?"},
+            {"question": "¿Cuál es el tratamiento farmacológico de primera línea en el manejo prehospitalario del asma severa?"},
+            {"question": "Explique la importancia de la administración de oxígeno y cómo se debe titular en este caso."}
+        ],
+        "references": [
+            "AAOS 11ª Edición - Capítulo de Emergencias Respiratorias."
+        ]
     },
-    "findings": [
-        "Crisis asmática severa / Estatus asmático.",
-        "Insuficiencia respiratoria inminente.",
-        "Hipoxia moderada."
-    ],
-    "questions": [
-        { "question": "¿Qué hallazgos clínicos indican una crisis asmática que pone en peligro la vida?" },
-        { "question": "¿Cuál es el tratamiento farmacológico de primera línea en el manejo prehospitalario del asma severa?" },
-        { "question": "Explique la importancia de la administración de oxígeno y cómo se debe titular en este caso." }
-    ],
-    "references": [
-        "AAOS 11ª Edición - Capítulo de Emergencias Respiratorias."
-    ]
-},
-{
-    "id": "evc-isquemico-03",
-    "title": "Inicio súbito de debilidad facial y dificultad para hablar",
-    "description": "Mujer de 72 años encontrada por su familia con debilidad súbita en el lado derecho de la cara y el brazo. Presenta dificultad para articular palabras (disartria) y parece confundida. Los síntomas iniciaron hace aproximadamente 45 minutos.",
-    "initialAssessment": "Paciente consciente, pero desorientada en tiempo y lugar. Se observa asimetría facial con caída de la comisura labial derecha. Incapacidad para levantar el brazo derecho (hemiparesia). Pupilas isocóricas y reactivas.",
-    "vitalSigns": {
-        "FC": "90 lpm (rítmico)",
-        "TA": "180/100 mmHg",
-        "FR": "18 rpm",
-        "SpO2": "97% (aire ambiente)"
+    {
+        "id": "evc-isquemico-03",
+        "title": "Inicio súbito de debilidad facial y dificultad para hablar",
+        "description": "Mujer de 72 años encontrada por su familia con debilidad súbita en el lado derecho de la cara y el brazo. Presenta dificultad para articular palabras (disartria) y parece confundida. Los síntomas iniciaron hace aproximadamente 45 minutos.",
+        "initialAssessment": "Paciente consciente, pero desorientada en tiempo y lugar. Se observa asimetría facial con caída de la comisura labial derecha. Incapacidad para levantar el brazo derecho (hemiparesia). Pupilas isocóricas y reactivas.",
+        "vitalSigns": {
+            "FC": "90 lpm (rítmico)",
+            "TA": "180/100 mmHg",
+            "FR": "18 rpm",
+            "SpO2": "97% (aire ambiente)"
+        },
+        "findings": [
+            "Sospecha de Evento Vascular Cerebral (EVC) agudo.",
+            "Déficit neurológico focal (hemiparesia derecha, disartria).",
+            "Paciente dentro de la ventana de tiempo para terapia trombolítica."
+        ],
+        "questions": [
+            {"question": "¿Qué herramientas de evaluación prehospitalaria (escalas) se utilizan para identificar un posible EVC?"},
+            {"question": "¿Por qué es fundamental determinar la hora de inicio de los síntomas en un paciente con sospecha de EVC?"},
+            {"question": "¿Cuál es el manejo prioritario y el destino de traslado para este tipo de paciente?"}
+        ],
+        "references": [
+            "AAOS 11ª Edición - Capítulo de Emergencias Neurológicas."
+        ]
     },
-    "findings": [
-        "Sospecha de Evento Vascular Cerebral (EVC) agudo.",
-        "Déficit neurológico focal (hemiparesia derecha, disartria).",
-        "Paciente dentro de la ventana de tiempo para terapia trombolítica."
-    ],
-    "questions": [
-        { "question": "¿Qué herramientas de evaluación prehospitalaria (escalas) se utilizan para identificar un posible EVC?" },
-        { "question": "¿Por qué es fundamental determinar la hora de inicio de los síntomas en un paciente con sospecha de EVC?" },
-        { "question": "¿Cuál es el manejo prioritario y el destino de traslado para este tipo de paciente?" }
-    ],
-    "references": [
-        "AAOS 11ª Edición - Capítulo de Emergencias Neurológicas."
-    ]
-},
-{
-    "id": "anafilaxia-04",
-    "title": "Reacción alérgica severa tras picadura de abeja",
-    "description": "Hombre de 40 años sufre picadura de abeja en el cuello mientras trabajaba en su jardín. A los pocos minutos, desarrolla urticaria generalizada, hinchazón de labios y lengua, y siente que se le cierra la garganta.",
-    "initialAssessment": "Paciente ansioso, con voz ronca y estridor inspiratorio audible. Presenta edema facial y urticaria en tronco y extremidades. Dificultad para respirar evidente.",
-    "vitalSigns": {
-        "FC": "125 lpm",
-        "TA": "88/50 mmHg",
-        "FR": "28 rpm",
-        "SpO2": "91% (aire ambiente)"
+    {
+        "id": "anafilaxia-04",
+        "title": "Reacción alérgica severa tras picadura de abeja",
+        "description": "Hombre de 40 años sufre picadura de abeja en el cuello mientras trabajaba en su jardín. A los pocos minutos, desarrolla urticaria generalizada, hinchazón de labios y lengua, y siente que se le cierra la garganta.",
+        "initialAssessment": "Paciente ansioso, con voz ronca y estridor inspiratorio audible. Presenta edema facial y urticaria en tronco y extremidades. Dificultad para respirar evidente.",
+        "vitalSigns": {
+            "FC": "125 lpm",
+            "TA": "88/50 mmHg",
+            "FR": "28 rpm",
+            "SpO2": "91% (aire ambiente)"
+        },
+        "findings": [
+            "Anafilaxia con compromiso de la vía aérea y cardiovascular.",
+            "Choque anafiláctico.",
+            "Necesidad inmediata de administración de epinefrina."
+        ],
+        "questions": [
+            {"question": "¿Cuáles son los criterios para diagnosticar anafilaxia en el entorno prehospitalario?"},
+            {"question": "Describa la dosis, vía de administración y mecanismo de acción de la epinefrina en la anafilaxia."},
+            {"question": "¿Qué otros tratamientos, además de la epinefrina, son importantes en el manejo de la anafilaxia severa?"}
+        ],
+        "references": [
+            "AAOS 11ª Edición - Capítulo de Reacciones Alérgicas y Anafilaxia."
+        ]
     },
-    "findings": [
-        "Anafilaxia con compromiso de la vía aérea y cardiovascular.",
-        "Choque anafiláctico.",
-        "Necesidad inmediata de administración de epinefrina."
-    ],
-    "questions": [
-        { "question": "¿Cuáles son los criterios para diagnosticar anafilaxia en el entorno prehospitalario?" },
-        { "question": "Describa la dosis, vía de administración y mecanismo de acción de la epinefrina en la anafilaxia." },
-        { "question": "¿Qué otros tratamientos, además de la epinefrina, son importantes en el manejo de la anafilaxia severa?" }
-    ],
-    "references": [
-        "AAOS 11ª Edición - Capítulo de Reacciones Alérgicas y Anafilaxia."
-    ]
-},
-{
-    "id": "hipoglucemia-05",
-    "title": "Alteración del estado mental en paciente diabético",
-    "description": "Se solicita una ambulancia para un hombre de 55 años, conocido por ser diabético tipo 1, encontrado por su esposa inconsciente en la cama. Refiere que se administró su insulina pero no ha comido.",
-    "initialAssessment": "Paciente masculino inconsciente, no responde a estímulos verbales ni dolorosos. Piel pálida, fría y diaforética. Respiración superficial y rápida. No hay evidencia de trauma.",
-    "vitalSigns": {
-        "FC": "110 lpm",
-        "TA": "105/60 mmHg",
-        "FR": "24 rpm",
-        "SpO2": "98% (aire ambiente)",
-        "Glucemia Capilar": "35 mg/dL"
+    {
+        "id": "hipoglucemia-05",
+        "title": "Alteración del estado mental en paciente diabético",
+        "description": "Se solicita una ambulancia para un hombre de 55 años, conocido por ser diabético tipo 1, encontrado por su esposa inconsciente en la cama. Refiere que se administró su insulina pero no ha comido.",
+        "initialAssessment": "Paciente masculino inconsciente, no responde a estímulos verbales ni dolorosos. Piel pálida, fría y diaforética. Respiración superficial y rápida. No hay evidencia de trauma.",
+        "vitalSigns": {
+            "FC": "110 lpm",
+            "TA": "105/60 mmHg",
+            "FR": "24 rpm",
+            "SpO2": "98% (aire ambiente)",
+            "Glucemia Capilar": "35 mg/dL"
+        },
+        "findings": [
+            "Hipoglucemia severa.",
+            "Alteración del estado de conciencia secundario a neuroglucopenia.",
+            "Riesgo de daño cerebral si no se revierte rápidamente."
+        ],
+        "questions": [
+            {"question": "¿Por qué un paciente con hipoglucemia severa puede presentar signos neurológicos focales o convulsiones?"},
+            {"question": "¿Cuál es el tratamiento de elección para un paciente inconsciente con hipoglucemia severa y cómo se administra?"},
+            {"question": "¿Qué se debe hacer después de que el paciente recupere la conciencia tras el tratamiento?"}
+        ],
+        "references": [
+            "AAOS 11ª Edición - Capítulo de Emergencias Diabéticas."
+        ]
     },
-    "findings": [
-        "Hipoglucemia severa.",
-        "Alteración del estado de conciencia secundario a neuroglucopenia.",
-        "Riesgo de daño cerebral si no se revierte rápidamente."
-    ],
-    "questions": [
-        { "question": "¿Por qué un paciente con hipoglucemia severa puede presentar signos neurológicos focales o convulsiones?" },
-        { "question": "¿Cuál es el tratamiento de elección para un paciente inconsciente con hipoglucemia severa y cómo se administra?" },
-        { "question": "¿Qué se debe hacer después de que el paciente recupere la conciencia tras el tratamiento?" }
-    ],
-    "references": [
-        "AAOS 11ª Edición - Capítulo de Emergencias Diabéticas."
-    ]
-},
-{
-    "id": "sobredosis-opioides-06",
-    "title": "Depresión respiratoria en adulto joven",
-    "description": "Joven de 24 años encontrado inconsciente en un baño público. Amigos refieren que podría haber consumido heroína. En la escena se observa parafernalia para uso de drogas intravenosas.",
-    "initialAssessment": "Paciente cianótico, no responde. Se observa miosis puntiforme bilateral. Respiraciones agónicas, de 4 a 6 por minuto. Pulso radial débil y filiforme.",
-    "vitalSigns": {
-        "FC": "50 lpm",
-        "TA": "80/40 mmHg",
-        "FR": "4 rpm",
-        "SpO2": "75% (aire ambiente)"
+    {
+        "id": "sobredosis-opioides-06",
+        "title": "Depresión respiratoria en adulto joven",
+        "description": "Joven de 24 años encontrado inconsciente en un baño público. Amigos refieren que podría haber consumido heroína. En la escena se observa parafernalia para uso de drogas intravenosas.",
+        "initialAssessment": "Paciente cianótico, no responde. Se observa miosis puntiforme bilateral. Respiraciones agónicas, de 4 a 6 por minuto. Pulso radial débil y filiforme.",
+        "vitalSigns": {
+            "FC": "50 lpm",
+            "TA": "80/40 mmHg",
+            "FR": "4 rpm",
+            "SpO2": "75% (aire ambiente)"
+        },
+        "findings": [
+            "Sobredosis de opioides.",
+            "Depresión respiratoria severa y paro respiratorio inminente.",
+            "Hipoxia y bradicardia secundarias."
+        ],
+        "questions": [
+            {"question": "¿Cuál es la tríada clásica de una sobredosis de opioides?"},
+            {"question": "Describa el manejo inicial de la vía aérea y la ventilación antes de administrar el antídoto."},
+            {"question": "¿Cuál es el fármaco revertor, su vía de administración preferida en el ámbito prehospitalario y qué se debe anticipar después de su administración?"}
+        ],
+        "references": [
+            "AAOS 11ª Edición - Capítulo de Emergencias Toxicológicas."
+        ]
     },
-    "findings": [
-        "Sobredosis de opioides.",
-        "Depresión respiratoria severa y paro respiratorio inminente.",
-        "Hipoxia y bradicardia secundarias."
-    ],
-    "questions": [
-        { "question": "¿Cuál es la tríada clásica de una sobredosis de opioides?" },
-        { "question": "Describa el manejo inicial de la vía aérea y la ventilación antes de administrar el antídoto." },
-        { "question": "¿Cuál es el fármaco revertor, su vía de administración preferida en el ámbito prehospitalario y qué se debe anticipar después de su administración?" }
-    ],
-    "references": [
-        "AAOS 11ª Edición - Capítulo de Emergencias Toxicológicas."
-    ]
-},
-{
-    "id": "tce-severo-07",
-    "title": "Caída de altura con alteración de conciencia",
-    "description": "Trabajador de la construcción de 35 años cae de un andamio de aproximadamente 6 metros de altura. No llevaba casco. Presenta pérdida de conciencia inicial, seguida de un periodo de lucidez y posterior deterioro neurológico.",
-    "initialAssessment": "Paciente masculino con respuesta motora de decorticación al estímulo doloroso. Emite sonidos incomprensibles y no abre los ojos. Se observa una herida en la región temporal derecha y otorragia del mismo lado. Restricción de movimiento espinal en progreso.",
-    "vitalSigns": {
-        "FC": "55 lpm",
-        "TA": "190/110 mmHg",
-        "FR": "12 rpm (patrón irregular)",
-        "SpO2": "90% (con O2 a 15L/min)"
+    {
+        "id": "tce-severo-07",
+        "title": "Caída de altura con alteración de conciencia",
+        "description": "Trabajador de la construcción de 35 años cae de un andamio de aproximadamente 6 metros de altura. No llevaba casco. Presenta pérdida de conciencia inicial, seguida de un periodo de lucidez y posterior deterioro neurológico.",
+        "initialAssessment": "Paciente masculino con respuesta motora de decorticación al estímulo doloroso. Emite sonidos incomprensibles y no abre los ojos. Se observa una herida en la región temporal derecha y otorragia del mismo lado. Restricción de movimiento espinal en progreso.",
+        "vitalSigns": {
+            "FC": "55 lpm",
+            "TA": "190/110 mmHg",
+            "FR": "12 rpm (patrón irregular)",
+            "SpO2": "90% (con O2 a 15L/min)"
+        },
+        "findings": [
+            "Traumatismo Craneoencefálico (TCE) severo (Glasgow de 5).",
+            "Sospecha de hematoma epidural por el intervalo lúcido.",
+            "Signos de hipertensión intracraneal (Tríada de Cushing)."
+        ],
+        "questions": [
+            {"question": "Explique los componentes de la Tríada de Cushing y su significado clínico en el TCE."},
+            {"question": "¿Cuál es el manejo prioritario de la vía aérea en un paciente con TCE severo y Glasgow bajo?"},
+            {"question": "¿Cómo se debe manejar la presión arterial y la oxigenación para prevenir lesiones secundarias en el cerebro?"}
+        ],
+        "references": [
+            "AAOS 11ª Edición - Capítulo de Trauma Craneoencefálico."
+        ]
     },
-    "findings": [
-        "Traumatismo Craneoencefálico (TCE) severo (Glasgow de 5).",
-        "Sospecha de hematoma epidural por el intervalo lúcido.",
-        "Signos de hipertensión intracraneal (Tríada de Cushing)."
-    ],
-    "questions": [
-        { "question": "Explique los componentes de la Tríada de Cushing y su significado clínico en el TCE." },
-        { "question": "¿Cuál es el manejo prioritario de la vía aérea en un paciente con TCE severo y Glasgow bajo?" },
-        { "question": "¿Cómo se debe manejar la presión arterial y la oxigenación para prevenir lesiones secundarias en el cerebro?" }
-    ],
-    "references": [
-        "AAOS 11ª Edición - Capítulo de Trauma Craneoencefálico."
-    ]
-},
-{
-    "id": "neumotorax-tension-08",
-    "title": "Dolor torácico y disnea tras herida punzante",
-    "description": "Hombre de 28 años involucrado en una riña, sufre una herida por arma blanca en el hemitórax derecho, a nivel del 4º espacio intercostal. Presenta dolor agudo y dificultad respiratoria que empeora rápidamente.",
-    "initialAssessment": "Paciente ansioso, con dificultad respiratoria severa. Ausencia unilateral de ruidos respiratorios en el hemitórax derecho. Hiperresonancia a la percusión en el mismo lado. Se observa ingurgitación yugular y desviación de la tráquea hacia el lado izquierdo.",
-    "vitalSigns": {
-        "FC": "140 lpm",
-        "TA": "85/55 mmHg",
-        "FR": "38 rpm",
-        "SpO2": "85% (aire ambiente)"
+    {
+        "id": "neumotorax-tension-08",
+        "title": "Dolor torácico y disnea tras herida punzante",
+        "description": "Hombre de 28 años involucrado en una riña, sufre una herida por arma blanca en el hemitórax derecho, a nivel del 4º espacio intercostal. Presenta dolor agudo y dificultad respiratoria que empeora rápidamente.",
+        "initialAssessment": "Paciente ansioso, con dificultad respiratoria severa. Ausencia unilateral de ruidos respiratorios en el hemitórax derecho. Hiperresonancia a la percusión en el mismo lado. Se observa ingurgitación yugular y desviación de la tráquea hacia el lado izquierdo.",
+        "vitalSigns": {
+            "FC": "140 lpm",
+            "TA": "85/55 mmHg",
+            "FR": "38 rpm",
+            "SpO2": "85% (aire ambiente)"
+        },
+        "findings": [
+            "Neumotórax a tensión derecho.",
+            "Choque obstructivo.",
+            "Necesidad de descompresión torácica inmediata."
+        ],
+        "questions": [
+            {"question": "¿Cuáles son los signos y síntomas cardinales que diferencian un neumotórax simple de uno a tensión?"},
+            {"question": "Describa el procedimiento de descompresión con aguja, incluyendo el punto de inserción anatómico correcto."},
+            {"question": "¿Qué cambios en los signos vitales se esperan inmediatamente después de una descompresión exitosa?"}
+        ],
+        "references": [
+            "AAOS 11ª Edición - Capítulo de Trauma Torácico."
+        ]
     },
-    "findings": [
-        "Neumotórax a tensión derecho.",
-        "Choque obstructivo.",
-        "Necesidad de descompresión torácica inmediata."
-    ],
-    "questions": [
-        { "question": "¿Cuáles son los signos y síntomas cardinales que diferencian un neumotórax simple de uno a tensión?" },
-        { "question": "Describa el procedimiento de descompresión con aguja, incluyendo el punto de inserción anatómico correcto." },
-        { "question": "¿Qué cambios en los signos vitales se esperan inmediatamente después de una descompresión exitosa?" }
-    ],
-    "references": [
-        "AAOS 11ª Edición - Capítulo de Trauma Torácico."
-    ]
-},
-{
-    "id": "quemadura-electrica-09",
-    "title": "Lesión por electrocución en trabajador de línea eléctrica",
-    "description": "Masculino de 42 años recibe descarga de una línea de alto voltaje. Fue lanzado varios metros. Se aseguró la escena y se cortó la corriente. El paciente está desorientado.",
-    "initialAssessment": "Paciente confuso, responde a órdenes simples. Presenta quemaduras de entrada en mano derecha y de salida en pie izquierdo, ambas carbonizadas y de espesor total. Se sospecha trauma cerrado por la caída. Se inmoviliza la columna cervical.",
-    "vitalSigns": {
-        "FC": "130 lpm (con extrasístoles ventriculares en monitor)",
-        "TA": "100/70 mmHg",
-        "FR": "22 rpm",
-        "SpO2": "99% (con O2 a 15L/min)"
+    {
+        "id": "quemadura-electrica-09",
+        "title": "Lesión por electrocución en trabajador de línea eléctrica",
+        "description": "Masculino de 42 años recibe descarga de una línea de alto voltaje. Fue lanzado varios metros. Se aseguró la escena y se cortó la corriente. El paciente está desorientado.",
+        "initialAssessment": "Paciente confuso, responde a órdenes simples. Presenta quemaduras de entrada en mano derecha y de salida en pie izquierdo, ambas carbonizadas y de espesor total. Se sospecha trauma cerrado por la caída. Se inmoviliza la columna cervical.",
+        "vitalSigns": {
+            "FC": "130 lpm (con extrasístoles ventriculares en monitor)",
+            "TA": "100/70 mmHg",
+            "FR": "22 rpm",
+            "SpO2": "99% (con O2 a 15L/min)"
+        },
+        "findings": [
+            "Quemadura eléctrica de alto voltaje.",
+            "Arritmias cardíacas.",
+            "Alto riesgo de rabdomiólisis y daño renal agudo.",
+            "Traumatismo cerrado asociado por la caída."
+        ],
+        "questions": [
+            {"question": "¿Por qué las quemaduras eléctricas son a menudo más graves de lo que aparentan en la superficie de la piel?"},
+            {"question": "¿Cuál es la importancia de la monitorización cardíaca continua en un paciente con electrocución de alto voltaje?"},
+            {"question": "Explique el fundamento para iniciar una reposición agresiva de líquidos intravenosos en este tipo de quemadura."}
+        ],
+        "references": [
+            "AAOS 11ª Edición - Capítulo de Lesiones por Quemaduras."
+        ]
     },
-    "findings": [
-        "Quemadura eléctrica de alto voltaje.",
-        "Arritmias cardíacas.",
-        "Alto riesgo de rabdomiólisis y daño renal agudo.",
-        "Traumatismo cerrado asociado por la caída."
-    ],
-    "questions": [
-        { "question": "¿Por qué las quemaduras eléctricas son a menudo más graves de lo que aparentan en la superficie de la piel?" },
-        { "question": "¿Cuál es la importancia de la monitorización cardíaca continua en un paciente con electrocución de alto voltaje?" },
-        { "question": "Explique el fundamento para iniciar una reposición agresiva de líquidos intravenosos en este tipo de quemadura." }
-    ],
-    "references": [
-        "AAOS 11ª Edición - Capítulo de Lesiones por Quemaduras."
-    ]
-},
-{
-    "id": "parto-emergencia-10",
-    "title": "Atención de parto inminente en domicilio",
-    "description": "Llamada por mujer de 28 años, G3 P2, con 39 semanas de gestación. Presenta contracciones cada 2 minutos y siente una fuerte necesidad de pujar. La fuente se rompió hace 10 minutos. El hospital está a 30 minutos de distancia.",
-    "initialAssessment": "Paciente en trabajo de parto activo, se observa coronamiento de la cabeza fetal durante una contracción. La atención del parto en el lugar es inevitable. Se prepara el equipo de obstetricia.",
-    "vitalSigns": {
-        "FC": "100 lpm",
-        "TA": "120/75 mmHg",
-        "FR": "20 rpm",
-        "SpO2": "98% (aire ambiente)"
+    {
+        "id": "parto-emergencia-10",
+        "title": "Atención de parto inminente en domicilio",
+        "description": "Llamada por mujer de 28 años, G3 P2, con 39 semanas de gestación. Presenta contracciones cada 2 minutos y siente una fuerte necesidad de pujar. La fuente se rompió hace 10 minutos. El hospital está a 30 minutos de distancia.",
+        "initialAssessment": "Paciente en trabajo de parto activo, se observa coronamiento de la cabeza fetal durante una contracción. La atención del parto en el lugar es inevitable. Se prepara el equipo de obstetricia.",
+        "vitalSigns": {
+            "FC": "100 lpm",
+            "TA": "120/75 mmHg",
+            "FR": "20 rpm",
+            "SpO2": "98% (aire ambiente)"
+        },
+        "findings": [
+            "Parto inminente en el segundo período del trabajo de parto.",
+            "Necesidad de asistir el parto fuera del hospital.",
+            "Preparación para posible reanimación neonatal."
+        ],
+        "questions": [
+            {"question": "Describa los pasos clave para asistir un parto normal no complicado en el entorno prehospitalario."},
+            {"question": "¿Cuáles son las tres preguntas críticas que se deben hacer inmediatamente después del nacimiento para evaluar la necesidad de reanimación neonatal?"},
+            {"question": "Si un recién nacido presenta apnea y flacidez, ¿cuáles son los pasos iniciales y más importantes de la reanimación?"}
+        ],
+        "references": [
+            "AAOS 11ª Edición - Capítulo de Obstetricia y Atención Neonatal."
+        ]
     },
-    "findings": [
-        "Parto inminente en el segundo período del trabajo de parto.",
-        "Necesidad de asistir el parto fuera del hospital.",
-        "Preparación para posible reanimación neonatal."
-    ],
-    "questions": [
-        { "question": "Describa los pasos clave para asistir un parto normal no complicado en el entorno prehospitalario." },
-        { "question": "¿Cuáles son las tres preguntas críticas que se deben hacer inmediatamente después del nacimiento para evaluar la necesidad de reanimación neonatal?" },
-        { "question": "Si un recién nacido presenta apnea y flacidez, ¿cuáles son los pasos iniciales y más importantes de la reanimación?" }
-    ],
-    "references": [
-        "AAOS 11ª Edición - Capítulo de Obstetricia y Atención Neonatal."
-    ]
-},
-{
-    "id": "sepsis-urinaria-11",
-    "title": "Fiebre y alteración del estado mental en anciana",
-    "description": "Mujer de 82 años residente de un asilo, con sonda urinaria permanente. El personal reporta que desde la mañana está letárgica, no quiere comer y tiene la piel caliente. Refieren que la orina en la bolsa colectora es turbia y de mal olor.",
-    "initialAssessment": "Paciente somnolienta, responde a estímulos verbales pero está desorientada en tiempo y lugar. Piel enrojecida, caliente y seca al tacto. No hay signos de trauma. Taquipnea evidente.",
-    "vitalSigns": {
-        "FC": "115 lpm",
-        "TA": "85/45 mmHg",
-        "FR": "28 rpm",
-        "SpO2": "93% (aire ambiente)",
-        "Temp": "39.1 °C"
+    {
+        "id": "sepsis-urinaria-11",
+        "title": "Fiebre y alteración del estado mental en anciana",
+        "description": "Mujer de 82 años residente de un asilo, con sonda urinaria permanente. El personal reporta que desde la mañana está letárgica, no quiere comer y tiene la piel caliente. Refieren que la orina en la bolsa colectora es turbia y de mal olor.",
+        "initialAssessment": "Paciente somnolienta, responde a estímulos verbales pero está desorientada en tiempo y lugar. Piel enrojecida, caliente y seca al tacto. No hay signos de trauma. Taquipnea evidente.",
+        "vitalSigns": {
+            "FC": "115 lpm",
+            "TA": "85/45 mmHg",
+            "FR": "28 rpm",
+            "SpO2": "93% (aire ambiente)",
+            "Temp": "39.1 °C"
+        },
+        "findings": [
+            "Sospecha de sepsis severa, probable foco infeccioso urinario (urosepsis).",
+            "Choque séptico manifestado por hipotensión y alteración del estado mental.",
+            "Necesidad de alerta por sepsis en el hospital receptor y manejo agresivo de líquidos."
+        ],
+        "questions": [
+            {"question": "¿Cuáles son los criterios (como qSOFA) que se pueden usar en el campo para identificar a un paciente con alto riesgo de sepsis?"},
+            {"question": "Explique la fisiopatología del choque séptico y por qué causa hipotensión."},
+            {"question": "¿Cuál es la importancia de la administración temprana de líquidos intravenosos y oxígeno en el manejo prehospitalario de la sepsis?"}
+        ],
+        "references": [
+            "AAOS 11ª Edición - Capítulo de Enfermedades Infecciosas."
+        ]
     },
-    "findings": [
-        "Sospecha de sepsis severa, probable foco infeccioso urinario (urosepsis).",
-        "Choque séptico manifestado por hipotensión y alteración del estado mental.",
-        "Necesidad de alerta por sepsis en el hospital receptor y manejo agresivo de líquidos."
-    ],
-    "questions": [
-        { "question": "¿Cuáles son los criterios (como qSOFA) que se pueden usar en el campo para identificar a un paciente con alto riesgo de sepsis?" },
-        { "question": "Explique la fisiopatología del choque séptico y por qué causa hipotensión." },
-        { "question": "¿Cuál es la importancia de la administración temprana de líquidos intravenosos y oxígeno en el manejo prehospitalario de la sepsis?" }
-    ],
-    "references": [
-        "AAOS 11ª Edición - Capítulo de Enfermedades Infecciosas."
-    ]
-},
-{
-    "id": "estatus-epileptico-12",
-    "title": "Convulsiones continuas en paciente adulto",
-    "description": "Hombre de 30 años con antecedentes de epilepsia mal controlada. Su familia llama porque ha tenido una convulsión tónico-clónica generalizada que ha durado más de 5 minutos sin recuperar la conciencia.",
-    "initialAssessment": "Paciente en el suelo con movimientos tónico-clónicos activos en las cuatro extremidades. Cianosis peribucal. Salivación excesiva. No responde a ningún estímulo. La escena es segura.",
-    "vitalSigns": {
-        "FC": "140 lpm",
-        "TA": "160/95 mmHg",
-        "FR": "Irregular/Apneica durante la convulsión",
-        "SpO2": "84% (durante la actividad convulsiva)"
+    {
+        "id": "estatus-epileptico-12",
+        "title": "Convulsiones continuas en paciente adulto",
+        "description": "Hombre de 30 años con antecedentes de epilepsia mal controlada. Su familia llama porque ha tenido una convulsión tónico-clónica generalizada que ha durado más de 5 minutos sin recuperar la conciencia.",
+        "initialAssessment": "Paciente en el suelo con movimientos tónico-clónicos activos en las cuatro extremidades. Cianosis peribucal. Salivación excesiva. No responde a ningún estímulo. La escena es segura.",
+        "vitalSigns": {
+            "FC": "140 lpm",
+            "TA": "160/95 mmHg",
+            "FR": "Irregular/Apneica durante la convulsión",
+            "SpO2": "84% (durante la actividad convulsiva)"
+        },
+        "findings": [
+            "Estatus epiléptico.",
+            "Riesgo elevado de hipoxia cerebral y broncoaspiración.",
+            "Necesidad de manejo farmacológico inmediato para detener la convulsión y asegurar la vía aérea."
+        ],
+        "questions": [
+            {"question": "¿Cuál es la definición de estatus epiléptico y por qué es una emergencia médica que amenaza la vida?"},
+            {"question": "Describa el manejo inicial de la vía aérea en un paciente con convulsiones activas."},
+            {"question": "¿Qué clase de medicamentos se utilizan para tratar el estatus epiléptico en el entorno prehospitalario y cuáles son sus vías de administración?"}
+        ],
+        "references": [
+            "AAOS 11ª Edición - Capítulo de Emergencias Neurológicas."
+        ]
     },
-    "findings": [
-        "Estatus epiléptico.",
-        "Riesgo elevado de hipoxia cerebral y broncoaspiración.",
-        "Necesidad de manejo farmacológico inmediato para detener la convulsión y asegurar la vía aérea."
-    ],
-    "questions": [
-        { "question": "¿Cuál es la definición de estatus epiléptico y por qué es una emergencia médica que amenaza la vida?" },
-        { "question": "Describa el manejo inicial de la vía aérea en un paciente con convulsiones activas." },
-        { "question": "¿Qué clase de medicamentos se utilizan para tratar el estatus epiléptico en el entorno prehospitalario y cuáles son sus vías de administración?" }
-    ],
-    "references": [
-        "AAOS 11ª Edición - Capítulo de Emergencias Neurológicas."
-    ]
-},
-{
-    "id": "aaa-roto-13",
-    "title": "Dolor abdominal y de espalda súbito con síncope",
-    "description": "Hombre de 70 años con historial de tabaquismo e hipertensión, se desploma en su casa. Al recuperar la conciencia, se queja de un dolor abdominal y de espalda insoportable, descrito como 'desgarrador'.",
-    "initialAssessment": "Paciente pálido, diaforético y ansioso. Pulso periférico apenas palpable. Abdomen distendido y sensible a la palpación. Es posible palpar una masa pulsátil en la región periumbilical.",
-    "vitalSigns": {
-        "FC": "128 lpm (filiforme)",
-        "TA": "80/50 mmHg",
-        "FR": "26 rpm (superficial)",
-        "SpO2": "92% (con O2 a 15L/min)"
+    {
+        "id": "aaa-roto-13",
+        "title": "Dolor abdominal y de espalda súbito con síncope",
+        "description": "Hombre de 70 años con historial de tabaquismo e hipertensión, se desploma en su casa. Al recuperar la conciencia, se queja de un dolor abdominal y de espalda insoportable, descrito como 'desgarrador'.",
+        "initialAssessment": "Paciente pálido, diaforético y ansioso. Pulso periférico apenas palpable. Abdomen distendido y sensible a la palpación. Es posible palpar una masa pulsátil en la región periumbilical.",
+        "vitalSigns": {
+            "FC": "128 lpm (filiforme)",
+            "TA": "80/50 mmHg",
+            "FR": "26 rpm (superficial)",
+            "SpO2": "92% (con O2 a 15L/min)"
+        },
+        "findings": [
+            "Sospecha de ruptura de Aneurisma de Aorta Abdominal (AAA).",
+            "Choque hipovolémico severo de origen hemorrágico.",
+            "Paciente en estado crítico que requiere traslado inmediato a un centro con capacidad quirúrgica vascular."
+        ],
+        "questions": [
+            {"question": "¿Cuál es la tríada clásica de síntomas de una ruptura de AAA?"},
+            {"question": "¿Por qué es controvertida la reanimación con grandes volúmenes de líquidos (hipotensión permisiva) en este tipo de pacientes?"},
+            {"question": "¿Qué acciones deben ser prioritarias y cuáles deben evitarse (ej. palpación abdominal vigorosa) durante el manejo prehospitalario?"}
+        ],
+        "references": [
+            "AAOS 11ª Edición - Capítulo de Emergencias Cardiovasculares y Capítulo de Trauma Abdominal."
+        ]
     },
-    "findings": [
-        "Sospecha de ruptura de Aneurisma de Aorta Abdominal (AAA).",
-        "Choque hipovolémico severo de origen hemorrágico.",
-        "Paciente en estado crítico que requiere traslado inmediato a un centro con capacidad quirúrgica vascular."
-    ],
-    "questions": [
-        { "question": "¿Cuál es la tríada clásica de síntomas de una ruptura de AAA?" },
-        { "question": "¿Por qué es controvertida la reanimación con grandes volúmenes de líquidos (hipotensión permisiva) en este tipo de pacientes?" },
-        { "question": "¿Qué acciones deben ser prioritarias y cuáles deben evitarse (ej. palpación abdominal vigorosa) durante el manejo prehospitalario?" }
-    ],
-    "references": [
-        "AAOS 11ª Edición - Capítulo de Emergencias Cardiovasculares y Capítulo de Trauma Abdominal."
-    ]
-},
-{
-    "id": "golpe-de-calor-14",
-    "title": "Colapso de un atleta durante una maratón",
-    "description": "Corredora de 25 años colapsa cerca de la línea de meta durante una maratón en un día caluroso y húmedo. Los organizadores del evento solicitan ayuda al encontrarla inconsciente.",
-    "initialAssessment": "Paciente femenina inconsciente, no responde a estímulos dolorosos. Piel extremadamente caliente al tacto, enrojecida y seca (cese de la sudoración). Respiraciones rápidas y superficiales. Se retira del ambiente caluroso de inmediato.",
-    "vitalSigns": {
-        "FC": "150 lpm",
-        "TA": "90/55 mmHg",
-        "FR": "32 rpm",
-        "SpO2": "95% (aire ambiente)",
-        "Temp": "41.5 °C (rectal)"
+    {
+        "id": "golpe-de-calor-14",
+        "title": "Colapso de un atleta durante una maratón",
+        "description": "Corredora de 25 años colapsa cerca de la línea de meta durante una maratón en un día caluroso y húmedo. Los organizadores del evento solicitan ayuda al encontrarla inconsciente.",
+        "initialAssessment": "Paciente femenina inconsciente, no responde a estímulos dolorosos. Piel extremadamente caliente al tacto, enrojecida y seca (cese de la sudoración). Respiraciones rápidas y superficiales. Se retira del ambiente caluroso de inmediato.",
+        "vitalSigns": {
+            "FC": "150 lpm",
+            "TA": "90/55 mmHg",
+            "FR": "32 rpm",
+            "SpO2": "95% (aire ambiente)",
+            "Temp": "41.5 °C (rectal)"
+        },
+        "findings": [
+            "Golpe de calor por esfuerzo, una emergencia médica verdadera.",
+            "Disfunción del sistema nervioso central (inconsciencia).",
+            "Falla multiorgánica inminente si no se inicia un enfriamiento rápido y agresivo."
+        ],
+        "questions": [
+            {"question": "¿Cuál es la diferencia fisiopatológica clave entre el agotamiento por calor y el golpe de calor?"},
+            {"question": "¿Cuál es el método de enfriamiento más efectivo que se puede iniciar en el campo para un paciente con golpe de calor?"},
+            {"question": "¿Por qué los medicamentos antipiréticos (como el paracetamol o el ibuprofeno) no son efectivos para tratar la hipertermia en un golpe de calor?"}
+        ],
+        "references": [
+            "AAOS 11ª Edición - Capítulo de Emergencias Ambientales."
+        ]
     },
-    "findings": [
-        "Golpe de calor por esfuerzo, una emergencia médica verdadera.",
-        "Disfunción del sistema nervioso central (inconsciencia).",
-        "Falla multiorgánica inminente si no se inicia un enfriamiento rápido y agresivo."
-    ],
-    "questions": [
-        { "question": "¿Cuál es la diferencia fisiopatológica clave entre el agotamiento por calor y el golpe de calor?" },
-        { "question": "¿Cuál es el método de enfriamiento más efectivo que se puede iniciar en el campo para un paciente con golpe de calor?" },
-        { "question": "¿Por qué los medicamentos antipiréticos (como el paracetamol o el ibuprofeno) no son efectivos para tratar la hipertermia en un golpe de calor?" }
-    ],
-    "references": [
-        "AAOS 11ª Edición - Capítulo de Emergencias Ambientales."
-    ]
-},
-{
-    "id": "fractura-pelvis-15",
-    "title": "Dolor pélvico severo tras accidente de motocicleta",
-    "description": "Motociclista de 22 años impacta a alta velocidad contra un vehículo. Es encontrado en el suelo quejándose de un dolor intenso en la cadera y la pelvis, e incapacidad para mover las piernas.",
-    "initialAssessment": "Paciente consciente, orientado, con dolor severo (10/10). Deformidad y crepitación a la compresión suave de la pelvis (inestabilidad pélvica). No hay hemorragia externa evidente, pero se sospecha sangrado interno masivo. Se observan abrasiones en el abdomen y las extremidades inferiores.",
-    "vitalSigns": {
-        "FC": "135 lpm",
-        "TA": "88/60 mmHg",
-        "FR": "28 rpm",
-        "SpO2": "96% (con O2)"
+    {
+        "id": "fractura-pelvis-15",
+        "title": "Dolor pélvico severo tras accidente de motocicleta",
+        "description": "Motociclista de 22 años impacta a alta velocidad contra un vehículo. Es encontrado en el suelo quejándose de un dolor intenso en la cadera y la pelvis, e incapacidad para mover las piernas.",
+        "initialAssessment": "Paciente consciente, orientado, con dolor severo (10/10). Deformidad y crepitación a la compresión suave de la pelvis (inestabilidad pélvica). No hay hemorragia externa evidente, pero se sospecha sangrado interno masivo. Se observan abrasiones en el abdomen y las extremidades inferiores.",
+        "vitalSigns": {
+            "FC": "135 lpm",
+            "TA": "88/60 mmHg",
+            "FR": "28 rpm",
+            "SpO2": "96% (con O2)"
+        },
+        "findings": [
+            "Traumatismo de alta energía con fractura de pelvis inestable (libro abierto).",
+            "Choque hipovolémico secundario a hemorragia pélvica.",
+            "Alto riesgo de lesiones asociadas en órganos abdominales y genitourinarios."
+        ],
+        "questions": [
+            {"question": "¿Por qué una fractura de pelvis inestable puede causar una hemorragia potencialmente mortal?"},
+            {"question": "Describa la técnica correcta para la estabilización pélvica en el campo utilizando un dispositivo comercial o una sábana."},
+            {"question": "¿Cuál es el objetivo principal del manejo prehospitalario en un paciente con este tipo de lesión?"}
+        ],
+        "references": [
+            "AAOS 11ª Edición - Capítulo de Trauma Musculoesquelético."
+        ]
     },
-    "findings": [
-        "Traumatismo de alta energía con fractura de pelvis inestable (libro abierto).",
-        "Choque hipovolémico secundario a hemorragia pélvica.",
-        "Alto riesgo de lesiones asociadas en órganos abdominales y genitourinarios."
-    ],
-    "questions": [
-        { "question": "¿Por qué una fractura de pelvis inestable puede causar una hemorragia potencialmente mortal?" },
-        { "question": "Describa la técnica correcta para la estabilización pélvica en el campo utilizando un dispositivo comercial o una sábana." },
-        { "question": "¿Cuál es el objetivo principal del manejo prehospitalario en un paciente con este tipo de lesión?" }
-    ],
-    "references": [
-        "AAOS 11ª Edición - Capítulo de Trauma Musculoesquelético."
-    ]
-}
+    {
+        "id": "eclampsia-39",
+        "title": "Convulsión en paciente embarazada",
+        "description": "Mujer de 28 años, con 34 semanas de gestación, presenta una convulsión tónico-clónica generalizada presenciada por su pareja. A la llegada de la unidad, la paciente se encuentra en estado postictal.",
+        "initialAssessment": "Paciente somnolienta, responde a estímulos verbales pero está desorientada. Piel pálida y diaforética. Se observa edema facial y en extremidades (fóvea ++). No hay evidencia de trauma. Vía aérea permeable.",
+        "vitalSigns": {
+            "FC": "108 lpm",
+            "TA": "170/110 mmHg",
+            "FR": "22 rpm",
+            "SpO2": "95% (aire ambiente)",
+            "Glucemia Capilar": "98 mg/dL"
+        },
+        "findings": [
+            "Eclampsia, una emergencia hipertensiva del embarazo.",
+            "Riesgo de convulsiones recurrentes, desprendimiento de placenta y EVC.",
+            "Necesidad de manejo cuidadoso de la vía aérea y traslado urgente a un centro obstétrico.",
+            "La administración de sulfato de magnesio es el tratamiento de elección en el hospital."
+        ],
+        "questions": [
+            { "question": "¿Cuáles son los signos y síntomas que definen la preeclampsia severa y la eclampsia?" },
+            { "question": "¿Por qué es crucial el manejo de la presión arterial en esta paciente, y qué precauciones se deben tomar?" },
+            { "question": "En el entorno prehospitalario, ¿cuál es la prioridad principal además de prevenir lesiones durante una convulsión?" }
+        ],
+        "references": [
+            "AAOS 11ª Edición - Capítulo de Emergencias Obstétricas y Neonatales."
+        ]
+    },
+    {
+        "id": "crisis-celulas-falciformes-40",
+        "title": "Dolor severo en paciente con anemia falciforme",
+        "description": "Paciente masculino de 24 años con antecedentes conocidos de anemia de células falciformes, llama a emergencias por un dolor severo (10/10) en espalda, pecho y extremidades que comenzó hace varias horas y no cede con sus analgésicos habituales.",
+        "initialAssessment": "Paciente consciente y alerta, en posición fetal por el dolor. No presenta disnea ni signos de trauma. Piel seca y caliente al tacto. Se muestra ansioso y pide alivio para el dolor.",
+        "vitalSigns": {
+            "FC": "115 lpm",
+            "TA": "130/80 mmHg",
+            "FR": "24 rpm",
+            "SpO2": "97% (aire ambiente)",
+            "Temp": "38.1 °C"
+        },
+        "findings": [
+            "Crisis vaso-oclusiva por anemia de células falciformes.",
+            "Dolor severo como principal manifestación.",
+            "Riesgo de síndrome torácico agudo si presenta síntomas respiratorios.",
+            "Requiere manejo agresivo del dolor, hidratación y oxígeno."
+        ],
+        "questions": [
+            { "question": "¿Cuál es la fisiopatología de una crisis vaso-oclusiva en la anemia de células falciformes?" },
+            { "question": "¿Por qué es importante administrar oxígeno a estos pacientes, incluso si su SpO2 es normal?" },
+            { "question": "¿Qué es el síndrome torácico agudo y por qué es una complicación mortal de esta enfermedad?" }
+        ],
+        "references": [
+            "AAOS 11ª Edición - Capítulo de Emergencias Hematológicas."
+        ]
+    },
+    {
+        "id": "intoxicacion-cianuro-incendio-41",
+        "title": "Inconsciencia y hollín tras incendio en casa",
+        "description": "Bomberos rescatan a un hombre de 45 años de un incendio estructural. El paciente fue encontrado en una habitación llena de humo denso por quema de plásticos y alfombras. Está inconsciente.",
+        "initialAssessment": "Paciente no responde a estímulos. Presenta hollín en la boca y fosas nasales. Piel de color rojo cereza brillante. No hay quemaduras corporales evidentes. Taquipnea marcada.",
+        "vitalSigns": {
+            "FC": "140 lpm",
+            "TA": "80/40 mmHg",
+            "FR": "35 rpm",
+            "SpO2": "100% (lectura falsamente alta)"
+        },
+        "findings": [
+            "Intoxicación por monóxido de carbono y sospecha alta de intoxicación por cianuro.",
+            "Shock profundo y acidosis metabólica severa.",
+            "La lectura de SpO2 no es fiable; el paciente sufre de hipoxia tisular extrema.",
+            "Requiere antídoto específico (hidroxocobalamina) si está disponible."
+        ],
+        "questions": [
+            { "question": "En un incendio, ¿qué materiales al quemarse liberan gas cianuro?" },
+            { "question": "Explique por qué tanto el monóxido de carbono como el cianuro pueden dar una lectura de SpO2 falsamente normal o alta." },
+            { "question": "¿Cuál es el mecanismo por el cual el cianuro causa hipoxia celular, y cómo actúa el antídoto como la hidroxocobalamina?" }
+        ],
+        "references": [
+            "AAOS 11ª Edición - Capítulo de Emergencias Toxicológicas y Ambientales."
+        ]
+    },
+    {
+        "id": "delirium-tremens-42",
+        "title": "Agitación y alucinaciones en paciente alcohólico",
+        "description": "Hombre de 50 años, con historial de alcoholismo crónico, es reportado por su familia por agitación extrema, temblores y alucinaciones visuales. Su último trago fue hace 3 días, cuando fue hospitalizado por una fractura.",
+        "initialAssessment": "Paciente desorientado, extremadamente agitado, diaforético. Intenta quitarse las vías que tiene puestas. Grita sobre 'insectos en las paredes'. No colabora con la evaluación.",
+        "vitalSigns": {
+            "FC": "135 lpm",
+            "TA": "175/95 mmHg",
+            "FR": "28 rpm",
+            "SpO2": "96% (aire ambiente)",
+            "Temp": "38.5 °C"
+        },
+        "findings": [
+            "Delirium Tremens (DT), la manifestación más severa del síndrome de abstinencia alcohólica.",
+            "Emergencia médica con alta mortalidad si no se trata.",
+            "Riesgo de arritmias, convulsiones y rabdomiólisis.",
+            "Requiere sedación (usualmente con benzodiacepinas) y soporte vital."
+        ],
+        "questions": [
+            { "question": "¿Qué diferencia al Delirium Tremens de las fases más leves de la abstinencia alcohólica?" },
+            { "question": "¿Por qué es fundamental medir la glucosa en un paciente con estado mental alterado y antecedentes de alcoholismo?" },
+            { "question": "Desde el punto de vista de la seguridad, ¿cuál es la prioridad al manejar a un paciente tan agitado?" }
+        ],
+        "references": [
+            "AAOS 11ª Edición - Capítulo de Emergencias Psiquiátricas y Abuso de Sustancias."
+        ]
+    },
+    {
+        "id": "neumotorax-espontaneo-43",
+        "title": "Dolor torácico súbito y disnea en joven alto y delgado",
+        "description": "Hombre de 21 años, alto y delgado, sin antecedentes médicos, experimenta un dolor torácico agudo y punzante en el lado derecho, seguido de dificultad para respirar mientras veía televisión.",
+        "initialAssessment": "Paciente consciente, ansioso, con disnea moderada. Refiere que el dolor aumenta con la inspiración profunda. A la auscultación, los ruidos respiratorios están marcadamente disminuidos en el hemitórax derecho en comparación con el izquierdo.",
+        "vitalSigns": {
+            "FC": "110 lpm",
+            "TA": "125/80 mmHg",
+            "FR": "24 rpm",
+            "SpO2": "94% (aire ambiente)"
+        },
+        "findings": [
+            "Alta sospecha de Neumotórax espontáneo primario.",
+            "Dolor de tipo pleurítico.",
+            "Riesgo de progresión a un neumotórax a tensión, aunque es raro.",
+            "El manejo es de soporte (oxígeno) y traslado en posición cómoda."
+        ],
+        "questions": [
+            { "question": "¿Cuál es el perfil de paciente clásico para un neumotórax espontáneo primario?" },
+            { "question": "¿Qué signos y síntomas indicarían que este neumotórax simple está evolucionando a un neumotórax a tensión?" },
+            { "question": "Si no hay trauma, ¿cuál es la causa subyacente de este tipo de neumotórax?" }
+        ],
+        "references": [
+            "AAOS 11ª Edición - Capítulo de Emergencias Respiratorias."
+        ]
+    },
+    {
+        "id": "aspiracion-cuerpo-extrano-pediatrico-44",
+        "title": "Atragantamiento y tos súbita en lactante",
+        "description": "Bebé de 11 meses estaba comiendo trozos de salchicha cuando de repente comenzó a toser vigorosamente, con estridor y dificultad para respirar. Los padres intentaron darle palmadas en la espalda sin éxito.",
+        "initialAssessment": "Lactante consciente, con mirada de pánico. Presenta tos ineficaz, estridor inspiratorio y cianosis peribucal que empeora. No vocaliza. A la auscultación se escuchan sibilancias unilaterales en el pulmón derecho.",
+        "vitalSigns": {
+            "FC": "150 lpm",
+            "FR": "40 rpm (con dificultad)",
+            "SpO2": "88% y bajando"
+        },
+        "findings": [
+            "Obstrucción de la vía aérea por cuerpo extraño (OVACE) severa.",
+            "Signos de obstrucción parcial con progresión a completa.",
+            "Riesgo inminente de paro respiratorio.",
+            "Requiere intervención inmediata con maniobras para lactantes."
+        ],
+        "questions": [
+            { "question": "Describa la secuencia correcta de maniobras (palmadas en la espalda y compresiones torácicas) para un lactante consciente con OVACE severa." },
+            { "question": "¿Qué se debe hacer de manera diferente si el lactante pierde la conciencia?" },
+            { "question": "¿Por qué un cuerpo extraño aspirado tiende a alojarse con más frecuencia en el bronquio principal derecho?" }
+        ],
+        "references": [
+            "AAOS 11ª Edición - Capítulo de Manejo de la Vía Aérea y Emergencias Pediátricas."
+        ]
+    },
+    {
+        "id": "epiglotitis-pediatrica-45",
+        "title": "Fiebre, babeo y estridor en niño preescolar",
+        "description": "Padres llaman al 911 porque su hijo de 4 años, no vacunado, desarrolló fiebre alta y dolor de garganta rápidamente. Ahora está sentado, inclinado hacia adelante, babeando y haciendo un ruido agudo al respirar.",
+        "initialAssessment": "Niño con apariencia tóxica, sentado en posición de olfateo. Presenta estridor inspiratorio, voz apagada ('de papa caliente') y babeo profuso, ya que se niega a tragar. No tose. Se ve aterrorizado.",
+        "vitalSigns": {
+            "FC": "145 lpm",
+            "FR": "30 rpm",
+            "SpO2": "91% (aire ambiente)",
+            "Temp": "40.1 °C"
+        },
+        "findings": [
+            "Alta sospecha de Epiglotitis, una emergencia de la vía aérea potencialmente mortal.",
+            "La presentación de las '4 D' (Disfagia, Disfonía, Dificultad respiratoria y Babeo - Drooling) es clásica.",
+            "Riesgo de obstrucción completa y súbita de la vía aérea.",
+            "El manejo debe minimizar la agitación del niño."
+        ],
+        "questions": [
+            { "question": "¿Por qué está contraindicado intentar visualizar la garganta con un abatelenguas en un caso de sospecha de epiglotitis en el campo?" },
+            { "question": "¿Cuál es la prioridad absoluta en el manejo prehospitalario de este paciente?" },
+            { "question": "¿Qué patógeno bacteriano es la causa clásica de la epiglotitis y por qué es menos común ahora?" }
+        ],
+        "references": [
+            "AAOS 11ª Edición - Capítulo de Emergencias Pediátricas y Emergencias Respiratorias."
+        ]
+    }
 
 ]

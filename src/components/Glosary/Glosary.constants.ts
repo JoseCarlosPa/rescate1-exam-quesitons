@@ -1034,6 +1034,126 @@ export const terminosData: GlosarioItem[] = [
         ejemplo: 'Es común encontrar hematomas en la piel, donde se manifiestan como moretones o cardenales. Los hematomas pueden ser causados por golpes, caídas, cirugías o incluso por algunas enfermedades.' ,
         tipo: 'termino'
     },
+    {
+        "termino": "Acceso Intraóseo (IO)",
+        "definicion": "Técnica para administrar líquidos, medicamentos y productos sanguíneos directamente en la médula ósea cuando el acceso intravenoso no es posible o es muy lento de conseguir.",
+        "ejemplo": "En el paciente pediátrico en paro cardíaco, se estableció un acceso intraóseo en la tibia proximal para la administración de epinefrina.",
+        "tipo": "termino"
+    },
+    {
+        "termino": "Agonista",
+        "definicion": "Sustancia que se une a un receptor celular y desencadena una respuesta, imitando la acción de una sustancia natural del cuerpo.",
+        "ejemplo": "El salbutamol es un agonista de los receptores beta-2, lo que causa la relajación de los músculos bronquiales.",
+        "tipo": "termino"
+    },
+    {
+        "termino": "Antagonista",
+        "definicion": "Sustancia que se une a un receptor celular pero no provoca una respuesta, bloqueando o atenuando los efectos de un agonista.",
+        "ejemplo": "La naloxona es un antagonista de los receptores opioides, utilizada para revertir sobredosis.",
+        "tipo": "termino"
+    },
+    {
+        "termino": "Capnografía",
+        "definicion": "Medición no invasiva de la concentración de dióxido de carbono (CO2) en el aire espirado. Es el estándar de oro para confirmar la colocación de un tubo endotraqueal y monitorear la calidad de la RCP y la ventilación.",
+        "ejemplo": "La capnografía mostró un valor de EtCO2 de 35 mmHg, indicando una ventilación adecuada.",
+        "tipo": "termino"
+    },
+    {
+        "termino": "Cardioversión",
+        "definicion": "Procedimiento médico que utiliza una descarga eléctrica sincronizada con el complejo QRS del electrocardiograma para convertir una taquiarritmia inestable (como la taquicardia supraventricular o la fibrilación auricular con respuesta ventricular rápida) a un ritmo sinusal normal.",
+        "ejemplo": "Se realizó una cardioversión sincronizada a 100 Joules debido a que el paciente presentaba taquicardia con signos de inestabilidad hemodinámica.",
+        "tipo": "termino"
+    },
+    {
+        "termino": "Cetoacidosis Diabética (CAD)",
+        "definicion": "Complicación grave de la diabetes, principalmente tipo 1, caracterizada por hiperglucemia, acidosis metabólica y presencia de cuerpos cetónicos en sangre y orina. A menudo se presenta con respiración de Kussmaul (rápida y profunda) y aliento con olor a frutas.",
+        "ejemplo": "Paciente con glucemia de 450 mg/dL, pH sanguíneo bajo y cetonas en orina fue diagnosticado con cetoacidosis diabética.",
+        "tipo": "termino"
+    },
+    {
+        "termino": "Extricación",
+        "definicion": "Proceso de remover a un paciente de un lugar confinado, como un vehículo accidentado, de manera segura y eficiente, minimizando el movimiento de la columna vertebral si se sospecha lesión.",
+        "ejemplo": "El equipo de bomberos realizó la extricación del conductor utilizando herramientas hidráulicas y una tabla espinal corta.",
+        "tipo": "termino"
+    },
+    {
+        "termino": "Fibrilación Ventricular (FV)",
+        "definicion": "Arritmia cardíaca letal caracterizada por una actividad eléctrica ventricular caótica y desorganizada, lo que resulta en un cese de la contracción cardíaca efectiva. Es un ritmo desfibrilable.",
+        "ejemplo": "El DEA analizó el ritmo y recomendó una descarga, indicando la presencia de fibrilación ventricular.",
+        "tipo": "termino"
+    },
+    {
+        "termino": "Índice de Shock",
+        "definicion": "Herramienta rápida para evaluar el estado hemodinámico, calculada dividiendo la frecuencia cardíaca entre la presión arterial sistólica. Un valor > 0.9 puede sugerir shock oculto.",
+        "ejemplo": "Paciente con FC de 120 lpm y PAS de 100 mmHg tiene un índice de shock de 1.2, lo que eleva la sospecha de hipovolemia.",
+        "tipo": "termino"
+    },
+    {
+        "termino": "Maniobra de Sellick (Presión Cricoidea)",
+        "definicion": "Técnica que consiste en aplicar presión sobre el cartílago cricoides para comprimir el esófago y prevenir la regurgitación y aspiración de contenido gástrico durante la intubación. Su uso es controvertido y depende del protocolo local.",
+        "ejemplo": "Se aplicó la maniobra de Sellick mientras se realizaba la intubación de secuencia rápida.",
+        "tipo": "termino"
+    },
+    {
+        "termino": "Taquicardia Ventricular sin Pulso (TVSP)",
+        "definicion": "Arritmia cardíaca letal en la que los ventrículos laten a un ritmo muy rápido y descoordinado, sin generar un pulso palpable ni un gasto cardíaco efectivo. Es un ritmo desfibrilable.",
+        "ejemplo": "El monitor mostró taquicardia ventricular y al no palpar pulso se inició RCP y se preparó el desfibrilador.",
+        "tipo": "termino"
+    },
+    {
+        "termino": "Tromboembolia Pulmonar (TEP)",
+        "definicion": "Obstrucción de una o más arterias pulmonares por un coágulo de sangre (trombo) que generalmente se origina en las venas profundas de las piernas. Puede causar disnea súbita, dolor torácico y colapso cardiovascular.",
+        "ejemplo": "Paciente con historia reciente de cirugía de cadera presenta disnea aguda y taquicardia, alta sospecha de TEP.",
+        "tipo": "termino"
+    },
+    {
+        "termino": "Valoración de la Escena",
+        "definicion": "Evaluación sistemática y continua del entorno de una emergencia para identificar peligros, determinar el mecanismo de lesión o naturaleza de la enfermedad, el número de pacientes y la necesidad de recursos adicionales, garantizando la seguridad del equipo.",
+        "ejemplo": "La valoración de la escena reveló un vehículo inestable y cables eléctricos caídos, por lo que se esperó a bomberos y a la compañía eléctrica antes de aproximarse.",
+        "tipo": "termino"
+    },
+    {
+        "termino": "auto-",
+        "definicion": "Prefijo que significa 'propio' o 'por sí mismo'.",
+        "ejemplo": "Autoinyector (dispositivo que se inyecta a sí mismo), Autoinmune (reacción inmune contra el propio cuerpo).",
+        "tipo": "prefijo"
+    },
+    {
+        "termino": "macro-",
+        "definicion": "Prefijo que significa 'grande' o 'anormalmente grande'.",
+        "ejemplo": "Macrocéfalo (cabeza anormalmente grande).",
+        "tipo": "prefijo"
+    },
+    {
+        "termino": "micro-",
+        "definicion": "Prefijo que significa 'pequeño'.",
+        "ejemplo": "Microscópico (demasiado pequeño para ser visto a simple vista), Microaspiración (aspiración de pequeñas cantidades).",
+        "tipo": "prefijo"
+    },
+    {
+        "termino": "-cele",
+        "definicion": "Sufijo que indica una hernia o protrusión.",
+        "ejemplo": "Meningocele (protrusión de las meninges).",
+        "tipo": "sufijo"
+    },
+    {
+        "termino": "-stasis",
+        "definicion": "Sufijo que significa 'detención' o 'control'.",
+        "ejemplo": "Hemostasis (detención del sangrado).",
+        "tipo": "sufijo"
+    },
+    {
+        "termino": "CINCINNATI",
+        "definicion": "Escala de valoración prehospitalaria utilizada para identificar un posible accidente cerebrovascular (ACV) mediante la evaluación de tres signos clave: parálisis facial, caída del brazo y habla anormal. Es similar a FAST.",
+        "ejemplo": "Desglose:\n  • Parálisis Facial: Pedir al paciente que sonría o muestre los dientes. ¿Un lado de la cara no se mueve igual que el otro?\n  • Caída del Brazo: Pedir al paciente que cierre los ojos y extienda ambos brazos hacia adelante por 10 segundos. ¿Un brazo se cae o no se mueve?\n  • Habla Anormal: Pedir al paciente que repita una frase simple. ¿Arrastra las palabras, usa palabras incorrectas o no puede hablar?",
+        "tipo": "mnemotecnia"
+    },
+    {
+        "termino": "PASTE",
+        "definicion": "Mnemotecnia utilizada para evaluar a pacientes con dificultad para respirar (disnea), especialmente útil en casos de posible asma o EPOC.",
+        "ejemplo": "Desglose:\n  • P: Provocación/Progresión (¿Qué lo provocó? ¿Ha empeorado?)\n  • A: Associated chest pain (¿Hay dolor de pecho asociado?)\n  • S: Sputum (¿Hay producción de esputo/flema? ¿De qué color?)\n  • T: Talking tiredness / Temperature (¿Se cansa al hablar? ¿Tiene fiebre?)\n  • E: Exacerbation history (¿Ha tenido episodios similares antes? ¿Qué le ayudó?)",
+        "tipo": "mnemotecnia"
+    }
 
 
 ];

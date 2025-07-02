@@ -1,8 +1,5 @@
-import { signOut } from "firebase/auth";
-import { auth } from "../../firebase/firebaseConfig.ts";
-import {NavLink, useLocation, useNavigate} from "react-router";
+import {NavLink, useLocation} from "react-router";
 import {tProvidersProps} from "./Layout.types.ts";
-import {useUserContext} from "../UserProvider/User.context.tsx";
 import {AllRoutes} from "../../components/Router/Router.constants.ts";
 import { LayoutContext } from "./Layout.context.tsx";
 
@@ -10,13 +7,14 @@ export default function LayoutProvider(props: tProvidersProps) {
     const { children } = props;
 
     const location = useLocation();
-    const { user, setUser } = useUserContext();
-    const navigate = useNavigate();
+    //const { user, setUser } = useUserContext();
+    //const navigate = useNavigate();
 
     if (location.pathname === "/login") {
         return <>{children}</>;
     }
 
+    /*
     async function closeSession() {
         try {
             await signOut(auth);
@@ -27,9 +25,12 @@ export default function LayoutProvider(props: tProvidersProps) {
         }
     }
 
+     */
+
     return (
         <LayoutContext.Provider value={{}}>
             <div className="flex flex-col min-h-screen">
+                {/*
                 <header className="md:h-12 h-24 flex md:flex-row flex-col items-center justify-between px-4 bg-orange-400 text-white shadow-md">
                     <div className="flex items-center">
                         <span className="text-lg font-bold">Alumnos R1</span>
@@ -52,6 +53,7 @@ export default function LayoutProvider(props: tProvidersProps) {
                         )}
                     </div>
                 </header>
+                */}
                 <main className="flex-grow">
                     {children}
                 </main>
