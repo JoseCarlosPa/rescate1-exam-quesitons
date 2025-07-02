@@ -1,22 +1,22 @@
 import {NavLink} from "react-router";
+import {AllRoutes} from "../../../components/Router/Router.constants.ts";
 import {Disclosure} from "@headlessui/react";
 import {ChevronUpIcon} from "@heroicons/react/16/solid";
-import {FaHeadSideMask} from "react-icons/fa";
 import {faqData} from "./AirwayManage.questions.ts";
-import {AllRoutes} from "../../../components/Router/Router.constants.ts";
+import {FaHeadSideMask} from "react-icons/fa";
 import {IoReturnDownBack} from "react-icons/io5";
 import {MdQuiz} from "react-icons/md";
-import {PiChalkboardTeacher} from "react-icons/pi";
 import {BsBookHalf} from "react-icons/bs";
+import {PiChalkboardTeacher} from "react-icons/pi";
 import {useState} from "react";
 
-export default function AirwayManage(){
-    const [activeTab, setActiveTab] = useState<'overview' | 'techniques' | 'devices' | 'practice'>('overview');
+export default function AirwayManage() {
+    const [activeTab, setActiveTab] = useState<'overview' | 'anatomy' | 'techniques' | 'practice'>('overview');
     const [showQuickQuiz, setShowQuickQuiz] = useState(false);
 
-    return(
+    return (
         <div className="min-h-screen bg-gray-50">
-            <div className="flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to white pb-12 md:px-0 px-4 p-4">
+            <div className="flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-white pb-12 px-4 p-4">
                 <div className="w-full max-w-7xl">
                     {/* Cabecera */}
                     <header className="mb-8 text-center">
@@ -50,13 +50,12 @@ export default function AirwayManage(){
                             <PiChalkboardTeacher className="w-10 h-10 text-orange-500 mb-2" />
                             <p className="text-center font-medium">Presentación</p>
                         </a>
-                        
                         <a href="https://www.easyauscultation.com/lung-sounds"
                            target="_blank"
                            rel="noopener noreferrer"
                            className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
                             <BsBookHalf className="w-10 h-10 text-orange-500 mb-2" />
-                            <p className="text-center font-medium">Práctica Auscultación</p>
+                            <p className="text-center font-medium">Auscultación</p>
                         </a>
                         <a href="https://drive.google.com/file/d/1X1gyH116wqPUNylkZ5b_VG6LHjB5vZcT/view?usp=drive_link"
                            target="_blank"
@@ -92,22 +91,22 @@ export default function AirwayManage(){
                                 Generalidades
                             </button>
                             <button
+                                onClick={() => setActiveTab('anatomy')}
+                                className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
+                                    activeTab === 'anatomy'
+                                        ? 'border-orange-500 text-orange-600'
+                                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                                }`}>
+                                Anatomía y Fisiología
+                            </button>
+                            <button
                                 onClick={() => setActiveTab('techniques')}
                                 className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
                                     activeTab === 'techniques'
                                         ? 'border-orange-500 text-orange-600'
                                         : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                                 }`}>
-                                Técnicas
-                            </button>
-                            <button
-                                onClick={() => setActiveTab('devices')}
-                                className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
-                                    activeTab === 'devices'
-                                        ? 'border-orange-500 text-orange-600'
-                                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                                }`}>
-                                Dispositivos
+                                Técnicas y Dispositivos
                             </button>
                             <button
                                 onClick={() => setActiveTab('practice')}
@@ -126,53 +125,124 @@ export default function AirwayManage(){
                         {activeTab === 'overview' && (
                             <div className="space-y-6">
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">¿Por qué es importante el manejo de la vía aérea?</h2>
-                                    <ul className="list-disc list-inside space-y-2">
-                                        <li>Garantizar una vía aérea abierta y funcional es la prioridad absoluta en la atención prehospitalaria.</li>
-                                        <li>La obstrucción de la vía aérea puede llevar rápidamente a hipoxia y muerte si no se maneja adecuadamente.</li>
-                                        <li>La evaluación y manejo oportuno salvan vidas y previenen secuelas neurológicas.</li>
-                                    </ul>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">¿Por qué es fundamental el manejo de la vía aérea?</h2>
+                                    <p className="text-gray-700 leading-relaxed">
+                                        El manejo adecuado de la vía aérea es la prioridad absoluta en la atención prehospitalaria, ya que una obstrucción puede llevar rápidamente a hipoxia, daño cerebral irreversible o muerte. La evaluación y el tratamiento oportunos salvan vidas y previenen secuelas neurológicas. <br />
+                                    </p>
                                 </div>
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Evaluación inicial</h2>
-                                    <ul className="list-disc list-inside space-y-2">
-                                        <li>Valora si el paciente puede hablar o respirar normalmente.</li>
-                                        <li>Busca sonidos anormales: estridor, ronquidos, gorgoteo.</li>
-                                        <li>Observa movimientos torácicos y signos de dificultad respiratoria.</li>
-                                        <li>Evalúa el color de piel y nivel de conciencia.</li>
-                                    </ul>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Evaluación inicial de la vía aérea</h2>
+                                    <div className="grid md:grid-cols-2 gap-4">
+                                        <ul className="list-disc list-inside space-y-2 text-gray-700">
+                                            <li>¿El paciente puede hablar o respirar normalmente?</li>
+                                            <li>Busca sonidos anormales: estridor, ronquidos, gorgoteo.</li>
+                                            <li>Observa movimientos torácicos y signos de dificultad respiratoria.</li>
+                                            <li>Evalúa el color de piel y nivel de conciencia.</li>
+                                        </ul>
+                                        <ul className="list-disc list-inside space-y-2 text-gray-700">
+                                            <li>Presencia de cuerpos extraños, sangre o vómito en la boca.</li>
+                                            <li>Uso de músculos accesorios para respirar.</li>
+                                            <li>Posición de trípode o retracciones.</li>
+                                            <li>Ansiedad, agitación o alteración del estado mental.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+                        {activeTab === 'anatomy' && (
+                            <div className="space-y-6">
+                                <div className="flex flex-col md:flex-row gap-6 items-center mb-6">
+                                    <div className="md:w-1/2">
+                                        <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Anatomía de la vía aérea</h2>
+                                        <ul className="list-disc list-inside space-y-2 mt-2 text-gray-700">
+                                            <li><strong>Vía aérea superior:</strong> Nariz, boca, faringe y laringe hasta las cuerdas vocales.</li>
+                                            <li><strong>Vía aérea inferior:</strong> Tráquea, bronquios, bronquiolos y alvéolos.</li>
+                                        </ul>
+                                        <p className="text-gray-700 mt-4">
+                                            <span className="font-medium">Dato:</span> La lengua es la causa más frecuente de obstrucción en pacientes inconscientes.
+                                        </p>
+                                    </div>
+                                    <div className="md:w-1/2 flex justify-center">
+                                        <img
+                                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Respiratory_system_complete_es.svg/500px-Respiratory_system_complete_es.svg.png"
+                                            alt="Anatomía del sistema respiratorio"
+                                            className="rounded-lg shadow-md max-w-full h-auto"
+                                        />
+                                    </div>
+                                </div>
+                                <div>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Fisiología básica</h2>
+                                    <div className="grid md:grid-cols-2 gap-6">
+                                        <div>
+                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Ventilación</h3>
+                                            <ul className="list-disc list-inside space-y-1 mt-2 text-gray-700">
+                                                <li>Movimiento de aire hacia dentro y fuera de los pulmones.</li>
+                                                <li>Requiere vía aérea permeable y músculos respiratorios funcionales.</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Intercambio gaseoso</h3>
+                                            <ul className="list-disc list-inside space-y-1 mt-2 text-gray-700">
+                                                <li>Ocurre en los alvéolos pulmonares.</li>
+                                                <li>El oxígeno pasa a la sangre y el CO₂ se elimina.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Valores normales</h2>
+                                    <div className="overflow-x-auto">
+                                        <table className="min-w-full bg-white">
+                                            <thead>
+                                                <tr className="bg-gray-100">
+                                                    <th className="py-2 px-4 border">Parámetro</th>
+                                                    <th className="py-2 px-4 border">Adultos</th>
+                                                    <th className="py-2 px-4 border">Niños</th>
+                                                    <th className="py-2 px-4 border">Lactantes</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td className="py-2 px-4 border font-medium">Frecuencia respiratoria</td>
+                                                    <td className="py-2 px-4 border">12-20/min</td>
+                                                    <td className="py-2 px-4 border">15-30/min</td>
+                                                    <td className="py-2 px-4 border">25-50/min</td>
+                                                </tr>
+                                                <tr>
+                                                    <td className="py-2 px-4 border font-medium">Saturación O₂</td>
+                                                    <td className="py-2 px-4 border">≥95%</td>
+                                                    <td className="py-2 px-4 border">≥95%</td>
+                                                    <td className="py-2 px-4 border">≥95%</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         )}
                         {activeTab === 'techniques' && (
                             <div className="space-y-6">
-                                <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Técnicas de apertura y protección de la vía aérea</h2>
-                                <ul className="list-disc list-inside space-y-2">
-                                    <li><strong>Inclinación de cabeza y elevación del mentón:</strong> Técnica estándar en pacientes sin trauma.</li>
-                                    <li><strong>Tracción mandibular:</strong> Técnica utilizada si se sospecha lesión cervical.</li>
-                                    <li><strong>Posición lateral de seguridad:</strong> Para pacientes inconscientes con respiración espontánea.</li>
-                                    <li><strong>Aspiración:</strong> Para eliminar secreciones, sangre o vómito.</li>
-                                </ul>
-                                <div>
-                                    <h3 className="text-lg font-semibold mb-2">Consejos prácticos</h3>
-                                    <ul className="list-disc list-inside space-y-2">
-                                        <li>Siempre proteger la columna cervical en trauma.</li>
-                                        <li>Evitar hiperextensión en niños pequeños.</li>
-                                        <li>Revisar la cavidad oral antes de ventilar.</li>
-                                    </ul>
+                                <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Técnicas y dispositivos para el manejo de la vía aérea</h2>
+                                <div className="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <h3 className="font-medium text-lg mb-2 text-gray-800">Técnicas manuales</h3>
+                                        <ul className="list-disc list-inside space-y-2 text-gray-700">
+                                            <li><strong>Maniobra frente-mentón:</strong> Pacientes sin sospecha de trauma cervical.</li>
+                                            <li><strong>Tracción mandibular:</strong> Pacientes con posible lesión cervical.</li>
+                                            <li><strong>Posición lateral de seguridad:</strong> Inconscientes con respiración espontánea.</li>
+                                            <li><strong>Aspiración:</strong> Eliminar secreciones, sangre o vómito.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h3 className="font-medium text-lg mb-2 text-gray-800">Dispositivos básicos</h3>
+                                        <ul className="list-disc list-inside space-y-2 text-gray-700">
+                                            <li><strong>Cánula orofaríngea (OPA):</strong> Pacientes inconscientes sin reflejo de vómito.</li>
+                                            <li><strong>Cánula nasofaríngea (NPA):</strong> Pacientes conscientes o con reflejo de vómito.</li>
+                                            <li><strong>BVM (bolsa-válvula-mascarilla):</strong> Ventilación asistida.</li>
+                                            <li><strong>Mascarillas de oxígeno:</strong> Cánula nasal, mascarilla simple, mascarilla con reservorio.</li>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
-                        )}
-                        {activeTab === 'devices' && (
-                            <div className="space-y-6">
-                                <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Dispositivos básicos de manejo de vía aérea</h2>
-                                <ul className="list-disc list-inside space-y-2">
-                                    <li><strong>Aspirador:</strong> Para eliminar secreciones o vómito.</li>
-                                    <li><strong>Cánula orofaríngea (OPA):</strong> Evita la obstrucción por la lengua en pacientes inconscientes sin reflejo de vómito.</li>
-                                    <li><strong>Cánula nasofaríngea (NPA):</strong> Para mantener la vía aérea en pacientes conscientes o semiconscientes.</li>
-                                    <li><strong>BVM (bolsa-válvula-mascarilla):</strong> Para ventilación asistida.</li>
-                                    <li><strong>Mascarillas de oxígeno:</strong> Cánula nasal, mascarilla simple, mascarilla de no reinhalación.</li>
-                                </ul>
                                 <div>
                                     <h3 className="text-lg font-semibold mb-2">Tabla de FiO₂ suministrada por dispositivos</h3>
                                     <div className="overflow-x-auto">
@@ -210,10 +280,11 @@ export default function AirwayManage(){
                                     </div>
                                 </div>
                                 <div>
-                                    <h3 className="text-lg font-semibold mb-2">Oxigenoterapia</h3>
+                                    <h3 className="text-lg font-semibold mb-2">Consejos prácticos</h3>
                                     <ul className="list-disc list-inside space-y-2">
-                                        <li>Administrar oxígeno suplementario según necesidad clínica del paciente.</li>
-                                        <li>Dispositivos: cánula nasal, mascarilla simple, mascarilla de no reinhalación, bolsa-válvula-mascarilla (BVM).</li>
+                                        <li>Siempre proteger la columna cervical en trauma.</li>
+                                        <li>Evitar hiperextensión en niños pequeños.</li>
+                                        <li>Revisar la cavidad oral antes de ventilar.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -303,9 +374,7 @@ export default function AirwayManage(){
                                             <Disclosure.Button className="flex w-full justify-between items-center bg-gray-100 px-4 py-3 text-left text-lg font-medium hover:bg-orange-100 transition">
                                                 <span>{faq.question}</span>
                                                 <ChevronUpIcon
-                                                    className={`${
-                                                        open ? "transform rotate-180" : ""
-                                                    } h-5 w-5 text-gray-500`}
+                                                    className={`$${open ? "transform rotate-180" : ""} h-5 w-5 text-gray-500`}
                                                 />
                                             </Disclosure.Button>
                                             <Disclosure.Panel className="px-4 pb-4 pt-2 text-gray-700">
@@ -315,6 +384,25 @@ export default function AirwayManage(){
                                     )}
                                 </Disclosure>
                             ))}
+                        </div>
+                    </section>
+                    {/* Referencias y Recursos */}
+                    <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">
+                        <h2 className="text-2xl font-bold mb-4">Referencias y recursos adicionales</h2>
+                        <div className="space-y-4">
+                            <div>
+                                <h3 className="text-lg font-medium mb-2">Bibliografía principal</h3>
+                                <ul className="list-disc list-inside space-y-2 text-gray-700">
+                                    <li>AAOS. (2021). <em>Atención Médica Prehospitalaria</em> (11ª edición). Jones & Bartlett Learning.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 className="text-lg font-medium mb-2">Recursos en línea</h3>
+                                <ul className="list-disc list-inside space-y-2 text-gray-700">
+                                    <li><a href="https://www.ems1.com/airway-management/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">EMS1 - Artículos sobre manejo de vía aérea</a></li>
+                                    <li><a href="https://www.easyauscultation.com/lung-sounds" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Easy Auscultation - Sonidos pulmonares</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </section>
                 </div>

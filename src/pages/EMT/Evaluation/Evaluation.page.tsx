@@ -11,7 +11,7 @@ import {PiChalkboardTeacher} from "react-icons/pi";
 import {useState} from "react";
 
 export default function Evaluation(){
-    const [activeTab, setActiveTab] = useState<'overview' | 'primary' | 'secondary' | 'tools' | 'practice'>('overview');
+    const [activeTab, setActiveTab] = useState<'overview' | 'scene' | 'primary' | 'secondary' | 'tools' | 'practice'>('overview');
     const [showQuickQuiz, setShowQuickQuiz] = useState(false);
 
     return (
@@ -36,7 +36,7 @@ export default function Evaluation(){
                     </header>
 
                     {/* Menú rápido de recursos */}
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8 max-w-4xl mx-auto">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 max-w-4xl mx-auto">
                         <NavLink
                             to="/evaluation/exam"
                             className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
@@ -55,7 +55,14 @@ export default function Evaluation(){
                            rel="noopener noreferrer"
                            className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
                             <BsBookHalf className="w-10 h-10 text-orange-500 mb-2"/>
-                            <p className="text-center font-medium">Capitulo</p>
+                            <p className="text-center font-medium">Capítulo</p>
+                        </a>
+                        <a href="https://www.jems.com/patient-care/assessment/"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
+                            <BsBookHalf className="w-10 h-10 text-orange-500 mb-2"/>
+                            <p className="text-center font-medium">Recursos JEMS</p>
                         </a>
                     </div>
 
@@ -82,6 +89,15 @@ export default function Evaluation(){
                                         : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                                 }`}>
                                 Generalidades
+                            </button>
+                            <button
+                                onClick={() => setActiveTab('scene')}
+                                className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
+                                    activeTab === 'scene'
+                                        ? 'border-orange-500 text-orange-600'
+                                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                                }`}>
+                                Evaluación de la Escena
                             </button>
                             <button
                                 onClick={() => setActiveTab('primary')}
@@ -128,78 +144,155 @@ export default function Evaluation(){
                             <div className="space-y-6">
                                 <div>
                                     <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">¿Qué es la Evaluación del Paciente?</h2>
-                                    <ul className="list-disc list-inside space-y-2">
-                                        <li>Es un proceso sistemático que permite identificar lesiones o enfermedades que amenazan la vida y requieren intervención inmediata.</li>
-                                        <li>Es una habilidad crítica en la atención prehospitalaria para brindar el tratamiento adecuado.</li>
-                                    </ul>
+                                    <p className="text-gray-700 leading-relaxed">
+                                        Es un proceso sistemático y dinámico que permite identificar lesiones o enfermedades que amenazan la vida y requieren intervención inmediata. La evaluación del paciente es la base de la atención prehospitalaria y debe realizarse de manera ordenada, eficiente y continua.
+                                    </p>
                                 </div>
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Pasos Principales en la Evaluación</h2>
-                                    <ul className="list-disc list-inside space-y-2">
-                                        <li><strong>Evaluación de la escena:</strong> Seguridad de la escena, mecanismo de lesión o naturaleza de la enfermedad, número de pacientes y necesidad de recursos adicionales.</li>
-                                        <li><strong>Evaluación primaria:</strong> Detectar amenazas inmediatas a la vida (ABC: vía aérea, respiración, circulación).</li>
-                                        <li><strong>Evaluación secundaria:</strong> Examen físico completo o enfocado según el caso, historial SAMPLE y medición de signos vitales.</li>
-                                        <li><strong>Reevaluación:</strong> Monitoreo continuo para detectar cambios en el estado del paciente.</li>
-                                    </ul>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Fases principales</h2>
+                                    <div className="grid md:grid-cols-2 gap-4">
+                                        <ul className="list-disc list-inside space-y-2 text-gray-700">
+                                            <li><strong>Evaluación de la escena:</strong> Seguridad, mecanismo de lesión o naturaleza de la enfermedad, número de pacientes y recursos.</li>
+                                            <li><strong>Evaluación primaria:</strong> Detección de amenazas inmediatas a la vida (ABCDE).</li>
+                                            <li><strong>Evaluación secundaria:</strong> Examen físico completo o enfocado, historia clínica y signos vitales.</li>
+                                            <li><strong>Reevaluación:</strong> Monitoreo y ajuste de intervenciones según evolución.</li>
+                                        </ul>
+                                        <div className="bg-orange-50 p-4 rounded-lg">
+                                            <h3 className="font-medium text-lg mb-2 text-orange-700">Importancia</h3>
+                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
+                                                <li>Permite priorizar intervenciones.</li>
+                                                <li>Reduce errores y omisiones.</li>
+                                                <li>Mejora la comunicación con el equipo y hospitales.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+                        {activeTab === 'scene' && (
+                            <div className="space-y-6">
+                                <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Evaluación de la Escena</h2>
+                                <div className="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <ul className="list-disc list-inside space-y-2 text-gray-700">
+                                            <li><strong>Seguridad de la escena:</strong> Identificar peligros para el personal, pacientes y testigos.</li>
+                                            <li><strong>Mecanismo de lesión o naturaleza de la enfermedad:</strong> Trauma vs. médico.</li>
+                                            <li><strong>Número de pacientes:</strong> Determina si se requiere apoyo adicional.</li>
+                                            <li><strong>Recursos adicionales:</strong> Bomberos, policía, ambulancias extra, etc.</li>
+                                            <li><strong>Uso de EPP:</strong> Guantes, gafas, mascarilla, bata según riesgo.</li>
+                                        </ul>
+                                    </div>
+                                    <div className="bg-blue-50 p-4 rounded-lg">
+                                        <h3 className="font-medium text-lg mb-2 text-blue-700">Tips prácticos</h3>
+                                        <ul className="list-disc list-inside space-y-1 text-gray-700">
+                                            <li>Evalúa la escena antes de acercarte.</li>
+                                            <li>Reevalúa la seguridad constantemente.</li>
+                                            <li>Identifica rutas de acceso y escape.</li>
+                                            <li>Observa el entorno: posición del paciente, objetos, testigos.</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         )}
                         {activeTab === 'primary' && (
                             <div className="space-y-6">
-                                <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Evaluación Primaria</h2>
-                                    <ul className="list-disc list-inside space-y-2">
-                                        <li>Impresión general del paciente</li>
-                                        <li>Evaluación del nivel de conciencia (AVDI)</li>
-                                        <li>Valoración rápida de ABCDE:
-                                            <ul className="list-disc ml-6">
-                                                <li><strong>A:</strong> Vía aérea y control de columna cervical</li>
-                                                <li><strong>B:</strong> Respiración y ventilación</li>
-                                                <li><strong>C:</strong> Circulación, control de hemorragias</li>
-                                                <li><strong>D:</strong> Discapacidad, estado neurológico</li>
-                                                <li><strong>E:</strong> Exposición y control ambiental</li>
-                                            </ul>
-                                        </li>
-                                        <li>Identificación de amenazas inmediatas a la vida</li>
-                                        <li>Intervenciones inmediatas según hallazgos</li>
-                                    </ul>
+                                <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Evaluación Primaria (ABCDE)</h2>
+                                <div className="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <ul className="list-disc list-inside space-y-2 text-gray-700">
+                                            <li><strong>A - Vía aérea:</strong> Verifica permeabilidad y protege columna cervical si hay trauma.</li>
+                                            <li><strong>B - Respiración:</strong> Evalúa frecuencia, esfuerzo, ruidos anormales, SpO₂.</li>
+                                            <li><strong>C - Circulación:</strong> Pulso, color, temperatura, hemorragias, relleno capilar.</li>
+                                            <li><strong>D - Discapacidad:</strong> Estado neurológico (AVDI, Glasgow, pupilas).</li>
+                                            <li><strong>E - Exposición:</strong> Descubre al paciente para buscar lesiones, previene hipotermia.</li>
+                                        </ul>
+                                    </div>
+                                    <div className="bg-green-50 p-4 rounded-lg">
+                                        <h3 className="font-medium text-lg mb-2 text-green-700">Intervenciones inmediatas</h3>
+                                        <ul className="list-disc list-inside space-y-1 text-gray-700">
+                                            <li>Control de hemorragias graves.</li>
+                                            <li>Oxígeno suplementario si está indicado.</li>
+                                            <li>Inmovilización cervical si hay sospecha de trauma.</li>
+                                            <li>Ventilación asistida si hay insuficiencia respiratoria.</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         )}
                         {activeTab === 'secondary' && (
                             <div className="space-y-6">
-                                <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Evaluación Secundaria</h2>
-                                    <ul className="list-disc list-inside space-y-2">
-                                        <li>Examen físico detallado o enfocado según el caso</li>
-                                        <li>Obtención de historia clínica (SAMPLE)</li>
-                                        <li>Valoración del dolor (OPQRST)</li>
-                                        <li>Medición de signos vitales:
-                                            <ul className="list-disc ml-6 mt-2">
-                                                <li><strong>Frecuencia cardiaca</strong> (pulso)</li>
-                                                <li><strong>Frecuencia respiratoria</strong></li>
-                                                <li><strong>Presión arterial</strong></li>
-                                                <li><strong>Temperatura</strong></li>
-                                                <li><strong>Saturación de oxígeno (SpO₂)</strong></li>
-                                                <li><strong>Glucosa capilar</strong> (si está indicado)</li>
-                                            </ul>
-                                        </li>
-                                        <li>Evaluación neurológica (Glasgow, pupilas, lateralización)</li>
-                                        <li>Revisión de intervenciones previas</li>
-                                    </ul>
+                                <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Evaluación Secundaria</h2>
+                                <div className="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <ul className="list-disc list-inside space-y-2 text-gray-700">
+                                            <li><strong>Examen físico:</strong> Completo o enfocado según el caso (cabeza a pies).</li>
+                                            <li><strong>Historia clínica:</strong> Utiliza SAMPLE y OPQRST.</li>
+                                            <li><strong>Signos vitales:</strong> Frecuencia cardiaca, respiratoria, presión arterial, temperatura, SpO₂, glucosa.</li>
+                                            <li><strong>Evaluación neurológica:</strong> Glasgow, pupilas, lateralización.</li>
+                                            <li><strong>Revisión de intervenciones previas:</strong> Efectividad y complicaciones.</li>
+                                        </ul>
+                                    </div>
+                                    <div className="bg-yellow-50 p-4 rounded-lg">
+                                        <h3 className="font-medium text-lg mb-2 text-yellow-700">Herramientas útiles</h3>
+                                        <ul className="list-disc list-inside space-y-1 text-gray-700">
+                                            <li>Termómetro, oxímetro, glucómetro.</li>
+                                            <li>Tablas de valores normales por edad.</li>
+                                            <li>Escalas de dolor y conciencia.</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         )}
                         {activeTab === 'tools' && (
                             <div className="space-y-6">
-                                <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Herramientas de Evaluación</h2>
-                                    <ul className="list-disc list-inside space-y-2">
-                                        <li><strong>SAMPLE:</strong> Signos y síntomas, Alergias, Medicamentos, Pasado médico, Última comida, Eventos previos.</li>
-                                        <li><strong>OPQRST:</strong> Inicio, Provocación, Calidad, Radiación, Severidad, Tiempo (para dolor).</li>
-                                        <li><strong>Glasgow Coma Scale (GCS):</strong> Valora el estado neurológico (respuesta ocular, verbal y motora).</li>
-                                        <li><strong>AVDI:</strong> Alerta, responde a Voz, responde a Dolor, No responde.</li>
-                                    </ul>
+                                <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Herramientas de Evaluación</h2>
+                                <div className="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <ul className="list-disc list-inside space-y-2 text-gray-700">
+                                            <li><strong>SAMPLE:</strong> Signos y síntomas, Alergias, Medicamentos, Pasado médico, Última comida, Eventos previos.</li>
+                                            <li><strong>OPQRST:</strong> Inicio, Provocación, Calidad, Radiación, Severidad, Tiempo (para dolor).</li>
+                                            <li><strong>AVDI:</strong> Alerta, responde a Voz, responde a Dolor, Inconsciente.</li>
+                                            <li><strong>Glasgow Coma Scale (GCS):</strong> Valora respuesta ocular, verbal y motora.</li>
+                                        </ul>
+                                    </div>
+                                    <div className="overflow-x-auto">
+                                        <table className="min-w-full bg-white">
+                                            <thead>
+                                                <tr className="bg-gray-100">
+                                                    <th className="py-2 px-4 border">Parámetro</th>
+                                                    <th className="py-2 px-4 border">Adultos</th>
+                                                    <th className="py-2 px-4 border">Niños</th>
+                                                    <th className="py-2 px-4 border">Lactantes</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td className="py-2 px-4 border font-medium">Frecuencia cardiaca</td>
+                                                    <td className="py-2 px-4 border">60-100/min</td>
+                                                    <td className="py-2 px-4 border">80-120/min</td>
+                                                    <td className="py-2 px-4 border">100-160/min</td>
+                                                </tr>
+                                                <tr>
+                                                    <td className="py-2 px-4 border font-medium">Frecuencia respiratoria</td>
+                                                    <td className="py-2 px-4 border">12-20/min</td>
+                                                    <td className="py-2 px-4 border">20-30/min</td>
+                                                    <td className="py-2 px-4 border">30-60/min</td>
+                                                </tr>
+                                                <tr>
+                                                    <td className="py-2 px-4 border font-medium">Presión arterial sistólica</td>
+                                                    <td className="py-2 px-4 border">{'>'}90 mmHg</td>
+                                                    <td className="py-2 px-4 border">{'>'}80 mmHg</td>
+                                                    <td className="py-2 px-4 border">{'>'}70 mmHg</td>
+                                                </tr>
+                                                <tr>
+                                                    <td className="py-2 px-4 border font-medium">SpO₂</td>
+                                                    <td className="py-2 px-4 border">≥95%</td>
+                                                    <td className="py-2 px-4 border">≥95%</td>
+                                                    <td className="py-2 px-4 border">≥95%</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         )}
@@ -207,77 +300,75 @@ export default function Evaluation(){
                             <div className="space-y-6">
                                 <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Casos clínicos para análisis</h2>
                                 <div className="p-5 bg-gray-50 rounded-lg shadow-sm mb-4">
-                                    <h3 className="text-xl font-semibold mb-2 text-orange-600">Caso 1: Trauma en vía pública</h3>
+                                    <h3 className="text-xl font-semibold mb-2 text-orange-600">Caso 1: Politrauma en accidente vial</h3>
                                     <p className="italic text-gray-600 mb-4">
-                                        Hombre de 35 años, motociclista, colisiona contra un automóvil. Se encuentra en el suelo, consciente, con sangrado en pierna derecha.
+                                        Hombre de 30 años, accidente automovilístico, inconsciente, atrapado en el vehículo.
                                     </p>
                                     <div className="mb-4">
                                         <h4 className="font-medium mb-2">Evaluación:</h4>
                                         <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                            <li>A: Vía aérea permeable, responde preguntas</li>
-                                            <li>B: FR 22/min, SpO₂ 97%</li>
-                                            <li>C: FC 110/min, TA 120/80 mmHg, sangrado activo en pierna</li>
-                                            <li>D: Alerta, orientado</li>
-                                            <li>E: Exposición muestra fractura abierta en tibia</li>
+                                            <li>A: Vía aérea comprometida, sangre en boca</li>
+                                            <li>B: FR 8/min, SpO₂ 85%</li>
+                                            <li>C: FC 120/min, TA 90/60 mmHg, hemorragia activa</li>
+                                            <li>D: No responde a estímulos</li>
+                                            <li>E: Fractura expuesta en fémur</li>
                                         </ul>
                                     </div>
                                     <div>
                                         <h4 className="font-medium mb-2">Manejo correcto:</h4>
                                         <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                            <li>Control de hemorragia con compresión directa</li>
-                                            <li>Inmovilización de la extremidad</li>
-                                            <li>Oxígeno suplementario si es necesario</li>
-                                            <li>Monitorización y traslado rápido</li>
+                                            <li>Control de vía aérea y aspiración</li>
+                                            <li>Control de hemorragia</li>
+                                            <li>Oxígeno alto flujo y ventilación asistida</li>
+                                            <li>Inmovilización y traslado urgente</li>
                                         </ol>
                                     </div>
                                 </div>
                                 <div className="p-5 bg-gray-50 rounded-lg shadow-sm mb-4">
-                                    <h3 className="text-xl font-semibold mb-2 text-blue-600">Caso 2: Dolor torácico súbito</h3>
+                                    <h3 className="text-xl font-semibold mb-2 text-blue-600">Caso 2: Dolor abdominal agudo</h3>
                                     <p className="italic text-gray-600 mb-4">
-                                        Mujer de 58 años, dolor torácico súbito, irradiado a brazo izquierdo, sudoración y náusea.
+                                        Mujer de 45 años, dolor abdominal súbito, palidez, sudoración, TA 80/50 mmHg.
                                     </p>
                                     <div className="mb-4">
                                         <h4 className="font-medium mb-2">Evaluación:</h4>
                                         <ul className="list-disc list-inside space-y-1 text-gray-700">
                                             <li>A: Vía aérea permeable</li>
-                                            <li>B: FR 18/min, SpO₂ 95%</li>
-                                            <li>C: FC 98/min, TA 135/85 mmHg</li>
+                                            <li>B: FR 24/min, SpO₂ 96%</li>
+                                            <li>C: FC 130/min, TA 80/50 mmHg, piel fría</li>
                                             <li>D: Alerta, ansiosa</li>
-                                            <li>E: Piel fría y sudorosa</li>
+                                            <li>E: Abdomen distendido, doloroso</li>
                                         </ul>
                                     </div>
                                     <div>
                                         <h4 className="font-medium mb-2">Manejo correcto:</h4>
                                         <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                            <li>Monitorización cardíaca</li>
-                                            <li>Oxígeno si SpO₂ &lt; 94%</li>
-                                            <li>Administrar aspirina si no hay contraindicación</li>
-                                            <li>Traslado urgente a hospital</li>
+                                            <li>Oxígeno suplementario</li>
+                                            <li>Acceso venoso y líquidos si está indicado</li>
+                                            <li>Monitorización y traslado inmediato</li>
                                         </ol>
                                     </div>
                                 </div>
                                 <div className="p-5 bg-gray-50 rounded-lg shadow-sm">
-                                    <h3 className="text-xl font-semibold mb-2 text-green-600">Caso 3: Paciente inconsciente</h3>
+                                    <h3 className="text-xl font-semibold mb-2 text-green-600">Caso 3: Paciente pediátrico febril</h3>
                                     <p className="italic text-gray-600 mb-4">
-                                        Joven de 19 años encontrado inconsciente en la calle, sin testigos.
+                                        Niño de 4 años, fiebre, letargia, dificultad respiratoria, SpO₂ 92%.
                                     </p>
                                     <div className="mb-4">
                                         <h4 className="font-medium mb-2">Evaluación:</h4>
                                         <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                            <li>A: Vía aérea comprometida, secreciones</li>
-                                            <li>B: FR 8/min, SpO₂ 82%</li>
-                                            <li>C: FC 60/min, TA 100/60 mmHg</li>
-                                            <li>D: No responde a estímulos</li>
-                                            <li>E: Pupilas puntiformes</li>
+                                            <li>A: Vía aérea permeable</li>
+                                            <li>B: FR 38/min, uso de músculos accesorios</li>
+                                            <li>C: FC 140/min, piel pálida</li>
+                                            <li>D: Somnoliento, responde a estímulos</li>
+                                            <li>E: Temperatura 39°C</li>
                                         </ul>
                                     </div>
                                     <div>
                                         <h4 className="font-medium mb-2">Manejo correcto:</h4>
                                         <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                            <li>Aspiración de secreciones</li>
-                                            <li>Ventilación asistida con BVM</li>
-                                            <li>Administrar oxígeno</li>
-                                            <li>Monitorización y traslado inmediato</li>
+                                            <li>Oxígeno suplementario</li>
+                                            <li>Monitorización y traslado</li>
+                                            <li>Control de temperatura</li>
                                         </ol>
                                     </div>
                                 </div>
