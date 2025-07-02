@@ -10,11 +10,11 @@ import {MdQuiz} from "react-icons/md";
 import {BsBookHalf} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
 
-export default function Communications(){
+export default function Communications() {
     const [activeTab, setActiveTab] = useState<'overview' | 'radio' | 'doc' | 'practice'>('overview');
     const [showQuickQuiz, setShowQuickQuiz] = useState(false);
 
-    return(
+    return (
         <div className="min-h-screen bg-gray-50">
             <div className="flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-white pb-12 px-4 p-4">
                 <div className="w-full max-w-7xl">
@@ -36,7 +36,7 @@ export default function Communications(){
                     </header>
 
                     {/* Menú rápido de recursos */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center mb-8 mx-auto max-w-5xl ">
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8 max-w-4xl mx-auto">
                         <NavLink
                             to="/communications/exam"
                             className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
@@ -99,7 +99,7 @@ export default function Communications(){
                                         ? 'border-orange-500 text-orange-600' 
                                         : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                                 }`}>
-                                Documentación y Reporte
+                                Documentación
                             </button>
                             <button
                                 onClick={() => setActiveTab('practice')}
@@ -125,98 +125,116 @@ export default function Communications(){
                                         <li>La escucha activa y el lenguaje corporal positivo generan confianza en el paciente.</li>
                                     </ul>
                                 </div>
-                                <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Herramientas de comunicación</h2>
-                                    <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                        <li><strong>SAMPLE:</strong> Signos/Síntomas, Alergias, Medicamentos, Pasado médico, Última ingesta, Eventos previos.</li>
-                                        <li><strong>OPQRST:</strong> Inicio, Provocación, Calidad, Irradiación, Severidad, Tiempo.</li>
-                                        <li>Permiten obtener información estructurada y relevante durante la evaluación inicial.</li>
-                                    </ul>
+                                <div className="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Herramientas de comunicación</h2>
+                                        <ul className="list-disc list-inside space-y-2 text-gray-700">
+                                            <li><strong>SAMPLE:</strong> Signos/Síntomas, Alergias, Medicamentos, Pasado médico, Última ingesta, Eventos previos.</li>
+                                            <li><strong>OPQRST:</strong> Inicio, Provocación, Calidad, Irradiación, Severidad, Tiempo.</li>
+                                            <li>Permiten obtener información estructurada y relevante durante la evaluación inicial.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Principios AAOS</h2>
+                                        <ul className="list-disc list-inside space-y-2 text-gray-700">
+                                            <li>La comunicación debe ser clara, concisa, completa y cortés.</li>
+                                            <li>Evitar tecnicismos innecesarios con pacientes y familiares.</li>
+                                            <li>Respetar la confidencialidad en todo momento.</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         )}
                         {activeTab === 'radio' && (
                             <div className="space-y-6">
-                                <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Comunicación en radio y verbal</h2>
-                                    <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                        <li>Antes de hablar, presionar el botón de transmisión y esperar un segundo.</li>
-                                        <li>Transmitir de forma clara, breve y pausada.</li>
-                                        <li>Utilizar códigos de radio si están autorizados, para facilitar la comunicación.</li>
-                                        <li>Confirmar recepción de mensajes importantes repitiéndolos de vuelta.</li>
-                                        <li>Evitar opiniones personales, enfocarse en datos objetivos y relevantes.</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Reporte verbal al hospital</h2>
-                                    <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                        <li>Al llegar al hospital, el TAMP debe entregar un reporte verbal breve pero completo al personal de salud.</li>
-                                        <li>Debe incluir: edad del paciente, quejas principales, signos vitales, tratamientos realizados y respuesta a tratamientos.</li>
-                                    </ul>
+                                <div className="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Comunicación en radio y verbal</h2>
+                                        <ul className="list-disc list-inside space-y-2 text-gray-700">
+                                            <li>Antes de hablar, presionar el botón de transmisión y esperar un segundo.</li>
+                                            <li>Transmitir de forma clara, breve y pausada.</li>
+                                            <li>Utilizar códigos de radio si están autorizados, para facilitar la comunicación.</li>
+                                            <li>Confirmar recepción de mensajes importantes repitiéndolos de vuelta.</li>
+                                            <li>Evitar opiniones personales, enfocarse en datos objetivos y relevantes.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Reporte verbal al hospital</h2>
+                                        <ul className="list-disc list-inside space-y-2 text-gray-700">
+                                            <li>Al llegar al hospital, el TAMP debe entregar un reporte verbal breve pero completo al personal de salud.</li>
+                                            <li>Debe incluir: edad del paciente, quejas principales, signos vitales, tratamientos realizados y respuesta a tratamientos.</li>
+                                            <li>Utilizar la estructura SBAR (Situación, Breve historia, Evaluación, Recomendación) para reportes claros.</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         )}
                         {activeTab === 'doc' && (
                             <div className="space-y-6">
-                                <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Documentación (FRAP)</h2>
-                                    <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                        <li>El Formato de Registro de Atención Prehospitalaria (FRAP) es el documento oficial que detalla toda la atención brindada.</li>
-                                        <li>Debe ser objetivo, claro, preciso, sin tachaduras ni enmiendas indebidas.</li>
-                                        <li>Errores deben corregirse con una línea simple, inicialar y añadir la corrección.</li>
-                                        <li>Todo rechazo de tratamiento debe ser documentado cuidadosamente, incluyendo advertencia de riesgos y firma de testigos.</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Buenas prácticas</h2>
-                                    <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                        <li>Documentar todas las observaciones relevantes, tratamientos y cambios en la condición del paciente.</li>
-                                        <li>Conservar la confidencialidad del paciente en todo momento.</li>
-                                        <li>Informar cualquier error o corrección de manera formal mediante adendas oficiales.</li>
-                                    </ul>
+                                <div className="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Documentación (FRAP)</h2>
+                                        <ul className="list-disc list-inside space-y-2 text-gray-700">
+                                            <li>El Formato de Registro de Atención Prehospitalaria (FRAP) es el documento oficial que detalla toda la atención brindada.</li>
+                                            <li>Debe ser objetivo, claro, preciso, sin tachaduras ni enmiendas indebidas.</li>
+                                            <li>Errores deben corregirse con una línea simple, inicialar y añadir la corrección.</li>
+                                            <li>Todo rechazo de tratamiento debe ser documentado cuidadosamente, incluyendo advertencia de riesgos y firma de testigos.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Buenas prácticas</h2>
+                                        <ul className="list-disc list-inside space-y-2 text-gray-700">
+                                            <li>Documentar todas las observaciones relevantes, tratamientos y cambios en la condición del paciente.</li>
+                                            <li>Conservar la confidencialidad del paciente en todo momento.</li>
+                                            <li>Informar cualquier error o corrección de manera formal mediante adendas oficiales.</li>
+                                            <li>Utilizar letra legible y evitar abreviaturas no estandarizadas.</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         )}
                         {activeTab === 'practice' && (
                             <div className="space-y-6">
                                 <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Casos prácticos para análisis</h2>
-                                <div className="p-5 bg-gray-50 rounded-lg shadow-sm mb-4">
-                                    <h3 className="text-xl font-semibold mb-2 text-orange-600">Caso 1: Error de comunicación en radio</h3>
-                                    <p className="italic text-gray-600 mb-4">
-                                        Un TAMP transmite un reporte de paciente politraumatizado, pero omite mencionar la saturación de oxígeno y el tratamiento administrado.
-                                    </p>
-                                    <div>
-                                        <h4 className="font-medium mb-2">¿Qué errores se cometieron?</h4>
-                                        <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                            <li>Falta de información relevante para la recepción hospitalaria.</li>
-                                            <li>Puede retrasar la preparación del equipo de salud.</li>
-                                        </ul>
+                                <div className="grid md:grid-cols-3 gap-4">
+                                    <div className="p-5 bg-orange-50 rounded-lg shadow-sm mb-4">
+                                        <h3 className="text-xl font-semibold mb-2 text-orange-600">Caso 1: Error de comunicación en radio</h3>
+                                        <p className="italic text-gray-600 mb-4">
+                                            Un TAMP transmite un reporte de paciente politraumatizado, pero omite mencionar la saturación de oxígeno y el tratamiento administrado.
+                                        </p>
+                                        <div>
+                                            <h4 className="font-medium mb-2">Errores:</h4>
+                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
+                                                <li>Falta de información relevante para la recepción hospitalaria.</li>
+                                                <li>Puede retrasar la preparación del equipo de salud.</li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="p-5 bg-gray-50 rounded-lg shadow-sm mb-4">
-                                    <h3 className="text-xl font-semibold mb-2 text-blue-600">Caso 2: Documentación incompleta</h3>
-                                    <p className="italic text-gray-600 mb-4">
-                                        Un paciente rechaza el traslado, pero el TAMP no documenta la advertencia de riesgos ni obtiene la firma del paciente.
-                                    </p>
-                                    <div>
-                                        <h4 className="font-medium mb-2">¿Qué consecuencias puede haber?</h4>
-                                        <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                            <li>Riesgo legal para el TAMP y la institución.</li>
-                                            <li>No se protege adecuadamente al personal ante posibles reclamaciones.</li>
-                                        </ul>
+                                    <div className="p-5 bg-blue-50 rounded-lg shadow-sm mb-4">
+                                        <h3 className="text-xl font-semibold mb-2 text-blue-600">Caso 2: Documentación incompleta</h3>
+                                        <p className="italic text-gray-600 mb-4">
+                                            Un paciente rechaza el traslado, pero el TAMP no documenta la advertencia de riesgos ni obtiene la firma del paciente.
+                                        </p>
+                                        <div>
+                                            <h4 className="font-medium mb-2">Consecuencias:</h4>
+                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
+                                                <li>Riesgo legal para el TAMP y la institución.</li>
+                                                <li>No se protege adecuadamente al personal ante posibles reclamaciones.</li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="p-5 bg-gray-50 rounded-lg shadow-sm">
-                                    <h3 className="text-xl font-semibold mb-2 text-green-600">Caso 3: Comunicación efectiva</h3>
-                                    <p className="italic text-gray-600 mb-4">
-                                        El equipo de ambulancia utiliza el sistema SAMPLE y OPQRST para obtener información precisa y transmite un reporte claro y completo al hospital.
-                                    </p>
-                                    <div>
-                                        <h4 className="font-medium mb-2">¿Qué beneficios aporta?</h4>
-                                        <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                            <li>Mejor preparación del hospital para recibir al paciente.</li>
-                                            <li>Reducción de errores y mejora en la atención.</li>
-                                        </ul>
+                                    <div className="p-5 bg-green-50 rounded-lg shadow-sm mb-4">
+                                        <h3 className="text-xl font-semibold mb-2 text-green-600">Caso 3: Comunicación efectiva</h3>
+                                        <p className="italic text-gray-600 mb-4">
+                                            El equipo de ambulancia utiliza el sistema SAMPLE y OPQRST para obtener información precisa y transmite un reporte claro y completo al hospital.
+                                        </p>
+                                        <div>
+                                            <h4 className="font-medium mb-2">Beneficios:</h4>
+                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
+                                                <li>Mejor preparación del hospital para recibir al paciente.</li>
+                                                <li>Reducción de errores y mejora en la atención.</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -257,8 +275,6 @@ export default function Communications(){
                                 <h3 className="text-lg font-medium mb-2">Bibliografía principal</h3>
                                 <ul className="list-disc list-inside space-y-2 text-gray-700">
                                     <li>AAOS. (2021). <em>Emergencias Médicas Prehospitalarias</em> (11ª edición). Jones & Bartlett Learning.</li>
-                                    <li>American Heart Association. (2020). <em>Soporte Vital Básico y Avanzado</em>.</li>
-                                    <li>NAEMT. (2020). <em>PHTLS: Soporte Vital de Trauma Prehospitalario</em> (9ª edición).</li>
                                 </ul>
                             </div>
                             <div>
