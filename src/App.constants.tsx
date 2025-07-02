@@ -344,7 +344,8 @@ export const lections: tLection[] = [
         id: '43',
         title: 'Manejo de incidentes',
         icon: <MdOutlineFireTruck className="w-12 h-12 mb-1 text-orange-500"/>,
-        route: AllRoutes.EMT,
+        route: AllRoutes.INCIDENT_MANAGEMENT,
+        active: true,
     },
     {
         id: '44',
