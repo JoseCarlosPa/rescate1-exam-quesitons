@@ -16,7 +16,6 @@ import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx"
 
 export default function SecurityOfPersonal() {
     const [activeTab, setActiveTab] = useState<'overview' | 'epp' | 'stress' | 'practice'>('overview');
-    const [showQuickQuiz, setShowQuickQuiz] = useState(false);
 
     return (
         <SEOWrapper
@@ -51,7 +50,7 @@ export default function SecurityOfPersonal() {
                         </header>
 
                         {/* Menú rápido de recursos */}
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 max-w-6xl mx-auto">
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8 max-w-6xl mx-auto">
                             <NavLink
                                 to="/security-of-personal/exam"
                                 className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
@@ -72,65 +71,9 @@ export default function SecurityOfPersonal() {
                                 <BsBookHalf className="w-10 h-10 text-orange-500 mb-2"/>
                                 <p className="text-center font-medium">Capítulo</p>
                             </a>
-                            <button
-                                onClick={() => setShowQuickQuiz(!showQuickQuiz)}
-                                className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
-                                <FaShieldAlt className="w-10 h-10 text-orange-500 mb-2"/>
-                                <p className="text-center font-medium">Quiz Rápido</p>
-                            </button>
                         </div>
 
-                        {/* Quiz rápido */}
-                        {showQuickQuiz && (
-                            <div className="bg-white p-6 rounded-lg shadow-md mb-8 max-w-4xl mx-auto">
-                                <h3 className="text-xl font-bold mb-4 text-gray-800 flex items-center">
-                                    <MdQuiz className="mr-2 text-orange-500"/>
-                                    Quiz Rápido - Seguridad y Bienestar
-                                </h3>
-                                <div className="space-y-4">
-                                    <div className="p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
-                                        <h4 className="font-bold text-blue-800 mb-2">¿Cuál es la prioridad número uno en cualquier emergencia?</h4>
-                                        <div className="space-y-2">
-                                            <label className="flex items-center text-gray-700">
-                                                <input type="radio" name="q1" className="mr-2"/>
-                                                La rapidez en la atención
-                                            </label>
-                                            <label className="flex items-center text-gray-700">
-                                                <input type="radio" name="q1" className="mr-2"/>
-                                                La seguridad del personal ✓
-                                            </label>
-                                            <label className="flex items-center text-gray-700">
-                                                <input type="radio" name="q1" className="mr-2"/>
-                                                El número de víctimas atendidas
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div className="p-4 bg-green-50 rounded-lg border-l-4 border-green-500">
-                                        <h4 className="font-bold text-green-800 mb-2">¿Qué significa EPP?</h4>
-                                        <div className="space-y-2">
-                                            <label className="flex items-center text-gray-700">
-                                                <input type="radio" name="q2" className="mr-2"/>
-                                                Equipo de Protección Personal ✓
-                                            </label>
-                                            <label className="flex items-center text-gray-700">
-                                                <input type="radio" name="q2" className="mr-2"/>
-                                                Equipo de Primeros Auxilios
-                                            </label>
-                                            <label className="flex items-center text-gray-700">
-                                                <input type="radio" name="q2" className="mr-2"/>
-                                                Equipo de Pacientes Politraumatizados
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button
-                                    onClick={() => setShowQuickQuiz(false)}
-                                    className="mt-4 bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded transition">
-                                    Cerrar Quiz
-                                </button>
-                            </div>
-                        )}
-
+                    
                         {/* Navegación por pestañas */}
                         <div className="mb-6 border-b border-gray-200 max-w-5xl mx-auto">
                             <nav className="flex space-x-2 overflow-x-auto">
