@@ -7,7 +7,7 @@ import {AllRoutes} from "../../../components/Router/Router.constants.ts";
 import {IoReturnDownBack} from "react-icons/io5";
 import {useState} from "react";
 import {MdQuiz, MdRecordVoiceOver, MdHeadset, MdFeedback} from "react-icons/md";
-import {BsBookHalf, BsFileText, BsChatDots, BsPhone} from "react-icons/bs";
+import {BsBookHalf, BsFileText, BsChatDots} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
 import {FaMicrophone, FaComments, FaFileAlt, FaUserMd, FaClock} from "react-icons/fa";
 import {HiDocumentText, HiSpeakerphone} from "react-icons/hi";
