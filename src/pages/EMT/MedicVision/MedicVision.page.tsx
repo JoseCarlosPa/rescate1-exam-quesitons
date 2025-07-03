@@ -6,14 +6,27 @@ import {CiMedicalCross} from "react-icons/ci";
 import { AllRoutes } from "../../../components/Router/Router.constants.ts";
 import {IoReturnDownBack} from "react-icons/io5";
 import {useState} from "react";
-import {MdQuiz} from "react-icons/md";
-import {BsBookHalf} from "react-icons/bs";
-import {PiChalkboardTeacher} from "react-icons/pi";
+import {MdQuiz, MdOutlineTimer, MdCheckCircle, MdWarning, MdHealthAndSafety} from "react-icons/md";
+import {BsBookHalf, BsLightbulb, BsShield, BsEye, BsHeart} from "react-icons/bs";
+import {PiChalkboardTeacher, PiStethoscope} from "react-icons/pi";
+import {FaUserMd, FaExclamationTriangle, FaFirstAid, FaThermometerHalf} from "react-icons/fa";
+import {FiAlertTriangle, FiUser, FiEye, FiActivity} from "react-icons/fi";
+import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
 
 export default function MedicVision(){
     const [activeTab, setActiveTab] = useState<'overview' | 'approach' | 'practice'>('overview');
-    const [showQuickQuiz, setShowQuickQuiz] = useState(false);
+    
     return(
+        <SEOWrapper
+            title="Visión Médica General EMT | Evaluación Completa del Paciente Médico"
+            description="Guía completa sobre visión médica general para Técnicos en Atención Médica Prehospitalaria: evaluación sistemática, herramientas SAMPLE y OPQRST, signos vitales y casos clínicos prácticos."
+            keywords="visión médica general, EMT, paramédicos, evaluación del paciente, SAMPLE, OPQRST, signos vitales, casos clínicos, emergencias médicas, diagnóstico prehospitalario"
+            section="emt"
+            difficulty="Intermediate"
+            timeRequired="PT120M"
+            educationalLevel="Technical"
+            includeEducationalSchema={true}
+        >
         <div className="min-h-screen bg-gray-50">
             <div className="flex flex-col items-center  justify-center bg-gradient-to-b from-gray-100 to-white pb-12 md:px-0 px-4   p-4">
                 <div className="w-full max-w-7xl">
@@ -57,18 +70,6 @@ export default function MedicVision(){
                         </a>
                     </div>
 
-                    {/* Quiz rápido */}
-                    {showQuickQuiz && (
-                        <div className="bg-white p-6 rounded-lg shadow-md mb-8 max-w-4xl mx-auto">
-                            <h3 className="text-xl font-bold mb-4 text-gray-800">Quiz Rápido - Pon a prueba tus conocimientos</h3>
-                            <button
-                                onClick={() => setShowQuickQuiz(false)}
-                                className="mt-4 bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded transition">
-                                Cerrar Quiz
-                            </button>
-                        </div>
-                    )}
-
                     {/* Navegación por pestañas */}
                     <div className="mb-6 border-b border-gray-200 max-w-5xl mx-auto">
                         <nav className="flex space-x-2 overflow-x-auto">
@@ -88,7 +89,7 @@ export default function MedicVision(){
                                         ? 'border-orange-500 text-orange-600' 
                                         : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                                 }`}>
-                                Abordaje y Herramientas
+                                Herramientas y Técnicas
                             </button>
                             <button
                                 onClick={() => setActiveTab('practice')}
@@ -105,116 +106,413 @@ export default function MedicVision(){
                     {/* Contenido principal basado en pestañas */}
                     <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-sm p-6 mb-8">
                         {activeTab === 'overview' && (
-                            <div className="space-y-6">
-                                <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">¿Qué es la Visión Médica General?</h2>
-                                    <p className="text-gray-700 leading-relaxed">
-                                        Es la capacidad del Técnico en Atención Médica Prehospitalaria (TAMP) para realizar una valoración completa, rápida y estructurada del estado general de un paciente médico (no traumático). Inicia con la evaluación del entorno y culmina con un abordaje diagnóstico basado en signos y síntomas, siguiendo el enfoque ABCDE y las guías de la AAOS 11ª edición.
+                            <div className="space-y-8">
+                                {/* Importancia crítica */}
+                                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-500 p-6 rounded-lg">
+                                    <div className="flex items-center mb-4">
+                                        <FaUserMd className="w-8 h-8 text-blue-500 mr-3"/>
+                                        <h2 className="text-2xl font-bold text-blue-700">¿Qué es la Visión Médica General?</h2>
+                                    </div>
+                                    <p className="text-gray-800 leading-relaxed text-lg mb-4">
+                                        Es la capacidad del <strong>Técnico en Atención Médica Prehospitalaria (TAMP)</strong> para realizar una 
+                                        valoración completa, rápida y estructurada del estado general de un paciente médico (no traumático).
                                     </p>
+                                    <div className="bg-white p-4 rounded-lg shadow-sm">
+                                        <p className="text-gray-700">
+                                            <strong>Objetivo:</strong> Identificar condiciones que requieren intervención urgente como IAM, EVC, 
+                                            crisis hipertensivas, disnea severa y alteraciones metabólicas siguiendo el enfoque ABCDE.
+                                        </p>
+                                    </div>
                                 </div>
+
+                                {/* Proceso de evaluación sistemática */}
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Importancia</h2>
-                                    <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                        <li>Permite identificar enfermedades que requieren intervención urgente (IAM, EVC, crisis hipertensivas, disnea severa, alteraciones metabólicas).</li>
-                                        <li>Prioriza el traslado y tratamiento adecuado.</li>
-                                        <li>Reduce errores en la atención inicial y mejora el pronóstico.</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Componentes Clave</h2>
-                                    <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                        <li><strong>Escena segura:</strong> Verificar que no existan riesgos.</li>
-                                        <li><strong>Evaluación inicial:</strong> Nivel de conciencia, posición del paciente, signos evidentes.</li>
-                                        <li><strong>Signos vitales:</strong> FC, FR, PA, temperatura, oximetría.</li>
-                                        <li><strong>Signos y síntomas:</strong> Información subjetiva y objetiva del paciente.</li>
-                                        <li><strong>Historial médico relevante:</strong> Medicamentos, alergias, antecedentes.</li>
-                                        <li><strong>Abordaje sistemático:</strong> Aplicar herramientas como OPQRST, SAMPLE.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        )}
-                        {activeTab === 'approach' && (
-                            <div className="space-y-6">
-                                <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Abordaje sistemático del paciente médico</h2>
-                                    <ol className="list-decimal list-inside space-y-2 text-gray-700">
-                                        <li><strong>Evaluación de la escena:</strong> Seguridad, número de pacientes, recursos necesarios.</li>
-                                        <li><strong>Evaluación primaria (ABCDE):</strong> Vía aérea, respiración, circulación, estado neurológico, exposición.</li>
-                                        <li><strong>Signos vitales:</strong> Medición y monitoreo.</li>
-                                        <li><strong>Historia clínica dirigida:</strong> Uso de SAMPLE y OPQRST.</li>
-                                        <li><strong>Evaluación secundaria:</strong> Examen físico detallado según el sistema afectado.</li>
-                                        <li><strong>Reevaluación continua:</strong> Cambios en el estado del paciente y respuesta al tratamiento.</li>
-                                    </ol>
-                                </div>
-                                <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Herramientas útiles para el TAMP</h2>
-                                    <div className="grid md:grid-cols-2 gap-6">
-                                        <div>
-                                            <h3 className="font-medium text-lg mb-2 text-gray-800">SAMPLE</h3>
-                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                                <li><strong>S:</strong> Signos y síntomas</li>
-                                                <li><strong>A:</strong> Alergias</li>
-                                                <li><strong>M:</strong> Medicamentos</li>
-                                                <li><strong>P:</strong> Patologías previas</li>
-                                                <li><strong>L:</strong> Última ingesta</li>
-                                                <li><strong>E:</strong> Eventos relacionados</li>
+                                    <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
+                                        <BsShield className="w-6 h-6 mr-2 text-orange-500"/>
+                                        Evaluación Sistemática del Paciente Médico
+                                    </h2>
+                                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                        <div className="bg-gradient-to-b from-red-50 to-red-100 p-6 rounded-lg border">
+                                            <div className="text-center mb-4">
+                                                <MdOutlineTimer className="w-12 h-12 text-red-500 mx-auto mb-2"/>
+                                                <h3 className="text-xl font-bold text-red-700">1. Evaluación de Escena</h3>
+                                            </div>
+                                            <ul className="space-y-2 text-gray-700">
+                                                <li className="flex items-start">
+                                                    <FiEye className="w-4 h-4 mt-1 mr-2 text-red-600"/>
+                                                    <span>Seguridad del entorno</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <FiEye className="w-4 h-4 mt-1 mr-2 text-red-600"/>
+                                                    <span>Número de pacientes</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <FiEye className="w-4 h-4 mt-1 mr-2 text-red-600"/>
+                                                    <span>Recursos necesarios</span>
+                                                </li>
                                             </ul>
                                         </div>
-                                        <div>
-                                            <h3 className="font-medium text-lg mb-2 text-gray-800">OPQRST</h3>
-                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                                <li><strong>O:</strong> Origen</li>
-                                                <li><strong>P:</strong> Provocación o alivio</li>
-                                                <li><strong>Q:</strong> Calidad</li>
-                                                <li><strong>R:</strong> Región o irradiación</li>
-                                                <li><strong>S:</strong> Severidad</li>
-                                                <li><strong>T:</strong> Tiempo de evolución</li>
+                                        
+                                        <div className="bg-gradient-to-b from-blue-50 to-blue-100 p-6 rounded-lg border">
+                                            <div className="text-center mb-4">
+                                                <FaFirstAid className="w-12 h-12 text-blue-500 mx-auto mb-2"/>
+                                                <h3 className="text-xl font-bold text-blue-700">2. Evaluación Primaria</h3>
+                                            </div>
+                                            <ul className="space-y-2 text-gray-700">
+                                                <li className="flex items-start">
+                                                    <FiActivity className="w-4 h-4 mt-1 mr-2 text-blue-600"/>
+                                                    <span>ABCDE sistemático</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <FiActivity className="w-4 h-4 mt-1 mr-2 text-blue-600"/>
+                                                    <span>Estado de conciencia</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <FiActivity className="w-4 h-4 mt-1 mr-2 text-blue-600"/>
+                                                    <span>Signos evidentes</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div className="bg-gradient-to-b from-green-50 to-green-100 p-6 rounded-lg border">
+                                            <div className="text-center mb-4">
+                                                <PiStethoscope className="w-12 h-12 text-green-500 mx-auto mb-2"/>
+                                                <h3 className="text-xl font-bold text-green-700">3. Signos Vitales</h3>
+                                            </div>
+                                            <ul className="space-y-2 text-gray-700">
+                                                <li className="flex items-start">
+                                                    <BsHeart className="w-4 h-4 mt-1 mr-2 text-green-600"/>
+                                                    <span>FC, FR, PA</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <FaThermometerHalf className="w-4 h-4 mt-1 mr-2 text-green-600"/>
+                                                    <span>Temperatura</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <MdHealthAndSafety className="w-4 h-4 mt-1 mr-2 text-green-600"/>
+                                                    <span>Oximetría de pulso</span>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
+
+                                {/* Importancia clínica */}
+                                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                                    <div className="flex items-center mb-4">
+                                        <FiAlertTriangle className="w-6 h-6 text-yellow-600 mr-2"/>
+                                        <h3 className="text-xl font-bold text-yellow-800">Importancia Clínica</h3>
+                                    </div>
+                                    <div className="grid md:grid-cols-3 gap-4">
+                                        <div className="bg-white p-4 rounded shadow-sm text-center">
+                                            <MdCheckCircle className="w-8 h-8 text-green-500 mx-auto mb-2"/>
+                                            <p className="font-bold text-green-600">Identificación Temprana</p>
+                                            <p className="text-sm">Detecta emergencias que requieren intervención urgente</p>
+                                        </div>
+                                        <div className="bg-white p-4 rounded shadow-sm text-center">
+                                            <MdOutlineTimer className="w-8 h-8 text-blue-500 mx-auto mb-2"/>
+                                            <p className="font-bold text-blue-600">Priorización</p>
+                                            <p className="text-sm">Establece prioridades de traslado y tratamiento</p>
+                                        </div>
+                                        <div className="bg-white p-4 rounded shadow-sm text-center">
+                                            <MdWarning className="w-8 h-8 text-orange-500 mx-auto mb-2"/>
+                                            <p className="font-bold text-orange-600">Reducción de Errores</p>
+                                            <p className="text-sm">Mejora el pronóstico del paciente</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Componentes clave */}
+                                <div className="bg-green-50 border border-green-200 rounded-lg p-6">
+                                    <div className="flex items-center mb-4">
+                                        <BsLightbulb className="w-6 h-6 text-green-600 mr-2"/>
+                                        <h3 className="text-xl font-bold text-green-800">Componentes Clave de la Evaluación</h3>
+                                    </div>
+                                    <div className="grid md:grid-cols-2 gap-6">
+                                        <div>
+                                            <h4 className="font-semibold text-green-800 mb-2 flex items-center">
+                                                <MdCheckCircle className="w-4 h-4 mr-2"/>
+                                                Evaluación Objetiva:
+                                            </h4>
+                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
+                                                <li>Escena segura y recursos disponibles</li>
+                                                <li>Nivel de conciencia (AVDI/Glasgow)</li>
+                                                <li>Posición y apariencia del paciente</li>
+                                                <li>Signos vitales completos</li>
+                                                <li>Examen físico dirigido por sistema</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h4 className="font-semibold text-green-800 mb-2 flex items-center">
+                                                <FiUser className="w-4 h-4 mr-2"/>
+                                                Información del Paciente:
+                                            </h4>
+                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
+                                                <li>Historia clínica relevante (SAMPLE)</li>
+                                                <li>Síntomas actuales (OPQRST)</li>
+                                                <li>Medicamentos y alergias</li>
+                                                <li>Antecedentes médicos importantes</li>
+                                                <li>Eventos relacionados al episodio</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+                        {activeTab === 'approach' && (
+                            <div className="space-y-8">
+                                {/* Abordaje sistemático */}
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Valores normales de signos vitales</h2>
+                                    <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
+                                        <FaFirstAid className="w-6 h-6 mr-2 text-orange-500"/>
+                                        Abordaje Sistemático del Paciente Médico
+                                    </h2>
+                                    <div className="grid lg:grid-cols-2 gap-6">
+                                        <div className="space-y-4">
+                                            <div className="bg-red-50 p-4 rounded-lg border border-red-200">
+                                                <h3 className="font-bold text-red-700 mb-2 flex items-center">
+                                                    <span className="bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-2">1</span>
+                                                    Evaluación de la Escena
+                                                </h3>
+                                                <ul className="text-sm space-y-1 text-gray-700">
+                                                    <li>• Seguridad del entorno</li>
+                                                    <li>• Número de pacientes</li>
+                                                    <li>• Recursos necesarios</li>
+                                                    <li>• Mecanismo de la enfermedad</li>
+                                                </ul>
+                                            </div>
+                                            <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                                                <h3 className="font-bold text-blue-700 mb-2 flex items-center">
+                                                    <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-2">2</span>
+                                                    Evaluación Primaria (ABCDE)
+                                                </h3>
+                                                <ul className="text-sm space-y-1 text-gray-700">
+                                                    <li>• <strong>A:</strong> Vía aérea permeable</li>
+                                                    <li>• <strong>B:</strong> Respiración adecuada</li>
+                                                    <li>• <strong>C:</strong> Circulación y control de hemorragias</li>
+                                                    <li>• <strong>D:</strong> Déficit neurológico</li>
+                                                    <li>• <strong>E:</strong> Exposición y entorno</li>
+                                                </ul>
+                                            </div>
+                                            <div className="bg-green-50 p-4 rounded-lg border border-green-200">
+                                                <h3 className="font-bold text-green-700 mb-2 flex items-center">
+                                                    <span className="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-2">3</span>
+                                                    Signos Vitales
+                                                </h3>
+                                                <ul className="text-sm space-y-1 text-gray-700">
+                                                    <li>• Medición completa y documentación</li>
+                                                    <li>• Monitoreo continuo</li>
+                                                    <li>• Tendencias y cambios</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div className="space-y-4">
+                                            <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                                                <h3 className="font-bold text-yellow-700 mb-2 flex items-center">
+                                                    <span className="bg-yellow-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-2">4</span>
+                                                    Historia Clínica (SAMPLE)
+                                                </h3>
+                                                <ul className="text-sm space-y-1 text-gray-700">
+                                                    <li>• Uso sistemático de SAMPLE</li>
+                                                    <li>• Información del paciente/familia</li>
+                                                    <li>• Síntomas con OPQRST</li>
+                                                </ul>
+                                            </div>
+                                            <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
+                                                <h3 className="font-bold text-purple-700 mb-2 flex items-center">
+                                                    <span className="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-2">5</span>
+                                                    Evaluación Secundaria
+                                                </h3>
+                                                <ul className="text-sm space-y-1 text-gray-700">
+                                                    <li>• Examen físico dirigido</li>
+                                                    <li>• Por sistemas afectados</li>
+                                                    <li>• Hallazgos adicionales</li>
+                                                </ul>
+                                            </div>
+                                            <div className="bg-indigo-50 p-4 rounded-lg border border-indigo-200">
+                                                <h3 className="font-bold text-indigo-700 mb-2 flex items-center">
+                                                    <span className="bg-indigo-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-2">6</span>
+                                                    Reevaluación Continua
+                                                </h3>
+                                                <ul className="text-sm space-y-1 text-gray-700">
+                                                    <li>• Cambios en el estado</li>
+                                                    <li>• Respuesta al tratamiento</li>
+                                                    <li>• Preparación para traslado</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Herramientas diagnósticas */}
+                                <div>
+                                    <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2">Herramientas Diagnósticas Esenciales</h2>
+                                    <div className="grid md:grid-cols-2 gap-8">
+                                        <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg border">
+                                            <h3 className="font-bold text-2xl mb-4 text-blue-700 text-center flex items-center justify-center">
+                                                <BsEye className="w-6 h-6 mr-2"/>
+                                                SAMPLE
+                                            </h3>
+                                            <div className="space-y-3">
+                                                <div className="flex items-start space-x-3">
+                                                    <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">S</div>
+                                                    <div>
+                                                        <h4 className="font-semibold text-blue-800">Signos y síntomas</h4>
+                                                        <p className="text-sm text-gray-600">¿Qué siente el paciente? Dolor, malestar, sensaciones</p>
+                                                    </div>
+                                                </div>
+                                                <div className="flex items-start space-x-3">
+                                                    <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">A</div>
+                                                    <div>
+                                                        <h4 className="font-semibold text-blue-800">Alergias</h4>
+                                                        <p className="text-sm text-gray-600">Medicamentos, alimentos, ambientales</p>
+                                                    </div>
+                                                </div>
+                                                <div className="flex items-start space-x-3">
+                                                    <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">M</div>
+                                                    <div>
+                                                        <h4 className="font-semibold text-blue-800">Medicamentos</h4>
+                                                        <p className="text-sm text-gray-600">Actuales, dosis, adherencia al tratamiento</p>
+                                                    </div>
+                                                </div>
+                                                <div className="flex items-start space-x-3">
+                                                    <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">P</div>
+                                                    <div>
+                                                        <h4 className="font-semibold text-blue-800">Patologías previas</h4>
+                                                        <p className="text-sm text-gray-600">Antecedentes médicos relevantes</p>
+                                                    </div>
+                                                </div>
+                                                <div className="flex items-start space-x-3">
+                                                    <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">L</div>
+                                                    <div>
+                                                        <h4 className="font-semibold text-blue-800">Última ingesta</h4>
+                                                        <p className="text-sm text-gray-600">Comidas, líquidos, tiempo transcurrido</p>
+                                                    </div>
+                                                </div>
+                                                <div className="flex items-start space-x-3">
+                                                    <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">E</div>
+                                                    <div>
+                                                        <h4 className="font-semibold text-blue-800">Eventos relacionados</h4>
+                                                        <p className="text-sm text-gray-600">Qué estaba haciendo cuando inició</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg border">
+                                            <h3 className="font-bold text-2xl mb-4 text-green-700 text-center flex items-center justify-center">
+                                                <FiActivity className="w-6 h-6 mr-2"/>
+                                                OPQRST
+                                            </h3>
+                                            <div className="space-y-3">
+                                                <div className="flex items-start space-x-3">
+                                                    <div className="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold">O</div>
+                                                    <div>
+                                                        <h4 className="font-semibold text-green-800">Origen/Aparición</h4>
+                                                        <p className="text-sm text-gray-600">¿Cuándo y cómo comenzó? ¿Súbito o gradual?</p>
+                                                    </div>
+                                                </div>
+                                                <div className="flex items-start space-x-3">
+                                                    <div className="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold">P</div>
+                                                    <div>
+                                                        <h4 className="font-semibold text-green-800">Provocación/Alivio</h4>
+                                                        <p className="text-sm text-gray-600">¿Qué lo empeora o mejora?</p>
+                                                    </div>
+                                                </div>
+                                                <div className="flex items-start space-x-3">
+                                                    <div className="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold">Q</div>
+                                                    <div>
+                                                        <h4 className="font-semibold text-green-800">Calidad</h4>
+                                                        <p className="text-sm text-gray-600">¿Cómo se siente? Opresivo, punzante, quemante</p>
+                                                    </div>
+                                                </div>
+                                                <div className="flex items-start space-x-3">
+                                                    <div className="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold">R</div>
+                                                    <div>
+                                                        <h4 className="font-semibold text-green-800">Región/Irradiación</h4>
+                                                        <p className="text-sm text-gray-600">¿Dónde duele? ¿Se extiende a otras áreas?</p>
+                                                    </div>
+                                                </div>
+                                                <div className="flex items-start space-x-3">
+                                                    <div className="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold">S</div>
+                                                    <div>
+                                                        <h4 className="font-semibold text-green-800">Severidad</h4>
+                                                        <p className="text-sm text-gray-600">Escala del 1-10, comparación con dolores previos</p>
+                                                    </div>
+                                                </div>
+                                                <div className="flex items-start space-x-3">
+                                                    <div className="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold">T</div>
+                                                    <div>
+                                                        <h4 className="font-semibold text-green-800">Tiempo</h4>
+                                                        <p className="text-sm text-gray-600">¿Cuánto tiempo lleva así? ¿Es constante o intermitente?</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Valores normales de signos vitales */}
+                                <div>
+                                    <h3 className="text-xl font-semibold mb-4 flex items-center">
+                                        <PiStethoscope className="w-6 h-6 mr-2 text-orange-500"/>
+                                        Valores Normales de Signos Vitales
+                                    </h3>
                                     <div className="overflow-x-auto">
-                                        <table className="min-w-full bg-white">
-                                            <thead>
-                                                <tr className="bg-gray-100">
-                                                    <th className="py-2 px-4 border">Parámetro</th>
-                                                    <th className="py-2 px-4 border">Adultos</th>
-                                                    <th className="py-2 px-4 border">Niños</th>
-                                                    <th className="py-2 px-4 border">Lactantes</th>
+                                        <table className="min-w-full bg-white border rounded-lg shadow-sm">
+                                            <thead className="bg-gradient-to-r from-gray-100 to-gray-200">
+                                                <tr>
+                                                    <th className="py-3 px-4 border text-left font-semibold">Parámetro</th>
+                                                    <th className="py-3 px-4 border text-center font-semibold">Adultos</th>
+                                                    <th className="py-3 px-4 border text-center font-semibold">Niños (1-12 años)</th>
+                                                    <th className="py-3 px-4 border text-center font-semibold">Lactantes (&lt;1 año)</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td className="py-2 px-4 border font-medium">Frecuencia cardíaca</td>
-                                                    <td className="py-2 px-4 border">60-100/min</td>
-                                                    <td className="py-2 px-4 border">80-120/min</td>
-                                                    <td className="py-2 px-4 border">100-160/min</td>
+                                                <tr className="hover:bg-gray-50">
+                                                    <td className="py-3 px-4 border font-medium flex items-center">
+                                                        <BsHeart className="w-4 h-4 mr-2 text-red-500"/>
+                                                        Frecuencia cardíaca
+                                                    </td>
+                                                    <td className="py-3 px-4 border text-center">60-100/min</td>
+                                                    <td className="py-3 px-4 border text-center">80-120/min</td>
+                                                    <td className="py-3 px-4 border text-center">100-160/min</td>
                                                 </tr>
-                                                <tr>
-                                                    <td className="py-2 px-4 border font-medium">Frecuencia respiratoria</td>
-                                                    <td className="py-2 px-4 border">12-20/min</td>
-                                                    <td className="py-2 px-4 border">15-30/min</td>
-                                                    <td className="py-2 px-4 border">25-50/min</td>
+                                                <tr className="hover:bg-gray-50">
+                                                    <td className="py-3 px-4 border font-medium flex items-center">
+                                                        <FiActivity className="w-4 h-4 mr-2 text-blue-500"/>
+                                                        Frecuencia respiratoria
+                                                    </td>
+                                                    <td className="py-3 px-4 border text-center">12-20/min</td>
+                                                    <td className="py-3 px-4 border text-center">15-30/min</td>
+                                                    <td className="py-3 px-4 border text-center">25-50/min</td>
                                                 </tr>
-                                                <tr>
-                                                    <td className="py-2 px-4 border font-medium">Presión arterial sistólica</td>
-                                                    <td className="py-2 px-4 border">90-140 mmHg</td>
-                                                    <td className="py-2 px-4 border">80-110 mmHg</td>
-                                                    <td className="py-2 px-4 border">70-100 mmHg</td>
+                                                <tr className="hover:bg-gray-50">
+                                                    <td className="py-3 px-4 border font-medium flex items-center">
+                                                        <MdHealthAndSafety className="w-4 h-4 mr-2 text-green-500"/>
+                                                        Presión arterial sistólica
+                                                    </td>
+                                                    <td className="py-3 px-4 border text-center">90-140 mmHg</td>
+                                                    <td className="py-3 px-4 border text-center">80-110 mmHg</td>
+                                                    <td className="py-3 px-4 border text-center">70-100 mmHg</td>
                                                 </tr>
-                                                <tr>
-                                                    <td className="py-2 px-4 border font-medium">Temperatura</td>
-                                                    <td className="py-2 px-4 border">36-37.5°C</td>
-                                                    <td className="py-2 px-4 border">36-37.5°C</td>
-                                                    <td className="py-2 px-4 border">36-37.5°C</td>
+                                                <tr className="hover:bg-gray-50">
+                                                    <td className="py-3 px-4 border font-medium flex items-center">
+                                                        <FaThermometerHalf className="w-4 h-4 mr-2 text-orange-500"/>
+                                                        Temperatura
+                                                    </td>
+                                                    <td className="py-3 px-4 border text-center">36-37.5°C</td>
+                                                    <td className="py-3 px-4 border text-center">36-37.5°C</td>
+                                                    <td className="py-3 px-4 border text-center">36-37.5°C</td>
                                                 </tr>
-                                                <tr>
-                                                    <td className="py-2 px-4 border font-medium">Saturación O₂</td>
-                                                    <td className="py-2 px-4 border">≥95%</td>
-                                                    <td className="py-2 px-4 border">≥95%</td>
-                                                    <td className="py-2 px-4 border">≥95%</td>
+                                                <tr className="hover:bg-gray-50">
+                                                    <td className="py-3 px-4 border font-medium flex items-center">
+                                                        <MdHealthAndSafety className="w-4 h-4 mr-2 text-purple-500"/>
+                                                        Saturación O₂
+                                                    </td>
+                                                    <td className="py-3 px-4 border text-center">≥95%</td>
+                                                    <td className="py-3 px-4 border text-center">≥95%</td>
+                                                    <td className="py-3 px-4 border text-center">≥95%</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -223,53 +521,215 @@ export default function MedicVision(){
                             </div>
                         )}
                         {activeTab === 'practice' && (
-                            <div className="space-y-6">
-                                <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Casos clínicos para análisis</h2>
-                                <div className="p-5 bg-gray-50 rounded-lg shadow-sm mb-4">
-                                    <h3 className="text-xl font-semibold mb-2 text-orange-600">Caso 1: Dolor torácico súbito</h3>
-                                    <p className="italic text-gray-600 mb-4">
-                                        Hombre de 54 años, dolor torácico opresivo súbito, irradiado a brazo izquierdo, diaforesis y náusea.
-                                    </p>
-                                    <div className="mb-4">
-                                        <h4 className="font-medium mb-2">Abordaje correcto:</h4>
+                            <div className="space-y-8">
+                                <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
+                                    <FaUserMd className="w-6 h-6 mr-2 text-orange-500"/>
+                                    Casos Clínicos Interactivos
+                                </h2>
+                                
+                                {/* Caso 1: Síndrome Coronario Agudo */}
+                                <div className="bg-gradient-to-r from-red-50 to-red-100 p-6 rounded-lg border border-red-200">
+                                    <div className="flex items-center mb-4">
+                                        <span className="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-lg mr-3">1</span>
+                                        <h3 className="text-xl font-semibold text-red-700">Caso Crítico: Síndrome Coronario Agudo</h3>
+                                    </div>
+                                    <div className="bg-white p-4 rounded-lg mb-4">
+                                        <h4 className="font-semibold text-gray-800 mb-2">Escenario:</h4>
+                                        <p className="text-gray-700 mb-3">
+                                            <strong>Paciente:</strong> Hombre de 54 años, ejecutivo<br/>
+                                            <strong>Evento:</strong> Dolor torácico súbito en oficina durante reunión estresante<br/>
+                                            <strong>Presentación:</strong> Dolor opresivo retroesternal 8/10, irradiado a brazo izquierdo y mandíbula, diaforesis profusa, náusea
+                                        </p>
+                                    </div>
+                                    <div className="grid md:grid-cols-2 gap-4">
+                                        <div className="bg-white p-4 rounded-lg">
+                                            <h4 className="font-semibold text-red-700 mb-2 flex items-center">
+                                                <BsLightbulb className="w-4 h-4 mr-2"/>
+                                                Evaluación SAMPLE:
+                                            </h4>
+                                            <ul className="text-sm space-y-1 text-gray-700">
+                                                <li><strong>S:</strong> Dolor opresivo, diaforesis, náusea</li>
+                                                <li><strong>A:</strong> Ninguna conocida</li>
+                                                <li><strong>M:</strong> Atorvastatina, Aspirina ocasional</li>
+                                                <li><strong>P:</strong> Hipertensión, dislipidemia</li>
+                                                <li><strong>L:</strong> Café hace 2 horas</li>
+                                                <li><strong>E:</strong> Reunión estresante, sedentario</li>
+                                            </ul>
+                                        </div>
+                                        <div className="bg-white p-4 rounded-lg">
+                                            <h4 className="font-semibold text-red-700 mb-2 flex items-center">
+                                                <FiActivity className="w-4 h-4 mr-2"/>
+                                                Evaluación OPQRST:
+                                            </h4>
+                                            <ul className="text-sm space-y-1 text-gray-700">
+                                                <li><strong>O:</strong> Súbito, durante estrés</li>
+                                                <li><strong>P:</strong> Empeora con movimiento</li>
+                                                <li><strong>Q:</strong> Opresivo, "como peso"</li>
+                                                <li><strong>R:</strong> Brazo izquierdo y mandíbula</li>
+                                                <li><strong>S:</strong> 8/10</li>
+                                                <li><strong>T:</strong> 15 minutos, constante</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div className="mt-4 bg-red-100 p-4 rounded-lg">
+                                        <h4 className="font-semibold text-red-800 mb-2">Abordaje Correcto:</h4>
                                         <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                            <li>Evaluar ABCDE y signos vitales</li>
-                                            <li>Administrar oxígeno si SpO₂ &lt;94%</li>
-                                            <li>Monitorear y preparar para traslado urgente</li>
-                                            <li>Aplicar OPQRST y SAMPLE</li>
+                                            <li>Posición semi-Fowler, O₂ si SpO₂ &lt;94%</li>
+                                            <li>Signos vitales: PA, FC, FR, temperatura</li>
+                                            <li>Aspirina 325mg masticable (si no contraindicada)</li>
+                                            <li>Acceso venoso, monitoreo cardíaco</li>
+                                            <li>Traslado URGENTE a hospital con hemodinamia</li>
                                         </ol>
                                     </div>
                                 </div>
-                                <div className="p-5 bg-gray-50 rounded-lg shadow-sm mb-4">
-                                    <h3 className="text-xl font-semibold mb-2 text-blue-600">Caso 2: Disnea y fiebre</h3>
-                                    <p className="italic text-gray-600 mb-4">
-                                        Mujer de 68 años, disnea progresiva, fiebre, tos productiva, crepitantes a la auscultación.
-                                    </p>
-                                    <div className="mb-4">
-                                        <h4 className="font-medium mb-2">Abordaje correcto:</h4>
+
+                                {/* Caso 2: Emergencia Respiratoria */}
+                                <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200">
+                                    <div className="flex items-center mb-4">
+                                        <span className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-lg mr-3">2</span>
+                                        <h3 className="text-xl font-semibold text-blue-700">Emergencia Respiratoria: Neumonía Severa</h3>
+                                    </div>
+                                    <div className="bg-white p-4 rounded-lg mb-4">
+                                        <h4 className="font-semibold text-gray-800 mb-2">Escenario:</h4>
+                                        <p className="text-gray-700 mb-3">
+                                            <strong>Paciente:</strong> Mujer de 68 años, jubilada<br/>
+                                            <strong>Evento:</strong> Disnea progresiva en 3 días, fiebre<br/>
+                                            <strong>Presentación:</strong> Dificultad respiratoria marcada, tos productiva con esputo amarillo, fiebre 39°C
+                                        </p>
+                                    </div>
+                                    <div className="grid md:grid-cols-3 gap-4">
+                                        <div className="bg-white p-4 rounded-lg">
+                                            <h4 className="font-semibold text-blue-700 mb-2">Signos Vitales:</h4>
+                                            <ul className="text-sm space-y-1 text-gray-700">
+                                                <li>PA: 90/60 mmHg</li>
+                                                <li>FC: 110 lpm</li>
+                                                <li>FR: 28 rpm</li>
+                                                <li>Temp: 39°C</li>
+                                                <li>SpO₂: 88% aire ambiente</li>
+                                            </ul>
+                                        </div>
+                                        <div className="bg-white p-4 rounded-lg">
+                                            <h4 className="font-semibold text-blue-700 mb-2">Hallazgos Físicos:</h4>
+                                            <ul className="text-sm space-y-1 text-gray-700">
+                                                <li>Crepitantes en base derecha</li>
+                                                <li>Uso de músculos accesorios</li>
+                                                <li>Cianosis perioral leve</li>
+                                                <li>Confusión moderada</li>
+                                            </ul>
+                                        </div>
+                                        <div className="bg-white p-4 rounded-lg">
+                                            <h4 className="font-semibold text-blue-700 mb-2">Datos SAMPLE:</h4>
+                                            <ul className="text-sm space-y-1 text-gray-700">
+                                                <li><strong>S:</strong> Disnea, fiebre, tos</li>
+                                                <li><strong>M:</strong> Losartán, Furosemida</li>
+                                                <li><strong>P:</strong> HTA, ICC</li>
+                                                <li><strong>E:</strong> Resfriado previo</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div className="mt-4 bg-blue-100 p-4 rounded-lg">
+                                        <h4 className="font-semibold text-blue-800 mb-2">Abordaje Correcto:</h4>
                                         <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                            <li>Evaluar ABCDE y saturación O₂</li>
-                                            <li>Oxígeno suplementario si SpO₂ &lt;94%</li>
-                                            <li>Buscar datos de sepsis</li>
-                                            <li>Aplicar SAMPLE y OPQRST</li>
-                                            <li>Traslado a hospital</li>
+                                            <li>O₂ suplementario inmediato (alto flujo)</li>
+                                            <li>Posición semi-Fowler (si tolera)</li>
+                                            <li>Monitoreo continuo de SpO₂</li>
+                                            <li>Acceso venoso, considerar líquidos (cauteloso por ICC)</li>
+                                            <li>Evaluación de sepsis (qSOFA)</li>
+                                            <li>Traslado urgente, notificar hospital</li>
                                         </ol>
                                     </div>
                                 </div>
-                                <div className="p-5 bg-gray-50 rounded-lg shadow-sm">
-                                    <h3 className="text-xl font-semibold mb-2 text-green-600">Caso 3: Alteración del estado mental</h3>
-                                    <p className="italic text-gray-600 mb-4">
-                                        Paciente masculino de 80 años, confuso, con antecedentes de diabetes, glucosa capilar 45 mg/dL.
-                                    </p>
-                                    <div className="mb-4">
-                                        <h4 className="font-medium mb-2">Abordaje correcto:</h4>
+
+                                {/* Caso 3: Emergencia Metabólica */}
+                                <div className="bg-gradient-to-r from-green-50 to-green-100 p-6 rounded-lg border border-green-200">
+                                    <div className="flex items-center mb-4">
+                                        <span className="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-lg mr-3">3</span>
+                                        <h3 className="text-xl font-semibold text-green-700">Emergencia Metabólica: Hipoglucemia Severa</h3>
+                                    </div>
+                                    <div className="bg-white p-4 rounded-lg mb-4">
+                                        <h4 className="font-semibold text-gray-800 mb-2">Escenario:</h4>
+                                        <p className="text-gray-700 mb-3">
+                                            <strong>Paciente:</strong> Hombre de 80 años, diabético tipo 2<br/>
+                                            <strong>Evento:</strong> Encontrado confuso en casa por familiar<br/>
+                                            <strong>Presentación:</strong> Alteración del estado mental, diaforesis, temblor, agitación
+                                        </p>
+                                    </div>
+                                    <div className="grid md:grid-cols-2 gap-4">
+                                        <div className="bg-white p-4 rounded-lg">
+                                            <h4 className="font-semibold text-green-700 mb-2">Evaluación Neurológica:</h4>
+                                            <ul className="text-sm space-y-1 text-gray-700">
+                                                <li><strong>Glasgow:</strong> 12 (O4, V3, M5)</li>
+                                                <li><strong>Orientación:</strong> Desorientado en tiempo/lugar</li>
+                                                <li><strong>Síntomas:</strong> Temblor, diaforesis</li>
+                                                <li><strong>Glucometría:</strong> 35 mg/dL</li>
+                                            </ul>
+                                        </div>
+                                        <div className="bg-white p-4 rounded-lg">
+                                            <h4 className="font-semibold text-green-700 mb-2">Historia Médica:</h4>
+                                            <ul className="text-sm space-y-1 text-gray-700">
+                                                <li><strong>DM2:</strong> 15 años evolución</li>
+                                                <li><strong>Medicamentos:</strong> Metformina, Glibenclamida</li>
+                                                <li><strong>Último alimento:</strong> Hace 12 horas</li>
+                                                <li><strong>Evento:</strong> Dosis normal, no desayunó</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div className="mt-4 bg-green-100 p-4 rounded-lg">
+                                        <h4 className="font-semibold text-green-800 mb-2">Protocolo de Tratamiento:</h4>
                                         <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                            <li>Evaluar ABCDE y glucosa capilar</li>
-                                            <li>Administrar glucosa oral o IV según protocolo</li>
-                                            <li>Monitorizar signos vitales</li>
-                                            <li>Aplicar SAMPLE</li>
-                                            <li>Traslado a hospital</li>
+                                            <li>Confirmar hipoglucemia (&lt;70 mg/dL)</li>
+                                            <li>Si consciente y puede deglutir: Glucosa oral 15g</li>
+                                            <li>Si inconsciente o no puede deglutir: Glucosa IV (Dextrosa 50% 25ml)</li>
+                                            <li>Reevaluar en 15 minutos</li>
+                                            <li>Repetir tratamiento si glucemia &lt;70 mg/dL</li>
+                                            <li>Monitoreo continuo durante traslado</li>
                                         </ol>
+                                    </div>
+                                </div>
+
+                                {/* Puntos de aprendizaje clave */}
+                                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                                    <div className="flex items-center mb-4">
+                                        <BsLightbulb className="w-6 h-6 text-yellow-600 mr-2"/>
+                                        <h3 className="text-xl font-bold text-yellow-800">Puntos de Aprendizaje Clave</h3>
+                                    </div>
+                                    <div className="grid md:grid-cols-3 gap-4">
+                                        <div className="bg-white p-4 rounded shadow-sm">
+                                            <h4 className="font-semibold text-yellow-800 mb-2 flex items-center">
+                                                <MdCheckCircle className="w-4 h-4 mr-2"/>
+                                                Comunicación Efectiva:
+                                            </h4>
+                                            <ul className="text-sm space-y-1 text-gray-700">
+                                                <li>• Preguntas abiertas iniciales</li>
+                                                <li>• SAMPLE y OPQRST sistemático</li>
+                                                <li>• Involucrar a familiares/testigos</li>
+                                                <li>• Documentación precisa</li>
+                                            </ul>
+                                        </div>
+                                        <div className="bg-white p-4 rounded shadow-sm">
+                                            <h4 className="font-semibold text-yellow-800 mb-2 flex items-center">
+                                                <FaExclamationTriangle className="w-4 h-4 mr-2"/>
+                                                Priorización:
+                                            </h4>
+                                            <ul className="text-sm space-y-1 text-gray-700">
+                                                <li>• ABC siempre primero</li>
+                                                <li>• Signos de gravedad</li>
+                                                <li>• Tratamiento vs traslado</li>
+                                                <li>• Reevaluación continua</li>
+                                            </ul>
+                                        </div>
+                                        <div className="bg-white p-4 rounded shadow-sm">
+                                            <h4 className="font-semibold text-yellow-800 mb-2 flex items-center">
+                                                <MdWarning className="w-4 h-4 mr-2"/>
+                                                Errores Comunes:
+                                            </h4>
+                                            <ul className="text-sm space-y-1 text-gray-700">
+                                                <li>• Saltar evaluación primaria</li>
+                                                <li>• Historia incompleta</li>
+                                                <li>• No monitorear tendencias</li>
+                                                <li>• Asumir diagnósticos</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -332,6 +792,7 @@ export default function MedicVision(){
                 </div>
             </div>
         </div>
+        </SEOWrapper>
     );
 }
 
