@@ -4,150 +4,326 @@ import { IoReturnDownBack } from "react-icons/io5";
 import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/16/solid";
 import { faqData } from "./Bleeding.questions.ts";
-import { MdBloodtype, MdQuiz } from "react-icons/md";
-import { BsBookHalf } from "react-icons/bs";
+import { MdBloodtype, MdQuiz, MdOutlineTimer, MdCheckCircle, MdWarning } from "react-icons/md";
+import { BsBookHalf, BsLightbulb, BsShield, BsDroplet } from "react-icons/bs";
 import { PiChalkboardTeacher } from "react-icons/pi";
+import { FaExclamationTriangle, FaBandAid } from "react-icons/fa";
+import { FiAlertTriangle, FiEye, FiActivity, FiUser } from "react-icons/fi";
+import { GiTornado } from "react-icons/gi";
+import { RiHeart2Line, RiDropLine } from "react-icons/ri";
 import { useState } from "react";
+import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
 
 export default function Bleeding() {
     const [activeTab, setActiveTab] = useState<'overview' | 'pathophysiology' | 'treatment' | 'practice'>('overview');
 
     return (
-        <div className="min-h-screen bg-gray-50">
-            <div className="flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-white pb-12 px-4 p-4">
-                <div className="w-full max-w-7xl">
-                    {/* Cabecera */}
-                    <header className="mb-8 text-center">
-                        <div className="flex justify-center">
-                            <MdBloodtype className="w-24 h-24 mb-1 text-orange-500" />
+        <SEOWrapper
+            title="Hemorragias y Shock EMT | Control de Sangrado y Manejo de Emergencias"
+            description="Guía completa sobre hemorragias y shock para Técnicos en Atención Médica Prehospitalaria: tipos de sangrado, control de hemorragias, shock hipovolémico, torniquetes y casos clínicos. Aprende a salvar vidas controlando sangrados masivos."
+            keywords="hemorragias, shock hipovolémico, control de sangrado, torniquete, EMT, paramédicos, presión directa, sangrado arterial, sangrado venoso, trauma, emergencias médicas, casos clínicos, hipotensión permisiva"
+            section="emt"
+            difficulty="Intermediate"
+            timeRequired="PT120M"
+            educationalLevel="Technical"
+            includeEducationalSchema={true}
+        >
+            <div className="min-h-screen bg-gray-50">
+                <div className="flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-white pb-12 px-4 p-4">
+                    <div className="w-full max-w-7xl">
+                        {/* Cabecera */}
+                        <header className="mb-8 text-center">
+                            <div className="flex justify-center">
+                                <MdBloodtype className="w-24 h-24 mb-1 text-red-500" />
+                            </div>
+                            <h1 className="text-5xl font-bold mb-2 text-center">Hemorragias y Shock</h1>
+                            <p className="text-sm italic mb-4">Alumnos Generación 2025 Sábados Rescate 1</p>
+                            <div className="flex justify-center">
+                                <NavLink
+                                    to={AllRoutes.EMT}
+                                    className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 transition duration-300 ease-in-out">
+                                    <IoReturnDownBack className="w-5 h-5 my-auto" />
+                                    <p className="text-lg">Regresar</p>
+                                </NavLink>
+                            </div>
+                        </header>
+
+                        {/* Alerta crítica */}
+                        <div className="bg-gradient-to-r from-red-50 to-red-100 border-l-4 border-red-500 p-6 rounded-lg mb-8 max-w-5xl mx-auto">
+                            <div className="flex items-center mb-4">
+                                <FaExclamationTriangle className="w-8 h-8 text-red-500 mr-3"/>
+                                <h2 className="text-2xl font-bold text-red-700">¡RECUERDA: XABCDE!</h2>
+                            </div>
+                            <p className="text-gray-800 leading-relaxed text-lg">
+                                La hemorragia exanguinante (que mata) es lo <strong>PRIMERO</strong> que debes controlar. 
+                                Puede causar muerte por shock en <span className="text-red-600 font-bold">minutos</span>.
+                                <br />
+                                <strong>X = eXanguinante</strong> viene ANTES que A, B, C.
+                            </p>
                         </div>
-                        <h1 className="text-5xl font-bold mb-2 text-center">Hemorragias y Shock</h1>
-                        <p className="text-sm italic mb-4">Alumnos Generación 2025 Sábados Rescate 1</p>
-                        <div className="flex justify-center">
+
+                        {/* Menú rápido de recursos */}
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 max-w-4xl mx-auto">
                             <NavLink
-                                to={AllRoutes.EMT}
-                                className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 transition duration-300 ease-in-out">
-                                <IoReturnDownBack className="w-5 h-5 my-auto" />
-                                <p className="text-lg">Regresar</p>
+                                to="/bleeding/exam"
+                                className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-red-50 transition duration-300 hover:shadow-md">
+                                <MdQuiz className="w-10 h-10 text-red-500 mb-2" />
+                                <p className="text-center font-medium">Examen</p>
                             </NavLink>
+                            <a href="https://docs.google.com/presentation/d/1hA3-7Yh-8XEeliOwZYnRbLHdM8KQ8_Vi/edit?usp=drive_link&ouid=107287742628985461156&rtpof=true&sd=true"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-red-50 transition duration-300 hover:shadow-md">
+                                <PiChalkboardTeacher className="w-10 h-10 text-red-500 mb-2" />
+                                <p className="text-center font-medium">Presentación</p>
+                            </a>
+                            <a href="https://www.stopthebleed.org/es"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-red-50 transition duration-300 hover:shadow-md">
+                                <FaBandAid className="w-10 h-10 text-red-500 mb-2" />
+                                <p className="text-center font-medium">Stop The Bleed</p>
+                            </a>
+                            <a href="https://drive.google.com/file/d/1X1gyH116wqPUNylkZ5b_VG6LHjB5vZcT/view?usp=drive_link"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-red-50 transition duration-300 hover:shadow-md">
+                                <BsBookHalf className="w-10 h-10 text-red-500 mb-2" />
+                                <p className="text-center font-medium">Capítulo</p>
+                            </a>
                         </div>
-                    </header>
 
-                    {/* Menú rápido de recursos */}
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8 max-w-4xl mx-auto">
-                        <NavLink
-                            to="/bleeding/exam" // Asegúrate que esta ruta exista o ajústala
-                            className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
-                            <MdQuiz className="w-10 h-10 text-orange-500 mb-2" />
-                            <p className="text-center font-medium">Examen</p>
-                        </NavLink>
+                        {/* Navegación por pestañas */}
+                        <div className="mb-6 border-b border-gray-200 max-w-5xl mx-auto">
+                            <nav className="flex space-x-2 overflow-x-auto">
+                                <button
+                                    onClick={() => setActiveTab('overview')}
+                                    className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
+                                        activeTab === 'overview' 
+                                            ? 'border-red-500 text-red-600' 
+                                            : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                                    }`}>
+                                    Generalidades
+                                </button>
+                                <button
+                                    onClick={() => setActiveTab('pathophysiology')}
+                                    className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
+                                        activeTab === 'pathophysiology' 
+                                            ? 'border-red-500 text-red-600' 
+                                            : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                                    }`}>
+                                    Fisiopatología y Shock
+                                </button>
+                                <button
+                                    onClick={() => setActiveTab('treatment')}
+                                    className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
+                                        activeTab === 'treatment' 
+                                            ? 'border-red-500 text-red-600' 
+                                            : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                                    }`}>
+                                    Control y Tratamiento
+                                </button>
+                                <button
+                                    onClick={() => setActiveTab('practice')}
+                                    className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
+                                        activeTab === 'practice' 
+                                            ? 'border-red-500 text-red-600' 
+                                            : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                                    }`}>
+                                    Casos Clínicos
+                                </button>
+                            </nav>
+                        </div>
 
-                        <a href="https://docs.google.com/presentation/d/1hA3-7Yh-8XEeliOwZYnRbLHdM8KQ8_Vi/edit?usp=drive_link&ouid=107287742628985461156&rtpof=true&sd=true" // Reemplazar con link específico de hemorragias si existe
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
-                            <PiChalkboardTeacher className="w-10 h-10 text-orange-500 mb-2" />
-                            <p className="text-center font-medium">Presentación</p>
-                        </a>
-                        <a href="https://www.stopthebleed.org" // Ejemplo, reemplazar con recurso específico
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
-                            <BsBookHalf className="w-10 h-10 text-orange-500 mb-2" />
-                            <p className="text-center font-medium">Stop The Bleed</p>
-                        </a>
-                    </div>
-
-                    {/* Navegación por pestañas */}
-                    <div className="mb-6 border-b border-gray-200 max-w-5xl mx-auto">
-                        <nav className="flex space-x-2 overflow-x-auto">
-                            <button
-                                onClick={() => setActiveTab('overview')}
-                                className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
-                                    activeTab === 'overview' 
-                                        ? 'border-orange-500 text-orange-600' 
-                                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                                }`}>
-                                Generalidades
-                            </button>
-                            <button
-                                onClick={() => setActiveTab('pathophysiology')}
-                                className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
-                                    activeTab === 'pathophysiology' 
-                                        ? 'border-orange-500 text-orange-600' 
-                                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                                }`}>
-                                Fisiopatología
-                            </button>
-                            <button
-                                onClick={() => setActiveTab('treatment')}
-                                className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
-                                    activeTab === 'treatment' 
-                                        ? 'border-orange-500 text-orange-600' 
-                                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                                }`}>
-                                Manejo y Tratamiento
-                            </button>
-                            <button
-                                onClick={() => setActiveTab('practice')}
-                                className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
-                                    activeTab === 'practice' 
-                                        ? 'border-orange-500 text-orange-600' 
-                                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                                }`}>
-                                Casos Clínicos
-                            </button>
-                        </nav>
-                    </div>
-
-                    {/* Contenido principal basado en pestañas */}
-                    <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-sm p-6 mb-8">
-                        {activeTab === 'overview' && (
-                            <div className="space-y-6">
-                                <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">¿Qué es una hemorragia?</h2>
-                                    <p className="text-gray-700 leading-relaxed">
-                                        Una hemorragia es la pérdida aguda de sangre del sistema circulatorio. Puede ser externa (visible) o interna (oculta), y su gravedad depende del volumen de sangre perdido, la velocidad de la pérdida y la localización. El reconocimiento y control temprano son vitales.
-                                    </p>
-                                </div>
-
-                                <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Tipos de Hemorragia</h2>
-                                    <div className="grid md:grid-cols-2 gap-4">
-                                        <div>
-                                            <h3 className="font-medium text-lg mb-2 text-orange-700">Según el vaso afectado:</h3>
-                                            <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                                <li><strong>Arterial:</strong> Sangre de color rojo brillante, sale a presión (pulsátil) sincronizada con el pulso. Es la más peligrosa y requiere control inmediato.</li>
-                                                <li><strong>Venosa:</strong> Sangre de color rojo oscuro, fluye de manera continua. Puede ser abundante y también grave.</li>
-                                                <li><strong>Capilar:</strong> Sangrado superficial, en "sábana", generalmente menos grave y se controla más fácilmente.</li>
-                                            </ul>
+                        {/* Contenido principal basado en pestañas */}
+                        <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-sm p-6 mb-8">
+                            {activeTab === 'overview' && (
+                                <div className="space-y-8">
+                                    {/* Definición y tipos críticos */}
+                                    <div className="bg-gradient-to-r from-blue-50 to-blue-100 border-l-4 border-blue-500 p-6 rounded-lg">
+                                        <div className="flex items-center mb-4">
+                                            <BsDroplet className="w-8 h-8 text-blue-500 mr-3"/>
+                                            <h2 className="text-2xl font-bold text-blue-700">¿Qué es una Hemorragia?</h2>
                                         </div>
-                                        <div>
-                                            <h3 className="font-medium text-lg mb-2 text-blue-700">Según la localización:</h3>
-                                            <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                                <li><strong>Externa:</strong> La sangre sale al exterior del cuerpo a través de una herida.</li>
-                                                <li><strong>Interna:</strong> La sangre se acumula dentro de cavidades corporales (abdomen, tórax, pelvis) o en tejidos. Requiere alta sospecha.</li>
-                                            </ul>
+                                        <p className="text-gray-800 leading-relaxed text-lg mb-4">
+                                            Pérdida <strong>aguda</strong> de sangre del sistema circulatorio. Su gravedad depende del 
+                                            <strong> volumen perdido</strong>, <strong>velocidad de pérdida</strong> y <strong>localización</strong>.
+                                        </p>
+                                        <div className="grid md:grid-cols-3 gap-4">
+                                            <div className="bg-white p-4 rounded shadow-sm text-center">
+                                                <MdOutlineTimer className="w-8 h-8 text-red-500 mx-auto mb-2"/>
+                                                <p className="font-bold text-red-600">Clase IV</p>
+                                                <p className="text-sm">&gt;40% pérdida = CRÍTICO</p>
+                                            </div>
+                                            <div className="bg-white p-4 rounded shadow-sm text-center">
+                                                <MdWarning className="w-8 h-8 text-orange-500 mx-auto mb-2"/>
+                                                <p className="font-bold text-orange-600">Clase III</p>
+                                                <p className="text-sm">30-40% = SEVERO</p>
+                                            </div>
+                                            <div className="bg-white p-4 rounded shadow-sm text-center">
+                                                <MdCheckCircle className="w-8 h-8 text-green-500 mx-auto mb-2"/>
+                                                <p className="font-bold text-green-600">Clase I-II</p>
+                                                <p className="text-sm">&lt;30% = MODERADO</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Tipos de hemorragia con características visuales */}
+                                    <div>
+                                        <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
+                                            <BsShield className="w-6 h-6 mr-2 text-red-500"/>
+                                            Tipos de Hemorragia - Reconocimiento Visual
+                                        </h2>
+                                        <div className="grid lg:grid-cols-3 gap-6">
+                                            <div className="bg-gradient-to-b from-red-50 to-red-100 p-6 rounded-lg border border-red-200">
+                                                <h3 className="text-xl font-bold text-red-700 mb-3 text-center flex items-center justify-center">
+                                                    <GiTornado className="w-6 h-6 mr-2"/>
+                                                    ARTERIAL
+                                                </h3>
+                                                <div className="space-y-3">
+                                                    <div className="bg-white p-4 rounded shadow-sm">
+                                                        <h4 className="font-bold text-red-600 mb-2">Características:</h4>
+                                                        <ul className="text-sm space-y-1">
+                                                            <li>• Color rojo <strong>brillante</strong></li>
+                                                            <li>• Sale a <strong>presión pulsátil</strong></li>
+                                                            <li>• Sincronizado con pulso</li>
+                                                            <li>• <strong>MÁS PELIGROSA</strong></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div className="bg-red-100 p-3 rounded">
+                                                        <p className="text-sm font-semibold text-red-800">⚠️ PRIORIDAD ABSOLUTA</p>
+                                                        <p className="text-xs">Control inmediato o muerte</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="bg-gradient-to-b from-purple-50 to-purple-100 p-6 rounded-lg border border-purple-200">
+                                                <h3 className="text-xl font-bold text-purple-700 mb-3 text-center flex items-center justify-center">
+                                                    <RiDropLine className="w-6 h-6 mr-2"/>
+                                                    VENOSA
+                                                </h3>
+                                                <div className="space-y-3">
+                                                    <div className="bg-white p-4 rounded shadow-sm">
+                                                        <h4 className="font-bold text-purple-600 mb-2">Características:</h4>
+                                                        <ul className="text-sm space-y-1">
+                                                            <li>• Color rojo <strong>oscuro</strong></li>
+                                                            <li>• Flujo <strong>continuo</strong></li>
+                                                            <li>• Sin pulsaciones</li>
+                                                            <li>• Puede ser abundante</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div className="bg-purple-100 p-3 rounded">
+                                                        <p className="text-sm font-semibold text-purple-800">Controlable con presión</p>
+                                                        <p className="text-xs">Responde bien a compresión</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="bg-gradient-to-b from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200">
+                                                <h3 className="text-xl font-bold text-blue-700 mb-3 text-center flex items-center justify-center">
+                                                    <RiHeart2Line className="w-6 h-6 mr-2"/>
+                                                    CAPILAR
+                                                </h3>
+                                                <div className="space-y-3">
+                                                    <div className="bg-white p-4 rounded shadow-sm">
+                                                        <h4 className="font-bold text-blue-600 mb-2">Características:</h4>
+                                                        <ul className="text-sm space-y-1">
+                                                            <li>• Color rojo medio</li>
+                                                            <li>• Rezuma en <strong>"sábana"</strong></li>
+                                                            <li>• Superficial</li>
+                                                            <li>• Menos peligrosa</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div className="bg-blue-100 p-3 rounded">
+                                                        <p className="text-sm font-semibold text-blue-800">Control fácil</p>
+                                                        <p className="text-xs">Presión directa suficiente</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Signos de alarma mejorados */}
+                                    <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                                        <div className="flex items-center mb-4">
+                                            <FiAlertTriangle className="w-6 h-6 text-yellow-600 mr-2"/>
+                                            <h3 className="text-xl font-bold text-yellow-800">Signos de Shock - Actúa YA</h3>
+                                        </div>
+                                        <div className="grid md:grid-cols-3 gap-4">
+                                            <div>
+                                                <h4 className="font-semibold text-yellow-800 mb-2 flex items-center">
+                                                    <FiEye className="w-4 h-4 mr-1"/>
+                                                    Lo que VES:
+                                                </h4>
+                                                <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
+                                                    <li><strong>Palidez</strong> de piel/mucosas</li>
+                                                    <li><strong>Diaforesis</strong> (sudor frío)</li>
+                                                    <li><strong>Inquietud</strong> o confusión</li>
+                                                    <li>Llenado capilar &gt;2 seg</li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <h4 className="font-semibold text-yellow-800 mb-2 flex items-center">
+                                                    <FiActivity className="w-4 h-4 mr-1"/>
+                                                    Signos Vitales:
+                                                </h4>
+                                                <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
+                                                    <li><strong>Taquicardia</strong> (FC &gt;100)</li>
+                                                    <li><strong>Hipotensión</strong> (signo tardío)</li>
+                                                    <li><strong>Taquipnea</strong> (FR &gt;20)</li>
+                                                    <li>Pulso débil/filiforme</li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <h4 className="font-semibold text-yellow-800 mb-2 flex items-center">
+                                                    <FiUser className="w-4 h-4 mr-1"/>
+                                                    Síntomas:
+                                                </h4>
+                                                <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
+                                                    <li><strong>Sed intensa</strong></li>
+                                                    <li><strong>Náuseas</strong></li>
+                                                    <li><strong>Debilidad</strong></li>
+                                                    <li>Alteración mental</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Puntos clave para recordar */}
+                                    <div className="bg-green-50 border border-green-200 rounded-lg p-6">
+                                        <div className="flex items-center mb-4">
+                                            <BsLightbulb className="w-6 h-6 text-green-600 mr-2"/>
+                                            <h3 className="text-xl font-bold text-green-800">Reglas de Oro del Control de Hemorragias</h3>
+                                        </div>
+                                        <div className="grid md:grid-cols-2 gap-6">
+                                            <div>
+                                                <h4 className="font-semibold text-green-800 mb-2 flex items-center">
+                                                    <MdCheckCircle className="w-4 h-4 mr-2"/>
+                                                    HACER SIEMPRE:
+                                                </h4>
+                                                <ul className="list-disc list-inside space-y-1 text-gray-700">
+                                                    <li><strong>X</strong> antes de ABC en trauma</li>
+                                                    <li>Presión directa FIRME</li>
+                                                    <li>Proteger de hipotermia</li>
+                                                    <li>Anotar hora del torniquete</li>
+                                                    <li>Monitorear signos vitales</li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <h4 className="font-semibold text-red-800 mb-2 flex items-center">
+                                                    <FaExclamationTriangle className="w-4 h-4 mr-2"/>
+                                                    NUNCA HACER:
+                                                </h4>
+                                                <ul className="list-disc list-inside space-y-1 text-gray-700">
+                                                    <li>Levantar apósitos para "ver"</li>
+                                                    <li>Dar líquidos por boca</li>
+                                                    <li>Aflojar torniquete en campo</li>
+                                                    <li>Retrasar transporte</li>
+                                                    <li>Presión arterial normal = estable</li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Signos y Síntomas Comunes</h2>
-                                    <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                        <li>Palidez de piel y mucosas.</li>
-                                        <li>Piel fría y húmeda (diaforesis).</li>
-                                        <li>Taquicardia (pulso rápido).</li>
-                                        <li>Hipotensión (presión arterial baja) - puede ser un signo tardío.</li>
-                                        <li>Taquipnea (respiración rápida).</li>
-                                        <li>Alteración del estado mental: ansiedad, confusión, agitación, somnolencia o inconsciencia.</li>
-                                        <li>Sed intensa.</li>
-                                        <li>Llenado capilar retardado (&gt;2 segundos).</li>
-                                        <li>En hemorragias internas: hematomas, distensión abdominal, dolor, rigidez.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        )}
+                            )}
 
                         {activeTab === 'pathophysiology' && (
                             <div className="space-y-6">
@@ -351,7 +527,7 @@ export default function Bleeding() {
                                 <Disclosure key={idx}>
                                     {({ open }) => (
                                         <div className="border rounded-lg overflow-hidden">
-                                            <Disclosure.Button className="flex w-full justify-between items-center bg-gray-100 px-4 py-3 text-left text-lg font-medium hover:bg-orange-100 transition">
+                                            <Disclosure.Button className="flex w-full justify-between items-center bg-gray-100 px-4 py-3 text-left text-lg font-medium hover:bg-red-100 transition">
                                                 <span>{faq.question}</span>
                                                 <ChevronUpIcon
                                                     className={`${open ? "transform rotate-180" : ""} h-5 w-5 text-gray-500`}
@@ -376,21 +552,31 @@ export default function Bleeding() {
                                 <ul className="list-disc list-inside space-y-2 text-gray-700">
                                     <li>NAEMT. (2023). <em>PHTLS: Soporte Vital de Trauma Prehospitalario</em> (10ª edición). Jones & Bartlett Learning.</li>
                                     <li>American College of Surgeons Committee on Trauma. (2018). <em>Advanced Trauma Life Support (ATLS) Student Course Manual</em> (10ª edición).</li>
-                                    <li>AAOS. (2021). <em>Emergencias Médicas Prehospitalarias</em> (11ª edición). Jones & Bartlett Learning.</li>
+                                    <li>AAOS. (2021). <em>Nancy Caroline's Emergency Care in the Streets</em> (11ª edición). Jones & Bartlett Learning.</li>
+                                    <li>Comité de Trauma del Colegio Americano de Cirujanos. (2022). <em>Recursos para el Cuidado Óptimo del Paciente Traumatizado</em>.</li>
                                 </ul>
                             </div>
                             <div>
                                 <h3 className="text-lg font-medium mb-2">Recursos en Línea</h3>
                                 <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                    <li><a href="https://www.stopthebleed.org" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Stop the Bleed Campaign</a></li>
-                                    <li><a href="https://www.ems1.com/hemorrhage-control" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">EMS1 - Artículos sobre Control de Hemorragias</a></li>
-                                    <li><a href="https://www.jems.com/patient-care/trauma/hemorrhage-control/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">JEMS - Sección de Control de Hemorragias</a></li>
+                                    <li><a href="https://www.stopthebleed.org/es" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline">Stop the Bleed Campaign (Español)</a></li>
+                                    <li><a href="https://www.ems1.com/hemorrhage-control" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline">EMS1 - Artículos sobre Control de Hemorragias</a></li>
+                                    <li><a href="https://www.jems.com/patient-care/trauma/hemorrhage-control/" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline">JEMS - Control de Hemorragias</a></li>
+                                    <li><a href="https://www.tc3sim.com" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline">TC3 Simulator - Entrenamiento táctico</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 className="text-lg font-medium mb-2">Videos Educativos Recomendados</h3>
+                                <ul className="list-disc list-inside space-y-2 text-gray-700">
+                                    <li><a href="https://youtu.be/6s3VKhJNn6Y" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline">Aplicación correcta de torniquete (Stop the Bleed)</a></li>
+                                    <li><a href="https://youtu.be/oFqP4JbZnec" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline">Control de hemorragias en trauma (PHTLS)</a></li>
                                 </ul>
                             </div>
                         </div>
                     </section>
                 </div>
             </div>
-        </div>
+            </div>
+        </SEOWrapper>
     );
 }
