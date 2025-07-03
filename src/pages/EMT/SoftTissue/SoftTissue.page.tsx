@@ -5,7 +5,7 @@ import {Disclosure} from "@headlessui/react";
 import {ChevronUpIcon} from "@heroicons/react/16/solid";
 import {faqData} from "./SoftTissue.questions.ts";
 import {IoReturnDownBack} from "react-icons/io5";
-import {MdQuiz, MdOutlineTimer, MdCheckCircle, MdWarning} from "react-icons/md";
+import {MdQuiz, MdCheckCircle, MdWarning} from "react-icons/md";
 import {BsBookHalf, BsLightbulb, BsShield} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
 import {CiMedicalCross} from "react-icons/ci";

@@ -6,7 +6,7 @@ import {faqData} from "./NeuroEmergency.questions.ts";
 import {RiBrain2Fill} from "react-icons/ri";
 import {IoReturnDownBack} from "react-icons/io5";
 import {useState} from "react";
-import {MdQuiz, MdOutlineTimer, MdCheckCircle, MdWarning, MdEmergency} from "react-icons/md";
+import {MdQuiz, MdCheckCircle, MdWarning, MdEmergency} from "react-icons/md";
 import {BsBookHalf, BsLightbulb, BsShield, BsClock} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
 import {FaExclamationTriangle, FaHeartbeat, FaEye, FaHandPaper} from "react-icons/fa";

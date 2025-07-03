@@ -5,7 +5,7 @@ import {ChevronUpIcon} from "@heroicons/react/16/solid";
 import {faqData} from "./ToraxInjuries.questions.ts";
 import {IoReturnDownBack} from "react-icons/io5";
 import {useState} from "react";
-import {MdQuiz, MdWarning, MdOutlineTimer, MdCheckCircle} from "react-icons/md";
+import {MdQuiz, MdOutlineTimer, MdCheckCircle} from "react-icons/md";
 import {BsBookHalf, BsLightbulb, BsShield} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
 import {GiTrenchBodyArmor} from "react-icons/gi";
