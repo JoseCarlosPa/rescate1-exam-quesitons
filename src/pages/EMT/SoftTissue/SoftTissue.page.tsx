@@ -5,28 +5,39 @@ import {Disclosure} from "@headlessui/react";
 import {ChevronUpIcon} from "@heroicons/react/16/solid";
 import {faqData} from "./SoftTissue.questions.ts";
 import {IoReturnDownBack} from "react-icons/io5";
-import {MdQuiz} from "react-icons/md";
-import {BsBookHalf} from "react-icons/bs";
+import {MdQuiz, MdOutlineTimer, MdCheckCircle, MdWarning} from "react-icons/md";
+import {BsBookHalf, BsLightbulb, BsShield} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
 import {CiMedicalCross} from "react-icons/ci";
+import {FaExclamationTriangle, FaFirstAid, FaBandAid, FaHeartbeat} from "react-icons/fa";
+import {FiAlertTriangle, FiEye, FiClock} from "react-icons/fi";
+import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
 
 export default function SoftTissue() {
     const [activeTab, setActiveTab] = useState<'overview' | 'anatomy' | 'treatment' | 'practice'>('overview');
-    const [showQuickQuiz, setShowQuickQuiz] = useState(false);
 
     return (
-        <div className="min-h-screen bg-gray-50">
+        <SEOWrapper
+            title="Lesiones de Tejido Blando EMT | Evaluación, Manejo y Casos Clínicos"
+            description="Guía completa sobre lesiones de tejido blando para Técnicos en Atención Médica Prehospitalaria: control de hemorragias, cuidado de heridas, manejo de shock y casos clínicos. Aprende técnicas críticas para el manejo de trauma."
+            keywords="lesiones tejido blando, EMT, paramédicos, control hemorragia, heridas abiertas, heridas cerradas, torniquetes, hemostasia, trauma, emergencias médicas, casos clínicos, protocolo XABCDE"
+            section="emt"
+            difficulty="Intermediate"
+            timeRequired="PT75M"
+            educationalLevel="Technical"
+            includeEducationalSchema={true}
+        >
+            <div className="min-h-screen bg-gray-50">
             <div
                 className="flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-white pb-12 px-4 p-4">
                 <div className="w-full max-w-7xl">
                     {/* Cabecera */}
                     <header className="mb-8 text-center">
                         <div className="flex justify-center">
-                            <CiMedicalCross
-                                className="w-24 h-24 mb-1 text-red-500"/> {/* Changed color for visual distinction of topic */}
+                            <CiMedicalCross className="w-24 h-24 mb-1 text-red-500"/>
                         </div>
                         <h1 className="text-5xl font-bold mb-2 text-center">Lesiones de Tejido Blando</h1>
-                        <p className="text-sm italic mb-4">Guía de estudio para Técnicos en Emergencias Médicas</p>
+                        <p className="text-sm italic mb-4">Alumnos Generación 2025 Sábados Rescate 1</p>
                         <div className="flex justify-center">
                             <NavLink
                                 to={AllRoutes.EMT}
@@ -61,19 +72,6 @@ export default function SoftTissue() {
                             <p className="text-center font-medium">Capítulo</p>
                         </a>
                     </div>
-
-                    {/* Quiz rápido */}
-                    {showQuickQuiz && (
-                        <div className="bg-white p-6 rounded-lg shadow-md mb-8 max-w-4xl mx-auto">
-                            <h3 className="text-xl font-bold mb-4 text-gray-800">Quiz Rápido - Pon a prueba tus
-                                conocimientos</h3>
-                            <button
-                                onClick={() => setShowQuickQuiz(false)}
-                                className="mt-4 bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded transition">
-                                Cerrar Quiz
-                            </button>
-                        </div>
-                    )}
 
                     {/* Navegación por pestañas */}
                     <div className="mb-6 border-b border-gray-200 max-w-5xl mx-auto">
@@ -120,90 +118,225 @@ export default function SoftTissue() {
                     {/* Contenido principal basado en pestañas */}
                     <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-sm p-6 mb-8">
                         {activeTab === 'overview' && (
-                            <div className="space-y-6">
-                                <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Introducción
-                                        a las Lesiones de Tejido Blando</h2>
-                                    <p className="text-gray-700 leading-relaxed">
-                                        Las lesiones de tejido blando son algunas de las emergencias más comunes que
-                                        atienden los TMEs. Comprenden una amplia gama de heridas que afectan la piel,
-                                        músculos, nervios, vasos sanguíneos y órganos subyacentes. Estas pueden variar
-                                        desde abrasiones menores y contusiones hasta laceraciones severas, avulsiones y
-                                        amputaciones que amenazan la vida.
-                                    </p>
-                                    <p className="text-gray-700 mt-2 leading-relaxed">
-                                        Según el libro de AAOS (Atención Médica Prehospitalaria de Emergencia, 11ª
-                                        edición), un manejo adecuado de estas lesiones es crucial para prevenir
-                                        infecciones, controlar hemorragias, minimizar el dolor y preservar la función.
-                                        Este módulo se enfoca en la evaluación y el manejo prehospitalario de las
-                                        lesiones de tejido blando.
-                                    </p>
-                                </div>
-
-                                <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Clasificación
-                                        General de Heridas</h2>
-                                    <div className="grid md:grid-cols-2 gap-4">
-                                        <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                            <li><strong>Heridas cerradas:</strong> La piel permanece intacta, pero hay
-                                                daño en los tejidos subyacentes. Ejemplos: contusiones, hematomas,
-                                                lesiones por aplastamiento internas.
-                                            </li>
-                                            <li><strong>Heridas abiertas:</strong> La piel está rota, exponiendo los
-                                                tejidos internos. Ejemplos: abrasiones, laceraciones, punciones,
-                                                avulsiones, amputaciones.
-                                            </li>
-                                        </ul>
-                                        <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                            <li><strong>Quemaduras:</strong> Lesiones causadas por calor, químicos,
-                                                electricidad o radiación. Se clasifican por profundidad y extensión. (Se
-                                                tratan en detalle en otro módulo, pero es importante reconocerlas).
-                                            </li>
-                                        </ul>
+                            <div className="space-y-8">
+                                {/* Importancia crítica */}
+                                <div className="bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-red-500 p-6 rounded-lg">
+                                    <div className="flex items-center mb-4">
+                                        <FaExclamationTriangle className="w-8 h-8 text-red-500 mr-3"/>
+                                        <h2 className="text-2xl font-bold text-red-700">¡Prioridad en la Evaluación!</h2>
                                     </div>
-                                    <p className="text-gray-700 mt-3 leading-relaxed">
-                                        La evaluación precisa del tipo de herida, su profundidad, la extensión del daño
-                                        y el potencial de contaminación son pasos fundamentales para el TME.
+                                    <p className="text-gray-800 leading-relaxed text-lg">
+                                        Las lesiones de tejido blando pueden ser <strong>mortales</strong> si no se controlan adecuadamente.
+                                        Una hemorragia no controlada puede causar shock hipovolémico en <span className="text-red-600 font-bold">minutos</span>.
                                     </p>
+                                    <div className="mt-4 grid md:grid-cols-3 gap-4">
+                                        <div className="bg-white p-4 rounded shadow-sm text-center">
+                                            <FiClock className="w-8 h-8 text-red-500 mx-auto mb-2"/>
+                                            <p className="font-bold text-red-600">Hemorragia Arterial</p>
+                                            <p className="text-sm">Pérdida rápida de volumen</p>
+                                        </div>
+                                        <div className="bg-white p-4 rounded shadow-sm text-center">
+                                            <MdWarning className="w-8 h-8 text-orange-500 mx-auto mb-2"/>
+                                            <p className="font-bold text-orange-600">Contaminación</p>
+                                            <p className="text-sm">Riesgo de infección severa</p>
+                                        </div>
+                                        <div className="bg-white p-4 rounded shadow-sm text-center">
+                                            <FaHeartbeat className="w-8 h-8 text-red-700 mx-auto mb-2"/>
+                                            <p className="font-bold text-red-700">Shock</p>
+                                            <p className="text-sm">Compromiso hemodinámico</p>
+                                        </div>
+                                    </div>
                                 </div>
 
+                                {/* Protocolo XABCDE */}
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Principios
-                                        de Evaluación y Manejo (Según AAOS)</h2>
-                                    <div className="space-y-3">
-                                        <div className="bg-orange-50 p-4 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-1 text-orange-700">1. Seguridad de la
-                                                Escena y BSI</h3>
-                                            <p className="text-gray-700">Priorizar la seguridad personal y utilizar el
-                                                equipo de protección individual adecuado.</p>
+                                    <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
+                                        <BsShield className="w-6 h-6 mr-2 text-orange-500"/>
+                                        Protocolo XABCDE - Evaluación Sistemática
+                                    </h2>
+                                    <div className="grid md:grid-cols-3 gap-6">
+                                        <div className="bg-gradient-to-b from-red-50 to-red-100 p-6 rounded-lg border">
+                                            <h3 className="text-xl font-bold text-red-700 mb-3 text-center">X - HEMORRAGIA</h3>
+                                            <ul className="space-y-2 text-gray-700">
+                                                <li className="flex items-start">
+                                                    <FiEye className="w-4 h-4 mt-1 mr-2 text-red-600"/>
+                                                    <span>Identificar hemorragias exanguinantes</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <FiEye className="w-4 h-4 mt-1 mr-2 text-red-600"/>
+                                                    <span>Aplicar presión directa inmediata</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <FiEye className="w-4 h-4 mt-1 mr-2 text-red-600"/>
+                                                    <span>Considerar torniquete si es necesario</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <FiEye className="w-4 h-4 mt-1 mr-2 text-red-600"/>
+                                                    <span>Controlar ANTES del ABC</span>
+                                                </li>
+                                            </ul>
                                         </div>
-                                        <div className="bg-blue-50 p-4 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-1 text-blue-700">2. Evaluación
-                                                Primaria (XABCDE)</h3>
-                                            <p className="text-gray-700">Identificar y tratar hemorragias exanguinantes
-                                                (X), asegurar vía aérea (A), ventilación (B), circulación (C), déficit
-                                                neurológico (D) y exposición/ambiente (E).</p>
+                                        <div className="bg-gradient-to-b from-blue-50 to-blue-100 p-6 rounded-lg border">
+                                            <h3 className="text-xl font-bold text-blue-700 mb-3 text-center">ABC - PRIMARIO</h3>
+                                            <ul className="space-y-2 text-gray-700">
+                                                <li className="flex items-start">
+                                                    <FiEye className="w-4 h-4 mt-1 mr-2 text-blue-600"/>
+                                                    <span><strong>A:</strong> Vía aérea permeable</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <FiEye className="w-4 h-4 mt-1 mr-2 text-blue-600"/>
+                                                    <span><strong>B:</strong> Respiración adecuada</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <FiEye className="w-4 h-4 mt-1 mr-2 text-blue-600"/>
+                                                    <span><strong>C:</strong> Circulación y pulso</span>
+                                                </li>
+                                            </ul>
                                         </div>
-                                        <div className="bg-green-50 p-4 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-1 text-green-700">3. Control de
-                                                Hemorragia</h3>
-                                            <p className="text-gray-700">Aplicar presión directa, elevación, vendajes
-                                                compresivos, y considerar torniquetes o agentes hemostáticos para
-                                                hemorragias severas.</p>
+                                        <div className="bg-gradient-to-b from-green-50 to-green-100 p-6 rounded-lg border">
+                                            <h3 className="text-xl font-bold text-green-700 mb-3 text-center">DE - NEUROLÓGICO</h3>
+                                            <ul className="space-y-2 text-gray-700">
+                                                <li className="flex items-start">
+                                                    <FiEye className="w-4 h-4 mt-1 mr-2 text-green-600"/>
+                                                    <span><strong>D:</strong> Déficit neurológico (AVDI)</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <FiEye className="w-4 h-4 mt-1 mr-2 text-green-600"/>
+                                                    <span><strong>E:</strong> Exposición completa</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <FiEye className="w-4 h-4 mt-1 mr-2 text-green-600"/>
+                                                    <span>Control de temperatura</span>
+                                                </li>
+                                            </ul>
                                         </div>
-                                        <div className="bg-yellow-50 p-4 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-1 text-yellow-700">4. Cuidado de la
-                                                Herida</h3>
-                                            <p className="text-gray-700">Limpiar la herida si es posible (según
-                                                protocolos), cubrir con apósitos estériles y vendar adecuadamente para
-                                                protegerla de mayor contaminación.</p>
+                                    </div>
+                                </div>
+
+                                {/* Clasificación de heridas */}
+                                <div>
+                                    <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2">Clasificación de Lesiones</h2>
+                                    <div className="grid md:grid-cols-2 gap-6">
+                                        <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
+                                            <h3 className="text-xl font-bold text-blue-700 mb-4 flex items-center">
+                                                <FaBandAid className="w-5 h-5 mr-2"/>
+                                                Heridas Cerradas
+                                            </h3>
+                                            <div className="space-y-3">
+                                                <div className="bg-white p-3 rounded">
+                                                    <h4 className="font-semibold text-blue-600">Contusiones</h4>
+                                                    <p className="text-sm text-gray-600">Daño a capilares sin ruptura de piel</p>
+                                                </div>
+                                                <div className="bg-white p-3 rounded">
+                                                    <h4 className="font-semibold text-blue-600">Hematomas</h4>
+                                                    <p className="text-sm text-gray-600">Acumulación de sangre en tejidos</p>
+                                                </div>
+                                                <div className="bg-white p-3 rounded">
+                                                    <h4 className="font-semibold text-blue-600">Lesiones por Aplastamiento</h4>
+                                                    <p className="text-sm text-gray-600">Compresión severa de tejidos</p>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div className="bg-purple-50 p-4 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-1 text-purple-700">5. Manejo del
-                                                Shock</h3>
-                                            <p className="text-gray-700">Reconocer y tratar el shock hipovolémico
-                                                manteniendo la temperatura corporal, administrando oxígeno y realizando
-                                                un traslado rápido.</p>
+                                        <div className="bg-red-50 p-6 rounded-lg border border-red-200">
+                                            <h3 className="text-xl font-bold text-red-700 mb-4 flex items-center">
+                                                <FaFirstAid className="w-5 h-5 mr-2"/>
+                                                Heridas Abiertas
+                                            </h3>
+                                            <div className="space-y-3">
+                                                <div className="bg-white p-3 rounded">
+                                                    <h4 className="font-semibold text-red-600">Abrasiones</h4>
+                                                    <p className="text-sm text-gray-600">Pérdida superficial de epidermis</p>
+                                                </div>
+                                                <div className="bg-white p-3 rounded">
+                                                    <h4 className="font-semibold text-red-600">Laceraciones</h4>
+                                                    <p className="text-sm text-gray-600">Cortes lineales o irregulares</p>
+                                                </div>
+                                                <div className="bg-white p-3 rounded">
+                                                    <h4 className="font-semibold text-red-600">Punciones</h4>
+                                                    <p className="text-sm text-gray-600">Heridas pequeñas y profundas</p>
+                                                </div>
+                                                <div className="bg-white p-3 rounded">
+                                                    <h4 className="font-semibold text-red-600">Avulsiones</h4>
+                                                    <p className="text-sm text-gray-600">Desprendimiento parcial/total de tejido</p>
+                                                </div>
+                                                <div className="bg-white p-3 rounded">
+                                                    <h4 className="font-semibold text-red-600">Amputaciones</h4>
+                                                    <p className="text-sm text-gray-600">Separación completa de estructuras</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Signos de alarma */}
+                                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                                    <div className="flex items-center mb-4">
+                                        <FiAlertTriangle className="w-6 h-6 text-yellow-600 mr-2"/>
+                                        <h3 className="text-xl font-bold text-yellow-800">Signos de Alarma - Actúa INMEDIATAMENTE</h3>
+                                    </div>
+                                    <div className="grid md:grid-cols-3 gap-4">
+                                        <div>
+                                            <h4 className="font-semibold text-yellow-800 mb-2">Hemorragia Severa:</h4>
+                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
+                                                <li>Sangrado arterial (rojo brillante, pulsátil)</li>
+                                                <li>Pérdida &gt;500ml en adultos</li>
+                                                <li>Empapamiento de apósitos</li>
+                                                <li>Formación de charcos</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h4 className="font-semibold text-yellow-800 mb-2">Shock Hipovolémico:</h4>
+                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
+                                                <li>Taquicardia (&gt;100 lpm)</li>
+                                                <li>Hipotensión (&lt;90 mmHg sistólica)</li>
+                                                <li>Piel fría, pálida, sudorosa</li>
+                                                <li>Alteración del estado mental</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h4 className="font-semibold text-yellow-800 mb-2">Complicaciones:</h4>
+                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
+                                                <li>Síndrome compartimental</li>
+                                                <li>Infección severa</li>
+                                                <li>Compromiso neurovascular</li>
+                                                <li>Hipotermia</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Puntos clave para recordar */}
+                                <div className="bg-green-50 border border-green-200 rounded-lg p-6">
+                                    <div className="flex items-center mb-4">
+                                        <BsLightbulb className="w-6 h-6 text-green-600 mr-2"/>
+                                        <h3 className="text-xl font-bold text-green-800">Principios Fundamentales</h3>
+                                    </div>
+                                    <div className="grid md:grid-cols-2 gap-6">
+                                        <div>
+                                            <h4 className="font-semibold text-green-800 mb-2 flex items-center">
+                                                <MdCheckCircle className="w-4 h-4 mr-2"/>
+                                                Hacer SIEMPRE:
+                                            </h4>
+                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
+                                                <li>BSI y seguridad de escena PRIMERO</li>
+                                                <li>Controlar hemorragias antes que ABC</li>
+                                                <li>Evaluar pulsos distales</li>
+                                                <li>Documentar hallazgos iniciales</li>
+                                                <li>Reevaluar constantemente</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h4 className="font-semibold text-red-800 mb-2 flex items-center">
+                                                <FaExclamationTriangle className="w-4 h-4 mr-2"/>
+                                                NUNCA hacer:
+                                            </h4>
+                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
+                                                <li>Retirar objetos empalados</li>
+                                                <li>Reintroducir órganos eviscerados</li>
+                                                <li>Aplicar torniquetes en cuello/tronco</li>
+                                                <li>Usar hielo directamente sobre piel</li>
+                                                <li>Subestimar pérdida de sangre</li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
@@ -211,102 +344,223 @@ export default function SoftTissue() {
                         )}
 
                         {activeTab === 'anatomy' && (
-                            <div className="space-y-6">
-                                <div className="flex flex-col md:flex-row gap-6 items-start mb-6">
-                                    <div className="md:w-1/2">
-                                        <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Anatomía
-                                            de los Tejidos Blandos</h2>
-                                        <p className="text-gray-700 leading-relaxed">
-                                            Los tejidos blandos del cuerpo incluyen la piel, músculos, tejido graso,
-                                            vasos sanguíneos, nervios, tendones y ligamentos. La piel es el órgano más
-                                            grande y cumple funciones vitales:
-                                        </p>
-                                        <ul className="list-disc list-inside space-y-2 mt-2 text-gray-700">
-                                            <li><strong>Epidermis:</strong> Capa externa, protectora y resistente al
-                                                agua.
-                                            </li>
-                                            <li><strong>Dermis:</strong> Capa intermedia que contiene folículos pilosos,
-                                                glándulas sebáceas y sudoríparas, vasos sanguíneos y terminaciones
-                                                nerviosas.
-                                            </li>
-                                            <li><strong>Hipodermis (Tejido subcutáneo):</strong> Capa más profunda,
-                                                compuesta por tejido adiposo y conectivo, que aísla y almacena energía.
-                                            </li>
-                                        </ul>
-                                        <p className="text-gray-700 mt-4">
-                                            Los músculos permiten el movimiento, los vasos sanguíneos transportan
-                                            nutrientes y oxígeno, y los nervios transmiten sensaciones e impulsos
-                                            motores. El conocimiento de estas estructuras es esencial para comprender el
-                                            impacto de las lesiones.
-                                        </p>
-                                    </div>
-                                    <div className="md:w-1/2 flex justify-center mt-4 md:mt-0">
-                                        <img
-                                            src="/src/assets/aaos.jpg" // Placeholder - Consider using a more specific image for skin layers or soft tissues
-                                            alt="Capas de la piel y tejidos blandos"
-                                            className="rounded-lg shadow-md max-w-full h-auto max-h-80 object-contain"
-                                        />
+                            <div className="space-y-8">
+                                {/* Anatomía de la piel */}
+                                <div>
+                                    <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
+                                        <FaBandAid className="w-6 h-6 mr-2 text-orange-500"/>
+                                        Anatomía de la Piel y Tejidos Blandos
+                                    </h2>
+                                    <div className="grid lg:grid-cols-2 gap-8">
+                                        <div>
+                                            <div className="bg-blue-50 p-6 rounded-lg border border-blue-200 mb-6">
+                                                <h3 className="text-xl font-bold text-blue-700 mb-4">Capas de la Piel</h3>
+                                                <div className="space-y-3">
+                                                    <div className="flex items-start space-x-3">
+                                                        <div className="w-3 h-3 bg-blue-500 rounded-full mt-2"></div>
+                                                        <div>
+                                                            <h4 className="font-semibold">Epidermis</h4>
+                                                            <p className="text-sm text-gray-600">Capa externa, protectora. Contiene melanocitos y células de Langerhans</p>
+                                                        </div>
+                                                    </div>
+                                                    <div className="flex items-start space-x-3">
+                                                        <div className="w-3 h-3 bg-blue-500 rounded-full mt-2"></div>
+                                                        <div>
+                                                            <h4 className="font-semibold">Dermis</h4>
+                                                            <p className="text-sm text-gray-600">Contiene folículos pilosos, glándulas sebáceas, vasos sanguíneos y nervios</p>
+                                                        </div>
+                                                    </div>
+                                                    <div className="flex items-start space-x-3">
+                                                        <div className="w-3 h-3 bg-blue-500 rounded-full mt-2"></div>
+                                                        <div>
+                                                            <h4 className="font-semibold">Hipodermis</h4>
+                                                            <p className="text-sm text-gray-600">Tejido subcutáneo con grasa, aislamiento térmico y almacén energético</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="bg-green-50 p-6 rounded-lg border border-green-200">
+                                                <h3 className="text-xl font-bold text-green-700 mb-4">Estructuras Asociadas</h3>
+                                                <div className="space-y-3">
+                                                    <div className="flex items-start space-x-3">
+                                                        <div className="w-3 h-3 bg-green-500 rounded-full mt-2"></div>
+                                                        <div>
+                                                            <h4 className="font-semibold">Vasos Sanguíneos</h4>
+                                                            <p className="text-sm text-gray-600">Red capilar, arterias y venas que nutren los tejidos</p>
+                                                        </div>
+                                                    </div>
+                                                    <div className="flex items-start space-x-3">
+                                                        <div className="w-3 h-3 bg-green-500 rounded-full mt-2"></div>
+                                                        <div>
+                                                            <h4 className="font-semibold">Nervios</h4>
+                                                            <p className="text-sm text-gray-600">Terminaciones sensitivas para dolor, tacto, temperatura</p>
+                                                        </div>
+                                                    </div>
+                                                    <div className="flex items-start space-x-3">
+                                                        <div className="w-3 h-3 bg-green-500 rounded-full mt-2"></div>
+                                                        <div>
+                                                            <h4 className="font-semibold">Músculos</h4>
+                                                            <p className="text-sm text-gray-600">Fibras musculares estriadas y lisas</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="flex justify-center items-start">
+                                            <div className="text-center">
+                                                <img
+                                                    src="/src/assets/aaos.jpg"
+                                                    alt="Anatomía de la piel y tejidos blandos"
+                                                    className="rounded-lg shadow-lg max-w-full h-auto mb-4"
+                                                />
+                                                <p className="text-sm text-gray-600 italic">Estructura anatómica de los tejidos blandos</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
+                                {/* Funciones vitales */}
+                                <div className="bg-orange-50 border border-orange-200 rounded-lg p-6">
+                                    <h3 className="text-xl font-bold text-orange-700 mb-4 flex items-center">
+                                        <FaFirstAid className="w-5 h-5 mr-2"/>
+                                        Funciones Vitales de la Piel
+                                    </h3>
+                                    <div className="grid md:grid-cols-3 gap-6">
+                                        <div className="bg-white p-4 rounded-lg shadow-sm">
+                                            <h4 className="font-bold text-orange-600 mb-2">Protección</h4>
+                                            <ul className="text-sm space-y-1 text-gray-700">
+                                                <li>• Barrera contra patógenos</li>
+                                                <li>• Protección UV</li>
+                                                <li>• Prevención de pérdida de fluidos</li>
+                                                <li>• Resistencia mecánica</li>
+                                            </ul>
+                                        </div>
+                                        <div className="bg-white p-4 rounded-lg shadow-sm">
+                                            <h4 className="font-bold text-orange-600 mb-2">Regulación</h4>
+                                            <ul className="text-sm space-y-1 text-gray-700">
+                                                <li>• Termorregulación</li>
+                                                <li>• Control de sudoración</li>
+                                                <li>• Vasodilatación/constricción</li>
+                                                <li>• Balance hídrico</li>
+                                            </ul>
+                                        </div>
+                                        <div className="bg-white p-4 rounded-lg shadow-sm">
+                                            <h4 className="font-bold text-orange-600 mb-2">Sensación</h4>
+                                            <ul className="text-sm space-y-1 text-gray-700">
+                                                <li>• Tacto y presión</li>
+                                                <li>• Dolor y temperatura</li>
+                                                <li>• Vibración</li>
+                                                <li>• Propioceptión</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Proceso de cicatrización */}
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Fisiología
-                                        de la Lesión y Curación</h2>
+                                    <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2">Fisiología de la Cicatrización</h2>
+                                    <div className="grid lg:grid-cols-4 gap-6">
+                                        <div className="bg-red-50 p-6 rounded-lg">
+                                            <h3 className="font-bold text-red-700 mb-3 text-center">HEMOSTASIA</h3>
+                                            <p className="text-sm text-gray-600 mb-3">0-30 minutos</p>
+                                            <ul className="text-sm space-y-1">
+                                                <li>• Vasoconstricción</li>
+                                                <li>• Agregación plaquetaria</li>
+                                                <li>• Formación de coágulo</li>
+                                                <li>• Fibrina y fibrinógeno</li>
+                                            </ul>
+                                        </div>
+                                        <div className="bg-yellow-50 p-6 rounded-lg">
+                                            <h3 className="font-bold text-yellow-700 mb-3 text-center">INFLAMACIÓN</h3>
+                                            <p className="text-sm text-gray-600 mb-3">1-5 días</p>
+                                            <ul className="text-sm space-y-1">
+                                                <li>• Vasodilatación</li>
+                                                <li>• Migración de neutrófilos</li>
+                                                <li>• Llegada de macrófagos</li>
+                                                <li>• Limpieza de detritos</li>
+                                            </ul>
+                                        </div>
+                                        <div className="bg-green-50 p-6 rounded-lg">
+                                            <h3 className="font-bold text-green-700 mb-3 text-center">PROLIFERACIÓN</h3>
+                                            <p className="text-sm text-gray-600 mb-3">5-21 días</p>
+                                            <ul className="text-sm space-y-1">
+                                                <li>• Angiogénesis</li>
+                                                <li>• Formación de colágeno</li>
+                                                <li>• Granulación</li>
+                                                <li>• Epitelización</li>
+                                            </ul>
+                                        </div>
+                                        <div className="bg-blue-50 p-6 rounded-lg">
+                                            <h3 className="font-bold text-blue-700 mb-3 text-center">REMODELACIÓN</h3>
+                                            <p className="text-sm text-gray-600 mb-3">21 días - 2 años</p>
+                                            <ul className="text-sm space-y-1">
+                                                <li>• Reorganización del colágeno</li>
+                                                <li>• Aumento de resistencia</li>
+                                                <li>• Reducción del tamaño</li>
+                                                <li>• Maduración cicatriz</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Factores que afectan la cicatrización */}
+                                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                                    <h3 className="text-xl font-bold text-yellow-800 mb-4">Factores que Afectan la Cicatrización</h3>
                                     <div className="grid md:grid-cols-2 gap-6">
                                         <div>
-                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Respuesta a la
-                                                Lesión</h3>
-                                            <p className="text-gray-700 leading-relaxed">
-                                                Cuando los tejidos blandos se lesionan, el cuerpo inicia una respuesta
-                                                inflamatoria caracterizada por:
-                                            </p>
-                                            <ul className="list-disc list-inside space-y-1 mt-2 text-gray-700">
-                                                <li><strong>Hemostasia:</strong> Vasoconstricción y formación de
-                                                    coágulos para detener el sangrado.
-                                                </li>
-                                                <li><strong>Inflamación:</strong> Aumento del flujo sanguíneo (causando
-                                                    enrojecimiento y calor), llegada de células inmunitarias y
-                                                    liberación de mediadores químicos (causando dolor e hinchazón).
-                                                </li>
-                                                <li><strong>Proliferación:</strong> Formación de nuevo tejido
-                                                    (granulación) y vasos sanguíneos.
-                                                </li>
-                                                <li><strong>Remodelación:</strong> Maduración y reorganización del
-                                                    tejido cicatricial.
-                                                </li>
+                                            <h4 className="font-semibold text-yellow-800 mb-2">Factores Intrínsecos:</h4>
+                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
+                                                <li><strong>Edad:</strong> Cicatrización más lenta en ancianos</li>
+                                                <li><strong>Nutrición:</strong> Proteínas, vitamina C, zinc</li>
+                                                <li><strong>Circulación:</strong> Perfusión tisular adecuada</li>
+                                                <li><strong>Diabetes:</strong> Compromete la cicatrización</li>
+                                                <li><strong>Medicamentos:</strong> Esteroides, anticoagulantes</li>
                                             </ul>
                                         </div>
                                         <div>
-                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Factores que Afectan
-                                                la Curación</h3>
-                                            <p className="text-gray-700 leading-relaxed">
-                                                La capacidad de curación puede verse afectada por diversos factores:
-                                            </p>
-                                            <ul className="list-disc list-inside space-y-1 mt-2 text-gray-700">
-                                                <li>Edad del paciente</li>
-                                                <li>Estado nutricional</li>
-                                                <li>Enfermedades crónicas (diabetes, enfermedad vascular)</li>
-                                                <li>Infección</li>
-                                                <li>Tipo y severidad de la herida</li>
-                                                <li>Medicación (ej. esteroides, anticoagulantes)</li>
-                                                <li>Tabaquismo</li>
+                                            <h4 className="font-semibold text-yellow-800 mb-2">Factores Extrínsecos:</h4>
+                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
+                                                <li><strong>Infección:</strong> Prolonga la fase inflamatoria</li>
+                                                <li><strong>Cuerpos extraños:</strong> Impiden la curación</li>
+                                                <li><strong>Tensión:</strong> Movimiento excesivo de bordes</li>
+                                                <li><strong>Hipoxia:</strong> Falta de oxígeno tisular</li>
+                                                <li><strong>Temperatura:</strong> Frío ralentiza el proceso</li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
 
+                                {/* Evaluación neurovascular */}
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Consideraciones
-                                        Importantes para TMEs</h2>
-                                    <p className="text-gray-700 leading-relaxed">
-                                        Para el TME, es crucial entender que una lesión aparentemente superficial puede
-                                        ocultar daños significativos en estructuras más profundas. La evaluación debe
-                                        incluir la búsqueda de signos de lesión vascular (pulsos distales, color,
-                                        temperatura) y nerviosa (sensibilidad, motricidad).
-                                        La AAOS enfatiza la importancia de una evaluación sistemática para no pasar por
-                                        alto lesiones ocultas que puedan comprometer la extremidad o la vida del
-                                        paciente.
-                                    </p>
+                                    <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2">Evaluación Neurovascular Crítica</h2>
+                                    <div className="bg-red-50 border border-red-200 rounded-lg p-6">
+                                        <h3 className="text-xl font-bold text-red-700 mb-4">Las 5 P del Compromiso Neurovascular</h3>
+                                        <div className="grid md:grid-cols-5 gap-4">
+                                            <div className="bg-white p-4 rounded-lg text-center">
+                                                <h4 className="font-bold text-red-600 mb-2">PAIN</h4>
+                                                <p className="text-sm">Dolor desproporcionado</p>
+                                            </div>
+                                            <div className="bg-white p-4 rounded-lg text-center">
+                                                <h4 className="font-bold text-red-600 mb-2">PALLOR</h4>
+                                                <p className="text-sm">Palidez distal</p>
+                                            </div>
+                                            <div className="bg-white p-4 rounded-lg text-center">
+                                                <h4 className="font-bold text-red-600 mb-2">PARESTHESIAS</h4>
+                                                <p className="text-sm">Hormigueo o entumecimiento</p>
+                                            </div>
+                                            <div className="bg-white p-4 rounded-lg text-center">
+                                                <h4 className="font-bold text-red-600 mb-2">PARALYSIS</h4>
+                                                <p className="text-sm">Pérdida de función motora</p>
+                                            </div>
+                                            <div className="bg-white p-4 rounded-lg text-center">
+                                                <h4 className="font-bold text-red-600 mb-2">PULSELESSNESS</h4>
+                                                <p className="text-sm">Ausencia de pulsos distales</p>
+                                            </div>
+                                        </div>
+                                        <div className="mt-4 p-3 bg-red-100 rounded">
+                                            <p className="text-sm text-red-800"><strong>¡ALERTA!</strong> La presencia de cualquiera de estas 5 P indica compromiso neurovascular grave que requiere atención inmediata.</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         )}
@@ -705,6 +959,7 @@ export default function SoftTissue() {
                 </div>
             </div>
         </div>
+        </SEOWrapper>
     );
 }
 
