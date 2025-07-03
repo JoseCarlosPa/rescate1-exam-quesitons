@@ -1,19 +1,21 @@
 import {NavLink} from "react-router";
-import {FaAmbulance} from "react-icons/fa";
+import {FaAmbulance, FaPhone, FaHospital, FaRoute, FaUsers, FaShieldAlt, FaClock, FaMapMarkerAlt, FaHeartbeat} from "react-icons/fa";
 import {Disclosure} from "@headlessui/react";
 import {ChevronUpIcon} from "@heroicons/react/16/solid";
 import {faqData} from "./Sem.questions.ts";
 import {AllRoutes} from "../../../components/Router/Router.constants.ts";
 import {IoReturnDownBack} from "react-icons/io5";
 import {useState} from "react";
-import {MdQuiz} from "react-icons/md";
-import {BsBookHalf} from "react-icons/bs";
+import {MdQuiz, MdEmergency, MdLocalHospital, MdSecurity, MdWarning, MdInfo, MdTipsAndUpdates} from "react-icons/md";
+import {BsBookHalf, BsTelephone, BsClockHistory} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
+import {FiAlertTriangle, FiCheckCircle, FiActivity} from "react-icons/fi";
+import {HiOutlineExclamationTriangle} from "react-icons/hi2";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
+import { FaRadio } from "react-icons/fa6";
 
 export default function Sem() {
     const [activeTab, setActiveTab] = useState<'overview' | 'structure' | 'activation' | 'practice'>('overview');
-    const [showQuickQuiz, setShowQuickQuiz] = useState(false);
 
     return (
         <SEOWrapper
@@ -48,7 +50,7 @@ export default function Sem() {
                         </header>
 
                         {/* Menú rápido de recursos */}
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8 max-w-4xl mx-auto">
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8 max-w-6xl mx-auto">
                             <NavLink
                                 to="/sem/exam"
                                 className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
@@ -62,7 +64,6 @@ export default function Sem() {
                                 <PiChalkboardTeacher className="w-10 h-10 text-orange-500 mb-2"/>
                                 <p className="text-center font-medium">Presentación</p>
                             </a>
-
                             <a href="https://drive.google.com/file/d/1DDHTjUDjx6yYCR3UA4apObjgoHw-wTEf/view?usp=drive_link"
                                target="_blank"
                                rel="noopener noreferrer"
@@ -71,19 +72,6 @@ export default function Sem() {
                                 <p className="text-center font-medium">Capítulo</p>
                             </a>
                         </div>
-
-                        {/* Quiz rápido */}
-                        {showQuickQuiz && (
-                            <div className="bg-white p-6 rounded-lg shadow-md mb-8 max-w-4xl mx-auto">
-                                <h3 className="text-xl font-bold mb-4 text-gray-800">Quiz Rápido - Pon a prueba tus
-                                    conocimientos sobre el SEM</h3>
-                                <button
-                                    onClick={() => setShowQuickQuiz(false)}
-                                    className="mt-4 bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded transition">
-                                    Cerrar Quiz
-                                </button>
-                            </div>
-                        )}
 
                         {/* Navegación por pestañas */}
                         <div className="mb-6 border-b border-gray-200 max-w-5xl mx-auto">
@@ -131,216 +119,906 @@ export default function Sem() {
                         <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-sm p-6 mb-8">
                             {activeTab === 'overview' && (
                                 <div className="space-y-6">
-                                    <div>
-                                        <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">¿Qué es
-                                            el Sistema de Emergencias Médicas (SEM)?</h2>
-                                        <p className="text-gray-700 leading-relaxed">
-                                            El SEM es un conjunto organizado de recursos, personal y protocolos que
-                                            permite la atención inmediata y coordinada de emergencias médicas fuera del
-                                            hospital. Su objetivo es salvar vidas, reducir secuelas y garantizar
-                                            atención profesional desde el primer contacto hasta la llegada al hospital.
-                                        </p>
+                                    <h2 className="text-3xl font-bold text-gray-800 mb-6 border-b border-gray-200 pb-3">
+                                        <FaAmbulance className="inline mr-3 text-orange-500"/>
+                                        Generalidades del Sistema SEM
+                                    </h2>
+
+                                    {/* Concepto y definición */}
+                                    <div className="grid md:grid-cols-2 gap-6">
+                                        <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-lg">
+                                            <h3 className="text-xl font-bold text-orange-800 mb-3 flex items-center">
+                                                <MdInfo className="mr-2"/>
+                                                ¿Qué es el SEM?
+                                            </h3>
+                                            <p className="text-gray-700 mb-3">
+                                                El Sistema de Emergencias Médicas (SEM) es una red coordinada de servicios y recursos 
+                                                diseñada para proporcionar atención médica prehospitalaria eficaz a personas en situaciones 
+                                                de emergencia médica.
+                                            </p>
+                                            <div className="bg-white p-3 rounded border-l-4 border-orange-500">
+                                                <p className="text-sm text-gray-600">
+                                                    <strong>Objetivo principal:</strong> Salvar vidas, reducir la discapacidad 
+                                                    y mejorar los resultados de salud mediante la atención médica temprana y adecuada.
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
+                                            <h3 className="text-xl font-bold text-blue-800 mb-3 flex items-center">
+                                                <FaRoute className="mr-2"/>
+                                                Cadena de Supervivencia
+                                            </h3>
+                                            <div className="space-y-2">
+                                                <div className="flex items-center bg-white p-2 rounded">
+                                                    <div className="w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center text-sm mr-3">1</div>
+                                                    <span className="text-sm">Reconocimiento y activación del SEM</span>
+                                                </div>
+                                                <div className="flex items-center bg-white p-2 rounded">
+                                                    <div className="w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center text-sm mr-3">2</div>
+                                                    <span className="text-sm">RCP inmediata de alta calidad</span>
+                                                </div>
+                                                <div className="flex items-center bg-white p-2 rounded">
+                                                    <div className="w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center text-sm mr-3">3</div>
+                                                    <span className="text-sm">Desfibrilación rápida</span>
+                                                </div>
+                                                <div className="flex items-center bg-white p-2 rounded">
+                                                    <div className="w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center text-sm mr-3">4</div>
+                                                    <span className="text-sm">Soporte vital avanzado</span>
+                                                </div>
+                                                <div className="flex items-center bg-white p-2 rounded">
+                                                    <div className="w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center text-sm mr-3">5</div>
+                                                    <span className="text-sm">Cuidados post-resucitación</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Importancia
-                                            del SEM</h2>
-                                        <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                            <li>Reduce la mortalidad y morbilidad en situaciones críticas.</li>
-                                            <li>Permite atención rápida y profesional en el lugar del incidente.</li>
-                                            <li>Coordina recursos y personal para una respuesta eficiente.</li>
-                                            <li>Incluye atención prehospitalaria, transporte, comunicación y
-                                                coordinación hospitalaria.
-                                            </li>
-                                        </ul>
+
+                                    {/* Principios fundamentales */}
+                                    <div className="bg-gray-50 p-6 rounded-lg">
+                                        <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                            <FaShieldAlt className="mr-2 text-green-600"/>
+                                            Principios Fundamentales del SEM
+                                        </h3>
+                                        <div className="grid md:grid-cols-3 gap-4">
+                                            <div className="bg-white p-4 rounded-lg border-l-4 border-green-500">
+                                                <h4 className="font-bold text-green-700 mb-2">Accesibilidad</h4>
+                                                <p className="text-sm text-gray-600">
+                                                    Servicio disponible 24/7 para toda la población, sin discriminación.
+                                                </p>
+                                            </div>
+                                            <div className="bg-white p-4 rounded-lg border-l-4 border-blue-500">
+                                                <h4 className="font-bold text-blue-700 mb-2">Oportunidad</h4>
+                                                <p className="text-sm text-gray-600">
+                                                    Respuesta rápida y eficaz en el momento crítico.
+                                                </p>
+                                            </div>
+                                            <div className="bg-white p-4 rounded-lg border-l-4 border-purple-500">
+                                                <h4 className="font-bold text-purple-700 mb-2">Calidad</h4>
+                                                <p className="text-sm text-gray-600">
+                                                    Atención basada en protocolos y evidencia científica.
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Historia
-                                            y evolución</h2>
-                                        <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                            <li>El concepto de SEM surge en la década de 1960 en EE.UU. y Europa,
-                                                evolucionando hacia sistemas integrados y normados.
-                                            </li>
-                                            <li>En México, el SEM se ha fortalecido con la NOM-034-SSA3-2013 y la
-                                                integración del 911 como número nacional de emergencias.
-                                            </li>
-                                        </ul>
+
+                                    {/* Historia y evolución */}
+                                    <div className="bg-indigo-50 p-6 rounded-lg">
+                                        <h3 className="text-xl font-bold text-indigo-800 mb-4 flex items-center">
+                                            <BsClockHistory className="mr-2"/>
+                                            Historia y Evolución del SEM
+                                        </h3>
+                                        <div className="grid md:grid-cols-2 gap-4">
+                                            <div className="space-y-3">
+                                                <div className="bg-white p-3 rounded border-l-4 border-indigo-500">
+                                                    <h4 className="font-bold text-indigo-700 mb-1">Década de 1960</h4>
+                                                    <p className="text-sm text-gray-600">
+                                                        Surge el concepto moderno de SEM en EE.UU. y Europa, 
+                                                        evolucionando hacia sistemas integrados.
+                                                    </p>
+                                                </div>
+                                                <div className="bg-white p-3 rounded border-l-4 border-indigo-500">
+                                                    <h4 className="font-bold text-indigo-700 mb-1">En México</h4>
+                                                    <p className="text-sm text-gray-600">
+                                                        Fortalecimiento con la NOM-034-SSA3-2013 que regula los servicios 
+                                                        de atención médica prehospitalaria.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div className="space-y-3">
+                                                <div className="bg-white p-3 rounded border-l-4 border-teal-500">
+                                                    <h4 className="font-bold text-teal-700 mb-1">Actualidad</h4>
+                                                    <p className="text-sm text-gray-600">
+                                                        Sistemas integrados con tecnología avanzada, protocolos estandarizados 
+                                                        y personal altamente capacitado.
+                                                    </p>
+                                                </div>
+                                                <div className="bg-white p-3 rounded border-l-4 border-teal-500">
+                                                    <h4 className="font-bold text-teal-700 mb-1">Futuro</h4>
+                                                    <p className="text-sm text-gray-600">
+                                                        Incorporación de telemedicina, inteligencia artificial 
+                                                        y sistemas de geolocalización avanzados.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Objetivos del SEM */}
+                                    <div className="grid md:grid-cols-2 gap-6">
+                                        <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg">
+                                            <h3 className="text-xl font-bold text-green-800 mb-4 flex items-center">
+                                                <FiCheckCircle className="mr-2"/>
+                                                Objetivos Primarios
+                                            </h3>
+                                            <ul className="space-y-2">
+                                                <li className="flex items-center text-gray-700">
+                                                    <FiActivity className="mr-2 text-green-600"/>
+                                                    Preservar la vida
+                                                </li>
+                                                <li className="flex items-center text-gray-700">
+                                                    <FiActivity className="mr-2 text-green-600"/>
+                                                    Minimizar las secuelas
+                                                </li>
+                                                <li className="flex items-center text-gray-700">
+                                                    <FiActivity className="mr-2 text-green-600"/>
+                                                    Aliviar el sufrimiento
+                                                </li>
+                                                <li className="flex items-center text-gray-700">
+                                                    <FiActivity className="mr-2 text-green-600"/>
+                                                    Estabilizar al paciente
+                                                </li>
+                                                <li className="flex items-center text-gray-700">
+                                                    <FiActivity className="mr-2 text-green-600"/>
+                                                    Coordinar recursos
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div className="bg-gradient-to-br from-yellow-50 to-yellow-100 p-6 rounded-lg">
+                                            <h3 className="text-xl font-bold text-yellow-800 mb-4 flex items-center">
+                                                <MdTipsAndUpdates className="mr-2"/>
+                                                Tips para Paramédicos
+                                            </h3>
+                                            <div className="space-y-3">
+                                                <div className="bg-white p-3 rounded border-l-4 border-yellow-500">
+                                                    <p className="text-sm text-gray-700">
+                                                        <strong>Recuerda:</strong> El SEM inicia desde el primer contacto 
+                                                        telefónico hasta la transferencia en el hospital.
+                                                    </p>
+                                                </div>
+                                                <div className="bg-white p-3 rounded border-l-4 border-orange-500">
+                                                    <p className="text-sm text-gray-700">
+                                                        <strong>Importante:</strong> La comunicación efectiva es clave 
+                                                        para el funcionamiento del sistema.
+                                                    </p>
+                                                </div>
+                                                <div className="bg-white p-3 rounded border-l-4 border-red-500">
+                                                    <p className="text-sm text-gray-700">
+                                                        <strong>Crítico:</strong> Los tiempos de respuesta impactan 
+                                                        directamente en la supervivencia del paciente.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             )}
                             {activeTab === 'structure' && (
                                 <div className="space-y-6">
-                                    <div>
-                                        <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Estructura
-                                            y componentes del SEM</h2>
-                                        <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                            <li><strong>Centro regulador de urgencias médicas (CRUM):</strong> Recibe
-                                                llamadas, coordina recursos y prioriza incidentes.
-                                            </li>
-                                            <li><strong>Ambulancias:</strong> Básicas, avanzadas y de cuidados
-                                                intensivos, equipadas según la NOM-034-SSA3-2013.
-                                            </li>
-                                            <li><strong>Personal:</strong> TUM, paramédicos, médicos, operadores y
-                                                radio-operadores.
-                                            </li>
-                                            <li><strong>Hospitales receptores:</strong> Coordinación para traslado y
-                                                recepción de pacientes.
-                                            </li>
-                                            <li><strong>Comunicación:</strong> Sistemas de radio, telefonía y datos para
-                                                coordinación efectiva.
-                                            </li>
-                                            <li><strong>Protocolos y guías:</strong> Normas oficiales, algoritmos y
-                                                procedimientos estandarizados.
-                                            </li>
-                                        </ul>
+                                    <h2 className="text-3xl font-bold text-gray-800 mb-6 border-b border-gray-200 pb-3">
+                                        <FaHospital className="inline mr-3 text-blue-500"/>
+                                        Estructura y Componentes del SEM
+                                    </h2>
+
+                                    {/* Componentes principales */}
+                                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                        <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
+                                            <h3 className="text-xl font-bold text-blue-800 mb-3 flex items-center">
+                                                <FaPhone className="mr-2"/>
+                                                CRUM
+                                            </h3>
+                                            <p className="text-gray-700 text-sm mb-3">
+                                                Centro Regulador de Urgencias Médicas. Coordina y regula toda la actividad del SEM.
+                                            </p>
+                                            <ul className="text-sm text-gray-600 space-y-1">
+                                                <li>• Recepción de llamadas de emergencia</li>
+                                                <li>• Despacho de recursos</li>
+                                                <li>• Coordinación médica</li>
+                                                <li>• Seguimiento de casos</li>
+                                            </ul>
+                                        </div>
+
+                                        <div className="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-lg">
+                                            <h3 className="text-xl font-bold text-red-800 mb-3 flex items-center">
+                                                <FaAmbulance className="mr-2"/>
+                                                Ambulancias
+                                            </h3>
+                                            <p className="text-gray-700 text-sm mb-3">
+                                                Vehículos especializados equipados según normatividad vigente.
+                                            </p>
+                                            <ul className="text-sm text-gray-600 space-y-1">
+                                                <li>• Básicas (SVB)</li>
+                                                <li>• Avanzadas (SVA)</li>
+                                                <li>• Cuidados intensivos</li>
+                                                <li>• Especializadas</li>
+                                            </ul>
+                                        </div>
+
+                                        <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg">
+                                            <h3 className="text-xl font-bold text-green-800 mb-3 flex items-center">
+                                                <FaUsers className="mr-2"/>
+                                                Personal
+                                            </h3>
+                                            <p className="text-gray-700 text-sm mb-3">
+                                                Profesionales capacitados en atención prehospitalaria.
+                                            </p>
+                                            <ul className="text-sm text-gray-600 space-y-1">
+                                                <li>• Técnicos (TUM-B)</li>
+                                                <li>• Paramédicos (TUM-I)</li>
+                                                <li>• Médicos</li>
+                                                <li>• Operadores/Despachadores</li>
+                                            </ul>
+                                        </div>
+
+                                        <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-lg">
+                                            <h3 className="text-xl font-bold text-purple-800 mb-3 flex items-center">
+                                                <FaRadio className="mr-2"/>
+                                                Comunicaciones
+                                            </h3>
+                                            <p className="text-gray-700 text-sm mb-3">
+                                                Sistemas de comunicación para coordinación efectiva.
+                                            </p>
+                                            <ul className="text-sm text-gray-600 space-y-1">
+                                                <li>• Radio troncalizado</li>
+                                                <li>• Telefonía celular</li>
+                                                <li>• GPS y localización</li>
+                                                <li>• Sistemas de datos</li>
+                                            </ul>
+                                        </div>
+
+                                        <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-lg">
+                                            <h3 className="text-xl font-bold text-orange-800 mb-3 flex items-center">
+                                                <MdLocalHospital className="mr-2"/>
+                                                Hospitales
+                                            </h3>
+                                            <p className="text-gray-700 text-sm mb-3">
+                                                Red hospitalaria receptora coordinada con el SEM.
+                                            </p>
+                                            <ul className="text-sm text-gray-600 space-y-1">
+                                                <li>• Hospitales de 1er nivel</li>
+                                                <li>• Hospitales de 2do nivel</li>
+                                                <li>• Hospitales de 3er nivel</li>
+                                                <li>• Centros de trauma</li>
+                                            </ul>
+                                        </div>
+
+                                        <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 rounded-lg">
+                                            <h3 className="text-xl font-bold text-indigo-800 mb-3 flex items-center">
+                                                <MdSecurity className="mr-2"/>
+                                                Protocolos
+                                            </h3>
+                                            <p className="text-gray-700 text-sm mb-3">
+                                                Guías y procedimientos estandarizados basados en evidencia.
+                                            </p>
+                                            <ul className="text-sm text-gray-600 space-y-1">
+                                                <li>• NOM-034-SSA3-2013</li>
+                                                <li>• Protocolos médicos</li>
+                                                <li>• Algoritmos de atención</li>
+                                                <li>• Procedimientos operativos</li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Cadena
-                                            de supervivencia prehospitalaria</h2>
-                                        <ol className="list-decimal list-inside space-y-2 text-gray-700">
-                                            <li>Reconocimiento temprano de la emergencia y activación del SEM.</li>
-                                            <li>Atención inicial y soporte vital básico.</li>
-                                            <li>Despliegue y llegada de la ambulancia.</li>
-                                            <li>Atención avanzada y estabilización.</li>
-                                            <li>Transporte y transferencia al hospital.</li>
-                                        </ol>
-                                    </div>
-                                    <div>
-                                        <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Tipos de
-                                            ambulancias y personal</h2>
+
+                                    {/* Tipos de ambulancias */}
+                                    <div className="bg-gray-50 p-6 rounded-lg">
+                                        <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                            <FaAmbulance className="mr-2 text-red-600"/>
+                                            Clasificación de Ambulancias (NOM-034-SSA3-2013)
+                                        </h3>
                                         <div className="overflow-x-auto">
-                                            <table className="min-w-full bg-white">
-                                                <thead>
-                                                <tr className="bg-gray-100">
-                                                    <th className="py-2 px-4 border">Tipo</th>
-                                                    <th className="py-2 px-4 border">Características</th>
-                                                    <th className="py-2 px-4 border">Personal mínimo</th>
-                                                </tr>
+                                            <table className="min-w-full bg-white rounded-lg overflow-hidden shadow">
+                                                <thead className="bg-gradient-to-r from-red-600 to-red-700 text-white">
+                                                    <tr>
+                                                        <th className="py-3 px-4 text-left">Tipo</th>
+                                                        <th className="py-3 px-4 text-left">Características</th>
+                                                        <th className="py-3 px-4 text-left">Personal Mínimo</th>
+                                                        <th className="py-3 px-4 text-left">Equipo Principal</th>
+                                                    </tr>
                                                 </thead>
-                                                <tbody>
-                                                <tr>
-                                                    <td className="py-2 px-4 border">Básica</td>
-                                                    <td className="py-2 px-4 border">Atención prehospitalaria básica,
-                                                        soporte vital básico
-                                                    </td>
-                                                    <td className="py-2 px-4 border">TUM, operador</td>
-                                                </tr>
-                                                <tr>
-                                                    <td className="py-2 px-4 border">Avanzada</td>
-                                                    <td className="py-2 px-4 border">Soporte vital avanzado, equipo
-                                                        especializado
-                                                    </td>
-                                                    <td className="py-2 px-4 border">Paramédico, médico, operador</td>
-                                                </tr>
-                                                <tr>
-                                                    <td className="py-2 px-4 border">Cuidados intensivos</td>
-                                                    <td className="py-2 px-4 border">Traslado de pacientes críticos,
-                                                        monitoreo avanzado
-                                                    </td>
-                                                    <td className="py-2 px-4 border">Médico, enfermero, operador</td>
-                                                </tr>
+                                                <tbody className="divide-y divide-gray-200">
+                                                    <tr className="hover:bg-gray-50">
+                                                        <td className="py-3 px-4 font-medium text-red-700">Básica (SVB)</td>
+                                                        <td className="py-3 px-4 text-sm">Soporte Vital Básico, traslados programados</td>
+                                                        <td className="py-3 px-4 text-sm">1 TUM-B + 1 Conductor</td>
+                                                        <td className="py-3 px-4 text-sm">Oxígeno, DEA, inmovilizadores</td>
+                                                    </tr>
+                                                    <tr className="hover:bg-gray-50">
+                                                        <td className="py-3 px-4 font-medium text-orange-700">Avanzada (SVA)</td>
+                                                        <td className="py-3 px-4 text-sm">Soporte Vital Avanzado, emergencias</td>
+                                                        <td className="py-3 px-4 text-sm">1 TUM-I + 1 TUM-B</td>
+                                                        <td className="py-3 px-4 text-sm">Monitor/Desfibrilador, medicamentos</td>
+                                                    </tr>
+                                                    <tr className="hover:bg-gray-50">
+                                                        <td className="py-3 px-4 font-medium text-blue-700">UCI Móvil</td>
+                                                        <td className="py-3 px-4 text-sm">Cuidados intensivos, traslados críticos</td>
+                                                        <td className="py-3 px-4 text-sm">1 Médico + 1 Enfermero + 1 TUM</td>
+                                                        <td className="py-3 px-4 text-sm">Ventilador, bombas de infusión</td>
+                                                    </tr>
+                                                    <tr className="hover:bg-gray-50">
+                                                        <td className="py-3 px-4 font-medium text-purple-700">Especializada</td>
+                                                        <td className="py-3 px-4 text-sm">Neonatal, bariatría, rescate</td>
+                                                        <td className="py-3 px-4 text-sm">Personal especializado</td>
+                                                        <td className="py-3 px-4 text-sm">Equipo específico según función</td>
+                                                    </tr>
                                                 </tbody>
                                             </table>
+                                        </div>
+                                    </div>
+
+                                    {/* Cadena de supervivencia */}
+                                    <div className="bg-gradient-to-br from-teal-50 to-teal-100 p-6 rounded-lg">
+                                        <h3 className="text-xl font-bold text-teal-800 mb-4 flex items-center">
+                                            <FaRoute className="mr-2"/>
+                                            Cadena de Supervivencia Prehospitalaria
+                                        </h3>
+                                        <div className="grid md:grid-cols-5 gap-4">
+                                            <div className="text-center">
+                                                <div className="w-12 h-12 bg-teal-600 text-white rounded-full flex items-center justify-center mx-auto mb-2 text-lg font-bold">1</div>
+                                                <h4 className="font-bold text-teal-700 text-sm mb-1">Reconocimiento</h4>
+                                                <p className="text-xs text-gray-600">Identificación temprana y activación del SEM</p>
+                                            </div>
+                                            <div className="text-center">
+                                                <div className="w-12 h-12 bg-teal-600 text-white rounded-full flex items-center justify-center mx-auto mb-2 text-lg font-bold">2</div>
+                                                <h4 className="font-bold text-teal-700 text-sm mb-1">Atención Inicial</h4>
+                                                <p className="text-xs text-gray-600">SVB por testigos o primeros respondientes</p>
+                                            </div>
+                                            <div className="text-center">
+                                                <div className="w-12 h-12 bg-teal-600 text-white rounded-full flex items-center justify-center mx-auto mb-2 text-lg font-bold">3</div>
+                                                <h4 className="font-bold text-teal-700 text-sm mb-1">Despliegue</h4>
+                                                <p className="text-xs text-gray-600">Llegada de la ambulancia y personal</p>
+                                            </div>
+                                            <div className="text-center">
+                                                <div className="w-12 h-12 bg-teal-600 text-white rounded-full flex items-center justify-center mx-auto mb-2 text-lg font-bold">4</div>
+                                                <h4 className="font-bold text-teal-700 text-sm mb-1">Estabilización</h4>
+                                                <p className="text-xs text-gray-600">Atención avanzada en sitio</p>
+                                            </div>
+                                            <div className="text-center">
+                                                <div className="w-12 h-12 bg-teal-600 text-white rounded-full flex items-center justify-center mx-auto mb-2 text-lg font-bold">5</div>
+                                                <h4 className="font-bold text-teal-700 text-sm mb-1">Transferencia</h4>
+                                                <p className="text-xs text-gray-600">Transporte y entrega hospitalaria</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Niveles de atención */}
+                                    <div className="grid md:grid-cols-3 gap-6">
+                                        <div className="bg-white p-6 rounded-lg shadow border-l-4 border-green-500">
+                                            <h3 className="text-lg font-bold text-green-700 mb-3 flex items-center">
+                                                <FiCheckCircle className="mr-2"/>
+                                                Primer Nivel
+                                            </h3>
+                                            <ul className="text-sm text-gray-600 space-y-1">
+                                                <li>• Centros de salud</li>
+                                                <li>• Consultorios rurales</li>
+                                                <li>• Atención básica</li>
+                                                <li>• Prevención y promoción</li>
+                                            </ul>
+                                        </div>
+
+                                        <div className="bg-white p-6 rounded-lg shadow border-l-4 border-yellow-500">
+                                            <h3 className="text-lg font-bold text-yellow-700 mb-3 flex items-center">
+                                                <MdWarning className="mr-2"/>
+                                                Segundo Nivel
+                                            </h3>
+                                            <ul className="text-sm text-gray-600 space-y-1">
+                                                <li>• Hospitales generales</li>
+                                                <li>• Especialidades básicas</li>
+                                                <li>• Urgencias intermedias</li>
+                                                <li>• Cirugía ambulatoria</li>
+                                            </ul>
+                                        </div>
+
+                                        <div className="bg-white p-6 rounded-lg shadow border-l-4 border-red-500">
+                                            <h3 className="text-lg font-bold text-red-700 mb-3 flex items-center">
+                                                <MdEmergency className="mr-2"/>
+                                                Tercer Nivel
+                                            </h3>
+                                            <ul className="text-sm text-gray-600 space-y-1">
+                                                <li>• Hospitales de alta especialidad</li>
+                                                <li>• Centros de trauma</li>
+                                                <li>• Procedimientos complejos</li>
+                                                <li>• Cuidados críticos</li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
                             )}
                             {activeTab === 'activation' && (
                                 <div className="space-y-6">
-                                    <div>
-                                        <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Activación
-                                            y protocolo del SEM</h2>
-                                        <ol className="list-decimal list-inside space-y-2 text-gray-700">
-                                            <li>Llamada al 911 o número local de emergencias.</li>
-                                            <li>Proporcionar información clara: ubicación, tipo de incidente, número de
-                                                víctimas, estado de conciencia, riesgos presentes.
-                                            </li>
-                                            <li>El CRUM prioriza y despacha la ambulancia adecuada.</li>
-                                            <li>El personal de SEM puede dar indicaciones telefónicas para primeros
-                                                auxilios.
-                                            </li>
-                                            <li>Seguimiento y coordinación hasta la llegada de la ambulancia y traslado
-                                                seguro.
-                                            </li>
-                                        </ol>
+                                    <h2 className="text-3xl font-bold text-gray-800 mb-6 border-b border-gray-200 pb-3">
+                                        <BsTelephone className="inline mr-3 text-green-500"/>
+                                        Activación y Protocolos del SEM
+                                    </h2>
+
+                                    {/* Proceso de activación */}
+                                    <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg">
+                                        <h3 className="text-xl font-bold text-green-800 mb-4 flex items-center">
+                                            <FaPhone className="mr-2"/>
+                                            Proceso de Activación del SEM
+                                        </h3>
+                                        <div className="grid md:grid-cols-4 gap-4">
+                                            <div className="bg-white p-4 rounded-lg border-l-4 border-green-500">
+                                                <div className="flex items-center mb-2">
+                                                    <div className="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center text-sm mr-2">1</div>
+                                                    <h4 className="font-bold text-green-700">Llamada</h4>
+                                                </div>
+                                                <p className="text-sm text-gray-600">
+                                                    Marcación al 911 o número local de emergencias
+                                                </p>
+                                            </div>
+                                            <div className="bg-white p-4 rounded-lg border-l-4 border-blue-500">
+                                                <div className="flex items-center mb-2">
+                                                    <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm mr-2">2</div>
+                                                    <h4 className="font-bold text-blue-700">Evaluación</h4>
+                                                </div>
+                                                <p className="text-sm text-gray-600">
+                                                    Operador evalúa tipo y prioridad de la emergencia
+                                                </p>
+                                            </div>
+                                            <div className="bg-white p-4 rounded-lg border-l-4 border-orange-500">
+                                                <div className="flex items-center mb-2">
+                                                    <div className="w-8 h-8 bg-orange-600 text-white rounded-full flex items-center justify-center text-sm mr-2">3</div>
+                                                    <h4 className="font-bold text-orange-700">Despacho</h4>
+                                                </div>
+                                                <p className="text-sm text-gray-600">
+                                                    Asignación de recursos apropiados según protocolo
+                                                </p>
+                                            </div>
+                                            <div className="bg-white p-4 rounded-lg border-l-4 border-red-500">
+                                                <div className="flex items-center mb-2">
+                                                    <div className="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center text-sm mr-2">4</div>
+                                                    <h4 className="font-bold text-red-700">Respuesta</h4>
+                                                </div>
+                                                <p className="text-sm text-gray-600">
+                                                    Activación y despliegue de la ambulancia
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Mejora
-                                            continua y evaluación</h2>
-                                        <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                            <li>El SEM realiza simulacros, capacitaciones y auditorías para mejorar la
-                                                calidad.
-                                            </li>
-                                            <li>Se promueve la retroalimentación y reporte de incidentes para
-                                                aprendizaje institucional.
-                                            </li>
-                                        </ul>
+
+                                    {/* Códigos de prioridad */}
+                                    <div className="grid md:grid-cols-2 gap-6">
+                                        <div className="bg-white p-6 rounded-lg shadow border-l-4 border-red-500">
+                                            <h3 className="text-xl font-bold text-red-700 mb-4 flex items-center">
+                                                <MdEmergency className="mr-2"/>
+                                                Códigos de Prioridad
+                                            </h3>
+                                            <div className="space-y-3">
+                                                <div className="bg-red-50 p-3 rounded border-l-4 border-red-600">
+                                                    <h4 className="font-bold text-red-700">Código Rojo - Crítico</h4>
+                                                    <p className="text-sm text-gray-600">
+                                                        Amenaza inmediata a la vida. Respuesta con sirena y luces.
+                                                    </p>
+                                                    <span className="text-xs text-red-600 font-medium">Tiempo objetivo: &lt; 8 minutos</span>
+                                                </div>
+                                                <div className="bg-yellow-50 p-3 rounded border-l-4 border-yellow-600">
+                                                    <h4 className="font-bold text-yellow-700">Código Amarillo - Urgente</h4>
+                                                    <p className="text-sm text-gray-600">
+                                                        Condición seria, requiere atención pronta.
+                                                    </p>
+                                                    <span className="text-xs text-yellow-600 font-medium">Tiempo objetivo: &lt; 15 minutos</span>
+                                                </div>
+                                                <div className="bg-green-50 p-3 rounded border-l-4 border-green-600">
+                                                    <h4 className="font-bold text-green-700">Código Verde - No urgente</h4>
+                                                    <p className="text-sm text-gray-600">
+                                                        Traslado programado o condición estable.
+                                                    </p>
+                                                    <span className="text-xs text-green-600 font-medium">Tiempo objetivo: &lt; 30 minutos</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="bg-white p-6 rounded-lg shadow border-l-4 border-blue-500">
+                                            <h3 className="text-xl font-bold text-blue-700 mb-4 flex items-center">
+                                                <FaClock className="mr-2"/>
+                                                Tiempos de Respuesta
+                                            </h3>
+                                            <div className="space-y-4">
+                                                <div className="bg-blue-50 p-3 rounded">
+                                                    <h4 className="font-bold text-blue-700 mb-2">Urbano</h4>
+                                                    <ul className="text-sm text-gray-600 space-y-1">
+                                                        <li>• Crítico: &lt; 8 minutos</li>
+                                                        <li>• Urgente: &lt; 15 minutos</li>
+                                                        <li>• No urgente: &lt; 30 minutos</li>
+                                                    </ul>
+                                                </div>
+                                                <div className="bg-indigo-50 p-3 rounded">
+                                                    <h4 className="font-bold text-indigo-700 mb-2">Rural</h4>
+                                                    <ul className="text-sm text-gray-600 space-y-1">
+                                                        <li>• Crítico: &lt; 15 minutos</li>
+                                                        <li>• Urgente: &lt; 25 minutos</li>
+                                                        <li>• No urgente: &lt; 45 minutos</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Nuevas
-                                            tendencias y tecnología</h2>
-                                        <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                            <li>Telemedicina prehospitalaria: consulta remota con médicos
-                                                especialistas.
-                                            </li>
-                                            <li>Apps móviles para geolocalización y coordinación de recursos.</li>
-                                            <li>Simulación clínica y realidad virtual para entrenamiento.</li>
-                                        </ul>
+
+                                    {/* Información clave para el despacho */}
+                                    <div className="bg-purple-50 p-6 rounded-lg">
+                                        <h3 className="text-xl font-bold text-purple-800 mb-4 flex items-center">
+                                            <MdInfo className="mr-2"/>
+                                            Información Clave para el Despacho
+                                        </h3>
+                                        <div className="grid md:grid-cols-2 gap-6">
+                                            <div className="space-y-3">
+                                                <h4 className="font-bold text-purple-700">Datos Esenciales</h4>
+                                                <div className="bg-white p-3 rounded border-l-4 border-purple-500">
+                                                    <ul className="text-sm text-gray-600 space-y-1">
+                                                        <li>• Ubicación exacta (dirección, referencias)</li>
+                                                        <li>• Tipo de emergencia</li>
+                                                        <li>• Número de víctimas</li>
+                                                        <li>• Estado de conciencia</li>
+                                                        <li>• Riesgos presentes en la escena</li>
+                                                        <li>• Número telefónico del contacto</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div className="space-y-3">
+                                                <h4 className="font-bold text-purple-700">Instrucciones Pre-arribo</h4>
+                                                <div className="bg-white p-3 rounded border-l-4 border-purple-500">
+                                                    <ul className="text-sm text-gray-600 space-y-1">
+                                                        <li>• RCP telefónica guiada</li>
+                                                        <li>• Control de hemorragias</li>
+                                                        <li>• Posición de recuperación</li>
+                                                        <li>• Liberación de vía aérea</li>
+                                                        <li>• Manejo de la escena segura</li>
+                                                        <li>• Instrucciones específicas por patología</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Tecnología y mejora continua */}
+                                    <div className="bg-teal-50 p-6 rounded-lg">
+                                        <h3 className="text-xl font-bold text-teal-800 mb-4 flex items-center">
+                                            <FiActivity className="mr-2"/>
+                                            Tecnología y Mejora Continua
+                                        </h3>
+                                        <div className="grid md:grid-cols-2 gap-6">
+                                            <div>
+                                                <h4 className="font-bold text-teal-700 mb-3">Nuevas Tecnologías</h4>
+                                                <ul className="space-y-2">
+                                                    <li className="flex items-center text-gray-700">
+                                                        <FaMapMarkerAlt className="mr-2 text-teal-600"/>
+                                                        GPS y geolocalización avanzada
+                                                    </li>
+                                                    <li className="flex items-center text-gray-700">
+                                                        <FaHeartbeat className="mr-2 text-teal-600"/>
+                                                        Telemedicina prehospitalaria
+                                                    </li>
+                                                    <li className="flex items-center text-gray-700">
+                                                        <FaRadio className="mr-2 text-teal-600"/>
+                                                        Apps móviles de coordinación
+                                                    </li>
+                                                    <li className="flex items-center text-gray-700">
+                                                        <MdInfo className="mr-2 text-teal-600"/>
+                                                        Simulación y realidad virtual
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <h4 className="font-bold text-teal-700 mb-3">Evaluación y Mejora</h4>
+                                                <ul className="space-y-2">
+                                                    <li className="flex items-center text-gray-700">
+                                                        <FiCheckCircle className="mr-2 text-teal-600"/>
+                                                        Simulacros regulares
+                                                    </li>
+                                                    <li className="flex items-center text-gray-700">
+                                                        <FiCheckCircle className="mr-2 text-teal-600"/>
+                                                        Capacitación continua
+                                                    </li>
+                                                    <li className="flex items-center text-gray-700">
+                                                        <FiCheckCircle className="mr-2 text-teal-600"/>
+                                                        Auditorías de calidad
+                                                    </li>
+                                                    <li className="flex items-center text-gray-700">
+                                                        <FiCheckCircle className="mr-2 text-teal-600"/>
+                                                        Retroalimentación sistémica
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             )}
                             {activeTab === 'practice' && (
                                 <div className="space-y-6">
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Casos
-                                        prácticos para análisis</h2>
-                                    <div className="p-5 bg-gray-50 rounded-lg shadow-sm mb-4">
-                                        <h3 className="text-xl font-semibold mb-2 text-orange-600">Caso 1: Múltiples
-                                            víctimas</h3>
-                                        <p className="italic text-gray-600 mb-4">
-                                            Se reporta un accidente vehicular con 5 víctimas en una carretera federal.
-                                            El primer respondiente activa el SEM y proporciona información precisa al
-                                            CRUM.
-                                        </p>
-                                        <div>
-                                            <h4 className="font-medium mb-2">¿Qué acciones son prioritarias?</h4>
-                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                                <li>Evaluar la seguridad de la escena.</li>
-                                                <li>Clasificar a las víctimas (triaje).</li>
-                                                <li>Solicitar recursos adicionales si es necesario.</li>
-                                                <li>Coordinar el traslado según prioridad clínica.</li>
+                                    <h2 className="text-3xl font-bold text-gray-800 mb-6 border-b border-gray-200 pb-3">
+                                        <PiChalkboardTeacher className="inline mr-3 text-orange-500"/>
+                                        Casos Prácticos del SEM
+                                    </h2>
+
+                                    {/* Caso 1: Múltiples víctimas */}
+                                    <div className="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-lg shadow">
+                                        <h3 className="text-xl font-bold text-red-800 mb-4 flex items-center">
+                                            <HiOutlineExclamationTriangle className="mr-2"/>
+                                            Caso 1: Accidente con Múltiples Víctimas
+                                        </h3>
+                                        <div className="bg-white p-4 rounded border-l-4 border-red-500 mb-4">
+                                            <p className="text-gray-700 italic">
+                                                <strong>Escenario:</strong> Colisión frontal entre dos vehículos en carretera federal. 
+                                                Cinco víctimas confirmadas, una con pérdida de conciencia. El primer respondiente 
+                                                (policía estatal) activa el SEM desde la escena.
+                                            </p>
+                                        </div>
+                                        
+                                        <div className="grid md:grid-cols-2 gap-6">
+                                            <div className="bg-white p-4 rounded">
+                                                <h4 className="font-bold text-red-700 mb-3 flex items-center">
+                                                    <FiAlertTriangle className="mr-2"/>
+                                                    Acciones Prioritarias
+                                                </h4>
+                                                <ul className="space-y-2">
+                                                    <li className="flex items-start text-gray-700">
+                                                        <div className="w-6 h-6 bg-red-600 text-white rounded-full flex items-center justify-center text-xs mr-2 mt-0.5">1</div>
+                                                        <span className="text-sm">Evaluar seguridad de la escena (tráfico, combustible)</span>
+                                                    </li>
+                                                    <li className="flex items-start text-gray-700">
+                                                        <div className="w-6 h-6 bg-red-600 text-white rounded-full flex items-center justify-center text-xs mr-2 mt-0.5">2</div>
+                                                        <span className="text-sm">Solicitar múltiples ambulancias y recursos</span>
+                                                    </li>
+                                                    <li className="flex items-start text-gray-700">
+                                                        <div className="w-6 h-6 bg-red-600 text-white rounded-full flex items-center justify-center text-xs mr-2 mt-0.5">3</div>
+                                                        <span className="text-sm">Realizar triaje primario (START)</span>
+                                                    </li>
+                                                    <li className="flex items-start text-gray-700">
+                                                        <div className="w-6 h-6 bg-red-600 text-white rounded-full flex items-center justify-center text-xs mr-2 mt-0.5">4</div>
+                                                        <span className="text-sm">Coordinar traslado por prioridad</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <div className="bg-white p-4 rounded">
+                                                <h4 className="font-bold text-red-700 mb-3">Información para el CRUM</h4>
+                                                <div className="space-y-2 text-sm text-gray-600">
+                                                    <p><strong>Ubicación:</strong> Km 45 carretera federal 57</p>
+                                                    <p><strong>Tipo:</strong> Colisión frontal 2 vehículos</p>
+                                                    <p><strong>Víctimas:</strong> 5 confirmadas</p>
+                                                    <p><strong>Estado:</strong> 1 inconsciente, 4 conscientes</p>
+                                                    <p><strong>Recursos:</strong> 3 ambulancias, bomberos</p>
+                                                    <p><strong>Riesgos:</strong> Tráfico intenso, derrame combustible</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div className="mt-4 bg-red-100 p-3 rounded">
+                                            <h4 className="font-bold text-red-800 mb-2">Lecciones Aprendidas</h4>
+                                            <ul className="text-sm text-red-700 space-y-1">
+                                                <li>• La comunicación precisa acelera la respuesta</li>
+                                                <li>• El triaje permite optimizar recursos limitados</li>
+                                                <li>• La coordinación interinstitucional es vital</li>
                                             </ul>
                                         </div>
                                     </div>
-                                    <div className="p-5 bg-gray-50 rounded-lg shadow-sm mb-4">
-                                        <h3 className="text-xl font-semibold mb-2 text-blue-600">Caso 2: Activación
-                                            inadecuada</h3>
-                                        <p className="italic text-gray-600 mb-4">
-                                            Un ciudadano llama al 911 por dolor abdominal leve sin datos de gravedad. Se
-                                            envía una ambulancia básica, pero el recurso queda ocupado y no disponible
-                                            para emergencias reales.
-                                        </p>
-                                        <div>
-                                            <h4 className="font-medium mb-2">¿Qué aprendizaje deja este caso?</h4>
-                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                                <li>La importancia de la correcta priorización y uso racional de
-                                                    recursos.
-                                                </li>
-                                                <li>Educar a la población sobre cuándo activar el SEM.</li>
-                                            </ul>
+
+                                    {/* Caso 2: Activación nocturna */}
+                                    <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg shadow">
+                                        <h3 className="text-xl font-bold text-blue-800 mb-4 flex items-center">
+                                            <FaClock className="mr-2"/>
+                                            Caso 2: Activación Nocturna - Paro Cardíaco
+                                        </h3>
+                                        <div className="bg-white p-4 rounded border-l-4 border-blue-500 mb-4">
+                                            <p className="text-gray-700 italic">
+                                                <strong>Escenario:</strong> Llamada a las 2:30 AM. Hombre de 65 años con dolor 
+                                                torácico severo y dificultad respiratoria. La esposa reporta que "se puso morado 
+                                                y ya no responde". Domicilio en zona residencial.
+                                            </p>
+                                        </div>
+                                        
+                                        <div className="grid md:grid-cols-2 gap-6">
+                                            <div className="bg-white p-4 rounded">
+                                                <h4 className="font-bold text-blue-700 mb-3">Protocolo de Activación</h4>
+                                                <div className="space-y-3">
+                                                    <div className="bg-blue-50 p-3 rounded">
+                                                        <h5 className="font-bold text-blue-600 text-sm">Código Rojo - Crítico</h5>
+                                                        <p className="text-xs text-gray-600">Sospecha de paro cardíaco</p>
+                                                    </div>
+                                                    <div className="bg-blue-50 p-3 rounded">
+                                                        <h5 className="font-bold text-blue-600 text-sm">Despacho Inmediato</h5>
+                                                        <p className="text-xs text-gray-600">Ambulancia SVA + Primer respondiente si disponible</p>
+                                                    </div>
+                                                    <div className="bg-blue-50 p-3 rounded">
+                                                        <h5 className="font-bold text-blue-600 text-sm">RCP Telefónica</h5>
+                                                        <p className="text-xs text-gray-600">Instruir a la esposa mientras llega apoyo</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div className="bg-white p-4 rounded">
+                                                <h4 className="font-bold text-blue-700 mb-3">Instrucciones Pre-arribo</h4>
+                                                <ol className="text-sm text-gray-600 space-y-2">
+                                                    <li className="flex">
+                                                        <span className="w-4 h-4 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs mr-2 mt-0.5">1</span>
+                                                        Verificar respuesta y respiración
+                                                    </li>
+                                                    <li className="flex">
+                                                        <span className="w-4 h-4 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs mr-2 mt-0.5">2</span>
+                                                        Colocar en superficie firme
+                                                    </li>
+                                                    <li className="flex">
+                                                        <span className="w-4 h-4 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs mr-2 mt-0.5">3</span>
+                                                        Iniciar compresiones: centro del pecho
+                                                    </li>
+                                                    <li className="flex">
+                                                        <span className="w-4 h-4 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs mr-2 mt-0.5">4</span>
+                                                        Ritmo: contar 1, 2, 3... 30 compresiones
+                                                    </li>
+                                                    <li className="flex">
+                                                        <span className="w-4 h-4 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs mr-2 mt-0.5">5</span>
+                                                        No interrumpir hasta llegada de SEM
+                                                    </li>
+                                                </ol>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className="p-5 bg-gray-50 rounded-lg shadow-sm">
-                                        <h3 className="text-xl font-semibold mb-2 text-green-600">Caso 3: Coordinación
-                                            interinstitucional</h3>
-                                        <p className="italic text-gray-600 mb-4">
-                                            Durante un incendio en una fábrica, el SEM coordina con bomberos y
-                                            protección civil para la evacuación y atención de heridos.
-                                        </p>
-                                        <div>
-                                            <h4 className="font-medium mb-2">¿Por qué es clave la coordinación?</h4>
-                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                                <li>Permite una respuesta integral y segura.</li>
-                                                <li>Optimiza recursos y reduce riesgos para víctimas y rescatistas.</li>
-                                            </ul>
+
+                                    {/* Caso 3: Triaje telefónico */}
+                                    <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg shadow">
+                                        <h3 className="text-xl font-bold text-green-800 mb-4 flex items-center">
+                                            <BsTelephone className="mr-2"/>
+                                            Caso 3: Triaje Telefónico - Dolor Abdominal
+                                        </h3>
+                                        <div className="bg-white p-4 rounded border-l-4 border-green-500 mb-4">
+                                            <p className="text-gray-700 italic">
+                                                <strong>Escenario:</strong> Mujer de 35 años con dolor abdominal de 4 horas 
+                                                de evolución. Consciente, orientada, camina con dificultad. Sin sangrado aparente. 
+                                                Solicita traslado al hospital.
+                                            </p>
+                                        </div>
+                                        
+                                        <div className="grid md:grid-cols-3 gap-4">
+                                            <div className="bg-white p-4 rounded">
+                                                <h4 className="font-bold text-green-700 mb-3">Evaluación Inicial</h4>
+                                                <ul className="text-sm text-gray-600 space-y-1">
+                                                    <li>• Paciente consciente ✓</li>
+                                                    <li>• Respiración normal ✓</li>
+                                                    <li>• Sin sangrado visible ✓</li>
+                                                    <li>• Dolor localizado</li>
+                                                    <li>• Signos vitales estables</li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <div className="bg-white p-4 rounded">
+                                                <h4 className="font-bold text-green-700 mb-3">Clasificación</h4>
+                                                <div className="bg-yellow-50 p-3 rounded border-l-4 border-yellow-500">
+                                                    <h5 className="font-bold text-yellow-700">Código Amarillo</h5>
+                                                    <p className="text-xs text-gray-600 mt-1">
+                                                        Urgente - Dolor abdominal requiere evaluación médica pero no amenaza vida inmediata
+                                                    </p>
+                                                </div>
+                                                <p className="text-xs text-green-600 mt-2">Tiempo objetivo: &lt; 15 minutos</p>
+                                            </div>
+                                            
+                                            <div className="bg-white p-4 rounded">
+                                                <h4 className="font-bold text-green-700 mb-3">Decisión</h4>
+                                                <div className="space-y-2">
+                                                    <div className="bg-green-50 p-2 rounded">
+                                                        <p className="text-xs text-green-700"><strong>Recurso:</strong> Ambulancia Básica</p>
+                                                    </div>
+                                                    <div className="bg-green-50 p-2 rounded">
+                                                        <p className="text-xs text-green-700"><strong>Hospital:</strong> Urgencias general</p>
+                                                    </div>
+                                                    <div className="bg-green-50 p-2 rounded">
+                                                        <p className="text-xs text-green-700"><strong>Prioridad:</strong> Traslado sin sirena</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Caso 4: Coordinación inter-institucional */}
+                                    <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-lg shadow">
+                                        <h3 className="text-xl font-bold text-purple-800 mb-4 flex items-center">
+                                            <FaUsers className="mr-2"/>
+                                            Caso 4: Emergencia con Múltiples Agencias
+                                        </h3>
+                                        <div className="bg-white p-4 rounded border-l-4 border-purple-500 mb-4">
+                                            <p className="text-gray-700 italic">
+                                                <strong>Escenario:</strong> Incendio en edificio residencial de 4 pisos. 
+                                                Múltiples personas atrapadas, víctimas con inhalación de humo. Se requiere 
+                                                coordinación entre bomberos, SEM, policía y protección civil.
+                                            </p>
+                                        </div>
+                                        
+                                        <div className="grid md:grid-cols-2 gap-6">
+                                            <div className="bg-white p-4 rounded">
+                                                <h4 className="font-bold text-purple-700 mb-3">Roles y Responsabilidades</h4>
+                                                <div className="space-y-3">
+                                                    <div className="flex items-center bg-red-50 p-2 rounded">
+                                                        <MdEmergency className="mr-2 text-red-600"/>
+                                                        <div>
+                                                            <p className="font-bold text-red-700 text-sm">Bomberos</p>
+                                                            <p className="text-xs text-gray-600">Extinción, rescate, ventilación</p>
+                                                        </div>
+                                                    </div>
+                                                    <div className="flex items-center bg-blue-50 p-2 rounded">
+                                                        <FaShieldAlt className="mr-2 text-blue-600"/>
+                                                        <div>
+                                                            <p className="font-bold text-blue-700 text-sm">Policía</p>
+                                                            <p className="text-xs text-gray-600">Perímetro, evacuación, tráfico</p>
+                                                        </div>
+                                                    </div>
+                                                    <div className="flex items-center bg-green-50 p-2 rounded">
+                                                        <FaAmbulance className="mr-2 text-green-600"/>
+                                                        <div>
+                                                            <p className="font-bold text-green-700 text-sm">SEM</p>
+                                                            <p className="text-xs text-gray-600">Triaje, atención, traslado</p>
+                                                        </div>
+                                                    </div>
+                                                    <div className="flex items-center bg-orange-50 p-2 rounded">
+                                                        <MdSecurity className="mr-2 text-orange-600"/>
+                                                        <div>
+                                                            <p className="font-bold text-orange-700 text-sm">Protección Civil</p>
+                                                            <p className="text-xs text-gray-600">Coordinación general, albergue</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div className="bg-white p-4 rounded">
+                                                <h4 className="font-bold text-purple-700 mb-3">Comunicación y Coordinación</h4>
+                                                <div className="space-y-3">
+                                                    <div className="bg-purple-50 p-3 rounded">
+                                                        <h5 className="font-bold text-purple-600 text-sm">Canal Principal</h5>
+                                                        <p className="text-xs text-gray-600">Frecuencia interinstitucional para coordinación</p>
+                                                    </div>
+                                                    <div className="bg-purple-50 p-3 rounded">
+                                                        <h5 className="font-bold text-purple-600 text-sm">Comando Unificado</h5>
+                                                        <p className="text-xs text-gray-600">Un solo comandante para decisiones tácticas</p>
+                                                    </div>
+                                                    <div className="bg-purple-50 p-3 rounded">
+                                                        <h5 className="font-bold text-purple-600 text-sm">Área de Triaje</h5>
+                                                        <p className="text-xs text-gray-600">Zona segura para clasificación y atención</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Reflexiones finales */}
+                                    <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-lg">
+                                        <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                            <MdTipsAndUpdates className="mr-2 text-orange-500"/>
+                                            Reflexiones y Buenas Prácticas
+                                        </h3>
+                                        <div className="grid md:grid-cols-3 gap-4">
+                                            <div className="bg-white p-4 rounded border-l-4 border-orange-500">
+                                                <h4 className="font-bold text-orange-700 mb-2">Comunicación</h4>
+                                                <ul className="text-sm text-gray-600 space-y-1">
+                                                    <li>• Información clara y precisa</li>
+                                                    <li>• Confirmación de órdenes</li>
+                                                    <li>• Actualización constante</li>
+                                                </ul>
+                                            </div>
+                                            <div className="bg-white p-4 rounded border-l-4 border-blue-500">
+                                                <h4 className="font-bold text-blue-700 mb-2">Coordinación</h4>
+                                                <ul className="text-sm text-gray-600 space-y-1">
+                                                    <li>• Roles bien definidos</li>
+                                                    <li>• Liderazgo claro</li>
+                                                    <li>• Trabajo en equipo</li>
+                                                </ul>
+                                            </div>
+                                            <div className="bg-white p-4 rounded border-l-4 border-green-500">
+                                                <h4 className="font-bold text-green-700 mb-2">Seguridad</h4>
+                                                <ul className="text-sm text-gray-600 space-y-1">
+                                                    <li>• Evaluación constante</li>
+                                                    <li>• Protección del personal</li>
+                                                    <li>• Prevención de riesgos</li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
