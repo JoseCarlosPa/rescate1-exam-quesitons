@@ -1,11 +1,17 @@
 {
   "hosting": {
     "public": "dist",
-    "site": "rescate1-examenes",
+    "site": "rescate1-alumnos",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
     ]
   }
 }
