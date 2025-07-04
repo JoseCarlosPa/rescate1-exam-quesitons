@@ -49,7 +49,7 @@ export default function AbdoGeniInjuries() {
                             </NavLink>
                         </div>
                     </header>                        {/* Menú rápido de recursos */}
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 max-w-4xl mx-auto">
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8 max-w-4xl mx-auto">
                             <NavLink
                                 to={`${AllRoutes.ABDO_GENI_INJURIES}/exam`}
                                 className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
@@ -71,13 +71,7 @@ export default function AbdoGeniInjuries() {
                                 <BsBookHalf className="w-10 h-10 text-orange-500 mb-2" />
                                 <p className="text-center font-medium">Capítulo</p>
                             </a>
-                            <a href="https://www.trauma.org/index.php/main/article/438"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
-                                <TbEmergencyBed className="w-10 h-10 text-orange-500 mb-2" />
-                                <p className="text-center font-medium">Trauma.org</p>
-                            </a>
+                          
                         </div>
 
                 
