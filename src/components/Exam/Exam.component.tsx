@@ -368,6 +368,14 @@ export default function Exam(props: ExamProps){
                                                         </span>
                                                     </div>
                                                 )}
+
+                                                {/* Explicación de la pregunta */}
+                                                {q?.explanation && (
+                                                    <div className="mt-3 p-3 bg-blue-50 border-l-4 border-blue-400 rounded">
+                                                        <span className="font-medium text-blue-700">Explicación: </span>
+                                                        <span className="text-blue-800">{q.explanation}</span>
+                                                    </div>
+                                                )}
                                             </div>
                                         </div>
                                     </div>

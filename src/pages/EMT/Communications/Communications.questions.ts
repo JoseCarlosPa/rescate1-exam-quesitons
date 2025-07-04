@@ -31,105 +31,115 @@ export const faqData = [
     }
 ];
 
-export const communicationsQuestions: Question[] = [
+export const communicationsQuestions: Question[] =[
     {
-        question: "Al comunicar información sobre un paciente al hospital, es fundamental:",
-        options: [
-            { letter: "a", text: "Proporcionar tantos detalles como sea posible, siendo objetivo e imparcial." },
-            { letter: "b", text: "Usar palabras codificadas para proteger la identidad del paciente." },
-            { letter: "c", text: "Hablar lo más rápido posible para ahorrar tiempo." },
-            { letter: "d", text: "Incluir tu opinión personal sobre la condición del paciente." }
+        "question": "Al comunicar información sobre un paciente al hospital, es fundamental:",
+        "options": [
+            { "letter": "a", "text": "Proporcionar tantos detalles como sea posible, siendo objetivo e imparcial." },
+            { "letter": "b", "text": "Usar palabras codificadas para proteger la identidad del paciente." },
+            { "letter": "c", "text": "Hablar lo más rápido posible para ahorrar tiempo." },
+            { "letter": "d", "text": "Incluir tu opinión personal sobre la condición del paciente." }
         ],
-        correctAnswer: "a"
+        "correctAnswer": "a",
+        "explanation": "La comunicación efectiva con el hospital requiere transmitir información clara, precisa y objetiva. El personal receptor necesita todos los datos relevantes (signos vitales, historia, intervenciones) para prepararse adecuadamente. Las opiniones personales deben evitarse; la comunicación debe basarse en hechos y hallazgos objetivos."
     },
     {
-        question: "¿Qué información *debe* incluir en su informe al hospital?",
-        options: [
-            { letter: "a", text: "Su hora estimada de llegada, queja principal, signos vitales y tratamientos." },
-            { letter: "b", text: "El nombre completo y la fecha de nacimiento del paciente." },
-            { letter: "c", text: "La dirección exacta del lugar de donde viene." },
-            { letter: "d", text: "Su opinión personal sobre la condición del paciente." }
+        "question": "¿Qué información *debe* incluir en su informe al hospital?",
+        "options": [
+            { "letter": "a", "text": "Su hora estimada de llegada, queja principal, signos vitales y tratamientos." },
+            { "letter": "b", "text": "El nombre completo y la fecha de nacimiento del paciente." },
+            { "letter": "c", "text": "La dirección exacta del lugar de donde viene." },
+            { "letter": "d", "text": "Su opinión personal sobre la condición del paciente." }
         ],
-        correctAnswer: "a"
+        "correctAnswer": "a",
+        "explanation": "Un reporte de radio efectivo debe ser conciso y centrarse en la información clínica esencial. Esto incluye la unidad de identificación, la edad y sexo del paciente, la queja principal, los hallazgos clave (como signos vitales), las intervenciones realizadas y la hora estimada de llegada (ETA). Esto permite al hospital movilizar los recursos necesarios."
     },
     {
-        question: "Al escribir la narrativa para un informe de atención prehospitalaria (FRAP), es importante incluir:",
-        options: [
-            { letter: "a", text: "Opiniones personales y suposiciones." },
-            { letter: "b", text: "Muchas abreviaturas que solo el personal de su agencia entienda." },
-            { letter: "c", text: "Hallazgos objetivos de la evaluación física y las intervenciones realizadas." },
-            { letter: "d", text: "La dirección exacta de su ubicación al momento de escribir el informe." }
+        "question": "Al escribir la narrativa para un informe de atención prehospitalaria (FRAP), es importante incluir:",
+        "options": [
+            { "letter": "a", "text": "Opiniones personales y suposiciones." },
+            { "letter": "b", "text": "Muchas abreviaturas que solo el personal de su agencia entienda." },
+            { "letter": "c", "text": "Hallazgos objetivos de la evaluación física y las intervenciones realizadas." },
+            { "letter": "d", "text": "La dirección exacta de su ubicación al momento de escribir el informe." }
         ],
-        correctAnswer: "c"
+        "correctAnswer": "c",
+        "explanation": "La narrativa del Formato de Registro de Atención Prehospitalaria (FRAP o PCR) es un documento médico-legal. Debe contener una descripción cronológica y objetiva de los hechos, desde el despacho hasta la transferencia del paciente. Incluir solo hallazgos observables y las acciones realizadas garantiza un registro profesional y defendible."
     },
     {
-        question: "Después de enviar un FRAP electrónico, se da cuenta de que documentó los signos vitales incorrectos. ¿Qué debe hacer?",
-        options: [
-            { letter: "a", text: "Dejar el registro como está y buscar consejo legal." },
-            { letter: "b", text: "Notificar al departamento de tecnología de la información de su agencia para que lo corrijan." },
-            { letter: "c", text: "Seguir las instrucciones de su agencia para hacer una enmienda o adenda al registro." },
-            { letter: "d", text: "No decir nada y esperar que el error pase desapercibido." }
+        "question": "Después de enviar un FRAP electrónico, se da cuenta de que documentó los signos vitales incorrectos. ¿Qué debe hacer?",
+        "options": [
+            { "letter": "a", "text": "Dejar el registro como está y buscar consejo legal." },
+            { "letter": "b", "text": "Notificar al departamento de tecnología de la información de su agencia para que lo corrijan." },
+            { "letter": "c", "text": "Seguir las instrucciones de su agencia para hacer una enmienda o adenda al registro." },
+            { "letter": "d", "text": "No decir nada y esperar que el error pase desapercibido." }
         ],
-        correctAnswer: "c"
+        "correctAnswer": "c",
+        "explanation": "La forma correcta y ética de corregir un error en un registro médico completo es mediante una enmienda o adenda. Este es un agregado al reporte original que aclara la información incorrecta, indica la información correcta, y es fechado y firmado por la persona que hace la corrección. Ocultar un error compromete la atención del paciente y la integridad del documento."
     },
     {
-        question: "Su compañero toma varias fotos del paciente y la escena para publicarlas en línea y compartirlas con amigos. Esto podría ser una violación de:",
-        options: [
-            { letter: "a", text: "Las leyes de Internet." },
-            { letter: "b", text: "El protocolo de informe de atención del paciente." },
-            { letter: "c", text: "NSEMIS." },
-            { letter: "d", text: "HIPAA." }
+        "question": "Su compañero toma varias fotos del paciente y la escena para publicarlas en línea y compartirlas con amigos. Esto podría ser una violación de:",
+        "options": [
+            { "letter": "a", "text": "Las leyes de Internet." },
+            { "letter": "b", "text": "El protocolo de informe de atención del paciente." },
+            { "letter": "c", "text": "NEMSIS (en EE.UU.)." },
+            { "letter": "d", "text": "HIPAA (o leyes de confidencialidad equivalentes)." }
         ],
-        correctAnswer: "d"
+        "correctAnswer": "d",
+        "explanation": "HIPAA (Ley de Portabilidad y Responsabilidad de Seguros Médicos de EE. UU.) y leyes de confidencialidad similares en otros países protegen la información de salud del paciente. Tomar y compartir fotos de un paciente sin su consentimiento explícito es una violación grave de su privacidad y tiene serias consecuencias legales y profesionales."
     },
     {
-        question: "¿Cuál de los siguientes es un componente de la información administrativa que se puede encontrar en un FRAP?",
-        options: [
-            { letter: "a", text: "Datos del paciente (nombre, edad, sexo)." },
-            { letter: "b", text: "Evaluación física del paciente." },
-            { letter: "c", text: "Detalles del tratamiento aplicado." },
-            { letter: "d", text: "Hallazgos de la evaluación del paciente." }
+        "question": "¿Cuál de los siguientes es un componente de la información administrativa que se puede encontrar en un FRAP?",
+        "options": [
+            { "letter": "a", "text": "Datos del paciente (nombre, edad, sexo)." },
+            { "letter": "b", "text": "Evaluación física del paciente." },
+            { "letter": "c", "text": "Detalles del tratamiento aplicado." },
+            { "letter": "d", "text": "Hallazgos de la evaluación del paciente." }
         ],
-        correctAnswer: "a"
+        "correctAnswer": "a",
+        "explanation": "El FRAP se divide en secciones. Los datos demográficos y administrativos incluyen información como el nombre del paciente, edad, sexo, fecha de nacimiento y los tiempos del incidente. Los otros elementos (evaluación, tratamiento) corresponden a la sección de datos clínicos del paciente."
     },
     {
-        question: "¿Cuál es el objetivo principal del reporte oral al personal hospitalario al entregar un paciente?",
-        options: [
-            { letter: "a", text: "Conocer su experiencia médica y pedir consejos." },
-            { letter: "b", text: "Transferir adecuadamente el cuidado del paciente y asegurar la continuidad." },
-            { letter: "c", text: "Obtener opiniones sobre el tratamiento que se aplicó." },
-            { letter: "d", text: "Solicitar propinas por el servicio brindado." }
+        "question": "¿Cuál es el objetivo principal del reporte oral al personal hospitalario al entregar un paciente?",
+        "options": [
+            { "letter": "a", "text": "Conocer su experiencia médica y pedir consejos." },
+            { "letter": "b", "text": "Transferir adecuadamente el cuidado del paciente y asegurar la continuidad." },
+            { "letter": "c", "text": "Obtener opiniones sobre el tratamiento que se aplicó." },
+            { "letter": "d", "text": "Solicitar propinas por el servicio brindado." }
         ],
-        correctAnswer: "b"
+        "correctAnswer": "b",
+        "explanation": "El reporte oral al lado de la cama es un paso crítico para la seguridad del paciente. Su propósito es transferir formalmente la responsabilidad del paciente al personal del hospital, proporcionando un resumen conciso de la situación, las intervenciones y la respuesta del paciente para que no haya interrupciones en su atención."
     },
     {
-        question: "Cuando se transmite un reporte por radio, se debe hablar:",
-        options: [
-            { letter: "a", text: "Rápido y sin pausas para ser eficiente." },
-            { letter: "b", text: "Con tono firme, claro y pausado para facilitar la comprensión." },
-            { letter: "c", text: "Utilizando solo abreviaciones para ahorrar tiempo." },
-            { letter: "d", text: "En voz baja para mantener la confidencialidad." }
+        "question": "Cuando se transmite un reporte por radio, se debe hablar:",
+        "options": [
+            { "letter": "a", "text": "Rápido y sin pausas para ser eficiente." },
+            { "letter": "b", "text": "Con tono firme, claro y pausado para facilitar la comprensión." },
+            { "letter": "c", "text":"Utilizando solo abreviaciones para ahorrar tiempo." },
+            { "letter": "d", "text": "En voz baja para mantener la confidencialidad." }
         ],
-        correctAnswer: "b"
+        "correctAnswer": "b",
+        "explanation": "Las comunicaciones por radio deben ser claras y fáciles de entender, ya que la transmisión puede tener interferencias. Hablar de forma pausada, con un volumen adecuado y enunciando claramente las palabras, minimiza los malentendidos y asegura que la información crítica sea recibida correctamente."
     },
     {
-        question: "¿Qué es la evaluación SAMPLE?",
-        options: [
-            { letter: "a", text: "Un protocolo para la administración de medicamentos." },
-            { letter: "b", text: "Una herramienta para la evaluación rápida de la escena." },
-            { letter: "c", text: "Un método para recopilar información clave sobre el paciente." },
-            { letter: "d", text: "Una técnica para inmovilizar a pacientes agresivos." }
+        "question": "¿Qué es la evaluación SAMPLE?",
+        "options": [
+            { "letter": "a", "text": "Un protocolo para la administración de medicamentos." },
+            { "letter": "b", "text": "Una herramienta para la evaluación rápida de la escena." },
+            { "letter": "c", "text": "Un método para recopilar información clave sobre el paciente." },
+            { "letter": "d", "text": "Una técnica para inmovilizar a pacientes agresivos." }
         ],
-        correctAnswer: "c"
+        "correctAnswer": "c",
+        "explanation": "SAMPLE es un acrónimo mnemotécnico utilizado para obtener el historial médico de un paciente. Significa: Signos y Síntomas, Alergias, Medicamentos, Padecimientos previos (historial médico pertinente), Última ingesta oral (comida o bebida), y Eventos previos al incidente."
     },
     {
-        question: "La documentación precisa y completa en el FRAP es esencial porque:",
-        options: [
-            { letter: "a", text: "Solo sirve como registro para el personal de la agencia." },
-            { letter: "b", text: "Es un requisito legal y ayuda a garantizar la continuidad de la atención al paciente." },
-            { letter: "c", text: "Permite al paramédico expresar sus opiniones personales sobre el caso." },
-            { letter: "d", text: "Es útil para generar estadísticas sobre la hora de llegada de las ambulancias." }
+        "question": "La documentación precisa y completa en el FRAP es esencial porque:",
+        "options": [
+            { "letter": "a", "text": "Solo sirve como registro para el personal de la agencia." },
+            { "letter": "b", "text": "Es un requisito legal y ayuda a garantizar la continuidad de la atención al paciente." },
+            { "letter": "c", "text": "Permite al paramédico expresar sus opiniones personales sobre el caso." },
+            { "letter": "d", "text": "Es útil para generar estadísticas sobre la hora de llegada de las ambulancias." }
         ],
-        correctAnswer: "b"
+        "correctAnswer": "b",
+        "explanation": "El FRAP tiene múltiples propósitos cruciales: es un documento legal que refleja la atención brindada, asegura la continuidad del cuidado al informar al siguiente nivel de atención, y se utiliza para la mejora de la calidad, la facturación y la investigación. Su precisión es vital para la atención del paciente y la protección legal del proveedor."
     }
-];
+]

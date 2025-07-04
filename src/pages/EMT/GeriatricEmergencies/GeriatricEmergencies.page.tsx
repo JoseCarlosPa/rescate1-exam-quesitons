@@ -12,7 +12,6 @@ import { FaPersonCane } from "react-icons/fa6";
 
 export default function GeriatricEmergencies(){
     const [activeTab, setActiveTab] = useState<'assessment' | 'conditions' | 'management' | 'cases'>('assessment');
-    const [showQuickQuiz, setShowQuickQuiz] = useState(false);
 
     return(
         <div className="min-h-screen bg-gray-50">
@@ -60,17 +59,7 @@ export default function GeriatricEmergencies(){
                         </a>
                     </div>
 
-                    {/* Quiz rápido */}
-                    {showQuickQuiz && (
-                        <div className="bg-white p-6 rounded-lg shadow-md mb-8 max-w-4xl mx-auto">
-                            <h3 className="text-xl font-bold mb-4 text-gray-800">Quiz Rápido - Pon a prueba tus conocimientos</h3>
-                            <button
-                                onClick={() => setShowQuickQuiz(false)}
-                                className="mt-4 bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded transition">
-                                Cerrar Quiz
-                            </button>
-                        </div>
-                    )}
+                
 
                     {/* Navegación por pestañas */}
                     <div className="mb-6 border-b border-gray-200 max-w-5xl mx-auto">
