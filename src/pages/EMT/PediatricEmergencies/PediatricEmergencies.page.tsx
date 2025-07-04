@@ -5,16 +5,29 @@ import {ChevronUpIcon} from "@heroicons/react/16/solid";
 import {faqData} from "./PediatricEmergencies.questions.ts";
 import {IoReturnDownBack} from "react-icons/io5";
 import {useState} from "react";
-import {MdQuiz} from "react-icons/md";
-import {BsBookHalf} from "react-icons/bs";
+import {MdQuiz, MdOutlineTimer, MdCheckCircle, MdWarning, MdHealthAndSafety} from "react-icons/md";
+import {BsBookHalf, BsLightbulb, BsShield} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
-import {FaChild} from "react-icons/fa";
+import {FaChild, FaExclamationTriangle, FaBaby, FaHeartbeat, FaLungsVirus} from "react-icons/fa";
+import {FiAlertTriangle, FiEye, FiActivity, FiUsers} from "react-icons/fi";
+import {TbEmergencyBed, TbScale, TbMedicalCross, TbStethoscope} from "react-icons/tb";
+import {RiThermometerLine, RiLungsLine, RiHeartPulseLine, RiMentalHealthLine} from "react-icons/ri";
+import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
 
 export default function PediatricEmergencies(){
-    const [activeTab, setActiveTab] = useState<'evaluation' | 'conditions' | 'treatment' | 'cases'>('evaluation');
-    const [showQuickQuiz, setShowQuickQuiz] = useState(false);
+    const [activeTab, setActiveTab] = useState<'evaluation' | 'pathologies' | 'treatment' | 'cases'>('evaluation');
 
     return(
+        <SEOWrapper
+            title="Emergencias Pediátricas EMT | Evaluación, Manejo y Casos Clínicos"
+            description="Guía completa de emergencias pediátricas para Técnicos en Atención Médica Prehospitalaria: TEP, patologías comunes, manejo emergente y casos clínicos. Aprende a evaluar y tratar niños en situaciones críticas."
+            keywords="emergencias pediátricas, EMT, paramédicos, TEP, triángulo evaluación pediátrica, bronquiolitis, epiglotitis, convulsiones febriles, shock pediátrico, vía aérea pediátrica, casos clínicos, pediatría prehospitalaria"
+            section="emt"
+            difficulty="Intermediate"
+            timeRequired="PT120M"
+            educationalLevel="Technical"
+            includeEducationalSchema={true}
+        >
         <div className="min-h-screen bg-gray-50">
             <div className="flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-white pb-12 px-4 p-4">
                 <div className="w-full max-w-7xl">
@@ -61,17 +74,7 @@ export default function PediatricEmergencies(){
                         </a>
                     </div>
 
-                    {/* Quiz rápido */}
-                    {showQuickQuiz && (
-                        <div className="bg-white p-6 rounded-lg shadow-md mb-8 max-w-4xl mx-auto">
-                            <h3 className="text-xl font-bold mb-4 text-gray-800">Quiz Rápido - Pon a prueba tus conocimientos</h3>
-                            <button
-                                onClick={() => setShowQuickQuiz(false)}
-                                className="mt-4 bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded transition">
-                                Cerrar Quiz
-                            </button>
-                        </div>
-                    )}
+            
 
                     {/* Navegación por pestañas */}
                     <div className="mb-6 border-b border-gray-200 max-w-5xl mx-auto">
@@ -83,16 +86,16 @@ export default function PediatricEmergencies(){
                                         ? 'border-orange-500 text-orange-600' 
                                         : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                                 }`}>
-                                Evaluación Pediátrica
+                                Evaluación TEP
                             </button>
                             <button
-                                onClick={() => setActiveTab('conditions')}
+                                onClick={() => setActiveTab('pathologies')}
                                 className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
-                                    activeTab === 'conditions' 
+                                    activeTab === 'pathologies' 
                                         ? 'border-orange-500 text-orange-600' 
                                         : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                                 }`}>
-                                Patologías Comunes
+                                Patologías Críticas
                             </button>
                             <button
                                 onClick={() => setActiveTab('treatment')}
@@ -101,7 +104,7 @@ export default function PediatricEmergencies(){
                                         ? 'border-orange-500 text-orange-600' 
                                         : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                                 }`}>
-                                Manejo Emergente
+                                Protocolos de Manejo
                             </button>
                             <button
                                 onClick={() => setActiveTab('cases')}
@@ -110,7 +113,7 @@ export default function PediatricEmergencies(){
                                         ? 'border-orange-500 text-orange-600' 
                                         : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                                 }`}>
-                                Casos Clínicos
+                                Escenarios Clínicos
                             </button>
                         </nav>
                     </div>
@@ -118,457 +121,943 @@ export default function PediatricEmergencies(){
                     {/* Contenido principal basado en pestañas */}
                     <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-sm p-6 mb-8">
                         {activeTab === 'evaluation' && (
-                            <div className="space-y-6">
-                                <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Triángulo de Evaluación Pediátrica (TEP)</h2>
-                                    <p className="text-gray-700 leading-relaxed">
-                                        El TEP es una herramienta de evaluación rápida que permite formar una impresión general del niño en segundos, 
-                                        evaluando al paciente "desde la puerta" antes del contacto físico. Consta de tres componentes principales:
+                            <div className="space-y-8">
+                                {/* Importancia crítica */}
+                                <div className="bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-red-500 p-6 rounded-lg">
+                                    <div className="flex items-center mb-4">
+                                        <FaExclamationTriangle className="w-8 h-8 text-red-500 mr-3"/>
+                                        <h2 className="text-2xl font-bold text-red-700">Los niños NO son adultos pequeños</h2>
+                                    </div>
+                                    <p className="text-gray-800 leading-relaxed text-lg mb-4">
+                                        Los niños tienen diferencias anatómicas, fisiológicas y psicológicas que requieren 
+                                        un enfoque especializado en el manejo de emergencias médicas.
                                     </p>
-                                    <div className="grid md:grid-cols-3 gap-4 mt-4">
-                                        <div className="bg-blue-50 p-4 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-blue-700">Apariencia</h3>
-                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                                <li>Tono muscular</li>
-                                                <li>Interactividad</li>
-                                                <li>Consuelo</li>
-                                                <li>Mirada/contacto visual</li>
-                                                <li>Habla/llanto</li>
+                                    <div className="grid md:grid-cols-3 gap-4">
+                                        <div className="bg-white p-4 rounded shadow-sm text-center">
+                                            <FaBaby className="w-8 h-8 text-blue-500 mx-auto mb-2"/>
+                                            <p className="font-bold text-blue-600">Anatomía</p>
+                                            <p className="text-sm">Diferencias estructurales críticas</p>
+                                        </div>
+                                        <div className="bg-white p-4 rounded shadow-sm text-center">
+                                            <FaHeartbeat className="w-8 h-8 text-green-500 mx-auto mb-2"/>
+                                            <p className="font-bold text-green-600">Fisiología</p>
+                                            <p className="text-sm">Respuestas compensatorias únicas</p>
+                                        </div>
+                                        <div className="bg-white p-4 rounded shadow-sm text-center">
+                                            <RiMentalHealthLine className="w-8 h-8 text-purple-500 mx-auto mb-2"/>
+                                            <p className="font-bold text-purple-600">Psicología</p>
+                                            <p className="text-sm">Desarrollo cognitivo variable</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Triángulo de Evaluación Pediátrica */}
+                                <div>
+                                    <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
+                                        <BsShield className="w-6 h-6 mr-2 text-orange-500"/>
+                                        Triángulo de Evaluación Pediátrica (TEP)
+                                    </h2>
+                                    <div className="bg-blue-50 p-4 rounded-lg mb-4">
+                                        <p className="text-gray-700 font-medium">
+                                            Herramienta de evaluación rápida que permite formar una impresión general del niño 
+                                            en <strong>10-15 segundos</strong>, evaluando "desde la puerta" antes del contacto físico.
+                                        </p>
+                                    </div>
+                                    <div className="grid md:grid-cols-3 gap-6">
+                                        <div className="bg-gradient-to-b from-blue-50 to-blue-100 p-6 rounded-lg border-2 border-blue-200">
+                                            <div className="text-center mb-4">
+                                                <RiMentalHealthLine className="w-12 h-12 text-blue-600 mx-auto mb-2"/>
+                                                <h3 className="text-xl font-bold text-blue-700">APARIENCIA</h3>
+                                                <p className="text-sm text-blue-600">Estado neurológico</p>
+                                            </div>
+                                            <ul className="space-y-2 text-gray-700">
+                                                <li className="flex items-start">
+                                                    <FiEye className="w-4 h-4 mt-1 mr-2 text-blue-600"/>
+                                                    <span><strong>Tono muscular:</strong> Flácido vs. Normal</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <FiEye className="w-4 h-4 mt-1 mr-2 text-blue-600"/>
+                                                    <span><strong>Interactividad:</strong> Responde a estímulos</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <FiEye className="w-4 h-4 mt-1 mr-2 text-blue-600"/>
+                                                    <span><strong>Consuelo:</strong> Se calma con padres</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <FiEye className="w-4 h-4 mt-1 mr-2 text-blue-600"/>
+                                                    <span><strong>Mirada:</strong> Contacto visual apropiado</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <FiEye className="w-4 h-4 mt-1 mr-2 text-blue-600"/>
+                                                    <span><strong>Habla/Llanto:</strong> Fuerte vs. Débil</span>
+                                                </li>
                                             </ul>
                                         </div>
-                                        <div className="bg-green-50 p-4 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-green-700">Trabajo Respiratorio</h3>
-                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                                <li>Sonidos respiratorios anormales</li>
-                                                <li>Retracciones</li>
-                                                <li>Aleteo nasal</li>
-                                                <li>Respiración irregular</li>
-                                                <li>Posicionamiento anormal</li>
+                                        <div className="bg-gradient-to-b from-green-50 to-green-100 p-6 rounded-lg border-2 border-green-200">
+                                            <div className="text-center mb-4">
+                                                <RiLungsLine className="w-12 h-12 text-green-600 mx-auto mb-2"/>
+                                                <h3 className="text-xl font-bold text-green-700">RESPIRACIÓN</h3>
+                                                <p className="text-sm text-green-600">Trabajo respiratorio</p>
+                                            </div>
+                                            <ul className="space-y-2 text-gray-700">
+                                                <li className="flex items-start">
+                                                    <FaLungsVirus className="w-4 h-4 mt-1 mr-2 text-green-600"/>
+                                                    <span><strong>Sonidos anormales:</strong> Estridor, sibilancias</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <FaLungsVirus className="w-4 h-4 mt-1 mr-2 text-green-600"/>
+                                                    <span><strong>Retracciones:</strong> Intercostales, subcostales</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <FaLungsVirus className="w-4 h-4 mt-1 mr-2 text-green-600"/>
+                                                    <span><strong>Aleteo nasal:</strong> Esfuerzo respiratorio</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <FaLungsVirus className="w-4 h-4 mt-1 mr-2 text-green-600"/>
+                                                    <span><strong>Posición anormal:</strong> Trípode, fowler</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <FaLungsVirus className="w-4 h-4 mt-1 mr-2 text-green-600"/>
+                                                    <span><strong>Frecuencia:</strong> Taquipnea, bradipnea</span>
+                                                </li>
                                             </ul>
                                         </div>
-                                        <div className="bg-orange-50 p-4 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-orange-700">Circulación Cutánea</h3>
-                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                                <li>Palidez</li>
-                                                <li>Moteado</li>
-                                                <li>Cianosis</li>
-                                                <li>Color de labios y mucosas</li>
-                                                <li>Relleno capilar</li>
+                                        <div className="bg-gradient-to-b from-red-50 to-red-100 p-6 rounded-lg border-2 border-red-200">
+                                            <div className="text-center mb-4">
+                                                <RiHeartPulseLine className="w-12 h-12 text-red-600 mx-auto mb-2"/>
+                                                <h3 className="text-xl font-bold text-red-700">CIRCULACIÓN</h3>
+                                                <p className="text-sm text-red-600">Perfusión cutánea</p>
+                                            </div>
+                                            <ul className="space-y-2 text-gray-700">
+                                                <li className="flex items-start">
+                                                    <FiActivity className="w-4 h-4 mt-1 mr-2 text-red-600"/>
+                                                    <span><strong>Palidez:</strong> Pérdida de color normal</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <FiActivity className="w-4 h-4 mt-1 mr-2 text-red-600"/>
+                                                    <span><strong>Moteado:</strong> Patrón reticulado</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <FiActivity className="w-4 h-4 mt-1 mr-2 text-red-600"/>
+                                                    <span><strong>Cianosis:</strong> Coloración azulada</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <FiActivity className="w-4 h-4 mt-1 mr-2 text-red-600"/>
+                                                    <span><strong>Relleno capilar:</strong> &gt;2 segundos anormal</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <FiActivity className="w-4 h-4 mt-1 mr-2 text-red-600"/>
+                                                    <span><strong>Temperatura:</strong> Extremidades frías</span>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Diferencias anatómicas y fisiológicas</h2>
-                                    <div className="grid md:grid-cols-2 gap-6">
-                                        <div>
-                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Vía aérea pediátrica</h3>
-                                            <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                                <li>Cabeza más grande proporcionalmente</li>
-                                                <li>Occipucio prominente (flexión cervical natural)</li>
-                                                <li>Lengua más grande en relación a la cavidad oral</li>
-                                                <li>Vía aérea más pequeña y estrecha</li>
-                                                <li>Tráquea más flexible y blanda</li>
-                                                <li>Punto más estrecho a nivel cricoides (no cuerdas)</li>
-                                            </ul>
+                                {/* Clasificación según TEP */}
+                                <div className="bg-gradient-to-r from-yellow-50 to-amber-50 border border-yellow-200 rounded-lg p-6">
+                                    <h3 className="text-xl font-bold text-yellow-800 mb-4 flex items-center">
+                                        <TbMedicalCross className="w-6 h-6 mr-2"/>
+                                        Clasificación según TEP
+                                    </h3>
+                                    <div className="grid md:grid-cols-3 gap-4">
+                                        <div className="bg-green-100 p-4 rounded-lg text-center">
+                                            <MdCheckCircle className="w-8 h-8 text-green-600 mx-auto mb-2"/>
+                                            <h4 className="font-bold text-green-700">NIÑO SANO</h4>
+                                            <p className="text-sm text-green-600">Todos los lados del triángulo normales</p>
                                         </div>
-                                        <div>
-                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Sistema cardiovascular</h3>
-                                            <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                                <li>Mayor capacidad de compensación</li>
-                                                <li>Taquicardia como respuesta inicial al shock</li>
-                                                <li>Hipotensión es signo tardío y ominoso</li>
-                                                <li>Mayor superficie corporal relativa</li>
-                                                <li>Predisposición a hipotermia</li>
-                                                <li>Mayor frecuencia metabólica</li>
-                                            </ul>
+                                        <div className="bg-yellow-100 p-4 rounded-lg text-center">
+                                            <MdWarning className="w-8 h-8 text-yellow-600 mx-auto mb-2"/>
+                                            <h4 className="font-bold text-yellow-700">NIÑO EN RIESGO</h4>
+                                            <p className="text-sm text-yellow-600">Un lado del triángulo anormal</p>
+                                        </div>
+                                        <div className="bg-red-100 p-4 rounded-lg text-center">
+                                            <FaExclamationTriangle className="w-8 h-8 text-red-600 mx-auto mb-2"/>
+                                            <h4 className="font-bold text-red-700">NIÑO ENFERMO</h4>
+                                            <p className="text-sm text-red-600">Dos o más lados anormales</p>
                                         </div>
                                     </div>
                                 </div>
 
+                                {/* Signos vitales por edad */}
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Signos vitales normales por edad</h2>
+                                    <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
+                                        <TbStethoscope className="w-6 h-6 mr-2 text-orange-500"/>
+                                        Signos Vitales Normales por Edad
+                                    </h2>
                                     <div className="overflow-x-auto">
-                                        <table className="min-w-full bg-white">
-                                            <thead>
-                                                <tr className="bg-gray-100">
-                                                    <th className="py-2 px-4 border">Grupo de edad</th>
-                                                    <th className="py-2 px-4 border">Frecuencia cardíaca</th>
-                                                    <th className="py-2 px-4 border">Frecuencia respiratoria</th>
-                                                    <th className="py-2 px-4 border">Presión sistólica</th>
+                                        <table className="min-w-full bg-white border border-gray-300 rounded-lg">
+                                            <thead className="bg-orange-100">
+                                                <tr>
+                                                    <th className="py-3 px-4 border-b font-semibold text-gray-700">Grupo de Edad</th>
+                                                    <th className="py-3 px-4 border-b font-semibold text-gray-700">FC (lpm)</th>
+                                                    <th className="py-3 px-4 border-b font-semibold text-gray-700">FR (rpm)</th>
+                                                    <th className="py-3 px-4 border-b font-semibold text-gray-700">PAS (mmHg)</th>
+                                                    <th className="py-3 px-4 border-b font-semibold text-gray-700">Peso (kg)</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td className="py-2 px-4 border font-medium">Recién nacido (0-1 mes)</td>
-                                                    <td className="py-2 px-4 border">120-160</td>
-                                                    <td className="py-2 px-4 border">30-50</td>
-                                                    <td className="py-2 px-4 border">60-90</td>
+                                                <tr className="hover:bg-gray-50">
+                                                    <td className="py-3 px-4 border-b font-medium text-blue-700">Recién nacido (0-1 mes)</td>
+                                                    <td className="py-3 px-4 border-b text-center">120-160</td>
+                                                    <td className="py-3 px-4 border-b text-center">30-50</td>
+                                                    <td className="py-3 px-4 border-b text-center">60-90</td>
+                                                    <td className="py-3 px-4 border-b text-center">3-5</td>
                                                 </tr>
-                                                <tr>
-                                                    <td className="py-2 px-4 border font-medium">Lactante (1-12 meses)</td>
-                                                    <td className="py-2 px-4 border">100-160</td>
-                                                    <td className="py-2 px-4 border">25-40</td>
-                                                    <td className="py-2 px-4 border">70-100</td>
+                                                <tr className="hover:bg-gray-50">
+                                                    <td className="py-3 px-4 border-b font-medium text-green-700">Lactante (1-12 meses)</td>
+                                                    <td className="py-3 px-4 border-b text-center">100-160</td>
+                                                    <td className="py-3 px-4 border-b text-center">25-40</td>
+                                                    <td className="py-3 px-4 border-b text-center">70-100</td>
+                                                    <td className="py-3 px-4 border-b text-center">6-12</td>
                                                 </tr>
-                                                <tr>
-                                                    <td className="py-2 px-4 border font-medium">Preescolar (1-6 años)</td>
-                                                    <td className="py-2 px-4 border">90-150</td>
-                                                    <td className="py-2 px-4 border">20-30</td>
-                                                    <td className="py-2 px-4 border">80-110</td>
+                                                <tr className="hover:bg-gray-50">
+                                                    <td className="py-3 px-4 border-b font-medium text-purple-700">Preescolar (1-6 años)</td>
+                                                    <td className="py-3 px-4 border-b text-center">90-150</td>
+                                                    <td className="py-3 px-4 border-b text-center">20-30</td>
+                                                    <td className="py-3 px-4 border-b text-center">80-110</td>
+                                                    <td className="py-3 px-4 border-b text-center">10-20</td>
                                                 </tr>
-                                                <tr>
-                                                    <td className="py-2 px-4 border font-medium">Escolar (6-12 años)</td>
-                                                    <td className="py-2 px-4 border">70-120</td>
-                                                    <td className="py-2 px-4 border">15-25</td>
-                                                    <td className="py-2 px-4 border">90-120</td>
+                                                <tr className="hover:bg-gray-50">
+                                                    <td className="py-3 px-4 border-b font-medium text-orange-700">Escolar (6-12 años)</td>
+                                                    <td className="py-3 px-4 border-b text-center">70-120</td>
+                                                    <td className="py-3 px-4 border-b text-center">15-25</td>
+                                                    <td className="py-3 px-4 border-b text-center">90-120</td>
+                                                    <td className="py-3 px-4 border-b text-center">20-40</td>
                                                 </tr>
-                                                <tr>
-                                                    <td className="py-2 px-4 border font-medium">Adolescente (12+ años)</td>
-                                                    <td className="py-2 px-4 border">60-100</td>
-                                                    <td className="py-2 px-4 border">12-20</td>
-                                                    <td className="py-2 px-4 border">100-120</td>
+                                                <tr className="hover:bg-gray-50">
+                                                    <td className="py-3 px-4 border-b font-medium text-red-700">Adolescente (12+ años)</td>
+                                                    <td className="py-3 px-4 border-b text-center">60-100</td>
+                                                    <td className="py-3 px-4 border-b text-center">12-20</td>
+                                                    <td className="py-3 px-4 border-b text-center">100-120</td>
+                                                    <td className="py-3 px-4 border-b text-center">40-70</td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
 
+                                {/* Diferencias anatómicas clave */}
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Evaluación ABCDE en pediatría</h2>
+                                    <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
+                                        <FaBaby className="w-6 h-6 mr-2 text-orange-500"/>
+                                        Diferencias Anatómicas Críticas
+                                    </h2>
+                                    <div className="grid md:grid-cols-2 gap-6">
+                                        <div className="bg-blue-50 p-6 rounded-lg">
+                                            <h3 className="text-lg font-semibold text-blue-700 mb-3 flex items-center">
+                                                <RiLungsLine className="w-5 h-5 mr-2"/>
+                                                Vía Aérea Pediátrica
+                                            </h3>
+                                            <ul className="space-y-2 text-gray-700">
+                                                <li className="flex items-start">
+                                                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-2"></div>
+                                                    <span><strong>Cabeza:</strong> Más grande proporcionalmente</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-2"></div>
+                                                    <span><strong>Lengua:</strong> Más grande en relación a la boca</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-2"></div>
+                                                    <span><strong>Tráquea:</strong> Más pequeña, flexible y blanda</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-2"></div>
+                                                    <span><strong>Estrechez:</strong> A nivel del cricoides</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-2"></div>
+                                                    <span><strong>Occipucio:</strong> Prominente (flexión natural)</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div className="bg-green-50 p-6 rounded-lg">
+                                            <h3 className="text-lg font-semibold text-green-700 mb-3 flex items-center">
+                                                <RiHeartPulseLine className="w-5 h-5 mr-2"/>
+                                                Sistema Cardiovascular
+                                            </h3>
+                                            <ul className="space-y-2 text-gray-700">
+                                                <li className="flex items-start">
+                                                    <div className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-2"></div>
+                                                    <span><strong>Compensación:</strong> Excelente capacidad inicial</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <div className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-2"></div>
+                                                    <span><strong>Hipotensión:</strong> Signo tardío y ominoso</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <div className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-2"></div>
+                                                    <span><strong>Superficie corporal:</strong> Mayor relativa</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <div className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-2"></div>
+                                                    <span><strong>Hipotermia:</strong> Predisposición aumentada</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <div className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-2"></div>
+                                                    <span><strong>Metabolismo:</strong> Más rápido y demandante</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Evaluación ABCDE pediátrica */}
+                                <div className="bg-gray-50 p-6 rounded-lg">
+                                    <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                        <BsLightbulb className="w-6 h-6 mr-2 text-yellow-500"/>
+                                        Evaluación ABCDE Pediátrica
+                                    </h3>
                                     <div className="space-y-4">
-                                        <div className="p-4 bg-red-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-red-700">A - Vía aérea</h3>
-                                            <p className="text-gray-700">Evaluar permeabilidad, sonidos anormales (estridor, ronquidos). Considerar posicionamiento adecuado según edad.</p>
+                                        <div className="flex items-start p-4 bg-red-50 rounded-lg">
+                                            <div className="bg-red-500 text-white text-xl font-bold w-8 h-8 rounded-full flex items-center justify-center mr-4">A</div>
+                                            <div>
+                                                <h4 className="font-semibold text-red-700">Vía aérea (Airway)</h4>
+                                                <p className="text-gray-600">Permeabilidad, posicionamiento adecuado según edad, sonidos anormales</p>
+                                            </div>
                                         </div>
-                                        <div className="p-4 bg-blue-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-blue-700">B - Respiración</h3>
-                                            <p className="text-gray-700">Frecuencia, calidad, esfuerzo respiratorio, retracciones, aleteo nasal, cianosis.</p>
+                                        <div className="flex items-start p-4 bg-blue-50 rounded-lg">
+                                            <div className="bg-blue-500 text-white text-xl font-bold w-8 h-8 rounded-full flex items-center justify-center mr-4">B</div>
+                                            <div>
+                                                <h4 className="font-semibold text-blue-700">Respiración (Breathing)</h4>
+                                                <p className="text-gray-600">Frecuencia, calidad, esfuerzo respiratorio, retracciones, oximetría</p>
+                                            </div>
                                         </div>
-                                        <div className="p-4 bg-green-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-green-700">C - Circulación</h3>
-                                            <p className="text-gray-700">Pulsos centrales y periféricos, relleno capilar, presión arterial, color de piel.</p>
+                                        <div className="flex items-start p-4 bg-green-50 rounded-lg">
+                                            <div className="bg-green-500 text-white text-xl font-bold w-8 h-8 rounded-full flex items-center justify-center mr-4">C</div>
+                                            <div>
+                                                <h4 className="font-semibold text-green-700">Circulación (Circulation)</h4>
+                                                <p className="text-gray-600">Pulsos, relleno capilar, color, presión arterial (signo tardío)</p>
+                                            </div>
                                         </div>
-                                        <div className="p-4 bg-purple-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-purple-700">D - Discapacidad</h3>
-                                            <p className="text-gray-700">Nivel de conciencia, respuesta pupilar, función neurológica. Usar AVPU modificado.</p>
+                                        <div className="flex items-start p-4 bg-purple-50 rounded-lg">
+                                            <div className="bg-purple-500 text-white text-xl font-bold w-8 h-8 rounded-full flex items-center justify-center mr-4">D</div>
+                                            <div>
+                                                <h4 className="font-semibold text-purple-700">Discapacidad (Disability)</h4>
+                                                <p className="text-gray-600">Nivel de conciencia (AVPU), respuesta pupilar, función neurológica</p>
+                                            </div>
                                         </div>
-                                        <div className="p-4 bg-yellow-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-yellow-700">E - Exposición</h3>
-                                            <p className="text-gray-700">Examen completo manteniendo la temperatura corporal. Prevenir hipotermia.</p>
+                                        <div className="flex items-start p-4 bg-yellow-50 rounded-lg">
+                                            <div className="bg-yellow-500 text-white text-xl font-bold w-8 h-8 rounded-full flex items-center justify-center mr-4">E</div>
+                                            <div>
+                                                <h4 className="font-semibold text-yellow-700">Exposición (Exposure)</h4>
+                                                <p className="text-gray-600">Examen completo manteniendo temperatura, prevenir hipotermia</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         )}
 
-                        {activeTab === 'conditions' && (
-                            <div className="space-y-6">
+                        {activeTab === 'pathologies' && (
+                            <div className="space-y-8">
+                                {/* Importancia de reconocimiento temprano */}
+                                <div className="bg-gradient-to-r from-red-50 to-pink-50 border-l-4 border-red-500 p-6 rounded-lg">
+                                    <div className="flex items-center mb-4">
+                                        <MdOutlineTimer className="w-8 h-8 text-red-500 mr-3"/>
+                                        <h2 className="text-2xl font-bold text-red-700">Reconocimiento Temprano = Vida</h2>
+                                    </div>
+                                    <p className="text-gray-800 leading-relaxed text-lg">
+                                        En pediatría, el reconocimiento temprano de patologías críticas es fundamental. 
+                                        Los niños pueden compensar inicialmente, pero la descompensación es rápida y catastrófica.
+                                    </p>
+                                </div>
+
+                                {/* Emergencias respiratorias */}
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Emergencias respiratorias pediátricas</h2>
+                                    <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
+                                        <RiLungsLine className="w-6 h-6 mr-2 text-blue-500"/>
+                                        Emergencias Respiratorias Pediátricas
+                                    </h2>
                                     <div className="grid md:grid-cols-2 gap-6">
-                                        <div className="bg-red-50 p-4 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-red-700">Crup (Laringotraqueobronquitis)</h3>
-                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                                <li>Infección viral, inicio gradual</li>
-                                                <li>Tos característica de "foca"</li>
-                                                <li>Estridor inspiratorio</li>
-                                                <li>Fiebre baja a moderada</li>
-                                                <li>Empeora durante la noche</li>
-                                                <li>Más común en 6 meses a 6 años</li>
-                                            </ul>
+                                        <div className="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-lg border-l-4 border-red-500">
+                                            <div className="flex items-center mb-3">
+                                                <TbEmergencyBed className="w-8 h-8 text-red-600 mr-3"/>
+                                                <h3 className="text-xl font-bold text-red-700">Crup (Laringotraqueobronquitis)</h3>
+                                            </div>
+                                            <div className="space-y-3">
+                                                <div className="bg-white p-3 rounded">
+                                                    <p className="text-sm font-medium text-gray-600 mb-1">Características:</p>
+                                                    <ul className="text-sm text-gray-700 space-y-1">
+                                                        <li>• Infección viral, inicio gradual</li>
+                                                        <li>• Edad: 6 meses a 6 años</li>
+                                                        <li>• Empeora durante la noche</li>
+                                                    </ul>
+                                                </div>
+                                                <div className="bg-white p-3 rounded">
+                                                    <p className="text-sm font-medium text-gray-600 mb-1">Signos clave:</p>
+                                                    <ul className="text-sm text-gray-700 space-y-1">
+                                                        <li>• Tos característica de "foca"</li>
+                                                        <li>• Estridor inspiratorio</li>
+                                                        <li>• Fiebre baja-moderada</li>
+                                                        <li>• Disfonia (voz ronca)</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div className="bg-orange-50 p-4 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-orange-700">Epiglotitis</h3>
-                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                                <li>Infección bacteriana, inicio súbito</li>
-                                                <li>Fiebre alta</li>
-                                                <li>Babeo y disfagia</li>
-                                                <li>Posición de trípode</li>
-                                                <li>Voz amortiguada</li>
-                                                <li>Emergencia que amenaza la vida</li>
-                                            </ul>
-                                        </div>
-                                        <div className="bg-blue-50 p-4 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-blue-700">Bronquiolitis</h3>
-                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                                <li>Inflamación de bronquiolos</li>
-                                                <li>Más común en lactantes</li>
-                                                <li>Sibilancias y retracciones</li>
-                                                <li>Dificultad para alimentarse</li>
-                                                <li>Virus sincicial respiratorio (VSR)</li>
-                                                <li>Puede progresar a insuficiencia respiratoria</li>
-                                            </ul>
-                                        </div>
-                                        <div className="bg-green-50 p-4 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-green-700">Asma pediátrica</h3>
-                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                                <li>Inflamación y broncoconstricción</li>
-                                                <li>Sibilancias expiratorias</li>
-                                                <li>Tos persistente</li>
-                                                <li>Opresión torácica</li>
-                                                <li>Desencadenantes específicos</li>
-                                                <li>Puede ser fatal si no se trata</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Emergencias neurológicas</h2>
-                                    <div className="grid md:grid-cols-2 gap-6">
-                                        <div className="bg-purple-50 p-4 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-purple-700">Convulsiones febriles</h3>
-                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                                <li>Temperatura corporal elevada</li>
-                                                <li>Más común entre 6 meses y 5 años</li>
-                                                <li>Simples: duran menos de 15 minutos</li>
-                                                <li>Complejas: duran más de 15 minutos</li>
-                                                <li>Generalmente benignas</li>
-                                                <li>Requieren evaluación médica</li>
-                                            </ul>
+                                        <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-lg border-l-4 border-orange-500">
+                                            <div className="flex items-center mb-3">
+                                                <FaExclamationTriangle className="w-8 h-8 text-orange-600 mr-3"/>
+                                                <h3 className="text-xl font-bold text-orange-700">Epiglotitis</h3>
+                                            </div>
+                                            <div className="space-y-3">
+                                                <div className="bg-white p-3 rounded">
+                                                    <p className="text-sm font-medium text-gray-600 mb-1">Características:</p>
+                                                    <ul className="text-sm text-gray-700 space-y-1">
+                                                        <li>• Infección bacteriana súbita</li>
+                                                        <li>• Emergencia que amenaza la vida</li>
+                                                        <li>• Puede obstruir completamente</li>
+                                                    </ul>
+                                                </div>
+                                                <div className="bg-white p-3 rounded">
+                                                    <p className="text-sm font-medium text-gray-600 mb-1">Signos clave:</p>
+                                                    <ul className="text-sm text-gray-700 space-y-1">
+                                                        <li>• Fiebre alta súbita</li>
+                                                        <li>• Posición de trípode</li>
+                                                        <li>• Babeo excesivo</li>
+                                                        <li>• Voz amortiguada</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div className="bg-indigo-50 p-4 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-indigo-700">Status epiléptico</h3>
-                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                                <li>Convulsión prolongada (&gt;5 minutos)</li>
-                                                <li>Convulsiones repetidas sin recuperación</li>
-                                                <li>Emergencia neurológica</li>
-                                                <li>Riesgo de daño cerebral</li>
-                                                <li>Requiere intervención inmediata</li>
-                                                <li>Puede ser refractario a tratamiento</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Shock en pediatría</h2>
-                                    <div className="space-y-4">
-                                        <div className="bg-yellow-50 p-4 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-yellow-700">Shock compensado</h3>
-                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                                <li>Taquicardia</li>
-                                                <li>Vasoconstricción periférica</li>
-                                                <li>Relleno capilar prolongado (&gt;2 seg)</li>
-                                                <li>Piel fría y pegajosa</li>
-                                                <li>Presión arterial normal</li>
-                                                <li>Alteración del estado mental</li>
-                                            </ul>
+                                        <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg border-l-4 border-blue-500">
+                                            <div className="flex items-center mb-3">
+                                                <FaLungsVirus className="w-8 h-8 text-blue-600 mr-3"/>
+                                                <h3 className="text-xl font-bold text-blue-700">Bronquiolitis</h3>
+                                            </div>
+                                            <div className="space-y-3">
+                                                <div className="bg-white p-3 rounded">
+                                                    <p className="text-sm font-medium text-gray-600 mb-1">Características:</p>
+                                                    <ul className="text-sm text-gray-700 space-y-1">
+                                                        <li>• Inflamación de bronquiolos</li>
+                                                        <li>• Edad: &lt;2 años (pico 2-8 meses)</li>
+                                                        <li>• Virus sincicial respiratorio</li>
+                                                    </ul>
+                                                </div>
+                                                <div className="bg-white p-3 rounded">
+                                                    <p className="text-sm font-medium text-gray-600 mb-1">Signos clave:</p>
+                                                    <ul className="text-sm text-gray-700 space-y-1">
+                                                        <li>• Sibilancias y retracciones</li>
+                                                        <li>• Dificultad para alimentarse</li>
+                                                        <li>• Taquipnea progresiva</li>
+                                                        <li>• Irritabilidad</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div className="bg-red-50 p-4 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-red-700">Shock descompensado</h3>
-                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                                <li>Hipotensión (signo tardío)</li>
-                                                <li>Bradipnea o taquipnea</li>
-                                                <li>Cianosis</li>
-                                                <li>Disminución del nivel de conciencia</li>
-                                                <li>Ausencia de pulsos periféricos</li>
-                                                <li>Próximo al paro cardiopulmonar</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Maltrato infantil</h2>
-                                    <div className="space-y-4">
-                                        <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-red-500">
-                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Signos de sospecha</h3>
-                                            <div className="grid md:grid-cols-2 gap-4">
-                                                <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                                    <li>Lesiones en diferentes etapas de curación</li>
-                                                    <li>Patrones de lesiones sugestivos</li>
-                                                    <li>Quemaduras con líneas de demarcación</li>
-                                                    <li>Fracturas en espiral en lactantes</li>
-                                                    <li>Lesiones en zonas protegidas</li>
-                                                </ul>
-                                                <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                                    <li>Historia inconsistente con las lesiones</li>
-                                                    <li>Retraso en buscar atención médica</li>
-                                                    <li>Comportamiento del niño (miedo, retraimiento)</li>
-                                                    <li>Comportamiento de los cuidadores</li>
-                                                    <li>Desnutrición o falta de higiene</li>
-                                                </ul>
+                                        <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg border-l-4 border-green-500">
+                                            <div className="flex items-center mb-3">
+                                                <RiLungsLine className="w-8 h-8 text-green-600 mr-3"/>
+                                                <h3 className="text-xl font-bold text-green-700">Asma Pediátrica</h3>
+                                            </div>
+                                            <div className="space-y-3">
+                                                <div className="bg-white p-3 rounded">
+                                                    <p className="text-sm font-medium text-gray-600 mb-1">Características:</p>
+                                                    <ul className="text-sm text-gray-700 space-y-1">
+                                                        <li>• Inflamación y broncoconstricción</li>
+                                                        <li>• Desencadenantes identificables</li>
+                                                        <li>• Historia familiar común</li>
+                                                    </ul>
+                                                </div>
+                                                <div className="bg-white p-3 rounded">
+                                                    <p className="text-sm font-medium text-gray-600 mb-1">Signos clave:</p>
+                                                    <ul className="text-sm text-gray-700 space-y-1">
+                                                        <li>• Sibilancias espiratorias</li>
+                                                        <li>• Tos persistente</li>
+                                                        <li>• Opresión torácica</li>
+                                                        <li>• Disnea de esfuerzo</li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
+                                {/* Emergencias neurológicas */}
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Síndrome de muerte súbita del lactante (SMSL)</h2>
-                                    <div className="bg-blue-50 p-4 rounded-lg">
-                                        <p className="text-gray-700 mb-3">
-                                            Muerte súbita e inexplicable de un lactante aparentemente sano, generalmente durante el sueño.
+                                    <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
+                                        <RiMentalHealthLine className="w-6 h-6 mr-2 text-purple-500"/>
+                                        Emergencias Neurológicas
+                                    </h2>
+                                    <div className="grid md:grid-cols-2 gap-6">
+                                        <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-lg border-l-4 border-purple-500">
+                                            <div className="flex items-center mb-3">
+                                                <RiThermometerLine className="w-8 h-8 text-purple-600 mr-3"/>
+                                                <h3 className="text-xl font-bold text-purple-700">Convulsiones Febriles</h3>
+                                            </div>
+                                            <div className="space-y-3">
+                                                <div className="bg-white p-3 rounded">
+                                                    <p className="text-sm font-medium text-gray-600 mb-1">Características:</p>
+                                                    <ul className="text-sm text-gray-700 space-y-1">
+                                                        <li>• Edad: 6 meses a 5 años</li>
+                                                        <li>• Asociadas a fiebre alta</li>
+                                                        <li>• Generalmente benignas</li>
+                                                    </ul>
+                                                </div>
+                                                <div className="bg-white p-3 rounded">
+                                                    <p className="text-sm font-medium text-gray-600 mb-1">Tipos:</p>
+                                                    <ul className="text-sm text-gray-700 space-y-1">
+                                                        <li>• <strong>Simples:</strong> &lt;15 min, generalizadas</li>
+                                                        <li>• <strong>Complejas:</strong> &gt;15 min, focales</li>
+                                                        <li>• <strong>Recurrentes:</strong> &gt;1 en 24h</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 rounded-lg border-l-4 border-indigo-500">
+                                            <div className="flex items-center mb-3">
+                                                <MdWarning className="w-8 h-8 text-indigo-600 mr-3"/>
+                                                <h3 className="text-xl font-bold text-indigo-700">Status Epiléptico</h3>
+                                            </div>
+                                            <div className="space-y-3">
+                                                <div className="bg-white p-3 rounded">
+                                                    <p className="text-sm font-medium text-gray-600 mb-1">Definición:</p>
+                                                    <ul className="text-sm text-gray-700 space-y-1">
+                                                        <li>• Convulsión &gt;5 minutos</li>
+                                                        <li>• Convulsiones sin recuperación</li>
+                                                        <li>• Emergencia neurológica</li>
+                                                    </ul>
+                                                </div>
+                                                <div className="bg-white p-3 rounded">
+                                                    <p className="text-sm font-medium text-gray-600 mb-1">Riesgos:</p>
+                                                    <ul className="text-sm text-gray-700 space-y-1">
+                                                        <li>• Daño cerebral permanente</li>
+                                                        <li>• Compromiso respiratorio</li>
+                                                        <li>• Acidosis metabólica</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Shock pediátrico */}
+                                <div>
+                                    <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
+                                        <RiHeartPulseLine className="w-6 h-6 mr-2 text-red-500"/>
+                                        Shock Pediátrico
+                                    </h2>
+                                    <div className="bg-yellow-50 p-4 rounded-lg mb-4">
+                                        <p className="text-yellow-800 font-medium">
+                                            <strong>Concepto clave:</strong> Los niños mantienen la presión arterial normal hasta las etapas finales. 
+                                            ¡La hipotensión es un signo tardío y ominoso!
                                         </p>
-                                        <div className="grid md:grid-cols-2 gap-4">
-                                            <div>
-                                                <h4 className="font-medium mb-2">Factores de riesgo:</h4>
-                                                <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                                    <li>Dormir boca abajo</li>
-                                                    <li>Exposición al humo</li>
-                                                    <li>Prematuridad</li>
-                                                    <li>Edad entre 1-4 meses</li>
-                                                </ul>
+                                    </div>
+                                    <div className="grid md:grid-cols-2 gap-6">
+                                        <div className="bg-gradient-to-br from-yellow-50 to-yellow-100 p-6 rounded-lg border-l-4 border-yellow-500">
+                                            <div className="flex items-center mb-3">
+                                                <MdHealthAndSafety className="w-8 h-8 text-yellow-600 mr-3"/>
+                                                <h3 className="text-xl font-bold text-yellow-700">Shock Compensado</h3>
                                             </div>
-                                            <div>
-                                                <h4 className="font-medium mb-2">Manejo:</h4>
-                                                <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                                    <li>Iniciar reanimación según protocolos</li>
-                                                    <li>Apoyo emocional a la familia</li>
-                                                    <li>Preservar la escena</li>
-                                                    <li>Documentación cuidadosa</li>
-                                                </ul>
+                                            <div className="space-y-3">
+                                                <div className="bg-white p-3 rounded">
+                                                    <p className="text-sm font-medium text-gray-600 mb-1">Signos tempranos:</p>
+                                                    <ul className="text-sm text-gray-700 space-y-1">
+                                                        <li>• Taquicardia (signo más temprano)</li>
+                                                        <li>• Relleno capilar &gt;2 segundos</li>
+                                                        <li>• Piel fría y pegajosa</li>
+                                                        <li>• Alteración mental sutil</li>
+                                                    </ul>
+                                                </div>
+                                                <div className="bg-green-100 p-3 rounded">
+                                                    <p className="text-sm font-medium text-green-700 mb-1">Pronóstico:</p>
+                                                    <p className="text-sm text-green-600">Excelente si se trata rápidamente</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-lg border-l-4 border-red-500">
+                                            <div className="flex items-center mb-3">
+                                                <FaExclamationTriangle className="w-8 h-8 text-red-600 mr-3"/>
+                                                <h3 className="text-xl font-bold text-red-700">Shock Descompensado</h3>
+                                            </div>
+                                            <div className="space-y-3">
+                                                <div className="bg-white p-3 rounded">
+                                                    <p className="text-sm font-medium text-gray-600 mb-1">Signos tardíos:</p>
+                                                    <ul className="text-sm text-gray-700 space-y-1">
+                                                        <li>• <strong>Hipotensión</strong> (crítico)</li>
+                                                        <li>• Pulsos débiles/ausentes</li>
+                                                        <li>• Cianosis</li>
+                                                        <li>• Alteración severa conciencia</li>
+                                                    </ul>
+                                                </div>
+                                                <div className="bg-red-100 p-3 rounded">
+                                                    <p className="text-sm font-medium text-red-700 mb-1">Pronóstico:</p>
+                                                    <p className="text-sm text-red-600">Riesgo inmediato de paro cardíaco</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Causas comunes por edad */}
+                                <div className="bg-gray-50 p-6 rounded-lg">
+                                    <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                        <TbScale className="w-6 h-6 mr-2 text-orange-500"/>
+                                        Causas de Shock por Grupo de Edad
+                                    </h3>
+                                    <div className="grid md:grid-cols-3 gap-4">
+                                        <div className="bg-white p-4 rounded-lg">
+                                            <h4 className="font-semibold text-blue-700 mb-2">Lactantes (0-12 meses)</h4>
+                                            <ul className="text-sm text-gray-700 space-y-1">
+                                                <li>• Gastroenteritis con deshidratación</li>
+                                                <li>• Sepsis</li>
+                                                <li>• Síndrome del niño sacudido</li>
+                                                <li>• Falla cardíaca congénita</li>
+                                            </ul>
+                                        </div>
+                                        <div className="bg-white p-4 rounded-lg">
+                                            <h4 className="font-semibold text-green-700 mb-2">Preescolares (1-6 años)</h4>
+                                            <ul className="text-sm text-gray-700 space-y-1">
+                                                <li>• Traumatismo</li>
+                                                <li>• Gastroenteritis</li>
+                                                <li>• Intoxicaciones</li>
+                                                <li>• Infecciones severas</li>
+                                            </ul>
+                                        </div>
+                                        <div className="bg-white p-4 rounded-lg">
+                                            <h4 className="font-semibold text-purple-700 mb-2">Escolares (6+ años)</h4>
+                                            <ul className="text-sm text-gray-700 space-y-1">
+                                                <li>• Traumatismo (principal causa)</li>
+                                                <li>• Anafilaxia</li>
+                                                <li>• Diabéticos (DKA)</li>
+                                                <li>• Hemorragias</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Condiciones especiales */}
+                                <div>
+                                    <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
+                                        <FiUsers className="w-6 h-6 mr-2 text-pink-500"/>
+                                        Condiciones Especiales
+                                    </h2>
+                                    <div className="grid md:grid-cols-2 gap-6">
+                                        <div className="bg-gradient-to-br from-pink-50 to-pink-100 p-6 rounded-lg border-l-4 border-pink-500">
+                                            <div className="flex items-center mb-3">
+                                                <FiAlertTriangle className="w-8 h-8 text-pink-600 mr-3"/>
+                                                <h3 className="text-xl font-bold text-pink-700">Maltrato Infantil</h3>
+                                            </div>
+                                            <div className="space-y-3">
+                                                <div className="bg-white p-3 rounded">
+                                                    <p className="text-sm font-medium text-gray-600 mb-1">Signos de sospecha:</p>
+                                                    <ul className="text-sm text-gray-700 space-y-1">
+                                                        <li>• Lesiones en diferentes etapas</li>
+                                                        <li>• Patrones sugestivos</li>
+                                                        <li>• Historia inconsistente</li>
+                                                        <li>• Comportamiento del niño</li>
+                                                    </ul>
+                                                </div>
+                                                <div className="bg-red-100 p-3 rounded">
+                                                    <p className="text-sm font-medium text-red-700 mb-1">Obligación legal:</p>
+                                                    <p className="text-sm text-red-600">Reportar sospechas a autoridades</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg border-l-4 border-blue-500">
+                                            <div className="flex items-center mb-3">
+                                                <FaBaby className="w-8 h-8 text-blue-600 mr-3"/>
+                                                <h3 className="text-xl font-bold text-blue-700">SMSL</h3>
+                                            </div>
+                                            <div className="space-y-3">
+                                                <div className="bg-white p-3 rounded">
+                                                    <p className="text-sm font-medium text-gray-600 mb-1">Características:</p>
+                                                    <ul className="text-sm text-gray-700 space-y-1">
+                                                        <li>• Muerte súbita e inexplicable</li>
+                                                        <li>• Lactantes aparentemente sanos</li>
+                                                        <li>• Pico: 2-4 meses de edad</li>
+                                                        <li>• Durante el sueño</li>
+                                                    </ul>
+                                                </div>
+                                                <div className="bg-blue-100 p-3 rounded">
+                                                    <p className="text-sm font-medium text-blue-700 mb-1">Manejo:</p>
+                                                    <p className="text-sm text-blue-600">RCP + apoyo emocional familia</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         )}
+                            
 
                         {activeTab === 'treatment' && (
-                            <div className="space-y-6">
-                                <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Manejo de la vía aérea pediátrica</h2>
-                                    <div className="grid md:grid-cols-2 gap-6">
-                                        <div>
-                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Posicionamiento según edad</h3>
-                                            <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                                <li><strong>Lactantes:</strong> Posición neutra (sin almohada)</li>
-                                                <li><strong>Niños pequeños:</strong> Ligera extensión</li>
-                                                <li><strong>Trauma:</strong> Elevación mandibular</li>
-                                                <li><strong>Inconsciente:</strong> Posición de recuperación modificada</li>
-                                                <li>Evitar hiperextensión cervical</li>
-                                                <li>Considerar el tamaño de la cabeza</li>
-                                            </ul>
+                            <div className="space-y-8">
+                                {/* Principios generales */}
+                                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-500 p-6 rounded-lg">
+                                    <div className="flex items-center mb-4">
+                                        <TbMedicalCross className="w-8 h-8 text-blue-500 mr-3"/>
+                                        <h2 className="text-2xl font-bold text-blue-700">Principios del Manejo Pediátrico</h2>
+                                    </div>
+                                    <div className="grid md:grid-cols-3 gap-4">
+                                        <div className="bg-white p-4 rounded-lg text-center">
+                                            <FiUsers className="w-8 h-8 text-blue-500 mx-auto mb-2"/>
+                                            <p className="font-bold text-blue-600">Familia</p>
+                                            <p className="text-sm">Incluir a los padres siempre que sea posible</p>
                                         </div>
-                                        <div>
-                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Dispositivos de vía aérea</h3>
-                                            <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                                <li><strong>Cánulas orofaríngeas:</strong> Solo en pacientes inconscientes</li>
-                                                <li><strong>Cánulas nasofaríngeas:</strong> Evitar en trauma facial</li>
-                                                <li><strong>BVM pediátrico:</strong> Volumen 450-500 ml</li>
-                                                <li><strong>Mascarillas:</strong> Sellar desde el puente nasal hasta el mentón</li>
-                                                <li>Succión frecuente si hay secreciones</li>
-                                                <li>Considerar intubación en casos severos</li>
-                                            </ul>
+                                        <div className="bg-white p-4 rounded-lg text-center">
+                                            <RiThermometerLine className="w-8 h-8 text-green-500 mx-auto mb-2"/>
+                                            <p className="font-bold text-green-600">Hipotermia</p>
+                                            <p className="text-sm">Prevenir pérdida de calor corporal</p>
+                                        </div>
+                                        <div className="bg-white p-4 rounded-lg text-center">
+                                            <TbScale className="w-8 h-8 text-purple-500 mx-auto mb-2"/>
+                                            <p className="font-bold text-purple-600">Peso</p>
+                                            <p className="text-sm">Base para cálculos de dosis</p>
                                         </div>
                                     </div>
                                 </div>
 
+                                {/* Manejo de vía aérea pediátrica */}
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Oxigenoterapia pediátrica</h2>
+                                    <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
+                                        <RiLungsLine className="w-6 h-6 mr-2 text-blue-500"/>
+                                        Manejo de Vía Aérea Pediátrica
+                                    </h2>
+                                    <div className="grid md:grid-cols-2 gap-6">
+                                        <div className="bg-blue-50 p-6 rounded-lg">
+                                            <h3 className="text-lg font-semibold text-blue-700 mb-4 flex items-center">
+                                                <MdHealthAndSafety className="w-5 h-5 mr-2"/>
+                                                Posicionamiento según Edad
+                                            </h3>
+                                            <div className="space-y-3">
+                                                <div className="bg-white p-3 rounded">
+                                                    <h4 className="font-medium text-blue-600">Lactantes (0-12 meses)</h4>
+                                                    <ul className="text-sm text-gray-700 mt-1">
+                                                        <li>• Posición neutra (sin almohada)</li>
+                                                        <li>• Occipucio prominente compensa</li>
+                                                        <li>• Evitar flexión/extensión excesiva</li>
+                                                    </ul>
+                                                </div>
+                                                <div className="bg-white p-3 rounded">
+                                                    <h4 className="font-medium text-blue-600">Niños (1+ años)</h4>
+                                                    <ul className="text-sm text-gray-700 mt-1">
+                                                        <li>• Ligera extensión del cuello</li>
+                                                        <li>• Almohada pequeña bajo cabeza</li>
+                                                        <li>• Posición de "olfateo"</li>
+                                                    </ul>
+                                                </div>
+                                                <div className="bg-white p-3 rounded">
+                                                    <h4 className="font-medium text-blue-600">Con sospecha de trauma</h4>
+                                                    <ul className="text-sm text-gray-700 mt-1">
+                                                        <li>• Inmovilización cervical</li>
+                                                        <li>• Elevación mandibular</li>
+                                                        <li>• Evitar movimientos del cuello</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="bg-green-50 p-6 rounded-lg">
+                                            <h3 className="text-lg font-semibold text-green-700 mb-4 flex items-center">
+                                                <FaLungsVirus className="w-5 h-5 mr-2"/>
+                                                Dispositivos de Vía Aérea
+                                            </h3>
+                                            <div className="space-y-3">
+                                                <div className="bg-white p-3 rounded">
+                                                    <h4 className="font-medium text-green-600">Cánulas Orofaríngeas</h4>
+                                                    <ul className="text-sm text-gray-700 mt-1">
+                                                        <li>• Solo en pacientes inconscientes</li>
+                                                        <li>• Tamaño: esquina boca a ángulo mandíbula</li>
+                                                        <li>• Inserción directa (NO rotar)</li>
+                                                    </ul>
+                                                </div>
+                                                <div className="bg-white p-3 rounded">
+                                                    <h4 className="font-medium text-green-600">Cánulas Nasofaríngeas</h4>
+                                                    <ul className="text-sm text-gray-700 mt-1">
+                                                        <li>• Semiconscientes o conscientes</li>
+                                                        <li>• Contraindicadas en trauma facial</li>
+                                                        <li>• Lubricar bien antes de insertar</li>
+                                                    </ul>
+                                                </div>
+                                                <div className="bg-white p-3 rounded">
+                                                    <h4 className="font-medium text-green-600">BVM Pediátrico</h4>
+                                                    <ul className="text-sm text-gray-700 mt-1">
+                                                        <li>• Volumen: 450-500 ml</li>
+                                                        <li>• Sellado: puente nasal a mentón</li>
+                                                        <li>• Ventilaciones suaves y lentas</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Oxigenoterapia pediátrica */}
+                                <div>
+                                    <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
+                                        <FaLungsVirus className="w-6 h-6 mr-2 text-green-500"/>
+                                        Oxigenoterapia Pediátrica
+                                    </h2>
                                     <div className="overflow-x-auto">
-                                        <table className="min-w-full bg-white">
-                                            <thead>
-                                                <tr className="bg-gray-100">
-                                                    <th className="py-2 px-4 border">Dispositivo</th>
-                                                    <th className="py-2 px-4 border">Concentración O₂</th>
-                                                    <th className="py-2 px-4 border">Flujo</th>
-                                                    <th className="py-2 px-4 border">Indicaciones en pediatría</th>
+                                        <table className="min-w-full bg-white border border-gray-300 rounded-lg">
+                                            <thead className="bg-green-100">
+                                                <tr>
+                                                    <th className="py-3 px-4 border-b font-semibold text-gray-700">Dispositivo</th>
+                                                    <th className="py-3 px-4 border-b font-semibold text-gray-700">Concentración O₂</th>
+                                                    <th className="py-3 px-4 border-b font-semibold text-gray-700">Flujo</th>
+                                                    <th className="py-3 px-4 border-b font-semibold text-gray-700">Indicaciones Pediátricas</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td className="py-2 px-4 border">Cánula nasal</td>
-                                                    <td className="py-2 px-4 border">24-40%</td>
-                                                    <td className="py-2 px-4 border">0.25-4 L/min</td>
-                                                    <td className="py-2 px-4 border">Niños cooperativos, hipoxia leve</td>
+                                                <tr className="hover:bg-gray-50">
+                                                    <td className="py-3 px-4 border-b font-medium">Cánula nasal</td>
+                                                    <td className="py-3 px-4 border-b text-center">24-40%</td>
+                                                    <td className="py-3 px-4 border-b text-center">0.25-4 L/min</td>
+                                                    <td className="py-3 px-4 border-b">Niños cooperativos, hipoxia leve</td>
                                                 </tr>
-                                                <tr>
-                                                    <td className="py-2 px-4 border">Mascarilla simple</td>
-                                                    <td className="py-2 px-4 border">35-60%</td>
-                                                    <td className="py-2 px-4 border">6-10 L/min</td>
-                                                    <td className="py-2 px-4 border">Hipoxia moderada</td>
+                                                <tr className="hover:bg-gray-50">
+                                                    <td className="py-3 px-4 border-b font-medium">Mascarilla simple</td>
+                                                    <td className="py-3 px-4 border-b text-center">35-60%</td>
+                                                    <td className="py-3 px-4 border-b text-center">6-10 L/min</td>
+                                                    <td className="py-3 px-4 border-b">Hipoxia moderada, niños cooperativos</td>
                                                 </tr>
-                                                <tr>
-                                                    <td className="py-2 px-4 border">Mascarilla con reservorio</td>
-                                                    <td className="py-2 px-4 border">85-95%</td>
-                                                    <td className="py-2 px-4 border">10-15 L/min</td>
-                                                    <td className="py-2 px-4 border">Emergencias respiratorias</td>
+                                                <tr className="hover:bg-gray-50">
+                                                    <td className="py-3 px-4 border-b font-medium">Mascarilla con reservorio</td>
+                                                    <td className="py-3 px-4 border-b text-center">85-95%</td>
+                                                    <td className="py-3 px-4 border-b text-center">10-15 L/min</td>
+                                                    <td className="py-3 px-4 border-b">Emergencias respiratorias graves</td>
                                                 </tr>
-                                                <tr>
-                                                    <td className="py-2 px-4 border">Oxígeno por soplado</td>
-                                                    <td className="py-2 px-4 border">Variable</td>
-                                                    <td className="py-2 px-4 border">10-15 L/min</td>
-                                                    <td className="py-2 px-4 border">Niños no cooperativos, epiglotitis</td>
+                                                <tr className="hover:bg-gray-50">
+                                                    <td className="py-3 px-4 border-b font-medium">Oxígeno por soplado</td>
+                                                    <td className="py-3 px-4 border-b text-center">Variable</td>
+                                                    <td className="py-3 px-4 border-b text-center">10-15 L/min</td>
+                                                    <td className="py-3 px-4 border-b">Niños no cooperativos, epiglotitis</td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
 
+                                {/* Protocolos específicos */}
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Protocolos de manejo específico</h2>
-                                    <div className="space-y-4">
-                                        <div className="p-4 bg-red-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-red-700">Epiglotitis</h3>
-                                            <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                                <li>NO examinar la garganta con abatelenguas</li>
-                                                <li>Mantener al niño calmado y en posición cómoda</li>
-                                                <li>Oxígeno por soplado (no invasivo)</li>
-                                                <li>Permitir que el padre/madre acompañe</li>
-                                                <li>Traslado inmediato sin demora</li>
-                                                <li>Preparar para intubación de emergencia</li>
-                                            </ol>
-                                        </div>
-
-                                        <div className="p-4 bg-orange-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-orange-700">Crup</h3>
-                                            <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                                <li>Mantener al niño calmado</li>
-                                                <li>Oxígeno humidificado si es necesario</li>
-                                                <li>Posición cómoda (generalmente brazos del padre)</li>
-                                                <li>Aire fresco puede ayudar</li>
-                                                <li>Considerar nebulización con epinefrina en casos severos</li>
-                                                <li>Monitorización continua</li>
-                                            </ol>
-                                        </div>
-
-                                        <div className="p-4 bg-blue-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-blue-700">Convulsiones febriles</h3>
-                                            <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                                <li>Proteger la vía aérea</li>
-                                                <li>Posición de recuperación si es posible</li>
-                                                <li>NO introducir objetos en la boca</li>
-                                                <li>Aspirar secreciones si es necesario</li>
-                                                <li>Medidas de enfriamiento gradual</li>
-                                                <li>Considerar benzodiazepinas si convulsión &gt;5 min</li>
-                                            </ol>
-                                        </div>
-
-                                        <div className="p-4 bg-green-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-green-700">Shock pediátrico</h3>
-                                            <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                                <li>Acceso vascular temprano (IV/IO)</li>
-                                                <li>Bolos de solución salina 20 ml/kg</li>
-                                                <li>Reevaluar después de cada bolo</li>
-                                                <li>Control de la temperatura corporal</li>
-                                                <li>Oxígeno de alto flujo</li>
-                                                <li>Traslado rápido a centro pediátrico</li>
-                                            </ol>
-                                        </div>
-
-                                        <div className="p-4 bg-purple-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-purple-700">Obstrucción de vía aérea por cuerpo extraño</h3>
+                                    <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
+                                        <BsLightbulb className="w-6 h-6 mr-2 text-yellow-500"/>
+                                        Protocolos de Manejo Específico
+                                    </h2>
+                                    <div className="space-y-6">
+                                        <div className="bg-red-50 p-6 rounded-lg border-l-4 border-red-500">
+                                            <h3 className="text-xl font-semibold text-red-700 mb-4 flex items-center">
+                                                <FaExclamationTriangle className="w-6 h-6 mr-2"/>
+                                                Epiglotitis - Protocolo Crítico
+                                            </h3>
                                             <div className="grid md:grid-cols-2 gap-4">
                                                 <div>
-                                                    <h4 className="font-medium mb-2">Lactantes (&lt;1 año):</h4>
-                                                    <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                                        <li>5 golpes en la espalda</li>
-                                                        <li>5 compresiones torácicas</li>
-                                                        <li>Repetir hasta desobstracción</li>
-                                                        <li>Si inconsciente: RCP</li>
+                                                    <h4 className="font-medium text-red-600 mb-2">QUÉ HACER:</h4>
+                                                    <ol className="list-decimal list-inside space-y-1 text-sm text-gray-700">
+                                                        <li>Mantener al niño calmado</li>
+                                                        <li>Posición cómoda (brazos del padre)</li>
+                                                        <li>Oxígeno por soplado (no invasivo)</li>
+                                                        <li>Preparar equipo de vía aérea</li>
+                                                        <li>Traslado inmediato CODE 3</li>
+                                                        <li>Notificar hospital receptor</li>
                                                     </ol>
                                                 </div>
                                                 <div>
-                                                    <h4 className="font-medium mb-2">Niños (&gt;1 año):</h4>
-                                                    <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                                        <li>Compresiones abdominales (Heimlich)</li>
-                                                        <li>Repetir hasta desobstracción</li>
-                                                        <li>Si inconsciente: RCP</li>
-                                                        <li>Examinar cavidad oral antes de ventilaciones</li>
+                                                    <h4 className="font-medium text-red-600 mb-2">QUÉ NO HACER:</h4>
+                                                    <ol className="list-decimal list-inside space-y-1 text-sm text-gray-700">
+                                                        <li>NO examinar garganta</li>
+                                                        <li>NO acostar al niño</li>
+                                                        <li>NO separar de padres</li>
+                                                        <li>NO procedimientos invasivos</li>
+                                                        <li>NO agitarlos o estresarlos</li>
+                                                        <li>NO forzar oxígeno con mascarilla</li>
+                                                    </ol>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                                            <h3 className="text-xl font-semibold text-blue-700 mb-4 flex items-center">
+                                                <RiMentalHealthLine className="w-6 h-6 mr-2"/>
+                                                Manejo de Convulsiones
+                                            </h3>
+                                            <div className="grid md:grid-cols-2 gap-4">
+                                                <div>
+                                                    <h4 className="font-medium text-blue-600 mb-2">Convulsiones Febriles:</h4>
+                                                    <ol className="list-decimal list-inside space-y-1 text-sm text-gray-700">
+                                                        <li>Proteger vía aérea</li>
+                                                        <li>Posición de recuperación</li>
+                                                        <li>NO introducir objetos en boca</li>
+                                                        <li>Medidas de enfriamiento gradual</li>
+                                                        <li>Oxígeno si SpO₂ &lt;94%</li>
+                                                        <li>Monitorizar para nuevas convulsiones</li>
+                                                    </ol>
+                                                </div>
+                                                <div>
+                                                    <h4 className="font-medium text-blue-600 mb-2">Status Epiléptico:</h4>
+                                                    <ol className="list-decimal list-inside space-y-1 text-sm text-gray-700">
+                                                        <li>Asegurar vía aérea</li>
+                                                        <li>Oxígeno alto flujo</li>
+                                                        <li>Acceso vascular (IV/IO)</li>
+                                                        <li>Considerar midazolam</li>
+                                                        <li>Monitorización continua</li>
+                                                        <li>Traslado urgente</li>
+                                                    </ol>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
+                                            <h3 className="text-xl font-semibold text-green-700 mb-4 flex items-center">
+                                                <RiHeartPulseLine className="w-6 h-6 mr-2"/>
+                                                Manejo de Shock Pediátrico
+                                            </h3>
+                                            <div className="space-y-4">
+                                                <div className="bg-white p-4 rounded">
+                                                    <h4 className="font-medium text-green-600 mb-2">Protocolo de Reanimación:</h4>
+                                                    <ol className="list-decimal list-inside space-y-1 text-sm text-gray-700">
+                                                        <li>Acceso vascular temprano (IV/IO)</li>
+                                                        <li>Bolo inicial: 20 ml/kg de solución salina</li>
+                                                        <li>Reevaluar después de cada bolo</li>
+                                                        <li>Repetir bolos según respuesta</li>
+                                                        <li>Oxígeno de alto flujo</li>
+                                                        <li>Control de temperatura</li>
+                                                        <li>Traslado a centro pediátrico</li>
+                                                    </ol>
+                                                </div>
+                                                <div className="bg-yellow-100 p-4 rounded">
+                                                    <h4 className="font-medium text-yellow-700 mb-2">⚠️ Puntos Críticos:</h4>
+                                                    <ul className="list-disc list-inside space-y-1 text-sm text-yellow-700">
+                                                        <li>Máximo 60 ml/kg total de cristaloides</li>
+                                                        <li>Reevaluar después de cada bolo</li>
+                                                        <li>Si no mejora: considerar otras causas</li>
+                                                        <li>Hipotensión = descompensación tardía</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="bg-purple-50 p-6 rounded-lg border-l-4 border-purple-500">
+                                            <h3 className="text-xl font-semibold text-purple-700 mb-4 flex items-center">
+                                                <FaLungsVirus className="w-6 h-6 mr-2"/>
+                                                Obstrucción de Vía Aérea por Cuerpo Extraño
+                                            </h3>
+                                            <div className="grid md:grid-cols-2 gap-4">
+                                                <div>
+                                                    <h4 className="font-medium text-purple-600 mb-2">Lactantes (&lt;1 año):</h4>
+                                                    <ol className="list-decimal list-inside space-y-1 text-sm text-gray-700">
+                                                        <li>Posición prona sobre antebrazo</li>
+                                                        <li>5 golpes en espalda (entre omóplatos)</li>
+                                                        <li>Voltear: 5 compresiones torácicas</li>
+                                                        <li>Repetir secuencia hasta desobstrucción</li>
+                                                        <li>Si inconsciente: iniciar RCP</li>
+                                                    </ol>
+                                                </div>
+                                                <div>
+                                                    <h4 className="font-medium text-purple-600 mb-2">Niños (&gt;1 año):</h4>
+                                                    <ol className="list-decimal list-inside space-y-1 text-sm text-gray-700">
+                                                        <li>Maniobra de Heimlich (compresiones abdominales)</li>
+                                                        <li>Posición: detrás del niño</li>
+                                                        <li>Compresiones hacia arriba y adentro</li>
+                                                        <li>Repetir hasta desobstrucción</li>
+                                                        <li>Si inconsciente: RCP + revisar boca</li>
                                                     </ol>
                                                 </div>
                                             </div>
@@ -576,45 +1065,61 @@ export default function PediatricEmergencies(){
                                     </div>
                                 </div>
 
-                                <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Consideraciones especiales en pediatría</h2>
+                                {/* Consideraciones especiales */}
+                                <div className="bg-gray-50 p-6 rounded-lg">
+                                    <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                        <MdHealthAndSafety className="w-6 h-6 mr-2 text-orange-500"/>
+                                        Consideraciones Especiales en Manejo Pediátrico
+                                    </h3>
                                     <div className="grid md:grid-cols-2 gap-6">
                                         <div className="space-y-4">
-                                            <div className="bg-yellow-50 p-4 rounded-lg">
-                                                <h3 className="font-medium text-lg mb-2 text-yellow-700">Control de temperatura</h3>
-                                                <ul className="list-disc list-inside space-y-1 text-gray-700">
+                                            <div className="bg-white p-4 rounded-lg">
+                                                <h4 className="font-medium text-yellow-700 mb-2 flex items-center">
+                                                    <RiThermometerLine className="w-5 h-5 mr-2"/>
+                                                    Control de Temperatura
+                                                </h4>
+                                                <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
                                                     <li>Los niños pierden calor rápidamente</li>
                                                     <li>Mantener ambiente cálido</li>
-                                                    <li>Cubrir la cabeza</li>
+                                                    <li>Cubrir cabeza y extremidades</li>
                                                     <li>Limitar exposición durante examen</li>
-                                                    <li>Considerar mantas térmicas</li>
+                                                    <li>Usar mantas térmicas cuando sea necesario</li>
                                                 </ul>
                                             </div>
-                                            <div className="bg-pink-50 p-4 rounded-lg">
-                                                <h3 className="font-medium text-lg mb-2 text-pink-700">Apoyo psicológico</h3>
-                                                <ul className="list-disc list-inside space-y-1 text-gray-700">
+                                            <div className="bg-white p-4 rounded-lg">
+                                                <h4 className="font-medium text-pink-700 mb-2 flex items-center">
+                                                    <FiUsers className="w-5 h-5 mr-2"/>
+                                                    Apoyo Psicológico
+                                                </h4>
+                                                <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
                                                     <li>Permitir presencia de padres</li>
-                                                    <li>Explicar procedimientos apropiados para la edad</li>
+                                                    <li>Explicar procedimientos apropiados para edad</li>
                                                     <li>Mantener calma y paciencia</li>
                                                     <li>Usar técnicas de distracción</li>
-                                                    <li>Considerar el desarrollo del niño</li>
+                                                    <li>Considerar desarrollo cognitivo</li>
                                                 </ul>
                                             </div>
                                         </div>
                                         <div className="space-y-4">
-                                            <div className="bg-indigo-50 p-4 rounded-lg">
-                                                <h3 className="font-medium text-lg mb-2 text-indigo-700">Dosificación de medicamentos</h3>
-                                                <ul className="list-disc list-inside space-y-1 text-gray-700">
+                                            <div className="bg-white p-4 rounded-lg">
+                                                <h4 className="font-medium text-indigo-700 mb-2 flex items-center">
+                                                    <TbScale className="w-5 h-5 mr-2"/>
+                                                    Dosificación de Medicamentos
+                                                </h4>
+                                                <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
                                                     <li>Calcular basándose en peso corporal</li>
                                                     <li>Usar cintas de medición pediátricas</li>
                                                     <li>Verificar dosis con protocolos</li>
-                                                    <li>Considerar vías de administración alternativas</li>
                                                     <li>Documentar peso estimado</li>
+                                                    <li>Considerar vías alternativas</li>
                                                 </ul>
                                             </div>
-                                            <div className="bg-gray-50 p-4 rounded-lg">
-                                                <h3 className="font-medium text-lg mb-2 text-gray-700">Comunicación</h3>
-                                                <ul className="list-disc list-inside space-y-1 text-gray-700">
+                                            <div className="bg-white p-4 rounded-lg">
+                                                <h4 className="font-medium text-gray-700 mb-2 flex items-center">
+                                                    <TbStethoscope className="w-5 h-5 mr-2"/>
+                                                    Comunicación Efectiva
+                                                </h4>
+                                                <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
                                                     <li>Hablar directamente al niño si es apropiado</li>
                                                     <li>Usar lenguaje simple y claro</li>
                                                     <li>Obtener historia de los padres</li>
@@ -627,6 +1132,7 @@ export default function PediatricEmergencies(){
                                 </div>
                             </div>
                         )}
+                          
 
                         {activeTab === 'cases' && (
                             <div className="space-y-6">
@@ -833,6 +1339,7 @@ export default function PediatricEmergencies(){
                                     </div>
                                 </div>
                             </div>
+                        
                         )}
                     </div>
 
@@ -912,6 +1419,7 @@ export default function PediatricEmergencies(){
                 </div>
             </div>
         </div>
+        </SEOWrapper>
     );
 }
 
