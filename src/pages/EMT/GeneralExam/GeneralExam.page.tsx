@@ -148,7 +148,6 @@ export default function GeneralExam() {
         <div className="flex flex-col items-center justify-center bg-gray-100 pb-12 px-4 p-4">
             <img src={logo}
                  alt="Logo" className="h-24 w-24 mb-4" />
-            <p className="text-sm italic">Generacion 2025 Rescate 1: Este examen fue hecho por los alumnos de la clase sabados R1 2025</p>
             <div className="flex justify-center">
                 <p className="text-5xl font-bold mb-4 flex text-center">Examen Personalizado</p>
             </div>

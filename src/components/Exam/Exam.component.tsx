@@ -117,7 +117,6 @@ export default function Exam(props: ExamProps){
                         <img src={logo} alt="Logo" className="h-16 w-16 mr-4" />
                         <div>
                             <h1 className="text-2xl font-bold text-gray-800">{props.name}</h1>
-                            <p className="text-sm text-gray-600 italic">Generación 2025 Rescate 1: Examen creado por alumnos de R1 2025</p>
                         </div>
                     </div>
                     <div className="flex items-center space-x-4">

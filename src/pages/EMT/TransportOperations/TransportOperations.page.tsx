@@ -24,7 +24,7 @@ export default function TransportOperations(){
                             <FaTruckMedical className="w-24 h-24 mb-1 text-orange-500" />
                         </div>
                         <h1 className="text-5xl font-bold mb-2 text-center">Operaciones de transporte</h1>
-                        <p className="text-sm italic mb-4">Alumnos Generación 2025 Sábados Rescate 1</p>
+                        <p className="text-sm italic mb-4">Alumnos Rescate 1</p>
                         <div className="flex justify-center">
                             <NavLink
                                 to={AllRoutes.EMT}

@@ -24,8 +24,6 @@ export default function Main() {
                     className="flex flex-col items-center min-h-screen h-full justify-center bg-gradient-to-b from-orange-50 to-gray-100 pb-12 md:px-0 px-4 p-4 ">
                     <img src={logo}
                          alt="Logo" className="h-24 w-24 mb-4"/>
-                    <p className="text-sm italic text-center">Generación 2025 Rescate 1: Esta plataforma fue hecha por y para los
-                        alumnos de la clase sabados R1 2025</p>
                     <p className="text-5xl font-bold mb-12 flex text-center">Rescate 1: Alumnos</p>
 
                     <div className="grid md:grid-cols-5 grid-cols-2 gap-4">

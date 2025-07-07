@@ -29,7 +29,7 @@ export default function Resources() {
             <div className="flex flex-col min-h-screen bg-gradient-to-br from-orange-50 to-gray-200 pb-12 md:p-12 px-4 p-4">
             <div className="flex flex-col justify-center items-center mb-8">
                 <p className="text-5xl font-extrabold mb-2 text-orange-600 drop-shadow text-center">Recursos y Libros</p>
-                <p className="text-base italic text-gray-600 mb-4">Alumnos Generación 2025 Sábados Rescate 1</p>
+                <p className="text-base italic text-gray-600 mb-4">Alumnos Rescate 1</p>
                 <NavLink
                     to="/"
                     className="flex gap-2 mb-4 bg-white shadow-lg rounded-full px-6 py-2 hover:bg-orange-100 transition duration-300 ease-in-out items-center border border-orange-200">

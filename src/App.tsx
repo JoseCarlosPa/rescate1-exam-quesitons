@@ -71,7 +71,6 @@ function App() {
             <div className="flex flex-col items-center w-full max-w-3xl">
                 <img src={logo}
                      alt="Logo" className="h-28 w-28 mb-2 drop-shadow-lg rounded-full "/>
-                <p className="text-xs italic text-gray-500 mb-1 text-center">Generación 2025 Rescate 1: Esta plataforma fue hecha por y para los alumnos de la clase sábados R1 2025</p>
                 <p className="text-5xl font-extrabold mb-6 flex text-center mt-2 text-orange-500 tracking-tight drop-shadow">TAMP-B</p>
             </div>
             <div className="relative w-full max-w-md mb-6 mt-8">
