@@ -5,15 +5,28 @@ import {ChevronUpIcon} from "@heroicons/react/16/solid";
 import {faqData} from "./GeriatricEmergencies.questions.ts";
 import {IoReturnDownBack} from "react-icons/io5";
 import {useState} from "react";
-import {MdQuiz} from "react-icons/md";
-import {BsBookHalf} from "react-icons/bs";
+import {MdQuiz, MdOutlineTimer, MdCheckCircle, MdWarning} from "react-icons/md";
+import {BsBookHalf, BsLightbulb, BsShield} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
-import { FaPersonCane } from "react-icons/fa6";
+import { FaPersonCane, FaBrain, FaThermometer } from "react-icons/fa6";
+import { FaExclamationTriangle, FaHeartbeat } from "react-icons/fa";
+import { FiAlertTriangle, FiActivity } from "react-icons/fi";
+import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
 
 export default function GeriatricEmergencies(){
-    const [activeTab, setActiveTab] = useState<'assessment' | 'conditions' | 'management' | 'cases'>('assessment');
+    const [activeTab, setActiveTab] = useState<'fundamentals' | 'assessment' | 'conditions' | 'management' | 'cases'>('fundamentals');
 
     return(
+        <SEOWrapper
+            title="Emergencias Geriátricas EMT | Evaluación, Patologías y Manejo del Adulto Mayor"
+            description="Guía completa sobre emergencias geriátricas para Técnicos en Atención Médica Prehospitalaria: cambios fisiológicos, evaluación especializada, patologías frecuentes, manejo farmacológico y casos clínicos del adulto mayor."
+            keywords="emergencias geriátricas, EMT, paramédicos, adulto mayor, gerontología, polifarmacia, delirium, demencia, hipotermia, caídas, síndrome coronario agudo, evaluación geriátrica, maltrato del adulto mayor"
+            section="emt"
+            difficulty="Intermediate"
+            timeRequired="PT120M"
+            educationalLevel="Technical"
+            includeEducationalSchema={true}
+        >
         <div className="min-h-screen bg-gray-50">
             <div className="flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-white pb-12 px-4 p-4">
                 <div className="w-full max-w-7xl">
@@ -65,6 +78,15 @@ export default function GeriatricEmergencies(){
                     <div className="mb-6 border-b border-gray-200 max-w-5xl mx-auto">
                         <nav className="flex space-x-2 overflow-x-auto">
                             <button
+                                onClick={() => setActiveTab('fundamentals')}
+                                className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
+                                    activeTab === 'fundamentals' 
+                                        ? 'border-orange-500 text-orange-600' 
+                                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                                }`}>
+                                Fundamentos
+                            </button>
+                            <button
                                 onClick={() => setActiveTab('assessment')}
                                 className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
                                     activeTab === 'assessment' 
@@ -105,6 +127,215 @@ export default function GeriatricEmergencies(){
 
                     {/* Contenido principal basado en pestañas */}
                     <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-sm p-6 mb-8">
+                        {activeTab === 'fundamentals' && (
+                            <div className="space-y-8">
+                                {/* Importancia crítica del tema */}
+                                <div className="bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-red-500 p-6 rounded-lg">
+                                    <div className="flex items-center mb-4">
+                                        <FaExclamationTriangle className="w-8 h-8 text-red-500 mr-3"/>
+                                        <h2 className="text-2xl font-bold text-red-700">¡Realidad Demográfica!</h2>
+                                    </div>
+                                    <p className="text-gray-800 leading-relaxed text-lg mb-4">
+                                        Para 2030, el <strong>20% de la población</strong> será mayor de 65 años. 
+                                        Los adultos mayores representan el <span className="text-red-600 font-bold">40-50%</span> 
+                                        de las emergencias médicas.
+                                    </p>
+                                    <div className="grid md:grid-cols-3 gap-4">
+                                        <div className="bg-white p-4 rounded shadow-sm text-center">
+                                            <MdOutlineTimer className="w-8 h-8 text-red-500 mx-auto mb-2"/>
+                                            <p className="font-bold text-red-600">3x más</p>
+                                            <p className="text-sm">Probabilidad de hospitalización</p>
+                                        </div>
+                                        <div className="bg-white p-4 rounded shadow-sm text-center">
+                                            <MdWarning className="w-8 h-8 text-orange-500 mx-auto mb-2"/>
+                                            <p className="font-bold text-orange-600">5x más</p>
+                                            <p className="text-sm">Tiempo de recuperación</p>
+                                        </div>
+                                        <div className="bg-white p-4 rounded shadow-sm text-center">
+                                            <FaExclamationTriangle className="w-8 h-8 text-red-700 mx-auto mb-2"/>
+                                            <p className="font-bold text-red-700">2x más</p>
+                                            <p className="text-sm">Mortalidad por emergencias</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Envejecimiento vs Enfermedad */}
+                                <div>
+                                    <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
+                                        <BsShield className="w-6 h-6 mr-2 text-orange-500"/>
+                                        Envejecimiento Normal vs Patológico
+                                    </h2>
+                                    <div className="grid md:grid-cols-2 gap-6">
+                                        <div className="bg-gradient-to-b from-green-50 to-green-100 p-6 rounded-lg border">
+                                            <h3 className="text-xl font-bold text-green-700 mb-3 text-center">
+                                                ✓ ENVEJECIMIENTO NORMAL
+                                            </h3>
+                                            <ul className="space-y-2 text-gray-700">
+                                                <li className="flex items-start">
+                                                    <MdCheckCircle className="w-4 h-4 mt-1 mr-2 text-green-600"/>
+                                                    <span>Disminución gradual de funciones</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <MdCheckCircle className="w-4 h-4 mt-1 mr-2 text-green-600"/>
+                                                    <span>Mantiene independencia funcional</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <MdCheckCircle className="w-4 h-4 mt-1 mr-2 text-green-600"/>
+                                                    <span>Adaptación a cambios</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <MdCheckCircle className="w-4 h-4 mt-1 mr-2 text-green-600"/>
+                                                    <span>Funciones cognitivas preservadas</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div className="bg-gradient-to-b from-red-50 to-red-100 p-6 rounded-lg border">
+                                            <h3 className="text-xl font-bold text-red-700 mb-3 text-center">
+                                                ⚠️ ENVEJECIMIENTO PATOLÓGICO
+                                            </h3>
+                                            <ul className="space-y-2 text-gray-700">
+                                                <li className="flex items-start">
+                                                    <FaExclamationTriangle className="w-4 h-4 mt-1 mr-2 text-red-600"/>
+                                                    <span>Deterioro funcional significativo</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <FaExclamationTriangle className="w-4 h-4 mt-1 mr-2 text-red-600"/>
+                                                    <span>Pérdida de independencia</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <FaExclamationTriangle className="w-4 h-4 mt-1 mr-2 text-red-600"/>
+                                                    <span>Enfermedades múltiples</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <FaExclamationTriangle className="w-4 h-4 mt-1 mr-2 text-red-600"/>
+                                                    <span>Deterioro cognitivo</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Principales cambios fisiológicos */}
+                                <div>
+                                    <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2">
+                                        Cambios Fisiológicos del Envejecimiento
+                                    </h2>
+                                    <div className="grid md:grid-cols-2 gap-6">
+                                        <div className="bg-blue-50 p-4 rounded-lg">
+                                            <h3 className="font-medium text-lg mb-2 text-blue-700 flex items-center">
+                                                <FaHeartbeat className="w-5 h-5 mr-2"/>
+                                                Sistema Cardiovascular
+                                            </h3>
+                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
+                                                <li>Disminución del gasto cardíaco (25-30%)</li>
+                                                <li>Rigidez arterial aumentada</li>
+                                                <li>Hipertensión sistólica aislada</li>
+                                                <li>Menor respuesta a catecolaminas</li>
+                                                <li>Arritmias más frecuentes</li>
+                                            </ul>
+                                        </div>
+                                        <div className="bg-green-50 p-4 rounded-lg">
+                                            <h3 className="font-medium text-lg mb-2 text-green-700 flex items-center">
+                                                <FiActivity className="w-5 h-5 mr-2"/>
+                                                Sistema Respiratorio
+                                            </h3>
+                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
+                                                <li>Pérdida de elasticidad pulmonar</li>
+                                                <li>Disminución de la capacidad vital (40%)</li>
+                                                <li>Debilitamiento muscular respiratorio</li>
+                                                <li>Menor eficiencia del intercambio gaseoso</li>
+                                                <li>Reducción del reflejo de tos</li>
+                                            </ul>
+                                        </div>
+                                        <div className="bg-purple-50 p-4 rounded-lg">
+                                            <h3 className="font-medium text-lg mb-2 text-purple-700 flex items-center">
+                                                <FaBrain className="w-5 h-5 mr-2"/>
+                                                Sistema Nervioso
+                                            </h3>
+                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
+                                                <li>Pérdida de masa cerebral (10%)</li>
+                                                <li>Disminución de neurotransmisores</li>
+                                                <li>Alteración de reflejos</li>
+                                                <li>Cambios en memoria a corto plazo</li>
+                                                <li>Alteración del equilibrio</li>
+                                            </ul>
+                                        </div>
+                                        <div className="bg-orange-50 p-4 rounded-lg">
+                                            <h3 className="font-medium text-lg mb-2 text-orange-700 flex items-center">
+                                                <FaThermometer className="w-5 h-5 mr-2"/>
+                                                Sistema Renal/Endocrino
+                                            </h3>
+                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
+                                                <li>Reducción de la filtración glomerular</li>
+                                                <li>Pérdida de la capacidad de concentración</li>
+                                                <li>Termorregulación alterada</li>
+                                                <li>Metabolismo de medicamentos más lento</li>
+                                                <li>Deshidratación más frecuente</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Conceptos clave para paramédicos */}
+                                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                                    <div className="flex items-center mb-4">
+                                        <FiAlertTriangle className="w-6 h-6 text-yellow-600 mr-2"/>
+                                        <h3 className="text-xl font-bold text-yellow-800">Conceptos Clave para Paramédicos</h3>
+                                    </div>
+                                    <div className="grid md:grid-cols-2 gap-6">
+                                        <div>
+                                            <h4 className="font-semibold text-yellow-800 mb-2">Reserva Funcional:</h4>
+                                            <p className="text-gray-700 mb-2">
+                                                Los adultos mayores tienen menor capacidad de respuesta al estrés. 
+                                                Una enfermedad menor puede descompensar múltiples sistemas.
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <h4 className="font-semibold text-yellow-800 mb-2">Presentación Atípica:</h4>
+                                            <p className="text-gray-700 mb-2">
+                                                Los síntomas clásicos pueden estar ausentes. La confusión puede ser 
+                                                el único signo de infección, infarto o crisis metabólica.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Principios de atención */}
+                                <div className="bg-green-50 border border-green-200 rounded-lg p-6">
+                                    <div className="flex items-center mb-4">
+                                        <BsLightbulb className="w-6 h-6 text-green-600 mr-2"/>
+                                        <h3 className="text-xl font-bold text-green-800">Principios de Atención Geriátrica</h3>
+                                    </div>
+                                    <div className="grid md:grid-cols-2 gap-6">
+                                        <div>
+                                            <h4 className="font-semibold text-green-800 mb-2 flex items-center">
+                                                <MdCheckCircle className="w-4 h-4 mr-2"/>
+                                                Enfoque Integral:
+                                            </h4>
+                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
+                                                <li>Evaluación completa de sistemas</li>
+                                                <li>Considerar múltiples diagnósticos</li>
+                                                <li>Valorar estado funcional previo</li>
+                                                <li>Incluir al cuidador en la evaluación</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h4 className="font-semibold text-green-800 mb-2 flex items-center">
+                                                <MdCheckCircle className="w-4 h-4 mr-2"/>
+                                                Prevención de Complicaciones:
+                                            </h4>
+                                            <ul className="list-disc list-inside space-y-1 text-gray-700">
+                                                <li>Prevenir caídas durante el transporte</li>
+                                                <li>Mantener temperatura corporal</li>
+                                                <li>Proteger la integridad de la piel</li>
+                                                <li>Preservar la dignidad del paciente</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+
                         {activeTab === 'assessment' && (
                             <div className="space-y-6">
                                 <div>
@@ -632,7 +863,7 @@ export default function GeriatricEmergencies(){
                                 <div>
                                     <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Dosificación de medicamentos de emergencia</h2>
                                     <div className="overflow-x-auto">
-                                        <table className="min-w-full bg-white">
+                                        <table className="min-w-full bg-white border rounded-lg">
                                             <thead>
                                                 <tr className="bg-gray-100">
                                                     <th className="py-2 px-4 border">Medicamento</th>
@@ -649,22 +880,22 @@ export default function GeriatricEmergencies(){
                                                     <td className="py-2 px-4 border">Monitorear función respiratoria</td>
                                                 </tr>
                                                 <tr>
-                                                    <td className="py-2 px-4 border font-medium">Midazolam</td>
-                                                    <td className="py-2 px-4 border">2-5 mg IV</td>
+                                                    <td className="py-2 px-4 border font-medium">Lorazepam</td>
+                                                    <td className="py-2 px-4 border">2-4 mg IV</td>
                                                     <td className="py-2 px-4 border">0.5-1 mg IV</td>
-                                                    <td className="py-2 px-4 border">Riesgo de caídas post-emergencia</td>
+                                                    <td className="py-2 px-4 border">Evitar si es posible</td>
                                                 </tr>
                                                 <tr>
                                                     <td className="py-2 px-4 border font-medium">Furosemida</td>
                                                     <td className="py-2 px-4 border">20-40 mg IV</td>
-                                                    <td className="py-2 px-4 border">10-20 mg IV</td>
-                                                    <td className="py-2 px-4 border">Monitorear función renal</td>
+                                                    <td className="py-2 px-4 border">20 mg IV inicial</td>
+                                                    <td className="py-2 px-4 border">Vigilar función renal</td>
                                                 </tr>
                                                 <tr>
                                                     <td className="py-2 px-4 border font-medium">Nitroglicerina</td>
                                                     <td className="py-2 px-4 border">0.4 mg SL</td>
-                                                    <td className="py-2 px-4 border">0.3 mg SL</td>
-                                                    <td className="py-2 px-4 border">Hipotensión ortostática marcada</td>
+                                                    <td className="py-2 px-4 border">0.4 mg SL</td>
+                                                    <td className="py-2 px-4 border">Precaución con hipotensión</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -1140,6 +1371,7 @@ export default function GeriatricEmergencies(){
                 </div>
             </div>
         </div>
+        </SEOWrapper>
     );
 }
 
