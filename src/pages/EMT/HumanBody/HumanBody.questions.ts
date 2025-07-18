@@ -65,153 +65,168 @@ export const faqData = [
 
 export const humanBodyQuestions: Question[] = [
     {
-        question: "Al evaluar las extremidades inferiores de un paciente, observa una marcada hinchazón en el muslo derecho. ¿Qué hueso hay en esta ubicación?",
-        options: [
-            {letter: "a", text: "Peroné"},
-            {letter: "b", text: "Tibia"},
-            {letter: "c", text: "Fémur"},
-            {letter: "d", text: "Rótula"},
+        "question": "Al evaluar las extremidades inferiores de un paciente, observa una marcada hinchazón en el muslo derecho. ¿Qué hueso hay en esta ubicación?",
+        "options": [
+            { "letter": "a", "text": "Peroné" },
+            { "letter": "b", "text": "Tibia" },
+            { "letter": "c", "text": "Fémur" },
+            { "letter": "d", "text": "Rótula" }
         ],
-        correctAnswer: "c",
+        "correctAnswer": "c",
+        "explanation": "El fémur es el único hueso largo ubicado en el muslo (la porción superior de la pierna, entre la cadera y la rodilla). Es el hueso más largo y fuerte del cuerpo humano. La tibia y el peroné se encuentran en la parte inferior de la pierna."
     },
     {
-        question: "¿Cuál de las siguientes sustancias es el elemento principal que utilizan las células óseas para crear una estructura dura y resistente?",
-        options: [
-            {letter: "a", text: "Sodio"},
-            {letter: "b", text: "Potasio"},
-            {letter: "c", text: "Magnesio"},
-            {letter: "d", text: "Calcio"},
+        "question": "¿Cuál de las siguientes sustancias es el elemento principal que utilizan las células óseas para crear una estructura dura y resistente?",
+        "options": [
+            { "letter": "a", "text": "Sodio" },
+            { "letter": "b", "text": "Potasio" },
+            { "letter": "c", "text": "Magnesio" },
+            { "letter": "d", "text": "Calcio" }
         ],
-        correctAnswer: "d",
+        "correctAnswer": "d",
+        "explanation": "El calcio, en forma de sales de fosfato de calcio (principalmente hidroxiapatita), es el mineral que se deposita sobre la matriz de colágeno del hueso, proporcionándole su dureza característica y su resistencia a la compresión."
     },
     {
-        question: "Un paciente presenta hematomas e inestabilidad en el pómulo derecho. ¿Cuál es el nombre correcto para este hueso?",
-        options: [
-            {letter: "a", text: "Cigoma"},
-            {letter: "b", text: "Maxilar"},
-            {letter: "c", "text": "Esfenoides"},
-            {letter: "d", text: "Mandíbula"},
+        "question": "Un paciente presenta hematomas e inestabilidad en el pómulo derecho. ¿Cuál es el nombre correcto para este hueso?",
+        "options": [
+            { "letter": "a", "text": "Cigoma" },
+            { "letter": "b", "text": "Maxilar" },
+            { "letter": "c", "text": "Esfenoides" },
+            { "letter": "d", "text": "Mandíbula" }
         ],
-        correctAnswer: "a",
+        "correctAnswer": "a",
+        "explanation": "El hueso cigomático, comúnmente conocido como pómulo, forma la prominencia de la mejilla y parte del suelo y la pared lateral de la órbita ocular. Es un hueso facial que se fractura con frecuencia en traumatismos directos."
     },
     {
-        question: "El hueso más grande del antebrazo que se articula en la muñeca es el:",
-        options: [
-            {letter: "a", text: "Húmero"},
-            {letter: "b", text: "Cúbito"},
-            {letter: "c", text: "Radio"},
-            {letter: "d", text: "Clavícula"},
+        "question": "El hueso más grande del antebrazo que se articula en la muñeca es el:",
+        "options": [
+            { "letter": "a", "text": "Húmero" },
+            { "letter": "b", "text": "Cúbito" },
+            { "letter": "c", "text": "Radio" },
+            { "letter": "d", "text": "Clavícula" }
         ],
-        correctAnswer: "c",
+        "correctAnswer": "c",
+        "explanation": "El radio es el hueso del antebrazo que se encuentra en el lado del pulgar. Es más grueso en su extremo distal, donde forma la parte principal de la articulación de la muñeca. El cúbito es el otro hueso del antebrazo, ubicado en el lado del meñique."
     },
     {
-        question: "El antebrazo forma parte del codo. ¿El codo es un ejemplo de qué tipo de articulación?",
-        options: [
-            {letter: "a", text: "Bisagra"},
-            {letter: "b", text: "Esférica"},
-            {letter: "c", text: "De silla"},
-            {letter: "d", text: "Inamovible"},
+        "question": "El antebrazo forma parte del codo. ¿El codo es un ejemplo de qué tipo de articulación?",
+        "options": [
+            { "letter": "a", "text": "Bisagra" },
+            { "letter": "b", "text": "Esférica" },
+            { "letter": "c", "text": "De silla" },
+            { "letter": "d", "text": "Inamovible" }
         ],
-        correctAnswer: "a",
+        "correctAnswer": "a",
+        "explanation": "El codo es una articulación de tipo bisagra (o gínglimo). Este tipo de articulación permite el movimiento en un solo plano, como una bisagra de puerta, facilitando la flexión y la extensión del antebrazo."
     },
     {
-        question: "¿Qué ocurre en el cuerpo como resultado de un compromiso respiratorio grave?",
-        options: [
-            {letter: "a", text: "Aumento de los niveles de oxígeno en sangre."},
-            {letter: "b", text: "Disminución de los niveles de dióxido de carbono en sangre."},
-            {letter: "c", text: "Reducción del intercambio gaseoso, llevando a hipoxia e hipercapnia."},
-            {letter: "d", text: "Aumento de la capacidad pulmonar vital."},
+        "question": "¿Qué ocurre en el cuerpo como resultado de un compromiso respiratorio grave?",
+        "options": [
+            { "letter": "a", "text": "Aumento de los niveles de oxígeno en sangre." },
+            { "letter": "b", "text": "Disminución de los niveles de dióxido de carbono en sangre." },
+            { "letter": "c", "text": "Reducción del intercambio gaseoso, llevando a hipoxia e hipercapnia." },
+            { "letter": "d", "text": "Aumento de la capacidad pulmonar vital." }
         ],
-        correctAnswer: "c",
+        "correctAnswer": "c",
+        "explanation": "Un compromiso respiratorio grave impide el intercambio adecuado de gases en los alvéolos. Esto resulta en una disminución del oxígeno en la sangre (hipoxia) y una acumulación de dióxido de carbono (hipercapnia), lo que lleva a un estado de insuficiencia respiratoria."
     },
     {
-        question: "En un paciente con sospecha de lesión cerrada en la cabeza, ¿qué estructura del cerebro es responsable del nivel de conciencia y el mantenimiento de los signos vitales?",
-        options: [
-            {letter: "a", text: "Corteza cerebral"},
-            {letter: "b", text: "Cerebelo"},
-            {letter: "c", text: "Tallo cerebral"},
-            {letter: "d", text: "Hipotálamo"},
+        "question": "En un paciente con sospecha de lesión cerrada en la cabeza, ¿qué estructura del cerebro es responsable del nivel de conciencia y el mantenimiento de los signos vitales?",
+        "options": [
+            { "letter": "a", "text": "Corteza cerebral" },
+            { "letter": "b", "text": "Cerebelo" },
+            { "letter": "c", "text": "Tallo cerebral" },
+            { "letter": "d", "text": "Hipotálamo" }
         ],
-        correctAnswer: "c",
+        "correctAnswer": "c",
+        "explanation": "El tallo cerebral (o tronco encefálico) contiene centros vitales que regulan funciones autónomas esenciales como la frecuencia cardíaca, la presión arterial y la respiración. También alberga el sistema de activación reticular, que es crucial para mantener el estado de vigilia y la conciencia."
     },
     {
-        question: "¿Qué válvula separa el ventrículo izquierdo de la aorta?",
-        options: [
-            {letter: "a", text: "Válvula tricúspide"},
-            {letter: "b", text: "Válvula pulmonar"},
-            {letter: "c", text: "Válvula aórtica"},
-            {letter: "d", text: "Válvula mitral"},
+        "question": "¿Qué válvula separa el ventrículo izquierdo de la aorta?",
+        "options": [
+            { "letter": "a", "text": "Válvula tricúspide" },
+            { "letter": "b", "text": "Válvula pulmonar" },
+            { "letter": "c", "text": "Válvula aórtica" },
+            { "letter": "d", "text": "Válvula mitral" }
         ],
-        correctAnswer: "c",
+        "correctAnswer": "c",
+        "explanation": "La válvula aórtica se encuentra entre el ventrículo izquierdo y la aorta. Se abre durante la contracción del ventrículo para permitir que la sangre rica en oxígeno sea bombeada al resto del cuerpo y se cierra para evitar que la sangre regrese al ventrículo."
     },
     {
-        question: "¿Qué función tiene el líquido sinovial?",
-        options: [
-            {letter: "a", text: "Regular temperatura corporal"},
-            {letter: "b", text: "Lubricar las articulaciones"},
-            {letter: "c", text: "Transportar nutrientes"},
-            {letter: "d", text: "Aumentar la fuerza muscular"},
+        "question": "¿Qué función tiene el líquido sinovial?",
+        "options": [
+            { "letter": "a", "text": "Regular temperatura corporal" },
+            { "letter": "b", "text": "Lubricar las articulaciones" },
+            { "letter": "c", "text": "Transportar nutrientes" },
+            { "letter": "d", "text": "Aumentar la fuerza muscular" }
         ],
-        correctAnswer: "b",
+        "correctAnswer": "b",
+        "explanation": "El líquido sinovial es un fluido viscoso que se encuentra en las cavidades de las articulaciones sinoviales (móviles). Su función principal es reducir la fricción entre los cartílagos articulares durante el movimiento, actuando como un lubricante."
     },
     {
-        question: "¿Qué sistema regula las respuestas de 'lucha o huida' (fight-or-flight)?",
-        options: [
-            {letter: "a", text: "Sistema simpático"},
-            {letter: "b", text: "Sistema somático"},
-            {letter: "c", text: "Sistema parasimpático"},
-            {letter: "d", text: "Sistema respiratorio"},
+        "question": "¿Qué sistema regula las respuestas de 'lucha o huida' (fight-or-flight)?",
+        "options": [
+            { "letter": "a", "text": "Sistema simpático" },
+            { "letter": "b", "text": "Sistema somático" },
+            { "letter": "c", "text": "Sistema parasimpático" },
+            { "letter": "d", "text": "Sistema respiratorio" }
         ],
-        correctAnswer: "a",
+        "correctAnswer": "a",
+        "explanation": "El sistema nervioso simpático es la parte del sistema nervioso autónomo que prepara al cuerpo para situaciones de estrés o emergencia. Activa la respuesta de 'lucha o huida', aumentando la frecuencia cardíaca, la presión arterial y desviando el flujo sanguíneo a los músculos."
     },
     {
-        question: "¿Qué tipo de articulación es la rodilla?",
-        options: [
-            {letter: "a", text: "Esférica (enartrosis)"},
-            {letter: "b", text: "Bisagra (gínglimo)"},
-            {letter: "c", text: "Pivote (trocoide)"},
-            {letter: "d", text: "Plana (artrodia)"},
+        "question": "¿Qué tipo de articulación es la rodilla?",
+        "options": [
+            { "letter": "a", "text": "Esférica (enartrosis)" },
+            { "letter": "b", "text": "Bisagra (gínglimo)" },
+            { "letter": "c", "text": "Pivote (trocoide)" },
+            { "letter": "d", "text": "Plana (artrodia)" }
         ],
-        correctAnswer: "b",
+        "correctAnswer": "b",
+        "explanation": "La rodilla es principalmente una articulación de tipo bisagra, que permite la flexión y la extensión. Sin embargo, es una articulación de bisagra 'modificada' porque también permite un pequeño grado de rotación cuando está flexionada."
     },
     {
-        question: "¿Cuál es el componente principal del hueso que le confiere dureza y resistencia?",
-        options: [
-            {letter: "a", text: "Colágeno"},
-            {letter: "b", text: "Agua"},
-            {letter: "c", text: "Sales de calcio (hidroxiapatita)"},
-            {letter: "d", text: "Células óseas (osteocitos)"},
+        "question": "¿Cuál es el componente principal del hueso que le confiere dureza y resistencia?",
+        "options": [
+            { "letter": "a", "text": "Colágeno" },
+            { "letter": "b", "text": "Agua" },
+            { "letter": "c", "text": "Sales de calcio (hidroxiapatita)" },
+            { "letter": "d", "text": "Células óseas (osteocitos)" }
         ],
-        correctAnswer: "c",
+        "correctAnswer": "c",
+        "explanation": "La matriz ósea está compuesta por una parte orgánica (principalmente colágeno, que le da flexibilidad) y una parte inorgánica. La parte inorgánica, compuesta por sales de calcio y fosfato en forma de cristales de hidroxiapatita, es la que proporciona la dureza y rigidez al hueso."
     },
     {
-        question: "¿Cuál es el propósito principal del cartílago articular en una articulación sinovial?",
-        options: [
-            {letter: "a", text: "Producir líquido sinovial."},
-            {letter: "b", text: "Unir los huesos de forma permanente."},
-            {letter: "c", text: "Reducir la fricción y amortiguar el impacto entre los huesos."},
-            {letter: "d", text: "Suministrar sangre a los huesos."},
+        "question": "¿Cuál es el propósito principal del cartílago articular en una articulación sinovial?",
+        "options": [
+            { "letter": "a", "text": "Producir líquido sinovial." },
+            { "letter": "b", "text": "Unir los huesos de forma permanente." },
+            { "letter": "c", "text": "Reducir la fricción y amortiguar el impacto entre los huesos." },
+            { "letter": "d", "text": "Suministrar sangre a los huesos." }
         ],
-        correctAnswer: "c",
+        "correctAnswer": "c",
+        "explanation": "El cartílago articular es un tejido liso, blanco y resbaladizo que recubre los extremos de los huesos en las articulaciones móviles. Su función es proporcionar una superficie de bajo rozamiento para el movimiento y ayudar a distribuir las cargas y amortiguar los impactos."
     },
     {
-        question: "¿Qué órgano es el principal responsable de la desintoxicación de la sangre y la producción de bilis?",
-        options: [
-            {letter: "a", text: "Riñón"},
-            {letter: "b", text: "Páncreas"},
-            {letter: "c", text: "Bazo"},
-            {letter: "d", text: "Hígado"},
+        "question": "¿Qué órgano es el principal responsable de la desintoxicación de la sangre y la producción de bilis?",
+        "options": [
+            { "letter": "a", "text": "Riñón" },
+            { "letter": "b", "text": "Páncreas" },
+            { "letter": "c", "text": "Bazo" },
+            { "letter": "d", "text": "Hígado" }
         ],
-        correctAnswer: "d",
+        "correctAnswer": "d",
+        "explanation": "El hígado es una 'central metabólica' del cuerpo. Entre sus más de 500 funciones se encuentran filtrar y desintoxicar la sangre de sustancias nocivas y producir bilis, que es esencial para la digestión de las grasas en el intestino delgado."
     },
     {
-        question: "¿Qué estructura del sistema respiratorio evita que los alimentos entren en la tráquea durante la deglución?",
-        options: [
-            {letter: "a", text: "Faringe"},
-            {letter: "b", text: "Laringe"},
-            {letter: "c", text: "Epiglotis"},
-            {letter: "d", text: "Bronquios"},
+        "question": "¿Qué estructura del sistema respiratorio evita que los alimentos entren en la tráquea durante la deglución?",
+        "options": [
+            { "letter": "a", "text": "Faringe" },
+            { "letter": "b", "text": "Laringe" },
+            { "letter": "c", "text": "Epiglotis" },
+            { "letter": "d", "text": "Bronquios" }
         ],
-        correctAnswer: "c",
+        "correctAnswer": "c",
+        "explanation": "La epiglotis es una lengüeta de cartílago elástico situada en la base de la lengua. Durante la deglución, se pliega hacia abajo para cubrir la apertura de la laringe (la entrada a la tráquea), dirigiendo así los alimentos y líquidos hacia el esófago y evitando la aspiración."
     }
-];
+]
