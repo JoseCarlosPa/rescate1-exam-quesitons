@@ -34,6 +34,7 @@ export const visionMedicGeneralQuestions: Question[] = [
             { letter: "d", text: "Aquel que requiere cirugía de emergencia" },
         ],
         correctAnswer: "b",
+        explanation: "Un paciente médico es aquel que presenta una condición interna no traumática, como enfermedades cardíacas, respiratorias o metabólicas, según la AAOS. Esto lo diferencia del paciente traumático, que presenta lesiones físicas externas."
     },
     {
         question: "¿Cuál es el objetivo principal de la evaluación de la naturaleza de la enfermedad (NE)?",
@@ -44,6 +45,7 @@ export const visionMedicGeneralQuestions: Question[] = [
             { letter: "d", text: "Definir el método de transporte más adecuado" },
         ],
         correctAnswer: "b",
+        explanation: "El objetivo de la evaluación de la naturaleza de la enfermedad es identificar la queja principal y el tipo de emergencia médica, lo que permite priorizar intervenciones y recursos."
     },
     {
         question: "¿Qué mnemotecnia se utiliza para obtener información sobre los signos y síntomas del paciente?",
@@ -54,6 +56,7 @@ export const visionMedicGeneralQuestions: Question[] = [
             { letter: "d", text: "DUMBELS" },
         ],
         correctAnswer: "c",
+        explanation: "OPQRST es una mnemotecnia utilizada para explorar los signos y síntomas, especialmente en dolor: Onset, Provocation, Quality, Region, Severity, Time."
     },
     {
         question: "¿Qué mnemotecnia se utiliza para recopilar el historial médico del paciente?",
@@ -64,6 +67,7 @@ export const visionMedicGeneralQuestions: Question[] = [
             { letter: "d", text: "TACOS" },
         ],
         correctAnswer: "b",
+        explanation: "SAMPLE es la mnemotecnia para obtener el historial médico: Signos y síntomas, Alergias, Medicamentos, Pasado médico, Última ingesta, Eventos relacionados."
     },
     {
         question: "¿Cuándo se debe tomar la decisión de transporte de un paciente médico?",
@@ -74,6 +78,7 @@ export const visionMedicGeneralQuestions: Question[] = [
             { letter: "d", text: "Luego de administrar todos los medicamentos posibles" },
         ],
         correctAnswer: "c",
+        explanation: "La decisión de transporte debe tomarse durante la evaluación primaria si el paciente está inestable o hay amenaza a la vida, para reducir el tiempo hasta la atención definitiva."
     },
     {
         question: "¿Cuál de las siguientes es una indicación de un paciente que necesita intervención inmediata?",
@@ -84,6 +89,7 @@ export const visionMedicGeneralQuestions: Question[] = [
             { letter: "d", text: "Paciente con diabetes controlada" },
         ],
         correctAnswer: "b",
+        explanation: "La inconsciencia es un signo de compromiso vital y requiere intervención inmediata para asegurar la vía aérea y soporte vital."
     },
     {
         question: "¿Qué se recomienda hacer con un paciente con signos de EVC (ictus)?",
@@ -94,6 +100,7 @@ export const visionMedicGeneralQuestions: Question[] = [
             { letter: "d", text: "Esperar 15 minutos para ver si mejora" },
         ],
         correctAnswer: "c",
+        explanation: "El paciente con signos de EVC debe recibir soporte de vía aérea, respiración y circulación (ABC) y ser trasladado urgentemente a un centro especializado."
     },
     {
         question: "¿Qué indica una piel fría y pegajosa en un paciente médico?",
@@ -104,6 +111,7 @@ export const visionMedicGeneralQuestions: Question[] = [
             { letter: "d", text: "Buena perfusión cutánea" },
         ],
         correctAnswer: "c",
+        explanation: "La piel fría y pegajosa suele indicar shock o respuesta al estrés, lo que requiere evaluación y tratamiento inmediato."
     },
     {
         question: "¿Qué herramienta ayuda a decidir si un paciente debe ser trasladado como prioridad?",
@@ -114,6 +122,7 @@ export const visionMedicGeneralQuestions: Question[] = [
             { letter: "d", "text": "El color de la ambulancia" },
         ],
         correctAnswer: "b",
+        explanation: "La evaluación de la condición y la presencia de amenazas a la vida determina la prioridad de traslado, según protocolos de la AAOS."
     },
     {
         question: "¿Qué precauciones estándar se deben tomar al tratar a un paciente con posible enfermedad infecciosa?",
@@ -124,6 +133,7 @@ export const visionMedicGeneralQuestions: Question[] = [
             { letter: "d", text: "Solamente mascarilla" },
         ],
         correctAnswer: "c",
+        explanation: "Las precauciones estándar incluyen guantes, mascarilla y protección ocular para evitar la transmisión de enfermedades infecciosas."
     },
     {
         question: "¿Cuál es la definición más precisa de una enfermedad transmisible?",
@@ -134,6 +144,7 @@ export const visionMedicGeneralQuestions: Question[] = [
             { letter: "d", text: "Una enfermedad que se puede propagar de una persona o especie a otra." },
         ],
         correctAnswer: "d",
+        explanation: "Una enfermedad transmisible es aquella que puede propagarse de una persona o especie a otra, como se define en epidemiología."
     },
     {
         question: "¿Qué acción se debe realizar después de evaluar los ABC (vía aérea, respiración, circulación) en un paciente médico?",
@@ -144,6 +155,7 @@ export const visionMedicGeneralQuestions: Question[] = [
             { letter: "d", text: "Esperar a que el paciente mejore por sí mismo." },
         ],
         correctAnswer: "b",
+        explanation: "Después de asegurar los ABC, se debe realizar una evaluación secundaria para identificar otras lesiones o condiciones."
     },
     {
         question: "¿Qué información NO es parte de la historia clínica rápida (SAMPLE)?",
@@ -154,6 +166,7 @@ export const visionMedicGeneralQuestions: Question[] = [
             { letter: "d", text: "Última ingesta oral" },
         ],
         correctAnswer: "c",
+        explanation: "La historia clínica rápida (SAMPLE) no incluye información financiera, solo datos médicos relevantes para la atención."
     },
     {
         question: "¿Por qué es crucial la selección del destino apropiado para un paciente médico?",
@@ -164,6 +177,7 @@ export const visionMedicGeneralQuestions: Question[] = [
             { letter: "d", text: "Solo es relevante para pacientes con trauma." },
         ],
         correctAnswer: "b",
+        explanation: "Seleccionar el destino adecuado permite que el paciente reciba atención especializada de forma oportuna, lo que mejora el pronóstico."
     },
     {
         question: "¿Cuál de las siguientes enfermedades infecciosas es de particular preocupación para el personal de SEM (Servicios de Emergencias Médicas)?",
@@ -174,5 +188,6 @@ export const visionMedicGeneralQuestions: Question[] = [
             { letter: "d", text: "Conjuntivitis" },
         ],
         correctAnswer: "b",
+        explanation: "La gripe (influenza) es de especial preocupación para el personal de SEM por su alta transmisibilidad y potencial de complicaciones graves."
     },
 ];

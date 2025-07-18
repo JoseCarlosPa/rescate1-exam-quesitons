@@ -74,6 +74,7 @@ export const medicTermsQuestions: Question[] = [
             { letter: "d", text: "Decúbito lateral" },
         ],
         correctAnswer: "c",
+        explanation: "La posición supina es cuando el paciente está acostado boca arriba. Es fundamental para la evaluación inicial y el traslado seguro, según la AAOS."
     },
     {
         question: "Al documentar una llamada, usted nota que el paciente está sufriendo. ¿Cuál es la palabra raíz para dolor?",
@@ -84,6 +85,7 @@ export const medicTermsQuestions: Question[] = [
             { letter: "d", text: "centesis" },
         ],
         correctAnswer: "a",
+        explanation: "'Alges' es la raíz que significa dolor, utilizada en términos como 'analgesia' o 'algesia'."
     },
     {
         question: "Usted observa que el paciente reporta debilidad. ¿Cuál es la palabra raíz para debilidad?",
@@ -94,16 +96,18 @@ export const medicTermsQuestions: Question[] = [
             { letter: "d", text: "centesis" },
         ],
         correctAnswer: "c",
+        explanation: "'Asten' es la raíz que significa debilidad, como en 'astenia', que se refiere a debilidad generalizada."
     },
     {
         question: "El paciente reporta debilidad en un lado. ¿Cuál es el término para 'en un lado'?",
         options: [
             { letter: "a", text: "bilateral" },
-            { letter: "b", text: "hemilateral" }, // El PDF usa "hemilateral" en la pregunta 4, aunque "unilateral" es más común en medicina. Mantengo el del PDF para coherencia con la fuente.
+            { letter: "b", text: "hemilateral" },
             { letter: "c", text: "lateral" },
             { letter: "d", text: "unilateral" },
         ],
-        correctAnswer: "b", // Basado en la pregunta 4 del PDF, aunque "unilateral" es la respuesta lógica si se busca el término general.
+        correctAnswer: "b",
+        explanation: "'Hemilateral' significa que afecta un solo lado del cuerpo. Es importante para describir síntomas neurológicos o musculares."
     },
     {
         question: "El paciente no parece tener alergias. ¿Cuál es el acrónimo para esto según el capítulo?",
@@ -113,7 +117,8 @@ export const medicTermsQuestions: Question[] = [
             { letter: "c", text: "NAC" },
             { letter: "d", text: "ANN" },
         ],
-        correctAnswer: "a", // "NA" es No Alergias según la imagen del PDF.
+        correctAnswer: "a",
+        explanation: "'NA' significa 'No Alergias', utilizado en la documentación para indicar que el paciente no reporta alergias conocidas."
     },
     {
         question: "El paciente ve doble. ¿Qué término médico significa visión doble?",
@@ -124,6 +129,7 @@ export const medicTermsQuestions: Question[] = [
             { letter: "d", text: "Diplopía" },
         ],
         correctAnswer: "d",
+        explanation: "'Diplopía' es el término médico para visión doble, síntoma relevante en alteraciones neurológicas o traumatismos."
     },
     {
         question: "El paciente tose sangre. ¿Cuál es el término médico para toser sangre?",
@@ -134,6 +140,7 @@ export const medicTermsQuestions: Question[] = [
             { letter: "d", text: "Hemoptisis" },
         ],
         correctAnswer: "d",
+        explanation: "'Hemoptisis' es el término para la expulsión de sangre al toser, importante en el diagnóstico de patologías respiratorias graves."
     },
     {
         question: "¿Qué término describe la acumulación de líquido en los tejidos?",
@@ -144,6 +151,7 @@ export const medicTermsQuestions: Question[] = [
             { letter: "d", text: "Cianosis" },
         ],
         correctAnswer: "a",
+        explanation: "'Edema' es la acumulación anormal de líquido en los tejidos, signo común en insuficiencia cardíaca, renal o lesiones."
     },
     {
         question: "¿Qué significa el término 'gastroenteritis'?",
@@ -154,6 +162,7 @@ export const medicTermsQuestions: Question[] = [
             { letter: "d", text: "Infección de la piel" },
         ],
         correctAnswer: "a",
+        explanation: "'Gastroenteritis' es la inflamación del estómago y los intestinos, generalmente causada por infecciones o intoxicaciones alimentarias."
     },
     {
         question: "¿Qué significa el término 'hepatomegalia'?",
@@ -164,6 +173,7 @@ export const medicTermsQuestions: Question[] = [
             { letter: "d", text: "Aumento de la presión arterial" },
         ],
         correctAnswer: "a",
+        explanation: "'Hepatomegalia' significa agrandamiento del hígado, hallazgo relevante en enfermedades hepáticas."
     },
     {
         question: "¿Qué término se refiere a la presión arterial elevada?",
@@ -174,6 +184,7 @@ export const medicTermsQuestions: Question[] = [
             { letter: "d", text: "Bradicardia" },
         ],
         correctAnswer: "c",
+        explanation: "'Hipertensión' es el término para presión arterial elevada, un factor de riesgo importante para enfermedades cardiovasculares."
     },
     {
         question: "¿Cuál es el término para el sangrado excesivo?",
@@ -184,6 +195,7 @@ export const medicTermsQuestions: Question[] = [
             { letter: "d", text: "Embolia" },
         ],
         correctAnswer: "b",
+        explanation: "'Hemorragia' es el sangrado excesivo, situación crítica que requiere intervención rápida en el entorno prehospitalario."
     },
     {
         question: "¿Qué significa el prefijo 'taqui-'?",
@@ -194,6 +206,7 @@ export const medicTermsQuestions: Question[] = [
             { letter: "d", text: "Pequeño" },
         ],
         correctAnswer: "b",
+        explanation: "El prefijo 'taqui-' significa rápido, como en 'taquicardia' (latido rápido del corazón)."
     },
     {
         question: "¿Qué significa el prefijo 'bradi-'?",
@@ -204,6 +217,7 @@ export const medicTermsQuestions: Question[] = [
             { letter: "d", text: "Poco" },
         ],
         correctAnswer: "a",
+        explanation: "El prefijo 'bradi-' significa lento, como en 'bradicardia' (latido lento del corazón)."
     },
     {
         question: "¿Qué término describe la inflamación de las articulaciones?",
@@ -214,6 +228,7 @@ export const medicTermsQuestions: Question[] = [
             { letter: "d", text: "Esclerosis" },
         ],
         correctAnswer: "b",
+        explanation: "'Artritis' es la inflamación de las articulaciones, frecuente en pacientes geriátricos y con enfermedades autoinmunes."
     },
     {
         question: "¿Qué significa el sufijo '-algia'?",
@@ -224,6 +239,7 @@ export const medicTermsQuestions: Question[] = [
             { letter: "d", text: "Debilidad" },
         ],
         correctAnswer: "b",
+        explanation: "El sufijo '-algia' significa dolor, como en 'mialgia' (dolor muscular)."
     },
     {
         question: "¿Qué término se refiere a la falta de oxígeno en los tejidos?",
@@ -233,7 +249,8 @@ export const medicTermsQuestions: Question[] = [
             { letter: "c", text: "Hipoxia" },
             { letter: "d", text: "Apnea" },
         ],
-        correctAnswer: "c", // Hipoxia es la falta parcial, anoxia es la ausencia total. Considerando el nivel paramédico, hipoxia es el término más comúnmente aplicable en este contexto.
+        correctAnswer: "c",
+        explanation: "'Hipoxia' es la disminución de oxígeno en los tejidos, condición crítica en emergencias respiratorias."
     },
     {
         question: "¿Cuál de los siguientes términos describe una estructura más cercana al tronco?",
@@ -244,6 +261,7 @@ export const medicTermsQuestions: Question[] = [
             { letter: "d", text: "Superficial" },
         ],
         correctAnswer: "c",
+        explanation: "'Proximal' indica que una estructura está más cerca del tronco o del punto de origen, útil para describir lesiones o localización anatómica."
     },
     {
         question: "¿Qué posición corporal se describe cuando el paciente se encuentra semisentado, con la parte superior del cuerpo elevada?",
@@ -254,6 +272,7 @@ export const medicTermsQuestions: Question[] = [
             { letter: "d", text: "Prona" },
         ],
         correctAnswer: "c",
+        explanation: "La posición Fowler es cuando el paciente está semisentado, recomendada para pacientes con dificultad respiratoria."
     },
     {
         question: "¿Cuál es el término para 'hacia el frente del cuerpo'?",
@@ -264,6 +283,7 @@ export const medicTermsQuestions: Question[] = [
             { letter: "d", text: "Caudal" },
         ],
         correctAnswer: "c",
+        explanation: "'Ventral' significa hacia el frente del cuerpo, opuesto a 'dorsal' que es hacia la espalda."
     },
     {
         question: "¿Qué abreviatura se utiliza comúnmente para 'sin antecedentes conocidos de alergias'?",
@@ -273,7 +293,8 @@ export const medicTermsQuestions: Question[] = [
             { letter: "c", text: "NOAL" },
             { letter: "d", text: "SNA" },
         ],
-        correctAnswer: "b", // NKA (No Known Allergies) es muy común, aunque el PDF menciona "NA". Agrego esta opción por su relevancia práctica. Si se debe mantener estrictamente lo del PDF, la anterior pregunta ya lo cubre. Si esta es una pregunta adicional, NKA es buena.
+        correctAnswer: "b",
+        explanation: "'NKA' significa 'No Known Allergies', abreviatura común en la documentación médica internacional."
     },
     {
         question: "¿Qué significa el sufijo '-ectomía'?",
@@ -284,6 +305,7 @@ export const medicTermsQuestions: Question[] = [
             { letter: "d", text: "Registro" },
         ],
         correctAnswer: "b",
+        explanation: "El sufijo '-ectomía' indica extirpación quirúrgica de un órgano o tejido, como en 'apendicectomía'."
     },
     {
         question: "¿Qué término describe una estructura que está más cerca de la superficie del cuerpo?",
@@ -294,6 +316,7 @@ export const medicTermsQuestions: Question[] = [
             { letter: "d", text: "Medial" },
         ],
         correctAnswer: "c",
+        explanation: "'Superficial' indica que una estructura está cerca de la superficie corporal, útil para describir heridas o lesiones."
     },
     {
         question: "¿Cuál es el término médico para la 'inflamación del hígado'?",
@@ -304,5 +327,6 @@ export const medicTermsQuestions: Question[] = [
             { letter: "d", text: "Colitis" },
         ],
         correctAnswer: "b",
+        explanation: "'Hepatitis' es la inflamación del hígado, condición que puede ser causada por infecciones, toxinas o enfermedades autoinmunes."
     },
 ];

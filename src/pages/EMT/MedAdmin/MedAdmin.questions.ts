@@ -41,6 +41,7 @@ export const medicationAdministrationQuestions: Question[] = [
             { letter: "d", text: "Subcutánea" },
         ],
         correctAnswer: "c",
+        explanation: "La vía sublingual permite una absorción rápida de medicamentos sin el uso de agujas, ya que los fármacos se absorben directamente a través de la mucosa oral hacia el torrente sanguíneo, evitando el metabolismo hepático inicial."
     },
     {
         question: "¿Qué información es crítica antes de administrar cualquier medicamento?",
@@ -51,6 +52,7 @@ export const medicationAdministrationQuestions: Question[] = [
             { letter: "d", text: "Color de la piel" },
         ],
         correctAnswer: "c",
+        explanation: "Conocer las alergias del paciente es fundamental antes de administrar cualquier medicamento para evitar reacciones adversas graves, como la anafilaxia."
     },
     {
         question: "¿Qué vía es usada para administrar epinefrina en anafilaxia fuera del hospital?",
@@ -61,6 +63,7 @@ export const medicationAdministrationQuestions: Question[] = [
             { letter: "d", text: "Oral" },
         ],
         correctAnswer: "b",
+        explanation: "La epinefrina se administra por vía intramuscular, generalmente en el muslo, porque esta vía permite una absorción rápida y es segura en el entorno prehospitalario."
     },
     {
         question: "¿Qué vía se emplea al administrar oxígeno suplementario?",
@@ -71,6 +74,7 @@ export const medicationAdministrationQuestions: Question[] = [
             { letter: "d", text: "Intramuscular" },
         ],
         correctAnswer: "c",
+        explanation: "El oxígeno suplementario se administra por vía inhalada, permitiendo que el gas llegue directamente a los pulmones para mejorar la oxigenación."
     },
     {
         question: "¿Qué se debe hacer inmediatamente después de administrar un medicamento?",
@@ -81,6 +85,7 @@ export const medicationAdministrationQuestions: Question[] = [
             { letter: "d", text: "Iniciar ventilación con bolsa-mascarilla" },
         ],
         correctAnswer: "b",
+        explanation: "Después de administrar un medicamento, es esencial registrar la acción y observar la respuesta del paciente para identificar efectos terapéuticos o adversos, según la AAOS."
     },
     {
         question: "¿Qué medicamento suele administrarse por vía oral para hipoglucemia?",
@@ -91,6 +96,7 @@ export const medicationAdministrationQuestions: Question[] = [
             { letter: "d", text: "Epinefrina" },
         ],
         correctAnswer: "b",
+        explanation: "La glucosa oral es el tratamiento de elección para pacientes conscientes con hipoglucemia, ya que eleva rápidamente los niveles de glucosa en sangre."
     },
     {
         question: "¿Qué medicamento administrado por vía inhalada puede salvar a un paciente hipoxémico?",
@@ -101,6 +107,7 @@ export const medicationAdministrationQuestions: Question[] = [
             { letter: "d", text: "Carbón activado" },
         ],
         correctAnswer: "c",
+        explanation: "El oxígeno administrado por vía inhalada es fundamental para tratar la hipoxemia, mejorando la oxigenación tisular de manera inmediata."
     },
     {
         question: "¿Qué paso es parte de los '5 correctos' en la administración de medicamentos?",
@@ -111,6 +118,7 @@ export const medicationAdministrationQuestions: Question[] = [
             { letter: "d", text: "Correcto lugar de traslado" },
         ],
         correctAnswer: "c",
+        explanation: "Uno de los '5 correctos' es asegurarse de que el medicamento se administre al paciente correcto, lo que previene errores y garantiza la seguridad del paciente, según la AAOS."
     },
     {
         question: "¿Qué vía requiere técnica estéril estricta para la administración de medicamentos?",
@@ -121,6 +129,7 @@ export const medicationAdministrationQuestions: Question[] = [
             { letter: "d", text: "Sublingual" },
         ],
         correctAnswer: "c",
+        explanation: "La vía intravenosa requiere una técnica estéril estricta para evitar infecciones, ya que el medicamento se administra directamente al torrente sanguíneo."
     },
     {
         question: "¿Qué vía permite una absorción gradual y sostenida del medicamento?",
@@ -131,6 +140,7 @@ export const medicationAdministrationQuestions: Question[] = [
             { letter: "d", text: "Intravenosa" },
         ],
         correctAnswer: "a",
+        explanation: "La vía intramuscular permite una absorción gradual y sostenida, ya que el medicamento se libera lentamente desde el músculo hacia la circulación."
     },
     {
         question: "¿Cuál es el sitio anatómico recomendado para la administración de epinefrina intramuscular?",
@@ -141,6 +151,7 @@ export const medicationAdministrationQuestions: Question[] = [
             { letter: "d", text: "Antebrazo" },
         ],
         correctAnswer: "b",
+        explanation: "El muslo lateral (cara anterolateral del muslo) es el sitio recomendado para la administración de epinefrina IM, ya que permite una absorción rápida y es seguro."
     },
     {
         question: "¿Qué paso debe realizarse antes de administrar cualquier medicamento?",
@@ -151,6 +162,7 @@ export const medicationAdministrationQuestions: Question[] = [
             { letter: "d", text: "Realizar RCP" },
         ],
         correctAnswer: "b",
+        explanation: "Siempre se deben revisar las alergias del paciente antes de administrar cualquier medicamento para evitar reacciones adversas graves."
     },
     {
         question: "¿Qué vía NO utiliza aguja para administrar medicamentos?",
@@ -161,6 +173,7 @@ export const medicationAdministrationQuestions: Question[] = [
             { letter: "d", text: "Subcutánea" },
         ],
         correctAnswer: "c",
+        explanation: "La vía sublingual no requiere el uso de agujas, ya que el medicamento se coloca debajo de la lengua para su absorción."
     },
     {
         question: "¿Qué efecto busca la administración sublingual?",
@@ -171,5 +184,6 @@ export const medicationAdministrationQuestions: Question[] = [
             { letter: "d", text: "Control de temperatura corporal" },
         ],
         correctAnswer: "b",
+        explanation: "La administración sublingual busca una absorción rápida del medicamento, ya que la mucosa oral permite el paso directo a la circulación sistémica."
     },
 ];
