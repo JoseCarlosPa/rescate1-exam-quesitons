@@ -33,157 +33,157 @@ export const faqData = [
 
 export const medicationAdministrationQuestions: Question[] = [
     {
-        question: "¿Qué vía de administración permite absorción más rápida sin necesidad de aguja?",
-        options: [
-            { letter: "a", text: "Oral" },
-            { letter: "b", text: "Intramuscular" },
-            { letter: "c", text: "Sublingual" },
-            { letter: "d", text: "Subcutánea" },
+        "question": "¿Qué vía de administración permite absorción más rápida sin necesidad de aguja?",
+        "options": [
+            { "letter": "a", "text": "Oral" },
+            { "letter": "b", "text": "Intramuscular" },
+            { "letter": "c", "text": "Sublingual" },
+            { "letter": "d", "text": "Subcutánea" }
         ],
-        correctAnswer: "c",
-        explanation: "La vía sublingual permite una absorción rápida de medicamentos sin el uso de agujas, ya que los fármacos se absorben directamente a través de la mucosa oral hacia el torrente sanguíneo, evitando el metabolismo hepático inicial."
+        "correctAnswer": "c",
+        "explanation": "La vía sublingual (debajo de la lengua) aprovecha la rica red de capilares de la zona para permitir que el medicamento se absorba directamente en el torrente sanguíneo. Esto evita el paso por el sistema digestivo y el hígado, logrando un efecto muy rápido sin necesidad de una inyección."
     },
     {
-        question: "¿Qué información es crítica antes de administrar cualquier medicamento?",
-        options: [
-            { letter: "a", text: "Presión arterial" },
-            { letter: "b", text: "Nivel de conciencia" },
-            { letter: "c", text: "Alergias del paciente" },
-            { letter: "d", text: "Color de la piel" },
+        "question": "¿Qué información es crítica antes de administrar cualquier medicamento?",
+        "options": [
+            { "letter": "a", "text": "Presión arterial" },
+            { "letter": "b", "text": "Nivel de conciencia" },
+            { "letter": "c", "text": "Alergias del paciente" },
+            { "letter": "d", "text": "Color de la piel" }
         ],
-        correctAnswer: "c",
-        explanation: "Conocer las alergias del paciente es fundamental antes de administrar cualquier medicamento para evitar reacciones adversas graves, como la anafilaxia."
+        "correctAnswer": "c",
+        "explanation": "La seguridad del paciente es la máxima prioridad. Antes de administrar cualquier fármaco, es absolutamente crucial confirmar que el paciente no tiene alergias conocidas al mismo, ya que una reacción alérgica puede ser grave y potencialmente mortal (anafilaxia)."
     },
     {
-        question: "¿Qué vía es usada para administrar epinefrina en anafilaxia fuera del hospital?",
-        options: [
-            { letter: "a", text: "Intravenosa" },
-            { letter: "b", text: "Intramuscular" },
-            { letter: "c", text: "Sublingual" },
-            { letter: "d", text: "Oral" },
+        "question": "¿Qué vía es usada para administrar epinefrina en anafilaxia fuera del hospital?",
+        "options": [
+            { "letter": "a", "text": "Intravenosa" },
+            { "letter": "b", "text": "Intramuscular" },
+            { "letter": "c", "text": "Sublingual" },
+            { "letter": "d", "text": "Oral" }
         ],
-        correctAnswer: "b",
-        explanation: "La epinefrina se administra por vía intramuscular, generalmente en el muslo, porque esta vía permite una absorción rápida y es segura en el entorno prehospitalario."
+        "correctAnswer": "b",
+        "explanation": "La vía intramuscular (IM) es la ruta estándar y recomendada para la administración de epinefrina en casos de anafilaxia, especialmente mediante autoinyectores. Ofrece una absorción rápida y confiable a través de los músculos grandes."
     },
     {
-        question: "¿Qué vía se emplea al administrar oxígeno suplementario?",
-        options: [
-            { letter: "a", text: "Oral" },
-            { letter: "b", text: "Sublingual" },
-            { letter: "c", text: "Inhalada" },
-            { letter: "d", text: "Intramuscular" },
+        "question": "¿Qué vía se emplea al administrar oxígeno suplementario?",
+        "options": [
+            { "letter": "a", "text": "Oral" },
+            { "letter": "b", "text": "Sublingual" },
+            { "letter": "c", "text": "Inhalada" },
+            { "letter": "d", "text": "Intramuscular" }
         ],
-        correctAnswer: "c",
-        explanation: "El oxígeno suplementario se administra por vía inhalada, permitiendo que el gas llegue directamente a los pulmones para mejorar la oxigenación."
+        "correctAnswer": "c",
+        "explanation": "El oxígeno es un gas que debe ser administrado por vía inhalada para que llegue a los pulmones, donde se produce el intercambio gaseoso y pasa al torrente sanguíneo. Se utiliza para tratar o prevenir la hipoxia."
     },
     {
-        question: "¿Qué se debe hacer inmediatamente después de administrar un medicamento?",
-        options: [
-            { letter: "a", text: "Abandonar la escena" },
-            { letter: "b", text: "Anotar administración y observar respuesta" },
-            { letter: "c", text: "Tomar presión arterial únicamente" },
-            { letter: "d", text: "Iniciar ventilación con bolsa-mascarilla" },
+        "question": "¿Qué se debe hacer inmediatamente después de administrar un medicamento?",
+        "options": [
+            { "letter": "a", "text": "Abandonar la escena" },
+            { "letter": "b", "text": "Anotar administración y observar respuesta" },
+            { "letter": "c", "text": "Tomar presión arterial únicamente" },
+            { "letter": "d", "text": "Iniciar ventilación con bolsa-mascarilla" }
         ],
-        correctAnswer: "b",
-        explanation: "Después de administrar un medicamento, es esencial registrar la acción y observar la respuesta del paciente para identificar efectos terapéuticos o adversos, según la AAOS."
+        "correctAnswer": "b",
+        "explanation": "Después de la administración, es fundamental documentar la dosis, la hora y la vía. Igualmente importante es reevaluar continuamente al paciente para observar los efectos terapéuticos deseados y vigilar la aparición de cualquier efecto secundario adverso."
     },
     {
-        question: "¿Qué medicamento suele administrarse por vía oral para hipoglucemia?",
-        options: [
-            { letter: "a", text: "Aspirina" },
-            { letter: "b", text: "Glucosa oral" },
-            { letter: "c", text: "Oxígeno" },
-            { letter: "d", text: "Epinefrina" },
+        "question": "¿Qué medicamento suele administrarse por vía oral para hipoglucemia?",
+        "options": [
+            { "letter": "a", "text": "Aspirina" },
+            { "letter": "b", "text": "Glucosa oral" },
+            { "letter": "c", "text": "Oxígeno" },
+            { "letter": "d", "text": "Epinefrina" }
         ],
-        correctAnswer: "b",
-        explanation: "La glucosa oral es el tratamiento de elección para pacientes conscientes con hipoglucemia, ya que eleva rápidamente los niveles de glucosa en sangre."
+        "correctAnswer": "b",
+        "explanation": "Para un paciente consciente con hipoglucemia (bajo nivel de azúcar en sangre), la glucosa oral (en forma de gel, tabletas o líquido) es el tratamiento de elección. Es un azúcar simple que se absorbe rápidamente para elevar la glucemia."
     },
     {
-        question: "¿Qué medicamento administrado por vía inhalada puede salvar a un paciente hipoxémico?",
-        options: [
-            { letter: "a", text: "Aspirina" },
-            { letter: "b", text: "Glucosa" },
-            { letter: "c", text: "Oxígeno" },
-            { letter: "d", text: "Carbón activado" },
+        "question": "¿Qué medicamento administrado por vía inhalada puede salvar a un paciente hipoxémico?",
+        "options": [
+            { "letter": "a", "text": "Aspirina" },
+            { "letter": "b", "text": "Glucosa" },
+            { "letter": "c", "text": "Oxígeno" },
+            { "letter": "d", "text": "Carbón activado" }
         ],
-        correctAnswer: "c",
-        explanation: "El oxígeno administrado por vía inhalada es fundamental para tratar la hipoxemia, mejorando la oxigenación tisular de manera inmediata."
+        "correctAnswer": "c",
+        "explanation": "Un paciente hipoxémico sufre de bajos niveles de oxígeno en la sangre. El tratamiento directo y que salva la vida es la administración de oxígeno suplementario por vía inhalada para aumentar la concentración de oxígeno en los pulmones y, por ende, en la sangre."
     },
     {
-        question: "¿Qué paso es parte de los '5 correctos' en la administración de medicamentos?",
-        options: [
-            { letter: "a", text: "Correcto proveedor médico" },
-            { letter: "b", text: "Correcto diagnóstico" },
-            { letter: "c", text: "Paciente correcto" },
-            { letter: "d", text: "Correcto lugar de traslado" },
+        "question": "¿Qué paso es parte de los '5 correctos' en la administración de medicamentos?",
+        "options": [
+            { "letter": "a", "text": "Correcto proveedor médico" },
+            { "letter": "b", "text": "Correcto diagnóstico" },
+            { "letter": "c", "text": "Paciente correcto" },
+            { "letter": "d", "text": "Correcto lugar de traslado" }
         ],
-        correctAnswer: "c",
-        explanation: "Uno de los '5 correctos' es asegurarse de que el medicamento se administre al paciente correcto, lo que previene errores y garantiza la seguridad del paciente, según la AAOS."
+        "correctAnswer": "c",
+        "explanation": "Los '5 correctos' (o más, según la guía) son una regla de seguridad fundamental. Incluyen: Paciente correcto, Medicamento correcto, Dosis correcta, Vía correcta y Hora correcta. Asegurarse de que se está tratando al paciente correcto es el primer paso."
     },
     {
-        question: "¿Qué vía requiere técnica estéril estricta para la administración de medicamentos?",
-        options: [
-            { letter: "a", text: "Oral" },
-            { letter: "b", text: "Subcutánea" },
-            { letter: "c", text: "Intravenosa" },
-            { letter: "d", text: "Sublingual" },
+        "question": "¿Qué vía requiere técnica estéril estricta para la administración de medicamentos?",
+        "options": [
+            { "letter": "a", "text": "Oral" },
+            { "letter": "b", "text": "Subcutánea" },
+            { "letter": "c", "text": "Intravenosa" },
+            { "letter": "d", "text": "Sublingual" }
         ],
-        correctAnswer: "c",
-        explanation: "La vía intravenosa requiere una técnica estéril estricta para evitar infecciones, ya que el medicamento se administra directamente al torrente sanguíneo."
+        "correctAnswer": "c",
+        "explanation": "La vía intravenosa (IV) introduce el medicamento directamente en el torrente sanguíneo, saltándose las barreras protectoras de la piel y las mucosas. Por ello, requiere una técnica aséptica estricta para prevenir infecciones graves en el torrente sanguíneo (sepsis)."
     },
     {
-        question: "¿Qué vía permite una absorción gradual y sostenida del medicamento?",
-        options: [
-            { letter: "a", text: "Intramuscular" },
-            { letter: "b", text: "Sublingual" },
-            { letter: "c", text: "Inhalada" },
-            { letter: "d", text: "Intravenosa" },
+        "question": "¿Qué vía permite una absorción gradual y sostenida del medicamento?",
+        "options": [
+            { "letter": "a", "text": "Intramuscular" },
+            { "letter": "b", "text": "Sublingual" },
+            { "letter": "c", "text": "Inhalada" },
+            { "letter": "d", "text": "Intravenosa" }
         ],
-        correctAnswer: "a",
-        explanation: "La vía intramuscular permite una absorción gradual y sostenida, ya que el medicamento se libera lentamente desde el músculo hacia la circulación."
+        "correctAnswer": "a",
+        "explanation": "La absorción desde el tejido muscular (vía IM) es más lenta que la intravenosa o sublingual, pero más rápida que la oral. La rica vascularización del músculo permite que el medicamento se libere de forma gradual y sostenida en la circulación."
     },
     {
-        question: "¿Cuál es el sitio anatómico recomendado para la administración de epinefrina intramuscular?",
-        options: [
-            { letter: "a", text: "Brazo" },
-            { letter: "b", text: "Muslo lateral" },
-            { letter: "c", text: "Glúteo" },
-            { letter: "d", text: "Antebrazo" },
+        "question": "¿Cuál es el sitio anatómico recomendado para la administración de epinefrina intramuscular?",
+        "options": [
+            { "letter": "a", "text": "Brazo" },
+            { "letter": "b", "text": "Muslo lateral" },
+            { "letter": "c", "text": "Glúteo" },
+            { "letter": "d", "text": "Antebrazo" }
         ],
-        correctAnswer: "b",
-        explanation: "El muslo lateral (cara anterolateral del muslo) es el sitio recomendado para la administración de epinefrina IM, ya que permite una absorción rápida y es seguro."
+        "correctAnswer": "b",
+        "explanation": "El músculo vasto lateral, en la cara externa del muslo, es el sitio preferido para la administración de epinefrina con autoinyector. Es un músculo grande, con buena irrigación sanguínea y de fácil acceso, lo que asegura una absorción rápida y efectiva."
     },
     {
-        question: "¿Qué paso debe realizarse antes de administrar cualquier medicamento?",
-        options: [
-            { letter: "a", text: "Tomar presión arterial" },
-            { letter: "b", text: "Revisar alergias" },
-            { letter: "c", text: "Medir glucosa" },
-            { letter: "d", text: "Realizar RCP" },
+        "question": "¿Qué paso debe realizarse antes de administrar cualquier medicamento?",
+        "options": [
+            { "letter": "a", "text": "Tomar presión arterial" },
+            { "letter": "b", "text": "Revisar alergias" },
+            { "letter": "c", "text": "Medir glucosa" },
+            { "letter": "d", "text": "Realizar RCP" }
         ],
-        correctAnswer: "b",
-        explanation: "Siempre se deben revisar las alergias del paciente antes de administrar cualquier medicamento para evitar reacciones adversas graves."
+        "correctAnswer": "b",
+        "explanation": "Repitiendo un punto crucial de seguridad: antes de administrar cualquier fármaco, es imperativo preguntar y confirmar si el paciente tiene alguna alergia conocida para prevenir una reacción adversa grave. '¿Es usted alérgico a algún medicamento?' es una pregunta obligatoria."
     },
     {
-        question: "¿Qué vía NO utiliza aguja para administrar medicamentos?",
-        options: [
-            { letter: "a", text: "Intramuscular" },
-            { letter: "b", text: "Intravenosa" },
-            { letter: "c", text: "Sublingual" },
-            { letter: "d", text: "Subcutánea" },
+        "question": "¿Qué vía NO utiliza aguja para administrar medicamentos?",
+        "options": [
+            { "letter": "a", "text": "Intramuscular" },
+            { "letter": "b", "text": "Intravenosa" },
+            { "letter": "c", "text": "Sublingual" },
+            { "letter": "d", "text": "Subcutánea" }
         ],
-        correctAnswer: "c",
-        explanation: "La vía sublingual no requiere el uso de agujas, ya que el medicamento se coloca debajo de la lengua para su absorción."
+        "correctAnswer": "c",
+        "explanation": "Las vías intramuscular, intravenosa y subcutánea son todas vías parenterales, lo que significa que requieren una inyección (aguja). La vía sublingual, al igual que la oral o la inhalada, es una vía no parenteral que no necesita aguja."
     },
     {
-        question: "¿Qué efecto busca la administración sublingual?",
-        options: [
-            { letter: "a", text: "Liberación prolongada" },
-            { letter: "b", text: "Absorción rápida" },
-            { letter: "c", text: "Protección contra infecciones" },
-            { letter: "d", text: "Control de temperatura corporal" },
+        "question": "¿Qué efecto busca la administración sublingual?",
+        "options": [
+            { "letter": "a", "text": "Liberación prolongada" },
+            { "letter": "b", "text": "Absorción rápida" },
+            { "letter": "c", "text": "Protección contra infecciones" },
+            { "letter": "d", "text": "Control de temperatura corporal" }
         ],
-        correctAnswer: "b",
-        explanation: "La administración sublingual busca una absorción rápida del medicamento, ya que la mucosa oral permite el paso directo a la circulación sistémica."
-    },
-];
+        "correctAnswer": "b",
+        "explanation": "La principal ventaja y el motivo para elegir la vía sublingual es la rapidez de su efecto. Al evitar el sistema digestivo, el medicamento llega rápidamente a la circulación sistémica, siendo ideal para emergencias como un dolor torácico de origen cardíaco (nitroglicerina)."
+    }
+]
