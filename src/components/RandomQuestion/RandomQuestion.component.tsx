@@ -89,6 +89,12 @@ export default function RandomQuestion({ onClose }: { onClose?: () => void }) {
             )}
             
             {/* Botones de acción */}
+            {feedback && (
+                <div className="flex flex-col gap-2">
+                    <p className="font-bold">Explicación:  </p>
+                    <p className="italic text-blue-400" >{question.explanation}</p>
+                </div>
+            )}
             <div className="flex justify-between mt-6">
                 <button
                     onClick={handleGrade}
