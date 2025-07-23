@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { FaTimes, FaCalculator, FaHeartbeat, FaWeight, FaBrain } from 'react-icons/fa';
-import { MdBloodtype } from 'react-icons/md';
+import { FaTimes, FaCalculator, FaHeartbeat, FaWeight, FaBrain, FaBaby, FaLungs, FaChild } from 'react-icons/fa';
+import { MdBloodtype, MdLocalHospital } from 'react-icons/md';
 
 interface ToolsModalProps {
     onClose: () => void;
@@ -13,7 +13,23 @@ type Tool =
   | 'map-calculator'
   | 'glasgow-scale'
   | 'cincinnati-scale'
-  | 'parkland-rule';
+  | 'parkland-rule'
+  | 'apgar-score'
+  | 'rts-score'
+  | 'oxygen-calculator'
+  | 'broselow-tape';
+
+// Definir tipos para medications y equipment
+interface BroslowMedications {
+  epinefrina: string;
+  atropina: string;
+  amiodarona: string;
+}
+interface BroslowEquipment {
+  tuboET: string;
+  aspiracion: string;
+  iv: string;
+}
 
 const ToolsModal: React.FC<ToolsModalProps> = ({ onClose }) => {
     const [selectedTool, setSelectedTool] = useState<Tool | null>(null);
@@ -75,6 +91,44 @@ const ToolsModal: React.FC<ToolsModalProps> = ({ onClose }) => {
       tbsa: '',
       result: null as number | null,
       instructions: '',
+    });
+
+    // Puntaje APGAR
+    const [apgarScore, setApgarScore] = useState({
+        appearance: '',
+        pulse: '',
+        grimace: '',
+        activity: '',
+        respiration: '',
+        result: null as number | null,
+        interpretation: ''
+    });
+
+    // Revised Trauma Score (RTS)
+    const [rtsScore, setRtsScore] = useState({
+        glasgow: '',
+        systolicBP: '',
+        respiratoryRate: '',
+        result: null as number | null,
+        interpretation: '',
+        survivalProbability: ''
+    });
+
+    // Calculadora de Oxigenoterapia
+    const [oxygenCalc, setOxygenCalc] = useState({
+        device: '',
+        flowRate: '',
+        fio2: null as number | null,
+        instructions: ''
+    });
+
+    // Cinta de Broselow
+    const [broslowCalc, setBroslowCalc] = useState({
+        length: '',
+        weight: null as number | null,
+        color: '',
+        medications: {} as Partial<BroslowMedications>,
+        equipment: {} as Partial<BroslowEquipment>
     });
 
     const calculateShockIndex = () => {
@@ -205,6 +259,253 @@ const ToolsModal: React.FC<ToolsModalProps> = ({ onClose }) => {
       }
     };
 
+    const calculateApgar = () => {
+        const appearance = parseFloat(apgarScore.appearance);
+        const pulse = parseFloat(apgarScore.pulse);
+        const grimace = parseFloat(apgarScore.grimace);
+        const activity = parseFloat(apgarScore.activity);
+        const respiration = parseFloat(apgarScore.respiration);
+
+        if (!isNaN(appearance) && !isNaN(pulse) && !isNaN(grimace) && !isNaN(activity) && !isNaN(respiration)) {
+            const total = appearance + pulse + grimace + activity + respiration;
+            let interpretation = '';
+
+            if (total >= 7) {
+                interpretation = 'Normal - El bebé está en buenas condiciones';
+            } else if (total >= 4) {
+                interpretation = 'Moderadamente deprimido - Requiere estimulación y oxígeno';
+            } else {
+                interpretation = 'Severamente deprimido - Requiere reanimación inmediata';
+            }
+
+            setApgarScore({
+                ...apgarScore,
+                result: total,
+                interpretation
+            });
+        }
+    };
+
+    const calculateRTS = () => {
+        const glasgow = parseFloat(rtsScore.glasgow);
+        const sbp = parseFloat(rtsScore.systolicBP);
+        const rr = parseFloat(rtsScore.respiratoryRate);
+
+        if (!isNaN(glasgow) && !isNaN(sbp) && !isNaN(rr)) {
+            // Codificación para RTS
+            let glasgowCode = 0;
+            let sbpCode = 0;
+            let rrCode = 0;
+
+            // Glasgow
+            if (glasgow >= 13) glasgowCode = 4;
+            else if (glasgow >= 9) glasgowCode = 3;
+            else if (glasgow >= 6) glasgowCode = 2;
+            else if (glasgow >= 4) glasgowCode = 1;
+            else glasgowCode = 0;
+
+            // Presión sistólica
+            if (sbp >= 90) sbpCode = 4;
+            else if (sbp >= 76) sbpCode = 3;
+            else if (sbp >= 50) sbpCode = 2;
+            else if (sbp >= 1) sbpCode = 1;
+            else sbpCode = 0;
+
+            // Frecuencia respiratoria
+            if (rr >= 10 && rr <= 29) rrCode = 4;
+            else if (rr >= 6 && rr <= 9) rrCode = 3;
+            else if (rr >= 1 && rr <= 5) rrCode = 2;
+            else if (rr >= 30) rrCode = 2;
+            else rrCode = 0;
+
+            const rts = (0.9368 * glasgowCode) + (0.7326 * sbpCode) + (0.2908 * rrCode);
+            const survival = Math.exp(0.9934 + (0.9364 * rts)) / (1 + Math.exp(0.9934 + (0.9364 * rts))) * 100;
+
+            let interpretation = '';
+            if (rts >= 7) interpretation = 'Buen pronóstico';
+            else if (rts >= 4) interpretation = 'Pronóstico moderado';
+            else interpretation = 'Pronóstico grave';
+
+            setRtsScore({
+                ...rtsScore,
+                result: parseFloat(rts.toFixed(2)),
+                interpretation,
+                survivalProbability: `${survival.toFixed(1)}%`
+            });
+        }
+    };
+
+    const calculateOxygen = () => {
+        const device = oxygenCalc.device;
+        const flow = parseFloat(oxygenCalc.flowRate);
+        let fio2 = 21; // Aire ambiente
+        let instructions = '';
+
+        if (device && flow) {
+            switch (device) {
+                case 'cannula':
+                    if (flow >= 1 && flow <= 6) {
+                        fio2 = 21 + (4 * flow);
+                        instructions = `Cánula nasal a ${flow}L/min. FiO2 aproximada: ${fio2}%. Máximo 6L/min para evitar sequedad nasal.`;
+                    }
+                    break;
+                case 'simple-mask':
+                    if (flow >= 5 && flow <= 10) {
+                        fio2 = 40 + (5 * (flow - 5));
+                        instructions = `Mascarilla simple a ${flow}L/min. FiO2 aproximada: ${fio2}%. Flujo mínimo 5L/min para evitar reinspiración de CO2.`;
+                    }
+                    break;
+                case 'reservoir-mask':
+                    if (flow >= 10 && flow <= 15) {
+                        fio2 = 80 + (5 * (flow - 10));
+                        if (fio2 > 95) fio2 = 95;
+                        instructions = `Mascarilla con reservorio a ${flow}L/min. FiO2 aproximada: ${fio2}%. Mantener bolsa inflada.`;
+                    }
+                    break;
+                case 'venturi':
+                    // Venturi ofrece concentraciones específicas
+                    if (flow === 24) fio2 = 24;
+                    else if (flow === 28) fio2 = 28;
+                    else if (flow === 35) fio2 = 35;
+                    else if (flow === 40) fio2 = 40;
+                    else if (flow === 50) fio2 = 50;
+                    instructions = `Mascarilla Venturi al ${fio2}%. Concentración precisa y constante.`;
+                    break;
+            }
+
+            setOxygenCalc({
+                ...oxygenCalc,
+                fio2,
+                instructions
+            });
+        }
+    };
+
+    const calculateBroselow = () => {
+        const length = parseFloat(broslowCalc.length);
+        if (length) {
+            let weight = 0;
+            let color = '';
+            let medications = {};
+            let equipment = {};
+
+            // Estimación de peso basada en longitud
+            if (length >= 46 && length < 53) {
+                weight = 3;
+                color = 'Gris';
+                medications = {
+                    epinefrina: '0.03 mg',
+                    atropina: '0.06 mg',
+                    amiodarona: '15 mg'
+                };
+                equipment = {
+                    tuboET: '3.0-3.5',
+                    aspiracion: '6-8 Fr',
+                    iv: '22-24 G'
+                };
+            } else if (length >= 53 && length < 61) {
+                weight = 5;
+                color = 'Rosa';
+                medications = {
+                    epinefrina: '0.05 mg',
+                    atropina: '0.1 mg',
+                    amiodarona: '25 mg'
+                };
+                equipment = {
+                    tuboET: '3.5-4.0',
+                    aspiracion: '8 Fr',
+                    iv: '22 G'
+                };
+            } else if (length >= 61 && length < 69) {
+                weight = 7;
+                color = 'Rojo';
+                medications = {
+                    epinefrina: '0.07 mg',
+                    atropina: '0.14 mg',
+                    amiodarona: '35 mg'
+                };
+                equipment = {
+                    tuboET: '4.0-4.5',
+                    aspiracion: '8-10 Fr',
+                    iv: '20-22 G'
+                };
+            } else if (length >= 69 && length < 79) {
+                weight = 10;
+                color = 'Morado';
+                medications = {
+                    epinefrina: '0.1 mg',
+                    atropina: '0.2 mg',
+                    amiodarona: '50 mg'
+                };
+                equipment = {
+                    tuboET: '4.5-5.0',
+                    aspiracion: '10 Fr',
+                    iv: '20 G'
+                };
+            } else if (length >= 79 && length < 89) {
+                weight = 14;
+                color = 'Amarillo';
+                medications = {
+                    epinefrina: '0.14 mg',
+                    atropina: '0.28 mg',
+                    amiodarona: '70 mg'
+                };
+                equipment = {
+                    tuboET: '5.0-5.5',
+                    aspiracion: '10-12 Fr',
+                    iv: '18-20 G'
+                };
+            } else if (length >= 89 && length < 102) {
+                weight = 18;
+                color = 'Blanco';
+                medications = {
+                    epinefrina: '0.18 mg',
+                    atropina: '0.36 mg',
+                    amiodarona: '90 mg'
+                };
+                equipment = {
+                    tuboET: '5.5-6.0',
+                    aspiracion: '12 Fr',
+                    iv: '18 G'
+                };
+            } else if (length >= 102 && length < 115) {
+                weight = 23;
+                color = 'Azul';
+                medications = {
+                    epinefrina: '0.23 mg',
+                    atropina: '0.46 mg',
+                    amiodarona: '115 mg'
+                };
+                equipment = {
+                    tuboET: '6.0-6.5',
+                    aspiracion: '12-14 Fr',
+                    iv: '16-18 G'
+                };
+            } else if (length >= 115) {
+                weight = 30;
+                color = 'Verde';
+                medications = {
+                    epinefrina: '0.3 mg',
+                    atropina: '0.5 mg',
+                    amiodarona: '150 mg'
+                };
+                equipment = {
+                    tuboET: '6.5-7.0',
+                    aspiracion: '14 Fr',
+                    iv: '14-16 G'
+                };
+            }
+
+            setBroslowCalc({
+                ...broslowCalc,
+                weight,
+                color,
+                medications,
+                equipment
+            });
+        }
+    };
+
     const tools = [
         {
             id: 'shock-index' as Tool,
@@ -247,6 +548,30 @@ const ToolsModal: React.FC<ToolsModalProps> = ({ onClose }) => {
             name: 'Regla de Parkland',
             icon: <FaCalculator className="w-6 h-6" />,
             description: 'Cálculo de líquidos en quemaduras',
+        },
+        {
+            id: 'apgar-score' as Tool,
+            name: 'Puntaje APGAR',
+            icon: <FaBaby className="w-6 h-6" />,
+            description: 'Evaluación neonatal al nacimiento',
+        },
+        {
+            id: 'rts-score' as Tool,
+            name: 'Trauma Score Revisado',
+            icon: <MdLocalHospital className="w-6 h-6" />,
+            description: 'Predictor de supervivencia en trauma',
+        },
+        {
+            id: 'oxygen-calculator' as Tool,
+            name: 'Calculadora de Oxígeno',
+            icon: <FaLungs className="w-6 h-6" />,
+            description: 'FiO2 según dispositivo y flujo',
+        },
+        {
+            id: 'broselow-tape' as Tool,
+            name: 'Cinta de Broselow',
+            icon: <FaChild className="w-6 h-6" />,
+            description: 'Dosis pediátricas por longitud',
         },
     ];
 
@@ -838,6 +1163,374 @@ const ToolsModal: React.FC<ToolsModalProps> = ({ onClose }) => {
                       </div>
                     )}
                   </div>
+                );
+
+            case 'apgar-score':
+                return (
+                    <div className="space-y-4">
+                        <h3 className="text-xl font-bold text-orange-600">Puntaje APGAR</h3>
+                        <p className="text-sm text-gray-600">
+                            Evaluación del recién nacido al minuto 1 y 5 después del nacimiento.
+                        </p>
+
+                        <div className="space-y-4">
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                    Apariencia (Color de piel) (0-2)
+                                </label>
+                                <select
+                                    value={apgarScore.appearance}
+                                    onChange={(e) => setApgarScore({...apgarScore, appearance: e.target.value})}
+                                    className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 outline-none"
+                                >
+                                    <option value="">Seleccionar</option>
+                                    <option value="2">2 - Rosado en todo el cuerpo</option>
+                                    <option value="1">1 - Cuerpo rosado, extremidades azules</option>
+                                    <option value="0">0 - Azul o pálido en todo el cuerpo</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                    Pulso (Frecuencia cardíaca) (0-2)
+                                </label>
+                                <select
+                                    value={apgarScore.pulse}
+                                    onChange={(e) => setApgarScore({...apgarScore, pulse: e.target.value})}
+                                    className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 outline-none"
+                                >
+                                    <option value="">Seleccionar</option>
+                                    <option value="2">2 - Mayor a 100 lpm</option>
+                                    <option value="1">1 - Menor a 100 lpm</option>
+                                    <option value="0">0 - Ausente</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                    Gesticulación (Irritabilidad refleja) (0-2)
+                                </label>
+                                <select
+                                    value={apgarScore.grimace}
+                                    onChange={(e) => setApgarScore({...apgarScore, grimace: e.target.value})}
+                                    className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 outline-none"
+                                >
+                                    <option value="">Seleccionar</option>
+                                    <option value="2">2 - Llora vigorosamente, tose o estornuda</option>
+                                    <option value="1">1 - Mueca facial, movimiento leve</option>
+                                    <option value="0">0 - Sin respuesta</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                    Actividad (Tono muscular) (0-2)
+                                </label>
+                                <select
+                                    value={apgarScore.activity}
+                                    onChange={(e) => setApgarScore({...apgarScore, activity: e.target.value})}
+                                    className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 outline-none"
+                                >
+                                    <option value="">Seleccionar</option>
+                                    <option value="2">2 - Movimientos activos</option>
+                                    <option value="1">1 - Cierta flexión de extremidades</option>
+                                    <option value="0">0 - Flácido</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                    Respiración (Esfuerzo respiratorio) (0-2)
+                                </label>
+                                <select
+                                    value={apgarScore.respiration}
+                                    onChange={(e) => setApgarScore({...apgarScore, respiration: e.target.value})}
+                                    className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 outline-none"
+                                >
+                                    <option value="">Seleccionar</option>
+                                    <option value="2">2 - Respiración regular, llanto fuerte</option>
+                                    <option value="1">1 - Respiración lenta o irregular</option>
+                                    <option value="0">0 - Ausente</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button
+                            onClick={calculateApgar}
+                            className="w-full bg-orange-500 text-white py-2 px-4 rounded-lg hover:bg-orange-600 transition-colors"
+                        >
+                            Calcular APGAR
+                        </button>
+
+                        {apgarScore.result !== null && (
+                            <div className="bg-orange-50 p-4 rounded-lg border border-orange-200">
+                                <p className="text-lg font-bold text-orange-800">
+                                    Puntaje APGAR: {apgarScore.result}/10
+                                </p>
+                                <p className="text-sm text-orange-700 mt-1">
+                                    {apgarScore.interpretation}
+                                </p>
+
+                                {apgarScore.result >= 7 && (
+                                    <div className="mt-3 p-3 bg-green-100 border border-green-300 rounded-lg">
+                                        <p className="text-green-800 font-bold text-sm">✅ NORMAL</p>
+                                        <p className="text-green-700 text-xs mt-1">
+                                            El bebé está en buenas condiciones. Continuar cuidados rutinarios.
+                                        </p>
+                                    </div>
+                                )}
+
+                                {apgarScore.result >= 4 && apgarScore.result < 7 && (
+                                    <div className="mt-3 p-3 bg-yellow-100 border border-yellow-300 rounded-lg">
+                                        <p className="text-yellow-800 font-bold text-sm">⚠️ DEPRESIÓN MODERADA</p>
+                                        <div className="text-yellow-700 text-xs mt-1 space-y-1">
+                                            <p><strong>Acciones inmediatas:</strong></p>
+                                            <p>• Estimulación táctil suave</p>
+                                            <p>• Oxígeno suplementario</p>
+                                            <p>• Aspiración de secreciones si es necesario</p>
+                                            <p>• Re-evaluar en 1 minuto</p>
+                                        </div>
+                                    </div>
+                                )}
+
+                                {apgarScore.result < 4 && (
+                                    <div className="mt-3 p-3 bg-red-100 border border-red-300 rounded-lg">
+                                        <p className="text-red-800 font-bold text-sm">🚨 DEPRESIÓN SEVERA</p>
+                                        <div className="text-red-700 text-xs mt-1 space-y-1">
+                                            <p><strong>REANIMACIÓN INMEDIATA:</strong></p>
+                                            <p>• Aspirar vía aérea</p>
+                                            <p>• Ventilación con presión positiva</p>
+                                            <p>• Compresiones torácicas si FC menor 60</p>
+                                            <p>• Considerar intubación</p>
+                                            <p>• Activar equipo de reanimación neonatal</p>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                        )}
+                    </div>
+                );
+
+            case 'rts-score':
+                return (
+                    <div className="space-y-4">
+                        <h3 className="text-xl font-bold text-orange-600">Revised Trauma Score (RTS)</h3>
+                        <p className="text-sm text-gray-600">
+                            Predictor de supervivencia en pacientes traumatizados.
+                        </p>
+
+                        <div className="grid grid-cols-3 gap-4">
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                    Escala de Glasgow
+                                </label>
+                                <input
+                                    type="number"
+                                    min="3"
+                                    max="15"
+                                    value={rtsScore.glasgow}
+                                    onChange={(e) => setRtsScore({...rtsScore, glasgow: e.target.value})}
+                                    className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 outline-none"
+                                    placeholder="15"
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                    PAS (mmHg)
+                                </label>
+                                <input
+                                    type="number"
+                                    value={rtsScore.systolicBP}
+                                    onChange={(e) => setRtsScore({...rtsScore, systolicBP: e.target.value})}
+                                    className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 outline-none"
+                                    placeholder="120"
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                    FR (rpm)
+                                </label>
+                                <input
+                                    type="number"
+                                    value={rtsScore.respiratoryRate}
+                                    onChange={(e) => setRtsScore({...rtsScore, respiratoryRate: e.target.value})}
+                                    className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 outline-none"
+                                    placeholder="16"
+                                />
+                            </div>
+                        </div>
+
+                        <button
+                            onClick={calculateRTS}
+                            className="w-full bg-orange-500 text-white py-2 px-4 rounded-lg hover:bg-orange-600 transition-colors"
+                        >
+                            Calcular RTS
+                        </button>
+
+                        {rtsScore.result !== null && (
+                            <div className="bg-orange-50 p-4 rounded-lg border border-orange-200">
+                                <p className="text-lg font-bold text-orange-800">
+                                    RTS: {rtsScore.result}
+                                </p>
+                                <p className="text-sm text-orange-700 mt-1">
+                                    <strong>Pronóstico:</strong> {rtsScore.interpretation}
+                                </p>
+                                <p className="text-sm text-orange-700">
+                                    <strong>Probabilidad de supervivencia:</strong> {rtsScore.survivalProbability}
+                                </p>
+                            </div>
+                        )}
+                    </div>
+                );
+
+            case 'oxygen-calculator':
+                return (
+                    <div className="space-y-4">
+                        <h3 className="text-xl font-bold text-orange-600">Calculadora de Oxigenoterapia</h3>
+                        <p className="text-sm text-gray-600">
+                            Estima la FiO2 según el dispositivo y flujo de oxígeno.
+                        </p>
+
+                        <div className="grid grid-cols-2 gap-4">
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                    Dispositivo
+                                </label>
+                                <select
+                                    value={oxygenCalc.device}
+                                    onChange={(e) => setOxygenCalc({...oxygenCalc, device: e.target.value})}
+                                    className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 outline-none"
+                                >
+                                    <option value="">Seleccionar</option>
+                                    <option value="cannula">Cánula nasal</option>
+                                    <option value="simple-mask">Mascarilla simple</option>
+                                    <option value="reservoir-mask">Mascarilla con reservorio</option>
+                                    <option value="venturi">Mascarilla Venturi</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                    Flujo (L/min) o FiO2 (%)
+                                </label>
+                                <input
+                                    type="number"
+                                    value={oxygenCalc.flowRate}
+                                    onChange={(e) => setOxygenCalc({...oxygenCalc, flowRate: e.target.value})}
+                                    className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 outline-none"
+                                    placeholder="4"
+                                />
+                            </div>
+                        </div>
+
+                        <button
+                            onClick={calculateOxygen}
+                            className="w-full bg-orange-500 text-white py-2 px-4 rounded-lg hover:bg-orange-600 transition-colors"
+                        >
+                            Calcular FiO2
+                        </button>
+
+                        {oxygenCalc.fio2 !== null && (
+                            <div className="bg-orange-50 p-4 rounded-lg border border-orange-200">
+                                <p className="text-lg font-bold text-orange-800">
+                                    FiO2 estimada: {oxygenCalc.fio2}%
+                                </p>
+                                <p className="text-sm text-orange-700 mt-1">
+                                    {oxygenCalc.instructions}
+                                </p>
+                            </div>
+                        )}
+
+                        <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                            <h4 className="font-semibold text-gray-700 mb-2">Guía de Referencia:</h4>
+                            <div className="text-xs space-y-1">
+                                <p><strong>Cánula nasal:</strong> 1-6 L/min = 25-45% FiO2</p>
+                                <p><strong>Mascarilla simple:</strong> 5-10 L/min = 40-65% FiO2</p>
+                                <p><strong>Mascarilla con reservorio:</strong> 10-15 L/min = 80-95% FiO2</p>
+                                <p><strong>Mascarilla Venturi:</strong> 24%, 28%, 35%, 40%, 50% FiO2</p>
+                            </div>
+                        </div>
+                    </div>
+                );
+
+            case 'broselow-tape':
+                return (
+                    <div className="space-y-4">
+                        <h3 className="text-xl font-bold text-orange-600">Cinta de Broselow</h3>
+                        <p className="text-sm text-gray-600">
+                            Estimación de peso y dosis pediátricas basada en la longitud del niño.
+                        </p>
+
+                        <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-1">
+                                Longitud del niño (cm)
+                            </label>
+                            <input
+                                type="number"
+                                value={broslowCalc.length}
+                                onChange={(e) => setBroslowCalc({...broslowCalc, length: e.target.value})}
+                                className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 outline-none"
+                                placeholder="75"
+                            />
+                        </div>
+
+                        <button
+                            onClick={calculateBroselow}
+                            className="w-full bg-orange-500 text-white py-2 px-4 rounded-lg hover:bg-orange-600 transition-colors"
+                        >
+                            Calcular Parámetros
+                        </button>
+
+                        {broslowCalc.weight !== null && (
+                            <div className="space-y-4">
+                                <div className="bg-orange-50 p-4 rounded-lg border border-orange-200">
+                                    <p className="text-lg font-bold text-orange-800">
+                                        Peso estimado: {broslowCalc.weight} kg
+                                    </p>
+                                    <p className="text-sm text-orange-700">
+                                        Zona de color: <span className="font-bold">{broslowCalc.color}</span>
+                                    </p>
+                                </div>
+
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                                        <h4 className="font-bold text-blue-800 mb-2">Medicamentos de Emergencia</h4>
+                                        <div className="text-sm text-blue-700 space-y-1">
+                                            {Object.entries(broslowCalc.medications).map(([med, dose]) => (
+                                                <p key={med}>
+                                                    <strong>{med.charAt(0).toUpperCase() + med.slice(1)}:</strong> {String(dose)}
+                                                </p>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    <div className="bg-green-50 p-4 rounded-lg border border-green-200">
+                                        <h4 className="font-bold text-green-800 mb-2">Equipamiento</h4>
+                                        <div className="text-sm text-green-700 space-y-1">
+                                            {Object.entries(broslowCalc.equipment).map(([equip, size]) => (
+                                                <p key={equip}>
+                                                    <strong>{equip === 'tuboET' ? 'Tubo ET' : equip === 'aspiracion' ? 'Sonda aspiración' : 'Catéter IV'}:</strong> {String(size)}
+                                                </p>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+
+                        <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                            <h4 className="font-semibold text-yellow-800 mb-2">Códigos de Color Broselow:</h4>
+                            <div className="grid grid-cols-2 gap-2 text-xs">
+                                <div><strong>Gris:</strong> 46-53 cm (3 kg)</div>
+                                <div><strong>Rosa:</strong> 53-61 cm (5 kg)</div>
+                                <div><strong>Rojo:</strong> 61-69 cm (7 kg)</div>
+                                <div><strong>Morado:</strong> 69-79 cm (10 kg)</div>
+                                <div><strong>Amarillo:</strong> 79-89 cm (14 kg)</div>
+                                <div><strong>Blanco:</strong> 89-102 cm (18 kg)</div>
+                                <div><strong>Azul:</strong> 102-115 cm (23 kg)</div>
+                                <div><strong>Verde:</strong> mayor 115 cm (30 kg)</div>
+                            </div>
+                        </div>
+                    </div>
                 );
 
             default:
