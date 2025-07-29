@@ -1553,7 +1553,7 @@ const ToolsModal: React.FC<ToolsModalProps> = ({ onClose }) => {
 
                 <div className="flex md:flex-row flex-col h-[calc(90vh-80px)]">
                     {/* Lista de herramientas */}
-                    <div className="w-full md:w-1/3 bg-gray-50 border-r border-gray-200 overflow-y-auto">
+                    <div className="w-full md:w-1/3 bg-gray-50 border-r border-gray-200 overflow-y-auto max-h-52 md:max-h-full">
                         <div className="p-4">
                             <h3 className="font-semibold text-gray-700 mb-3">Selecciona una herramienta:</h3>
                             <div className="space-y-2">
