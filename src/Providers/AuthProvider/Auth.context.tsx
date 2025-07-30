@@ -1,6 +1,6 @@
 import { createContext, useContext } from "react";
 import { User } from "firebase/auth";
-import { tUser } from "../UserProvider/User.types";
+import {tUser} from "./Auth.types.ts";
 
 export interface AuthContextType {
   user: tUser | null;

@@ -12,9 +12,9 @@ import {
 import { doc, setDoc, getDoc, updateDoc } from 'firebase/firestore';
 import { auth, db } from '../../firebase/firebaseConfig';
 import { AuthContext, AuthContextType } from './Auth.context';
-import { tUser } from '../UserProvider/User.types';
 import { toast } from 'sonner';
 import { examsInitialvalues } from '../../pages/Auth/Login/Login.constants';
+import {tUser} from "./Auth.types.ts";
 
 interface AuthProviderProps {
   children: ReactNode;
@@ -40,7 +40,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
               email: firebaseUser.email,
               name: userData.name || firebaseUser.displayName,
               photoURL: userData.photoURL || firebaseUser.photoURL,
-              role: userData.role || 'Alumno'
+              role: userData.role || 'Alumno',
+              createdAt:new Date(),
             });
           } else {
             // Si no existe el documento, crear uno básico
@@ -61,7 +62,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
               email: firebaseUser.email,
               name: firebaseUser.displayName,
               photoURL: firebaseUser.photoURL,
-              role: 'Alumno'
+              role: 'Alumno',
+              createdAt:new Date(),
             });
           }
         } catch (error) {
@@ -71,7 +73,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
             email: firebaseUser.email,
             name: firebaseUser.displayName,
             photoURL: firebaseUser.photoURL,
-            role: 'Alumno'
+            role: 'Alumno',
+            createdAt:new Date(),
           });
         }
       } else {
