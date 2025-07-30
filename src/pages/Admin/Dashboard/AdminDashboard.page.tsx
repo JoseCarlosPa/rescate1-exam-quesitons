@@ -1,10 +1,8 @@
 import { useState, useEffect, useCallback } from 'react';
-import { useUserContext } from '../../../Providers/UserProvider/User.context';
 import { useNavigate } from 'react-router';
 import { AllRoutes } from '../../../components/Router/Router.constants';
 import { collection, getDocs, doc, updateDoc, deleteDoc, query, orderBy } from 'firebase/firestore';
 import { db } from '../../../firebase/firebaseConfig';
-import { NavLink } from 'react-router';
 import {
   FaUsers,
   FaComments,
@@ -15,11 +13,11 @@ import {
   FaEye,
   FaChartBar,
   FaBook,
-  FaShieldAlt
 } from 'react-icons/fa';
 import { ImSpinner2 } from 'react-icons/im';
 import { toast } from 'sonner';
 import { Timestamp } from 'firebase/firestore';
+import {useAuth} from "../../../Providers/AuthProvider";
 
 interface ExamData {
   completed: boolean;
@@ -81,7 +79,7 @@ const initialLessons: LessonConfig[] = [
 ];
 
 export default function AdminDashboard() {
-  const { user } = useUserContext();
+  const { user } = useAuth();
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState<ActiveTab>('overview');
   const [loading, setLoading] = useState(true);
@@ -150,7 +148,7 @@ export default function AdminDashboard() {
     }
 
     // Verificar si el usuario es administrador
-    if (user.role !== 'Admin' && user.role !== 'Administrador') {
+    if (user.role !== "Admin") {
       toast.error('No tienes permisos para acceder al panel administrativo');
       navigate(AllRoutes.STUDENT_DASHBOARD);
       return;
@@ -206,31 +204,6 @@ export default function AdminDashboard() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Header */}
-      <header className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            <div className="flex items-center space-x-4">
-              <NavLink to={AllRoutes.MAIN} className="text-orange-500 font-bold text-xl">
-                Rescate 1 Admin
-              </NavLink>
-              <FaShieldAlt className="text-orange-500" />
-            </div>
-            <div className="flex items-center space-x-4">
-              <span className="text-gray-700 font-medium">
-                {user?.name || user?.email}
-              </span>
-              <NavLink
-                to={AllRoutes.MAIN}
-                className="text-gray-500 hover:text-orange-500 transition-colors"
-              >
-                Salir del Admin
-              </NavLink>
-            </div>
-          </div>
-        </div>
-      </header>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Navigation Tabs */}
         <div className="border-b border-gray-200 mb-8">

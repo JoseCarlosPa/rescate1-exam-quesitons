@@ -3,7 +3,6 @@ import {NavLink} from "react-router";
 import logo from "./assets/logo.png";
 import {AllRoutes} from "./components/Router/Router.constants.ts";
 import {lections, tLection} from "./App.constants.tsx";
-import {useUserContext} from "./Providers/UserProvider/User.context.tsx";
 import {useEffect, useState} from "react";
 import useApp from "./App.hook.ts";
 import {MdOutlineGrade} from "react-icons/md";
@@ -16,6 +15,7 @@ import {TbListLetters} from "react-icons/tb";
 import {GoBook, GoWorkflow} from "react-icons/go";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { useSEO } from "./hooks/useSEO.hook.ts";
+import {useAuth} from "./Providers/AuthProvider";
 
 function App() {
     // SEO para página principal
@@ -26,7 +26,7 @@ function App() {
         type: 'website'
     });
 
-    const {user} = useUserContext()
+    const {user} = useAuth()
     const [leactionWithGrades, setLeactionWithGrades] = useState<tLection[]>([])
     const [showRandomQuestion, setShowRandomQuestion] = useState<boolean>(false)
     const [showToolsModal, setShowToolsModal] = useState<boolean>(false)

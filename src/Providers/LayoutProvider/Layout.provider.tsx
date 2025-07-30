@@ -96,6 +96,17 @@ export default function LayoutProvider(props: tProvidersProps) {
                                             <FaCog className="w-4 h-4" />
                                             <span>Configuración</span>
                                         </NavLink>
+                                        {user?.role === 'Admin' &&
+                                            <NavLink
+                                                to={AllRoutes.ADMIN_DASHBOARD}
+                                                className="flex items-center space-x-2 px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors"
+                                                onClick={() => setShowUserMenu(false)}
+                                            >
+                                                <FaCog className="w-4 h-4" />
+                                                <span>Admin</span>
+                                            </NavLink>
+                                        }
+
                                         <hr className="my-1" />
                                         <button
                                             onClick={handleLogout}
