@@ -52,6 +52,12 @@ export enum AllRoutes {
     STUDY_CASES = "/study-cases",
     ALOGIRTHMS = "/algorithms-protocols",
     LOGIN= "/login",
+    REGISTER= "/register",
+    STUDENT_DASHBOARD= "/student",
+    STUDENT_PROFILE= "/student-profile",
+    STUDENT_GRADES= "/student-grades",
+    STUDENT_FORUM= "/student-forum",
+    ADMIN_DASHBOARD= "/admin-dashboard",
     DISCLAMER= "/disclaimer",
     PRIVACYANDTERMS = "/privacy-and-terms",
 }

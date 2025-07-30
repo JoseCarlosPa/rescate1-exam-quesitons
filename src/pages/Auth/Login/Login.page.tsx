@@ -25,6 +25,8 @@ export default function Login() {
 
     const {handleFirebaseError} = useLogin()
 
+    console.log('Login page rendered');
+
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged((user) => {
             if (user) {
@@ -35,7 +37,7 @@ export default function Login() {
                     photoURL: null,
                     role: null
                 })
-                navigate(AllRoutes.MAIN)
+                navigate(AllRoutes.STUDENT_DASHBOARD)
             }
         })
 
@@ -54,7 +56,7 @@ export default function Login() {
                 photoURL: null,
                 role: null
             })
-            navigate(AllRoutes.MAIN)
+            navigate(AllRoutes.STUDENT_DASHBOARD)
 
         }).catch((error) => {
             handleFirebaseError(error)
@@ -88,7 +90,7 @@ export default function Login() {
                 role: null
             })
 
-            navigate(AllRoutes.MAIN)
+            navigate(AllRoutes.STUDENT_DASHBOARD)
 
 
         }).catch(error => {
@@ -152,6 +154,13 @@ export default function Login() {
                                     {authing ? <ImSpinner2
                                         className="animate-spin w-6 h-6 text-orange-700 "/> : 'Iniciar sesion'}
                                 </button>
+
+                                <div className="text-center">
+                                    <span className="text-gray-600">¿No tienes cuenta? </span>
+                                    <NavLink to={AllRoutes.REGISTER} className="text-orange-500 hover:text-orange-600 font-medium">
+                                        Regístrate
+                                    </NavLink>
+                                </div>
                             </form>
                         </div>
                     </div>

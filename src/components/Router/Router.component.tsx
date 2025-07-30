@@ -40,8 +40,12 @@ import {megaQuestions} from "../../pages/EMT/Mega/Mega.questions.ts";
 import Mega from "../../pages/EMT/Mega/Mega.page.tsx";
 import {AllRoutes} from "./Router.constants.ts";
 import Login from "../../pages/Auth/Login/Login.page.tsx";
-import {visionMedicGeneralQuestions} from "../../pages/EMT/MedicVision/MedicVision.questions.ts";
-import MedicVision from "../../pages/EMT/MedicVision/MedicVision.page.tsx";
+import Register from "../../pages/Auth/Register/Register.page.tsx";
+import StudentDashboard from "../../pages/Student/Dashboard/StudentDashboard.page.tsx";
+import StudentProfile from "../../pages/Student/Profile/StudentProfile.page.tsx";
+import StudentGrades from "../../pages/Student/Grades/StudentGrades.page.tsx";
+import StudentForum from "../../pages/Student/Forum/StudentForum.page.tsx";
+import AdminDashboard from "../../pages/Admin/Dashboard/AdminDashboard.page.tsx";
 import {
     respiratoryEmergenciesExam,
 } from "../../pages/EMT/AirwayEmergency/AirwayEmergency.questions.ts";
@@ -101,12 +105,25 @@ import IncidentManage from "../../pages/EMT/IncidentManage/IncidentManage.page.t
 import {incidentManageQuestions} from "../../pages/EMT/IncidentManage/IncidentManage.questions.ts";
 import TerroristManage from "../../pages/EMT/TerroristManage/TerroristManage.page.tsx";
 import {terroristManageQuestions} from "../../pages/EMT/TerroristManage/TerroristManage.questions.ts";
+import MedicVision from "../../pages/EMT/MedicVision/MedicVision.page.tsx";
+import {visionMedicGeneralQuestions} from "../../pages/EMT/MedicVision/MedicVision.questions.ts";
 export default function Router(){
     return(
         <Suspense fallback={<div>Loading...</div>}>
             <Routes>
 
                 <Route path={AllRoutes.LOGIN} element={<Login/>}/>
+                <Route path={AllRoutes.REGISTER} element={<Register/>}/>
+
+                {/* Student Dashboard Routes */}
+                <Route path={AllRoutes.STUDENT_DASHBOARD} element={<StudentDashboard/>}/>
+                <Route path={AllRoutes.STUDENT_PROFILE} element={<StudentProfile/>}/>
+                <Route path={AllRoutes.STUDENT_GRADES} element={<StudentGrades/>}/>
+                <Route path={AllRoutes.STUDENT_FORUM} element={<StudentForum/>}/>
+
+                {/* Admin Dashboard Routes */}
+                <Route path={AllRoutes.ADMIN_DASHBOARD} element={<AdminDashboard/>}/>
+
                 <Route path="/" element={<Main/>}/>
 
                 <Route path={AllRoutes.EMT} element={<App/>}/>
