@@ -8,6 +8,7 @@ import {useState} from "react";
 import {MdOutlineFireTruck, MdQuiz} from "react-icons/md";
 import {BsBookHalf} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function IncidentManage(){
     const [activeTab, setActiveTab] = useState<'overview' | 'structure' | 'operations' | 'practice'>('overview');
@@ -674,6 +675,13 @@ export default function IncidentManage(){
                             ))}
                         </div>
                     </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="incident-manage" 
+                            titulo="Foro de Discusión - Incident Manage"
+                        />
+
+                        
 
                     {/* Referencias y Recursos */}
                     <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">

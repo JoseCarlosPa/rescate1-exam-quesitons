@@ -13,6 +13,7 @@ import {FaExclamationTriangle, FaHeartbeat, FaLungsVirus, FaFirstAid} from "reac
 import {FiAlertTriangle, FiEye, FiActivity} from "react-icons/fi";
 import {RiStethoscopeLine} from "react-icons/ri";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function ToraxInjuries(){
     const [activeTab, setActiveTab] = useState<'overview' | 'anatomy' | 'treatment' | 'practice'>('overview');
@@ -964,6 +965,13 @@ export default function ToraxInjuries(){
                                 ))}
                             </div>
                         </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="torax-injuries" 
+                            titulo="Foro de Discusión - Torax Injuries"
+                        />
+
+                        
 
                         {/* Referencias y Recursos */}
                         <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">

@@ -9,6 +9,7 @@ import {MdQuiz} from "react-icons/md";
 import {BsBookHalf} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
 import {FaTruckMedical} from "react-icons/fa6";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function TransportOperations(){
     const [activeTab, setActiveTab] = useState<'overview' | 'equipment' | 'procedures' | 'practice'>('overview');
@@ -635,6 +636,13 @@ export default function TransportOperations(){
                             ))}
                         </div>
                     </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="transport-operations" 
+                            titulo="Foro de Discusión - Transport Operations"
+                        />
+
+                        
 
                     {/* Referencias y Recursos */}
                     <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">

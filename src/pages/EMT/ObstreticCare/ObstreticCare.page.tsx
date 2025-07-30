@@ -12,6 +12,7 @@ import {FaExclamationTriangle, FaFirstAid, FaHeartbeat, FaLungsVirus} from "reac
 import {FiAlertTriangle, FiEye, FiCheckCircle, FiX, FiHeart, FiActivity} from "react-icons/fi";
 import {HiOutlineClipboardList, HiOutlineClipboardCheck} from "react-icons/hi";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function ObstreticCare(){
     const [activeTab, setActiveTab] = useState<'overview' | 'anatomy' | 'treatment' | 'practice'>('overview');
@@ -1387,6 +1388,13 @@ export default function ObstreticCare(){
                             ))}
                         </div>
                     </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="obstretic-care" 
+                            titulo="Foro de Discusión - Obstretic Care"
+                        />
+
+                        
 
                     {/* Referencias y Recursos */}
                     <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">

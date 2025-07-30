@@ -12,6 +12,7 @@ import { FaPersonCane, FaBrain, FaThermometer } from "react-icons/fa6";
 import { FaExclamationTriangle, FaHeartbeat } from "react-icons/fa";
 import { FiAlertTriangle, FiActivity } from "react-icons/fi";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function GeriatricEmergencies(){
     const [activeTab, setActiveTab] = useState<'fundamentals' | 'assessment' | 'conditions' | 'management' | 'cases'>('fundamentals');
@@ -1334,6 +1335,13 @@ export default function GeriatricEmergencies(){
                             ))}
                         </div>
                     </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="geriatric-emergencies" 
+                            titulo="Foro de Discusión - Geriatric Emergencies"
+                        />
+
+                        
 
                     {/* Referencias y Recursos */}
                     <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">

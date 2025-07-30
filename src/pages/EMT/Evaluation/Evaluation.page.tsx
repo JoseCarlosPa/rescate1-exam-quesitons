@@ -11,6 +11,7 @@ import {PiChalkboardTeacher} from "react-icons/pi";
 import {FaUserMd, FaHeartbeat, FaEye, FaStethoscope} from "react-icons/fa";
 import {useState} from "react";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function Evaluation() {
     const [activeTab, setActiveTab] = useState<'overview' | 'scene' | 'primary' | 'secondary' | 'tools' | 'practice'>('overview');
@@ -1327,6 +1328,13 @@ export default function Evaluation() {
                                 ))}
                             </div>
                         </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="evaluation" 
+                            titulo="Foro de Discusión - Evaluation"
+                        />
+
+                        
 
                         {/* Referencias y Recursos */}
                         <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">

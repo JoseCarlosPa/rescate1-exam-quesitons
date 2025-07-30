@@ -9,6 +9,7 @@ import {MdQuiz} from "react-icons/md";
 import {PiChalkboardTeacher} from "react-icons/pi";
 import {FaPills} from "react-icons/fa";
 import {useState} from "react";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function MedAdmin(){
     const [activeTab, setActiveTab] = useState<'overview' | 'routes' | 'rights' | 'practice'>('overview');
@@ -320,6 +321,13 @@ export default function MedAdmin(){
                             ))}
                         </div>
                     </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="med-admin" 
+                            titulo="Foro de Discusión - Med Admin"
+                        />
+
+                        
 
                     {/* Referencias y Recursos */}
                     <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">

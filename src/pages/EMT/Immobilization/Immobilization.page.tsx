@@ -12,6 +12,7 @@ import {PiChalkboardTeacher} from "react-icons/pi";
 import {FaBone, FaExclamationTriangle, FaFirstAid, FaHandsHelping} from "react-icons/fa";
 import {FiAlertTriangle, FiUser, FiEye} from "react-icons/fi";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function Immobilization() {
     const [activeTab, setActiveTab] = useState<'overview' | 'materials' | 'techniques' | 'practice'>('overview');
@@ -1105,6 +1106,13 @@ export default function Immobilization() {
                             ))}
                         </div>
                     </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="immobilization" 
+                            titulo="Foro de Discusión - Immobilization"
+                        />
+
+                        
 
                     {/* Referencias y Recursos */}
                     <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">

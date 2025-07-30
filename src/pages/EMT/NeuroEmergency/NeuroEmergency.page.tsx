@@ -14,6 +14,7 @@ import Overview from "./components/Overview.component.tsx";
 import Anatomy from "./components/Anatomy.component.tsx";
 import Assessment from "./components/Assessment.component.tsx";
 import Practice from "./components/Practice.component.tsx";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function NeuroEmergency() {
     const [activeTab, setActiveTab] = useState<'overview' | 'anatomy' | 'assessment' | 'practice'>('overview');
@@ -158,6 +159,13 @@ export default function NeuroEmergency() {
                             ))}
                         </div>
                     </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="neuro-emergency" 
+                            titulo="Foro de Discusión - Neuro Emergency"
+                        />
+
+                        
 
                     {/* Referencias y Recursos */}
                     <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">

@@ -14,6 +14,7 @@ import {HiDocumentText, HiSpeakerphone} from "react-icons/hi";
 import {RiFileList3Line, RiUserVoiceLine} from "react-icons/ri";
 import {AiOutlineAudit, AiOutlineWarning} from "react-icons/ai";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function Communications() {
     const [activeTab, setActiveTab] = useState<'overview' | 'radio' | 'doc' | 'practice'>('overview');
@@ -695,6 +696,13 @@ export default function Communications() {
                                 ))}
                             </div>
                         </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="communications" 
+                            titulo="Foro de Discusión - Communications"
+                        />
+
+                        
 
                         {/* Referencias y Recursos */}
                         <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">

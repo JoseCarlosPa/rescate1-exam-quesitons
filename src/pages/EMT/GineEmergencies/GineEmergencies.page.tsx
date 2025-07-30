@@ -15,6 +15,7 @@ import {RiAlarmWarningLine, RiFlashlightLine} from "react-icons/ri";
 import {TbMoodSad, TbNurse, TbStethoscope} from "react-icons/tb";
 import {HiOutlineClipboardList} from "react-icons/hi";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function GineEmergencies(){
     const [activeTab, setActiveTab] = useState<'overview' | 'anatomy' | 'treatment' | 'practice'>('overview');
@@ -1521,6 +1522,13 @@ export default function GineEmergencies(){
                             ))}
                         </div>
                     </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="gine-emergencies" 
+                            titulo="Foro de Discusión - Gine Emergencies"
+                        />
+
+                        
 
                     {/* Referencias y Recursos */}
                     <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">

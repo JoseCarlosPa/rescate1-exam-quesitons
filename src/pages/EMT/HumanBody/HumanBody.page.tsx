@@ -14,6 +14,7 @@ import {GiKidneys, GiStomach, GiLiver} from "react-icons/gi";
 import {MdBloodtype, MdThermostat} from "react-icons/md";
 import {BiBody} from "react-icons/bi";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function HumanBody() {
     const [activeTab, setActiveTab] = useState<'overview' | 'systems' | 'anatomy' | 'practice'>('overview');
@@ -763,6 +764,13 @@ export default function HumanBody() {
                                 ))}
                             </div>
                         </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="human-body" 
+                            titulo="Foro de Discusión - Human Body"
+                        />
+
+                        
 
                         {/* Referencias y Recursos */}
                         <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">

@@ -12,6 +12,7 @@ import {FaFireAlt, FaExclamationTriangle, FaThermometerHalf, FaSnowflake, FaWate
 import {FiAlertTriangle, FiUser, FiEye} from "react-icons/fi";
 import {GiPoisonBottle, GiHeatHaze, GiIceCube, GiSpiderWeb} from "react-icons/gi";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function AmbientalEmergencies() {
     const [activeTab, setActiveTab] = useState<'overview' | 'types' | 'management' | 'prevention'>('overview');
@@ -983,6 +984,13 @@ export default function AmbientalEmergencies() {
                             </Disclosure>
                         ))}
                     </div>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="ambiental-emergencies" 
+                            titulo="Foro de Discusión - Ambiental Emergencies"
+                        />
+
+                        
 
                     {/* Referencias y Recursos */}
                     <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">

@@ -13,6 +13,7 @@ import {FiAlertTriangle, FiUser, FiEye, FiHeart, FiShield} from "react-icons/fi"
 import {HiOutlineEmojiSad, HiOutlineEmojiHappy} from "react-icons/hi";
 import {RiMentalHealthLine} from "react-icons/ri";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function PsiquiatricEmergencies(){
     const [activeTab, setActiveTab] = useState<'overview' | 'evaluation' | 'treatment' | 'scenarios'>('overview');
@@ -1386,6 +1387,13 @@ export default function PsiquiatricEmergencies(){
                             ))}
                         </div>
                     </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="psiquiatric-emergencies" 
+                            titulo="Foro de Discusión - Psiquiatric Emergencies"
+                        />
+
+                        
 
                     {/* Referencias y Recursos */}
                     <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">

@@ -14,6 +14,7 @@ import Overview from "./components/Overview.component.tsx";
 import Anatomy from "./components/Anatomy.component.tsx";
 import Techniques from "./components/Techniques.component.tsx";
 import Practice from "./components/Practice.component.tsx";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function AirwayManage() {
     const [activeTab, setActiveTab] = useState<'overview' | 'anatomy' | 'techniques' | 'practice'>('overview');
@@ -163,6 +164,13 @@ export default function AirwayManage() {
                                 ))}
                             </div>
                         </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="airway-manage" 
+                            titulo="Foro de Discusión - Airway Manage"
+                        />
+
+                        
                         {/* Referencias y Recursos */}
                         <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">
                             <h2 className="text-2xl font-bold mb-4">Referencias y recursos adicionales</h2>

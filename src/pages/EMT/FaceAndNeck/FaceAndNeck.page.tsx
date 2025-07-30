@@ -11,6 +11,7 @@ import {PiChalkboardTeacher} from "react-icons/pi";
 import {FaExclamationTriangle, FaFirstAid, FaHeadSideVirus} from "react-icons/fa";
 import {FiAlertTriangle, FiUser, FiEye} from "react-icons/fi";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function FaceAndNeck(){
     const [activeTab, setActiveTab] = useState<'overview' | 'anatomy' | 'treatment' | 'practice'>('overview');
@@ -1156,6 +1157,13 @@ export default function FaceAndNeck(){
                             ))}
                         </div>
                     </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="face-and-neck" 
+                            titulo="Foro de Discusión - Face And Neck"
+                        />
+
+                        
 
                     {/* Referencias y Recursos */}
                     <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">

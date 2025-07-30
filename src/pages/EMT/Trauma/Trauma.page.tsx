@@ -12,6 +12,7 @@ import {PiChalkboardTeacher} from "react-icons/pi";
 import {FiAlertTriangle, FiUser, FiEye, FiActivity} from "react-icons/fi";
 import {GiMedicalDrip, GiStethoscope, GiBodyHeight} from "react-icons/gi";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function Trauma() {
     const [activeTab, setActiveTab] = useState<'overview' | 'mechanism' | 'assessment' | 'management' | 'practice'>('overview');
@@ -1373,6 +1374,13 @@ export default function Trauma() {
                                 ))}
                             </div>
                         </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="trauma" 
+                            titulo="Foro de Discusión - Trauma"
+                        />
+
+                        
 
                         {/* Referencias y Recursos */}
                         <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">

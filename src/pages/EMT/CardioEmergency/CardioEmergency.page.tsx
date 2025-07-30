@@ -16,6 +16,7 @@ import Pathophysiology from "./components/Pathophysiology.component.tsx";
 import Treatment from "./components/Treatment.component.tsx";
 import Practice from "./components/Practice.component.tsx";
 import Diseases from "./components/Diseases.component.tsx";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function CardioEmergency() {
     const [activeTab, setActiveTab] = useState<'overview' | 'anatomy' | 'treatment' | 'practice' | 'diseases' | 'pathophysiology'>('overview');
@@ -179,6 +180,13 @@ export default function CardioEmergency() {
                             ))}
                         </div>
                     </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="cardio-emergency" 
+                            titulo="Foro de Discusión - Cardio Emergency"
+                        />
+
+                        
 
                     {/* Referencias y Recursos */}
                     <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">

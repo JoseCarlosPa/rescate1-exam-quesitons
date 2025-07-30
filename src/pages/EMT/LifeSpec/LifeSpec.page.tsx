@@ -11,6 +11,7 @@ import {BsBookHalf, BsPersonCheck} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
 import {FiUsers, FiActivity} from "react-icons/fi";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function LifeSpec() {
     const [activeTab, setActiveTab] = useState<'overview' | 'vitals' | 'prehospital' | 'practice'>('overview');
@@ -858,6 +859,13 @@ export default function LifeSpec() {
                                 ))}
                             </div>
                         </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="life-spec" 
+                            titulo="Foro de Discusión - Life Spec"
+                        />
+
+                        
 
                         {/* Referencias y Recursos */}
                         <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">

@@ -14,6 +14,7 @@ import Overview from "./components/Overview.component.tsx";
 import Anatomy from "./components/Anatomy.component.tsx";
 import Treatment from "./components/Treatment.component.tsx";
 import Practice from "./components/Practice.component.tsx";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function AirwayEmergency() {
     const [activeTab, setActiveTab] = useState<'overview' | 'anatomy' | 'treatment' | 'practice'>('overview');
@@ -172,6 +173,12 @@ export default function AirwayEmergency() {
                             </div>
                         </section>
 
+                        {/* Foro de Discusión */}
+                        <ForumSection
+                            pagina="airway-emergency"
+                            titulo="Foro de Discusión - Emergencias Respiratorias"
+                        />
+
                         {/* Referencias y Recursos */}
                         <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">
                             <h2 className="text-2xl font-bold mb-4">Referencias y recursos adicionales</h2>
@@ -223,4 +230,3 @@ export default function AirwayEmergency() {
         </SEOWrapper>
     );
 }
-

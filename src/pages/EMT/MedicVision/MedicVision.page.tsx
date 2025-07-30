@@ -12,6 +12,7 @@ import {PiChalkboardTeacher, PiStethoscope} from "react-icons/pi";
 import {FaUserMd, FaExclamationTriangle, FaFirstAid, FaThermometerHalf} from "react-icons/fa";
 import {FiAlertTriangle, FiUser, FiEye, FiActivity} from "react-icons/fi";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function MedicVision(){
     const [activeTab, setActiveTab] = useState<'overview' | 'approach' | 'practice'>('overview');
@@ -759,6 +760,13 @@ export default function MedicVision(){
                             ))}
                         </div>
                     </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="medic-vision" 
+                            titulo="Foro de Discusión - Medic Vision"
+                        />
+
+                        
 
                     {/* Referencias y Recursos */}
                     <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">

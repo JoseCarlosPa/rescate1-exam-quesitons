@@ -9,6 +9,7 @@ import {MdQuiz} from "react-icons/md";
 import {BsBookHalf} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
 import {TbDisabled} from "react-icons/tb";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function SpecialNeedsPacient(){
     const [activeTab, setActiveTab] = useState<'overview' | 'conditions' | 'considerations' | 'practice'>('overview');
@@ -609,6 +610,13 @@ export default function SpecialNeedsPacient(){
                             ))}
                         </div>
                     </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="special-needs-pacient" 
+                            titulo="Foro de Discusión - Special Needs Pacient"
+                        />
+
+                        
 
                     {/* Referencias y Recursos */}
                     <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">

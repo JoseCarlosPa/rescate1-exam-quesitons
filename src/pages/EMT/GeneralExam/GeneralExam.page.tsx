@@ -7,6 +7,7 @@ import {IoReturnDownBack} from "react-icons/io5";
 import {lections} from "../../../App.constants.tsx";
 import {FaClock, FaPrint, FaPlus, FaMinus} from "react-icons/fa";
 import {getQuestionsFromSelectedTopics} from "../allQuestionts.ts";
+import { ForumSection } from "../../../components/ForumSection";
 import "./GeneralExam.css";
 
 export default function GeneralExam() {
@@ -474,6 +475,16 @@ export default function GeneralExam() {
                             ))}
                         </div>
                     </div>
+                </div>
+            )}
+
+            {/* Foro de Discusión */}
+            {!showTopicSelection && (
+                <div className="w-full max-w-4xl mt-8">
+                    <ForumSection
+                        pagina="general-exam"
+                        titulo="Foro de Discusión - Examen Personalizado"
+                    />
                 </div>
             )}
         </div>

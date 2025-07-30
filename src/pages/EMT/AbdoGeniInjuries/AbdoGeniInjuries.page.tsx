@@ -14,6 +14,7 @@ import Overview from "./components/Overview.component.tsx";
 import Anatomy from "./components/Anatomy.component.tsx";
 import Treatment from "./components/Treatment.comonent.tsx";
 import Practice from "./components/Practice.component.tsx";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function AbdoGeniInjuries() {
     const [activeTab, setActiveTab] = useState<'overview' | 'anatomy' | 'treatment' | 'practice'>('overview');
@@ -159,6 +160,13 @@ export default function AbdoGeniInjuries() {
                                 ))}
                             </div>
                         </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="abdo-geni-injuries" 
+                            titulo="Foro de Discusión - Abdo Geni Injuries"
+                        />
+
+                        
 
                         {/* Referencias y Recursos */}
                         <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">

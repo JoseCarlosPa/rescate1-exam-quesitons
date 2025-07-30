@@ -13,6 +13,7 @@ import {FiEye} from "react-icons/fi";
 import {GiPoisonBottle, GiDeathNote, GiMedicines} from "react-icons/gi";
 import {RiVirusLine} from "react-icons/ri";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function Toxicology(){
     const [activeTab, setActiveTab] = useState<'overview' | 'classification' | 'management' | 'antidotes'>('overview');
@@ -912,6 +913,13 @@ export default function Toxicology(){
                             ))}
                         </div>
                     </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="toxicology" 
+                            titulo="Foro de Discusión - Toxicology"
+                        />
+
+                        
 
                     {/* Referencias y Recursos */}
                     <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">

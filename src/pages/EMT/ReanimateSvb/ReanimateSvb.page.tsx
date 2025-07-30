@@ -11,6 +11,7 @@ import {BsBookHalf, BsLightbulb, BsShield, BsStopwatch} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
 import {FiActivity, FiClock} from "react-icons/fi";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function ReanimateSvb() {
     const [activeTab, setActiveTab] = useState<'overview' | 'algorithm' | 'techniques' | 'practice'>('overview');
@@ -904,6 +905,13 @@ export default function ReanimateSvb() {
                             ))}
                         </div>
                     </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="reanimate-svb" 
+                            titulo="Foro de Discusión - Reanimate Svb"
+                        />
+
+                        
 
                     {/* Referencias y Recursos */}
                     <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">

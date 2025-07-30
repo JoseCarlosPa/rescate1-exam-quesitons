@@ -13,6 +13,7 @@ import { GiTornado } from "react-icons/gi";
 import { RiHeart2Line, RiDropLine } from "react-icons/ri";
 import { useState } from "react";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function Bleeding() {
     const [activeTab, setActiveTab] = useState<'overview' | 'pathophysiology' | 'treatment' | 'practice'>('overview');
@@ -542,6 +543,13 @@ export default function Bleeding() {
                             ))}
                         </div>
                     </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="bleeding" 
+                            titulo="Foro de Discusión - Bleeding"
+                        />
+
+                        
 
                     {/* Referencias y Recursos */}
                     <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">

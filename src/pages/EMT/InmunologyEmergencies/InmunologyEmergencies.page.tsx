@@ -13,6 +13,7 @@ import {FiAlertTriangle, FiUser, FiEye, FiClock} from "react-icons/fi";
 import {TbEmergencyBed} from "react-icons/tb";
 import {GiMedicines} from "react-icons/gi";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function InmunologyEmergencies(){
     const [activeTab, setActiveTab] = useState<'general' | 'physiology' | 'management' | 'cases'>('general');
@@ -1562,6 +1563,13 @@ export default function InmunologyEmergencies(){
                             ))}
                         </div>
                     </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="inmunology-emergencies" 
+                            titulo="Foro de Discusión - Inmunology Emergencies"
+                        />
+
+                        
 
                     {/* Referencias y Recursos */}
                     <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">

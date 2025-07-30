@@ -11,6 +11,7 @@ import {BsBookHalf, BsLightning} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
 import {HiDocumentText, HiAcademicCap} from "react-icons/hi";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function MedicTerms(){
     const [activeTab, setActiveTab] = useState<'overview' | 'roots' | 'abbreviations' | 'practice'>('overview');
@@ -882,6 +883,13 @@ export default function MedicTerms(){
                                 ))}
                             </div>
                         </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="medic-terms" 
+                            titulo="Foro de Discusión - Medic Terms"
+                        />
+
+                        
 
                         {/* Referencias y Recursos */}
                         <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">

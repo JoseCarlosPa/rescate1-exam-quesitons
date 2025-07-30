@@ -9,6 +9,7 @@ import {useState} from "react";
 import {MdQuiz} from "react-icons/md";
 import {BsBookHalf} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function Mega() {
     const [activeTab, setActiveTab] = useState<'overview' | 'steps' | 'practice'>('overview');
@@ -232,6 +233,13 @@ export default function Mega() {
                             ))}
                         </div>
                     </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="mega" 
+                            titulo="Foro de Discusión - Mega"
+                        />
+
+                        
 
                     {/* Referencias y Recursos */}
                     <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">

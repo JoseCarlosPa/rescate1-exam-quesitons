@@ -13,6 +13,7 @@ import {FaExclamationTriangle, FaHeartbeat, FaThermometerHalf, FaBrain, FaEye} f
 import {FiAlertTriangle, FiActivity, FiUser} from "react-icons/fi";
 import {GiMedicines, GiTestTubes} from "react-icons/gi";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function EndocryEmergency(){
     const [activeTab, setActiveTab] = useState<'overview' | 'anatomy' | 'treatment' | 'practice'>('overview');
@@ -1178,6 +1179,13 @@ export default function EndocryEmergency(){
                             ))}
                         </div>
                     </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="endocry-emergency" 
+                            titulo="Foro de Discusión - Endocry Emergency"
+                        />
+
+                        
                     {/* Referencias y Recursos */}
                     <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">
                         <h2 className="text-2xl font-bold mb-4">Referencias y recursos adicionales</h2>

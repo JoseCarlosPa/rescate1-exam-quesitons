@@ -13,6 +13,7 @@ import {FiAlertTriangle, FiCheckCircle, FiActivity} from "react-icons/fi";
 import {HiOutlineExclamationTriangle} from "react-icons/hi2";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
 import { FaRadio } from "react-icons/fa6";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function Sem() {
     const [activeTab, setActiveTab] = useState<'overview' | 'structure' | 'activation' | 'practice'>('overview');
@@ -1052,6 +1053,13 @@ export default function Sem() {
                                 ))}
                             </div>
                         </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="s-e-m" 
+                            titulo="Foro de Discusión - S E M"
+                        />
+
+                        
 
                         {/* Referencias y Recursos */}
                         <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">

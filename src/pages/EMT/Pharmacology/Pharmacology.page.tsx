@@ -13,6 +13,7 @@ import {BsBookHalf, BsLightbulb, BsCalculator} from "react-icons/bs";
 import {FiUser, FiClock, FiTrendingUp, FiAlertTriangle} from "react-icons/fi";
 import {TbMedicineSyrup, TbPill, TbReportMedical} from "react-icons/tb";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function Pharmacology() {
     const [activeTab, setActiveTab] = useState<'overview' | 'rights' | 'drugs' | 'tables'>('overview');
@@ -1443,6 +1444,13 @@ export default function Pharmacology() {
                                     </Disclosure>
                                 ))}
                             </div>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="pharmacology" 
+                            titulo="Foro de Discusión - Pharmacology"
+                        />
+
+                        
                         </section>
                     </div>
                 </div>

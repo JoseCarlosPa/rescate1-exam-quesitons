@@ -4,6 +4,12 @@ service cloud.firestore {
    match /public/{publicDoc}{
    allow read: if true;
    }
+
+   // Reglas para el foro - permitir lectura y escritura sin autenticación
+   match /forum/{forumDoc} {
+     allow read, write: if true;
+   }
+
    match /{document=**} {
       allow read, write: if request.auth.uid != null;
     }

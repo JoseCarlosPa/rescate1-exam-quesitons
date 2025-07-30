@@ -12,6 +12,7 @@ import {CiMedicalCross} from "react-icons/ci";
 import {FaExclamationTriangle, FaFirstAid, FaBandAid, FaHeartbeat} from "react-icons/fa";
 import {FiAlertTriangle, FiEye, FiClock} from "react-icons/fi";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function SoftTissue() {
     const [activeTab, setActiveTab] = useState<'overview' | 'anatomy' | 'treatment' | 'practice'>('overview');
@@ -893,6 +894,13 @@ export default function SoftTissue() {
                                 ))}
                             </div>
                         </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="soft-tissue" 
+                            titulo="Foro de Discusión - Soft Tissue"
+                        />
+
+                        
 
                         {/* Referencias y Recursos */}
                         <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">

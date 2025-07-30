@@ -14,6 +14,7 @@ import {BiPulse} from "react-icons/bi";
 import {GiHeartOrgan, GiBlood} from "react-icons/gi";
 import {useState} from "react";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function Shock(){
     const [activeTab, setActiveTab] = useState<'overview' | 'types' | 'treatment' | 'practice'>('overview');
@@ -1317,6 +1318,13 @@ export default function Shock(){
                             ))}
                         </div>
                     </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="shock" 
+                            titulo="Foro de Discusión - Shock"
+                        />
+
+                        
 
                     {/* Referencias y Recursos */}
                     <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">

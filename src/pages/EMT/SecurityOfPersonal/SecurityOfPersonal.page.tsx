@@ -13,6 +13,7 @@ import {FaHardHat, FaEye, FaHandsWash, FaMask, FaAmbulance, FaUsers, FaClock, Fa
 import {FiAlertTriangle, FiCheckCircle, FiActivity, FiShield, FiEye, FiHeart} from "react-icons/fi";
 import {HiOutlineExclamationTriangle} from "react-icons/hi2";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function SecurityOfPersonal() {
     const [activeTab, setActiveTab] = useState<'overview' | 'epp' | 'stress' | 'practice'>('overview');
@@ -1343,6 +1344,13 @@ export default function SecurityOfPersonal() {
                                 ))}
                             </div>
                         </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="security-of-personal" 
+                            titulo="Foro de Discusión - Security Of Personal"
+                        />
+
+                        
 
                         {/* Referencias y Recursos */}
                         <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">

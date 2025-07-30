@@ -13,6 +13,7 @@ import {FaExclamationTriangle, FaBrain, FaFirstAid} from "react-icons/fa";
 import {FiAlertTriangle, FiEye, FiActivity} from "react-icons/fi";
 import { GiBrokenBone, GiSpinalCoil} from "react-icons/gi";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function HeadAndColumnInjuries(){
     const [activeTab, setActiveTab] = useState<'overview' | 'anatomy' | 'assessment' | 'management' | 'practice'>('overview');
@@ -895,6 +896,13 @@ export default function HeadAndColumnInjuries(){
                             ))}
                         </div>
                     </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="head-and-column-injuries" 
+                            titulo="Foro de Discusión - Head And Column Injuries"
+                        />
+
+                        
 
                     {/* Referencias y Recursos */}
                     <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">

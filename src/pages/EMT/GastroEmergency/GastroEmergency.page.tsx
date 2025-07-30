@@ -14,6 +14,7 @@ import {FaDroplet} from "react-icons/fa6";
 import {FiAlertTriangle, FiEye} from "react-icons/fi";
 import {RiPulseLine} from "react-icons/ri";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function GastroEmergency() {
     const [activeTab, setActiveTab] = useState<'overview' | 'anatomy' | 'assessment' | 'practice'>('overview');
@@ -1284,6 +1285,13 @@ export default function GastroEmergency() {
                             ))}
                         </div>
                     </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="gastro-emergency" 
+                            titulo="Foro de Discusión - Gastro Emergency"
+                        />
+
+                        
                     {/* Referencias y Recursos */}
                     <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">
                         <h2 className="text-2xl font-bold mb-4">Referencias y recursos adicionales</h2>

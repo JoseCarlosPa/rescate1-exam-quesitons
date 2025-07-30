@@ -14,6 +14,7 @@ import {RiGovernmentLine, RiFileList3Line} from "react-icons/ri";
 import {HiDocumentText} from "react-icons/hi";
 import {AiOutlineWarning} from "react-icons/ai";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function LegalAspects() {
     const [activeTab, setActiveTab] = useState<'overview' | 'legal' | 'consent' | 'practice'>('overview');
@@ -831,6 +832,13 @@ export default function LegalAspects() {
                                 ))}
                             </div>
                         </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="legal-aspects" 
+                            titulo="Foro de Discusión - Legal Aspects"
+                        />
+
+                        
 
                         {/* Referencias y Recursos */}
                         <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">

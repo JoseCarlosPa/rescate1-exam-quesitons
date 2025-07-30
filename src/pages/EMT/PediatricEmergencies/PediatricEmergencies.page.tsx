@@ -13,6 +13,7 @@ import {FiAlertTriangle, FiEye, FiActivity, FiUsers} from "react-icons/fi";
 import {TbEmergencyBed, TbScale, TbMedicalCross, TbStethoscope} from "react-icons/tb";
 import {RiThermometerLine, RiLungsLine, RiHeartPulseLine, RiMentalHealthLine} from "react-icons/ri";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
+import { ForumSection } from "../../../components/ForumSection";
 
 export default function PediatricEmergencies(){
     const [activeTab, setActiveTab] = useState<'evaluation' | 'pathologies' | 'treatment' | 'cases'>('evaluation');
@@ -1369,6 +1370,13 @@ export default function PediatricEmergencies(){
                             ))}
                         </div>
                     </section>
+                        {/* Foro de Discusión */}
+                        <ForumSection 
+                            pagina="pediatric-emergencies" 
+                            titulo="Foro de Discusión - Pediatric Emergencies"
+                        />
+
+                        
 
                     {/* Referencias y Recursos */}
                     <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">
