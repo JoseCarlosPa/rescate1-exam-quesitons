@@ -5,7 +5,7 @@ import { ForumMessage, ForumFormData, ForumThread } from '../types/forum.types';
 
 export const useForum = (pagina: string) => {
   const [threads, setThreads] = useState<ForumThread[]>([]);
-
+  
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -132,7 +132,7 @@ export const useForum = (pagina: string) => {
       .filter(thread => thread.message.correo === userEmail)
       .map(thread => ({
         message: thread.message,
-        replies: thread.replies.filter(r => r.correo !== userEmail)
+        replies: thread.replies
       }));
   }
 

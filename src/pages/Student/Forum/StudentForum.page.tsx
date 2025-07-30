@@ -48,7 +48,7 @@ export default function StudentForum() {
     try {
       await addDoc(collection(db, 'forum'), {
         nombre: user.name || user.email?.split('@')[0] || 'Usuario',
-        correo: user.email,
+        correo: user.id,
         contenido: newThreadContent.trim(),
         timestamp: Timestamp.now(),
         pagina: selectedPage,
@@ -204,7 +204,7 @@ export default function StudentForum() {
                         <div className="flex-1">
                           <div className="flex items-center space-x-2 mb-2">
                             <h3 className="font-medium text-gray-900">
-                              {thread.message.nombre}
+                              {thread.message.correo === user?.email ? 'Tú' : thread.message.nombre}
                             </h3>
                             <span className="text-gray-500 text-sm flex items-center">
                               <FaCalendarAlt className="mr-1" />
@@ -232,7 +232,7 @@ export default function StudentForum() {
                                   <FaUser className="text-white text-xs" />
                                 </div>
                                 <span className="font-medium text-gray-900 text-sm">
-                                  {reply.nombre}
+                                  {reply.correo === user?.email ? 'Tú' : reply.nombre}
                                 </span>
                                 <span className="text-gray-500 text-xs">
                                   {reply.timestamp.toLocaleDateString()}
