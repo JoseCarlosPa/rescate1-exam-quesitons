@@ -1,16 +1,13 @@
 import { useState, useEffect, useCallback } from 'react';
-import { useUserContext } from '../../../Providers/UserProvider/User.context';
 import { useNavigate } from 'react-router';
 import { AllRoutes } from '../../../components/Router/Router.constants';
 import { doc, getDoc } from 'firebase/firestore';
-import { db, auth } from '../../../firebase/firebaseConfig';
-import { signOut } from 'firebase/auth';
+import { db } from '../../../firebase/firebaseConfig';
 import { NavLink } from 'react-router';
 import {
   FaUser,
   FaGraduationCap,
   FaComments,
-  FaSignOutAlt,
   FaChartLine,
   FaBook,
   FaBell
@@ -18,6 +15,7 @@ import {
 import { ImSpinner2 } from 'react-icons/im';
 import { toast } from 'sonner';
 import { Timestamp } from 'firebase/firestore';
+import {useAuth} from "../../../Providers/AuthProvider";
 
 interface ExamData {
   completed: boolean;
@@ -38,7 +36,7 @@ interface StudentData {
 }
 
 export default function StudentDashboard() {
-  const { user, setUser } = useUserContext();
+  const {user} = useAuth()
   const navigate = useNavigate();
   const [studentData, setStudentData] = useState<StudentData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -67,8 +65,9 @@ export default function StudentDashboard() {
   }, [user?.id]);
 
   useEffect(() => {
+    console.log('StudentDashboard mounted',user);
     if (!user) {
-      navigate(AllRoutes.LOGIN);
+      //navigate(AllRoutes.LOGIN);
       return;
     }
 
@@ -90,18 +89,6 @@ export default function StudentDashboard() {
     });
   };
 
-  const handleLogout = async () => {
-    try {
-      await signOut(auth);
-      setUser(null);
-      navigate(AllRoutes.MAIN);
-      toast.success('Sesión cerrada exitosamente');
-    } catch (error) {
-      console.error('Error signing out:', error);
-      toast.error('Error al cerrar sesión');
-    }
-  };
-
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-100 flex items-center justify-center">
@@ -112,43 +99,6 @@ export default function StudentDashboard() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Header */}
-      <header className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            <div className="flex items-center">
-              <NavLink to={AllRoutes.MAIN} className="text-orange-500 font-bold text-xl">
-                Rescate 1
-              </NavLink>
-            </div>
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-2">
-                {studentData?.photoURL ? (
-                  <img
-                    src={studentData.photoURL}
-                    alt="Perfil"
-                    className="w-8 h-8 rounded-full"
-                  />
-                ) : (
-                  <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
-                    <FaUser className="text-white text-sm" />
-                  </div>
-                )}
-                <span className="text-gray-700 font-medium">
-                  {studentData?.name || user?.email}
-                </span>
-              </div>
-              <button
-                onClick={handleLogout}
-                className="text-gray-500 hover:text-red-600 transition-colors"
-                title="Cerrar sesión"
-              >
-                <FaSignOutAlt />
-              </button>
-            </div>
-          </div>
-        </div>
-      </header>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Welcome Section */}

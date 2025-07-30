@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from 'react';
-import { useUserContext } from '../../../Providers/UserProvider/User.context';
 import { useNavigate } from 'react-router';
 import { AllRoutes } from '../../../components/Router/Router.constants';
 import { doc, updateDoc, getDoc } from 'firebase/firestore';
@@ -17,6 +16,7 @@ import {
 import { ImSpinner2 } from 'react-icons/im';
 import { toast } from 'sonner';
 import { Timestamp } from 'firebase/firestore';
+import {useAuth} from "../../../Providers/AuthProvider";
 
 interface StudentData {
   id: string;
@@ -28,7 +28,7 @@ interface StudentData {
 }
 
 export default function StudentProfile() {
-  const { user, setUser } = useUserContext();
+  const { user } = useAuth();
   const navigate = useNavigate();
   const [studentData, setStudentData] = useState<StudentData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -112,12 +112,6 @@ export default function StudentProfile() {
         }
       }
 
-      // Actualizar contexto del usuario
-      setUser({
-        ...user,
-        name: name.trim(),
-        photoURL: photoURL.trim() || null
-      });
 
       // Actualizar estado local
       setStudentData(prev => prev ? {

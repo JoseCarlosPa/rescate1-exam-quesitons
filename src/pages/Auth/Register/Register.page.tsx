@@ -1,18 +1,14 @@
 import {useState} from "react";
-import {createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider} from "firebase/auth";
-import {auth, db} from "../../../firebase/firebaseConfig.ts";
 import {ImSpinner2} from "react-icons/im";
 import {FcGoogle} from "react-icons/fc";
 import logo from "../../../assets/logo.png";
-import {collection, doc, getDocs, setDoc} from "firebase/firestore";
 import {toast} from "sonner";
 import * as React from "react";
 import {NavLink} from "react-router";
 import {AllRoutes} from "../../../components/Router/Router.constants.ts";
-import {useUserContext} from "../../../Providers/UserProvider/User.context.tsx";
 import {useNavigate} from "react-router";
-import {examsInitialvalues} from "../Login/Login.constants.ts";
 import {IoIosReturnLeft} from "react-icons/io";
+import {useAuth} from "../../../Providers/AuthProvider";
 
 export default function Register() {
     const [email, setEmail] = useState<string>("");
@@ -20,12 +16,23 @@ export default function Register() {
     const [confirmPassword, setConfirmPassword] = useState<string>("");
     const [fullName, setFullName] = useState<string>("");
     const [authing, setAuthing] = useState<boolean>(false);
-    const userCollectionsRef = collection(db, 'users');
-    const {setUser} = useUserContext();
     const navigate = useNavigate();
+    const { register, loginWithGoogle, isAuthenticated } = useAuth();
 
-    function handleRegister(event: React.FormEvent<HTMLFormElement>) {
+    // Redirigir si ya está autenticado
+    React.useEffect(() => {
+        if (isAuthenticated) {
+            navigate(AllRoutes.STUDENT_DASHBOARD);
+        }
+    }, [isAuthenticated, navigate]);
+
+    const handleRegister = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+
+        if (!fullName.trim() || !email.trim() || !password.trim() || !confirmPassword.trim()) {
+            toast.error('Por favor completa todos los campos');
+            return;
+        }
 
         if (password !== confirmPassword) {
             toast.error("Las contraseñas no coinciden");
@@ -38,85 +45,27 @@ export default function Register() {
         }
 
         setAuthing(true);
-        createUserWithEmailAndPassword(auth, email, password)
-            .then(async (userCredential) => {
-                const user = userCredential.user;
+        try {
+            await register(email, password, fullName);
+            navigate(AllRoutes.STUDENT_DASHBOARD);
+        } catch (error) {
+            // El error ya se maneja en el AuthProvider
+        } finally {
+            setAuthing(false);
+        }
+    };
 
-                // Crear documento del usuario en Firestore
-                await setDoc(doc(db, 'users', user.uid), {
-                    id: user.uid,
-                    email: user.email,
-                    name: fullName,
-                    role: "Alumno",
-                    exams: examsInitialvalues,
-                    createdAt: new Date(),
-                    photoURL: null
-                });
-
-                setUser({
-                    id: user.uid,
-                    email: user.email,
-                    name: fullName,
-                    photoURL: null,
-                    role: "Alumno"
-                });
-
-                toast.success("Cuenta creada exitosamente");
-                navigate(AllRoutes.MAIN);
-            })
-            .catch((error) => {
-                console.error(error);
-                if (error.code === 'auth/email-already-in-use') {
-                    toast.error("Este correo ya está registrado");
-                } else if (error.code === 'auth/invalid-email') {
-                    toast.error("Correo electrónico inválido");
-                } else {
-                    toast.error("Error al crear la cuenta: " + error.message);
-                }
-            })
-            .finally(() => {
-                setAuthing(false);
-            });
-    }
-
-    async function signInWithGoogle() {
+    const handleGoogleSignup = async () => {
         setAuthing(true);
-        signInWithPopup(auth, new GoogleAuthProvider())
-            .then(async userCredential => {
-                const user = userCredential.user;
-                const data = await getDocs(userCollectionsRef);
-                const emails = data.docs.map((doc) => ({...doc.data()}));
-
-                if (!emails.find(email => email.email === user.email)) {
-                    await setDoc(doc(db, 'users', user.uid), {
-                        id: user.uid,
-                        email: user.email,
-                        name: user.displayName,
-                        role: "Alumno",
-                        exams: examsInitialvalues,
-                        createdAt: new Date(),
-                        photoURL: user.photoURL
-                    });
-                }
-
-                setUser({
-                    id: user.uid,
-                    email: user.email,
-                    name: user.displayName,
-                    photoURL: user.photoURL,
-                    role: "Alumno"
-                });
-
-                navigate(AllRoutes.MAIN);
-            })
-            .catch(error => {
-                console.error(error);
-                toast.error(error.message);
-            })
-            .finally(() => {
-                setAuthing(false);
-            });
-    }
+        try {
+            await loginWithGoogle();
+            navigate(AllRoutes.STUDENT_DASHBOARD);
+        } catch (error) {
+            // El error ya se maneja en el AuthProvider
+        } finally {
+            setAuthing(false);
+        }
+    };
 
     return (
         <div className="bg-gray-100 rounded-lg">
@@ -141,7 +90,7 @@ export default function Register() {
                                 <button
                                     type="button"
                                     disabled={authing}
-                                    onClick={signInWithGoogle}
+                                    onClick={handleGoogleSignup}
                                     className="cursor-pointer shadow-lg flex items-center justify-center w-full py-4 mb-6 font-medium transition duration-300 rounded-2xl text-gray-900 bg-white hover:bg-gray-200 focus:ring-4 focus:ring-gray-300">
                                     {authing ? <ImSpinner2 className="animate-spin w-6 h-6 text-orange-700"/> : <>
                                         <FcGoogle className="mr-2 my-auto"/>

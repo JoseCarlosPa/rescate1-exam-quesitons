@@ -1,104 +1,59 @@
 import {useEffect, useState} from "react";
-import {signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider} from "firebase/auth";
-import {auth, db} from "../../../firebase/firebaseConfig.ts";
 import {ImSpinner2} from "react-icons/im";
 import {FcGoogle} from "react-icons/fc";
 import logo from "../../../assets/logo.png";
-import {collection, doc, getDocs, setDoc} from "firebase/firestore";
 import {toast} from "sonner";
 import * as React from "react";
-import {useLogin} from "./Login.hook.ts";
 import {NavLink} from "react-router";
 import {AllRoutes} from "../../../components/Router/Router.constants.ts";
-import {useUserContext} from "../../../Providers/UserProvider/User.context.tsx";
 import {useNavigate} from "react-router";
-import {examsInitialvalues} from "./Login.constants.ts";
 import {IoIosReturnLeft} from "react-icons/io";
+import {useAuth} from "../../../Providers/AuthProvider";
 
 export default function Login() {
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
-    const [authing, setAuthing] = useState<boolean>(false)
-    const userCollectionsRef = collection(db, 'users')
-    const {setUser} = useUserContext()
+    const [authing, setAuthing] = useState<boolean>(false);
     const navigate = useNavigate();
-
-    const {handleFirebaseError} = useLogin()
-
-    console.log('Login page rendered');
+    const { login, loginWithGoogle, isAuthenticated } = useAuth();
 
     useEffect(() => {
-        const unsubscribe = auth.onAuthStateChanged((user) => {
-            if (user) {
-                setUser({
-                    id: user.uid,
-                    email: user.email,
-                    name: null,
-                    photoURL: null,
-                    role: null
-                })
-                navigate(AllRoutes.STUDENT_DASHBOARD)
-            }
-        })
+        if (isAuthenticated) {
+            navigate(AllRoutes.STUDENT_DASHBOARD);
+            console.log('Ya estás autenticado, redirigiendo al dashboard');
+        }
+    }, [isAuthenticated, navigate]);
 
-        return () => unsubscribe()
-    }, [navigate, setUser])
+    const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
 
-    function handleLogin(event: React.FormEvent<HTMLFormElement>) {
-        event.preventDefault()
-        setAuthing(true)
-        signInWithEmailAndPassword(auth, email, password).then(async (userCredential) => {
-            const user = userCredential.user
-            setUser({
-                id: user.uid,
-                email: user.email,
-                name: null,
-                photoURL: null,
-                role: null
-            })
-            navigate(AllRoutes.STUDENT_DASHBOARD)
+        if (!email.trim() || !password.trim()) {
+            toast.error('Por favor completa todos los campos');
+            return;
+        }
 
-        }).catch((error) => {
-            handleFirebaseError(error)
-        })
-        setAuthing(false)
+        setAuthing(true);
+        try {
+            await login(email, password);
+            navigate(AllRoutes.STUDENT_DASHBOARD);
+        } catch (error) {
+            // El error ya se maneja en el AuthProvider
+        } finally {
+            setAuthing(false);
+        }
+    };
 
-    }
-
-    async function signInWithGoogle() {
-        setAuthing(true)
-        signInWithPopup(auth, new GoogleAuthProvider()).then(async userCredential => {
-            const user = userCredential.user
-            const data = await getDocs(userCollectionsRef)
-            const emails = data.docs.map((doc) => ({...doc.data()}))
-            if (emails.find(email => email.email === user.email)) {
-                console.log("email", email)
-            } else {
-                await setDoc(doc(db, 'users', user.uid), {
-                    id: user.uid,
-                    email: user.email,
-                    name: user.displayName,
-                    role: "Alumno",
-                    exams: examsInitialvalues,
-                })
-            }
-            setUser({
-                id: user.uid,
-                email: user.email,
-                name: null,
-                photoURL: null,
-                role: null
-            })
-
-            navigate(AllRoutes.STUDENT_DASHBOARD)
-
-
-        }).catch(error => {
-            console.error(error)
-            toast.error(error.message)
-            setAuthing(false)
-        })
-    }
+    const handleGoogleLogin = async () => {
+        setAuthing(true);
+        try {
+            await loginWithGoogle();
+            navigate(AllRoutes.STUDENT_DASHBOARD);
+        } catch (error) {
+            // El error ya se maneja en el AuthProvider
+        } finally {
+            setAuthing(false);
+        }
+    };
 
     return (
         <div className="bg-gray-100   rounded-lg">
@@ -124,7 +79,7 @@ export default function Login() {
                                 <button
                                     type={"button"}
                                     disabled={authing}
-                                    onClick={signInWithGoogle}
+                                    onClick={handleGoogleLogin}
                                     className="cursor-pointer shadow-lg flex items-center justify-center w-full py-4 mb-6  font-medium transition duration-300 rounded-2xl text-gray-900 bg-white   hover:bg-gray-200 focus:ring-4 focus:ring-gray-300">
                                     {authing ? <ImSpinner2 className="animate-spin w-6 h-6 text-orange-700"/> : <>
                                         <FcGoogle className="mr-2 my-auto"/>

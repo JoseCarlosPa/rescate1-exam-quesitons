@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useUserContext } from '../../../Providers/UserProvider/User.context';
 import { useNavigate } from 'react-router';
 import { AllRoutes } from '../../../components/Router/Router.constants';
 import { NavLink } from 'react-router';
@@ -17,9 +16,10 @@ import { toast } from 'sonner';
 import { useForum } from '../../../hooks/useForum.hook';
 import { collection, addDoc, Timestamp } from 'firebase/firestore';
 import { db } from '../../../firebase/firebaseConfig';
+import {useAuth} from "../../../Providers/AuthProvider";
 
 export default function StudentForum() {
-  const { user } = useUserContext();
+  const { user } = useAuth();
   const navigate = useNavigate();
   const [selectedPage, setSelectedPage] = useState('general');
   const [showNewThreadModal, setShowNewThreadModal] = useState(false);

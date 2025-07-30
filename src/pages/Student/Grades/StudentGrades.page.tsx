@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from 'react';
-import { useUserContext } from '../../../Providers/UserProvider/User.context';
 import { useNavigate } from 'react-router';
 import { AllRoutes } from '../../../components/Router/Router.constants';
 import { doc, getDoc } from 'firebase/firestore';
@@ -17,6 +16,7 @@ import {
 import { ImSpinner2 } from 'react-icons/im';
 import { toast } from 'sonner';
 import { Timestamp } from 'firebase/firestore';
+import {useAuth} from "../../../Providers/AuthProvider";
 
 interface ExamResult {
   id: number;
@@ -94,7 +94,7 @@ const examNames: Record<number, string> = {
 };
 
 export default function StudentGrades() {
-  const { user } = useUserContext();
+  const { user } = useAuth();
   const navigate = useNavigate();
   const [examResults, setExamResults] = useState<ExamResult[]>([]);
   const [loading, setLoading] = useState(true);

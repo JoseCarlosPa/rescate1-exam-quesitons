@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForum } from '../../hooks/useForum.hook';
+import { useAuth } from '../../Providers/AuthProvider';
 import { ForumFormData } from '../../types/forum.types';
 import { ChatBubbleLeftRightIcon, PaperAirplaneIcon, ChatBubbleLeftEllipsisIcon, ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 import { toast } from 'sonner';
@@ -10,6 +11,7 @@ interface ForumSectionProps {
 }
 
 export default function ForumSection({ pagina, titulo = "Foro de Discusión" }: ForumSectionProps) {
+  const { user, isAuthenticated } = useAuth();
   const { threads, loading, error, enviarThread, enviarRespuesta } = useForum(pagina);
   const [formData, setFormData] = useState<ForumFormData>({
     nombre: '',
@@ -25,6 +27,26 @@ export default function ForumSection({ pagina, titulo = "Foro de Discusión" }: 
     contenido: ''
   });
   const [enviandoRespuesta, setEnviandoRespuesta] = useState(false);
+
+  // Llenar automáticamente los datos del usuario si está logeado
+  useEffect(() => {
+    if (isAuthenticated && user) {
+      const userName = user.name || user.email?.split('@')[0] || '';
+      const userEmail = user.email || '';
+
+      setFormData(prev => ({
+        ...prev,
+        nombre: userName,
+        correo: userEmail
+      }));
+
+      setReplyFormData(prev => ({
+        ...prev,
+        nombre: userName,
+        correo: userEmail
+      }));
+    }
+  }, [user, isAuthenticated]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
