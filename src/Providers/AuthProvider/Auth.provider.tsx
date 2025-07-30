@@ -13,8 +13,8 @@ import { doc, setDoc, getDoc, updateDoc } from 'firebase/firestore';
 import { auth, db } from '../../firebase/firebaseConfig';
 import { AuthContext, AuthContextType } from './Auth.context';
 import { toast } from 'sonner';
-import { examsInitialvalues } from '../../pages/Auth/Login/Login.constants';
 import {tUser} from "./Auth.types.ts";
+import { examNames, ExamData } from "../../pages/Student/Grades/StudentGrades.page.tsx";
 
 interface AuthProviderProps {
   children: ReactNode;
@@ -44,15 +44,17 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
               createdAt:new Date(),
             });
           } else {
-            // Si no existe el documento, crear uno básico
+            // Si no existe el documento, crear uno básico con exámenes
+            const initialExams = await createInitialExams();
+
             const basicUserData = {
               id: firebaseUser.uid,
               email: firebaseUser.email,
               name: firebaseUser.displayName || firebaseUser.email?.split('@')[0],
               role: 'Alumno',
-              exams: examsInitialvalues,
               createdAt: new Date(),
-              photoURL: firebaseUser.photoURL
+              photoURL: firebaseUser.photoURL,
+              exams: initialExams
             };
 
             await setDoc(doc(db, 'users', firebaseUser.uid), basicUserData);
@@ -101,13 +103,60 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const loginWithGoogle = async (): Promise<void> => {
     try {
       const provider = new GoogleAuthProvider();
-      await signInWithPopup(auth, provider);
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+
+      // Verificar si es un usuario nuevo (sin documento en Firestore)
+      const userDoc = await getDoc(doc(db, 'users', user.uid));
+
+      if (!userDoc.exists()) {
+        // Es un usuario nuevo, crear documento con exámenes
+        const initialExams = await createInitialExams();
+
+        await setDoc(doc(db, 'users', user.uid), {
+          id: user.uid,
+          email: user.email,
+          name: user.displayName || user.email?.split('@')[0],
+          role: 'Alumno',
+          createdAt: new Date(),
+          photoURL: user.photoURL,
+          exams: initialExams
+        });
+      } else {
+        // Usuario existente, verificar si tiene exámenes
+        const userData = userDoc.data();
+        if (!userData.exams) {
+          // Agregar exámenes a usuario existente que no los tiene
+          const initialExams = await createInitialExams();
+          await updateDoc(doc(db, 'users', user.uid), {
+            exams: initialExams
+          });
+        }
+      }
+
       toast.success('Inicio de sesión con Google exitoso');
     } catch (error) {
       console.error('Google login error:', error);
       handleAuthError(error);
       throw error;
     }
+  };
+
+  // Función para crear la colección inicial de exámenes
+  const createInitialExams = async (): Promise<Record<string, ExamData>> => {
+    const initialExams: Record<string, ExamData> = {};
+
+    // Crear un examen inicial para cada uno de los 44 exámenes
+    Object.keys(examNames).forEach((examId) => {
+      initialExams[examId] = {
+        completed: false,
+        score: 0,
+        totalQuestions: 0,
+        correctAnswers: 0
+      };
+    });
+
+    return initialExams;
   };
 
   const register = async (email: string, password: string, fullName: string): Promise<void> => {
@@ -120,15 +169,18 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         displayName: fullName
       });
 
-      // Crear documento del usuario en Firestore
+      // Crear la colección inicial de exámenes
+      const initialExams = await createInitialExams();
+
+      // Crear documento del usuario en Firestore con la colección de exámenes
       await setDoc(doc(db, 'users', user.uid), {
         id: user.uid,
         email: user.email,
         name: fullName,
         role: 'Alumno',
-        exams: examsInitialvalues,
         createdAt: new Date(),
-        photoURL: null
+        photoURL: null,
+        exams: initialExams
       });
 
       toast.success('Cuenta creada exitosamente');

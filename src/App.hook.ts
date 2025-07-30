@@ -1,39 +1,47 @@
-import { doc, getDoc } from "firebase/firestore";
-import {auth, db} from "./firebase/firebaseConfig.ts";
-import {useState} from "react";
+import { useState } from 'react';
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from './firebase/firebaseConfig';
+import { useAuth } from './Providers/AuthProvider';
+import { ExamData } from './pages/Student/Grades/StudentGrades.page';
 
+const useApp = () => {
+  const { user } = useAuth();
+  const [loading, setLoading] = useState(true);
 
-export default function useApp(){
+  const getUserExams = async (): Promise<number[]> => {
+    if (!user?.id) return [];
 
-    const [loading,setLoading] = useState<boolean>(true)
+    try {
+      const userDoc = await getDoc(doc(db, 'users', user.id));
 
+      if (userDoc.exists()) {
+        const userData = userDoc.data();
+        const exams: Record<string, ExamData> = userData.exams || {};
 
-    async function getUserExams() {
-        setLoading(true)
-        const user = auth.currentUser;
+        // Crear array de 44 elementos con las calificaciones
+        const grades: number[] = [];
 
-        if (user) {
-            const userDocRef = doc(db, "users", user.uid);
-            const userDoc = await getDoc(userDocRef);
-
-            if (userDoc.exists()) {
-                const userData = userDoc.data();
-                setLoading(false)
-                return userData.exams || []; // Devuelve el arreglo "exams" o un arreglo vacío si no existe
-            } else {
-                console.error("El documento del usuario no existe.");
-            }
-        } else {
-            console.error("No hay un usuario autenticado.");
+        // Iterar del 1 al 44 para obtener las calificaciones en orden
+        for (let i = 1; i <= 44; i++) {
+          const examData = exams[i.toString()];
+          grades.push(examData?.score || 0);
         }
-        setLoading(false)
 
-        return [];
-    }
+        return grades;
+      }
 
-    return {
-        getUserExams,
-        loading,
-        setLoading
+      return new Array(44).fill(0);
+    } catch (error) {
+      console.error('Error fetching user exams:', error);
+      return new Array(44).fill(0);
     }
-}
+  };
+
+  return {
+    getUserExams,
+    loading,
+    setLoading
+  };
+};
+
+export default useApp;

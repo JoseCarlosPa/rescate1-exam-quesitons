@@ -5,9 +5,11 @@ import {NavLink} from "react-router";
 import { ExamProps } from "./Exam.types";
 import {AllRoutes} from "../Router/Router.constants.ts";
 import {auth, db} from "../../firebase/firebaseConfig.ts";
-import {doc, getDoc, setDoc} from "firebase/firestore";
+import {doc, getDoc, updateDoc} from "firebase/firestore";
 import {AiOutlineLoading3Quarters} from "react-icons/ai";
 import {FaHome, FaArrowLeft, FaCheck, FaTimes, FaClock, FaPrint} from "react-icons/fa";
+import { ExamData } from "../../pages/Student/Grades/StudentGrades.page.tsx";
+import { Timestamp } from "firebase/firestore";
 
 export default function Exam(props: ExamProps){
     const [answers, setAnswers] = useState<{ [index: number]: string }>({});
@@ -58,7 +60,7 @@ export default function Exam(props: ExamProps){
         }
 
         setSubmitted(true);
-        const scoreS = Object.keys(answers).reduce((acc, key) => {
+        const correctAnswers = Object.keys(answers).reduce((acc, key) => {
             const index = parseInt(key);
             if (props.questions[index].correctAnswer === answers[index]) {
                 return acc + 1;
@@ -66,22 +68,46 @@ export default function Exam(props: ExamProps){
             return acc;
         }, 0);
 
-        const finalScore = ((scoreS / props.questions.length) * 100).toFixed(2)
+        const finalScore = Math.round((correctAnswers / props.questions.length) * 100);
         setLoading(true);
+
         const user = auth.currentUser;
 
         if (user) {
+            try {
+                const userDocRef = doc(db, "users", user.uid);
+                const userDoc = await getDoc(userDocRef);
 
-            const userDocRef = doc(db, "users", user.uid);
-            const userDoc = await getDoc(userDocRef);
+                if (userDoc.exists()) {
+                    const userData = userDoc.data();
+                    const currentExams = userData.exams || {};
 
-            if (userDoc.exists()) {
-                const userData = userDoc.data();
-                const exams = userData.exams || [];
-                exams[props.id - 1] = parseFloat(finalScore);
-                await setDoc(userDocRef, { exams }, { merge: true });
-            } else {
-                console.error("El documento del usuario no existe.");
+                    // Crear el objeto ExamData para este examen
+                    const examData: ExamData = {
+                        completed: true,
+                        score: finalScore,
+                        totalQuestions: props.questions.length,
+                        correctAnswers: correctAnswers,
+                        completedAt: Timestamp.now()
+                    };
+
+                    // Actualizar el examen específico usando el ID del examen
+                    const updatedExams = {
+                        ...currentExams,
+                        [props.id.toString()]: examData
+                    };
+
+                    // Guardar en Firestore
+                    await updateDoc(userDocRef, {
+                        exams: updatedExams
+                    });
+
+                    console.log(`Examen ${props.id} completado con ${finalScore}% de calificación`);
+                } else {
+                    console.error("El documento del usuario no existe.");
+                }
+            } catch (error) {
+                console.error("Error al guardar los resultados del examen:", error);
             }
         } else {
             console.error("No hay un usuario autenticado.");

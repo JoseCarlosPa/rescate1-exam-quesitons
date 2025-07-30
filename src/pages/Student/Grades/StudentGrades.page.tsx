@@ -28,7 +28,7 @@ interface ExamResult {
   correctAnswers: number;
 }
 
-interface ExamData {
+export interface ExamData {
   completed: boolean;
   score: number;
   totalQuestions: number;
@@ -46,8 +46,7 @@ interface StudentData {
 type FilterType = 'all' | 'completed' | 'pending';
 type SortType = 'name' | 'score' | 'date';
 
-// Mapeo de IDs de exámenes a nombres
-const examNames: Record<number, string> = {
+export const examNames: Record<number, string> = {
   1: "Examen General",
   2: "Aspectos Legales",
   3: "Comunicaciones y documentación",
