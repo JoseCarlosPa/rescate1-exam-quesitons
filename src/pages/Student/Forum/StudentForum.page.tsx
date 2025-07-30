@@ -17,18 +17,19 @@ import { useForum } from '../../../hooks/useForum.hook';
 import { collection, addDoc, Timestamp } from 'firebase/firestore';
 import { db } from '../../../firebase/firebaseConfig';
 import {useAuth} from "../../../Providers/AuthProvider";
+import {lections} from "../../../App.constants.tsx";
 
 export default function StudentForum() {
   const { user } = useAuth();
   const navigate = useNavigate();
-  const [selectedPage, setSelectedPage] = useState('general');
+  const [selectedPage, setSelectedPage] = useState('general-exam');
   const [showNewThreadModal, setShowNewThreadModal] = useState(false);
   const [showReplyModal, setShowReplyModal] = useState<string | null>(null);
   const [newThreadContent, setNewThreadContent] = useState('');
   const [replyContent, setReplyContent] = useState('');
   const [submitting, setSubmitting] = useState(false);
 
-  const { threads, loading } = useForum(selectedPage);
+  const {  loading, getUserThreadsWithOtherReplies } = useForum(selectedPage);
 
   useEffect(() => {
     if (!user) {
@@ -36,23 +37,6 @@ export default function StudentForum() {
       return;
     }
   }, [user, navigate]);
-
-  const forumPages = [
-    { key: 'general', name: 'General' },
-    { key: 'legal-aspects', name: 'Aspectos Legales' },
-    { key: 'comunicaciones', name: 'Comunicaciones' },
-    { key: 'sistema-sem', name: 'Sistema SEM' },
-    { key: 'seguridad', name: 'Seguridad del Personal' },
-    { key: 'terminos-medicos', name: 'Términos Médicos' },
-    { key: 'cuerpo-humano', name: 'Cuerpo Humano' },
-    { key: 'evaluacion-paciente', name: 'Evaluación del Paciente' },
-    { key: 'via-aerea', name: 'Vía Aérea' },
-    { key: 'farmacologia', name: 'Farmacología' },
-    { key: 'emergencias-cardio', name: 'Emergencias Cardiovasculares' },
-    { key: 'emergencias-neuro', name: 'Emergencias Neurológicas' },
-    { key: 'trauma', name: 'Trauma' },
-    { key: 'pediatria', name: 'Emergencias Pediátricas' }
-  ];
 
   const handleSubmitThread = async () => {
     if (!user || !newThreadContent.trim()) {
@@ -114,6 +98,9 @@ export default function StudentForum() {
     }
   };
 
+  // Filtrar los hilos para mostrar solo los del usuario con respuestas de otros
+  const userThreads = user ? getUserThreadsWithOtherReplies(user.email ?? '') : [];
+
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-100 flex items-center justify-center">
@@ -157,7 +144,7 @@ export default function StudentForum() {
                 <h2 className="font-semibold text-gray-900">Temas</h2>
               </div>
               <div className="p-2">
-                {forumPages.map((page) => (
+                {lections.map((page) => (
                   <button
                     key={page.key}
                     onClick={() => setSelectedPage(page.key)}
@@ -167,7 +154,7 @@ export default function StudentForum() {
                         : 'text-gray-600 hover:bg-gray-100'
                     }`}
                   >
-                    {page.name}
+                    {page.title}
                   </button>
                 ))}
               </div>
@@ -179,7 +166,7 @@ export default function StudentForum() {
             <div className="bg-white rounded-lg shadow">
               <div className="p-6 border-b">
                 <h2 className="text-xl font-semibold text-gray-900">
-                  {forumPages.find(p => p.key === selectedPage)?.name || 'General'}
+                  {lections.find(p => p.key === selectedPage)?.title || 'General'}
                 </h2>
                 <p className="text-gray-600 mt-1">
                   Participa en discusiones sobre este tema
@@ -188,7 +175,7 @@ export default function StudentForum() {
 
               {/* Threads */}
               <div className="divide-y">
-                {threads.length === 0 ? (
+                {userThreads.length === 0 ? (
                   <div className="p-12 text-center">
                     <FaComments className="mx-auto text-4xl text-gray-300 mb-4" />
                     <h3 className="text-lg font-medium text-gray-900 mb-2">
@@ -205,7 +192,7 @@ export default function StudentForum() {
                     </button>
                   </div>
                 ) : (
-                  threads.map((thread) => (
+                  userThreads.map((thread) => (
                     <div key={thread.message.id} className="p-6">
                       {/* Thread Message */}
                       <div className="flex space-x-4">
