@@ -44,6 +44,41 @@ export default function Overview() {
                     <BsShield className="w-6 h-6 mr-2 text-orange-500"/>
                     Protocolo ABC - Evaluación Sistemática
                 </h2>
+
+                {/* Evaluación específica de la vía aérea */}
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
+                    <h3 className="text-xl font-bold text-blue-700 mb-4">🔍 Evaluación Específica de la Vía Aérea</h3>
+                    <div className="grid md:grid-cols-3 gap-4">
+                        <div className="bg-white p-4 rounded-lg shadow-sm">
+                            <h4 className="font-semibold text-blue-800 mb-2">Preguntas Clave:</h4>
+                            <ul className="space-y-1 text-sm text-gray-700">
+                                <li>• ¿El paciente respira?</li>
+                                <li>• ¿Respira de forma adecuada?</li>
+                                <li>• ¿Está hipóxico?</li>
+                                <li>• ¿Presenta patrones anormales?</li>
+                            </ul>
+                        </div>
+                        <div className="bg-white p-4 rounded-lg shadow-sm">
+                            <h4 className="font-semibold text-green-800 mb-2">Signos de Obstrucción:</h4>
+                            <ul className="space-y-1 text-sm text-gray-700">
+                                <li>• Ronquidos</li>
+                                <li>• Estridor</li>
+                                <li>• Respiración ruidosa</li>
+                                <li>• Respiración superficial</li>
+                            </ul>
+                        </div>
+                        <div className="bg-white p-4 rounded-lg shadow-sm">
+                            <h4 className="font-semibold text-orange-800 mb-2">Parámetros a Evaluar:</h4>
+                            <ul className="space-y-1 text-sm text-gray-700">
+                                <li>• Frecuencia respiratoria</li>
+                                <li>• Profundidad</li>
+                                <li>• Ritmo</li>
+                                <li>• Simetría torácica</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
                 <div className="grid md:grid-cols-3 gap-6">
                     <div
                         className="bg-gradient-to-b from-blue-50 to-blue-100 p-6 rounded-lg border">
@@ -146,6 +181,66 @@ export default function Overview() {
                             <li>Silencio total (obstrucción completa)</li>
                         </ul>
                     </div>
+                </div>
+            </div>
+
+            {/* Patrón respiratorio Cheyne-Stokes */}
+            <div className="bg-red-50 border-l-4 border-red-500 rounded-lg p-6">
+                <div className="flex items-center mb-4">
+                    <FaExclamationTriangle className="w-8 h-8 text-red-600 mr-3"/>
+                    <h3 className="text-xl font-bold text-red-700">⚠️ Patrón Respiratorio Cheyne-Stokes</h3>
+                </div>
+                <div className="grid lg:grid-cols-2 gap-6">
+                    <div>
+                        <div className="bg-white p-4 rounded-lg shadow-sm mb-4">
+                            <h4 className="font-semibold text-red-800 mb-2">Descripción:</h4>
+                            <p className="text-gray-700 text-sm mb-3">
+                                Respiraciones que aumentan y disminuyen en profundidad y frecuencia,
+                                seguidas de períodos de apnea (15-30 segundos).
+                            </p>
+                            <div className="bg-red-100 p-3 rounded">
+                                <p className="text-sm text-red-700">
+                                    <strong>Patrón:</strong> Superficial → Profunda → Superficial → Apnea → Reinicio
+                                </p>
+                            </div>
+                        </div>
+                        <div className="bg-white p-4 rounded-lg shadow-sm">
+                            <h4 className="font-semibold text-orange-800 mb-2">Causas Comunes:</h4>
+                            <ul className="space-y-1 text-sm text-gray-700">
+                                <li>• Lesión cerebral grave</li>
+                                <li>• Insuficiencia cardíaca severa</li>
+                                <li>• Eventos neurológicos (ACV, trauma)</li>
+                                <li>• Estados terminales</li>
+                                <li>• Hipertensión intracraneal</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div className="bg-orange-50 p-4 rounded-lg border border-orange-200 mb-4">
+                            <h4 className="font-semibold text-orange-800 mb-2">🔍 Evaluación Inmediata:</h4>
+                            <ol className="list-decimal list-inside space-y-1 text-sm text-gray-700">
+                                <li>Confirmar patrón observando 30-60 segundos</li>
+                                <li>Verificar saturación de oxígeno (SpO₂)</li>
+                                <li>Medir nivel de conciencia (AVPU/Glasgow)</li>
+                                <li>Evaluar signos neurológicos</li>
+                            </ol>
+                        </div>
+                        <div className="bg-green-50 p-4 rounded-lg border border-green-200">
+                            <h4 className="font-semibold text-green-800 mb-2">🚨 Tratamiento:</h4>
+                            <ol className="list-decimal list-inside space-y-1 text-sm text-gray-700">
+                                <li>Oxígeno suplementario inmediato</li>
+                                <li>Mascarilla de no reinhalación si hipoxémico</li>
+                                <li>Monitoreo continuo</li>
+                                <li>Preparar ventilación asistida (apnea mayor 20 seg)</li>
+                                <li>Transporte URGENTE y monitorizado</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div className="mt-4 bg-red-100 p-4 rounded-lg border border-red-300">
+                    <p className="text-red-800 font-semibold text-center">
+                        ⚠️ IMPORTANCIA CLÍNICA: Indica compromiso neurológico grave o perfusión cerebral deficiente - Requiere intervención inmediata
+                    </p>
                 </div>
             </div>
 
