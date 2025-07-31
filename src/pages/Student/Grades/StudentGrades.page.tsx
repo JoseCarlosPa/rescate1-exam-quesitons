@@ -11,7 +11,6 @@ import {
   FaTrophy,
   FaCheck,
   FaTimes,
-  FaEye
 } from 'react-icons/fa';
 import { ImSpinner2 } from 'react-icons/im';
 import { toast } from 'sonner';
@@ -279,7 +278,7 @@ export default function StudentGrades() {
               <div className="ml-4">
                 <p className="text-sm font-medium text-gray-600">Aprobados</p>
                 <p className="text-2xl font-bold text-gray-900">
-                  {examResults.filter(exam => exam.completed && exam.score >= 70).length}
+                  {examResults.filter(exam => exam.completed && exam.score >= 80).length}
                 </p>
               </div>
             </div>
@@ -334,9 +333,6 @@ export default function StudentGrades() {
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Fecha
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Acciones
-                  </th>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
@@ -387,21 +383,7 @@ export default function StudentGrades() {
                         <span className="text-gray-400">-</span>
                       )}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                      {exam.completed ? (
-                        <button className="text-orange-600 hover:text-orange-900 flex items-center space-x-1">
-                          <FaEye />
-                          <span>Ver detalles</span>
-                        </button>
-                      ) : (
-                        <NavLink
-                          to={AllRoutes.EMT}
-                          className="text-blue-600 hover:text-blue-900"
-                        >
-                          Tomar examen
-                        </NavLink>
-                      )}
-                    </td>
+
                   </tr>
                 ))}
               </tbody>

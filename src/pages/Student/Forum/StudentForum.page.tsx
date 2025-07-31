@@ -9,15 +9,19 @@ import {
   FaReply,
   FaPaperPlane,
   FaUser,
-  FaCalendarAlt
+  FaCalendarAlt,
+  FaFilter
 } from 'react-icons/fa';
 import { ImSpinner2 } from 'react-icons/im';
 import { toast } from 'sonner';
 import { useForum } from '../../../hooks/useForum.hook';
+import { useForumStats } from '../../../hooks/useForumStats.hook';
 import { collection, addDoc, Timestamp } from 'firebase/firestore';
 import { db } from '../../../firebase/firebaseConfig';
 import {useAuth} from "../../../Providers/AuthProvider";
 import {lections} from "../../../App.constants.tsx";
+
+type ForumFilter = 'all' | 'mine';
 
 export default function StudentForum() {
   const { user } = useAuth();
@@ -28,8 +32,10 @@ export default function StudentForum() {
   const [newThreadContent, setNewThreadContent] = useState('');
   const [replyContent, setReplyContent] = useState('');
   const [submitting, setSubmitting] = useState(false);
+  const [forumFilter, setForumFilter] = useState<ForumFilter>('all');
 
-  const {  loading, getUserThreadsWithOtherReplies } = useForum(selectedPage);
+  const { threads, loading, getUserThreadsWithOtherReplies } = useForum(selectedPage);
+  const { stats: forumStats, loading: statsLoading } = useForumStats();
 
   useEffect(() => {
     if (!user) {
@@ -98,8 +104,18 @@ export default function StudentForum() {
     }
   };
 
-  // Filtrar los hilos para mostrar solo los del usuario con respuestas de otros
-  const userThreads = user ? getUserThreadsWithOtherReplies(user.email ?? '') : [];
+  // Función para obtener los hilos filtrados según la selección
+  const getFilteredThreads = () => {
+    if (!user) return [];
+
+    if (forumFilter === 'mine') {
+      return getUserThreadsWithOtherReplies(user.email ?? '');
+    }
+
+    return threads; // Todas las preguntas
+  };
+
+  const filteredThreads = getFilteredThreads();
 
   if (loading) {
     return (
@@ -144,19 +160,42 @@ export default function StudentForum() {
                 <h2 className="font-semibold text-gray-900">Temas</h2>
               </div>
               <div className="p-2">
-                {lections.map((page) => (
-                  <button
-                    key={page.key}
-                    onClick={() => setSelectedPage(page.key)}
-                    className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-colors ${
-                      selectedPage === page.key
-                        ? 'bg-orange-100 text-orange-700 font-medium'
-                        : 'text-gray-600 hover:bg-gray-100'
-                    }`}
-                  >
-                    {page.title}
-                  </button>
-                ))}
+                {lections.map((page) => {
+                  const threadCount = forumStats[page.key] || 0;
+                  return (
+                    <button
+                      key={page.key}
+                      onClick={() => setSelectedPage(page.key)}
+                      className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-colors ${
+                        selectedPage === page.key
+                          ? 'bg-orange-100 text-orange-700 font-medium'
+                          : 'text-gray-600 hover:bg-gray-100'
+                      }`}
+                    >
+                      <div className="flex justify-between items-center">
+                        <span className="truncate">{page.title}</span>
+                        {!statsLoading && (
+                          <span
+                            className={`ml-2 px-2 py-1 text-xs rounded-full flex-shrink-0 ${
+                              threadCount > 0
+                                ? selectedPage === page.key
+                                  ? 'bg-orange-200 text-orange-800'
+                                  : 'bg-gray-200 text-gray-600'
+                                : 'bg-gray-100 text-gray-400'
+                            }`}
+                          >
+                            {threadCount}
+                          </span>
+                        )}
+                        {statsLoading && (
+                          <div className="ml-2 w-5 h-5 flex items-center justify-center">
+                            <ImSpinner2 className="animate-spin text-xs text-gray-400" />
+                          </div>
+                        )}
+                      </div>
+                    </button>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -165,17 +204,33 @@ export default function StudentForum() {
           <div className="lg:w-3/4">
             <div className="bg-white rounded-lg shadow">
               <div className="p-6 border-b">
-                <h2 className="text-xl font-semibold text-gray-900">
-                  {lections.find(p => p.key === selectedPage)?.title || 'General'}
-                </h2>
-                <p className="text-gray-600 mt-1">
-                  Participa en discusiones sobre este tema
-                </p>
+                <div className="flex justify-between items-center">
+                  <div>
+                    <h2 className="text-xl font-semibold text-gray-900">
+                      {lections.find(p => p.key === selectedPage)?.title || 'General'}
+                    </h2>
+                    <p className="text-gray-600 mt-1">
+                      Participa en discusiones sobre este tema
+                    </p>
+                  </div>
+                  {/* Filter Button */}
+                  <div className="relative">
+                    <button
+                      onClick={() => setForumFilter(forumFilter === 'all' ? 'mine' : 'all')}
+                      className="flex items-center space-x-2 text-gray-600 hover:text-gray-800 cursor-pointer bg-gray-300 rounded px-3 py-2 transition-colors"
+                    >
+                      <FaFilter />
+                      <span className="text-sm">
+                        {forumFilter === 'all' ? 'Mis Preguntas' : 'Todas las Preguntas'}
+                      </span>
+                    </button>
+                  </div>
+                </div>
               </div>
 
               {/* Threads */}
               <div className="divide-y">
-                {userThreads.length === 0 ? (
+                {filteredThreads.length === 0 ? (
                   <div className="p-12 text-center">
                     <FaComments className="mx-auto text-4xl text-gray-300 mb-4" />
                     <h3 className="text-lg font-medium text-gray-900 mb-2">
@@ -192,7 +247,7 @@ export default function StudentForum() {
                     </button>
                   </div>
                 ) : (
-                  userThreads.map((thread) => (
+                  filteredThreads.map((thread) => (
                     <div key={thread.message.id} className="p-6">
                       {/* Thread Message */}
                       <div className="flex space-x-4">
