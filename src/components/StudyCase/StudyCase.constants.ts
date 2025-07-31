@@ -7,9 +7,87 @@ export type CaseStudy = {
     findings: string[];
     questions: { question: string; answer?: string }[];
     references: string[];
+    correctManage?: string;
+    explanation?: string;
 };
 
+
 export const caseStudies: CaseStudy[] = [
+    {
+        id: "001",
+        title: "Dolor torácico súbito en paciente masculino",
+        description: "Paciente masculino de 58 años refiere dolor torácico opresivo que inició hace 20 minutos mientras caminaba.",
+        initialAssessment: "Paciente alerta, diaforético, refiere dolor 7/10 en región retroesternal, sin irradiación. Antecedentes de hipertensión arterial.",
+        vitalSigns: {
+            FC: "98 lpm",
+            PA: "138/88 mmHg",
+            FR: "18 rpm",
+            SpO2: "93%",
+        },
+        findings: [
+            "Dolor torácico opresivo no irradiado",
+            "Diaforesis",
+            "Disminución de saturación de oxígeno",
+        ],
+        questions: [
+            {
+                question: "¿Cuál es la sospecha clínica principal?",
+                answer: "Síndrome Coronario Agudo (SCA)",
+            },
+            {
+                question: "¿Qué medicamentos deben administrarse si no hay contraindicaciones?",
+            },
+        ],
+        references: [
+            "https://www.ahajournals.org/doi/full/10.1161/CIR.0000000000000911",
+            "https://www.uptodate.com/contents/initial-evaluation-and-management-of-acute-coronary-syndrome-acs-in-the-emergency-department",
+        ],
+        correctManage: `- Administrar ASA 300 mg VO masticable si no hay alergias.
+- Oxígeno si la SpO2 es < 94%.
+- Monitoreo cardíaco continuo (ECG 12 derivaciones).
+- Acceso IV periférico.
+- Nitroglicerina sublingual si PA sistólica > 100 mmHg.
+- Alertar al centro receptor para activación del código infarto.
+- Preparar traslado rápido.`,
+        explanation: `Este caso indica un probable infarto con elevación del ST (IAMCEST). El tratamiento prehospitalario busca reducir el daño miocárdico. La aspirina reduce la agregación plaquetaria y mejora la sobrevida. La oxigenoterapia debe usarse solo si hay hipoxia. La nitroglicerina puede aliviar el dolor y reducir la demanda de oxígeno. Es esencial un ECG de 12 derivaciones y preparar al paciente para intervención coronaria urgente si aplica.`,
+    },
+    {
+        id: "002",
+        title: "Paciente inconsciente en la vía pública",
+        description: "Hombre de 35 años encontrado inconsciente en la calle, sin testigos. No responde a estímulos verbales ni dolorosos.",
+        initialAssessment: "Paciente inconsciente, con respiración lenta e irregular. Pulso carotídeo presente. Pupilas mióticas.",
+        vitalSigns: {
+            FC: "54 lpm",
+            PA: "90/60 mmHg",
+            FR: "8 rpm",
+            SpO2: "85%",
+        },
+        findings: [
+            "Disminución del nivel de conciencia (GCS 3-4)",
+            "Bradipnea con hipoxia",
+            "Pupilas puntiformes (posible sobredosis opioide)",
+        ],
+        questions: [
+            {
+                question: "¿Cuál debe ser la prioridad en el manejo inicial?",
+                answer: "Asegurar vía aérea y ventilación asistida",
+            },
+            {
+                question: "¿Qué dispositivos puedes considerar para el manejo de la vía aérea?",
+            },
+        ],
+        references: [
+            "https://emergency.cdc.gov/han/han00384.asp",
+            "https://www.naemsp.org/Pages/Position-Statements.aspx",
+        ],
+        correctManage: `- Apertura de vía aérea con maniobra frente-mentón o tracción mandibular.
+- Insertar cánula orofaríngea si no hay reflejo nauseoso.
+- Ventilar con BVM a 10-12 rpm con oxígeno al 100%.
+- Administrar naloxona intranasal (2 mg) o IV si se sospecha sobredosis opioide.
+- Monitorizar signos vitales y nivel de conciencia.
+- Preparar traslado urgente.`,
+        explanation: `Un paciente inconsciente con respiración lenta y pupilas mióticas sugiere una posible intoxicación por opioides. La ventilación adecuada es prioritaria antes de la administración de naloxona. La hipoxia debe corregirse rápidamente. El uso de un BVM con O2 suplementario es crítico. Naloxona puede revertir la depresión respiratoria en casos de sobredosis. Siempre se debe considerar otras causas y transportar a un centro que pueda continuar el tratamiento.`,
+    },
     {
         id: "accidente-motocicleta-01",
         title: "Colisión entre automóvil y motocicleta",
@@ -22,7 +100,6 @@ export const caseStudies: CaseStudy[] = [
             "TA inicial": "96/54 mmHg",
             "SpO2 inicial": "88% con BVM a O₂ 15 lpm",
             "FR inicial": "34 rpm",
-            // Signos vitales post-intervención
             "Pulso final": "118 lpm",
             "TA final": "104/62 mmHg",
             "SpO2 final": "96%",
@@ -39,7 +116,20 @@ export const caseStudies: CaseStudy[] = [
             {question: "¿Por qué mejoran la presión arterial y la frecuencia cardíaca después de la descompresión torácica?"},
             {question: "¿Cuál es el manejo inicial prioritario para la fractura expuesta?"},
         ],
-        references: ["Capítulo 12 - Shock.pdf"],
+        references: [
+            "Capítulo 12 - Shock.pdf",
+            "https://www.naemt.org/education/phtls",
+            "https://emcrit.org/emcrit/tension-pneumothorax-needle/",
+        ],
+        correctManage: `- Evaluación rápida y control de la vía aérea (considerar intubación si deteriora).
+- Ventilación asistida con BVM y oxígeno al 100%.
+- Descompresión torácica inmediata con aguja en 2º espacio intercostal línea medio clavicular o 5º espacio línea axilar anterior.
+- Control de hemorragia externa en fractura expuesta (presión directa, apósitos estériles).
+- Inmovilización de extremidad con férula adecuada.
+- Acceso IV y reposición con líquidos si está indicado.
+- Evaluación continua del estado neurológico y signos de perfusión.
+- Traslado inmediato a centro de trauma con alerta previa.`,
+        explanation: `El paciente presenta un neumotórax a tensión, una emergencia que compromete la ventilación y circulación. La desviación traqueal, la distensión yugular y la ausencia de ruidos respiratorios lo confirman. La descompresión con aguja es la intervención que salva la vida. La fractura de fémur puede causar hemorragia significativa, por lo que debe controlarse e inmovilizarse. El manejo debe priorizar la vía aérea, ventilación efectiva y tratamiento del shock obstructivo. La pronta identificación de estos hallazgos y la intervención rápida son fundamentales para la supervivencia.`,
     },
     {
         id: "paciente-inconsciente-03",
@@ -49,7 +139,7 @@ export const caseStudies: CaseStudy[] = [
         initialAssessment:
             "Sin lesiones visibles, nivel de glucosa normal, ventilación inicial pobre pero mejora con oxígeno, bradicardia persistente e hipotensión, sin respuesta al estímulo.",
         vitalSigns: {
-            "Glucosa": "108 mg/dL",
+            Glucosa: "108 mg/dL",
             "Frecuencia cardíaca": "Baja (bradicardia)",
             "Presión arterial": "Hipotensa (no especificada)",
         },
@@ -72,7 +162,16 @@ export const caseStudies: CaseStudy[] = [
         ],
         references: [
             "AAOS Atención Prehospitalaria Básica, 11ª Edición - Capítulos de evaluación primaria, evaluación médica y emergencias por sobredosis.",
+            "https://www.samhsa.gov/medications-substance-use-disorders/medications-counseling-related-conditions/naloxone",
         ],
+        correctManage: `- Evaluación rápida del ABCDE.
+- Asegurar vía aérea y ventilar con BVM si FR < 10 o hay hipoxia.
+- Administrar oxígeno suplementario a alto flujo.
+- Administrar naloxona intranasal (2-4 mg) o IV si se sospecha opioides.
+- Colocar en posición lateral de seguridad si no hay indicación de intubación.
+- Monitorizar signos vitales y nivel de conciencia.
+- No retrasar el traslado si el paciente no responde o recae tras la naloxona.`,
+        explanation: `La presentación clínica es compatible con una intoxicación por opioides (bradicardia, hipoventilación, inconsciencia). Aunque la glucosa es normal y no hay trauma, el paciente requiere soporte ventilatorio inmediato y naloxona como antídoto. El monitoreo continuo es clave, ya que puede requerir dosis adicionales. La reevaluación constante permite detectar recaídas. No es necesaria la inmovilización espinal si no hay mecanismo traumático. La prioridad es ventilar, revertir el efecto opioide y trasladar sin demoras.`,
     },
     {
         id: "diabetico-no-responde-04",
@@ -93,19 +192,27 @@ export const caseStudies: CaseStudy[] = [
             "Sin antecedentes claros disponibles en el lugar",
         ],
         questions: [
-            {question: "¿Cuál es la intervención inmediata indicada para este paciente?"},
-            {question: "¿Cómo afecta la hipoglucemia el estado mental del paciente?"},
-            {question: "¿Qué protocolo seguir si el paciente no responde a glucosa oral?"},
+            { question: "¿Cuál es la intervención inmediata indicada para este paciente?" },
+            { question: "¿Cómo afecta la hipoglucemia el estado mental del paciente?" },
+            { question: "¿Qué protocolo seguir si el paciente no responde a glucosa oral?" },
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de emergencias endocrinas.",
+            "https://www.uptodate.com/contents/treatment-of-hypoglycemia-in-adults",
         ],
+        correctManage: `- Confirmar hipoglucemia con glucometría (menor a 60 mg/dL).
+- Administrar dextrosa IV (D10 o D50) en bolo si hay acceso.
+- Si no hay vía IV, administrar glucagón IM (1 mg).
+- Monitorear signos vitales, nivel de conciencia y glucosa post-intervención.
+- Reevaluar cada 5-10 minutos y preparar traslado.
+- Obtener información adicional vía SAMPLE si es posible.`,
+        explanation: `La hipoglucemia severa puede causar deterioro neurológico agudo y pérdida de conciencia. La prioridad es restaurar rápidamente la glucosa sérica para prevenir daño cerebral. Dextrosa IV es el tratamiento de elección si hay acceso vascular; si no, se administra glucagón IM. La piel pálida, diaforesis y taquicardia son signos clásicos de hipoglucemia. Una vez consciente, se deben buscar causas y asegurar un seguimiento adecuado.`,
     },
     {
         id: "asma-descompensada-05",
         title: "Crisis asmática severa",
         description:
-            "Mujer de 29 años con antecedentes de asma, encontrada en posición de trípode, jadeando por aire, con silbilancias audibles. No responde bien al inhalador.",
+            "Mujer de 29 años con antecedentes de asma, encontrada en posición de trípode, jadeando por aire, con sibilancias audibles. No responde bien al inhalador.",
         initialAssessment:
             "Consciente, pero con dificultad extrema para hablar. Respiración rápida, uso de músculos accesorios, tórax hiperexpandido.",
         vitalSigns: {
@@ -120,13 +227,22 @@ export const caseStudies: CaseStudy[] = [
             "Riesgo de agotamiento respiratorio",
         ],
         questions: [
-            {question: "¿Qué indicaciones hay para administrar salbutamol en nebulización?"},
-            {question: "¿Cuándo se debe asistir la ventilación de un paciente asmático?"},
-            {question: "¿Qué signos indican inminente fallo respiratorio?"},
+            { question: "¿Qué indicaciones hay para administrar salbutamol en nebulización?" },
+            { question: "¿Cuándo se debe asistir la ventilación de un paciente asmático?" },
+            { question: "¿Qué signos indican inminente fallo respiratorio?" },
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de emergencias respiratorias.",
+            "https://www.ginasthma.org/",
         ],
+        correctManage: `- Administrar oxígeno de alto flujo (NRM o BVM con O₂).
+- Nebulización con salbutamol (albuterol) 2.5 mg + ipratropio 0.5 mg si disponible.
+- Repetir nebulizaciones cada 10-20 minutos si es necesario.
+- Evaluar signos de fatiga (bradipnea, disminución del esfuerzo).
+- Preparar para asistencia ventilatoria si hay deterioro.
+- Monitorear frecuencia respiratoria, SpO₂ y nivel de conciencia.
+- Traslado urgente a centro de atención avanzada.`,
+        explanation: `Una crisis asmática severa se identifica por dificultad para hablar, uso de músculos accesorios y saturación baja. El broncoespasmo debe tratarse con broncodilatadores de acción corta. El uso de salbutamol e ipratropio nebulizado mejora rápidamente la mecánica ventilatoria. La fatiga puede llevar al fallo respiratorio, por lo que es esencial vigilar signos de agotamiento como bradipnea, somnolencia o caída de la SpO₂. La ventilación asistida debe iniciarse si la condición empeora.`,
     },
     {
         id: "trauma-cervical-06",
@@ -146,13 +262,21 @@ export const caseStudies: CaseStudy[] = [
             "Evaluación neurológica continua es clave",
         ],
         questions: [
-            {question: "¿Cuándo está indicada la inmovilización espinal completa?"},
-            {question: "¿Qué signos indican lesión medular?"},
-            {question: "¿Cómo evalúas función motora y sensitiva en escena?"},
+            { question: "¿Cuándo está indicada la inmovilización espinal completa?" },
+            { question: "¿Qué signos indican lesión medular?" },
+            { question: "¿Cómo evalúas función motora y sensitiva en escena?" },
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de trauma músculo-esquelético e inmovilización.",
+            "https://www.naemt.org/education/phtls",
         ],
+        correctManage: `- Control manual inmediato de la columna cervical.
+- Evaluar función motora y sensitiva en extremidades.
+- Aplicar collar cervical rígido y tablero largo o dispositivo de inmovilización espinal.
+- Monitorear nivel de conciencia y signos neurológicos.
+- Evitar movimientos innecesarios durante el traslado.
+- Traslado urgente a hospital con capacidad para neuroimagen y trauma.`,
+        explanation: `Una caída desde más de 1.5 m se considera mecanismo de trauma significativo. La presencia de parestesias y déficit motor es indicativa de posible lesión medular. Es fundamental restringir completamente el movimiento de la columna desde la primera evaluación. La inmovilización adecuada previene un posible daño secundario irreversible. La evaluación neurológica en campo permite monitorear cambios durante el traslado.`,
     },
     {
         id: "dolor-toracico-infarto-07",
@@ -172,13 +296,20 @@ export const caseStudies: CaseStudy[] = [
             "Asistencia con nitroglicerina si no hay contraindicaciones",
         ],
         questions: [
-            {question: "¿Qué medicamentos puedes administrar en sospecha de IAM?"},
-            {question: "¿Qué datos electrocardiográficos o clínicos deben reportarse al hospital?"},
-            {question: "¿Cómo evalúas el dolor torácico de manera sistemática?"},
+            { question: "¿Qué medicamentos puedes administrar en sospecha de IAM?" },
+            { question: "¿Qué datos electrocardiográficos o clínicos deben reportarse al hospital?" },
+            { question: "¿Cómo evalúas el dolor torácico de manera sistemática?" },
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de emergencias cardiovasculares.",
+            "https://www.ahajournals.org/doi/10.1161/CIR.0000000000000911",
         ],
+        correctManage: `- Monitoreo ECG si está disponible.
+- Administrar ASA 300 mg VO (si no hay alergia o contraindicación).
+- Nitroglicerina sublingual si PA sistólica > 100 mmHg y no hay uso reciente de inhibidores PDE-5.
+- Oxígeno si SpO₂ < 94%.
+- Establecer vía IV y preparar para traslado inmediato con activación del código infarto.`,
+        explanation: `El paciente presenta signos clásicos de un infarto agudo al miocardio. El manejo incluye oxigenación (si hipoxia), antiagregantes plaquetarios (aspirina), vasodilatadores (nitroglicerina) y ECG para detección de IAM con o sin elevación del ST. El traslado rápido a un centro con capacidad de reperfusión es fundamental para el pronóstico.`,
     },
     {
         id: "parto-inminente-08",
@@ -198,13 +329,21 @@ export const caseStudies: CaseStudy[] = [
             "Control de sangrado postparto materno",
         ],
         questions: [
-            {question: "¿Cuáles son los pasos clave para un parto asistido en el campo?"},
-            {question: "¿Cómo evalúas al recién nacido con APGAR?"},
-            {question: "¿Qué hacer en caso de hemorragia postparto?"},
+            { question: "¿Cuáles son los pasos clave para un parto asistido en el campo?" },
+            { question: "¿Cómo evalúas al recién nacido con APGAR?" },
+            { question: "¿Qué hacer en caso de hemorragia postparto?" },
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de emergencias obstétricas y neonatales.",
         ],
+        correctManage: `- Preparar equipo limpio y guantes estériles.
+- Asistir el parto controlando el descenso cefálico con presión suave.
+- Limpiar vía aérea del neonato si es necesario (sin aspiración rutinaria).
+- Estimular al neonato y evaluar APGAR al minuto y a los 5 minutos.
+- Pinzar y cortar el cordón tras 1-3 minutos si no hay complicaciones.
+- Vigilar sangrado postparto y masajear fondo uterino si hay hemorragia.
+- Traslado de madre y neonato para evaluación hospitalaria.`,
+        explanation: `El parto inminente en campo debe abordarse con calma y técnica. Lo prioritario es la seguridad del neonato: despejar vía aérea, estimular, mantener temperatura y evaluar con APGAR. El manejo del alumbramiento y prevención de hemorragia postparto mediante masaje uterino también es crucial. Se debe cortar el cordón de manera segura y asegurar el bienestar de ambos pacientes.`,
     },
     {
         id: "quemadura-electrica-09",
@@ -224,13 +363,22 @@ export const caseStudies: CaseStudy[] = [
             "Importancia de monitorización continua",
         ],
         questions: [
-            {question: "¿Por qué una quemadura eléctrica puede causar daño interno severo sin lesión externa visible?"},
-            {question: "¿Cuál es el riesgo cardíaco asociado a este tipo de trauma?"},
-            {question: "¿Qué medidas debes tomar si no tienes un monitor cardíaco disponible?"},
+            { question: "¿Por qué una quemadura eléctrica puede causar daño interno severo sin lesión externa visible?" },
+            { question: "¿Cuál es el riesgo cardíaco asociado a este tipo de trauma?" },
+            { question: "¿Qué medidas debes tomar si no tienes un monitor cardíaco disponible?" },
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de emergencias ambientales y trauma eléctrico.",
+            "https://www.ncbi.nlm.nih.gov/books/NBK448117/",
         ],
+        correctManage: `- Asegurar escena segura antes del contacto.
+- Evaluar y mantener la vía aérea y respiración.
+- Administrar oxígeno suplementario si hay hipoxia.
+- Colocar en monitor cardíaco si disponible; observar arritmias.
+- Control de quemaduras con apósitos secos estériles.
+- Vigilar signos de lesión interna (palidez, confusión, arritmias).
+- Acceso IV y traslado urgente a centro con capacidad para trauma eléctrico.`,
+        explanation: `Las quemaduras eléctricas pueden causar daño extenso en tejidos profundos, aun cuando las lesiones externas sean mínimas. El paso de corriente puede afectar el corazón, generando arritmias potencialmente letales. El monitoreo cardíaco es esencial, y debe mantenerse durante al menos 24 horas si hay sospecha de corriente de alto voltaje. El manejo incluye soporte vital, control de quemaduras y monitoreo continuo.`,
     },
     {
         id: "ahogamiento-nino-10",
@@ -250,13 +398,21 @@ export const caseStudies: CaseStudy[] = [
             "Riesgo de edema pulmonar secundario",
         ],
         questions: [
-            {question: "¿Cuál es la prioridad en un caso de ahogamiento pediátrico?"},
-            {question: "¿Qué signos indican que el paciente podría desarrollar complicaciones como edema pulmonar?"},
-            {question: "¿Qué precauciones especiales debes tener en niños después de un rescate acuático?"},
+            { question: "¿Cuál es la prioridad en un caso de ahogamiento pediátrico?" },
+            { question: "¿Qué signos indican que el paciente podría desarrollar complicaciones como edema pulmonar?" },
+            { question: "¿Qué precauciones especiales debes tener en niños después de un rescate acuático?" },
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de emergencias pediátricas y ambientales.",
+            "https://www.cdc.gov/drowning/index.html",
         ],
+        correctManage: `- Evaluar vía aérea, respiración y pulso.
+- Iniciar ventilación asistida con BVM a 15 L/min O₂.
+- Si no respira y no hay pulso, iniciar RCP pediátrico inmediatamente.
+- Monitorizar signos vitales y SpO₂.
+- Mantener al niño abrigado para prevenir hipotermia.
+- Trasladar urgentemente, aunque mejore, por riesgo de complicaciones tardías (edema pulmonar, aspiración secundaria).`,
+        explanation: `Los niños pueden presentar hipoxia severa tras inmersión aunque estén conscientes brevemente. La ventilación asistida es crucial. Aun si el niño mejora, siempre debe ser evaluado en hospital por riesgo de edema pulmonar retardado. La prioridad en el prehospital es ventilación eficaz, prevención de hipotermia y transporte inmediato.`,
     },
     {
         id: "abuso-anciano-11",
@@ -1607,9 +1763,9 @@ export const caseStudies: CaseStudy[] = [
             "La administración de sulfato de magnesio es el tratamiento de elección en el hospital."
         ],
         "questions": [
-            { "question": "¿Cuáles son los signos y síntomas que definen la preeclampsia severa y la eclampsia?" },
-            { "question": "¿Por qué es crucial el manejo de la presión arterial en esta paciente, y qué precauciones se deben tomar?" },
-            { "question": "En el entorno prehospitalario, ¿cuál es la prioridad principal además de prevenir lesiones durante una convulsión?" }
+            {"question": "¿Cuáles son los signos y síntomas que definen la preeclampsia severa y la eclampsia?"},
+            {"question": "¿Por qué es crucial el manejo de la presión arterial en esta paciente, y qué precauciones se deben tomar?"},
+            {"question": "En el entorno prehospitalario, ¿cuál es la prioridad principal además de prevenir lesiones durante una convulsión?"}
         ],
         "references": [
             "AAOS 11ª Edición - Capítulo de Emergencias Obstétricas y Neonatales."
@@ -1634,9 +1790,9 @@ export const caseStudies: CaseStudy[] = [
             "Requiere manejo agresivo del dolor, hidratación y oxígeno."
         ],
         "questions": [
-            { "question": "¿Cuál es la fisiopatología de una crisis vaso-oclusiva en la anemia de células falciformes?" },
-            { "question": "¿Por qué es importante administrar oxígeno a estos pacientes, incluso si su SpO2 es normal?" },
-            { "question": "¿Qué es el síndrome torácico agudo y por qué es una complicación mortal de esta enfermedad?" }
+            {"question": "¿Cuál es la fisiopatología de una crisis vaso-oclusiva en la anemia de células falciformes?"},
+            {"question": "¿Por qué es importante administrar oxígeno a estos pacientes, incluso si su SpO2 es normal?"},
+            {"question": "¿Qué es el síndrome torácico agudo y por qué es una complicación mortal de esta enfermedad?"}
         ],
         "references": [
             "AAOS 11ª Edición - Capítulo de Emergencias Hematológicas."
@@ -1660,9 +1816,9 @@ export const caseStudies: CaseStudy[] = [
             "Requiere antídoto específico (hidroxocobalamina) si está disponible."
         ],
         "questions": [
-            { "question": "En un incendio, ¿qué materiales al quemarse liberan gas cianuro?" },
-            { "question": "Explique por qué tanto el monóxido de carbono como el cianuro pueden dar una lectura de SpO2 falsamente normal o alta." },
-            { "question": "¿Cuál es el mecanismo por el cual el cianuro causa hipoxia celular, y cómo actúa el antídoto como la hidroxocobalamina?" }
+            {"question": "En un incendio, ¿qué materiales al quemarse liberan gas cianuro?"},
+            {"question": "Explique por qué tanto el monóxido de carbono como el cianuro pueden dar una lectura de SpO2 falsamente normal o alta."},
+            {"question": "¿Cuál es el mecanismo por el cual el cianuro causa hipoxia celular, y cómo actúa el antídoto como la hidroxocobalamina?"}
         ],
         "references": [
             "AAOS 11ª Edición - Capítulo de Emergencias Toxicológicas y Ambientales."
@@ -1687,9 +1843,9 @@ export const caseStudies: CaseStudy[] = [
             "Requiere sedación (usualmente con benzodiacepinas) y soporte vital."
         ],
         "questions": [
-            { "question": "¿Qué diferencia al Delirium Tremens de las fases más leves de la abstinencia alcohólica?" },
-            { "question": "¿Por qué es fundamental medir la glucosa en un paciente con estado mental alterado y antecedentes de alcoholismo?" },
-            { "question": "Desde el punto de vista de la seguridad, ¿cuál es la prioridad al manejar a un paciente tan agitado?" }
+            {"question": "¿Qué diferencia al Delirium Tremens de las fases más leves de la abstinencia alcohólica?"},
+            {"question": "¿Por qué es fundamental medir la glucosa en un paciente con estado mental alterado y antecedentes de alcoholismo?"},
+            {"question": "Desde el punto de vista de la seguridad, ¿cuál es la prioridad al manejar a un paciente tan agitado?"}
         ],
         "references": [
             "AAOS 11ª Edición - Capítulo de Emergencias Psiquiátricas y Abuso de Sustancias."
@@ -1713,9 +1869,9 @@ export const caseStudies: CaseStudy[] = [
             "El manejo es de soporte (oxígeno) y traslado en posición cómoda."
         ],
         "questions": [
-            { "question": "¿Cuál es el perfil de paciente clásico para un neumotórax espontáneo primario?" },
-            { "question": "¿Qué signos y síntomas indicarían que este neumotórax simple está evolucionando a un neumotórax a tensión?" },
-            { "question": "Si no hay trauma, ¿cuál es la causa subyacente de este tipo de neumotórax?" }
+            {"question": "¿Cuál es el perfil de paciente clásico para un neumotórax espontáneo primario?"},
+            {"question": "¿Qué signos y síntomas indicarían que este neumotórax simple está evolucionando a un neumotórax a tensión?"},
+            {"question": "Si no hay trauma, ¿cuál es la causa subyacente de este tipo de neumotórax?"}
         ],
         "references": [
             "AAOS 11ª Edición - Capítulo de Emergencias Respiratorias."
@@ -1738,9 +1894,9 @@ export const caseStudies: CaseStudy[] = [
             "Requiere intervención inmediata con maniobras para lactantes."
         ],
         "questions": [
-            { "question": "Describa la secuencia correcta de maniobras (palmadas en la espalda y compresiones torácicas) para un lactante consciente con OVACE severa." },
-            { "question": "¿Qué se debe hacer de manera diferente si el lactante pierde la conciencia?" },
-            { "question": "¿Por qué un cuerpo extraño aspirado tiende a alojarse con más frecuencia en el bronquio principal derecho?" }
+            {"question": "Describa la secuencia correcta de maniobras (palmadas en la espalda y compresiones torácicas) para un lactante consciente con OVACE severa."},
+            {"question": "¿Qué se debe hacer de manera diferente si el lactante pierde la conciencia?"},
+            {"question": "¿Por qué un cuerpo extraño aspirado tiende a alojarse con más frecuencia en el bronquio principal derecho?"}
         ],
         "references": [
             "AAOS 11ª Edición - Capítulo de Manejo de la Vía Aérea y Emergencias Pediátricas."
@@ -1764,9 +1920,9 @@ export const caseStudies: CaseStudy[] = [
             "El manejo debe minimizar la agitación del niño."
         ],
         "questions": [
-            { "question": "¿Por qué está contraindicado intentar visualizar la garganta con un abatelenguas en un caso de sospecha de epiglotitis en el campo?" },
-            { "question": "¿Cuál es la prioridad absoluta en el manejo prehospitalario de este paciente?" },
-            { "question": "¿Qué patógeno bacteriano es la causa clásica de la epiglotitis y por qué es menos común ahora?" }
+            {"question": "¿Por qué está contraindicado intentar visualizar la garganta con un abatelenguas en un caso de sospecha de epiglotitis en el campo?"},
+            {"question": "¿Cuál es la prioridad absoluta en el manejo prehospitalario de este paciente?"},
+            {"question": "¿Qué patógeno bacteriano es la causa clásica de la epiglotitis y por qué es menos común ahora?"}
         ],
         "references": [
             "AAOS 11ª Edición - Capítulo de Emergencias Pediátricas y Emergencias Respiratorias."

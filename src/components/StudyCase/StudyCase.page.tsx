@@ -13,7 +13,7 @@ import {IoClose} from "react-icons/io5";
 export default function StudyCase(){
     const [currentCase, setCurrentCase] = useState<CaseStudy | null>(null);
     const [logoBase64, setLogoBase64] = useState<string | null>(null);
-    const [activeTab, setActiveTab] = useState<'descripcion' | 'preguntas' | 'referencias'>('descripcion');
+    const [activeTab, setActiveTab] = useState<'descripcion' | 'preguntas' | 'manejo' | 'referencias'>('descripcion');
     const [showCaseSelector, setShowCaseSelector] = useState<boolean>(false);
     const [searchTerm, setSearchTerm] = useState<string>('');
 
@@ -296,6 +296,16 @@ export default function StudyCase(){
                         Preguntas
                     </button>
                     <button
+                        onClick={() => setActiveTab('manejo')}
+                        className={`py-2 px-1 border-b-2 font-medium text-sm ${
+                            activeTab === 'manejo'
+                                ? 'border-blue-500 text-blue-600'
+                                : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                        }`}
+                    >
+                        Manejo
+                    </button>
+                    <button
                         onClick={() => setActiveTab('referencias')}
                         className={`py-2 px-1 border-b-2 font-medium text-sm ${
                             activeTab === 'referencias'
@@ -358,6 +368,30 @@ export default function StudyCase(){
                 </div>
             )}
 
+            {activeTab === 'manejo' && (
+                <div className="space-y-6">
+                    {currentCase.correctManage && (
+                        <div className="bg-white p-4 rounded-lg border border-gray-200">
+                            <h3 className="font-semibold text-blue-600 mb-2 text-lg">Manejo Correcto</h3>
+                            <div className="text-gray-800 whitespace-pre-line">{currentCase.correctManage}</div>
+                        </div>
+                    )}
+
+                    {currentCase.explanation && (
+                        <div className="bg-white p-4 rounded-lg border border-gray-200">
+                            <h3 className="font-semibold text-blue-600 mb-2 text-lg">Explicación</h3>
+                            <p className="text-gray-800">{currentCase.explanation}</p>
+                        </div>
+                    )}
+
+                    {!currentCase.correctManage && !currentCase.explanation && (
+                        <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                            <p className="text-gray-500 italic">No hay información de manejo disponible para este caso.</p>
+                        </div>
+                    )}
+                </div>
+            )}
+
             {activeTab === 'referencias' && (
                 <div className="bg-white p-4 rounded-lg border border-gray-200">
                     <h3 className="font-semibold text-blue-600 mb-2 text-lg">Referencias bibliográficas</h3>
@@ -374,4 +408,3 @@ export default function StudyCase(){
         </div>
     );
 }
-
