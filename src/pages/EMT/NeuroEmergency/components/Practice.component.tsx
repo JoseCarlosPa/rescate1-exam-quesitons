@@ -1,238 +1,325 @@
-import {MdWarning} from "react-icons/md";
-import {FaExclamationTriangle} from "react-icons/fa";
-import {BsLightbulb} from "react-icons/bs";
+import { useState } from "react";
+import { FaUser, FaClock, FaStethoscope, FaAmbulance } from "react-icons/fa";
+import { MdExpandMore, MdExpandLess } from "react-icons/md";
+import { BiAnalyse } from "react-icons/bi";
 
-export default function Practice(){
-    return(
+interface ClinicalCase {
+    id: number;
+    title: string;
+    scenario: string;
+    vitals: {
+        age: string;
+        gender: string;
+        consciousness: string;
+        bp: string;
+        hr: string;
+        rr: string;
+        sao2: string;
+        temp: string;
+        glucose: string;
+    };
+    findings: string[];
+    questions: {
+        question: string;
+        options: string[];
+        correct: number;
+        explanation: string;
+    }[];
+}
+
+const clinicalCases: ClinicalCase[] = [
+    {
+        id: 1,
+        title: "Caso 1: Sospecha de EVC",
+        scenario: "Paciente masculino de 68 años encontrado por su esposa en el suelo del baño a las 7:30 AM. La esposa refiere que lo vio normal a las 6:00 AM cuando desayunaron juntos. Presenta debilidad del lado derecho, no puede hablar claramente y tiene desviación de la comisura labial.",
+        vitals: {
+            age: "68 años",
+            gender: "Masculino",
+            consciousness: "Consciente, desorientado",
+            bp: "160/95 mmHg",
+            hr: "88 lpm",
+            rr: "16 rpm",
+            sao2: "97%",
+            temp: "36.8°C",
+            glucose: "145 mg/dL"
+        },
+        findings: [
+            "Hemiparesia derecha",
+            "Afasia mixta",
+            "Desviación de comisura labial izquierda",
+            "Pupilas isocóricas y reactivas",
+            "No rigidez de nuca"
+        ],
+        questions: [
+            {
+                question: "¿Cuál es la ventana terapéutica crítica para el tratamiento de EVC isquémico?",
+                options: [
+                    "1-2 horas",
+                    "3-4.5 horas",
+                    "6-8 horas",
+                    "12-24 horas"
+                ],
+                correct: 1,
+                explanation: "La trombólisis es más efectiva cuando se administra dentro de las primeras 3-4.5 horas del inicio de síntomas."
+            },
+            {
+                question: "¿Qué escala es más apropiada para evaluar este paciente?",
+                options: [
+                    "Escala de Glasgow",
+                    "Escala Cincinnati",
+                    "Escala de Trauma",
+                    "Escala de Sedación"
+                ],
+                correct: 1,
+                explanation: "La escala Cincinnati evalúa específicamente signos de EVC: parálisis facial, debilidad de brazos y alteración del habla."
+            }
+        ]
+    },
+    {
+        id: 2,
+        title: "Caso 2: Crisis Convulsiva",
+        scenario: "Mujer de 25 años en centro comercial presenta súbitamente movimientos tónico-clónicos generalizados. Testigos refieren que gritó antes de caer. La crisis duró aproximadamente 2 minutos. Ahora está confusa y somnolienta.",
+        vitals: {
+            age: "25 años",
+            gender: "Femenino",
+            consciousness: "Confusa, somnolienta",
+            bp: "110/70 mmHg",
+            hr: "105 lpm",
+            rr: "20 rpm",
+            sao2: "94%",
+            temp: "37.2°C",
+            glucose: "95 mg/dL"
+        },
+        findings: [
+            "Estado post-ictal",
+            "Mordedura lateral de lengua",
+            "Incontinencia urinaria",
+            "Confusión y desorientación",
+            "Salivación aumentada"
+        ],
+        questions: [
+            {
+                question: "¿Qué NO debe hacer durante una convulsión activa?",
+                options: [
+                    "Proteger la cabeza del paciente",
+                    "Introducir objeto en la boca",
+                    "Cronometrar la duración",
+                    "Mantener vía aérea permeable"
+                ],
+                correct: 1,
+                explanation: "Nunca se debe introducir objetos en la boca durante una convulsión, ya que puede causar lesiones dentales o obstrucción de vía aérea."
+            },
+            {
+                question: "En el período post-ictal, la prioridad es:",
+                options: [
+                    "Administrar medicamentos",
+                    "Obtener historia clínica detallada",
+                    "Mantener vía aérea y oxigenación",
+                    "Realizar examen neurológico completo"
+                ],
+                correct: 2,
+                explanation: "En el período post-ictal, la prioridad es mantener la vía aérea permeable y asegurar adecuada oxigenación."
+            }
+        ]
+    }
+];
+
+export default function Practice() {
+    const [selectedCase, setSelectedCase] = useState<number | null>(null);
+    const [answers, setAnswers] = useState<{[key: string]: number}>({});
+    const [showResults, setShowResults] = useState<{[key: string]: boolean}>({});
+
+    const handleAnswerSelect = (caseId: number, questionIndex: number, answerIndex: number) => {
+        const key = `${caseId}-${questionIndex}`;
+        setAnswers(prev => ({
+            ...prev,
+            [key]: answerIndex
+        }));
+    };
+
+    const showAnswer = (caseId: number, questionIndex: number) => {
+        const key = `${caseId}-${questionIndex}`;
+        setShowResults(prev => ({
+            ...prev,
+            [key]: true
+        }));
+    };
+
+    return (
         <div className="space-y-6">
-            <h2 className="text-2xl font-semibold mb-6 text-gray-800 border-b pb-2">Casos Clínicos Interactivos</h2>
-
-            {/* Caso 1: ACV isquémico */}
-            <div className="p-6 bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg shadow-sm border border-blue-200">
-                <div className="flex items-center mb-4">
-                    <div className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3">1</div>
-                    <h3 className="text-xl font-semibold text-blue-700">Caso: ACV Isquémico</h3>
-                </div>
-                <div className="bg-white p-4 rounded-lg mb-4">
-                    <h4 className="font-semibold text-blue-800 mb-2">Escenario:</h4>
-                    <p className="italic text-gray-700 mb-3">
-                        Mujer de 68 años, despierta con debilidad en hemicuerpo derecho y dificultad para hablar.
-                        Familia refiere que ayer en la noche estaba normal. Última vez vista normal: 08:00 hrs. Hora actual: 10:30 hrs.
-                    </p>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-4 mb-4">
-                    <div className="bg-white p-4 rounded-lg">
-                        <h4 className="font-semibold text-blue-800 mb-2">Hallazgos Vitales:</h4>
-                        <ul className="text-sm text-gray-700 space-y-1">
-                            <li>• <strong>Conciencia:</strong> Alerta, orientada</li>
-                            <li>• <strong>Vía aérea:</strong> Permeable</li>
-                            <li>• <strong>Respiración:</strong> FR 18/min, SpO₂ 96%</li>
-                            <li>• <strong>Circulación:</strong> FC 90/min regular, TA 150/90</li>
-                            <li>• <strong>Glasgow:</strong> 13 (O4-V4-M5)</li>
-                        </ul>
-                    </div>
-                    <div className="bg-white p-4 rounded-lg">
-                        <h4 className="font-semibold text-blue-800 mb-2">Examen Neurológico:</h4>
-                        <ul className="text-sm text-gray-700 space-y-1">
-                            <li>• <strong>Habla:</strong> Disártrica, comprende órdenes</li>
-                            <li>• <strong>Cara:</strong> Paresia facial derecha</li>
-                            <li>• <strong>Brazo derecho:</strong> Deriva al elevar</li>
-                            <li>• <strong>Pierna derecha:</strong> Debilidad leve</li>
-                            <li>• <strong>Pupilas:</strong> Normales, reactivas</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div className="bg-yellow-50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-yellow-800 mb-2">Análisis del Caso:</h4>
-                    <div className="grid md:grid-cols-2 gap-4">
-                        <div>
-                            <h5 className="font-medium text-yellow-700 mb-1">Escala de Cincinnati:</h5>
-                            <ul className="text-sm text-gray-700">
-                                <li>✓ Parálisis facial: <span className="text-red-600">ANORMAL</span></li>
-                                <li>✓ Debilidad brazo: <span className="text-red-600">ANORMAL</span></li>
-                                <li>✓ Habla anormal: <span className="text-red-600">ANORMAL</span></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h5 className="font-medium text-yellow-700 mb-1">Manejo Correcto:</h5>
-                            <ol className="text-sm text-gray-700 list-decimal list-inside">
-                                <li>Oxígeno si SpO₂ &lt;94%</li>
-                                <li>Control glucosa capilar</li>
-                                <li>Traslado URGENTE código ACV</li>
-                                <li>Notificación hospital</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
+            <div className="text-center mb-8">
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">Casos Clínicos Interactivos</h2>
+                <p className="text-gray-600">
+                    Practica con casos reales de emergencias neurológicas y pon a prueba tus conocimientos
+                </p>
             </div>
 
-            {/* Caso 2: Estado epiléptico */}
-            <div className="p-6 bg-gradient-to-r from-green-50 to-green-100 rounded-lg shadow-sm border border-green-200">
-                <div className="flex items-center mb-4">
-                    <div className="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3">2</div>
-                    <h3 className="text-xl font-semibold text-green-700">Caso: Estado Epiléptico</h3>
-                </div>
-                <div className="bg-white p-4 rounded-lg mb-4">
-                    <h4 className="font-semibold text-green-800 mb-2">Escenario:</h4>
-                    <p className="italic text-gray-700 mb-3">
-                        Hombre de 25 años, historia de epilepsia. Familiar reporta convulsión generalizada que inició
-                        hace 7 minutos y continúa. No ha recuperado conciencia entre episodios.
-                    </p>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-4 mb-4">
-                    <div className="bg-white p-4 rounded-lg">
-                        <h4 className="font-semibold text-green-800 mb-2">Hallazgos Durante Convulsión:</h4>
-                        <ul className="text-sm text-gray-700 space-y-1">
-                            <li>• <strong>Tipo:</strong> Tónico-clónica generalizada</li>
-                            <li>• <strong>Duración:</strong> &gt; 7 minutos continua</li>
-                            <li>• <strong>Respiración:</strong> Irregular, cianosis perioral</li>
-                            <li>• <strong>SpO₂:</strong> 88% durante convulsión</li>
-                            <li>• <strong>Incontinencia:</strong> Presente</li>
-                        </ul>
-                    </div>
-                    <div className="bg-white p-4 rounded-lg">
-                        <h4 className="font-semibold text-green-800 mb-2">Post-Convulsión (min 10):</h4>
-                        <ul className="text-sm text-gray-700 space-y-1">
-                            <li>• <strong>Conciencia:</strong> Estuporoso</li>
-                            <li>• <strong>Vía aérea:</strong> Permeable, secreciones</li>
-                            <li>• <strong>Respiración:</strong> FR 24/min, SpO₂ 92%</li>
-                            <li>• <strong>FC:</strong> 110/min, TA 140/85</li>
-                            <li>• <strong>Glasgow:</strong> 9 (O2-V2-M5)</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div className="bg-red-50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-red-800 mb-2 flex items-center">
-                        <MdWarning className="w-5 h-5 mr-2"/>
-                        Estado Epiléptico - Manejo Prioritario:
-                    </h4>
-                    <div className="grid md:grid-cols-2 gap-4">
-                        <div>
-                            <h5 className="font-medium text-red-700 mb-1">Intervenciones Inmediatas:</h5>
-                            <ol className="text-sm text-gray-700 list-decimal list-inside space-y-1">
-                                <li>Proteger vía aérea (aspiración)</li>
-                                <li>Oxígeno alto flujo</li>
-                                <li>Acceso IV si posible</li>
-                                <li>Control glucosa capilar STAT</li>
-                                <li>Posición lateral segura</li>
-                            </ol>
-                        </div>
-                        <div>
-                            <h5 className="font-medium text-red-700 mb-1">Consideraciones:</h5>
-                            <ul className="text-sm text-gray-700 space-y-1">
-                                <li>• Emergencia neurológica</li>
-                                <li>• Riesgo de aspiración</li>
-                                <li>• Traslado inmediato</li>
-                                <li>• Medicación anticonvulsiva</li>
-                            </ul>
+            {clinicalCases.map((clinicalCase) => (
+                <div key={clinicalCase.id} className="bg-white border border-gray-200 rounded-lg shadow-sm">
+                    <div
+                        className="p-4 cursor-pointer hover:bg-gray-50"
+                        onClick={() => setSelectedCase(selectedCase === clinicalCase.id ? null : clinicalCase.id)}
+                    >
+                        <div className="flex items-center justify-between">
+                            <h3 className="text-lg font-semibold text-gray-900">{clinicalCase.title}</h3>
+                            {selectedCase === clinicalCase.id ? (
+                                <MdExpandLess className="w-6 h-6 text-gray-500" />
+                            ) : (
+                                <MdExpandMore className="w-6 h-6 text-gray-500" />
+                            )}
                         </div>
                     </div>
-                </div>
-            </div>
 
-            {/* Caso 3: TCE con deterioro */}
-            <div className="p-6 bg-gradient-to-r from-purple-50 to-purple-100 rounded-lg shadow-sm border border-purple-200">
-                <div className="flex items-center mb-4">
-                    <div className="bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3">3</div>
-                    <h3 className="text-xl font-semibold text-purple-700">Caso: TCE con Deterioro Neurológico</h3>
-                </div>
-                <div className="bg-white p-4 rounded-lg mb-4">
-                    <h4 className="font-semibold text-purple-800 mb-2">Escenario:</h4>
-                    <p className="italic text-gray-700 mb-3">
-                        Motociclista de 30 años, accidente a alta velocidad. Inicialmente consciente y orientado,
-                        pero durante traslado presenta deterioro progresivo del nivel de conciencia.
-                    </p>
-                </div>
+                    {selectedCase === clinicalCase.id && (
+                        <div className="px-4 pb-4 border-t border-gray-100">
+                            {/* Escenario */}
+                            <div className="mb-6 bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
+                                <div className="flex items-center gap-2 mb-2">
+                                    <FaAmbulance className="w-5 h-5 text-blue-600" />
+                                    <h4 className="font-semibold text-blue-800">Escenario</h4>
+                                </div>
+                                <p className="text-blue-700 text-sm leading-relaxed">{clinicalCase.scenario}</p>
+                            </div>
 
-                <div className="grid md:grid-cols-3 gap-4 mb-4">
-                    <div className="bg-white p-4 rounded-lg">
-                        <h4 className="font-semibold text-purple-800 mb-2">Evaluación Inicial:</h4>
-                        <ul className="text-sm text-gray-700 space-y-1">
-                            <li>• <strong>Glasgow:</strong> 15</li>
-                            <li>• <strong>Pupilas:</strong> 3mm reactivas</li>
-                            <li>• <strong>Queja:</strong> Cefalea intensa</li>
-                            <li>• <strong>TA:</strong> 120/70</li>
-                            <li>• <strong>FC:</strong> 90/min</li>
-                        </ul>
-                    </div>
-                    <div className="bg-white p-4 rounded-lg">
-                        <h4 className="font-semibold text-purple-800 mb-2">15 minutos después:</h4>
-                        <ul className="text-sm text-gray-700 space-y-1">
-                            <li>• <strong>Glasgow:</strong> 11 (O3-V3-M5)</li>
-                            <li>• <strong>Pupilas:</strong> Derecha 5mm fija</li>
-                            <li>• <strong>Vómito:</strong> En proyectil x2</li>
-                            <li>• <strong>TA:</strong> 160/90</li>
-                            <li>• <strong>FC:</strong> 60/min</li>
-                        </ul>
-                    </div>
-                    <div className="bg-white p-4 rounded-lg">
-                        <h4 className="font-semibold text-purple-800 mb-2">25 minutos después:</h4>
-                        <ul className="text-sm text-gray-700 space-y-1">
-                            <li>• <strong>Glasgow:</strong> 6 (O1-V1-M4)</li>
-                            <li>• <strong>Pupilas:</strong> Bilaterales fijas</li>
-                            <li>• <strong>Respiración:</strong> Irregular</li>
-                            <li>• <strong>TA:</strong> 180/110</li>
-                            <li>• <strong>FC:</strong> 45/min</li>
-                        </ul>
-                    </div>
-                </div>
+                            {/* Signos Vitales */}
+                            <div className="mb-6 bg-green-50 border border-green-200 rounded-lg p-4">
+                                <div className="flex items-center gap-2 mb-3">
+                                    <FaStethoscope className="w-5 h-5 text-green-600" />
+                                    <h4 className="font-semibold text-green-800">Signos Vitales y Datos</h4>
+                                </div>
+                                <div className="grid md:grid-cols-3 gap-4">
+                                    <div className="space-y-2">
+                                        <div className="flex items-center gap-2">
+                                            <FaUser className="w-4 h-4 text-green-600" />
+                                            <span className="text-sm">
+                                                <strong>Edad:</strong> {clinicalCase.vitals.age}
+                                            </span>
+                                        </div>
+                                        <div className="text-sm">
+                                            <strong>Sexo:</strong> {clinicalCase.vitals.gender}
+                                        </div>
+                                        <div className="text-sm">
+                                            <strong>Conciencia:</strong> {clinicalCase.vitals.consciousness}
+                                        </div>
+                                    </div>
+                                    <div className="space-y-2 text-sm">
+                                        <div><strong>PA:</strong> {clinicalCase.vitals.bp}</div>
+                                        <div><strong>FC:</strong> {clinicalCase.vitals.hr}</div>
+                                        <div><strong>FR:</strong> {clinicalCase.vitals.rr}</div>
+                                    </div>
+                                    <div className="space-y-2 text-sm">
+                                        <div><strong>SaO₂:</strong> {clinicalCase.vitals.sao2}</div>
+                                        <div><strong>Temp:</strong> {clinicalCase.vitals.temp}</div>
+                                        <div><strong>Glucosa:</strong> {clinicalCase.vitals.glucose}</div>
+                                    </div>
+                                </div>
+                            </div>
 
-                <div className="bg-red-100 p-4 rounded-lg">
-                    <h4 className="font-semibold text-red-800 mb-2 flex items-center">
-                        <FaExclamationTriangle className="w-5 h-5 mr-2"/>
-                        Análisis: Herniación Cerebral Inminente
-                    </h4>
-                    <div className="grid md:grid-cols-2 gap-4">
-                        <div>
-                            <h5 className="font-medium text-red-700 mb-1">Signos de Herniación:</h5>
-                            <ul className="text-sm text-gray-700 space-y-1">
-                                <li>• Deterioro Glasgow progresivo</li>
-                                <li>• Anisocoria → pupilas fijas</li>
-                                <li>• Triada de Cushing: ↑TA, ↓FC, resp. irregular</li>
-                                <li>• Vómito en proyectil</li>
-                            </ul>
+                            {/* Hallazgos */}
+                            <div className="mb-6 bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                                <div className="flex items-center gap-2 mb-3">
+                                    <BiAnalyse className="w-5 h-5 text-yellow-600" />
+                                    <h4 className="font-semibold text-yellow-800">Hallazgos al Examen</h4>
+                                </div>
+                                <ul className="grid md:grid-cols-2 gap-2">
+                                    {clinicalCase.findings.map((finding, index) => (
+                                        <li key={index} className="text-sm text-yellow-700 flex items-center gap-2">
+                                            <span className="w-2 h-2 bg-yellow-500 rounded-full"></span>
+                                            {finding}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            {/* Preguntas */}
+                            <div className="space-y-4">
+                                <h4 className="font-semibold text-gray-800 flex items-center gap-2">
+                                    <FaClock className="w-5 h-5 text-orange-500" />
+                                    Preguntas de Evaluación
+                                </h4>
+
+                                {clinicalCase.questions.map((question, qIndex) => (
+                                    <div key={qIndex} className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                                        <p className="font-medium text-gray-800 mb-3">
+                                            {qIndex + 1}. {question.question}
+                                        </p>
+
+                                        <div className="space-y-2 mb-4">
+                                            {question.options.map((option, oIndex) => {
+                                                const key = `${clinicalCase.id}-${qIndex}`;
+                                                const isSelected = answers[key] === oIndex;
+                                                const isCorrect = oIndex === question.correct;
+                                                const showingResults = showResults[key];
+
+                                                return (
+                                                    <button
+                                                        key={oIndex}
+                                                        onClick={() => handleAnswerSelect(clinicalCase.id, qIndex, oIndex)}
+                                                        disabled={showingResults}
+                                                        className={`w-full text-left p-3 rounded border text-sm transition ${
+                                                            showingResults
+                                                                ? isCorrect
+                                                                    ? 'bg-green-100 border-green-400 text-green-800'
+                                                                    : isSelected
+                                                                    ? 'bg-red-100 border-red-400 text-red-800'
+                                                                    : 'bg-gray-100 border-gray-300 text-gray-600'
+                                                                : isSelected
+                                                                ? 'bg-blue-100 border-blue-400 text-blue-800'
+                                                                : 'bg-white border-gray-300 hover:bg-gray-50'
+                                                        }`}
+                                                    >
+                                                        {String.fromCharCode(65 + oIndex)}. {option}
+                                                    </button>
+                                                );
+                                            })}
+                                        </div>
+
+                                        <div className="flex gap-2">
+                                            <button
+                                                onClick={() => showAnswer(clinicalCase.id, qIndex)}
+                                                disabled={showResults[`${clinicalCase.id}-${qIndex}`]}
+                                                className="px-4 py-2 bg-orange-500 text-white rounded text-sm hover:bg-orange-600 disabled:bg-gray-400 disabled:cursor-not-allowed"
+                                            >
+                                                Ver Respuesta
+                                            </button>
+                                        </div>
+
+                                        {showResults[`${clinicalCase.id}-${qIndex}`] && (
+                                            <div className="mt-4 bg-blue-50 border-l-4 border-blue-400 p-3 rounded-r">
+                                                <p className="font-medium text-blue-800 mb-1">
+                                                    Respuesta correcta: {String.fromCharCode(65 + question.correct)}
+                                                </p>
+                                                <p className="text-blue-700 text-sm">{question.explanation}</p>
+                                            </div>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
                         </div>
-                        <div>
-                            <h5 className="font-medium text-red-700 mb-1">Manejo Crítico:</h5>
-                            <ol className="text-sm text-gray-700 list-decimal list-inside space-y-1">
-                                <li>Intubación inmediata</li>
-                                <li>Hiperventilación controlada</li>
-                                <li>Posición cabecera 30°</li>
-                                <li>Traslado urgente neurocirugía</li>
-                                <li>Comunicación médica</li>
-                            </ol>
-                        </div>
-                    </div>
+                    )}
                 </div>
-            </div>
+            ))}
 
-            {/* Puntos de aprendizaje */}
-            <div className="bg-gradient-to-r from-orange-50 to-yellow-50 border-l-4 border-orange-400 p-6 rounded-lg">
-                <h3 className="text-xl font-bold text-orange-700 mb-4 flex items-center">
-                    <BsLightbulb className="w-6 h-6 mr-2"/>
-                    Puntos Clave de Aprendizaje
-                </h3>
-                <div className="grid md:grid-cols-2 gap-6">
+            {/* Resumen de aprendizaje */}
+            <div className="bg-gradient-to-r from-orange-50 to-red-50 border border-orange-200 rounded-lg p-6">
+                <h3 className="text-lg font-bold text-orange-800 mb-3">Puntos Clave para Recordar</h3>
+                <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                        <h4 className="font-semibold text-orange-800 mb-2">Reconocimiento Temprano:</h4>
-                        <ul className="text-sm text-gray-700 space-y-1">
-                            <li>• La ventana terapéutica es crítica</li>
-                            <li>• Los síntomas pueden ser sutiles inicialmente</li>
-                            <li>• La evaluación seriada es fundamental</li>
+                        <h4 className="font-medium text-orange-700 mb-2">En EVC:</h4>
+                        <ul className="text-sm text-orange-600 space-y-1">
+                            <li>• Tiempo = cerebro</li>
                             <li>• Documentar hora exacta de inicio</li>
+                            <li>• Usar escalas de evaluación</li>
+                            <li>• Transporte inmediato</li>
                         </ul>
                     </div>
                     <div>
-                        <h4 className="font-semibold text-orange-800 mb-2">Principios de Manejo:</h4>
-                        <ul className="text-sm text-gray-700 space-y-1">
-                            <li>• ABC siempre primero</li>
-                            <li>• Evitar hipoxia e hipotensión</li>
-                            <li>• Traslado rápido pero seguro</li>
-                            <li>• Comunicación efectiva con hospital</li>
+                        <h4 className="font-medium text-orange-700 mb-2">En Convulsiones:</h4>
+                        <ul className="text-sm text-orange-600 space-y-1">
+                            <li>• No restringir movimientos</li>
+                            <li>• Proteger de lesiones</li>
+                            <li>• Vía aérea en post-ictal</li>
+                            <li>• Verificar glucosa</li>
                         </ul>
                     </div>
                 </div>

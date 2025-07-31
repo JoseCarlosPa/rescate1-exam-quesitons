@@ -1,167 +1,132 @@
-import {FaExclamationTriangle, FaEye, FaHandPaper, FaHeartbeat} from "react-icons/fa";
-import {BsClock, BsLightbulb, BsShield} from "react-icons/bs";
-import {MdCheckCircle, MdEmergency, MdWarning} from "react-icons/md";
-import {FiAlertTriangle, FiTarget, FiUser} from "react-icons/fi";
+import { RiBrain2Fill } from "react-icons/ri";
+import { FaExclamationTriangle, FaClock, FaHeartbeat } from "react-icons/fa";
+import { MdLocalHospital } from "react-icons/md";
 
 export default function Overview() {
-    return(
+    return (
         <div className="space-y-8">
-            {/* Importancia crítica */}
-            <div className="bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-red-500 p-6 rounded-lg">
-                <div className="flex items-center mb-4">
-                    <FaExclamationTriangle className="w-8 h-8 text-red-500 mr-3"/>
-                    <h2 className="text-2xl font-bold text-red-700">¡Reconocimiento Temprano Salva Vidas!</h2>
+            {/* Introducción */}
+            <section>
+                <div className="flex items-center gap-3 mb-4">
+                    <RiBrain2Fill className="w-8 h-8 text-orange-500" />
+                    <h2 className="text-2xl font-bold text-gray-900">Introducción</h2>
                 </div>
-                <p className="text-gray-800 leading-relaxed text-lg">
-                    Las emergencias neurológicas pueden progresar rápidamente y causar daño permanente.
-                    El <strong>reconocimiento temprano</strong> y la <strong>intervención rápida</strong> son fundamentales
-                    para mejorar el pronóstico del paciente.
-                </p>
-                <div className="mt-4 grid md:grid-cols-3 gap-4">
-                    <div className="bg-white p-4 rounded shadow-sm text-center">
-                        <BsClock className="w-8 h-8 text-red-500 mx-auto mb-2"/>
-                        <p className="font-bold text-red-600">Ventana terapéutica</p>
-                        <p className="text-sm">ACV: 3-4.5 horas para trombólisis</p>
-                    </div>
-                    <div className="bg-white p-4 rounded shadow-sm text-center">
-                        <MdEmergency className="w-8 h-8 text-orange-500 mx-auto mb-2"/>
-                        <p className="font-bold text-orange-600">Estado epiléptico</p>
-                        <p className="text-sm">Convulsiones &gt;5 minutos</p>
-                    </div>
-                    <div className="bg-white p-4 rounded shadow-sm text-center">
-                        <FaHeartbeat className="w-8 h-8 text-purple-500 mx-auto mb-2"/>
-                        <p className="font-bold text-purple-600">TCE grave</p>
-                        <p className="text-sm">Glasgow &lt;8 intubación</p>
-                    </div>
+                <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
+                    <p className="text-gray-700 leading-relaxed">
+                        Las emergencias neurológicas son afecciones que alteran el funcionamiento normal del cerebro,
+                        médula espinal o nervios periféricos. Estas pueden comprometer el estado mental, el control motor,
+                        el habla, la respiración y otros procesos vitales.
+                    </p>
                 </div>
-            </div>
+                <div className="mt-4 bg-red-50 border-l-4 border-red-400 p-4 rounded-r-lg">
+                    <div className="flex items-center gap-2 mb-2">
+                        <FaExclamationTriangle className="w-5 h-5 text-red-500" />
+                        <p className="font-semibold text-red-800">Importancia Crítica</p>
+                    </div>
+                    <p className="text-red-700">
+                        La atención rápida y precisa es crítica para reducir la discapacidad o muerte del paciente.
+                    </p>
+                </div>
+            </section>
 
-            {/* Patologías principales */}
-            <div>
-                <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
-                    <BsShield className="w-6 h-6 mr-2 text-orange-500"/>
-                    Principales Emergencias Neurológicas
-                </h2>
+            {/* Fisiopatología Común */}
+            <section>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">Fisiopatología Común</h2>
                 <div className="grid md:grid-cols-2 gap-6">
-                    <div className="bg-gradient-to-b from-blue-50 to-blue-100 p-6 rounded-lg border">
-                        <h3 className="text-xl font-bold text-blue-700 mb-3">Emergencias Vasculares</h3>
-                        <ul className="space-y-2 text-gray-700">
-                            <li className="flex items-start">
-                                <FiTarget className="w-4 h-4 mt-1 mr-2 text-blue-600"/>
-                                <span><strong>ACV Isquémico (85%):</strong> Oclusión arterial</span>
-                            </li>
-                            <li className="flex items-start">
-                                <FiTarget className="w-4 h-4 mt-1 mr-2 text-blue-600"/>
-                                <span><strong>ACV Hemorrágico (15%):</strong> Ruptura vascular</span>
-                            </li>
-                            <li className="flex items-start">
-                                <FiTarget className="w-4 h-4 mt-1 mr-2 text-blue-600"/>
-                                <span><strong>AIT:</strong> Síntomas transitorios &lt;24h</span>
-                            </li>
+                    <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                        <h3 className="font-semibold text-yellow-800 mb-3 flex items-center gap-2">
+                            <FaHeartbeat className="w-5 h-5" />
+                            Sensibilidad Cerebral
+                        </h3>
+                        <p className="text-yellow-700 text-sm">
+                            El cerebro es extremadamente sensible a alteraciones en:
+                        </p>
+                        <ul className="list-disc list-inside text-yellow-700 text-sm mt-2 space-y-1">
+                            <li>Oxígeno</li>
+                            <li>Glucosa</li>
+                            <li>Temperatura</li>
                         </ul>
+                        <p className="text-yellow-700 text-sm mt-2">
+                            Alteraciones pueden causar desde confusión hasta coma.
+                        </p>
                     </div>
-                    <div className="bg-gradient-to-b from-green-50 to-green-100 p-6 rounded-lg border">
-                        <h3 className="text-xl font-bold text-green-700 mb-3">Emergencias No Vasculares</h3>
-                        <ul className="space-y-2 text-gray-700">
-                            <li className="flex items-start">
-                                <FiTarget className="w-4 h-4 mt-1 mr-2 text-green-600"/>
-                                <span><strong>Convulsiones:</strong> Actividad neuronal anormal</span>
-                            </li>
-                            <li className="flex items-start">
-                                <FiTarget className="w-4 h-4 mt-1 mr-2 text-green-600"/>
-                                <span><strong>TCE:</strong> Trauma directo o indirecto</span>
-                            </li>
-                            <li className="flex items-start">
-                                <FiTarget className="w-4 h-4 mt-1 mr-2 text-green-600"/>
-                                <span><strong>Síncope:</strong> Pérdida transitoria conciencia</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
 
-            {/* Signos de alarma críticos */}
-            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
-                <div className="flex items-center mb-4">
-                    <FiAlertTriangle className="w-6 h-6 text-yellow-600 mr-2"/>
-                    <h3 className="text-xl font-bold text-yellow-800">Signos de Alarma - Actúa INMEDIATAMENTE</h3>
-                </div>
-                <div className="grid md:grid-cols-3 gap-4">
-                    <div>
-                        <h4 className="font-semibold text-yellow-800 mb-2 flex items-center">
-                            <FaEye className="w-4 h-4 mr-2"/>
-                            Neurológicos:
-                        </h4>
-                        <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
-                            <li>Déficit neurológico focal súbito</li>
-                            <li>Alteración súbita del nivel de conciencia</li>
-                            <li>Cefalea súbita e intensa ("trueno")</li>
-                            <li>Convulsiones prolongadas (&gt;5 min)</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 className="font-semibold text-yellow-800 mb-2 flex items-center">
-                            <FaHandPaper className="w-4 h-4 mr-2"/>
-                            Motores:
-                        </h4>
-                        <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
-                            <li>Hemiparesia o hemiplejía</li>
-                            <li>Parálisis facial</li>
-                            <li>Pérdida de coordinación</li>
-                            <li>Posturas anormales</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 className="font-semibold text-yellow-800 mb-2 flex items-center">
-                            <FiUser className="w-4 h-4 mr-2"/>
-                            Vitales:
-                        </h4>
-                        <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
-                            <li>Alteración del habla o lenguaje</li>
-                            <li>Trastornos visuales súbitos</li>
-                            <li>Vómito en proyectil</li>
-                            <li>Alteración pupilar</li>
-                        </ul>
+                    <div className="space-y-4">
+                        <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
+                            <h4 className="font-medium text-orange-800 mb-2">Problemas Cardiopulmonares</h4>
+                            <p className="text-orange-700 text-sm">
+                                Afectan al cerebro en su totalidad
+                            </p>
+                        </div>
+                        <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
+                            <h4 className="font-medium text-purple-800 mb-2">Problemas Localizados</h4>
+                            <p className="text-purple-700 text-sm">
+                                Como un EVC, afectan funciones de una región específica
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            {/* Puntos clave para recordar */}
-            <div className="bg-green-50 border border-green-200 rounded-lg p-6">
-                <div className="flex items-center mb-4">
-                    <BsLightbulb className="w-6 h-6 text-green-600 mr-2"/>
-                    <h3 className="text-xl font-bold text-green-800">Puntos Clave para el Éxito</h3>
-                </div>
-                <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <h4 className="font-semibold text-green-800 mb-2 flex items-center">
-                            <MdCheckCircle className="w-4 h-4 mr-2"/>
-                            Hacer SIEMPRE:
-                        </h4>
-                        <ul className="list-disc list-inside space-y-1 text-gray-700">
-                            <li>Evaluar ABC primero</li>
-                            <li>Obtener historia clínica completa</li>
-                            <li>Determinar hora de inicio síntomas</li>
-                            <li>Controlar glucosa capilar</li>
-                            <li>Documentar hallazgos neurológicos</li>
-                            <li>Comunicar al hospital receptor</li>
-                        </ul>
+            {/* Principios de Manejo */}
+            <section>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">Principios de Manejo Prehospitalario</h2>
+                <div className="grid md:grid-cols-2 gap-4">
+                    <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+                        <h3 className="font-semibold text-green-800 mb-3 flex items-center gap-2">
+                            <FaClock className="w-5 h-5" />
+                            Prioridades Inmediatas
+                        </h3>
+                        <ol className="list-decimal list-inside text-green-700 text-sm space-y-2">
+                            <li>Priorizar vía aérea, respiración y circulación</li>
+                            <li>Oxígeno si hay hipoxia</li>
+                            <li>Monitoreo de signos vitales, ECG y glucosa</li>
+                            <li>Evaluar necesidad de ventilación asistida</li>
+                        </ol>
                     </div>
-                    <div>
-                        <h4 className="font-semibold text-red-800 mb-2 flex items-center">
-                            <MdWarning className="w-4 h-4 mr-2"/>
-                            NUNCA hacer:
-                        </h4>
-                        <ul className="list-disc list-inside space-y-1 text-gray-700">
-                            <li>Administrar glucosa sin confirmar hipoglucemia</li>
-                            <li>Restringir movimientos durante convulsión</li>
-                            <li>Introducir objetos en la boca</li>
-                            <li>Asumir intoxicación en alteración conciencia</li>
-                            <li>Retrasar traslado por "mejoría"</li>
+
+                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                        <h3 className="font-semibold text-blue-800 mb-3 flex items-center gap-2">
+                            <MdLocalHospital className="w-5 h-5" />
+                            Documentación y Transporte
+                        </h3>
+                        <ul className="list-disc list-inside text-blue-700 text-sm space-y-2">
+                            <li>Documentar hora de inicio de síntomas neurológicos</li>
+                            <li>Transporte inmediato a centro adecuado según protocolo</li>
+                            <li>Especialmente crítico en casos de EVC</li>
                         </ul>
                     </div>
                 </div>
-            </div>
+            </section>
+
+            {/* Factores de Tiempo */}
+            <section>
+                <div className="bg-red-100 border border-red-300 rounded-lg p-6">
+                    <h3 className="text-xl font-bold text-red-800 mb-3 flex items-center gap-2">
+                        <FaClock className="w-6 h-6" />
+                        El Factor Tiempo es Crítico
+                    </h3>
+                    <p className="text-red-700 mb-3">
+                        En emergencias neurológicas, especialmente en EVC, cada minuto cuenta:
+                    </p>
+                    <div className="grid md:grid-cols-2 gap-4">
+                        <div className="bg-white bg-opacity-50 rounded p-3">
+                            <p className="font-medium text-red-800">Ventana Terapéutica</p>
+                            <p className="text-red-700 text-sm">
+                                Tratamientos como trombólisis son efectivos solo dentro de
+                                <strong> 3-4.5 horas</strong> del inicio
+                            </p>
+                        </div>
+                        <div className="bg-white bg-opacity-50 rounded p-3">
+                            <p className="font-medium text-red-800">Importancia del EMT</p>
+                            <p className="text-red-700 text-sm">
+                                Reconocimiento temprano y transporte rápido pueden marcar
+                                la diferencia entre recuperación completa y discapacidad permanente
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     );
 }
