@@ -1,249 +1,472 @@
-import {FaFirstAid} from "react-icons/fa";
-import {MdWarning} from "react-icons/md";
-import {FaDroplet} from "react-icons/fa6";
-import {GiKidneys} from "react-icons/gi";
-import {BsLightbulb} from "react-icons/bs";
+import { useState } from "react";
+import { FaUser, FaClock, FaStethoscope, FaAmbulance } from "react-icons/fa";
+import { MdExpandMore, MdExpandLess } from "react-icons/md";
+import { BiAnalyse } from "react-icons/bi";
 
-export default function Practice(){
-    return(<div className="space-y-6">
-        <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
-            <FaFirstAid className="w-6 h-6 mr-2 text-red-500"/>
-            Casos Clínicos Interactivos - Aprende con Experiencias Reales
-        </h2>
+interface ClinicalCase {
+    id: number;
+    title: string;
+    scenario: string;
+    vitals: {
+        age: string;
+        gender: string;
+        consciousness: string;
+        bp: string;
+        hr: string;
+        rr: string;
+        sao2: string;
+        temp: string;
+        glucose: string;
+    };
+    findings: string[];
+    questions: {
+        question: string;
+        options: string[];
+        correct: number;
+        explanation: string;
+    }[];
+}
 
-        {/* Caso 1: Apendicitis */}
-        <div className="bg-gradient-to-r from-red-50 to-orange-50 p-6 rounded-lg shadow-md border-l-4 border-red-500">
-            <div className="flex items-center mb-3">
-                <MdWarning className="w-6 h-6 text-red-500 mr-2"/>
-                <h3 className="text-xl font-semibold text-red-700">Caso 1: Apendicitis Aguda</h3>
-            </div>
-            <div className="bg-white p-4 rounded-lg mb-4 border">
-                <p className="italic text-gray-600 mb-3">
-                    <strong>Escenario:</strong> Mujer de 22 años, estudiante universitaria. Llamada por dolor abdominal que inició hace 12 horas.
-                    Inicialmente periumbilical, ahora localizado en fosa iliaca derecha. Náuseas y un episodio de vómito.
+const clinicalCases: ClinicalCase[] = [
+    {
+        id: 1,
+        title: "Caso 1: Apendicitis Aguda",
+        scenario: "Mujer de 22 años, estudiante universitaria, presenta dolor abdominal que inició como molestia periumbilical hace 12 horas y ahora está localizado en fosa ilíaca derecha. Refiere náuseas, un episodio de vómito y fiebre. El dolor empeora con el movimiento y la tos.",
+        vitals: {
+            age: "22 años",
+            gender: "Femenino",
+            consciousness: "Alerta y orientada",
+            bp: "120/75 mmHg",
+            hr: "105 lpm",
+            rr: "22 rpm",
+            sao2: "98%",
+            temp: "38.1°C",
+            glucose: "95 mg/dL"
+        },
+        findings: [
+            "Dolor intenso en punto de McBurney",
+            "Rebote positivo en FID",
+            "Defensa muscular localizada",
+            "Signo de Rovsing positivo",
+            "Posición antálgica (flexión de cadera derecha)"
+        ],
+        questions: [
+            {
+                question: "¿Cuál es la prioridad en el manejo prehospitalario de este caso?",
+                options: [
+                    "Administrar analgésicos para el dolor",
+                    "Dar líquidos por vía oral",
+                    "Transporte inmediato sin demora",
+                    "Aplicar calor local en el abdomen"
+                ],
+                correct: 2,
+                explanation: "En sospecha de apendicitis, el transporte inmediato es prioritario ya que existe riesgo de perforación. NO se deben dar líquidos orales ni analgésicos que puedan enmascarar síntomas."
+            },
+            {
+                question: "¿Qué NO debe hacer el PAP en este caso?",
+                options: [
+                    "Monitorizar signos vitales",
+                    "Permitir nada por vía oral",
+                    "Palpar repetidamente el abdomen",
+                    "Mantener posición de confort"
+                ],
+                correct: 2,
+                explanation: "La palpación excesiva puede causar ruptura del apéndice. Se debe limitar el examen físico a lo esencial y evitar manipulación innecesaria."
+            }
+        ]
+    },
+    {
+        id: 2,
+        title: "Caso 2: Hemorragia Digestiva Alta",
+        scenario: "Hombre de 55 años con antecedente de úlcera péptica y alcoholismo. Presenta hematemesis abundante (vómito con sangre roja) y episodios de melena. Se encuentra pálido, diaforético y refiere mareo al ponerse de pie.",
+        vitals: {
+            age: "55 años",
+            gender: "Masculino",
+            consciousness: "Alerta pero ansioso",
+            bp: "90/55 mmHg",
+            hr: "125 lpm",
+            rr: "24 rpm",
+            sao2: "92%",
+            temp: "36.2°C",
+            glucose: "110 mg/dL"
+        },
+        findings: [
+            "Hematemesis con coágulos",
+            "Palidez marcada de mucosas",
+            "Piel fría y pegajosa",
+            "Hipotensión ortostática",
+            "Dolor epigástrico moderado"
+        ],
+        questions: [
+            {
+                question: "¿Cuál es la principal preocupación en este paciente?",
+                options: [
+                    "El dolor abdominal",
+                    "La deshidratación leve",
+                    "El shock hipovolémico",
+                    "La náusea y vómito"
+                ],
+                correct: 2,
+                explanation: "Los signos vitales (hipotensión, taquicardia, piel fría) indican shock hipovolémico por pérdida sanguínea significativa, una emergencia que requiere manejo inmediato."
+            },
+            {
+                question: "¿Cuál es la prioridad en el manejo de este paciente?",
+                options: [
+                    "Control del dolor",
+                    "Oxígeno de alto flujo y transporte urgente",
+                    "Administrar antieméticos",
+                    "Posición de Trendelenburg"
+                ],
+                correct: 1,
+                explanation: "En shock hipovolémico por hemorragia digestiva, la prioridad es oxígeno de alto flujo para compensar la hipoxia y transporte urgente para intervención médica definitiva."
+            }
+        ]
+    },
+    {
+        id: 3,
+        title: "Caso 3: Cólico Renal",
+        scenario: "Hombre de 35 años, ejecutivo, presenta súbitamente dolor lumbar izquierdo severo que irradia hacia la ingle. El dolor es tipo cólico, llega a 10/10 en intensidad. Se encuentra inquieto, no puede encontrar posición cómoda y refiere náuseas.",
+        vitals: {
+            age: "35 años",
+            gender: "Masculino",
+            consciousness: "Alerta, muy ansioso por dolor",
+            bp: "140/90 mmHg",
+            hr: "110 lpm",
+            rr: "20 rpm",
+            sao2: "98%",
+            temp: "36.8°C",
+            glucose: "105 mg/dL"
+        },
+        findings: [
+            "Dolor lumbar izquierdo severo",
+            "Irradiación hacia ingle y genitales",
+            "Hematuria microscópica",
+            "Inquietud marcada",
+            "Náuseas sin vómito"
+        ],
+        questions: [
+            {
+                question: "¿Qué característica del dolor es más sugestiva de cálculo renal?",
+                options: [
+                    "Dolor que mejora con el reposo",
+                    "Dolor cólico que no mejora con posición",
+                    "Dolor continuo y sordo",
+                    "Dolor que empeora al palpar"
+                ],
+                correct: 1,
+                explanation: "El dolor cólico por cálculo renal es característicamente intenso, intermitente y NO mejora con cambios de posición, a diferencia de otros tipos de dolor abdominal."
+            },
+            {
+                question: "¿Cuál es el manejo más apropiado para este paciente?",
+                options: [
+                    "Forzar posición supina para examen",
+                    "Permitir posición de confort y tranquilizar",
+                    "Aplicar presión en zona dolorosa",
+                    "Administrar grandes cantidades de agua"
+                ],
+                correct: 1,
+                explanation: "En cólico renal, se debe permitir que el paciente adopte la posición más cómoda posible y tranquilizarlo, ya que la ansiedad puede empeorar la percepción del dolor."
+            }
+        ]
+    },
+    {
+        id: 4,
+        title: "Caso 4: Aneurisma Aórtico Abdominal Roto",
+        scenario: "Hombre de 68 años con antecedente de hipertensión presenta súbitamente dolor abdominal y lumbar intenso mientras realizaba jardinería. Al examen se palpa masa pulsátil en abdomen. Paciente pálido, diaforético y con signos de shock.",
+        vitals: {
+            age: "68 años",
+            gender: "Masculino",
+            consciousness: "Alerta pero confuso",
+            bp: "80/50 mmHg",
+            hr: "130 lpm",
+            rr: "28 rpm",
+            sao2: "90%",
+            temp: "36.0°C",
+            glucose: "140 mg/dL"
+        },
+        findings: [
+            "Masa pulsátil abdominal",
+            "Dolor severo abdominal y lumbar",
+            "Shock hipovolémico",
+            "Palidez y diaforesis",
+            "Pulsos femorales débiles"
+        ],
+        questions: [
+            {
+                question: "¿Qué debe evitar el PAP en este caso crítico?",
+                options: [
+                    "Administrar oxígeno",
+                    "Palpar excesivamente la masa abdominal",
+                    "Monitorizar signos vitales",
+                    "Transporte inmediato"
+                ],
+                correct: 1,
+                explanation: "En sospecha de AAA roto, la palpación excesiva puede precipitar ruptura completa. Se debe limitar la manipulación y proceder inmediatamente al transporte."
+            },
+            {
+                question: "¿Cuál es la prioridad absoluta en este caso?",
+                options: [
+                    "Control del dolor",
+                    "Administrar líquidos IV",
+                    "Transporte código rojo a centro quirúrgico",
+                    "Obtener historia médica detallada"
+                ],
+                correct: 2,
+                explanation: "AAA roto es una emergencia quirúrgica inmediata. Cada minuto cuenta y el transporte urgente a un centro con capacidad quirúrgica vascular es la única intervención que puede salvar la vida."
+            }
+        ]
+    },
+    {
+        id: 5,
+        title: "Caso 5: Paciente en Diálisis con Complicaciones",
+        scenario: "Mujer de 45 años en programa de hemodiálisis. Acude por dificultad respiratoria y edema generalizado. Refiere que no pudo asistir a su sesión de diálisis programada hace 2 días por problemas de transporte. Presenta disnea de reposo y edema en extremidades.",
+        vitals: {
+            age: "45 años",
+            gender: "Femenino",
+            consciousness: "Alerta, ansiosa",
+            bp: "180/110 mmHg",
+            hr: "95 lpm",
+            rr: "26 rpm",
+            sao2: "88%",
+            temp: "37.1°C",
+            glucose: "160 mg/dL"
+        },
+        findings: [
+            "Edema generalizado (+3)",
+            "Disnea de reposo",
+            "Estertores pulmonares bilaterales",
+            "Fístula arteriovenosa en brazo izquierdo",
+            "Hipertensión severa"
+        ],
+        questions: [
+            {
+                question: "¿Qué complicación presenta esta paciente?",
+                options: [
+                    "Hipotensión por diálisis",
+                    "Sobrecarga de líquidos",
+                    "Infección de fístula",
+                    "Hipoglucemia"
+                ],
+                correct: 1,
+                explanation: "La paciente presenta sobrecarga de líquidos por pérdida de sesión de diálisis, evidenciada por edema, disnea, estertores e hipertensión."
+            },
+            {
+                question: "¿Qué precaución específica debe tomar el PAP?",
+                options: [
+                    "Usar la fístula para acceso venoso",
+                    "Administrar grandes volúmenes de líquido",
+                    "No usar la fístula para procedimientos",
+                    "Colocar paciente en posición supina"
+                ],
+                correct: 2,
+                explanation: "NUNCA se debe usar la fístula arteriovenosa para acceso venoso, toma de presión arterial o inyecciones, ya que puede dañarse y comprometer el acceso para diálisis."
+            }
+        ]
+    }
+];
+
+export default function Practice() {
+    const [selectedCase, setSelectedCase] = useState<number | null>(null);
+    const [answers, setAnswers] = useState<{[key: string]: number}>({});
+    const [showResults, setShowResults] = useState<{[key: string]: boolean}>({});
+
+    const handleAnswerSelect = (caseId: number, questionIndex: number, answerIndex: number) => {
+        const key = `${caseId}-${questionIndex}`;
+        setAnswers(prev => ({
+            ...prev,
+            [key]: answerIndex
+        }));
+    };
+
+    const showAnswer = (caseId: number, questionIndex: number) => {
+        const key = `${caseId}-${questionIndex}`;
+        setShowResults(prev => ({
+            ...prev,
+            [key]: true
+        }));
+    };
+
+    return (
+        <div className="space-y-6">
+            <div className="text-center mb-8">
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">Casos Clínicos Interactivos</h2>
+                <p className="text-gray-600">
+                    Practica con casos reales de emergencias gastrointestinales y urológicas y pon a prueba tus conocimientos
                 </p>
+            </div>
+
+            {clinicalCases.map((clinicalCase) => (
+                <div key={clinicalCase.id} className="bg-white border border-gray-200 rounded-lg shadow-sm">
+                    <div
+                        className="p-4 cursor-pointer hover:bg-gray-50"
+                        onClick={() => setSelectedCase(selectedCase === clinicalCase.id ? null : clinicalCase.id)}
+                    >
+                        <div className="flex items-center justify-between">
+                            <h3 className="text-lg font-semibold text-gray-900">{clinicalCase.title}</h3>
+                            {selectedCase === clinicalCase.id ? (
+                                <MdExpandLess className="w-6 h-6 text-gray-500" />
+                            ) : (
+                                <MdExpandMore className="w-6 h-6 text-gray-500" />
+                            )}
+                        </div>
+                    </div>
+
+                    {selectedCase === clinicalCase.id && (
+                        <div className="px-4 pb-4 border-t border-gray-100">
+                            {/* Escenario */}
+                            <div className="mb-6 bg-orange-50 border-l-4 border-orange-400 p-4 rounded-r-lg">
+                                <div className="flex items-center gap-2 mb-2">
+                                    <FaAmbulance className="w-5 h-5 text-orange-600" />
+                                    <h4 className="font-semibold text-orange-800">Escenario</h4>
+                                </div>
+                                <p className="text-orange-700 text-sm leading-relaxed">{clinicalCase.scenario}</p>
+                            </div>
+
+                            {/* Signos Vitales */}
+                            <div className="mb-6 bg-green-50 border border-green-200 rounded-lg p-4">
+                                <div className="flex items-center gap-2 mb-3">
+                                    <FaStethoscope className="w-5 h-5 text-green-600" />
+                                    <h4 className="font-semibold text-green-800">Signos Vitales y Datos</h4>
+                                </div>
+                                <div className="grid md:grid-cols-3 gap-4">
+                                    <div className="space-y-2">
+                                        <div className="flex items-center gap-2">
+                                            <FaUser className="w-4 h-4 text-green-600" />
+                                            <span className="text-sm">
+                                                <strong>Edad:</strong> {clinicalCase.vitals.age}
+                                            </span>
+                                        </div>
+                                        <div className="text-sm">
+                                            <strong>Sexo:</strong> {clinicalCase.vitals.gender}
+                                        </div>
+                                        <div className="text-sm">
+                                            <strong>Conciencia:</strong> {clinicalCase.vitals.consciousness}
+                                        </div>
+                                    </div>
+                                    <div className="space-y-2 text-sm">
+                                        <div><strong>PA:</strong> {clinicalCase.vitals.bp}</div>
+                                        <div><strong>FC:</strong> {clinicalCase.vitals.hr}</div>
+                                        <div><strong>FR:</strong> {clinicalCase.vitals.rr}</div>
+                                    </div>
+                                    <div className="space-y-2 text-sm">
+                                        <div><strong>SaO₂:</strong> {clinicalCase.vitals.sao2}</div>
+                                        <div><strong>Temp:</strong> {clinicalCase.vitals.temp}</div>
+                                        <div><strong>Glucosa:</strong> {clinicalCase.vitals.glucose}</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Hallazgos */}
+                            <div className="mb-6 bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                                <div className="flex items-center gap-2 mb-3">
+                                    <BiAnalyse className="w-5 h-5 text-yellow-600" />
+                                    <h4 className="font-semibold text-yellow-800">Hallazgos al Examen</h4>
+                                </div>
+                                <ul className="grid md:grid-cols-2 gap-2">
+                                    {clinicalCase.findings.map((finding, index) => (
+                                        <li key={index} className="text-sm text-yellow-700 flex items-center gap-2">
+                                            <span className="w-2 h-2 bg-yellow-500 rounded-full"></span>
+                                            {finding}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            {/* Preguntas */}
+                            <div className="space-y-4">
+                                <h4 className="font-semibold text-gray-800 flex items-center gap-2">
+                                    <FaClock className="w-5 h-5 text-orange-500" />
+                                    Preguntas de Evaluación
+                                </h4>
+
+                                {clinicalCase.questions.map((question, qIndex) => (
+                                    <div key={qIndex} className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                                        <p className="font-medium text-gray-800 mb-3">
+                                            {qIndex + 1}. {question.question}
+                                        </p>
+
+                                        <div className="space-y-2 mb-4">
+                                            {question.options.map((option, oIndex) => {
+                                                const key = `${clinicalCase.id}-${qIndex}`;
+                                                const isSelected = answers[key] === oIndex;
+                                                const isCorrect = oIndex === question.correct;
+                                                const showingResults = showResults[key];
+
+                                                return (
+                                                    <button
+                                                        key={oIndex}
+                                                        onClick={() => handleAnswerSelect(clinicalCase.id, qIndex, oIndex)}
+                                                        disabled={showingResults}
+                                                        className={`w-full text-left p-3 rounded border text-sm transition ${
+                                                            showingResults
+                                                                ? isCorrect
+                                                                    ? 'bg-green-100 border-green-400 text-green-800'
+                                                                    : isSelected
+                                                                    ? 'bg-red-100 border-red-400 text-red-800'
+                                                                    : 'bg-gray-100 border-gray-300 text-gray-600'
+                                                                : isSelected
+                                                                ? 'bg-orange-100 border-orange-400 text-orange-800'
+                                                                : 'bg-white border-gray-300 hover:bg-gray-50'
+                                                        }`}
+                                                    >
+                                                        {String.fromCharCode(65 + oIndex)}. {option}
+                                                    </button>
+                                                );
+                                            })}
+                                        </div>
+
+                                        <div className="flex gap-2">
+                                            <button
+                                                onClick={() => showAnswer(clinicalCase.id, qIndex)}
+                                                disabled={showResults[`${clinicalCase.id}-${qIndex}`]}
+                                                className="px-4 py-2 bg-orange-500 text-white rounded text-sm hover:bg-orange-600 disabled:bg-gray-400 disabled:cursor-not-allowed"
+                                            >
+                                                Ver Respuesta
+                                            </button>
+                                        </div>
+
+                                        {showResults[`${clinicalCase.id}-${qIndex}`] && (
+                                            <div className="mt-4 bg-blue-50 border-l-4 border-blue-400 p-3 rounded-r">
+                                                <p className="font-medium text-blue-800 mb-1">
+                                                    Respuesta correcta: {String.fromCharCode(65 + question.correct)}
+                                                </p>
+                                                <p className="text-blue-700 text-sm">{question.explanation}</p>
+                                            </div>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+                </div>
+            ))}
+
+            {/* Resumen de aprendizaje */}
+            <div className="bg-gradient-to-r from-orange-50 to-red-50 border border-orange-200 rounded-lg p-6">
+                <h3 className="text-lg font-bold text-orange-800 mb-3">Puntos Clave para Recordar</h3>
                 <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                        <h4 className="font-semibold text-gray-800 mb-2">Evaluación Inicial:</h4>
-                        <ul className="text-sm space-y-1 text-gray-700">
-                            <li><strong>A:</strong> Vía aérea permeable, habla con frases completas</li>
-                            <li><strong>B:</strong> FR 22/min, SpO₂ 98% aire ambiente</li>
-                            <li><strong>C:</strong> FC 105/min, TA 120/75 mmHg, pulsos fuertes</li>
-                            <li><strong>D:</strong> Alerta, orientada, Glasgow 15/15</li>
-                            <li><strong>E:</strong> Temp 38.1°C, posición antálgica</li>
+                        <h4 className="font-medium text-orange-700 mb-2">En Emergencias Gastrointestinales:</h4>
+                        <ul className="text-sm text-orange-600 space-y-1">
+                            <li>• NPO estricto (nada por vía oral)</li>
+                            <li>• Evitar palpación excesiva</li>
+                            <li>• Reconocer signos de shock</li>
+                            <li>• Transporte urgente si abdomen agudo</li>
+                            <li>• Proteger vía aérea si vómito</li>
                         </ul>
                     </div>
                     <div>
-                        <h4 className="font-semibold text-gray-800 mb-2">OPQRST:</h4>
-                        <ul className="text-sm space-y-1 text-gray-700">
-                            <li><strong>O:</strong> Inicio gradual hace 12 hrs</li>
-                            <li><strong>P:</strong> Empeora con movimiento, tos</li>
-                            <li><strong>Q:</strong> Constante, punzante</li>
-                            <li><strong>R:</strong> FID, sin irradiación</li>
-                            <li><strong>S:</strong> 8/10</li>
-                            <li><strong>T:</strong> Empeorando progresivamente</li>
+                        <h4 className="font-medium text-orange-700 mb-2">En Emergencias Urológicas:</h4>
+                        <ul className="text-sm text-orange-600 space-y-1">
+                            <li>• Posición de confort en cólico renal</li>
+                            <li>• No usar fístula en pacientes diálisis</li>
+                            <li>• Evaluar sobrecarga de líquidos</li>
+                            <li>• Considerar retención urinaria</li>
+                            <li>• Signos de sepsis en pielonefritis</li>
                         </ul>
                     </div>
-                </div>
-                <div className="mt-4 p-3 bg-yellow-100 rounded">
-                    <h4 className="font-semibold text-yellow-800 mb-2">Hallazgos Físicos:</h4>
-                    <p className="text-sm text-gray-700">
-                        Dolor intenso a la palpación en punto de McBurney. Rebote positivo. Defensa muscular localizada.
-                        Signo de Rovsing positivo (dolor en FID al palpar FII).
-                    </p>
-                </div>
-            </div>
-            <div className="grid md:grid-cols-2 gap-4">
-                <div className="bg-green-100 p-4 rounded-lg">
-                    <h4 className="font-bold text-green-800 mb-2">✅ Manejo Correcto:</h4>
-                    <ol className="list-decimal list-inside space-y-1 text-sm text-gray-700">
-                        <li>Posición de confort (rodillas flexionadas)</li>
-                        <li>NPO absoluto</li>
-                        <li>Monitoreo signos vitales cada 5 min</li>
-                        <li>Preparar equipo para vómito</li>
-                        <li>Notificación inmediata hospital</li>
-                        <li>Traslado código amarillo</li>
-                    </ol>
-                </div>
-                <div className="bg-red-100 p-4 rounded-lg">
-                    <h4 className="font-bold text-red-800 mb-2">❌ Errores Comunes:</h4>
-                    <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
-                        <li>Dar analgésicos "para el dolor"</li>
-                        <li>Aplicar calor local</li>
-                        <li>Palpación abdominal repetida</li>
-                        <li>Subestimar por la edad</li>
-                        <li>Permitir ingesta oral</li>
-                    </ul>
-                </div>
-            </div>
-            <div className="mt-4 p-3 bg-blue-100 rounded">
-                <h4 className="font-semibold text-blue-800">💡 Perla Educativa:</h4>
-                <p className="text-sm text-gray-700">
-                    La apendicitis es la urgencia quirúrgica abdominal más común en jóvenes. El dolor migra de periumbilical a FID en el 65% de casos.
-                    La perforación ocurre en 12-24 horas, especialmente en extremos de edad.
-                </p>
-            </div>
-        </div>
-
-        {/* Caso 2: Hemorragia Digestiva */}
-        <div className="bg-gradient-to-r from-red-50 to-pink-50 p-6 rounded-lg shadow-md border-l-4 border-red-600">
-            <div className="flex items-center mb-3">
-                <FaDroplet className="w-6 h-6 text-red-600 mr-2"/>
-                <h3 className="text-xl font-semibold text-red-700">Caso 2: Hemorragia Digestiva Alta</h3>
-            </div>
-            <div className="bg-white p-4 rounded-lg mb-4 border">
-                <p className="italic text-gray-600 mb-3">
-                    <strong>Escenario:</strong> Hombre de 58 años, antecedente de cirrosis hepática por alcohol. Llamada por vómito con sangre.
-                    Familiar reporta 3 episodios de hematemesis en las últimas 2 horas.
-                </p>
-                <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                        <h4 className="font-semibold text-gray-800 mb-2">Evaluación Inicial:</h4>
-                        <ul className="text-sm space-y-1 text-gray-700">
-                            <li><strong>A:</strong> Permeable, respiraciones laboriosas</li>
-                            <li><strong>B:</strong> FR 28/min, SpO₂ 94% aire ambiente</li>
-                            <li><strong>C:</strong> FC 125/min, TA 85/50 mmHg, pulsos débiles</li>
-                            <li><strong>D:</strong> Somnoliento, responde a estímulos</li>
-                            <li><strong>E:</strong> Piel fría, húmeda, palidez marcada</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 className="font-semibold text-gray-800 mb-2">Hallazgos Adicionales:</h4>
-                        <ul className="text-sm space-y-1 text-gray-700">
-                            <li>Abdomen distendido, ascitis</li>
-                            <li>Ictericia escleral</li>
-                            <li>Telangiectasias (arañas vasculares)</li>
-                            <li>Melena en ropa del paciente</li>
-                            <li>Llenado capilar &gt; 3 segundos</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div className="grid md:grid-cols-2 gap-4">
-                <div className="bg-green-100 p-4 rounded-lg">
-                    <h4 className="font-bold text-green-800 mb-2">🚨 Manejo Emergente:</h4>
-                    <ol className="list-decimal list-inside space-y-1 text-sm text-gray-700">
-                        <li>Oxígeno alto flujo (15L mascarilla)</li>
-                        <li>Posición lateral de seguridad</li>
-                        <li>Dos accesos IV calibre grueso</li>
-                        <li>Aspiración continua disponible</li>
-                        <li>Monitoreo intensivo</li>
-                        <li>Traslado código rojo + ALS intercept</li>
-                    </ol>
-                </div>
-                <div className="bg-orange-100 p-4 rounded-lg">
-                    <h4 className="font-bold text-orange-800 mb-2">⚠️ Signos de Shock:</h4>
-                    <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
-                        <li>Taquicardia compensatoria</li>
-                        <li>Hipotensión (pérdida &gt; 30% volemia)</li>
-                        <li>Alteración estado mental</li>
-                        <li>Oliguria/anuria</li>
-                        <li>Piel fría, húmeda</li>
-                    </ul>
-                </div>
-            </div>
-            <div className="mt-4 p-3 bg-purple-100 rounded">
-                <h4 className="font-semibold text-purple-800">📚 Fisiopatología:</h4>
-                <p className="text-sm text-gray-700">
-                    En cirrosis, la hipertensión portal causa varices esofágicas. Su ruptura puede ser masiva (2-6L sangre).
-                    La mortalidad es del 30-50% en primer episodio.
-                </p>
-            </div>
-        </div>
-
-        {/* Caso 3: Cólico Renal */}
-        <div className="bg-gradient-to-r from-blue-50 to-cyan-50 p-6 rounded-lg shadow-md border-l-4 border-blue-500">
-            <div className="flex items-center mb-3">
-                <GiKidneys className="w-6 h-6 text-blue-500 mr-2"/>
-                <h3 className="text-xl font-semibold text-blue-700">Caso 3: Cólico Renal</h3>
-            </div>
-            <div className="bg-white p-4 rounded-lg mb-4 border">
-                <p className="italic text-gray-600 mb-3">
-                    <strong>Escenario:</strong> Hombre de 35 años, ejecutivo. Despertó a las 3 AM con dolor lumbar derecho severo
-                    que se irradia a ingle. Se encuentra inquieto, no puede encontrar posición cómoda.
-                </p>
-                <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                        <h4 className="font-semibold text-gray-800 mb-2">Evaluación:</h4>
-                        <ul className="text-sm space-y-1 text-gray-700">
-                            <li><strong>A:</strong> Permeable, quejidos de dolor</li>
-                            <li><strong>B:</strong> FR 20/min, SpO₂ 99%</li>
-                            <li><strong>C:</strong> FC 98/min, TA 145/90 mmHg</li>
-                            <li><strong>D:</strong> Alerta, ansioso por el dolor</li>
-                            <li><strong>E:</strong> Inquieto, sudoroso, temp normal</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 className="font-semibold text-gray-800 mb-2">Características del Dolor:</h4>
-                        <ul className="text-sm space-y-1 text-gray-700">
-                            <li>Inicio súbito</li>
-                            <li>Tipo cólico (ondas)</li>
-                            <li>Intensidad 9/10</li>
-                            <li>Irradiación flanco → ingle → testículo</li>
-                            <li>Náuseas sin vómito</li>
-                        </ul>
-                    </div>
-                </div>
-                <div className="mt-4 p-3 bg-blue-100 rounded">
-                    <h4 className="font-semibold text-blue-800 mb-2">Hallazgos:</h4>
-                    <p className="text-sm text-gray-700">
-                        Puño-percusión positiva derecha. Hematuria microscópica. Sin fiebre.
-                        Antecedente de cálculos renales hace 2 años.
-                    </p>
-                </div>
-            </div>
-            <div className="grid md:grid-cols-2 gap-4">
-                <div className="bg-green-100 p-4 rounded-lg">
-                    <h4 className="font-bold text-green-800 mb-2">✅ Manejo Adecuado:</h4>
-                    <ol className="list-decimal list-inside space-y-1 text-sm text-gray-700">
-                        <li>Posición de confort (cualquiera que alivie)</li>
-                        <li>Monitoreo signos vitales</li>
-                        <li>Preparar antiemético si disponible</li>
-                        <li>NPO por las náuseas</li>
-                        <li>Traslado para analgesia</li>
-                        <li>Documentar características orina</li>
-                    </ol>
-                </div>
-                <div className="bg-yellow-100 p-4 rounded-lg">
-                    <h4 className="font-bold text-yellow-800 mb-2">🎯 Puntos Clave:</h4>
-                    <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
-                        <li>Dolor más severo que IAM</li>
-                        <li>Inquietud vs rigidez (apendicitis)</li>
-                        <li>Hematuria presente 85% casos</li>
-                        <li>Puede simular otras patologías</li>
-                        <li>Complicación: hidronefrosis</li>
-                    </ul>
                 </div>
             </div>
         </div>
-
-        {/* Desafío de Triage */}
-        <div className="bg-gradient-to-r from-purple-50 to-indigo-50 p-6 rounded-lg shadow-md border-l-4 border-purple-500">
-            <div className="flex items-center mb-4">
-                <BsLightbulb className="w-6 h-6 text-purple-500 mr-2"/>
-                <h3 className="text-xl font-semibold text-purple-700">🎯 Desafío de Triage - ¿Puedes Decidir Correctamente?</h3>
-            </div>
-            <div className="grid md:grid-cols-3 gap-4">
-                <div className="bg-white p-4 rounded-lg border-2 border-gray-200">
-                    <h4 className="font-bold text-gray-800 mb-2">Paciente A</h4>
-                    <p className="text-sm text-gray-600 mb-2">♀ 45 años, dolor epigástrico post-comida, náuseas, signos vitales normales</p>
-                    <div className="text-xs bg-gray-100 p-2 rounded">¿Código Verde, Amarillo o Rojo?</div>
-                </div>
-                <div className="bg-white p-4 rounded-lg border-2 border-gray-200">
-                    <h4 className="font-bold text-gray-800 mb-2">Paciente B</h4>
-                    <p className="text-sm text-gray-600 mb-2">♂ 70 años, melena, FC 110, TA 100/60, mareo al incorporarse</p>
-                    <div className="text-xs bg-gray-100 p-2 rounded">¿Código Verde, Amarillo o Rojo?</div>
-                </div>
-                <div className="bg-white p-4 rounded-lg border-2 border-gray-200">
-                    <h4 className="font-bold text-gray-800 mb-2">Paciente C</h4>
-                    <p className="text-sm text-gray-600 mb-2">♂ 28 años, dolor testicular súbito 10/10, náuseas, testículo elevado</p>
-                    <div className="text-xs bg-gray-100 p-2 rounded">¿Código Verde, Amarillo o Rojo?</div>
-                </div>
-            </div>
-            <div className="mt-4 p-3 bg-purple-100 rounded text-sm">
-                <strong>Respuestas:</strong> A = Verde (probable dispepsia), B = Amarillo/Rojo (sangrado GI con ortostatismo),
-                C = Rojo (posible torsión testicular = emergencia urológica)
-            </div>
-        </div>
-    </div>);
+    );
 }

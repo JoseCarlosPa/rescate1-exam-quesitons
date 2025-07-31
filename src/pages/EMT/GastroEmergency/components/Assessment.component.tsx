@@ -1,284 +1,313 @@
-import {BsHeartPulse, BsShield} from "react-icons/bs";
-import {MdCheckCircle, MdLocalHospital, MdWarning} from "react-icons/md";
-import {FaExclamationTriangle} from "react-icons/fa";
+import {  FaStethoscope, FaAmbulance, FaEye } from "react-icons/fa";
+import { RiFirstAidKitLine, RiAlarmWarningLine } from "react-icons/ri";
+import { GiStomach, GiKidneys } from "react-icons/gi";
 
-export default function Assessment(){
-    return(
+export default function Assessment() {
+    return (
         <div className="space-y-8">
-            {/* Protocolo de evaluación */}
+            {/* Evaluación SAMPLE enfocada */}
             <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-500 p-6 rounded-lg">
                 <div className="flex items-center mb-4">
-                    <BsShield className="w-8 h-8 text-blue-500 mr-3"/>
-                    <h2 className="text-2xl font-bold text-blue-700">Protocolo de Evaluación Sistemática</h2>
+                    <FaStethoscope className="w-8 h-8 text-blue-500 mr-3" />
+                    <h2 className="text-2xl font-bold text-blue-700">Evaluación SAMPLE Enfocada en Abdomen</h2>
                 </div>
+                <div className="grid md:grid-cols-2 gap-6">
+                    <div className="bg-white p-5 rounded-lg shadow-sm">
+                        <h3 className="text-lg font-bold text-blue-600 mb-3">Historia SAMPLE Específica</h3>
+                        <div className="space-y-3 text-sm">
+                            <div>
+                                <h4 className="font-semibold text-blue-700">S - Síntomas:</h4>
+                                <ul className="ml-4 text-gray-700">
+                                    <li>• <strong>Emesis:</strong> Color, cantidad, presencia de sangre</li>
+                                    <li>• <strong>Heces:</strong> Diarrea, sangre, color (melena)</li>
+                                    <li>• <strong>Dolor:</strong> Inicio, irradiación, severidad</li>
+                                    <li>• <strong>Hábitos urinarios:</strong> Disuria, hematuria, frecuencia</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 className="font-semibold text-blue-700">A - Alergias:</h4>
+                                <p className="ml-4 text-gray-700">Medicamentos, alimentos, especialmente si hay sospecha de reacción alérgica</p>
+                            </div>
+                            <div>
+                                <h4 className="font-semibold text-blue-700">M - Medicamentos:</h4>
+                                <p className="ml-4 text-gray-700">Anticoagulantes, AINEs, antibióticos recientes</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="bg-white p-5 rounded-lg shadow-sm">
+                        <h3 className="text-lg font-bold text-blue-600 mb-3">Historia Específica</h3>
+                        <div className="space-y-3 text-sm">
+                            <div>
+                                <h4 className="font-semibold text-blue-700">P - Pasado médico:</h4>
+                                <ul className="ml-4 text-gray-700">
+                                    <li>• Cirugías abdominales previas</li>
+                                    <li>• Enfermedad inflamatoria intestinal</li>
+                                    <li>• Diabetes, hipertensión</li>
+                                    <li>• Antecedentes de cálculos</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 className="font-semibold text-blue-700">L - Última comida:</h4>
+                                <p className="ml-4 text-gray-700">Hora, tipo de alimento, relación con síntomas</p>
+                            </div>
+                            <div>
+                                <h4 className="font-semibold text-blue-700">E - Eventos:</h4>
+                                <p className="ml-4 text-gray-700">Qué estaba haciendo cuando comenzó, factores desencadenantes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Evaluación abdominal sistemática */}
+            <div>
+                <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
+                    <FaEye className="w-6 h-6 mr-2 text-orange-500" />
+                    Evaluación Abdominal Sistemática
+                </h2>
                 <div className="grid md:grid-cols-3 gap-6">
-                    <div className="bg-white p-5 rounded-lg shadow-sm">
-                        <h3 className="text-lg font-bold text-red-600 mb-3 text-center">1. PRIMARIA</h3>
-                        <ul className="space-y-2 text-sm">
-                            <li className="flex items-center">
-                                <div className="w-6 h-6 bg-red-500 text-white rounded-full text-xs flex items-center justify-center mr-2">A</div>
-                                <span>Vía aérea + C-spine</span>
-                            </li>
-                            <li className="flex items-center">
-                                <div className="w-6 h-6 bg-red-500 text-white rounded-full text-xs flex items-center justify-center mr-2">B</div>
-                                <span>Respiración, sat O₂</span>
-                            </li>
-                            <li className="flex items-center">
-                                <div className="w-6 h-6 bg-red-500 text-white rounded-full text-xs flex items-center justify-center mr-2">C</div>
-                                <span>Circulación, pulsos</span>
-                            </li>
-                            <li className="flex items-center">
-                                <div className="w-6 h-6 bg-red-500 text-white rounded-full text-xs flex items-center justify-center mr-2">D</div>
-                                <span>Neurológico, Glasgow</span>
-                            </li>
-                            <li className="flex items-center">
-                                <div className="w-6 h-6 bg-red-500 text-white rounded-full text-xs flex items-center justify-center mr-2">E</div>
-                                <span>Exposición, temperatura</span>
-                            </li>
+                    <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg">
+                        <h3 className="font-bold text-yellow-700 mb-3">1. Inspección</h3>
+                        <ul className="text-sm text-gray-700 space-y-1">
+                            <li>• <strong>Forma:</strong> Distensión, asimetría</li>
+                            <li>• <strong>Piel:</strong> Color, lesiones, cicatrices</li>
+                            <li>• <strong>Movimiento:</strong> Respiratorio, peristáltico</li>
+                            <li>• <strong>Masas:</strong> Hernias, tumores visibles</li>
                         </ul>
                     </div>
-                    <div className="bg-white p-5 rounded-lg shadow-sm">
-                        <h3 className="text-lg font-bold text-orange-600 mb-3 text-center">2. SECUNDARIA</h3>
-                        <ul className="space-y-2 text-sm">
-                            <li><strong>SAMPLE:</strong> Síntomas, alergias, medicamentos</li>
-                            <li><strong>OPQRST:</strong> Dolor abdominal detallado</li>
-                            <li><strong>Signos vitales:</strong> Cada 5-15 minutos</li>
-                            <li><strong>Examen físico:</strong> Abdomen, genitales</li>
-                            <li><strong>Glucometría:</strong> Si alteración mental</li>
+
+                    <div className="bg-green-50 border border-green-200 p-4 rounded-lg">
+                        <h3 className="font-bold text-green-700 mb-3">2. Auscultación</h3>
+                        <ul className="text-sm text-gray-700 space-y-1">
+                            <li>• <strong>Ruidos intestinales:</strong> Presentes, ausentes, aumentados</li>
+                            <li>• <strong>Soplos:</strong> Aórticos, renales</li>
+                            <li>• <strong>Ubicación:</strong> 4 cuadrantes mínimo</li>
+                            <li>• <strong>Duración:</strong> Al menos 2 minutos si silencio</li>
                         </ul>
                     </div>
-                    <div className="bg-white p-5 rounded-lg shadow-sm">
-                        <h3 className="text-lg font-bold text-green-600 mb-3 text-center">3. MONITOREO</h3>
-                        <ul className="space-y-2 text-sm">
-                            <li><strong>Continuo:</strong> Signos vitales, dolor</li>
-                            <li><strong>Reevaluación:</strong> Cada 5 minutos</li>
-                            <li><strong>Documentación:</strong> Evolución síntomas</li>
-                            <li><strong>Comunicación:</strong> Hospital receptor</li>
-                            <li><strong>Transporte:</strong> Posición confort</li>
+
+                    <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
+                        <h3 className="font-bold text-blue-700 mb-3">3. Palpación Suave</h3>
+                        <ul className="text-sm text-gray-700 space-y-1">
+                            <li>• <strong>Comenzar:</strong> Área menos dolorosa</li>
+                            <li>• <strong>Evaluar:</strong> Dolor, rigidez, masas</li>
+                            <li>• <strong>Rebote:</strong> Signos de irritación peritoneal</li>
+                            <li>• <strong>Defensa:</strong> Voluntaria vs involuntaria</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            {/* Examen físico específico */}
-            <div>
-                <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2">Examen Físico del Abdomen</h2>
-                <div className="grid lg:grid-cols-4 gap-6 mb-6">
-                    <div className="bg-blue-50 p-4 rounded-lg border-2 border-blue-200">
-                        <h3 className="font-bold text-blue-700 mb-3 text-center">1. INSPECCIÓN</h3>
-                        <ul className="text-sm space-y-1">
-                            <li>• Distensión abdominal</li>
-                            <li>• Cicatrices quirúrgicas</li>
-                            <li>• Coloración de piel</li>
-                            <li>• Movimientos respiratorios</li>
-                            <li>• Equimosis (Cullen, Grey-Turner)</li>
-                        </ul>
-                    </div>
-                    <div className="bg-green-50 p-4 rounded-lg border-2 border-green-200">
-                        <h3 className="font-bold text-green-700 mb-3 text-center">2. AUSCULTACIÓN</h3>
-                        <ul className="text-sm space-y-1">
-                            <li>• Ruidos intestinales</li>
-                            <li>• Ausentes = íleo</li>
-                            <li>• Aumentados = obstrucción</li>
-                            <li>• Soplos vasculares</li>
-                            <li>• Duración: 2 minutos mínimo</li>
-                        </ul>
-                    </div>
-                    <div className="bg-yellow-50 p-4 rounded-lg border-2 border-yellow-200">
-                        <h3 className="font-bold text-yellow-700 mb-3 text-center">3. PERCUSIÓN</h3>
-                        <ul className="text-sm space-y-1">
-                            <li>• Timpanismo = gas</li>
-                            <li>• Matidez = masa/líquido</li>
-                            <li>• Límites hepáticos</li>
-                            <li>• Puño-percusión renal</li>
-                            <li>• Límites de órganos</li>
-                        </ul>
-                    </div>
-                    <div className="bg-red-50 p-4 rounded-lg border-2 border-red-200">
-                        <h3 className="font-bold text-red-700 mb-3 text-center">4. PALPACIÓN</h3>
-                        <ul className="text-sm space-y-1">
-                            <li>• Superficial primero</li>
-                            <li>• Dolor, defensa</li>
-                            <li>• Rigidez muscular</li>
-                            <li>• Rebote positivo</li>
-                            <li>• Masas palpables</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            {/* Maniobras especiales */}
-            <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-6">
-                <h3 className="text-xl font-bold text-indigo-800 mb-4">Maniobras Especiales para Paramédicos</h3>
-                <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <h4 className="font-semibold text-indigo-700 mb-3">Dolor Abdominal</h4>
-                        <div className="space-y-3">
-                            <div className="bg-white p-3 rounded shadow-sm">
-                                <strong className="text-red-600">Signo de Blumberg:</strong>
-                                <p className="text-sm text-gray-700">Dolor al retirar la mano (rebote). Indica irritación peritoneal.</p>
-                            </div>
-                            <div className="bg-white p-3 rounded shadow-sm">
-                                <strong className="text-orange-600">Punto de McBurney:</strong>
-                                <p className="text-sm text-gray-700">1/3 entre ombligo y espina iliaca anterior superior. Apendicitis.</p>
-                            </div>
-                            <div className="bg-white p-3 rounded shadow-sm">
-                                <strong className="text-blue-600">Signo de Murphy:</strong>
-                                <p className="text-sm text-gray-700">Dolor en inspiración profunda + palpación CSD. Colecistitis.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <h4 className="font-semibold text-indigo-700 mb-3">Evaluación Urológica</h4>
-                        <div className="space-y-3">
-                            <div className="bg-white p-3 rounded shadow-sm">
-                                <strong className="text-green-600">Puño-percusión:</strong>
-                                <p className="text-sm text-gray-700">Dolor costovertebral. Pielonefritis o cólico renal.</p>
-                            </div>
-                            <div className="bg-white p-3 rounded shadow-sm">
-                                <strong className="text-purple-600">Palpación vejiga:</strong>
-                                <p className="text-sm text-gray-700">Distensión suprapúbica. Retención urinaria.</p>
-                            </div>
-                            <div className="bg-white p-3 rounded shadow-sm">
-                                <strong className="text-yellow-600">Examen genital:</strong>
-                                <p className="text-sm text-gray-700">Testículos, hernias. Torsión testicular = emergencia.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {/* Algoritmo de triage */}
-            <div>
-                <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2">Algoritmo de Triage Prehospitalario</h2>
-                <div className="grid lg:grid-cols-3 gap-6">
-                    <div className="bg-red-100 border-2 border-red-400 p-5 rounded-lg">
-                        <h3 className="font-bold text-red-700 mb-3 text-center flex items-center justify-center">
-                            <MdLocalHospital className="w-5 h-5 mr-2"/>
-                            CRÍTICO - Código Rojo
-                        </h3>
-                        <ul className="text-sm space-y-2">
-                            <li className="flex items-center">
-                                <div className="w-2 h-2 bg-red-500 rounded-full mr-2"></div>
-                                Shock (TAS &lt; 90, FC &gt; 120)
-                            </li>
-                            <li className="flex items-center">
-                                <div className="w-2 h-2 bg-red-500 rounded-full mr-2"></div>
-                                Hematemesis masiva
-                            </li>
-                            <li className="flex items-center">
-                                <div className="w-2 h-2 bg-red-500 rounded-full mr-2"></div>
-                                Abdomen rígido + signos peritoneales
-                            </li>
-                            <li className="flex items-center">
-                                <div className="w-2 h-2 bg-red-500 rounded-full mr-2"></div>
-                                Alteración estado mental
-                            </li>
-                            <li className="flex items-center">
-                                <div className="w-2 h-2 bg-red-500 rounded-full mr-2"></div>
-                                Signos de Cullen/Grey-Turner
-                            </li>
-                        </ul>
-                        <div className="mt-3 p-2 bg-red-200 rounded text-xs font-bold">
-                            ⚡ Traslado inmediato, ALS intercept
-                        </div>
-                    </div>
-                    <div className="bg-yellow-100 border-2 border-yellow-400 p-5 rounded-lg">
-                        <h3 className="font-bold text-yellow-700 mb-3 text-center flex items-center justify-center">
-                            <MdWarning className="w-5 h-5 mr-2"/>
-                            URGENTE - Código Amarillo
-                        </h3>
-                        <ul className="text-sm space-y-2">
-                            <li className="flex items-center">
-                                <div className="w-2 h-2 bg-yellow-500 rounded-full mr-2"></div>
-                                Dolor severo (8-10/10)
-                            </li>
-                            <li className="flex items-center">
-                                <div className="w-2 h-2 bg-yellow-500 rounded-full mr-2"></div>
-                                Vómito persistente
-                            </li>
-                            <li className="flex items-center">
-                                <div className="w-2 h-2 bg-yellow-500 rounded-full mr-2"></div>
-                                Fiebre alta (&gt; 38.5°C)
-                            </li>
-                            <li className="flex items-center">
-                                <div className="w-2 h-2 bg-yellow-500 rounded-full mr-2"></div>
-                                Deshidratación moderada
-                            </li>
-                            <li className="flex items-center">
-                                <div className="w-2 h-2 bg-yellow-500 rounded-full mr-2"></div>
-                                Hematuria macroscópica
-                            </li>
-                        </ul>
-                        <div className="mt-3 p-2 bg-yellow-200 rounded text-xs font-bold">
-                            🚨 Traslado prioritario (&lt; 30 min)
-                        </div>
-                    </div>
-                    <div className="bg-green-100 border-2 border-green-400 p-5 rounded-lg">
-                        <h3 className="font-bold text-green-700 mb-3 text-center flex items-center justify-center">
-                            <MdCheckCircle className="w-5 h-5 mr-2"/>
-                            ESTABLE - Código Verde
-                        </h3>
-                        <ul className="text-sm space-y-2">
-                            <li className="flex items-center">
-                                <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                                Dolor leve-moderado (&lt; 7/10)
-                            </li>
-                            <li className="flex items-center">
-                                <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                                Signos vitales estables
-                            </li>
-                            <li className="flex items-center">
-                                <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                                Síntomas crónicos reagudizados
-                            </li>
-                            <li className="flex items-center">
-                                <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                                ITU no complicada
-                            </li>
-                            <li className="flex items-center">
-                                <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                                Tolerancia oral conservada
-                            </li>
-                        </ul>
-                        <div className="mt-3 p-2 bg-green-200 rounded text-xs font-bold">
-                            ✅ Traslado rutinario
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {/* Tratamiento prehospitalario */}
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+            {/* Atención médica de emergencia */}
+            <div className="bg-red-50 border border-red-200 rounded-lg p-6">
                 <div className="flex items-center mb-4">
-                    <BsHeartPulse className="w-6 h-6 text-blue-600 mr-2"/>
-                    <h3 className="text-xl font-bold text-blue-800">Manejo Prehospitalario por Prioridad</h3>
+                    <RiFirstAidKitLine className="w-6 h-6 text-red-500 mr-2" />
+                    <h3 className="text-xl font-bold text-red-700">Atención Médica de Emergencia</h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                        <h4 className="font-semibold text-blue-800 mb-2 flex items-center">
-                            <MdCheckCircle className="w-4 h-4 mr-2"/>
-                            Medidas Generales:
-                        </h4>
-                        <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
-                            <li>Posición de confort (decúbito con rodillas flexionadas)</li>
-                            <li>NPO absoluto - no alimentos ni líquidos</li>
-                            <li>Monitorización continua signos vitales</li>
-                            <li>Acceso vascular si signos de shock</li>
-                            <li>Oxígeno si SpO₂ &lt; 94% o distrés</li>
+                        <h4 className="font-semibold text-red-800 mb-2">Intervenciones Generales:</h4>
+                        <ul className="text-sm text-gray-700 space-y-1">
+                            <li>• <strong>Oxígeno:</strong> Si hay signos de hipoxia o shock</li>
+                            <li>• <strong>Nada por vía oral:</strong> NPO estricto</li>
+                            <li>• <strong>Posición:</strong> De confort (no forzar supino)</li>
+                            <li>• <strong>Movimientos suaves:</strong> Evitar sacudidas</li>
+                            <li>• <strong>Monitoreo continuo:</strong> Signos vitales frecuentes</li>
                         </ul>
                     </div>
                     <div>
-                        <h4 className="font-semibold text-red-800 mb-2 flex items-center">
-                            <FaExclamationTriangle className="w-4 h-4 mr-2"/>
-                            Contraindicaciones Absolutas:
-                        </h4>
-                        <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
-                            <li>NO aplicar calor local en abdomen</li>
-                            <li>NO administrar analgésicos</li>
-                            <li>NO dar antiemético sin orden médica</li>
-                            <li>NO palpación profunda repetida</li>
-                            <li>NO enemas o laxantes</li>
+                        <h4 className="font-semibold text-red-800 mb-2">Consideraciones Especiales:</h4>
+                        <ul className="text-sm text-gray-700 space-y-1">
+                            <li>• <strong>AAA sospechoso:</strong> Evitar palpación excesiva</li>
+                            <li>• <strong>Shock:</strong> Transporte inmediato</li>
+                            <li>• <strong>Vómito:</strong> Proteger vía aérea</li>
+                            <li>• <strong>Dolor severo:</strong> No administrar analgésicos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            {/* Causas comunes por cuadrante */}
+            <div>
+                <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
+                    <GiStomach className="w-6 h-6 mr-2 text-orange-500" />
+                    Causas Comunes de Dolor por Cuadrante
+                </h2>
+                <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-orange-50 border border-orange-200 p-4 rounded-lg">
+                        <h3 className="font-bold text-orange-700 mb-3">Cuadrante Superior Derecho</h3>
+                        <ul className="text-sm text-gray-700 space-y-1">
+                            <li>• <strong>Colecistitis:</strong> Dolor post-prandial, irradiado al hombro</li>
+                            <li>• <strong>Hepatitis:</strong> Dolor sordo, ictericia</li>
+                            <li>• <strong>Úlcera duodenal:</strong> Dolor con comidas</li>
+                            <li>• <strong>Cólico biliar:</strong> Dolor intenso, episódico</li>
+                        </ul>
+                    </div>
+
+                    <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
+                        <h3 className="font-bold text-blue-700 mb-3">Cuadrante Superior Izquierdo</h3>
+                        <ul className="text-sm text-gray-700 space-y-1">
+                            <li>• <strong>Pancreatitis:</strong> Dolor epigástrico irradiado a espalda</li>
+                            <li>• <strong>Úlcera gástrica:</strong> Dolor con comidas</li>
+                            <li>• <strong>Ruptura esplénica:</strong> Dolor referido a hombro izquierdo</li>
+                            <li>• <strong>Infarto esplénico:</strong> Dolor agudo en flanco</li>
+                        </ul>
+                    </div>
+
+                    <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg">
+                        <h3 className="font-bold text-yellow-700 mb-3">Cuadrante Inferior Derecho</h3>
+                        <ul className="text-sm text-gray-700 space-y-1">
+                            <li>• <strong>Apendicitis:</strong> Dolor migratorio, náuseas, fiebre</li>
+                            <li>• <strong>Enfermedad de Crohn:</strong> Dolor crónico, diarrea</li>
+                            <li>• <strong>Cálculo ureteral:</strong> Dolor cólico hacia ingle</li>
+                            <li>• <strong>Torsión ovárica:</strong> Dolor súbito en mujeres</li>
+                        </ul>
+                    </div>
+
+                    <div className="bg-green-50 border border-green-200 p-4 rounded-lg">
+                        <h3 className="font-bold text-green-700 mb-3">Cuadrante Inferior Izquierdo</h3>
+                        <ul className="text-sm text-gray-700 space-y-1">
+                            <li>• <strong>Diverticulitis:</strong> Dolor localizado, fiebre</li>
+                            <li>• <strong>Colitis ulcerosa:</strong> Diarrea sanguinolenta</li>
+                            <li>• <strong>Cálculo ureteral:</strong> Dolor irradiado</li>
+                            <li>• <strong>Embarazo ectópico:</strong> Dolor pélvico en mujeres</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            {/* Emergencias urológicas específicas */}
+            <div>
+                <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
+                    <GiKidneys className="w-6 h-6 mr-2 text-blue-500" />
+                    Emergencias Urinarias Específicas
+                </h2>
+                <div className="grid md:grid-cols-2 gap-6">
+                    <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
+                        <h3 className="font-bold text-blue-700 mb-3">Cálculos Renales</h3>
+                        <div className="space-y-2 text-sm text-gray-700">
+                            <p><strong>Síntomas:</strong> Dolor lumbar irradiado a ingle, hematuria, náuseas</p>
+                            <p><strong>Características:</strong> Dolor cólico, severo, no mejora con posición</p>
+                            <p><strong>Manejo:</strong> Posición de confort, oxígeno si hipoxia, transporte para imagenología</p>
+                        </div>
+                    </div>
+
+                    <div className="bg-purple-50 border border-purple-200 p-4 rounded-lg">
+                        <h3 className="font-bold text-purple-700 mb-3">Retención Urinaria Aguda</h3>
+                        <div className="space-y-2 text-sm text-gray-700">
+                            <p><strong>Síntomas:</strong> Dolor suprapúbico, necesidad urgente de orinar sin éxito</p>
+                            <p><strong>Causas:</strong> Hiperplasia prostática, medicamentos, obstrucción</p>
+                            <p><strong>Manejo:</strong> Monitoreo, transporte para cateterismo urgente</p>
+                        </div>
+                    </div>
+
+                    <div className="bg-red-50 border border-red-200 p-4 rounded-lg">
+                        <h3 className="font-bold text-red-700 mb-3">Pielonefritis</h3>
+                        <div className="space-y-2 text-sm text-gray-700">
+                            <p><strong>Síntomas:</strong> Fiebre alta, dolor en flanco, malestar general</p>
+                            <p><strong>Complicaciones:</strong> Sepsis, shock séptico</p>
+                            <p><strong>Manejo:</strong> Monitoreo estricto, transporte urgente si sepsis</p>
+                        </div>
+                    </div>
+
+                    <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg">
+                        <h3 className="font-bold text-yellow-700 mb-3">Cistitis</h3>
+                        <div className="space-y-2 text-sm text-gray-700">
+                            <p><strong>Síntomas:</strong> Disuria, micción frecuente y dolorosa</p>
+                            <p><strong>Gravedad:</strong> Usualmente no requiere intervenciones agresivas</p>
+                            <p><strong>Manejo:</strong> Evaluación general, transporte para tratamiento</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Complicaciones en pacientes en diálisis */}
+            <div className="bg-orange-50 border border-orange-200 rounded-lg p-6">
+                <div className="flex items-center mb-4">
+                    <RiAlarmWarningLine className="w-6 h-6 text-orange-500 mr-2" />
+                    <h3 className="text-xl font-bold text-orange-700">Complicaciones en Pacientes en Diálisis</h3>
+                </div>
+                <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 className="font-semibold text-orange-800 mb-2">Complicaciones Comunes:</h4>
+                        <ul className="text-sm text-gray-700 space-y-1">
+                            <li>• <strong>Hipotensión:</strong> Post-diálisis, remoción excesiva de líquido</li>
+                            <li>• <strong>Sobrecarga de líquidos:</strong> Edema, disnea, hipertensión</li>
+                            <li>• <strong>Infecciones:</strong> En fístulas o catéteres de diálisis</li>
+                            <li>• <strong>Uremia:</strong> Acumulación de tóxicos por falla renal</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 className="font-semibold text-orange-800 mb-2">Manejo Prehospitalario:</h4>
+                        <ul className="text-sm text-gray-700 space-y-1">
+                            <li>• <strong>No usar fístula</strong> para acceso IV</li>
+                            <li>• <strong>Evaluar sobrecarga:</strong> Edema, dificultad respiratoria</li>
+                            <li>• <strong>Oxígeno</strong> si hay dificultad respiratoria</li>
+                            <li>• <strong>Transporte urgente</strong> si infección o desequilibrio severo</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            {/* Criterios de transporte prioritario */}
+            <div className="bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-red-500 p-6 rounded-lg">
+                <div className="flex items-center mb-4">
+                    <FaAmbulance className="w-8 h-8 text-red-500 mr-3" />
+                    <h2 className="text-2xl font-bold text-red-700">Criterios de Transporte Prioritario</h2>
+                </div>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div className="bg-white p-4 rounded shadow-sm">
+                        <h4 className="font-bold text-red-600 mb-2">Signos de Shock</h4>
+                        <ul className="text-sm text-gray-700 space-y-1">
+                            <li>• Hipotensión</li>
+                            <li>• Taquicardia</li>
+                            <li>• Piel fría y pegajosa</li>
+                            <li>• Alteración mental</li>
+                        </ul>
+                    </div>
+                    <div className="bg-white p-4 rounded shadow-sm">
+                        <h4 className="font-bold text-red-600 mb-2">Abdomen Quirúrgico</h4>
+                        <ul className="text-sm text-gray-700 space-y-1">
+                            <li>• Rigidez involuntaria</li>
+                            <li>• Rebote positivo</li>
+                            <li>• Silencio abdominal</li>
+                            <li>• Distensión severa</li>
+                        </ul>
+                    </div>
+                    <div className="bg-white p-4 rounded shadow-sm">
+                        <h4 className="font-bold text-red-600 mb-2">Hemorragia</h4>
+                        <ul className="text-sm text-gray-700 space-y-1">
+                            <li>• Hematemesis</li>
+                            <li>• Melena</li>
+                            <li>• Hematuria masiva</li>
+                            <li>• Sangrado rectal activo</li>
+                        </ul>
+                    </div>
+                    <div className="bg-white p-4 rounded shadow-sm">
+                        <h4 className="font-bold text-red-600 mb-2">AAA Sospechoso</h4>
+                        <ul className="text-sm text-gray-700 space-y-1">
+                            <li>• Masa pulsátil</li>
+                            <li>• Dolor súbito intenso</li>
+                            <li>• Irradiación a espalda</li>
+                            <li>• Síncope</li>
+                        </ul>
+                    </div>
+                    <div className="bg-white p-4 rounded shadow-sm">
+                        <h4 className="font-bold text-red-600 mb-2">Sepsis</h4>
+                        <ul className="text-sm text-gray-700 space-y-1">
+                            <li>• Fiebre alta</li>
+                            <li>• Alteración mental</li>
+                            <li>• Taquipnea</li>
+                            <li>• Hipotensión</li>
+                        </ul>
+                    </div>
+                    <div className="bg-white p-4 rounded shadow-sm">
+                        <h4 className="font-bold text-red-600 mb-2">Obstrucción</h4>
+                        <ul className="text-sm text-gray-700 space-y-1">
+                            <li>• Vómito fecaloide</li>
+                            <li>• Distensión severa</li>
+                            <li>• Ausencia de gases</li>
+                            <li>• Dolor cólico intenso</li>
                         </ul>
                     </div>
                 </div>
