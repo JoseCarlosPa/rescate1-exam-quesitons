@@ -203,3 +203,116 @@ export const neurologicasQuestions: Question[] = [
         "explanation": "El tratamiento definitivo para muchos EVC isquémicos es tiempo-dependiente. La función del proveedor prehospitalario es reconocer rápidamente un posible EVC, realizar una evaluación breve y notificar al hospital receptor mientras se inicia un transporte rápido a un centro de ictus designado."
     }
 ]
+
+export const neurologicalQuestionsChallenge: Question[] = [
+    {
+        question: "Un hombre de 65 años con fibrilación auricular desarrolla súbitamente debilidad en el lado derecho del cuerpo y dificultad para hablar. Sus familiares reportan que los síntomas iniciaron hace 45 minutos. Al examen: alerta pero confuso, hemiparesia derecha, desviación de la mirada hacia la izquierda, afasia. Glucosa: 110 mg/dL, TA: 160/95 mmHg. ¿Cuál es la prioridad en el manejo?",
+        options: [
+            { letter: "a", text: "Administrar aspirina 325 mg inmediatamente" },
+            { letter: "b", text: "Reducir la presión arterial antes del transporte" },
+            { letter: "c", text: "Transporte urgente a centro con capacidad de trombólisis (código ictus)" },
+            { letter: "d", text: "Observación por 2 horas para ver si mejora espontáneamente" }
+        ],
+        correctAnswer: "c",
+        explanation: "Este paciente presenta signos de EVC isquémico agudo en territorio de arteria cerebral media izquierda. Está dentro de la ventana de tiempo para trombólisis (3-4.5 horas). El transporte urgente a un centro de ictus es crucial. No se debe dar aspirina sin descartar hemorragia con TC."
+    },
+    {
+        question: "Una mujer de 35 años presenta cefalea súbita e intensa ('la peor de mi vida'), rigidez de nuca, fotofobia y vómitos. Está consciente pero irritable. Sus signos vitales: FC 95 lpm, TA 145/85 mmHg, temperatura 37.2°C. ¿Cuál es la sospecha diagnóstica más probable?",
+        options: [
+            { letter: "a", text: "Migraña severa" },
+            { letter: "b", text: "Hemorragia subaracnoidea" },
+            { letter: "c", text: "Meningitis bacteriana" },
+            { letter: "d", text: "Tumor cerebral" }
+        ],
+        correctAnswer: "b",
+        explanation: "La cefalea 'en trueno' (súbita, intensa, peor de la vida) con rigidez de nuca en una mujer joven es altamente sugestiva de hemorragia subaracnoidea, frecuentemente por ruptura de aneurisma. Aunque la meningitis también causa rigidez de nuca, la fiebre sería más prominente."
+    },
+    {
+        question: "Durante el transporte, un paciente diabético de 45 años con alteración del estado mental presenta convulsiones tónico-clónicas generalizadas que han durado 8 minutos. Su glucosa inicial fue de 180 mg/dL. Las convulsiones continúan a pesar de la oxigenoterapia. ¿Cuál es la intervención más apropiada?",
+        options: [
+            { letter: "a", text: "Administrar dextrosa 50% IV" },
+            { letter: "b", text: "Preparar para intubación de secuencia rápida" },
+            { letter: "c", text: "Sujetar físicamente al paciente para evitar lesiones" },
+            { letter: "d", text: "Aumentar el flujo de oxígeno y esperar" }
+        ],
+        correctAnswer: "b",
+        explanation: "Estado epiléptico (>5 minutos de convulsiones) es una emergencia neurológica. Con glucosa normal, la prioridad es proteger la vía aérea ya que las convulsiones prolongadas comprometen la ventilación y oxigenación. La intubación puede ser necesaria para control definitivo de la vía aérea."
+    },
+    {
+        question: "Un hombre de 28 años sufre traumatismo craneal en accidente de motocicleta. Inicialmente estaba consciente, pero ahora presenta deterioro neurológico: confusión progresiva, somnolencia, pupila derecha dilatada y no reactiva. Su TA es 180/60 mmHg con bradicardia (50 lpm). ¿Qué complicación es más probable?",
+        options: [
+            { letter: "a", text: "Shock hemorrágico por sangrado interno" },
+            { letter: "b", text: "Hematoma epidural con herniación cerebral" },
+            { letter: "c", text: "Lesión cervical con shock neurogénico" },
+            { letter: "d", text: "Contusión pulmonar severa" }
+        ],
+        correctAnswer: "b",
+        explanation: "El 'intervalo lúcido' seguido de deterioro, pupila unilateral dilatada y la tríada de Cushing (hipertensión, bradicardia, respiración irregular) sugieren hematoma epidural con aumento de la presión intracraneal y herniación cerebral inminente. Es una emergencia neuroquirúrgica."
+    },
+    {
+        question: "Una mujer de 55 años con antecedentes de migraña presenta cefalea severa, pero esta vez es diferente: inicio súbito, acompañada de debilidad en brazo y pierna izquierdos, y dificultad para encontrar palabras. Sus signos vitales son estables. ¿Cuál es la consideración más importante?",
+        options: [
+            { letter: "a", text: "Es una migraña complicada, administrar analgésicos" },
+            { letter: "b", text: "Probable EVC, activar código ictus independientemente del historial de migraña" },
+            { letter: "c", text: "Crisis de ansiedad exacerbando la migraña" },
+            { letter: "d", text: "Cefalea tensional severa" }
+        ],
+        correctAnswer: "b",
+        explanation: "Aunque tenga historial de migraña, la presencia de déficits neurológicos focales (hemiparesia, afasia) indica EVC hasta demostrar lo contrario. La migraña con aura puede causar síntomas neurológicos, pero estos nuevos signos requieren evaluación urgente para EVC."
+    },
+    {
+        question: "Un niño de 8 años presenta convulsión febril en el contexto de fiebre de 39.5°C. La convulsión duró 3 minutos y ahora está posictal pero despierta. Sus padres están muy angustiados. ¿Cuál es el manejo más apropiado?",
+        options: [
+            { letter: "a", text: "Administrar anticonvulsivantes profilácticos" },
+            { letter: "b", text: "Enfriamiento agresivo con hielo y alcohol" },
+            { letter: "c", text: "Tranquilizar a los padres, enfriamiento gradual, y evaluación médica para determinar causa de la fiebre" },
+            { letter: "d", text: "Transporte inmediato a neurocirugía" }
+        ],
+        correctAnswer: "c",
+        explanation: "Las convulsiones febriles simples (<15 min, generalizadas, sin recurrencia en 24h) en niños de 6 meses a 5 años son generalmente benignas. El enfoque debe ser el enfriamiento gradual, tranquilizar a la familia, y encontrar la causa de la fiebre. El enfriamiento agresivo puede causar escalofríos."
+    },
+    {
+        question: "Un paciente de 70 años con demencia es encontrado por su familia con nivel de conciencia alterado. No hay signos de trauma. Glucosa: 45 mg/dL. Después de administrar dextrosa 50%, el paciente mejora significativamente pero permanece ligeramente confuso. ¿Cuál es la explicación más probable?",
+        options: [
+            { letter: "a", text: "La dextrosa no fue efectiva" },
+            { letter: "b", text: "Hay una lesión cerebral estructural subyacente" },
+            { letter: "c", text: "La hipoglucemia se resolvió pero la confusión basal por demencia persiste" },
+            { letter: "d", text: "Se requiere más dextrosa" }
+        ],
+        correctAnswer: "c",
+        "explanation": "La hipoglucemia se corrigió exitosamente (mejoría significativa tras dextrosa), pero el paciente con demencia preexistente retorna a su nivel basal de función cognitiva alterada. Es importante reconocer que la corrección completa no siempre significa normalidad en pacientes con deterioro cognitivo previo."
+    },
+    {
+        question: "Un hombre de 42 años presenta episodio de pérdida súbita de conciencia de 30 segundos mientras caminaba. Los testigos refieren que se puso pálido, cayó, y recuperó la conciencia espontáneamente sin confusión posterior. Niega palpitaciones o dolor torácico. ¿Cuál es la causa más probable?",
+        options: [
+            { letter: "a", text: "Convulsión parcial compleja" },
+            { letter: "b", text: "Síncope vasovagal" },
+            { letter: "c", text: "Hipoglucemia" },
+            { letter: "d", text: "Ataque isquémico transitorio (AIT)" }
+        ],
+        correctAnswer: "b",
+        "explanation": "El síncope vasovagal se caracteriza por pérdida súbita de conciencia con palidez, recuperación rápida y completa sin estado posictal (confusión). Las convulsiones típicamente tienen fase posictal, la hipoglucemia causa confusión persistente, y el AIT no causa pérdida de conciencia."
+    },
+    {
+        question: "Una mujer embarazada de 32 semanas desarrolla convulsión tónico-clónica en presencia de hipertensión (TA 170/110 mmHg), proteinuria y edema. La convulsión cesa después de 2 minutos. Está posictal pero con signos vitales estables. ¿Cuál es la prioridad en el manejo?",
+        options: [
+            { letter: "a", text: "Administrar anticonvulsivantes de rutina" },
+            { letter: "b", text: "Posición en decúbito lateral izquierdo, oxígeno, y transporte urgente a centro obstétrico" },
+            { letter: "c", text: "Reducir rápidamente la presión arterial" },
+            { letter: "d", text: "Inducir el parto inmediatamente" }
+        ],
+        correctAnswer: "b",
+        explanation: "Este cuadro sugiere eclampsia (convulsiones en contexto de preeclampsia). La posición lateral evita la compresión aortocava, el oxígeno beneficia a madre y feto, y requiere manejo obstétrico especializado urgente. La reducción agresiva de TA puede comprometer la perfusión fetal."
+    },
+    {
+        question: "Un paciente de 60 años con antecedentes de alcoholismo crónico es encontrado confuso y desorientado. Presenta marcha atáxica, movimientos oculares anormales (nistagmo) y dificultad para formar nuevos recuerdos. Su familia reporta que no ha comido bien por semanas. ¿Cuál es la deficiencia nutricional más probable?",
+        options: [
+            { letter: "a", text: "Deficiencia de vitamina B12" },
+            { letter: "b", text: "Deficiencia de tiamina (vitamina B1)" },
+            { letter: "c", text: "Deficiencia de ácido fólico" },
+            { letter: "d", text: "Deficiencia de vitamina D" }
+        ],
+        correctAnswer: "b",
+        explanation: "La tríada de encefalopatía de Wernicke (confusión, ataxia, oftalmoplegia/nistagmo) en un paciente alcohólico con malnutrición sugiere deficiencia de tiamina. Esta condición puede progresar al síndrome de Korsakoff (pérdida de memoria) si no se trata. Requiere tiamina IV urgente."
+    }
+];

@@ -203,3 +203,116 @@ export const cardiovascularQuestions: Question[] = [
         "explanation": "El uso de inhibidores de la fosfodiesterasa como el sildenafil en las últimas 24-48 horas es una contraindicación absoluta para la administración de nitroglicerina. La combinación de ambos fármacos puede provocar una vasodilatación masiva y una hipotensión grave y refractaria que puede ser mortal."
     }
 ]
+
+export const cardiovascularQuestionsChallenge: Question[] = [
+    {
+        question: "Un hombre de 58 años con diabetes e hipertensión presenta dolor epigástrico intenso, náuseas, vómitos y diaforesis. Niega dolor torácico. Sus signos vitales son: FC 95 lpm, TA 145/90 mmHg, SpO2 96%. Su ECG muestra elevaciones del ST en las derivaciones II, III y aVF. ¿Cuál es la interpretación más probable?",
+        options: [
+            { letter: "a", text: "Gastritis aguda por estrés" },
+            { letter: "b", text: "Infarto agudo de miocardio inferior (pared inferior)" },
+            { letter: "c", text: "Crisis hipertensiva" },
+            { letter: "d", text: "Pancreatitis aguda" }
+        ],
+        correctAnswer: "b",
+        explanation: "Los pacientes diabéticos pueden presentar infartos con síntomas atípicos (dolor epigástrico en lugar de torácico). Las elevaciones del ST en II, III y aVF indican infarto de la pared inferior del ventrículo izquierdo, típicamente por oclusión de la arteria coronaria derecha."
+    },
+    {
+        question: "Una mujer de 65 años con antecedentes de insuficiencia cardíaca despierta súbitamente con disnea severa, ortopnea y ansiedad extrema. Al examen presenta crepitantes bibasales, taquicardia (120 lpm), hipertensión (180/100 mmHg) y expectoración espumosa rosada. ¿Cuál es la intervención prioritaria?",
+        options: [
+            { letter: "a", text: "Colocar al paciente en posición supina para mejorar el retorno venoso" },
+            { letter: "b", text: "Posición semisentada, oxígeno de alto flujo y preparar para asistencia ventilatoria" },
+            { letter: "c", text: "Administrar líquidos IV para mejorar la precarga" },
+            { letter: "d", text: "Broncodilatadores nebulizados para el broncoespasmo" }
+        ],
+        correctAnswer: "b",
+        explanation: "El cuadro indica edema agudo de pulmón. La posición semisentada reduce el retorno venoso, el oxígeno mejora la oxigenación y puede requerir CPAP o intubación. Los líquidos están contraindicados ya que empeorarían la sobrecarga de volumen."
+    },
+    {
+        question: "Durante el transporte de un paciente con infarto, súbitamente se vuelve inconsciente. El monitor muestra taquicardia ventricular sostenida y el paciente no tiene pulso palpable. Su TA no es medible. ¿Cuál es la acción inmediata más apropiada?",
+        options: [
+            { letter: "a", text: "Administrar amiodarona IV" },
+            { letter: "b", text: "Realizar cardioversión eléctrica sincronizada" },
+            { letter: "c", text: "Iniciar RCP y preparar para desfibrilación" },
+            { letter: "d", text: "Administrar lidocaína IV" }
+        ],
+        correctAnswer: "c",
+        explanation: "Taquicardia ventricular sin pulso es un ritmo de paro cardíaco que requiere manejo como fibrilación ventricular: RCP inmediata y desfibrilación no sincronizada lo antes posible. La cardioversión sincronizada es solo para ritmos con pulso."
+    },
+    {
+        question: "Un paciente de 45 años presenta dolor torácico severo tipo 'desgarro' que inicia súbitamente y se irradia a la espalda entre las escápulas. Al examen: TA brazo derecho 180/95 mmHg, brazo izquierdo 140/80 mmHg, pulsos desiguales en extremidades superiores. ¿Cuál es la sospecha clínica más probable?",
+        options: [
+            { letter: "a", text: "Infarto agudo de miocardio" },
+            { letter: "b", text: "Embolia pulmonar masiva" },
+            { letter: "c", text: "Disección aórtica aguda" },
+            { letter: "d", text: "Neumotórax a tensión" }
+        ],
+        correctAnswer: "c",
+        explanation: "El dolor 'desgarrador' súbito irradiado a la espalda, la diferencia de presión arterial >20 mmHg entre brazos y los pulsos desiguales son signos clásicos de disección aórtica aguda, una emergencia cardiovascular que requiere manejo inmediato."
+    },
+    {
+        question: "Un hombre de 72 años con fibrilación auricular crónica presenta súbitamente dolor abdominal severo, náuseas y distensión. Al examen: abdomen rígido, ausencia de ruidos intestinales, taquicardia (130 lpm) e hipotensión (85/50 mmHg). No refiere fiebre. ¿Cuál es la complicación más probable de su arritmia?",
+        options: [
+            { letter: "a", text: "Perforación intestinal espontánea" },
+            { letter: "b", text: "Isquemia mesentérica por embolia" },
+            { letter: "c", text: "Pancreatitis aguda" },
+            { letter: "d", text: "Obstrucción intestinal mecánica" }
+        ],
+        correctAnswer: "b",
+        explanation: "La fibrilación auricular predispone a formación de trombos que pueden embolizar. La isquemia mesentérica embólica presenta dolor abdominal severo desproporcionado a los hallazgos físicos iniciales, con posterior desarrollo de signos peritoneales y shock."
+    },
+    {
+        question: "Una mujer de 55 años desarrolla palpitaciones súbitas. Al monitor se observa taquicardia supraventricular regular a 180 lpm. Está consciente, ansiosa, con TA 110/70 mmHg. Ha fallado la maniobra de Valsalva. ¿Cuál es el siguiente paso en el manejo?",
+        options: [
+            { letter: "a", text: "Cardioversión eléctrica inmediata" },
+            { letter: "b", text: "Masaje del seno carotídeo" },
+            { letter: "c", text: "Amiodarona IV lenta" },
+            { letter: "d", text: "Preparar para intubación" }
+        ],
+        correctAnswer: "b",
+        explanation: "En TSV estable (con pulso y sin signos de shock), después del Valsalva se puede intentar masaje del seno carotídeo. La cardioversión se reserva para pacientes inestables o cuando fallan las maniobras vagales y medicamentos."
+    },
+    {
+        question: "Un paciente de 68 años con antecedentes de IAM previo presenta síncope. Al recuperar la conciencia, el monitor muestra bradicardia sinusal a 35 lpm con pausas >3 segundos. Su TA es 80/50 mmHg y refiere mareo persistente. ¿Cuál es el tratamiento inicial más apropiado?",
+        options: [
+            { letter: "a", text: "Observación y monitorización continua" },
+            { letter: "b", text: "Atropina 0.5 mg IV" },
+            { letter: "c", text: "Marcapaso transcutáneo inmediato" },
+            { letter: "d", text: "Líquidos IV para mejorar la precarga" }
+        ],
+        correctAnswer: "b",
+        "explanation": "La bradicardia sintomática con compromiso hemodinámico requiere tratamiento. La atropina es la primera línea para bradicardia sinusal. Si no responde o hay bloqueo AV de alto grado, entonces se considera el marcapaso transcutáneo."
+    },
+    {
+        question: "Durante una reanimación, después de 6 minutos de RCP de alta calidad y 3 descargas por FV, el paciente recupera pulso con TA 70/40 mmHg y FC 110 lpm. Está inconsciente con respiración espontánea pero superficial. ¿Cuál es la prioridad en el manejo post-paro?",
+        options: [
+            { letter: "a", text: "Administrar amiodarona para prevenir recurrencia de FV" },
+            { letter: "b", text: "Asegurar vía aérea definitiva y ventilación adecuada" },
+            { letter: "c", text: "Iniciar dopamina para la hipotensión" },
+            { letter: "d", text: "Obtener ECG de 12 derivaciones inmediatamente" }
+        ],
+        correctAnswer: "b",
+        explanation: "En el retorno de la circulación espontánea (ROSC), la prioridad es optimizar la oxigenación y ventilación para prevenir hipoxia secundaria. La vía aérea definitiva asegura ventilación controlada y previene aspiración en pacientes inconscientes."
+    },
+    {
+        question: "Un hombre de 50 años fumador presenta dolor torácico atípico de 30 minutos de duración. Su ECG inicial es normal, pero 20 minutos después desarrolla elevación del ST de 3mm en V2-V4 y nueva onda Q en V3. Sus signos vitales son estables. ¿Qué indica este cambio electrocardiográfico?",
+        options: [
+            { letter: "a", text: "Falsa elevación del ST por artefacto" },
+            { letter: "b", text: "STEMI anterior en evolución - requiere reperfusión urgente" },
+            { letter: "c", text: "Pericarditis aguda" },
+            { letter: "d", text: "Variante normal en deportista" }
+        ],
+        correctAnswer: "b",
+        explanation: "La evolución de ECG normal a elevación significativa del ST (>2mm en precordiales) con nueva onda Q indica STEMI anterior en evolución (oclusión de descendente anterior). Es una emergencia que requiere reperfusión inmediata (angioplastia primaria o trombolisis)."
+    },
+    {
+        question: "Una mujer embarazada de 34 semanas presenta disnea súbita, dolor torácico pleurítico y taquicardia (125 lpm) después de un vuelo largo. Su SpO2 es 89% y presenta taquipnea. Niega dolor en miembros inferiores pero refiere ansiedad severa. ¿Cuál es la consideración más importante en su manejo?",
+        options: [
+            { letter: "a", text: "Posición supina para mejorar el retorno venoso" },
+            { letter: "b", text: "Restricción de oxígeno por riesgo fetal" },
+            { letter: "c", text: "Posición en decúbito lateral izquierdo, oxígeno suplementario y transporte urgente" },
+            { letter: "d", text: "Sedación para controlar la ansiedad" }
+        ],
+        correctAnswer: "c",
+        explanation: "El cuadro sugiere embolia pulmonar (alto riesgo en embarazo + vuelo largo). La posición en decúbito lateral izquierdo previene la compresión aortocava, el oxígeno es seguro y beneficioso para madre y feto, y requiere transporte urgente para anticoagulación."
+    }
+];

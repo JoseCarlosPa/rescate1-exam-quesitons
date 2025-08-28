@@ -4,7 +4,10 @@ import {
     respiratoryEmergenciesExam
 } from "./AirwayEmergency/AirwayEmergency.questions";
 import {airwayManagementQuestions} from "./AirwayManage/AirwayManage.questions.ts";
-import {cardiovascularQuestions} from "./CardioEmergency/CardioEmergency.questions.ts";
+import {
+    cardiovascularQuestions,
+    cardiovascularQuestionsChallenge
+} from "./CardioEmergency/CardioEmergency.questions.ts";
 import {communicationsQuestions} from "./Communications/Communications.questions.ts";
 import {endocrineHematologicQuestions} from "./EndocryEmergency/EndocryEmergency.questions.ts";
 import {patientAssessmentQuestions} from "./Evaluation/Evaluation.questions.ts";
@@ -18,7 +21,7 @@ import {medicationAdministrationQuestions} from "./MedAdmin/MedAdmin.questions.t
 import {medicTermsQuestions} from "./MedicTerms/MediTerms.questions.ts";
 import {visionMedicGeneralQuestions} from "./MedicVision/MedicVision.questions.ts";
 import {megaQuestions} from "./Mega/Mega.questions.ts";
-import {neurologicasQuestions} from "./NeuroEmergency/NeuroEmergency.questions.ts";
+import {neurologicalQuestionsChallenge, neurologicasQuestions} from "./NeuroEmergency/NeuroEmergency.questions.ts";
 import {nemotecniasQuestions} from "./Nnemotecnias/Mnemotecnias.questions.ts";
 import {pharmacologyQuestions} from "./Pharmacology/Pharmacology.questions.ts";
 import {svbQuestions} from "./ReanimateSvb/ReanimateSvb.questions.ts";
@@ -58,6 +61,7 @@ export function getRandomQuestionsFromEachCategory(n: number): Question[] {
         respiratoryEmergenciesChallengingExam,
         airwayManagementQuestions,
         cardiovascularQuestions,
+        cardiovascularQuestionsChallenge,
         communicationsQuestions,
         endocrineHematologicQuestions,
         patientAssessmentQuestions,
@@ -72,6 +76,7 @@ export function getRandomQuestionsFromEachCategory(n: number): Question[] {
         visionMedicGeneralQuestions,
         megaQuestions,
         neurologicasQuestions,
+        neurologicalQuestionsChallenge,
         nemotecniasQuestions,
         pharmacologyQuestions,
         svbQuestions,
@@ -205,6 +210,7 @@ export const allQuestions: Question[] = [
     ...respiratoryEmergenciesChallengingExam,
     ...airwayManagementQuestions,
     ...cardiovascularQuestions,
+    ...cardiovascularQuestionsChallenge,
     ...communicationsQuestions,
     ...endocrineHematologicQuestions,
     ...patientAssessmentQuestions,
@@ -219,6 +225,7 @@ export const allQuestions: Question[] = [
     ...visionMedicGeneralQuestions,
     ...megaQuestions,
     ...neurologicasQuestions,
+    ...neurologicalQuestionsChallenge,
     ...nemotecniasQuestions,
     ...pharmacologyQuestions,
     ...svbQuestions,

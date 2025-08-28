@@ -210,3 +210,116 @@ export const gastrointestinalUrologicQuestions: Question[] = [
         "explanation": "La retención urinaria aguda es una emergencia médica definida por la incapacidad repentina y dolorosa de orinar. El paciente siente una necesidad urgente de vaciar la vejiga, pero no puede hacerlo, lo que causa una distensión severa de la vejiga y un dolor intenso en la región suprapúbica (por encima del pubis)."
     }
 ]
+
+export const gastrointestinalUrologicQuestionsChallenge: Question[] = [
+    {
+        question: "Un hombre de 45 años presenta dolor abdominal severo que inició hace 6 horas como dolor periumbilical difuso y ahora se localiza en fosa ilíaca derecha. Al examen: fiebre 38.2°C, defensa muscular en cuadrante inferior derecho, signo de Blumberg positivo. FC 110 lpm, TA 125/80 mmHg. ¿Cuál es la sospecha diagnóstica más probable y el manejo apropiado?",
+        options: [
+            { letter: "a", text: "Gastroenteritis; líquidos IV y antieméticos" },
+            { letter: "b", text: "Apendicitis aguda; transporte urgente sin analgésicos" },
+            { letter: "c", text: "Cálculo renal; analgésicos y líquidos" },
+            { letter: "d", text: "Obstrucción intestinal; descompresión gástrica" }
+        ],
+        correctAnswer: "b",
+        explanation: "La migración del dolor de periumbilical a fosa ilíaca derecha (signo de Murphy), fiebre, defensa muscular y signo de Blumberg (dolor de rebote) son clásicos de apendicitis aguda. Requiere evaluación quirúrgica urgente. Los analgésicos pueden enmascarar signos y retrasar el diagnóstico."
+    },
+    {
+        question: "Una mujer de 35 años presenta hematemesis masiva (vómito con sangre roja) y melena. Está pálida, diaforética, con FC 130 lpm, TA 85/50 mmHg. Refiere antecedentes de úlcera péptica y uso crónico de AINE. ¿Cuál es la prioridad en el manejo prehospitalario?",
+        options: [
+            { letter: "a", text: "Administrar antiácidos para neutralizar el ácido gástrico" },
+            { letter: "b", text: "Dos accesos IV de gran calibre, cristaloides, posición Trendelenburg y transporte urgente" },
+            { letter: "c", text: "Sonda nasogástrica para descompresión" },
+            { letter: "d", text: "Posición semi-sentada para evitar aspiración" }
+        ],
+        correctAnswer: "b",
+        explanation: "Hemorragia digestiva alta masiva con signos de shock hipovolémico (taquicardia, hipotensión, palidez, diaforesis). La prioridad es la reanimación con volumen mediante dos accesos IV de gran calibre y transporte urgente para control quirúrgico del sangrado."
+    },
+    {
+        question: "Un hombre de 65 años con cirrosis hepática conocida presenta distensión abdominal masiva, disnea y ortopnea. Al examen: abdomen tenso con matidez desplazable, edema en extremidades inferiores, ictericia. Sus signos vitales son estables pero presenta saturación de 88%. ¿Cuál es la complicación más probable?",
+        options: [
+            { letter: "a", text: "Perforación intestinal" },
+            { letter: "b", text: "Ascitis masiva con compromiso respiratorio" },
+            { letter: "c", text: "Obstrucción intestinal mecánica" },
+            { letter: "d", text: "Pancreatitis aguda" }
+        ],
+        correctAnswer: "b",
+        explanation: "La cirrosis causa hipertensión portal que lleva a ascitis (acumulación de líquido en cavidad peritoneal). Cuando es masiva, puede comprometer la respiración por elevación diafragmática. El paciente necesita drenaje terapéutico urgente y soporte respiratorio."
+    },
+    {
+        question: "Un joven de 20 años presenta dolor testicular izquierdo súbito e intenso que inició hace 2 horas durante el ejercicio. Al examen: testículo izquierdo elevado, horizontalizado, extremadamente sensible. Niega fiebre o síntomas urinarios. ¿Cuál es la urgencia de este cuadro?",
+        options: [
+            { letter: "a", text: "No urgente; probable trauma menor" },
+            { letter: "b", text: "Urgencia moderada; probable epididimitis" },
+            { letter: "c", text: "Urgencia extrema; probable torsión testicular" },
+            { letter: "d", text: "Urgencia baja; probable varicocele" }
+        ],
+        correctAnswer: "c",
+        explanation: "Dolor testicular súbito, intenso, con testículo elevado y horizontalizado sugiere torsión testicular. Es una emergencia urológica absoluta que requiere detorsión quirúrgica dentro de 6 horas para salvar el testículo. Cada hora de retraso reduce significativamente la viabilidad."
+    },
+    {
+        question: "Una mujer de 28 años embarazada de 16 semanas presenta náuseas y vómitos severos, pérdida de peso de 8 kg, deshidratación y cetonas en orina. No puede retener líquidos ni sólidos por 5 días. ¿Cuál es el diagnóstico más probable y manejo inicial?",
+        options: [
+            { letter: "a", text: "Gastroenteritis viral; rehidratación oral" },
+            { letter: "b", text: "Hiperémesis gravídica; líquidos IV con tiamina y antiémeticos seguros" },
+            { letter: "c", text: "Apendicitis en embarazo; evaluación quirúrgica" },
+            { letter: "d", text: "Reflujo gastroesofágico; antiácidos" }
+        ],
+        correctAnswer: "b",
+        explanation: "Hiperémesis gravídica es náuseas y vómitos severos del embarazo con pérdida de peso >5% y cetonuria. Puede causar desequilibrios electrolíticos graves y deficiencia de tiamina. Requiere hidratación IV, corrección electrolítica y antiémeticos seguros en embarazo."
+    },
+    {
+        question: "Un hombre de 55 años con antecedentes de alcoholismo presenta dolor abdominal epigástrico severo irradiado a la espalda, náuseas, vómitos y distensión abdominal. Al examen: abdomen rígido, ausencia de ruidos intestinales, FC 120 lpm, TA 90/60 mmHg. ¿Cuál es la complicación más temida de su condición probable?",
+        options: [
+            { letter: "a", text: "Perforación gástrica" },
+            { letter: "b", text: "Necrosis pancreática con shock distributivo" },
+            { letter: "c", text: "Obstrucción biliar" },
+            { letter: "d", text: "Sangrado variceal" }
+        ],
+        correctAnswer: "b",
+        explanation: "El cuadro sugiere pancreatitis aguda severa (dolor epigástrico irradiado a espalda, alcoholismo). La necrosis pancreática puede llevar a liberación masiva de enzimas, SIRS (síndrome de respuesta inflamatoria sistémica) y shock distributivo, con mortalidad muy alta."
+    },
+    {
+        question: "Un paciente de 70 años con fibrilación auricular presenta dolor abdominal súbito, severo y desproporcionado a los hallazgos físicos. Inicialmente el abdomen está blando pero el paciente refiere dolor 10/10. Después de 4 horas desarrolla distensión, rigidez y ausencia de ruidos intestinales. ¿Cuál es la causa más probable?",
+        options: [
+            { letter: "a", text: "Perforación de úlcera péptica" },
+            { letter: "b", text: "Isquemia mesentérica embólica" },
+            { letter: "c", text: "Vólvulo intestinal" },
+            { letter: "d", text: "Colecistitis aguda" }
+        ],
+        correctAnswer: "b",
+        explanation: "Fibrilación auricular predispone a embolias. La isquemia mesentérica embólica presenta inicialmente dolor severo desproporcionado a hallazgos físicos ('dolor fuera de proporción'). Posteriormente desarrolla signos peritoneales por necrosis intestinal. Es una emergencia quirúrgica."
+    },
+    {
+        question: "Un hombre de 30 años presenta cólico renal severo en flanco derecho irradiado a ingle, con hematuria microscópica. Durante el transporte desarrolla súbitamente fiebre (39°C), escalofríos y deterioro del estado general. ¿Qué complicación ha desarrollado?",
+        options: [
+            { letter: "a", text: "Ruptura renal" },
+            { letter: "b", text: "Pielonefritis obstructiva (pionefrosis)" },
+            { letter: "c", text: "Glomerulonefritis aguda" },
+            { letter: "d", text: "Cistitis hemorrágica" }
+        ],
+        correctAnswer: "b",
+        explanation: "Un cálculo renal con fiebre y escalofríos indica pielonefritis obstructiva (pionefrosis), donde la infección se desarrolla proximal al cálculo obstructor. Es una emergencia urológica que requiere drenaje inmediato (nefrostomía o stent ureteral) y antibióticos, ya que puede llevar a sepsis."
+    },
+    {
+        question: "Una mujer de 40 años presenta dolor en cuadrante superior derecho que inicia después de comer comida grasosa, acompañado de náuseas y vómitos. Al examen: signo de Murphy positivo, ictericia leve, fiebre 38.5°C. Sus signos vitales: FC 105 lpm, TA 110/70 mmHg. ¿Cuál es la tríada clásica presente en este caso?",
+        options: [
+            { letter: "a", text: "Dolor, fiebre, ictericia (tríada de Charcot)" },
+            { letter: "b", text: "Dolor, náuseas, vómitos" },
+            { letter: "c", text: "Fiebre, taquicardia, hipotensión" },
+            { letter: "d", text: "Murphy, ictericia, distensión" }
+        ],
+        correctAnswer: "a",
+        explanation: "La tríada de Charcot (dolor en cuadrante superior derecho + fiebre + ictericia) indica colangitis aguda, una infección del árbol biliar frecuentemente asociada a obstrucción por cálculos. Es una emergencia que requiere antibióticos y descompresión biliar urgente."
+    },
+    {
+        question: "Un hombre de 25 años consulta por imposibilidad para orinar desde hace 8 horas, con dolor suprapúbico severo y sensación de llenado vesical. Al examen se palpa masa suprapúbica. Niega fiebre o secreción uretral, pero refiere antecedente de gonorrea tratada hace 2 meses. ¿Cuál es la causa más probable de su retención urinaria?",
+        options: [
+            { letter: "a", text: "Hiperplasia prostática benigna" },
+            { letter: "b", text: "Estenosis uretral post-infecciosa" },
+            { letter: "c", text: "Cálculo vesical" },
+            { letter: "d", text: "Tumor prostático" }
+        ],
+        correctAnswer: "b",
+        explanation: "En un joven con antecedente de gonorrea, la retención urinaria aguda sugiere estenosis uretral como secuela de la infección previa. Las infecciones de transmisión sexual pueden causar cicatrización y estrechez uretral, llevando a obstrucción. Requiere cateterización de emergencia y posterior dilatación."
+    }
+];
