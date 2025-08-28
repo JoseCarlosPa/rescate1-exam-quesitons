@@ -31,7 +31,7 @@ export const faqData = [
     },
 ];
 
-export const patientAssessmentQuestions: Question[] =[
+export const patientAssessmentQuestions: Question[] = [
     {
         "question": "Durante la evaluación primaria de un paciente traumatizado, usted nota que emite sonidos de gorgoteo con cada respiración. ¿Cuál es su acción inmediata?",
         "options": [
@@ -120,4 +120,29 @@ export const patientAssessmentQuestions: Question[] =[
         "correctAnswer": "c",
         "explanation": "En un paciente considerado estable después de la evaluación primaria (ABCDE), el siguiente paso es realizar una evaluación secundaria. Esta consiste en obtener un historial médico (SAMPLE, OPQRST) y realizar un examen físico enfocado en la queja principal para obtener más detalles sobre la condición."
     }
-]
+];
+
+export const patientAssessmentChallengingQuestions: Question[] = [
+    {
+        question: "¿Cuál es el principal objetivo de la evaluación primaria en un paciente politraumatizado?",
+        options: [
+            { letter: "a", text: "Obtener un historial médico completo" },
+            { letter: "b", text: "Identificar y tratar amenazas inmediatas para la vida" },
+            { letter: "c", text: "Realizar un examen físico detallado" },
+            { letter: "d", text: "Determinar el mecanismo de lesión" }
+        ],
+        correctAnswer: "b",
+        explanation: "La evaluación primaria busca identificar y tratar amenazas inmediatas para la vida, como obstrucción de vía aérea, dificultad respiratoria o shock."
+    },
+    {
+        question: "¿Qué hallazgo objetivo puede indicar shock hipovolémico en la evaluación inicial?",
+        options: [
+            { letter: "a", text: "Dolor abdominal" },
+            { letter: "b", text: "Palidez y frialdad de la piel" },
+            { letter: "c", text: "Náuseas" },
+            { letter: "d", text: "Ansiedad" }
+        ],
+        correctAnswer: "b",
+        explanation: "La palidez y frialdad de la piel son signos objetivos de hipoperfusión, típicos del shock hipovolémico."
+    }
+];

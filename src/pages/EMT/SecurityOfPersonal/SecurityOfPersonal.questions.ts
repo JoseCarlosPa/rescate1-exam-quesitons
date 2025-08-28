@@ -206,3 +206,28 @@ export const securityQuestions: Question[] = [
         "explanation": "Después de cualquier llamada, pero especialmente una con un riesgo infeccioso conocido, es obligatorio realizar una limpieza y descontaminación completa de la ambulancia y de todo el equipo utilizado. Esto es fundamental para prevenir la contaminación cruzada y proteger al siguiente paciente y a la tripulación."
     }
 ]
+
+export const securityChallengingQuestions: Question[] = [
+    {
+        question: "¿Cuál es la acción más importante si el entorno de intervención es inseguro?",
+        options: [
+            { letter: "a", text: "Entrar rápidamente para salvar al paciente" },
+            { letter: "b", text: "Esperar a que lleguen las autoridades competentes" },
+            { letter: "c", text: "Ignorar el peligro si el paciente está grave" },
+            { letter: "d", text: "Solicitar ayuda pero entrar de inmediato" }
+        ],
+        correctAnswer: "b",
+        explanation: "La seguridad del personal es la prioridad. Nunca se debe entrar en un entorno peligroso sin la intervención de las autoridades competentes."
+    },
+    {
+        question: "¿Qué medida NO ayuda a prevenir la fatiga en el personal de emergencias?",
+        options: [
+            { letter: "a", text: "Rotación de turnos" },
+            { letter: "b", text: "Descanso adecuado" },
+            { letter: "c", text: "Uso de alcohol para relajarse" },
+            { letter: "d", text: "Apoyo emocional" }
+        ],
+        correctAnswer: "c",
+        explanation: "El uso de alcohol no es una medida adecuada para prevenir la fatiga y puede empeorar el estrés y la salud física y mental."
+    }
+];

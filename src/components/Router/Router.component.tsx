@@ -4,39 +4,37 @@ import App from "../../App.tsx";
 import GeneralExam from "../../pages/EMT/GeneralExam/GeneralExam.page.tsx";
 import LegalAspects from "../../pages/EMT/LegalAspects/LegalAspects.page.tsx";
 import Exam from "../Exam/Exam.component.tsx";
-import {legalQuestions} from "../../pages/EMT/LegalAspects/LegalAspects.questions.ts";
+import { legalQuestions, legalChallengingQuestions } from "../../pages/EMT/LegalAspects/LegalAspects.questions";
 import Communications from "../../pages/EMT/Communications/Communications.page.tsx";
-import {communicationsQuestions} from "../../pages/EMT/Communications/Communications.questions.ts";
+import { communicationsQuestions, communicationsChallengingQuestions } from "../../pages/EMT/Communications/Communications.questions";
 import Sem from "../../pages/EMT/SEM/Sem.page.tsx";
-import {semSystemQuestions} from "../../pages/EMT/SEM/Sem.questions.ts";
 import Main from "../../pages/Main/Main.page.tsx";
 import Lms from "../../pages/LMS/Lms.page.tsx";
 import Bls from "../../pages/BLS/Bls.page.tsx";
 import StopTheBleed from "../../pages/StopTheBleed/StopTheBleed.page.tsx";
 import SecurityOfPersonal from "../../pages/EMT/SecurityOfPersonal/SecurityOfPersonal.page.tsx";
-import {securityQuestions} from "../../pages/EMT/SecurityOfPersonal/SecurityOfPersonal.questions.ts";
-import {medicTermsQuestions} from "../../pages/EMT/MedicTerms/MediTerms.questions.ts";
+import { securityQuestions, securityChallengingQuestions } from "../../pages/EMT/SecurityOfPersonal/SecurityOfPersonal.questions";
+import { medicTermsQuestions, medicTermsChallengingQuestions } from "../../pages/EMT/MedicTerms/MediTerms.questions";
 import MedicTerms from "../../pages/EMT/MedicTerms/MedicTerms.page.tsx";
-import {humanBodyQuestions} from "../../pages/EMT/HumanBody/HumanBody.questions.ts";
+import { humanBodyQuestions, humanBodyChallengingQuestions } from "../../pages/EMT/HumanBody/HumanBody.questions";
 import HumanBody from "../../pages/EMT/HumanBody/HumanBody.page.tsx";
 import LifeSpec from "../../pages/EMT/LifeSpec/LifeSpec.page.tsx";
-import {lifeSpecQuestions} from "../../pages/EMT/LifeSpec/LifeSpec.questions.ts";
+import { lifeSpecQuestions, lifeSpecChallengingQuestions } from "../../pages/EMT/LifeSpec/LifeSpec.questions";
 import Evaluation from "../../pages/EMT/Evaluation/Evaluation.page.tsx";
-import {patientAssessmentQuestions} from "../../pages/EMT/Evaluation/Evaluation.questions.ts";
-import {nemotecniasQuestions} from "../../pages/EMT/Nnemotecnias/Mnemotecnias.questions.ts";
+import { patientAssessmentQuestions, patientAssessmentChallengingQuestions } from "../../pages/EMT/Evaluation/Evaluation.questions.ts";
 import Mnemotecnias from "../../pages/EMT/Nnemotecnias/Mnemotecnias.page.tsx";
 import AirwayManage from "../../pages/EMT/AirwayManage/AirwayManage.page.tsx";
-import {airwayManagementQuestions} from "../../pages/EMT/AirwayManage/AirwayManage.questions.ts";
+import { airwayManagementQuestions, airwayManagementChallengingQuestions } from "../../pages/EMT/AirwayManage/AirwayManage.questions";
 import Pharmacology from "../../pages/EMT/Pharmacology/Pharmacology.page.tsx";
-import {pharmacologyQuestions} from "../../pages/EMT/Pharmacology/Pharmacology.questions.ts";
+import { pharmacologyQuestions } from "../../pages/EMT/Pharmacology/Pharmacology.questions.ts";
 import MedAdmin from "../../pages/EMT/MedAdmin/MedAdmin.page.tsx";
-import {medicationAdministrationQuestions} from "../../pages/EMT/MedAdmin/MedAdmin.questions.ts";
-import {shockQuestions} from "../../pages/EMT/Shock/Shock.questions.ts";
+import { medicationAdministrationQuestions } from "../../pages/EMT/MedAdmin/MedAdmin.questions.ts";
+import { shockQuestions } from "../../pages/EMT/Shock/Shock.questions.ts";
 import Shock from "../../pages/EMT/Shock/Shock.page.tsx";
 import Resources from "../../pages/Resources/Resources.page.tsx";
 import ReanimateSvb from "../../pages/EMT/ReanimateSvb/ReanimateSvb.page.tsx";
-import {svbQuestions} from "../../pages/EMT/ReanimateSvb/ReanimateSvb.questions.ts";
-import {megaQuestions} from "../../pages/EMT/Mega/Mega.questions.ts";
+import { svbQuestions } from "../../pages/EMT/ReanimateSvb/ReanimateSvb.questions.ts";
+import { megaQuestions } from "../../pages/EMT/Mega/Mega.questions.ts";
 import Mega from "../../pages/EMT/Mega/Mega.page.tsx";
 import {AllRoutes} from "./Router.constants.ts";
 import Login from "../../pages/Auth/Login/Login.page.tsx";
@@ -50,63 +48,65 @@ import {
     respiratoryEmergenciesExam,
 } from "../../pages/EMT/AirwayEmergency/AirwayEmergency.questions.ts";
 import AirwayEmergency from "../../pages/EMT/AirwayEmergency/AirwayEmergency.page.tsx";
-import {cardiovascularQuestions} from "../../pages/EMT/CardioEmergency/CardioEmergency.questions.ts";
+import { cardiovascularQuestions } from "../../pages/EMT/CardioEmergency/CardioEmergency.questions.ts";
 import CardioEmergency from "../../pages/EMT/CardioEmergency/CardioEmergency.page.tsx";
 import NeuroEmergency from "../../pages/EMT/NeuroEmergency/NeuroEmergency.page.tsx";
-import {neurologicasQuestions} from "../../pages/EMT/NeuroEmergency/NeuroEmergency.questions.ts";
+import { neurologicasQuestions } from "../../pages/EMT/NeuroEmergency/NeuroEmergency.questions.ts";
 import GastroEmergency from "../../pages/EMT/GastroEmergency/GastroEmergency.page.tsx";
-import {gastrointestinalUrologicQuestions} from "../../pages/EMT/GastroEmergency/GastroEmergency.questions.ts";
+import { gastrointestinalUrologicQuestions } from "../../pages/EMT/GastroEmergency/GastroEmergency.questions.ts";
 import EndocryEmergency from "../../pages/EMT/EndocryEmergency/EndocryEmergency.page.tsx";
-import {endocrineHematologicQuestions} from "../../pages/EMT/EndocryEmergency/EndocryEmergency.questions.ts";
-import {traumaGeneralQuestions} from "../../pages/EMT/Trauma/Trauma.questions.ts";
+import { endocrineHematologicQuestions } from "../../pages/EMT/EndocryEmergency/EndocryEmergency.questions.ts";
+import { traumaGeneralQuestions } from "../../pages/EMT/Trauma/Trauma.questions.ts";
 import Trauma from "../../pages/EMT/Trauma/Trauma.page.tsx";
 import Immobilization from "../../pages/EMT/Immobilization/Immobilization.page.tsx";
-import {immobilizationQuestions} from "../../pages/EMT/Immobilization/Immobilization.questionts.ts";
+import { immobilizationQuestions } from "../../pages/EMT/Immobilization/Immobilization.questionts.ts";
 import Disclaimer from "../../pages/Main/Disclaimer.page.tsx";
 import PrivacyAndTerms from "../../pages/Main/PrivacyAndTerms.page.tsx";
 import Glosary from "../Glosary/Glosary.page.tsx";
 import Bleeding from "../../pages/EMT/Bleeding/Bleeding.page.tsx";
-import {hemorragiasQuestions} from "../../pages/EMT/Bleeding/Bleeding.questions.ts";
+import { hemorragiasQuestions } from "../../pages/EMT/Bleeding/Bleeding.questions.ts";
 import StudyCase from "../StudyCase/StudyCase.page.tsx";
 import AlgorithmsAndProtocols from "../AlgorithmsAndProtocols/AlgorithmsAndProtocols.page.tsx";
 import FaceAndNeck from "../../pages/EMT/FaceAndNeck/FaceAndNeck.page.tsx";
-import {faceAndNeckExamen} from "../../pages/EMT/FaceAndNeck/FaceAndNeck.questions.ts";
-import {softTissueExam} from "../../pages/EMT/SoftTissue/SoftTissue.questions.ts";
+import { faceAndNeckExamen } from "../../pages/EMT/FaceAndNeck/FaceAndNeck.questions.ts";
+import { softTissueExam } from "../../pages/EMT/SoftTissue/SoftTissue.questions.ts";
 import SoftTissue from "../../pages/EMT/SoftTissue/SoftTissue.page.tsx";
 import HeadAndColumnInjuries from "../../pages/EMT/HeadAndColumnInjuries/HeadAndColumnInjuries.page.tsx";
-import {headAndColumnInjuriesQuestions} from "../../pages/EMT/HeadAndColumnInjuries/HeadAndColumnInjuries.questions.ts";
+import { headAndColumnInjuriesQuestions } from "../../pages/EMT/HeadAndColumnInjuries/HeadAndColumnInjuries.questions.ts";
 import ToraxInjuries from "../../pages/EMT/ToraxInjuries/ToraxInjuries.page.tsx";
-import {toraxInjuriesQuestions} from "../../pages/EMT/ToraxInjuries/ToraxInjuries.questions.ts";
+import { toraxInjuriesQuestions } from "../../pages/EMT/ToraxInjuries/ToraxInjuries.questions.ts";
 import FeetInjuries from "../../pages/EMT/FeetInjuries/FeetInjuries.page.tsx";
-import {feetInjuriesQuestions} from "../../pages/EMT/FeetInjuries/FeetInjuries.questions.ts";
-import {abdoBeniInjuriesQuestions} from "../../pages/EMT/AbdoGeniInjuries/AbdoGeniInjuries.questions.ts";
+import { feetInjuriesQuestions } from "../../pages/EMT/FeetInjuries/FeetInjuries.questions.ts";
+import { abdoBeniInjuriesQuestions } from "../../pages/EMT/AbdoGeniInjuries/AbdoGeniInjuries.questions.ts";
 import AbdoGeniInjuries from "../../pages/EMT/AbdoGeniInjuries/AbdoGeniInjuries.page.tsx";
-import {inmunologieQuestions} from "../../pages/EMT/InmunologyEmergencies/InmunologyEmergencies.questions.ts";
+import { inmunologieQuestions } from "../../pages/EMT/InmunologyEmergencies/InmunologyEmergencies.questions.ts";
 import InmunologyEmergencies from "../../pages/EMT/InmunologyEmergencies/InmunologyEmergencies.page.tsx";
-import {toxicologyQuestions} from "../../pages/EMT/Toxicology/Toxicology.questions.ts";
+import { toxicologyQuestions } from "../../pages/EMT/Toxicology/Toxicology.questions.ts";
 import Toxicology from "../../pages/EMT/Toxicology/Toxicology.page.tsx";
-import {environmentalEmergencyQuestions} from "../../pages/EMT/AmbientalEmergencies/AmbientalEmergencies.questions.ts";
+import { environmentalEmergencyQuestions } from "../../pages/EMT/AmbientalEmergencies/AmbientalEmergencies.questions.ts";
 import AmbientalEmergencies from "../../pages/EMT/AmbientalEmergencies/AmbientalEmergencies.page.tsx";
-import {psiquiatricQuestions} from "../../pages/EMT/PsiquiatricEmergencies/PsiquiatricEmergencies.questions.ts";
+import { psiquiatricQuestions } from "../../pages/EMT/PsiquiatricEmergencies/PsiquiatricEmergencies.questions.ts";
 import PsiquiatricEmergencies from "../../pages/EMT/PsiquiatricEmergencies/PsiquiatricEmergencies.page.tsx";
 import GineEmergencies from "../../pages/EMT/GineEmergencies/GineEmergencies.page.tsx";
-import {gineQuestions} from "../../pages/EMT/GineEmergencies/GineEmergencies.questions.ts";
+import { gineQuestions } from "../../pages/EMT/GineEmergencies/GineEmergencies.questions.ts";
 import ObstreticCare from "../../pages/EMT/ObstreticCare/ObstreticCare.page.tsx";
-import {obstetricQuestions} from "../../pages/EMT/ObstreticCare/ObstreticCare.questions.ts";
+import { obstetricQuestions } from "../../pages/EMT/ObstreticCare/ObstreticCare.questions.ts";
 import PediatricEmergencies from "../../pages/EMT/PediatricEmergencies/PediatricEmergencies.page.tsx";
-import {pediatricQuestions} from "../../pages/EMT/PediatricEmergencies/PediatricEmergencies.questions.ts";
+import { pediatricQuestions } from "../../pages/EMT/PediatricEmergencies/PediatricEmergencies.questions.ts";
 import GeriatricEmergencies from "../../pages/EMT/GeriatricEmergencies/GeriatricEmergencies.page.tsx";
-import {geriatricQuestions} from "../../pages/EMT/GeriatricEmergencies/GeriatricEmergencies.questions.ts";
-import {specialNeedsPacientQuestions} from "../../pages/EMT/SpecialNeedsPacient/SpecialNeedsPacient.questions.ts";
+import { geriatricQuestions } from "../../pages/EMT/GeriatricEmergencies/GeriatricEmergencies.questions.ts";
+import { specialNeedsPacientQuestions } from "../../pages/EMT/SpecialNeedsPacient/SpecialNeedsPacient.questions.ts";
 import SpecialNeedsPacient from "../../pages/EMT/SpecialNeedsPacient/SpecialNeedsPacient.page.tsx";
-import {transportOperationsQuestions} from "../../pages/EMT/TransportOperations/TransportOperations.questions.ts";
+import { transportOperationsQuestions } from "../../pages/EMT/TransportOperations/TransportOperations.questions.ts";
 import TransportOperations from "../../pages/EMT/TransportOperations/TransportOperations.page.tsx";
 import IncidentManage from "../../pages/EMT/IncidentManage/IncidentManage.page.tsx";
-import {incidentManageQuestions} from "../../pages/EMT/IncidentManage/IncidentManage.questions.ts";
+import { incidentManageQuestions } from "../../pages/EMT/IncidentManage/IncidentManage.questions.ts";
 import TerroristManage from "../../pages/EMT/TerroristManage/TerroristManage.page.tsx";
-import {terroristManageQuestions} from "../../pages/EMT/TerroristManage/TerroristManage.questions.ts";
+import { terroristManageQuestions } from "../../pages/EMT/TerroristManage/TerroristManage.questions.ts";
 import MedicVision from "../../pages/EMT/MedicVision/MedicVision.page.tsx";
-import {visionMedicGeneralQuestions} from "../../pages/EMT/MedicVision/MedicVision.questions.ts";
+import { visionMedicGeneralQuestions } from "../../pages/EMT/MedicVision/MedicVision.questions.ts";
+import {semSystemChallengingQuestions, semSystemQuestions} from "../../pages/EMT/SEM/Sem.questions.ts";
+import {nemotecniasQuestions} from "../../pages/EMT/Nnemotecnias/Mnemotecnias.questions.ts";
 export default function Router(){
     return(
         <Suspense fallback={<div>Loading...</div>}>
@@ -129,25 +129,25 @@ export default function Router(){
                 <Route path={AllRoutes.EMT} element={<App/>}/>
                 <Route path={AllRoutes.GENERAL} element={<GeneralExam/>}/>
                 <Route path={AllRoutes.LEGAL} element={<LegalAspects />}/>
-                <Route path={`/${AllRoutes.LEGAL}/exam`} element={<Exam returnRoute={AllRoutes.LEGAL} name="Aspectos Legales" questions={legalQuestions} id={2}  />}/>
+                <Route path={`/${AllRoutes.LEGAL}/exam`} element={<Exam returnRoute={AllRoutes.LEGAL} name="Aspectos Legales" questions={legalQuestions} challengingQuestions={legalChallengingQuestions} id={2}  />}/>
                 <Route path={AllRoutes.COMMUNICATIONS} element={<Communications />}/>
-                <Route path={`${AllRoutes.COMMUNICATIONS}/exam`} element={<Exam returnRoute={AllRoutes.COMMUNICATIONS} name="Comunicaciones y documentación" questions={communicationsQuestions} id={3}  />}/>
+                <Route path={`${AllRoutes.COMMUNICATIONS}/exam`} element={<Exam returnRoute={AllRoutes.COMMUNICATIONS} name="Comunicaciones y documentación" questions={communicationsQuestions} challengingQuestions={communicationsChallengingQuestions} id={3}  />}/>
                 <Route path={AllRoutes.SEM} element={<Sem />}/>
-                <Route path={`${AllRoutes.SEM}/exam`} element={<Exam returnRoute={AllRoutes.SEM} name="Sistema SEM" questions={semSystemQuestions} id={4}  />}/>
+                <Route path={`${AllRoutes.SEM}/exam`} element={<Exam returnRoute={AllRoutes.SEM} name="Sistema SEM" questions={semSystemQuestions} challengingQuestions={semSystemChallengingQuestions} id={4}  />}/>
                 <Route path={AllRoutes.SECURITY_OF_PERSONAL} element={<SecurityOfPersonal />}/>
-                <Route path={`${AllRoutes.SECURITY_OF_PERSONAL}/exam`} element={<Exam returnRoute={AllRoutes.SECURITY_OF_PERSONAL} name="Seguridad y bienestar del personal" questions={securityQuestions} id={5}  />}/>
+                <Route path={`${AllRoutes.SECURITY_OF_PERSONAL}/exam`} element={<Exam returnRoute={AllRoutes.SECURITY_OF_PERSONAL} name="Seguridad y bienestar del personal" questions={securityQuestions} challengingQuestions={securityChallengingQuestions} id={5}  />}/>
                 <Route path={AllRoutes.MEDIC_TERMS} element={<MedicTerms />}/>
-                <Route path={`${AllRoutes.MEDIC_TERMS}/exam`} element={<Exam returnRoute={AllRoutes.MEDIC_TERMS} name="Terminos Médicos" questions={medicTermsQuestions} id={6}  />}/>
+                <Route path={`${AllRoutes.MEDIC_TERMS}/exam`} element={<Exam returnRoute={AllRoutes.MEDIC_TERMS} name="Terminos Médicos" questions={medicTermsQuestions} challengingQuestions={medicTermsChallengingQuestions} id={6}  />}/>
                 <Route path={AllRoutes.HUMAN_BODY} element={<HumanBody />}/>
-                <Route path={`${AllRoutes.HUMAN_BODY}/exam`} element={<Exam returnRoute={AllRoutes.HUMAN_BODY} name="El Cuerpo Humano" questions={humanBodyQuestions} id={7}  />}/>
+                <Route path={`${AllRoutes.HUMAN_BODY}/exam`} element={<Exam returnRoute={AllRoutes.HUMAN_BODY} name="El Cuerpo Humano" questions={humanBodyQuestions} challengingQuestions={humanBodyChallengingQuestions} id={7}  />}/>
                 <Route path={AllRoutes.LIFE_SPEC} element={<LifeSpec />}/>
-                <Route path={`${AllRoutes.LIFE_SPEC}/exam`} element={<Exam returnRoute={AllRoutes.LIFE_SPEC} name="Desarrollo y esperanza de vida" questions={lifeSpecQuestions} id={8}  />}/>
+                <Route path={`${AllRoutes.LIFE_SPEC}/exam`} element={<Exam returnRoute={AllRoutes.LIFE_SPEC} name="Desarrollo y esperanza de vida" questions={lifeSpecQuestions} challengingQuestions={lifeSpecChallengingQuestions} id={8}  />}/>
                 <Route path={AllRoutes.EVALUATION} element={<Evaluation />}/>
-                <Route path={`${AllRoutes.EVALUATION}/exam`} element={<Exam returnRoute={AllRoutes.EVALUATION} name="Evaluacion del paciente" questions={patientAssessmentQuestions} id={9} />}/>
+                <Route path={`${AllRoutes.EVALUATION}/exam`} element={<Exam returnRoute={AllRoutes.EVALUATION} name="Evaluacion del paciente" questions={patientAssessmentQuestions} challengingQuestions={patientAssessmentChallengingQuestions} id={9} />}/>
                 <Route path={AllRoutes.MNEMOTECNIAS} element={<Mnemotecnias />}/>
-                <Route path={`${AllRoutes.MNEMOTECNIAS}/exam`} element={<Exam returnRoute={AllRoutes.MNEMOTECNIAS} name="Mnemotecnias" questions={nemotecniasQuestions} id={10}  />}/>
+                <Route path={`${AllRoutes.MNEMOTECNIAS}/exam`} element={<Exam returnRoute={AllRoutes.MNEMOTECNIAS} name="Mnemotecnias" questions={nemotecniasQuestions} challengingQuestions={[]} id={10}  />}/>
                 <Route path={AllRoutes.AIRWAY_MANAGE} element={<AirwayManage />}/>
-                <Route path={`${AllRoutes.AIRWAY_MANAGE}/exam`} element={<Exam returnRoute={AllRoutes.AIRWAY_MANAGE} name="Manejo de la Vía Aérea" questions={airwayManagementQuestions} id={11}  />}/>
+                <Route path={`${AllRoutes.AIRWAY_MANAGE}/exam`} element={<Exam returnRoute={AllRoutes.AIRWAY_MANAGE} name="Manejo de la Vía Aérea" questions={airwayManagementQuestions} challengingQuestions={airwayManagementChallengingQuestions} id={11}  />}/>
                 <Route path={AllRoutes.PHARMACOLOGY} element={<Pharmacology />}/>
                 <Route path={`${AllRoutes.PHARMACOLOGY}/exam`} element={<Exam returnRoute={AllRoutes.PHARMACOLOGY} name="Principios de la Farmacología" questions={pharmacologyQuestions} id={12}  />}/>
                 <Route path={AllRoutes.MED_ADMIN} element={<MedAdmin />}/>

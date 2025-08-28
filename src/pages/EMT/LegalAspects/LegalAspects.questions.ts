@@ -165,3 +165,28 @@ export const legalQuestions: Question[] = [
         "explanation": "Legalmente, el asalto (assault) consiste en crear en una persona el temor razonable de un contacto físico dañino o no deseado. La amenaza verbal es el ejemplo clásico de asalto. Si después de la amenaza se realiza el contacto físico sin consentimiento, se convierte en agresión (battery)."
     }
 ];
+
+export const legalChallengingQuestions: Question[] = [
+    {
+        question: "¿Cuál es la diferencia legal entre negligencia y mala praxis?",
+        options: [
+            { letter: "a", text: "La negligencia es intencional, la mala praxis no" },
+            { letter: "b", text: "La mala praxis requiere daño comprobable, la negligencia no" },
+            { letter: "c", text: "La negligencia es un error involuntario, la mala praxis implica violar estándares profesionales" },
+            { letter: "d", text: "Ambas son lo mismo" }
+        ],
+        correctAnswer: "c",
+        explanation: "La negligencia es la falta de cuidado razonable, mientras que la mala praxis implica violar estándares profesionales y causar daño por ello."
+    },
+    {
+        question: "¿En qué situación un menor puede dar consentimiento informado por sí mismo?",
+        options: [
+            { letter: "a", text: "Nunca" },
+            { letter: "b", text: "Si es emancipado legalmente" },
+            { letter: "c", text: "Solo si está acompañado de un adulto" },
+            { letter: "d", text: "Si tiene más de 16 años" }
+        ],
+        correctAnswer: "b",
+        explanation: "Un menor emancipado (casado, padre, militar) puede dar consentimiento informado por sí mismo."
+    }
+];

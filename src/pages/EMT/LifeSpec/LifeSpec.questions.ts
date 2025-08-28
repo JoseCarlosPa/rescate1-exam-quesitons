@@ -187,4 +187,29 @@ export const lifeSpecQuestions: Question[] = [
         "correctAnswer": "c",
         "explanation": "Los lactantes tienen una gran superficie corporal en relación con su masa y poca grasa subcutánea. Esto los hace perder calor rápidamente y los pone en alto riesgo de hipotermia, una condición que puede complicar gravemente cualquier enfermedad o lesión."
     }
-]
+];
+
+export const lifeSpecChallengingQuestions: Question[] = [
+    {
+        question: "¿Cuál es el principal riesgo fisiológico en el neonato durante la atención prehospitalaria?",
+        options: [
+            { letter: "a", text: "Hipertensión arterial" },
+            { letter: "b", text: "Hipotermia" },
+            { letter: "c", text: "Hiperglucemia" },
+            { letter: "d", text: "Fractura de cadera" }
+        ],
+        correctAnswer: "b",
+        explanation: "El neonato es muy susceptible a la hipotermia por su alta relación superficie/volumen y poca capacidad para regular la temperatura."
+    },
+    {
+        question: "¿Qué cambio fisiológico es más común en adultos mayores y afecta la atención prehospitalaria?",
+        options: [
+            { letter: "a", text: "Aumento de la masa muscular" },
+            { letter: "b", text: "Disminución de la función renal" },
+            { letter: "c", text: "Mejoría de la visión" },
+            { letter: "d", text: "Aumento de la elasticidad arterial" }
+        ],
+        correctAnswer: "b",
+        explanation: "La función renal disminuye con la edad, lo que afecta la eliminación de medicamentos y toxinas, y debe considerarse en la atención prehospitalaria."
+    }
+];

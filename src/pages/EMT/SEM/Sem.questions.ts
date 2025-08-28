@@ -181,4 +181,29 @@ export const semSystemQuestions: Question[] = [
         "correctAnswer": "c",
         "explanation": "La ADA es una ley de derechos civiles que prohíbe la discriminación contra personas con discapacidades. Exige que los empleadores proporcionen 'ajustes razonables' para los empleados calificados con discapacidades, siempre y cuando puedan realizar las funciones esenciales del trabajo."
     }
-]
+];
+
+export const semSystemChallengingQuestions: Question[] = [
+    {
+        question: "¿Cuál es el principal objetivo de la mejora continua de la calidad (MCC) en el SEM?",
+        options: [
+            { letter: "a", text: "Reducir costos operativos" },
+            { letter: "b", text: "Garantizar la seguridad y mejorar resultados del paciente" },
+            { letter: "c", text: "Aumentar el número de ambulancias" },
+            { letter: "d", text: "Capacitar solo al personal administrativo" }
+        ],
+        correctAnswer: "b",
+        explanation: "La MCC busca mejorar la seguridad y los resultados del paciente mediante la evaluación y optimización constante de los procesos y protocolos del SEM."
+    },
+    {
+        question: "¿Qué función cumple el centro de despacho en el Sistema SEM?",
+        options: [
+            { letter: "a", text: "Solo recibe llamadas" },
+            { letter: "b", text: "Coordina recursos y da instrucciones iniciales" },
+            { letter: "c", text: "Transporta pacientes" },
+            { letter: "d", text: "No tiene relevancia en la atención" }
+        ],
+        correctAnswer: "b",
+        explanation: "El centro de despacho coordina los recursos, da instrucciones iniciales y asegura la respuesta adecuada a la emergencia."
+    }
+];

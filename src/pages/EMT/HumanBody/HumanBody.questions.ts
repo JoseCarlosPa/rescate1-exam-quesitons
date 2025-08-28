@@ -229,4 +229,29 @@ export const humanBodyQuestions: Question[] = [
         "correctAnswer": "c",
         "explanation": "La epiglotis es una lengüeta de cartílago elástico situada en la base de la lengua. Durante la deglución, se pliega hacia abajo para cubrir la apertura de la laringe (la entrada a la tráquea), dirigiendo así los alimentos y líquidos hacia el esófago y evitando la aspiración."
     }
-]
+];
+
+export const humanBodyChallengingQuestions: Question[] = [
+    {
+        question: "¿Cuál es la función principal de los huesos sesamoideos?",
+        options: [
+            { letter: "a", text: "Proteger órganos internos" },
+            { letter: "b", text: "Facilitar el movimiento y proteger tendones" },
+            { letter: "c", text: "Almacenar calcio" },
+            { letter: "d", text: "Producir glóbulos rojos" }
+        ],
+        correctAnswer: "b",
+        explanation: "Los huesos sesamoideos, como la rótula, facilitan el movimiento y protegen los tendones de fuerzas excesivas."
+    },
+    {
+        question: "¿Qué sistema corporal regula principalmente la homeostasis?",
+        options: [
+            { letter: "a", text: "Sistema muscular" },
+            { letter: "b", text: "Sistema nervioso y endocrino" },
+            { letter: "c", text: "Sistema digestivo" },
+            { letter: "d", text: "Sistema respiratorio" }
+        ],
+        correctAnswer: "b",
+        explanation: "La homeostasis es regulada principalmente por el sistema nervioso y el endocrino, que coordinan respuestas rápidas y lentas respectivamente."
+    }
+];

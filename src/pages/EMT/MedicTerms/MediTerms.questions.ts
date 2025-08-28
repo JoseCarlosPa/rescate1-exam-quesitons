@@ -330,3 +330,28 @@ export const medicTermsQuestions: Question[] = [
         "explanation": "Este término se compone de 'hepato-', que se refiere al hígado, y el sufijo '-itis', que significa inflamación. Por lo tanto, hepatitis es la inflamación del hígado."
     }
 ]
+
+export const medicTermsChallengingQuestions: Question[] = [
+    {
+        question: "¿Cuál es el significado del prefijo 'bradi-' en terminología médica?",
+        options: [
+            { letter: "a", text: "Rápido" },
+            { letter: "b", text: "Lento" },
+            { letter: "c", text: "Grande" },
+            { letter: "d", text: "Pequeño" }
+        ],
+        correctAnswer: "b",
+        explanation: "El prefijo 'bradi-' significa lento, como en 'bradicardia' (frecuencia cardíaca lenta)."
+    },
+    {
+        question: "¿Qué indica el sufijo '-algia' en un término médico?",
+        options: [
+            { letter: "a", text: "Inflamación" },
+            { letter: "b", text: "Dolor" },
+            { letter: "c", text: "Tumor" },
+            { letter: "d", text: "Sangrado" }
+        ],
+        correctAnswer: "b",
+        explanation: "El sufijo '-algia' indica dolor, como en 'neuralgia' (dolor en los nervios)."
+    }
+];

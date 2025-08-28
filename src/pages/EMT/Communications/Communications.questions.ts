@@ -31,7 +31,7 @@ export const faqData = [
     }
 ];
 
-export const communicationsQuestions: Question[] =[
+export const communicationsQuestions: Question[] = [
     {
         "question": "Al comunicar información sobre un paciente al hospital, es fundamental:",
         "options": [
@@ -142,4 +142,29 @@ export const communicationsQuestions: Question[] =[
         "correctAnswer": "b",
         "explanation": "El FRAP tiene múltiples propósitos cruciales: es un documento legal que refleja la atención brindada, asegura la continuidad del cuidado al informar al siguiente nivel de atención, y se utiliza para la mejora de la calidad, la facturación y la investigación. Su precisión es vital para la atención del paciente y la protección legal del proveedor."
     }
-]
+];
+
+export const communicationsChallengingQuestions: Question[] = [
+    {
+        question: "¿Cuál es la consecuencia legal de omitir información relevante en el FRAP?",
+        options: [
+            { letter: "a", text: "No tiene consecuencias" },
+            { letter: "b", text: "Puede considerarse falsificación de documentos" },
+            { letter: "c", text: "Solo afecta la atención médica" },
+            { letter: "d", text: "Es responsabilidad del hospital" }
+        ],
+        correctAnswer: "b",
+        explanation: "Omitir información relevante en el FRAP puede considerarse falsificación de documentos y tener consecuencias legales y administrativas graves."
+    },
+    {
+        question: "¿Qué elemento NO es parte de la comunicación terapéutica efectiva?",
+        options: [
+            { letter: "a", text: "Escucha activa" },
+            { letter: "b", text: "Lenguaje técnico sin explicación" },
+            { letter: "c", text: "Empatía" },
+            { letter: "d", text: "Claridad en el mensaje" }
+        ],
+        correctAnswer: "b",
+        explanation: "El uso de lenguaje técnico sin explicación dificulta la comprensión y no es parte de una comunicación terapéutica efectiva."
+    }
+];

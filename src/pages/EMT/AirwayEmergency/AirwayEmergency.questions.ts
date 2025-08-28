@@ -202,3 +202,50 @@ export const respiratoryEmergenciesExam: Question[] =[
         "explanation": "Un neumotórax ocurre cuando el aire se acumula en el espacio pleural, causando el colapso del pulmón. Esto provoca un inicio agudo de dolor torácico y dificultad para respirar (disnea). Al auscultar, los ruidos respiratorios estarán disminuidos o ausentes en el lado afectado porque el aire no está entrando ni saliendo de ese pulmón colapsado."
     }
 ]
+
+export const respiratoryEmergenciesChallengingExam: Question[] = [
+    {
+        question: "Un paciente con EPOC agudizado presenta hipercapnia y somnolencia. ¿Cuál es el riesgo principal de administrar oxígeno a alto flujo sin control?",
+        options: [
+            { letter: "a", text: "Hipoxia por desplazamiento de nitrógeno" },
+            { letter: "b", text: "Paro cardíaco inmediato" },
+            { letter: "c", text: "Depresión del estímulo respiratorio y retención de CO2" },
+            { letter: "d", text: "Edema pulmonar agudo" }
+        ],
+        correctAnswer: "c",
+        explanation: "En pacientes con EPOC, el estímulo respiratorio puede depender de la hipoxia. Administrar oxígeno a alto flujo puede suprimir este estímulo, causando hipoventilación y retención de CO2 (hipercapnia)."
+    },
+    {
+        question: "¿Cuál es el hallazgo más específico de neumotórax a tensión en la evaluación prehospitalaria?",
+        options: [
+            { letter: "a", text: "Taquipnea" },
+            { letter: "b", text: "Desviación traqueal" },
+            { letter: "c", text: "Crepitantes pulmonares" },
+            { letter: "d", text: "Cianosis" }
+        ],
+        correctAnswer: "b",
+        explanation: "La desviación traqueal es un signo tardío y muy específico de neumotórax a tensión, aunque poco frecuente. Otros signos como taquipnea y cianosis son inespecíficos."
+    },
+    {
+        question: "En un paciente con asma severa, ¿qué hallazgo indica inminente paro respiratorio?",
+        options: [
+            { letter: "a", text: "Sibilancias audibles" },
+            { letter: "b", text: "Silencio auscultatorio" },
+            { letter: "c", text: "Taquipnea" },
+            { letter: "d", text: "Uso de músculos accesorios" }
+        ],
+        correctAnswer: "b",
+        explanation: "El silencio auscultatorio (ausencia de ruidos respiratorios) indica obstrucción crítica y riesgo de paro respiratorio inminente."
+    },
+    {
+        question: "¿Cuál es la intervención prehospitalaria más importante en un paciente con edema agudo de pulmón?",
+        options: [
+            { letter: "a", text: "Administrar líquidos intravenosos" },
+            { letter: "b", text: "Colocar al paciente en decúbito supino" },
+            { letter: "c", text: "Oxigenoterapia y posición sentada" },
+            { letter: "d", text: "Administrar broncodilatadores" }
+        ],
+        correctAnswer: "c",
+        explanation: "La oxigenoterapia y la posición sentada ayudan a mejorar la oxigenación y disminuir el retorno venoso, aliviando la congestión pulmonar."
+    }
+];

@@ -163,3 +163,28 @@ export const airwayManagementQuestions: Question[] = [
         correctAnswer: "b",
     }
 ];
+
+export const airwayManagementChallengingQuestions: Question[] = [
+    {
+        question: "¿Cuál es la complicación más grave de insertar una cánula orofaríngea en un paciente consciente?",
+        options: [
+            { letter: "a", text: "Obstrucción de la vía aérea" },
+            { letter: "b", text: "Reflejo nauseoso y vómito" },
+            { letter: "c", text: "Hipoxia" },
+            { letter: "d", text: "Lesión dental" }
+        ],
+        correctAnswer: "b",
+        explanation: "En un paciente consciente, la OPA puede provocar reflejo nauseoso, vómito y riesgo de aspiración."
+    },
+    {
+        question: "¿Qué maniobra se debe evitar en pacientes con sospecha de trauma cervical?",
+        options: [
+            { letter: "a", text: "Tracción mandibular" },
+            { letter: "b", text: "Inclinación de cabeza y elevación del mentón" },
+            { letter: "c", text: "Aspiración de secreciones" },
+            { letter: "d", text: "Administración de oxígeno" }
+        ],
+        correctAnswer: "b",
+        explanation: "La maniobra de inclinación de cabeza y elevación del mentón puede agravar una lesión cervical. Se debe usar tracción mandibular en estos casos."
+    }
+];
