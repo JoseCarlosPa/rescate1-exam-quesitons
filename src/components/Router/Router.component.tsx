@@ -45,6 +45,7 @@ import StudentGrades from "../../pages/Student/Grades/StudentGrades.page.tsx";
 import StudentForum from "../../pages/Student/Forum/StudentForum.page.tsx";
 import AdminDashboard from "../../pages/Admin/Dashboard/AdminDashboard.page.tsx";
 import {
+    respiratoryEmergenciesChallengingExam,
     respiratoryEmergenciesExam,
 } from "../../pages/EMT/AirwayEmergency/AirwayEmergency.questions.ts";
 import AirwayEmergency from "../../pages/EMT/AirwayEmergency/AirwayEmergency.page.tsx";
@@ -161,7 +162,7 @@ export default function Router(){
                 <Route path={AllRoutes.MEDIC_VISION} element={<MedicVision />}/>
                 <Route path={`${AllRoutes.MEDIC_VISION}/exam`} element={<Exam returnRoute={AllRoutes.MEDIC_VISION} name="Vision médica general" questions={visionMedicGeneralQuestions} id={17} />}/>
                 <Route path={AllRoutes.AIRWAY_EMERGENCY} element={<AirwayEmergency />}/>
-                <Route path={`${AllRoutes.AIRWAY_EMERGENCY}/exam`} element={<Exam returnRoute={AllRoutes.AIRWAY_EMERGENCY} name="Emergencias respiratorias" questions={respiratoryEmergenciesExam} id={18} />}/>
+                <Route path={`${AllRoutes.AIRWAY_EMERGENCY}/exam`} element={<Exam returnRoute={AllRoutes.AIRWAY_EMERGENCY} name="Emergencias respiratorias" questions={respiratoryEmergenciesExam} id={18} challengingQuestions={respiratoryEmergenciesChallengingExam} />}/>
                 <Route path={AllRoutes.CARDIO_EMERGENCY} element={<CardioEmergency />}/>
                 <Route path={`${AllRoutes.CARDIO_EMERGENCY}/exam`} element={<Exam returnRoute={AllRoutes.CARDIO_EMERGENCY} name="Emergencias Cardiovasculares" questions={cardiovascularQuestions} id={19}  />}/>
                 <Route path={AllRoutes.NEURO_EMERGENCY} element={<NeuroEmergency />}/>

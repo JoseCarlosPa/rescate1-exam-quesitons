@@ -205,47 +205,113 @@ export const respiratoryEmergenciesExam: Question[] =[
 
 export const respiratoryEmergenciesChallengingExam: Question[] = [
     {
-        question: "Un paciente con EPOC agudizado presenta hipercapnia y somnolencia. ¿Cuál es el riesgo principal de administrar oxígeno a alto flujo sin control?",
+        question: "Un paciente de 60 años con antecedentes de EPOC presenta disnea severa. La evaluación muestra piel pálida y diaforética, uso de músculos accesorios y sibilancias espiratorias. Su SpO2 es de 85% con aire ambiente. ¿Cuál es el manejo inicial más apropiado para la oxigenoterapia?",
         options: [
-            { letter: "a", text: "Hipoxia por desplazamiento de nitrógeno" },
-            { letter: "b", text: "Paro cardíaco inmediato" },
-            { letter: "c", text: "Depresión del estímulo respiratorio y retención de CO2" },
-            { letter: "d", text: "Edema pulmonar agudo" }
-        ],
-        correctAnswer: "c",
-        explanation: "En pacientes con EPOC, el estímulo respiratorio puede depender de la hipoxia. Administrar oxígeno a alto flujo puede suprimir este estímulo, causando hipoventilación y retención de CO2 (hipercapnia)."
-    },
-    {
-        question: "¿Cuál es el hallazgo más específico de neumotórax a tensión en la evaluación prehospitalaria?",
-        options: [
-            { letter: "a", text: "Taquipnea" },
-            { letter: "b", text: "Desviación traqueal" },
-            { letter: "c", text: "Crepitantes pulmonares" },
-            { letter: "d", text: "Cianosis" }
+            { letter: "a", text: "Oxígeno a 15 L/min con mascarilla con reservorio" },
+            { letter: "b", text: "Oxígeno a 2-4 L/min por cánula nasal" },
+            { letter: "c", text: "Ventilación con BVM inmediatamente" },
+            { letter: "d", text: "Esperar a obtener gasometría arterial antes de administrar oxígeno" }
         ],
         correctAnswer: "b",
-        explanation: "La desviación traqueal es un signo tardío y muy específico de neumotórax a tensión, aunque poco frecuente. Otros signos como taquipnea y cianosis son inespecíficos."
+        explanation: "En pacientes con EPOC, se debe administrar oxígeno controlado (2-4 L/min) para evitar la supresión del estímulo respiratorio hipóxico. Aunque el SpO2 está bajo, el alto flujo puede causar retención de CO2 y depresión respiratoria. Se debe monitorizar constantemente y titular según respuesta."
     },
     {
-        question: "En un paciente con asma severa, ¿qué hallazgo indica inminente paro respiratorio?",
+        question: "Responde a un llamado por dificultad respiratoria. Encuentras una mujer de 28 años consciente, sentada en posición de trípode, con estridor inspiratorio y disfagia. Niega fiebre pero refiere dolor de garganta que empeoró rápidamente en las últimas 4 horas. ¿Cuál es tu prioridad inmediata?",
         options: [
-            { letter: "a", text: "Sibilancias audibles" },
-            { letter: "b", text: "Silencio auscultatorio" },
-            { letter: "c", text: "Taquipnea" },
-            { letter: "d", text: "Uso de músculos accesorios" }
-        ],
-        correctAnswer: "b",
-        explanation: "El silencio auscultatorio (ausencia de ruidos respiratorios) indica obstrucción crítica y riesgo de paro respiratorio inminente."
-    },
-    {
-        question: "¿Cuál es la intervención prehospitalaria más importante en un paciente con edema agudo de pulmón?",
-        options: [
-            { letter: "a", text: "Administrar líquidos intravenosos" },
-            { letter: "b", text: "Colocar al paciente en decúbito supino" },
-            { letter: "c", text: "Oxigenoterapia y posición sentada" },
-            { letter: "d", text: "Administrar broncodilatadores" }
+            { letter: "a", text: "Examinar la garganta con laringoscopio" },
+            { letter: "b", text: "Administrar albuterol nebulizado" },
+            { letter: "c", text: "Mantener al paciente calmado y en posición cómoda, preparar para manejo avanzado de vía aérea" },
+            { letter: "d", text: "Colocar cánula orofaríngea inmediatamente" }
         ],
         correctAnswer: "c",
-        explanation: "La oxigenoterapia y la posición sentada ayudan a mejorar la oxigenación y disminuir el retorno venoso, aliviando la congestión pulmonar."
+        explanation: "Este cuadro sugiere epiglotitis aguda. La manipulación de la vía aérea puede precipitar obstrucción completa. La prioridad es mantener al paciente calmado, en posición cómoda, y preparar equipo para cricotiroidotomía de emergencia si es necesario. Evitar cualquier maniobra que pueda agravar la obstrucción."
+    },
+    {
+        question: "Un hombre de 45 años presenta súbitamente dolor torácico agudo y disnea después de toser violentamente. Al examen: taquipnea (32/min), taquicardia (110 lpm), hipertimpanismo y ausencia de ruidos respiratorios en hemitórax derecho. Su TA es 90/60 mmHg. ¿Cuál es la intervención más urgente?",
+        options: [
+            { letter: "a", text: "Administrar analgésicos para el dolor torácico" },
+            { letter: "b", text: "Descompresión inmediata con aguja en 2° espacio intercostal, línea medioclavicular" },
+            { letter: "c", text: "Oxígeno por mascarilla y transporte inmediato" },
+            { letter: "d", text: "Colocar acceso IV y administrar cristaloides" }
+        ],
+        correctAnswer: "b",
+        explanation: "Los hallazgos sugieren neumotórax a tensión: hipertimpanismo, ausencia de ruidos respiratorios y compromiso hemodinámico (hipotensión). La descompresión inmediata con aguja es vital para salvar la vida antes de que progrese a paro cardíaco."
+    },
+    {
+        question: "Una niña de 6 años presenta tos metálica, fiebre de 38.5°C y estridor inspiratorio que empeora con la agitación. Los padres reportan que los síntomas comenzaron gradualmente hace 2 días. Al examen se observa retracción supraesternal leve. ¿Cuál es el manejo más apropiado?",
+        options: [
+            { letter: "a", text: "Intubación inmediata" },
+            { letter: "b", text: "Posición cómoda, oxígeno humidificado, evitar procedimientos que causen estrés" },
+            { letter: "c", text: "Examen de garganta con depresor lingual" },
+            { letter: "d", text: "Administrar adrenalina subcutánea" }
+        ],
+        correctAnswer: "b",
+        explanation: "El cuadro sugiere crup (laringotraqueobronquitis viral). El manejo incluye mantener al niño calmado, oxígeno humidificado si tolera, y evitar procedimientos invasivos que puedan empeorar el estridor. El examen de garganta está contraindicado ya que puede precipitar obstrucción completa."
+    },
+    {
+        question: "Atiende a un paciente de 70 años con disnea progresiva, ortopnea y crepitantes bibasales. Presenta edema en extremidades inferiores y distensión venosa yugular. Su SpO2 es 88% y la TA es 160/95 mmHg. ¿Cuál es la intervención prioritaria en el manejo prehospitalario?",
+        options: [
+            { letter: "a", text: "Posición supina con piernas elevadas" },
+            { letter: "b", text: "Posición semisentada, oxígeno de alto flujo y preparar para CPAP" },
+            { letter: "c", text: "Broncodilatadores nebulizados" },
+            { letter: "d", text: "Líquidos intravenosos para mejorar la precarga" }
+        ],
+        correctAnswer: "b",
+        explanation: "Los síntomas indican edema agudo de pulmón. La posición semisentada reduce el retorno venoso, el oxígeno de alto flujo mejora la oxigenación y el CPAP puede reducir la postcarga y mejorar el intercambio gaseoso. Los líquidos están contraindicados."
+    },
+    {
+        question: "Un paciente asmático de 25 años llega en ambulancia con disnea extrema. No puede hablar frases completas, presenta cianosis perioral, y al auscultar no se escuchan sibilancias pero hay muy poco movimiento de aire. Su FC es 140 lpm y SpO2 82%. ¿Qué indica la ausencia de sibilancias en este contexto?",
+        options: [
+            { letter: "a", text: "El asma está mejorando" },
+            { letter: "b", text: "Necesita más broncodilatadores" },
+            { letter: "c", text: "Indica obstrucción crítica y riesgo de paro respiratorio inminente" },
+            { letter: "d", text: "El paciente está simulando" }
+        ],
+        correctAnswer: "c",
+        explanation: "La ausencia de sibilancias en un paciente con asma severa indica 'pulmón silente' - obstrucción tan severa que no hay suficiente flujo de aire para generar sonidos. Es un signo ominoso que precede al paro respiratorio y requiere manejo agresivo inmediato."
+    },
+    {
+        question: "Durante el transporte de un paciente intubado y ventilado, notas súbitamente desaturación (SpO2 75%), taquicardia (130 lpm) e hipotensión (85/50 mmHg). La ventilación se siente más difícil. ¿Cuál es tu primera acción utilizando el mnemónico DOPE?",
+        options: [
+            { letter: "a", text: "Aumentar la FiO2 al 100%" },
+            { letter: "b", text: "Desconectar el tubo y ventilar con BVM mientras verificas la posición del tubo" },
+            { letter: "c", text: "Administrar adrenalina IV" },
+            { letter: "d", text: "Realizar cricotiroidotomía de emergencia" }
+        ],
+        correctAnswer: "b",
+        explanation: "DOPE: Desplazamiento, Obstrucción, Neumotórax, Equipo. Ante deterioro súbito, primero desconectar y ventilar manualmente con BVM para estabilizar mientras se identifica la causa. Esto permite verificar si hay desplazamiento del tubo o obstrucción."
+    },
+    {
+        question: "Un trabajador de construcción de 35 años fue encontrado inconsciente en un espacio confinado. Sus compañeros lo sacaron y ahora está consciente pero confuso, con disnea, cefalea y náuseas. Su SpO2 es 98% con aire ambiente pero su piel está color rojo cereza. ¿Cuál es la causa más probable y el tratamiento?",
+        options: [
+            { letter: "a", text: "Hipoxia; administrar oxígeno a bajo flujo" },
+            { letter: "b", text: "Intoxicación por monóxido de carbono; oxígeno al 100% con mascarilla reservorio" },
+            { letter: "c", text: "Golpe de calor; enfriamiento y líquidos" },
+            { letter: "d", text: "Hipoglucemia; dextrosa IV" }
+        ],
+        correctAnswer: "b",
+        explanation: "La coloración rojo cereza, SpO2 normal paradójicamente, y el contexto de espacio confinado sugieren intoxicación por CO. El oxígeno al 100% es vital para desplazar el CO de la hemoglobina (vida media de COHb se reduce de 4-6 horas a 30-90 minutos con O2 al 100%)."
+    },
+    {
+        question: "Una mujer embarazada de 32 semanas presenta disnea súbita, dolor torácico pleurítico y taquicardia (115 lpm) después de un vuelo largo. Niega tos o fiebre. Su SpO2 es 91% y presenta taquipnea (28/min). ¿Cuál es la consideración más importante en su manejo prehospitalario?",
+        options: [
+            { letter: "a", text: "Posición supina para mejorar el retorno venoso" },
+            { letter: "b", text: "Posición en decúbito lateral izquierdo, oxígeno suplementario y transporte urgente" },
+            { letter: "c", text: "Broncodilatadores por posible asma del embarazo" },
+            { letter: "d", text: "Restricción de oxígeno por riesgo teratogénico" }
+        ],
+        correctAnswer: "b",
+        explanation: "El cuadro sugiere embolia pulmonar (factor de riesgo: embarazo + vuelo largo). La posición en decúbito lateral izquierdo previene la compresión aortocava, el oxígeno mejora la oxigenación materno-fetal, y requiere transporte urgente para anticoagulación hospitalaria."
+    },
+    {
+        question: "Atiende a un hombre de 55 años que presenta dificultad respiratoria progresiva. Al examen: uso de músculos accesorios, cianosis central, crepitantes gruesos bilaterales, y expectoración espumosa rosada. Su TA es 180/110 mmHg y FC 105 lpm. Refiere despertar en la noche con disnea. ¿Cuál es la fisiopatología más probable y el tratamiento inicial?",
+        options: [
+            { letter: "a", text: "Asma nocturna; broncodilatadores nebulizados" },
+            { letter: "b", text: "Edema pulmonar cardiogénico; posición semisentada, oxígeno de alto flujo y CPAP" },
+            { letter: "c", text: "Neumonía bilateral; antibióticos y oxígeno" },
+            { letter: "d", text: "EPOC exacerbado; oxígeno controlado" }
+        ],
+        correctAnswer: "b",
+        explanation: "La disnea paroxística nocturna, esputo espumoso rosado (hemoptisis por ruptura capilar), hipertensión y crepitantes indican edema pulmonar cardiogénico. El CPAP reduce la postcarga cardíaca y mejora el intercambio gaseoso."
     }
 ];

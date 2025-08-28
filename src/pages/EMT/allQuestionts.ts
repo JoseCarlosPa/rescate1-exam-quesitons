@@ -1,5 +1,8 @@
 import {Question} from "../../question";
-import { respiratoryEmergenciesExam } from "./AirwayEmergency/AirwayEmergency.questions";
+import {
+    respiratoryEmergenciesChallengingExam,
+    respiratoryEmergenciesExam
+} from "./AirwayEmergency/AirwayEmergency.questions";
 import {airwayManagementQuestions} from "./AirwayManage/AirwayManage.questions.ts";
 import {cardiovascularQuestions} from "./CardioEmergency/CardioEmergency.questions.ts";
 import {communicationsQuestions} from "./Communications/Communications.questions.ts";
@@ -52,6 +55,7 @@ export function getRandomQuestion() {
 export function getRandomQuestionsFromEachCategory(n: number): Question[] {
     const categories = [
         respiratoryEmergenciesExam,
+        respiratoryEmergenciesChallengingExam,
         airwayManagementQuestions,
         cardiovascularQuestions,
         communicationsQuestions,
@@ -198,6 +202,7 @@ function shuffleArray<T>(array: T[]): T[] {
 
 export const allQuestions: Question[] = [
     ...respiratoryEmergenciesExam,
+    ...respiratoryEmergenciesChallengingExam,
     ...airwayManagementQuestions,
     ...cardiovascularQuestions,
     ...communicationsQuestions,
