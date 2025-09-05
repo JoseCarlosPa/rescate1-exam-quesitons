@@ -1,579 +1,26 @@
-import React, { useState } from 'react';
-import { FaTimes, FaCalculator, FaHeartbeat, FaWeight, FaBrain, FaBaby, FaLungs, FaChild } from 'react-icons/fa';
-import { MdBloodtype, MdLocalHospital } from 'react-icons/md';
+import React, {useState} from 'react';
+import {FaTimes, FaCalculator} from 'react-icons/fa';
+import useToolsModal from "./ToolsModal.hook.tsx";
+import {Tool} from "./ToolsModal.types.ts";
 
 interface ToolsModalProps {
     onClose: () => void;
 }
 
-type Tool =
-  | 'shock-index'
-  | 'bmi'
-  | 'drug-calculator'
-  | 'map-calculator'
-  | 'glasgow-scale'
-  | 'cincinnati-scale'
-  | 'parkland-rule'
-  | 'apgar-score'
-  | 'rts-score'
-  | 'oxygen-calculator'
-  | 'broselow-tape';
-
-// Definir tipos para medications y equipment
-interface BroslowMedications {
-  epinefrina: string;
-  atropina: string;
-  amiodarona: string;
-}
-interface BroslowEquipment {
-  tuboET: string;
-  aspiracion: string;
-  iv: string;
-}
-
-const ToolsModal: React.FC<ToolsModalProps> = ({ onClose }) => {
+const ToolsModal: React.FC<ToolsModalProps> = ({onClose}) => {
     const [selectedTool, setSelectedTool] = useState<Tool | null>(null);
-
-    // Calculadora de Índice de Shock
-    const [shockCalc, setShockCalc] = useState({
-        heartRate: '',
-        systolicBP: '',
-        result: null as number | null,
-        interpretation: ''
-    });
-
-    // Calculadora de IMC
-    const [bmiCalc, setBmiCalc] = useState({
-        weight: '',
-        height: '',
-        result: null as number | null,
-        interpretation: ''
-    });
-
-    // Calculadora de PAM (Presión Arterial Media)
-    const [mapCalc, setMapCalc] = useState({
-        systolic: '',
-        diastolic: '',
-        result: null as number | null,
-        interpretation: ''
-    });
-
-    // Calculadora de Escala de Glasgow
-    const [glasgowCalc, setGlasgowCalc] = useState({
-        eyeOpening: '',
-        verbalResponse: '',
-        motorResponse: '',
-        result: null as number | null,
-        interpretation: ''
-    });
-
-    // Calculadora de Dosis de Medicamentos
-    const [dosageCalc, setDosageCalc] = useState({
-        weight: '',
-        medication: '',
-        result: null as number | null,
-        unit: '',
-        route: '',
-        instructions: ''
-    });
-
-    // Escala de Cincinnati
-    const [cincinnati, setCincinnati] = useState({
-      facial: '',
-      arm: '',
-      speech: '',
-      result: '',
-    });
-
-    // Regla de Parkland
-    const [parkland, setParkland] = useState({
-      weight: '',
-      tbsa: '',
-      result: null as number | null,
-      instructions: '',
-    });
-
-    // Puntaje APGAR
-    const [apgarScore, setApgarScore] = useState({
-        appearance: '',
-        pulse: '',
-        grimace: '',
-        activity: '',
-        respiration: '',
-        result: null as number | null,
-        interpretation: ''
-    });
-
-    // Revised Trauma Score (RTS)
-    const [rtsScore, setRtsScore] = useState({
-        glasgow: '',
-        systolicBP: '',
-        respiratoryRate: '',
-        result: null as number | null,
-        interpretation: '',
-        survivalProbability: ''
-    });
-
-    // Calculadora de Oxigenoterapia
-    const [oxygenCalc, setOxygenCalc] = useState({
-        device: '',
-        flowRate: '',
-        fio2: null as number | null,
-        instructions: ''
-    });
-
-    // Cinta de Broselow
-    const [broslowCalc, setBroslowCalc] = useState({
-        length: '',
-        weight: null as number | null,
-        color: '',
-        medications: {} as Partial<BroslowMedications>,
-        equipment: {} as Partial<BroslowEquipment>
-    });
-
-    const calculateShockIndex = () => {
-        const hr = parseFloat(shockCalc.heartRate);
-        const sbp = parseFloat(shockCalc.systolicBP);
-
-        if (hr && sbp) {
-            const index = hr / sbp;
-            let interpretation = '';
-
-            if (index < 0.5) {
-                interpretation = 'Bajo - Posible bradicardia o hipertensión';
-            } else if (index >= 0.5 && index <= 1.0) {
-                interpretation = 'Normal - Rango fisiológico';
-            } else if (index > 1.0 && index <= 1.5) {
-                interpretation = 'Elevado - Posible shock compensado';
-            } else {
-                interpretation = 'Muy elevado - Shock descompensado, requiere intervención inmediata';
-            }
-
-            setShockCalc({
-                ...shockCalc,
-                result: parseFloat(index.toFixed(2)),
-                interpretation
-            });
-        }
-    };
-
-    const calculateBMI = () => {
-        const weight = parseFloat(bmiCalc.weight);
-        const height = parseFloat(bmiCalc.height) / 100; // convertir cm a m
-
-        if (weight && height) {
-            const bmi = weight / (height * height);
-            let interpretation = '';
-
-            if (bmi < 18.5) {
-                interpretation = 'Bajo peso';
-            } else if (bmi >= 18.5 && bmi < 25) {
-                interpretation = 'Peso normal';
-            } else if (bmi >= 25 && bmi < 30) {
-                interpretation = 'Sobrepeso';
-            } else {
-                interpretation = 'Obesidad';
-            }
-
-            setBmiCalc({
-                ...bmiCalc,
-                result: parseFloat(bmi.toFixed(1)),
-                interpretation
-            });
-        }
-    };
-
-    const calculateMAP = () => {
-        const sys = parseFloat(mapCalc.systolic);
-        const dia = parseFloat(mapCalc.diastolic);
-
-        if (sys && dia) {
-            const map = dia + ((sys - dia) / 3);
-            let interpretation = '';
-
-            if (map < 60) {
-                interpretation = 'Baja - Riesgo de hipoperfusión';
-            } else if (map >= 60 && map <= 100) {
-                interpretation = 'Normal - Perfusión adecuada';
-            } else {
-                interpretation = 'Alta - Posible hipertensión';
-            }
-
-            setMapCalc({
-                ...mapCalc,
-                result: parseFloat(map.toFixed(1)),
-                interpretation
-            });
-        }
-    };
-
-    const calculateGlasgow = () => {
-        const eye = parseFloat(glasgowCalc.eyeOpening);
-        const verbal = parseFloat(glasgowCalc.verbalResponse);
-        const motor = parseFloat(glasgowCalc.motorResponse);
-
-        if (eye && verbal && motor) {
-            const total = eye + verbal + motor;
-            let interpretation = '';
-
-            if (total < 8) {
-                interpretation = 'Severo - Coma o estado de no respuesta';
-            } else if (total >= 8 && total <= 12) {
-                interpretation = 'Moderado - Respuesta parcial o confusa';
-            } else {
-                interpretation = 'Leve - Respuesta normal';
-            }
-
-            setGlasgowCalc({
-                ...glasgowCalc,
-                result: total,
-                interpretation
-            });
-        }
-    };
-
-    const calculateCincinnati = () => {
-      const { facial, arm, speech } = cincinnati;
-      let positives = 0;
-      if (facial === 'yes') positives++;
-      if (arm === 'yes') positives++;
-      if (speech === 'yes') positives++;
-      let result = '';
-      if (positives === 0) result = 'No hay signos de ACV.';
-      else if (positives === 1) result = 'Un signo: posible ACV, evaluar más.';
-      else if (positives === 2) result = 'Dos signos: alta sospecha de ACV.';
-      else result = 'Tres signos: ACV muy probable, activar código ictus.';
-      setCincinnati({ ...cincinnati, result });
-    };
-
-    const calculateParkland = () => {
-      const weight = parseFloat(parkland.weight);
-      const tbsa = parseFloat(parkland.tbsa);
-      if (weight && tbsa) {
-        const total = weight * tbsa * 4;
-        setParkland({
-          ...parkland,
-          result: total,
-          instructions: `Administrar ${total / 2} mL en las primeras 8 horas y ${total / 2} mL en las siguientes 16 horas.`,
-        });
-      }
-    };
-
-    const calculateApgar = () => {
-        const appearance = parseFloat(apgarScore.appearance);
-        const pulse = parseFloat(apgarScore.pulse);
-        const grimace = parseFloat(apgarScore.grimace);
-        const activity = parseFloat(apgarScore.activity);
-        const respiration = parseFloat(apgarScore.respiration);
-
-        if (!isNaN(appearance) && !isNaN(pulse) && !isNaN(grimace) && !isNaN(activity) && !isNaN(respiration)) {
-            const total = appearance + pulse + grimace + activity + respiration;
-            let interpretation = '';
-
-            if (total >= 7) {
-                interpretation = 'Normal - El bebé está en buenas condiciones';
-            } else if (total >= 4) {
-                interpretation = 'Moderadamente deprimido - Requiere estimulación y oxígeno';
-            } else {
-                interpretation = 'Severamente deprimido - Requiere reanimación inmediata';
-            }
-
-            setApgarScore({
-                ...apgarScore,
-                result: total,
-                interpretation
-            });
-        }
-    };
-
-    const calculateRTS = () => {
-        const glasgow = parseFloat(rtsScore.glasgow);
-        const sbp = parseFloat(rtsScore.systolicBP);
-        const rr = parseFloat(rtsScore.respiratoryRate);
-
-        if (!isNaN(glasgow) && !isNaN(sbp) && !isNaN(rr)) {
-            // Codificación para RTS
-            let glasgowCode = 0;
-            let sbpCode = 0;
-            let rrCode = 0;
-
-            // Glasgow
-            if (glasgow >= 13) glasgowCode = 4;
-            else if (glasgow >= 9) glasgowCode = 3;
-            else if (glasgow >= 6) glasgowCode = 2;
-            else if (glasgow >= 4) glasgowCode = 1;
-            else glasgowCode = 0;
-
-            // Presión sistólica
-            if (sbp >= 90) sbpCode = 4;
-            else if (sbp >= 76) sbpCode = 3;
-            else if (sbp >= 50) sbpCode = 2;
-            else if (sbp >= 1) sbpCode = 1;
-            else sbpCode = 0;
-
-            // Frecuencia respiratoria
-            if (rr >= 10 && rr <= 29) rrCode = 4;
-            else if (rr >= 6 && rr <= 9) rrCode = 3;
-            else if (rr >= 1 && rr <= 5) rrCode = 2;
-            else if (rr >= 30) rrCode = 2;
-            else rrCode = 0;
-
-            const rts = (0.9368 * glasgowCode) + (0.7326 * sbpCode) + (0.2908 * rrCode);
-            const survival = Math.exp(0.9934 + (0.9364 * rts)) / (1 + Math.exp(0.9934 + (0.9364 * rts))) * 100;
-
-            let interpretation = '';
-            if (rts >= 7) interpretation = 'Buen pronóstico';
-            else if (rts >= 4) interpretation = 'Pronóstico moderado';
-            else interpretation = 'Pronóstico grave';
-
-            setRtsScore({
-                ...rtsScore,
-                result: parseFloat(rts.toFixed(2)),
-                interpretation,
-                survivalProbability: `${survival.toFixed(1)}%`
-            });
-        }
-    };
-
-    const calculateOxygen = () => {
-        const device = oxygenCalc.device;
-        const flow = parseFloat(oxygenCalc.flowRate);
-        let fio2 = 21; // Aire ambiente
-        let instructions = '';
-
-        if (device && flow) {
-            switch (device) {
-                case 'cannula':
-                    if (flow >= 1 && flow <= 6) {
-                        fio2 = 21 + (4 * flow);
-                        instructions = `Cánula nasal a ${flow}L/min. FiO2 aproximada: ${fio2}%. Máximo 6L/min para evitar sequedad nasal.`;
-                    }
-                    break;
-                case 'simple-mask':
-                    if (flow >= 5 && flow <= 10) {
-                        fio2 = 40 + (5 * (flow - 5));
-                        instructions = `Mascarilla simple a ${flow}L/min. FiO2 aproximada: ${fio2}%. Flujo mínimo 5L/min para evitar reinspiración de CO2.`;
-                    }
-                    break;
-                case 'reservoir-mask':
-                    if (flow >= 10 && flow <= 15) {
-                        fio2 = 80 + (5 * (flow - 10));
-                        if (fio2 > 95) fio2 = 95;
-                        instructions = `Mascarilla con reservorio a ${flow}L/min. FiO2 aproximada: ${fio2}%. Mantener bolsa inflada.`;
-                    }
-                    break;
-                case 'venturi':
-                    // Venturi ofrece concentraciones específicas
-                    if (flow === 24) fio2 = 24;
-                    else if (flow === 28) fio2 = 28;
-                    else if (flow === 35) fio2 = 35;
-                    else if (flow === 40) fio2 = 40;
-                    else if (flow === 50) fio2 = 50;
-                    instructions = `Mascarilla Venturi al ${fio2}%. Concentración precisa y constante.`;
-                    break;
-            }
-
-            setOxygenCalc({
-                ...oxygenCalc,
-                fio2,
-                instructions
-            });
-        }
-    };
-
-    const calculateBroselow = () => {
-        const length = parseFloat(broslowCalc.length);
-        if (length) {
-            let weight = 0;
-            let color = '';
-            let medications = {};
-            let equipment = {};
-
-            // Estimación de peso basada en longitud
-            if (length >= 46 && length < 53) {
-                weight = 3;
-                color = 'Gris';
-                medications = {
-                    epinefrina: '0.03 mg',
-                    atropina: '0.06 mg',
-                    amiodarona: '15 mg'
-                };
-                equipment = {
-                    tuboET: '3.0-3.5',
-                    aspiracion: '6-8 Fr',
-                    iv: '22-24 G'
-                };
-            } else if (length >= 53 && length < 61) {
-                weight = 5;
-                color = 'Rosa';
-                medications = {
-                    epinefrina: '0.05 mg',
-                    atropina: '0.1 mg',
-                    amiodarona: '25 mg'
-                };
-                equipment = {
-                    tuboET: '3.5-4.0',
-                    aspiracion: '8 Fr',
-                    iv: '22 G'
-                };
-            } else if (length >= 61 && length < 69) {
-                weight = 7;
-                color = 'Rojo';
-                medications = {
-                    epinefrina: '0.07 mg',
-                    atropina: '0.14 mg',
-                    amiodarona: '35 mg'
-                };
-                equipment = {
-                    tuboET: '4.0-4.5',
-                    aspiracion: '8-10 Fr',
-                    iv: '20-22 G'
-                };
-            } else if (length >= 69 && length < 79) {
-                weight = 10;
-                color = 'Morado';
-                medications = {
-                    epinefrina: '0.1 mg',
-                    atropina: '0.2 mg',
-                    amiodarona: '50 mg'
-                };
-                equipment = {
-                    tuboET: '4.5-5.0',
-                    aspiracion: '10 Fr',
-                    iv: '20 G'
-                };
-            } else if (length >= 79 && length < 89) {
-                weight = 14;
-                color = 'Amarillo';
-                medications = {
-                    epinefrina: '0.14 mg',
-                    atropina: '0.28 mg',
-                    amiodarona: '70 mg'
-                };
-                equipment = {
-                    tuboET: '5.0-5.5',
-                    aspiracion: '10-12 Fr',
-                    iv: '18-20 G'
-                };
-            } else if (length >= 89 && length < 102) {
-                weight = 18;
-                color = 'Blanco';
-                medications = {
-                    epinefrina: '0.18 mg',
-                    atropina: '0.36 mg',
-                    amiodarona: '90 mg'
-                };
-                equipment = {
-                    tuboET: '5.5-6.0',
-                    aspiracion: '12 Fr',
-                    iv: '18 G'
-                };
-            } else if (length >= 102 && length < 115) {
-                weight = 23;
-                color = 'Azul';
-                medications = {
-                    epinefrina: '0.23 mg',
-                    atropina: '0.46 mg',
-                    amiodarona: '115 mg'
-                };
-                equipment = {
-                    tuboET: '6.0-6.5',
-                    aspiracion: '12-14 Fr',
-                    iv: '16-18 G'
-                };
-            } else if (length >= 115) {
-                weight = 30;
-                color = 'Verde';
-                medications = {
-                    epinefrina: '0.3 mg',
-                    atropina: '0.5 mg',
-                    amiodarona: '150 mg'
-                };
-                equipment = {
-                    tuboET: '6.5-7.0',
-                    aspiracion: '14 Fr',
-                    iv: '14-16 G'
-                };
-            }
-
-            setBroslowCalc({
-                ...broslowCalc,
-                weight,
-                color,
-                medications,
-                equipment
-            });
-        }
-    };
-
-    const tools = [
-        {
-            id: 'shock-index' as Tool,
-            name: 'Índice de Shock',
-            icon: <FaHeartbeat className="w-6 h-6" />,
-            description: 'Calcula el índice de shock (FC/PAS)'
-        },
-        {
-            id: 'bmi' as Tool,
-            name: 'Calculadora IMC',
-            icon: <FaWeight className="w-6 h-6" />,
-            description: 'Índice de masa corporal'
-        },
-        {
-            id: 'map-calculator' as Tool,
-            name: 'PAM Calculator',
-            icon: <MdBloodtype className="w-6 h-6" />,
-            description: 'Presión arterial media'
-        },
-        {
-            id: 'drug-calculator' as Tool,
-            name: 'Calculadora de Dosis',
-            icon: <FaCalculator className="w-6 h-6" />,
-            description: 'Cálculos de medicamentos'
-        },
-        {
-            id: 'glasgow-scale' as Tool,
-            name: 'Escala de Glasgow',
-            icon: <FaBrain className="w-6 h-6" />,
-            description: 'Evalúa el nivel de conciencia'
-        },
-        {
-            id: 'cincinnati-scale' as Tool,
-            name: 'Escala de Cincinnati',
-            icon: <FaBrain className="w-6 h-6" />,
-            description: 'Evaluación rápida de ACV',
-        },
-        {
-            id: 'parkland-rule' as Tool,
-            name: 'Regla de Parkland',
-            icon: <FaCalculator className="w-6 h-6" />,
-            description: 'Cálculo de líquidos en quemaduras',
-        },
-        {
-            id: 'apgar-score' as Tool,
-            name: 'Puntaje APGAR',
-            icon: <FaBaby className="w-6 h-6" />,
-            description: 'Evaluación neonatal al nacimiento',
-        },
-        {
-            id: 'rts-score' as Tool,
-            name: 'Trauma Score Revisado',
-            icon: <MdLocalHospital className="w-6 h-6" />,
-            description: 'Predictor de supervivencia en trauma',
-        },
-        {
-            id: 'oxygen-calculator' as Tool,
-            name: 'Calculadora de Oxígeno',
-            icon: <FaLungs className="w-6 h-6" />,
-            description: 'FiO2 según dispositivo y flujo',
-        },
-        {
-            id: 'broselow-tape' as Tool,
-            name: 'Cinta de Broselow',
-            icon: <FaChild className="w-6 h-6" />,
-            description: 'Dosis pediátricas por longitud',
-        },
-    ];
+    const {
+        shockCalc, setShockCalc, calculateShockIndex,
+        bmiCalc, setBmiCalc, calculateBMI,
+        mapCalc, setMapCalc, calculateMAP,
+        glasgowCalc, setGlasgowCalc, calculateGlasgow,
+        cincinnati, setCincinnati,
+        dosageCalc, setDosageCalc,
+        calculateCincinnati, parkland, setParkland, apgarScore, setApgarScore,
+        calculateParkland, calculateApgar,rtsScore,setRtsScore,oxygenCalc,setOxygenCalc,
+        broslowCalc,setBroslowCalc,calculateRTS,calculateOxygen,calculateBroselow,tools,
+        nihssScore,setNihssScore,calculateNIHSS
+    } = useToolsModal()
 
     const renderToolContent = () => {
         switch (selectedTool) {
@@ -582,7 +29,8 @@ const ToolsModal: React.FC<ToolsModalProps> = ({ onClose }) => {
                     <div className="space-y-4">
                         <h3 className="text-xl font-bold text-orange-600">Calculadora de Índice de Shock</h3>
                         <p className="text-sm text-gray-600">
-                            El índice de shock se calcula dividiendo la frecuencia cardíaca entre la presión arterial sistólica.
+                            El índice de shock se calcula dividiendo la frecuencia cardíaca entre la presión arterial
+                            sistólica.
                         </p>
 
                         <div className="grid grid-cols-2 gap-4">
@@ -802,7 +250,10 @@ const ToolsModal: React.FC<ToolsModalProps> = ({ onClose }) => {
                                     <input
                                         type="number"
                                         value={dosageCalc.result !== null ? dosageCalc.result : ''}
-                                        onChange={(e) => setDosageCalc({...dosageCalc, result: parseFloat(e.target.value)})}
+                                        onChange={(e) => setDosageCalc({
+                                            ...dosageCalc,
+                                            result: parseFloat(e.target.value)
+                                        })}
                                         className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 outline-none"
                                         placeholder="0.01"
                                         disabled
@@ -960,7 +411,8 @@ const ToolsModal: React.FC<ToolsModalProps> = ({ onClose }) => {
                                     <div className="mt-4 p-3 bg-red-100 border border-red-300 rounded-lg">
                                         <p className="text-red-800 font-bold text-sm">🚨 ALERTA CRÍTICA - Glasgow ≤ 8</p>
                                         <div className="text-red-700 text-xs mt-2 space-y-1">
-                                            <p><strong>INTUBACIÓN INMEDIATA:</strong> El paciente no puede proteger su vía aérea</p>
+                                            <p><strong>INTUBACIÓN INMEDIATA:</strong> El paciente no puede proteger su
+                                                vía aérea</p>
                                             <p><strong>• Preparar intubación endotraqueal</strong></p>
                                             <p><strong>• Considerar secuencia rápida de intubación (RSI)</strong></p>
                                             <p><strong>• Monitoreo continuo de signos vitales</strong></p>
@@ -972,7 +424,8 @@ const ToolsModal: React.FC<ToolsModalProps> = ({ onClose }) => {
 
                                 {glasgowCalc.result >= 9 && glasgowCalc.result <= 12 && (
                                     <div className="mt-4 p-3 bg-yellow-100 border border-yellow-300 rounded-lg">
-                                        <p className="text-yellow-800 font-bold text-sm">⚠️ PRECAUCIÓN - Glasgow 9-12</p>
+                                        <p className="text-yellow-800 font-bold text-sm">⚠️ PRECAUCIÓN - Glasgow
+                                            9-12</p>
                                         <div className="text-yellow-700 text-xs mt-2 space-y-1">
                                             <p><strong>MONITOREO ESTRECHO:</strong></p>
                                             <p><strong>• Evaluar vía aérea constantemente</strong></p>
@@ -1001,7 +454,8 @@ const ToolsModal: React.FC<ToolsModalProps> = ({ onClose }) => {
                                 <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg">
                                     <p className="text-blue-800 font-bold text-xs">💡 CONSIDERACIONES ESPECIALES:</p>
                                     <div className="text-blue-700 text-xs mt-1 space-y-1">
-                                        <p><strong>• Intoxicación/Drogas:</strong> Glasgow puede estar alterado sin TEC</p>
+                                        <p><strong>• Intoxicación/Drogas:</strong> Glasgow puede estar alterado sin TEC
+                                        </p>
                                         <p><strong>• Hipoglucemia:</strong> Verificar glucosa capilar</p>
                                         <p><strong>• Hipoxia:</strong> Corregir antes de evaluar Glasgow</p>
                                         <p><strong>• Sedación:</strong> Considerar efectos de medicamentos</p>
@@ -1046,123 +500,141 @@ const ToolsModal: React.FC<ToolsModalProps> = ({ onClose }) => {
 
             case 'cincinnati-scale':
                 return (
-                  <div className="space-y-4">
-                    <h3 className="text-xl font-bold text-orange-600">Escala de Cincinnati</h3>
-                    <p className="text-sm text-gray-600 mb-2">Evalúa signos de ACV prehospitalario.</p>
-                    <div className="space-y-2">
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Parálisis facial
-                          <span className="block text-xs text-gray-500">(Pida al paciente sonreír o mostrar los dientes)</span>
-                        </label>
-                        <select value={cincinnati.facial} onChange={e => setCincinnati({ ...cincinnati, facial: e.target.value })} className="w-full p-2 border border-gray-300 rounded-lg">
-                          <option value="">Seleccionar</option>
-                          <option value="yes">Presente</option>
-                          <option value="no">Ausente</option>
-                        </select>
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Debilidad de brazo
-                          <span className="block text-xs text-gray-500">(Pida al paciente levantar ambos brazos por 10 segundos)</span>
-                        </label>
-                        <select value={cincinnati.arm} onChange={e => setCincinnati({ ...cincinnati, arm: e.target.value })} className="w-full p-2 border border-gray-300 rounded-lg">
-                          <option value="">Seleccionar</option>
-                          <option value="yes">Presente</option>
-                          <option value="no">Ausente</option>
-                        </select>
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Alteración del habla
-                          <span className="block text-xs text-gray-500">(Pida repetir: "El cielo es azul en Cincinnati")</span>
-                        </label>
-                        <select value={cincinnati.speech} onChange={e => setCincinnati({ ...cincinnati, speech: e.target.value })} className="w-full p-2 border border-gray-300 rounded-lg">
-                          <option value="">Seleccionar</option>
-                          <option value="yes">Presente</option>
-                          <option value="no">Ausente</option>
-                        </select>
-                      </div>
+                    <div className="space-y-4">
+                        <h3 className="text-xl font-bold text-orange-600">Escala de Cincinnati</h3>
+                        <p className="text-sm text-gray-600 mb-2">Evalúa signos de ACV prehospitalario.</p>
+                        <div className="space-y-2">
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">Parálisis facial
+                                    <span className="block text-xs text-gray-500">(Pida al paciente sonreír o mostrar los dientes)</span>
+                                </label>
+                                <select value={cincinnati.facial}
+                                        onChange={e => setCincinnati({...cincinnati, facial: e.target.value})}
+                                        className="w-full p-2 border border-gray-300 rounded-lg">
+                                    <option value="">Seleccionar</option>
+                                    <option value="yes">Presente</option>
+                                    <option value="no">Ausente</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">Debilidad de brazo
+                                    <span className="block text-xs text-gray-500">(Pida al paciente levantar ambos brazos por 10 segundos)</span>
+                                </label>
+                                <select value={cincinnati.arm}
+                                        onChange={e => setCincinnati({...cincinnati, arm: e.target.value})}
+                                        className="w-full p-2 border border-gray-300 rounded-lg">
+                                    <option value="">Seleccionar</option>
+                                    <option value="yes">Presente</option>
+                                    <option value="no">Ausente</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">Alteración del habla
+                                    <span className="block text-xs text-gray-500">(Pida repetir: "El cielo es azul en Cincinnati")</span>
+                                </label>
+                                <select value={cincinnati.speech}
+                                        onChange={e => setCincinnati({...cincinnati, speech: e.target.value})}
+                                        className="w-full p-2 border border-gray-300 rounded-lg">
+                                    <option value="">Seleccionar</option>
+                                    <option value="yes">Presente</option>
+                                    <option value="no">Ausente</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button onClick={calculateCincinnati}
+                                className="w-full bg-orange-500 text-white py-2 px-4 rounded-lg hover:bg-orange-600">
+                            Evaluar
+                        </button>
+                        {cincinnati.result && (
+                            <div className="bg-orange-50 p-4 rounded-lg border border-orange-200 mt-2">
+                                <p className="text-orange-800 font-semibold">{cincinnati.result}</p>
+                                {cincinnati.result.includes('posible ACV') && (
+                                    <div className="mt-2 text-xs text-yellow-700">
+                                        <p><strong>¿Qué hacer?</strong></p>
+                                        <ul className="list-disc ml-5">
+                                            <li>Repetir la evaluación y buscar otros signos neurológicos.</li>
+                                            <li>Consultar con un médico o activar protocolo de ACV si hay duda.</li>
+                                            <li>Monitorear signos vitales y nivel de conciencia.</li>
+                                            <li>Valorar glucosa capilar (descartar hipoglucemia).</li>
+                                        </ul>
+                                    </div>
+                                )}
+                                {cincinnati.result.includes('alta sospecha') && (
+                                    <div className="mt-2 text-xs text-orange-700">
+                                        <p><strong>Recomendaciones:</strong></p>
+                                        <ul className="list-disc ml-5">
+                                            <li>Activar código ictus y trasladar de inmediato a centro especializado.
+                                            </li>
+                                            <li>Notificar al hospital receptor.</li>
+                                            <li>Oxígeno suplementario si está indicado.</li>
+                                            <li>No administrar alimentos, líquidos ni medicamentos por vía oral.</li>
+                                            <li>Monitorear y documentar evolución.</li>
+                                        </ul>
+                                    </div>
+                                )}
+                                {cincinnati.result.includes('muy probable') && (
+                                    <div className="mt-2 text-xs text-red-700">
+                                        <p><strong>¡Emergencia!</strong> Traslado urgente a centro con unidad de ACV.
+                                        </p>
+                                        <ul className="list-disc ml-5">
+                                            <li>Activar código ictus.</li>
+                                            <li>Notificar y preparar traslado inmediato.</li>
+                                            <li>Monitorear vía aérea, ventilación y circulación.</li>
+                                            <li>Oxígeno si está indicado.</li>
+                                            <li>Evitar retrasos en la atención.</li>
+                                        </ul>
+                                    </div>
+                                )}
+                            </div>
+                        )}
                     </div>
-                    <button onClick={calculateCincinnati} className="w-full bg-orange-500 text-white py-2 px-4 rounded-lg hover:bg-orange-600">
-                      Evaluar
-                    </button>
-                    {cincinnati.result && (
-                      <div className="bg-orange-50 p-4 rounded-lg border border-orange-200 mt-2">
-                        <p className="text-orange-800 font-semibold">{cincinnati.result}</p>
-                        {cincinnati.result.includes('posible ACV') && (
-                          <div className="mt-2 text-xs text-yellow-700">
-                            <p><strong>¿Qué hacer?</strong></p>
-                            <ul className="list-disc ml-5">
-                              <li>Repetir la evaluación y buscar otros signos neurológicos.</li>
-                              <li>Consultar con un médico o activar protocolo de ACV si hay duda.</li>
-                              <li>Monitorear signos vitales y nivel de conciencia.</li>
-                              <li>Valorar glucosa capilar (descartar hipoglucemia).</li>
-                            </ul>
-                          </div>
-                        )}
-                        {cincinnati.result.includes('alta sospecha') && (
-                          <div className="mt-2 text-xs text-orange-700">
-                            <p><strong>Recomendaciones:</strong></p>
-                            <ul className="list-disc ml-5">
-                              <li>Activar código ictus y trasladar de inmediato a centro especializado.</li>
-                              <li>Notificar al hospital receptor.</li>
-                              <li>Oxígeno suplementario si está indicado.</li>
-                              <li>No administrar alimentos, líquidos ni medicamentos por vía oral.</li>
-                              <li>Monitorear y documentar evolución.</li>
-                            </ul>
-                          </div>
-                        )}
-                        {cincinnati.result.includes('muy probable') && (
-                          <div className="mt-2 text-xs text-red-700">
-                            <p><strong>¡Emergencia!</strong> Traslado urgente a centro con unidad de ACV.</p>
-                            <ul className="list-disc ml-5">
-                              <li>Activar código ictus.</li>
-                              <li>Notificar y preparar traslado inmediato.</li>
-                              <li>Monitorear vía aérea, ventilación y circulación.</li>
-                              <li>Oxígeno si está indicado.</li>
-                              <li>Evitar retrasos en la atención.</li>
-                            </ul>
-                          </div>
-                        )}
-                      </div>
-                    )}
-                  </div>
                 );
-              case 'parkland-rule':
+            case 'parkland-rule':
                 return (
-                  <div className="space-y-4">
-                    <h3 className="text-xl font-bold text-orange-600">Regla de Parkland</h3>
-                    <p className="text-sm text-gray-600 mb-2">Calcula la reposición de líquidos en quemaduras graves.</p>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Peso (kg)</label>
-                        <input type="number" value={parkland.weight} onChange={e => setParkland({ ...parkland, weight: e.target.value })} className="w-full p-2 border border-gray-300 rounded-lg" placeholder="70" />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">% SCQ (Superficie Corporal Quemada)</label>
-                        <input type="number" value={parkland.tbsa} onChange={e => setParkland({ ...parkland, tbsa: e.target.value })} className="w-full p-2 border border-gray-300 rounded-lg" placeholder="30" />
-                      </div>
+                    <div className="space-y-4">
+                        <h3 className="text-xl font-bold text-orange-600">Regla de Parkland</h3>
+                        <p className="text-sm text-gray-600 mb-2">Calcula la reposición de líquidos en quemaduras
+                            graves.</p>
+                        <div className="grid grid-cols-2 gap-4">
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">Peso (kg)</label>
+                                <input type="number" value={parkland.weight}
+                                       onChange={e => setParkland({...parkland, weight: e.target.value})}
+                                       className="w-full p-2 border border-gray-300 rounded-lg" placeholder="70"/>
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">% SCQ (Superficie
+                                    Corporal Quemada)</label>
+                                <input type="number" value={parkland.tbsa}
+                                       onChange={e => setParkland({...parkland, tbsa: e.target.value})}
+                                       className="w-full p-2 border border-gray-300 rounded-lg" placeholder="30"/>
+                            </div>
+                        </div>
+                        <div className="bg-gray-50 p-3 rounded text-xs mt-2">
+                            <p className="font-semibold text-orange-700 mb-1">Guía rápida para estimar %SCQ (Regla de
+                                los 9):</p>
+                            <ul className="list-disc ml-5">
+                                <li>Cabeza y cuello: 9%</li>
+                                <li>Tronco anterior: 18%</li>
+                                <li>Tronco posterior: 18%</li>
+                                <li>Cada brazo: 9%</li>
+                                <li>Cada pierna: 18%</li>
+                                <li>Área genital: 1%</li>
+                            </ul>
+                            <p className="mt-2">En niños, la cabeza representa más porcentaje y las piernas menos. Usa
+                                tablas específicas si es posible.</p>
+                        </div>
+                        <button onClick={calculateParkland}
+                                className="w-full bg-orange-500 text-white py-2 px-4 rounded-lg hover:bg-orange-600 mt-2">
+                            Calcular
+                        </button>
+                        {parkland.result !== null && (
+                            <div className="bg-orange-50 p-4 rounded-lg border border-orange-200 mt-2">
+                                <p className="text-orange-800 font-semibold">Total: {parkland.result} mL</p>
+                                <p className="text-orange-700">{parkland.instructions}</p>
+                            </div>
+                        )}
                     </div>
-                    <div className="bg-gray-50 p-3 rounded text-xs mt-2">
-                      <p className="font-semibold text-orange-700 mb-1">Guía rápida para estimar %SCQ (Regla de los 9):</p>
-                      <ul className="list-disc ml-5">
-                        <li>Cabeza y cuello: 9%</li>
-                        <li>Tronco anterior: 18%</li>
-                        <li>Tronco posterior: 18%</li>
-                        <li>Cada brazo: 9%</li>
-                        <li>Cada pierna: 18%</li>
-                        <li>Área genital: 1%</li>
-                      </ul>
-                      <p className="mt-2">En niños, la cabeza representa más porcentaje y las piernas menos. Usa tablas específicas si es posible.</p>
-                    </div>
-                    <button onClick={calculateParkland} className="w-full bg-orange-500 text-white py-2 px-4 rounded-lg hover:bg-orange-600 mt-2">
-                      Calcular
-                    </button>
-                    {parkland.result !== null && (
-                      <div className="bg-orange-50 p-4 rounded-lg border border-orange-200 mt-2">
-                        <p className="text-orange-800 font-semibold">Total: {parkland.result} mL</p>
-                        <p className="text-orange-700">{parkland.instructions}</p>
-                      </div>
-                    )}
-                  </div>
                 );
 
             case 'apgar-score':
@@ -1533,13 +1005,404 @@ const ToolsModal: React.FC<ToolsModalProps> = ({ onClose }) => {
                     </div>
                 );
 
+            case 'nihss-scale':
+                return (
+                    <div className="space-y-4">
+                        <h3 className="text-xl font-bold text-orange-600">Escala de NIHSS</h3>
+                        <p className="text-sm text-gray-600">
+                            Evaluación neurológica estandarizada de 15 ítems para cuantificar la gravedad de un ACV.
+                        </p>
+
+                        <div className="space-y-4 max-h-96 overflow-y-auto">
+                            {/* 1. Nivel de conciencia */}
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                    1a. Nivel de conciencia (0-3)
+                                </label>
+                                <select
+                                    value={nihssScore.consciousness}
+                                    onChange={(e) => setNihssScore({...nihssScore, consciousness: e.target.value})}
+                                    className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 outline-none"
+                                >
+                                    <option value="">Seleccionar</option>
+                                    <option value="0">0 - Alerta, responde normalmente</option>
+                                    <option value="1">1 - No alerta, pero despierta con estímulo mínimo</option>
+                                    <option value="2">2 - No alerta, requiere estímulo repetido para mantener atención</option>
+                                    <option value="3">3 - Responde solo con estimulación refleja o no responde</option>
+                                </select>
+                            </div>
+
+                            {/* 2. Preguntas de orientación */}
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                    1b. Preguntas de orientación (0-2)
+                                    <span className="block text-xs text-gray-500">Edad y mes actual</span>
+                                </label>
+                                <select
+                                    value={nihssScore.questions}
+                                    onChange={(e) => setNihssScore({...nihssScore, questions: e.target.value})}
+                                    className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 outline-none"
+                                >
+                                    <option value="">Seleccionar</option>
+                                    <option value="0">0 - Responde ambas preguntas correctamente</option>
+                                    <option value="1">1 - Responde una pregunta correctamente</option>
+                                    <option value="2">2 - Responde incorrectamente ambas preguntas</option>
+                                </select>
+                            </div>
+
+                            {/* 3. Comandos */}
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                    1c. Comandos (0-2)
+                                    <span className="block text-xs text-gray-500">Cerrar/abrir ojos, cerrar/abrir mano</span>
+                                </label>
+                                <select
+                                    value={nihssScore.commands}
+                                    onChange={(e) => setNihssScore({...nihssScore, commands: e.target.value})}
+                                    className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 outline-none"
+                                >
+                                    <option value="">Seleccionar</option>
+                                    <option value="0">0 - Realiza ambas tareas correctamente</option>
+                                    <option value="1">1 - Realiza una tarea correctamente</option>
+                                    <option value="2">2 - Realiza incorrectamente ambas tareas</option>
+                                </select>
+                            </div>
+
+                            {/* 4. Mejor mirada conjugada */}
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                    2. Mejor mirada conjugada (0-2)
+                                </label>
+                                <select
+                                    value={nihssScore.eyeMovement}
+                                    onChange={(e) => setNihssScore({...nihssScore, eyeMovement: e.target.value})}
+                                    className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 outline-none"
+                                >
+                                    <option value="">Seleccionar</option>
+                                    <option value="0">0 - Normal</option>
+                                    <option value="1">1 - Parálisis parcial de la mirada</option>
+                                    <option value="2">2 - Desviación forzada de la mirada</option>
+                                </select>
+                            </div>
+
+                            {/* 5. Campos visuales */}
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                    3. Campos visuales (0-3)
+                                </label>
+                                <select
+                                    value={nihssScore.visualField}
+                                    onChange={(e) => setNihssScore({...nihssScore, visualField: e.target.value})}
+                                    className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 outline-none"
+                                >
+                                    <option value="">Seleccionar</option>
+                                    <option value="0">0 - Sin pérdida del campo visual</option>
+                                    <option value="1">1 - Hemianopsia parcial</option>
+                                    <option value="2">2 - Hemianopsia completa</option>
+                                    <option value="3">3 - Hemianopsia bilateral</option>
+                                </select>
+                            </div>
+
+                            {/* 6. Parálisis facial */}
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                    4. Parálisis facial (0-3)
+                                </label>
+                                <select
+                                    value={nihssScore.facialPalsy}
+                                    onChange={(e) => setNihssScore({...nihssScore, facialPalsy: e.target.value})}
+                                    className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 outline-none"
+                                >
+                                    <option value="">Seleccionar</option>
+                                    <option value="0">0 - Movimientos normales y simétricos</option>
+                                    <option value="1">1 - Parálisis menor (asimetría leve)</option>
+                                    <option value="2">2 - Parálisis parcial (parálisis facial central)</option>
+                                    <option value="3">3 - Parálisis completa</option>
+                                </select>
+                            </div>
+
+                            {/* 7. Motor brazo izquierdo */}
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                    5a. Motor brazo izquierdo (0-4)
+                                </label>
+                                <select
+                                    value={nihssScore.leftArmMotor}
+                                    onChange={(e) => setNihssScore({...nihssScore, leftArmMotor: e.target.value})}
+                                    className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 outline-none"
+                                >
+                                    <option value="">Seleccionar</option>
+                                    <option value="0">0 - Sin caída; mantiene brazo 90° por 10 segundos</option>
+                                    <option value="1">1 - Caída; no mantiene posición, pero hay esfuerzo contra gravedad</option>
+                                    <option value="2">2 - Algún esfuerzo contra gravedad, pero no puede elevar brazo</option>
+                                    <option value="3">3 - Sin esfuerzo contra gravedad; brazo cae</option>
+                                    <option value="4">4 - Sin movimiento</option>
+                                </select>
+                            </div>
+
+                            {/* 8. Motor brazo derecho */}
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                    5b. Motor brazo derecho (0-4)
+                                </label>
+                                <select
+                                    value={nihssScore.rightArmMotor}
+                                    onChange={(e) => setNihssScore({...nihssScore, rightArmMotor: e.target.value})}
+                                    className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 outline-none"
+                                >
+                                    <option value="">Seleccionar</option>
+                                    <option value="0">0 - Sin caída; mantiene brazo 90° por 10 segundos</option>
+                                    <option value="1">1 - Caída; no mantiene posición, pero hay esfuerzo contra gravedad</option>
+                                    <option value="2">2 - Algún esfuerzo contra gravedad, pero no puede elevar brazo</option>
+                                    <option value="3">3 - Sin esfuerzo contra gravedad; brazo cae</option>
+                                    <option value="4">4 - Sin movimiento</option>
+                                </select>
+                            </div>
+
+                            {/* 9. Motor pierna izquierda */}
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                    6a. Motor pierna izquierda (0-4)
+                                </label>
+                                <select
+                                    value={nihssScore.leftLegMotor}
+                                    onChange={(e) => setNihssScore({...nihssScore, leftLegMotor: e.target.value})}
+                                    className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 outline-none"
+                                >
+                                    <option value="">Seleccionar</option>
+                                    <option value="0">0 - Sin caída; mantiene pierna 30° por 5 segundos</option>
+                                    <option value="1">1 - Caída; no mantiene posición, pero hay esfuerzo contra gravedad</option>
+                                    <option value="2">2 - Algún esfuerzo contra gravedad, pero no puede elevar pierna</option>
+                                    <option value="3">3 - Sin esfuerzo contra gravedad; pierna cae inmediatamente</option>
+                                    <option value="4">4 - Sin movimiento</option>
+                                </select>
+                            </div>
+
+                            {/* 10. Motor pierna derecha */}
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                    6b. Motor pierna derecha (0-4)
+                                </label>
+                                <select
+                                    value={nihssScore.rightLegMotor}
+                                    onChange={(e) => setNihssScore({...nihssScore, rightLegMotor: e.target.value})}
+                                    className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 outline-none"
+                                >
+                                    <option value="">Seleccionar</option>
+                                    <option value="0">0 - Sin caída; mantiene pierna 30° por 5 segundos</option>
+                                    <option value="1">1 - Caída; no mantiene posición, pero hay esfuerzo contra gravedad</option>
+                                    <option value="2">2 - Algún esfuerzo contra gravedad, pero no puede elevar pierna</option>
+                                    <option value="3">3 - Sin esfuerzo contra gravedad; pierna cae inmediatamente</option>
+                                    <option value="4">4 - Sin movimiento</option>
+                                </select>
+                            </div>
+
+                            {/* 11. Ataxia de extremidades */}
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                    7. Ataxia de extremidades (0-2)
+                                </label>
+                                <select
+                                    value={nihssScore.limbAtaxia}
+                                    onChange={(e) => setNihssScore({...nihssScore, limbAtaxia: e.target.value})}
+                                    className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 outline-none"
+                                >
+                                    <option value="">Seleccionar</option>
+                                    <option value="0">0 - Ausente</option>
+                                    <option value="1">1 - Presente en una extremidad</option>
+                                    <option value="2">2 - Presente en dos extremidades</option>
+                                </select>
+                            </div>
+
+                            {/* 12. Sensibilidad */}
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                    8. Sensibilidad (0-2)
+                                </label>
+                                <select
+                                    value={nihssScore.sensation}
+                                    onChange={(e) => setNihssScore({...nihssScore, sensation: e.target.value})}
+                                    className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 outline-none"
+                                >
+                                    <option value="">Seleccionar</option>
+                                    <option value="0">0 - Normal; sin pérdida sensorial</option>
+                                    <option value="1">1 - Pérdida sensorial leve a moderada</option>
+                                    <option value="2">2 - Pérdida sensorial severa o total</option>
+                                </select>
+                            </div>
+
+                            {/* 13. Mejor lenguaje */}
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                    9. Mejor lenguaje (0-3)
+                                </label>
+                                <select
+                                    value={nihssScore.language}
+                                    onChange={(e) => setNihssScore({...nihssScore, language: e.target.value})}
+                                    className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 outline-none"
+                                >
+                                    <option value="">Seleccionar</option>
+                                    <option value="0">0 - Sin afasia; normal</option>
+                                    <option value="1">1 - Afasia leve a moderada</option>
+                                    <option value="2">2 - Afasia severa</option>
+                                    <option value="3">3 - Mudo, afasia global; sin lenguaje utilizable</option>
+                                </select>
+                            </div>
+
+                            {/* 14. Disartria */}
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                    10. Disartria (0-2)
+                                </label>
+                                <select
+                                    value={nihssScore.dysarthria}
+                                    onChange={(e) => setNihssScore({...nihssScore, dysarthria: e.target.value})}
+                                    className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 outline-none"
+                                >
+                                    <option value="">Seleccionar</option>
+                                    <option value="0">0 - Normal</option>
+                                    <option value="1">1 - Leve a moderada; paciente arrastra algunas palabras</option>
+                                    <option value="2">2 - Severa; lenguaje del paciente es muy difícil de entender</option>
+                                </select>
+                            </div>
+
+                            {/* 15. Extinción e inatención */}
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                    11. Extinción e inatención (0-2)
+                                </label>
+                                <select
+                                    value={nihssScore.neglect}
+                                    onChange={(e) => setNihssScore({...nihssScore, neglect: e.target.value})}
+                                    className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 outline-none"
+                                >
+                                    <option value="">Seleccionar</option>
+                                    <option value="0">0 - Sin evidencia anormal</option>
+                                    <option value="1">1 - Inatención visual, táctil, auditiva o personal en una modalidad</option>
+                                    <option value="2">2 - Hemi-inatención severa en más de una modalidad</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button
+                            onClick={calculateNIHSS}
+                            className="w-full bg-orange-500 text-white py-2 px-4 rounded-lg hover:bg-orange-600 transition-colors"
+                        >
+                            Calcular Puntaje NIHSS
+                        </button>
+
+                        {nihssScore.result !== null && (
+                            <div className="bg-orange-50 p-4 rounded-lg border border-orange-200">
+                                <p className="text-lg font-bold text-orange-800">
+                                    Puntaje NIHSS: {nihssScore.result}/42
+                                </p>
+                                <p className="text-sm text-orange-700 mt-1">
+                                    <strong>Interpretación:</strong> {nihssScore.interpretation}
+                                </p>
+
+                                {/* Alertas y recomendaciones clínicas basadas en el puntaje */}
+                                {nihssScore.result === 0 && (
+                                    <div className="mt-3 p-3 bg-green-100 border border-green-300 rounded-lg">
+                                        <p className="text-green-800 font-bold text-sm">✅ SIN DÉFICIT NEUROLÓGICO</p>
+                                        <div className="text-green-700 text-xs mt-1 space-y-1">
+                                            <p><strong>• Continuar monitoreo neurológico</strong></p>
+                                            <p><strong>• Considerar otras causas si hay síntomas</strong></p>
+                                            <p><strong>• Re-evaluar periódicamente</strong></p>
+                                        </div>
+                                    </div>
+                                )}
+
+                                {nihssScore.result >= 1 && nihssScore.result <= 4 && (
+                                    <div className="mt-3 p-3 bg-yellow-100 border border-yellow-300 rounded-lg">
+                                        <p className="text-yellow-800 font-bold text-sm">⚠️ ACV MENOR</p>
+                                        <div className="text-yellow-700 text-xs mt-1 space-y-1">
+                                            <p><strong>• Activar protocolo de ACV</strong></p>
+                                            <p><strong>• Evaluación urgente por neurólogo</strong></p>
+                                            <p><strong>• Considerar trombolisis si está en ventana terapéutica</strong></p>
+                                            <p><strong>• TC craneal urgente</strong></p>
+                                        </div>
+                                    </div>
+                                )}
+
+                                {nihssScore.result >= 5 && nihssScore.result <= 15 && (
+                                    <div className="mt-3 p-3 bg-orange-100 border border-orange-300 rounded-lg">
+                                        <p className="text-orange-800 font-bold text-sm">🚨 ACV MODERADO</p>
+                                        <div className="text-orange-700 text-xs mt-1 space-y-1">
+                                            <p><strong>• CÓDIGO ICTUS - Activación inmediata</strong></p>
+                                            <p><strong>• TC craneal STAT</strong></p>
+                                            <p><strong>• Evaluación para trombolisis/trombectomía</strong></p>
+                                            <p><strong>• Monitoreo neurológico continuo</strong></p>
+                                            <p><strong>• Traslado a unidad de ictus</strong></p>
+                                        </div>
+                                    </div>
+                                )}
+
+                                {nihssScore.result >= 16 && nihssScore.result <= 20 && (
+                                    <div className="mt-3 p-3 bg-red-100 border border-red-300 rounded-lg">
+                                        <p className="text-red-800 font-bold text-sm">🚨 ACV MODERADO-SEVERO</p>
+                                        <div className="text-red-700 text-xs mt-1 space-y-1">
+                                            <p><strong>• CÓDIGO ICTUS CRÍTICO</strong></p>
+                                            <p><strong>• Evaluación inmediata para trombectomía</strong></p>
+                                            <p><strong>• Protección de vía aérea</strong></p>
+                                            <p><strong>• Monitoreo en UCI neurológica</strong></p>
+                                            <p><strong>• Control de PIC si es necesario</strong></p>
+                                        </div>
+                                    </div>
+                                )}
+
+                                {nihssScore.result >= 21 && (
+                                    <div className="mt-3 p-3 bg-red-100 border border-red-400 rounded-lg">
+                                        <p className="text-red-800 font-bold text-sm">🆘 ACV SEVERO - CRÍTICO</p>
+                                        <div className="text-red-700 text-xs mt-1 space-y-1">
+                                            <p><strong>• EMERGENCIA NEUROLÓGICA MÁXIMA</strong></p>
+                                            <p><strong>• Intubación y ventilación mecánica probable</strong></p>
+                                            <p><strong>• Trombectomía urgente si es candidato</strong></p>
+                                            <p><strong>• UCI neurológica inmediatamente</strong></p>
+                                            <p><strong>• Monitoreo de PIC</strong></p>
+                                            <p><strong>• Considerar craniectomía descompresiva</strong></p>
+                                        </div>
+                                    </div>
+                                )}
+
+                                {/* Consideraciones especiales */}
+                                <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg">
+                                    <p className="text-blue-800 font-bold text-xs">💡 CONSIDERACIONES IMPORTANTES:</p>
+                                    <div className="text-blue-700 text-xs mt-1 space-y-1">
+                                        <p><strong>• Ventana terapéutica:</strong> tPA &lt;4.5h, trombectomía &lt;6-24h</p>
+                                        <p><strong>• Contraindicaciones:</strong> verificar antes de trombolisis</p>
+                                        <p><strong>• Monitoreo:</strong> re-evaluar NIHSS cada 1-2 horas</p>
+                                        <p><strong>• Deterioro:</strong> aumento ≥4 puntos = preocupante</p>
+                                        <p><strong>• Mejoría:</strong> disminución ≥8 puntos = significativa</p>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Guía de referencia */}
+                        <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                            <h4 className="font-semibold text-gray-700 mb-2">Rangos de Interpretación NIHSS:</h4>
+                            <div className="text-xs space-y-1">
+                                <p><strong>0:</strong> Sin déficit neurológico</p>
+                                <p><strong>1-4:</strong> ACV menor (déficit leve)</p>
+                                <p><strong>5-15:</strong> ACV moderado</p>
+                                <p><strong>16-20:</strong> ACV moderado-severo</p>
+                                <p><strong>21-42:</strong> ACV severo</p>
+                                <p className="mt-2 font-semibold text-orange-600">
+                                    La escala NIHSS debe ser administrada por personal entrenado para obtener resultados precisos.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                );
+
             default:
                 return null;
         }
     };
 
     return (
-        <div className="fixed inset-0 bg-black/20 bg-opacity-50 z-50 flex justify-center items-center p-4 backdrop-blur-sm animate-fadeIn">
+        <div
+            className="fixed inset-0 bg-black/20 bg-opacity-50 z-50 flex justify-center items-center p-4 backdrop-blur-sm animate-fadeIn">
             <div className="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden">
                 <div className="bg-orange-500 text-white p-4 flex justify-between items-center">
                     <h2 className="text-2xl font-bold">🛠️ Herramientas</h2>
@@ -1547,13 +1410,14 @@ const ToolsModal: React.FC<ToolsModalProps> = ({ onClose }) => {
                         onClick={onClose}
                         className="p-2 hover:bg-orange-600 rounded-full transition-colors"
                     >
-                        <FaTimes className="w-5 h-5" />
+                        <FaTimes className="w-5 h-5"/>
                     </button>
                 </div>
 
                 <div className="flex md:flex-row flex-col h-[calc(90vh-80px)]">
                     {/* Lista de herramientas */}
-                    <div className="w-full md:w-1/3 bg-gray-50 border-r border-gray-200 overflow-y-auto max-h-52 md:max-h-full">
+                    <div
+                        className="w-full md:w-1/3 bg-gray-50 border-r border-gray-200 overflow-y-auto max-h-52 md:max-h-full">
                         <div className="p-4">
                             <h3 className="font-semibold text-gray-700 mb-3">Selecciona una herramienta:</h3>
                             <div className="space-y-2">
@@ -1584,7 +1448,7 @@ const ToolsModal: React.FC<ToolsModalProps> = ({ onClose }) => {
                             renderToolContent()
                         ) : (
                             <div className="flex flex-col items-center justify-center h-full text-gray-500">
-                                <FaCalculator className="w-16 h-16 mb-4 text-gray-300" />
+                                <FaCalculator className="w-16 h-16 mb-4 text-gray-300"/>
                                 <p className="text-lg">Selecciona una herramienta para comenzar</p>
                             </div>
                         )}
