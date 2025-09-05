@@ -6,6 +6,8 @@ import nudos from "../../assets/nudos.jpg";
 import netter from "../../assets/netter.webp";
 import acls from "../../assets/acls.avif";
 import moore from "../../assets/moore.webp";
+import amls from "../../assets/amls.jpg";
+
 
 export const resources = [
     {
@@ -53,6 +55,16 @@ export const resources = [
         category: "Manual",
         download: "https://drive.google.com/uc?export=download&id=1J0PAh0nONBGmSpiYdyyjemKb-Ujx65fC",
         link: { url: "https://www.psglearning.com/es/phtls?srsltid=AfmBOorLGRrP95FMjmKsLpuMyQJA-dZGBP-GCCK5axFAL7XjcsSrsbGq", label: "Sitio web" },
+    },
+    {
+        img: amls,
+        title: "AMLS Soporte Vital Avanzado para Pacientes Médicos",
+        subtitle: "National Association of Emergency Medical Technicians",
+        edition: "Tercera edición 2021",
+        category: "Manual",
+        download: "https://drive.google.com/file/d/12XTprKF6WJwORjNNG2CrZVbGLh8A6M8i/view?usp=share_link",
+        link: { url: "https://www.psglearning.com/catalog/productdetails/9781284241488?srsltid=AfmBOoo13GT74b4KRoovcofMkOPddJ9Y3FyN3Y_3JjYYR60QinYLe2gH", label: "Sitio web" },
+
     },
     {
         img: moore,
