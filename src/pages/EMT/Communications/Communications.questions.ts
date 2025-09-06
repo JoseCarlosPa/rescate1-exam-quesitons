@@ -146,25 +146,113 @@ export const communicationsQuestions: Question[] = [
 
 export const communicationsChallengingQuestions: Question[] = [
     {
-        question: "¿Cuál es la consecuencia legal de omitir información relevante en el FRAP?",
+        question: "Durante un incidente de múltiples víctimas, usted es el oficial de comunicaciones en el puesto de comando. Recibe simultáneamente reportes de 3 unidades con pacientes críticos, el hospital reporta saturación de su departamento de emergencias, y el centro de despacho solicita actualización del estado de la escena. Su radio principal falla parcialmente. ¿Cuál es la prioridad de comunicación más crítica?",
         options: [
-            { letter: "a", text: "No tiene consecuencias" },
-            { letter: "b", text: "Puede considerarse falsificación de documentos" },
-            { letter: "c", text: "Solo afecta la atención médica" },
-            { letter: "d", text: "Es responsabilidad del hospital" }
+            { letter: "a", text: "Reportar inmediatamente el estado de la escena al centro de despacho" },
+            { letter: "b", text: "Coordinar el desvío de pacientes críticos a hospitales alternativos con capacidad disponible" },
+            { letter: "c", text: "Solicitar reparación inmediata del equipo de radio principal" },
+            { letter: "d", text: "Establecer comunicación directa con cada unidad para obtener reportes detallados" }
         ],
         correctAnswer: "b",
-        explanation: "Omitir información relevante en el FRAP puede considerarse falsificación de documentos y tener consecuencias legales y administrativas graves."
+        explanation: "En un incidente de múltiples víctimas, la prioridad absoluta es asegurar que los pacientes críticos reciban atención hospitalaria oportuna. Si el hospital está saturado, coordinar el desvío a centros alternativos es crucial para salvar vidas. Los reportes administrativos y reparaciones de equipo son secundarios cuando vidas están en riesgo inmediato."
     },
     {
-        question: "¿Qué elemento NO es parte de la comunicación terapéutica efectiva?",
+        question: "Está documentando la atención de un paciente de 35 años que inicialmente presentaba dolor torácico severo y negaba cualquier consumo de drogas. Durante el transporte, encuentra evidencia de uso reciente de cocaína y el paciente admite haber mentido por temor a consecuencias legales. Sus signos vitales mejoraron significativamente después de la administración de nitroglicerina. ¿Cómo debe documentar esta información en el FRAP?",
         options: [
-            { letter: "a", text: "Escucha activa" },
-            { letter: "b", text: "Lenguaje técnico sin explicación" },
-            { letter: "c", text: "Empatía" },
-            { letter: "d", text: "Claridad en el mensaje" }
+            { letter: "a", text: "Omitir la información sobre drogas ya que el paciente inicialmente la negó" },
+            { letter: "b", text: "Documentar objetivamente la información inicial negativa y la subsecuente admisión, explicando el cambio" },
+            { letter: "c", text: "Solo documentar la información final verdadera para evitar contradicciones" },
+            { letter: "d", text: "Reportar inmediatamente a las autoridades antes de completar la documentación" }
         ],
         correctAnswer: "b",
-        explanation: "El uso de lenguaje técnico sin explicación dificulta la comprensión y no es parte de una comunicación terapéutica efectiva."
+        explanation: "La documentación médica debe reflejar cronológicamente toda la información obtenida. Es importante documentar tanto la negativa inicial como la admisión posterior, explicando las circunstancias del cambio. Esto proporciona un registro completo y honesto que es crucial para la atención médica continuada, especialmente considerando las contraindicaciones de la nitroglicerina con el uso de cocaína."
+    },
+    {
+        question: "Durante el transporte de un paciente psiquiátrico agitado, él le confía que planea lastimar a una persona específica cuando sea dado de alta. El paciente muestra signos de mejora con la medicación y solicita que mantenga esta información confidencial. Al llegar al hospital, el personal le pregunta sobre el comportamiento del paciente durante el transporte. ¿Cuál es su obligación de comunicación?",
+        options: [
+            { letter: "a", text: "Mantener la confidencialidad absoluta según los deseos del paciente" },
+            { letter: "b", text: "Reportar la amenaza específica al personal hospitalario y seguir los protocolos de amenaza" },
+            { letter: "c", text: "Solo mencionar la agitación general sin detalles específicos" },
+            { letter: "d", text: "Esperar hasta completar la documentación escrita para revelar la información" }
+        ],
+        correctAnswer: "b",
+        explanation: "El deber de advertir (Tarasoff duty) anula la confidencialidad del paciente cuando existe una amenaza específica y creíble contra una persona identificable. Esta información es crucial para la evaluación psiquiátrica y las medidas de protección necesarias. El personal hospitalario necesita esta información para tomar decisiones apropiadas sobre el alta y la seguridad pública."
+    },
+    {
+        question: "Responde a una emergencia en una zona rural donde un trabajador agrícola de 28 años cayó de una altura considerable. Su supervisor, que habla inglés limitado, intenta traducir para el paciente que solo habla un dialecto local. La información traducida parece inconsistente y el paciente muestra signos neurológicos preocupantes. El hospital más cercano está a 45 minutos y no tiene servicio de traducción. ¿Cuál es su estrategia de comunicación más efectiva?",
+        options: [
+            { letter: "a", text: "Confiar completamente en el supervisor como traductor para ahorrar tiempo" },
+            { letter: "b", text: "Utilizar comunicación no verbal y evaluación física exhaustiva mientras contacta servicios de traducción telefónica" },
+            { letter: "c", text: "Transportar inmediatamente sin obtener historia adicional" },
+            { letter: "d", text: "Esperar hasta encontrar un traductor competente antes de continuar" }
+        ],
+        correctAnswer: "b",
+        explanation: "En situaciones de barrera idiomática crítica, la combinación de evaluación física exhaustiva, comunicación no verbal, y servicios de traducción telefónica es la más segura. Los signos neurológicos requieren evaluación cuidadosa que no puede depender de traducción inadecuada. Los servicios de traducción telefónica están disponibles 24/7 y proporcionan traducción médica certificada."
+    },
+    {
+        question: "Durante una emergencia cardíaca nocturna, el médico de control médico le ordena administrar un medicamento que según su protocolo local requiere una dosis diferente a la indicada. Hay interferencia significativa en la comunicación por radio y no está seguro si escuchó correctamente la orden. El paciente está en deterioro rápido y cada minuto cuenta. ¿Cuál es su acción de comunicación más apropiada?",
+        options: [
+            { letter: "a", text: "Administrar el medicamento según el protocolo local sin consultar nuevamente" },
+            { letter: "b", text: "Repetir la orden recibida palabra por palabra al control médico para confirmación antes de administrar" },
+            { letter: "c", text: "Pedir que cambien de frecuencia para mejor recepción antes de proceder" },
+            { letter: "d", text: "Administrar según la orden escuchada ya que el médico tiene autoridad superior" }
+        ],
+        correctAnswer: "b",
+        explanation: "La técnica de 'eco' o repetición de órdenes verbales es un estándar de seguridad crítico en medicina de emergencia. Repetir la orden permite confirmar que se escuchó correctamente, especialmente con interferencia de radio. Esta práctica previene errores de medicación potencialmente fatales y asegura que tanto el médico como el paramédico estén de acuerdo en el tratamiento."
+    },
+    {
+        question: "Está completando un FRAP para un paciente que sufrió un infarto agudo durante el cual su compañero cometió un error en la administración de medicamentos que temporalmente empeoró la condición del paciente. El error fue corregido y el paciente se estabilizó antes de llegar al hospital. Su compañero le pide que no mencione el error en la documentación. ¿Cuál es su responsabilidad profesional?",
+        options: [
+            { letter: "a", text: "Omitir el error para proteger a su compañero y evitar problemas legales" },
+            { letter: "b", text: "Documentar objetivamente todos los medicamentos administrados, incluyendo las correcciones realizadas" },
+            { letter: "c", text: "Reportar el error solo al supervisor, no en el FRAP" },
+            { letter: "d", text: "Permitir que su compañero complete su propia documentación sin intervenir" }
+        ],
+        correctAnswer: "b",
+        explanation: "La documentación médica debe ser completa, precisa y objetiva. Todos los medicamentos administrados, incluyendo errores y correcciones, deben documentarse para la seguridad del paciente y la continuidad del cuidado. Esta información es crucial para el personal hospitalario que continuará el tratamiento. La omisión de información médicamente relevante compromete la atención del paciente y viola los estándares profesionales."
+    },
+    {
+        question: "Durante el transporte de una adolescente de 16 años con una sobredosis, sus padres llegan al hospital y demandan conocer exactamente qué sustancias consumió su hija y todos los detalles de lo que ella dijo durante el transporte. La menor había solicitado específicamente que no se lo dijeran a sus padres. El personal del hospital le pregunta qué información puede compartir de su reporte. ¿Cuál es el equilibrio apropiado entre confidencialidad y derechos parentales?",
+        options: [
+            { letter: "a", text: "Compartir toda la información con los padres ya que es menor de edad" },
+            { letter: "b", text: "Proporcionar solo información médica necesaria para el tratamiento continuo, respetando la privacidad solicitada por la menor" },
+            { letter: "c", text: "Negarse a proporcionar cualquier información sin una orden judicial" },
+            { letter: "d", text: "Permitir que solo el personal hospitalario decida qué compartir" }
+        ],
+        correctAnswer: "b",
+        explanation: "En casos de adolescentes con temas de sustancias, existe un equilibrio delicado entre los derechos parentales y la privacidad del menor. La información médicamente necesaria para el tratamiento continuo debe compartirse, pero los detalles específicos de conversaciones privadas pueden requerir consideración cuidadosa. Esto fomenta la confianza del menor en el sistema de salud mientras asegura que reciba el tratamiento adecuado."
+    },
+    {
+        question: "Está atendiendo un accidente vehicular donde un conductor ebrio impactó a una familia. La madre de la familia está crítica, el padre está histérico demandando información constante, y los medios de comunicación han llegado solicitando detalles del accidente. Debe comunicar con múltiples hospitales para coordinar el destino de las víctimas mientras maneja la situación emocional. ¿Cuál es su prioridad de comunicación en esta situación compleja?",
+        options: [
+            { letter: "a", text: "Proporcionar información inmediata a los medios para controlar la narrativa" },
+            { letter: "b", text: "Enfocar toda la atención en calmar al padre histérico" },
+            { letter: "c", text: "Coordinar silenciosamente los destinos hospitalarios mientras designa a otro personal para manejar la familia y los medios" },
+            { letter: "d", text: "Evacuar inmediatamente a todos los pacientes al hospital más cercano" }
+        ],
+        correctAnswer: "c",
+        explanation: "En situaciones de múltiples demandas de comunicación, la triage de prioridades es esencial. La coordinación hospitalaria para pacientes críticos es la prioridad médica absoluta. La delegación efectiva permite que otros manejen los aspectos emocionales y de medios mientras el paramédico senior se enfoca en decisiones médicas críticas que determinan los resultados de los pacientes."
+    },
+    {
+        question: "Su sistema electrónico de FRAP falla durante un turno especialmente ocupado con múltiples llamadas críticas. Debe documentar manualmente en papel y luego transferir la información cuando el sistema se restaure. Al día siguiente, se da cuenta de que algunos detalles específicos de uno de los casos se están volviendo borrosos en su memoria. ¿Cuál es la mejor práctica para manejar esta situación de documentación?",
+        options: [
+            { letter: "a", text: "Llenar los detalles faltantes basándose en lo que 'probablemente ocurrió' en situaciones similares" },
+            { letter: "b", text: "Documentar solo la información que recuerda con certeza y anotar que algunos detalles no están disponibles debido a la falla del sistema" },
+            { letter: "c", text: "Contactar al hospital para obtener información de su documentación" },
+            { letter: "d", text: "Reconstruir la información consultando con su compañero y combinando recuerdos" }
+        ],
+        correctAnswer: "b",
+        explanation: "La integridad de la documentación médica requiere absoluta honestidad. Es mejor documentar solo información que se recuerda con certeza y explicar las limitaciones del registro debido a circunstancias técnicas. Inventar o aproximar información compromete la validez legal del documento y puede afectar negativamente la atención futura del paciente. La transparencia sobre las limitaciones del registro es profesional y legalmente apropriada."
+    },
+    {
+        question: "Durante una emergencia pediátrica, una madre extremadamente ansiosa interrumpe constantemente mientras intenta obtener información vital del niño de 8 años que está consciente pero asustado. La madre proporciona información contradictoria sobre alergias y medicamentos, y el niño se agita más cuando ella habla. Necesita información precisa para proporcionar tratamiento seguro. ¿Cuál es su estrategia de comunicación más efectiva?",
+        options: [
+            { letter: "a", text: "Pedirle a la madre que se retire temporalmente de la escena" },
+            { letter: "b", text: "Separar gentilmente la obtención de historia: asignar a un miembro del equipo para hablar con la madre mientras usted obtiene información del niño" },
+            { letter: "c", text: "Confiar únicamente en la información de la madre por ser la tutora legal" },
+            { letter: "d", text: "Proceder sin obtener historia completa para evitar mayor agitación" }
+        ],
+        correctAnswer: "b",
+        explanation: "La separación controlada de fuentes de información permite obtener datos más precisos de ambas partes sin crear más ansiedad. Un niño de 8 años puede proporcionar información valiosa sobre sus síntomas cuando no está abrumado por la ansiedad parental. Simultáneamente, un miembro del equipo puede obtener información de la madre en un ambiente más calmado. Esto optimiza la calidad de la información mientras mantiene a la familia unida."
     }
 ];

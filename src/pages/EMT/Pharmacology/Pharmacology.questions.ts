@@ -261,3 +261,116 @@ export const pharmacologyQuestions: Question[] = [
         "explanation": "Este escenario se define como 'administración asistida por el paciente'. El medicamento pertenece al paciente, pero el paramédico le ayuda a tomarlo, asegurándose de que sea el medicamento correcto, la dosis correcta y que no existan contraindicaciones."
     }
 ]
+
+export const pharmacologyChallengeQuestions: Question[] = [
+    {
+        question: "Un paciente de 75 años con insuficiencia renal crónica presenta dolor torácico y recibe nitroglicerina sublingual. Después de la segunda dosis, desarrolla hipotensión severa (PA 70/40) que no responde a fluidos. Su creatinina sérica basal es 3.2 mg/dL. ¿Cuál es la consideración farmacocinética más crítica que explica esta respuesta exagerada?",
+        options: [
+            { letter: "a", text: "La insuficiencia renal no afecta el metabolismo de la nitroglicerina" },
+            { letter: "b", text: "La eliminación reducida de nitroglicerina y metabolitos activos, combinada con posible hipovolemia crónica y disminución de respuesta barorreceptora en adultos mayores" },
+            { letter: "c", text: "La absorción sublingual está aumentada en pacientes con insuficiencia renal" },
+            { letter: "d", text: "Los pacientes renales siempre tienen contraindicación absoluta para nitroglicerina" }
+        ],
+        correctAnswer: "b",
+        explanation: "La insuficiencia renal altera múltiples aspectos farmacocinéticos: 1) Eliminación renal reducida de nitroglicerina y sus metabolitos activos, 2) Posible estado de hipovolemia crónica por diuresis o restricción hídrica, aumentando sensibilidad a vasodilatadores, 3) Los adultos mayores tienen respuesta barorreceptora disminuida (menor compensación por taquicardia ante hipotensión), 4) Posible hipoproteinemia que aumenta fracción libre del fármaco. El manejo requiere dosis reducidas, monitoreo estrecho, y preparación para soporte hemodinámico."
+    },
+    {
+        question: "Durante una emergencia de anafilaxia severa, administra epinefrina 1:1000 IM a un paciente que toma propranolol diario para hipertensión. La epinefrina inicialmente mejora el broncoespasmo, pero la hipotensión persiste y empeora. ¿Cuál es el mecanismo de esta interacción farmacológica y el manejo más apropiado?",
+        options: [
+            { letter: "a", text: "El propranolol no interactúa con la epinefrina" },
+            { letter: "b", text: "El bloqueo beta-adrenérgico impide los efectos cronotrópicos e inotrópicos de la epinefrina, permitiendo vasodilatación alfa-2 no opuesta, requiriendo glucagón como antídoto específico" },
+            { letter: "c", text: "Se debe aumentar la dosis de epinefrina al doble" },
+            { letter: "d", text: "La interacción solo afecta el sistema respiratorio" }
+        ],
+        correctAnswer: "b",
+        explanation: "Esta interacción farmacológica compleja involucra: 1) El propranolol bloquea receptores β1 y β2, impidiendo efectos cronotrópicos (aumento FC) e inotrópicos (aumento contractilidad) de la epinefrina, 2) Los efectos α2 de la epinefrina (vasodilatación) quedan sin oposición de los efectos β2 (vasoconstricción), causando 'reversión de la epinefrina', 3) El glucagón actúa independiente de receptores beta, aumentando AMPc y mejorando contractilidad cardíaca, 4) Dosis típica: glucagón 1-5mg IV, seguido de infusión si es necesario. También considerar vasopresina como vasopresor alternativo."
+    },
+    {
+        question: "Un paciente diabético en coma presenta glucemia capilar de 35 mg/dL. Al administrar dextrosa 50% IV, se produce extravasación significativa en el sitio de punción. ¿Cuáles son las consideraciones farmacológicas más críticas de esta complicación?",
+        options: [
+            { letter: "a", text: "La dextrosa 50% es isotónica y no causa daño tisular" },
+            { letter: "b", text: "La dextrosa 50% es extremadamente hipertónica (2500 mOsm/L), puede causar necrosis tisular severa, requiriendo dilución inmediata, elevación, y consideración de hialuronidasa para mejorar dispersión" },
+            { letter: "c", text: "Solo se debe aplicar hielo en el área de extravasación" },
+            { letter: "d", text: "La extravasación de dextrosa no requiere tratamiento espec��fico" }
+        ],
+        correctAnswer: "b",
+        explanation: "La dextrosa 50% es una solución extremadamente hipertónica: 1) Osmolaridad ~2500 mOsm/L (vs plasma ~290 mOsm/L), 2) La extravasación puede causar lesión endotelial, trombosis, necrosis tisular, y síndrome compartimental, 3) El manejo incluye: dilución inmediata con salina, elevación del miembro, compresas tibias para vasodilatación, hialuronidasa 150U en 5 sitios alrededor de extravasación para mejorar dispersión, 4) Prevención: usar venas grandes, diluir dextrosa (D25% o D10%), o usar glucagón 1mg IM si no hay acceso IV confiable."
+    },
+    {
+        question: "Un paciente con EPOC severo presenta exacerbación aguda. Su saturación de oxígeno es 85% y está recibiendo oxígeno al 28% por mascarilla Venturi. El médico de control médico ordena aumentar a 100%. ¿Cuál es la consideración fisiopatológica más importante antes de seguir esta orden?",
+        options: [
+            { letter: "a", text: "Los pacientes con EPOC no pueden recibir oxígeno de alta concentración" },
+            { letter: "b", text: "Los pacientes con EPOC pueden tener 'drive hipóxico' donde el estímulo respiratorio depende de hipoxemia; el oxígeno de alta concentración puede suprimir el drive respiratorio, pero la hipoxia severa es más peligrosa inmediatamente" },
+            { letter: "c", text: "Siempre se debe dar oxígeno al 100% sin consideraciones especiales" },
+            { letter: "d", text: "La teoría del drive hipóxico siempre contraindica el oxígeno suplementario" }
+        ],
+        correctAnswer: "b",
+        explanation: "La oxigenoterapia en EPOC requiere balance riesgo-beneficio: 1) Algunos pacientes con EPOC crónico desarrollan 'drive hipóxico' donde el centro respiratorio responde a hipoxemia más que a hipercapnia, 2) El oxígeno de alta concentración puede suprimir este drive, causando hipoventilación y retención de CO2, 3) Sin embargo, la hipoxia severa (SatO2 <85%) causa daño orgánico inmediato más peligroso que la hipercapnia, 4) El enfoque correcto es oxigenoterapia titulada: objetivo SatO2 88-92%, monitoreo estrecho de estado mental y ventilación, preparación para ventilación asistida si es necesario."
+    },
+    {
+        question: "Un paciente toma warfarina y presenta sangrado gastrointestinal severo. Requiere cardioversión eléctrica urgente por fibrilación auricular con respuesta ventricular rápida e hipotensión. Su INR es 4.5. ¿Cuál es el manejo farmacológico más apropiado para el riesgo tromboembólico vs hemorrágico?",
+        options: [
+            { letter: "a", text: "Proceder con cardioversión sin modificar anticoagulación" },
+            { letter: "b", text: "El manejo debe balancear riesgo embólico vs hemorrágico: considerar vitamina K para reducir INR, pero la cardioversión urgente puede requerir proceder con anticoagulación subóptima, monitoreo neurológico estrecho" },
+            { letter: "c", text: "Administrar heparina adicional antes de cardioversión" },
+            { letter: "d", text: "Suspender toda anticoagulación inmediatamente" }
+        ],
+        correctAnswer: "b",
+        explanation: "Esta situación representa un dilema farmacológico complejo: 1) La fibrilación auricular aumenta riesgo de embolia cerebral, especialmente con cardioversión, 2) El INR elevado (4.5) con sangrado activo contraindicaria anticoagulación normalmente, 3) La cardioversión urgente puede requerir proceder a pesar de anticoagulación subóptima si hay inestabilidad hemodinámica, 4) Considerar: vitamina K 2.5-5mg IV para reducción parcial de INR, factor VII recombinante o complejo protrombínico si disponible, monitoreo neurológico estrecho post-cardioversión. La decisión final depende de la severidad relativa de ambas condiciones."
+    },
+    {
+        question: "Una paciente embarazada de 32 semanas presenta eclampsia con convulsiones tónicoclónicas generalizadas. El sulfato de magnesio IV detiene las convulsiones, pero desarrolla depresión respiratoria severa (FR 6/min) y arreflexia. ¿Cuál es el antídoto específico y su mecanismo de acción?",
+        options: [
+            { letter: "a", text: "Naloxona - bloquea receptores opioides" },
+            { letter: "b", text: "Gluconato de calcio - antagoniza competitivamente los efectos del magnesio en receptores de calcio" },
+            { letter: "c", text: "Flumazenil - revierte sedación" },
+            { letter: "d", text: "No existe antídoto específico para magnesio" }
+        ],
+        correctAnswer: "b",
+        explanation: "La intoxicación por magnesio requiere antídoto específico: 1) El magnesio compite con calcio en canales de calcio, causando depresión del SNC, depresión respiratoria, y bloqueo neuromuscular, 2) El gluconato de calcio (1-2g IV lento) antagoniza competitivamente estos efectos restaurando función neuromuscular y respiratoria, 3) Los signos de toxicidad por magnesio incluyen: pérdida de reflejos tendinosos profundos (primero), depresión respiratoria, hipotensión, bloqueo cardíaco, 4) Niveles séricos: terapéutico 4-7 mg/dL, tóxico >10 mg/dL. El calcio debe administrarse lentamente para evitar arritmias."
+    },
+    {
+        question: "Un paciente presenta sobredosis mixta de benzodiazepinas y etanol con coma profundo (GCS 3) y depresión respiratoria. Después de administrar flumazenil, despierta abruptamente pero desarrolla convulsiones tónicoclónicas y agitación extrema. ¿Cuál es la explicación farmacológica más probable de esta complicación?",
+        options: [
+            { letter: "a", text: "El flumazenil causó una reacción alérgica" },
+            { letter: "b", text: "El flumazenil precipitó síndrome de abstinencia en un paciente con dependencia crónica a benzodiazepinas, desenmascarando convulsiones subyacentes o causando abstinencia severa" },
+            { letter: "c", text: "La dosis de flumazenil fue insuficiente" },
+            { letter: "d", text: "El etanol interactúa adversamente con flumazenil" }
+        ],
+        correctAnswer: "b",
+        explanation: "Esta complicación ilustra los riesgos del flumazenil: 1) En pacientes con dependencia crónica a benzodiazepinas, el flumazenil puede precipitar síndrome de abstinencia severo con convulsiones, 2) Puede desenmascarar convulsiones que estaban siendo suprimidas por benzodiazepinas (ej. en intoxicación con antidepresivos tricíclicos), 3) La reversión abrupta en politoxicómanos es especialmente peligrosa, 4) El manejo incluye: benzodiacepinas IV para controlar convulsiones/agitación, evitar flumazenil adicional, soporte ventilatorio si es necesario. En sobredosis mixtas, a menudo es preferible manejar con soporte ventilatorio sin reversor específico."
+    },
+    {
+        question: "Un paciente hipertenso toma un IECA (enalapril) diario y presenta angioedema severo con compromiso de vía aérea tras iniciar tratamiento dental. La epinefrina mejora parcialmente el edema, pero el compromiso de vía aérea persiste. ¿Cuál es la diferencia patofisiológica clave entre este angioedema y la anafilaxia típica?",
+        options: [
+            { letter: "a", text: "No hay diferencia patofisiológica significativa" },
+            { letter: "b", text: "El angioedema por IECA es mediado por acumulación de bradiquinina (no histamina), por lo que responde menos a epinefrina y antihistamínicos; puede requerir inhibidor de C1 esterasa o icatibant" },
+            { letter: "c", text: "El angioedema por IECA es más leve que la anafilaxia" },
+            { letter: "d", text: "Solo se debe administrar corticosteroides" }
+        ],
+        correctAnswer: "b",
+        explanation: "El angioedema por IECA tiene patofisiología distinta: 1) Los IECA inhiben enzima convertidora de angiotensina que también degrada bradiquinina, 2) La acumulación de bradiquinina causa vasodilatación y aumento de permeabilidad vascular independiente de histamina, 3) Por tanto, responde menos a epinefrina, antihistamínicos y corticosteroides tradicionales, 4) Tratamientos específicos incluyen: inhibidor de C1 esterasa (si disponible), icatibant (antagonista de receptor de bradiquinina), o ácido tranexámico, 5) El manejo de vía aérea puede requerir intubación temprana ya que el edema puede progresar a pesar del tratamiento convencional."
+    },
+    {
+        question: "Un paciente con fibrilación auricular toma dabigatrán (inhibidor directo de trombina) y presenta hemorragia intracraneal masiva tras trauma. Su tiempo de tromboplastina parcial está significativamente prolongado. ¿Cuál es la estrategia de reversión más específica disponible?",
+        options: [
+            { letter: "a", text: "Vitamina K y plasma fresco congelado" },
+            { letter: "b", text: "Idarucizumab - anticuerpo monoclonal específico que liga dabigatrán, neutralizando instantáneamente su efecto anticoagulante" },
+            { letter: "c", text: "Protamina sulfato" },
+            { letter: "d", text: "Solo medidas de soporte sin reversión específica" }
+        ],
+        correctAnswer: "b",
+        explanation: "Los nuevos anticoagulantes orales directos (DOAC) tienen antídotos específicos: 1) Idarucizumab (Praxbind) es un anticuerpo monoclonal humanizado que liga específicamente dabigatrán con alta afinidad, 2) Neutraliza instantánea y completamente el efecto anticoagulante, 3) Dosis: 5g IV en dos bolos de 2.5g separados por 15 minutos, 4) Otros DOAC (rivaroxabán, apixabán) pueden revertirse con andexanet alfa, 5) La vitamina K no afecta DOAC ya que no interfieren con síntesis de factores de coagulación dependientes de vitamina K. El reconocimiento del anticoagulante específico es crucial para seleccionar el antídoto correcto."
+    },
+    {
+        question: "Un paciente de 45 años con depresión toma sertralina (ISRS) y presenta síndrome serotoninérgico después de recibir meperidina en el departamento de emergencias. Desarrolla hipertermia (40°C), rigidez muscular, mioclonías, y alteración mental. ¿Cuál es el antagonista farmacológico más específico y el manejo integral?",
+        options: [
+            { letter: "a", text: "Naloxona como antídoto específico" },
+            { letter: "b", text: "Ciproheptadina como antagonista serotoninérgico, combinado con enfriamiento agresivo, sedación con benzodiazepinas, y relajantes musculares si es necesario" },
+            { letter: "c", text: "Solo medidas de soporte sin tratamiento farmacológico específico" },
+            { letter: "d", text: "Flumazenil como antídoto" }
+        ],
+        correctAnswer: "b",
+        explanation: "El síndrome serotoninérgico requiere manejo farmacológico específico: 1) La ciproheptadina es un antagonista no selectivo de receptores de serotonina, particularmente 5-HT2A, 2) Dosis inicial: 8mg VO/SNG, seguido de 4mg cada 6 horas hasta resolución de síntomas, 3) El manejo integral incluye: descontinuación de agentes serotoninérgicos, enfriamiento agresivo (hipertermia puede ser fatal), benzodiazepinas para agitación y convulsiones, relajantes musculares (dantroleno) si hay rigidez severa, 4) Evitar antipsicóticos que pueden empeorar hipertermia. El reconocimiento temprano es crucial ya que puede progresar rápidamente a falla multiorgánica."
+    }
+];

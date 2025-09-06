@@ -54,7 +54,7 @@ export const faqData = [
         answer: "Los riñones son órganos vitales del sistema urinario que filtran la sangre para eliminar productos de desecho y exceso de agua, formando orina. También regulan la presión arterial, el equilibrio de electrolitos y la producción de glóbulos rojos."
     },
     {
-        question: "¿Qué es el sistema endocrino y cuál es su función principal?",
+        question: "¿Qué es el sistema endocrino y cu��l es su función principal?",
         answer: "El sistema endocrino está compuesto por glándulas que producen y secretan hormonas, que son sustancias químicas que regulan una amplia gama de funciones corporales, incluyendo el crecimiento, el metabolismo, la reproducción y el estado de ánimo."
     },
     {
@@ -233,25 +233,113 @@ export const humanBodyQuestions: Question[] = [
 
 export const humanBodyChallengingQuestions: Question[] = [
     {
-        question: "¿Cuál es la función principal de los huesos sesamoideos?",
+        question: "Un paciente de 45 años sufre un traumatismo torácico cerrado y presenta disnea severa, desviación traqueal hacia la izquierda, ausencia de ruidos respiratorios derechos, e hipotensión progresiva. Considerando la anatomía de la cavidad pleural y la fisiología cardiovascular, ¿cuál es el mecanismo fisiopatológico que mejor explica esta presentación clínica?",
         options: [
-            { letter: "a", text: "Proteger órganos internos" },
-            { letter: "b", text: "Facilitar el movimiento y proteger tendones" },
-            { letter: "c", text: "Almacenar calcio" },
-            { letter: "d", text: "Producir glóbulos rojos" }
+            { letter: "a", text: "El neumotórax simple causa colapso pulmonar sin afectar el retorno venoso" },
+            { letter: "b", text: "El neumotórax a tensión aumenta la presión intratorácica, comprime el mediastino, desplaza estructuras y compromete el retorno venoso al corazón" },
+            { letter: "c", text: "La contusión pulmonar causa inflamación que bloquea el intercambio gaseoso" },
+            { letter: "d", text: "El hemotórax masivo causa únicamente pérdida de volumen sanguíneo" }
         ],
         correctAnswer: "b",
-        explanation: "Los huesos sesamoideos, como la rótula, facilitan el movimiento y protegen los tendones de fuerzas excesivas."
+        explanation: "El neumotórax a tensión es una emergencia que involucra múltiples sistemas. La acumulación progresiva de aire en el espacio pleural aumenta la presión intratorácica, causando: 1) colapso pulmonar ipsilateral (ausencia de ruidos respiratorios), 2) desplazamiento del mediastino hacia el lado contralateral (desviación traqueal), 3) compresión de las venas cavas y corazón, reduciendo el retorno venoso y el gasto cardíaco (hipotensión). Esta comprensión anatómica y fisiológica es crucial para reconocer la necesidad de descompresión inmediata."
     },
     {
-        question: "¿Qué sistema corporal regula principalmente la homeostasis?",
+        question: "Durante la evaluación de un paciente inconsciente, observa que las pupilas son puntiformes (miosis extrema), la respiración es superficial a 8 por minuto, y hay cianosis perioral. Al aplicar estímulos dolorosos, hay respuesta mínima. ¿Qué sistema neurológico está principalmente comprometido y cuál es la base anatómica de estos hallazgos?",
         options: [
-            { letter: "a", text: "Sistema muscular" },
-            { letter: "b", text: "Sistema nervioso y endocrino" },
-            { letter: "c", text: "Sistema digestivo" },
-            { letter: "d", text: "Sistema respiratorio" }
+            { letter: "a", text: "El sistema nervioso simpático está hiperactivado causando vasoconstricción" },
+            { letter: "b", text: "El tronco encefálico está deprimido, afectando los centros respiratorio y autonómico, mientras el sistema parasimpático predomina" },
+            { letter: "c", text: "El córtex cerebral está lesionado causando pérdida de funciones superiores únicamente" },
+            { letter: "d", text: "El sistema nervioso periférico está inflamado causando disfunción motora" }
         ],
         correctAnswer: "b",
-        explanation: "La homeostasis es regulada principalmente por el sistema nervioso y el endocrino, que coordinan respuestas rápidas y lentas respectivamente."
+        explanation: "Esta constelación de signos indica depresión del tronco encefálico, específicamente: 1) la miosis extrema sugiere pérdida del tono simpático en las pupilas con predominio parasimpático, 2) la bradipnea indica depresión del centro respiratorio en el bulbo raquídeo, 3) la respuesta disminuida al dolor indica compromiso de la formación reticular activadora ascendente. Esta comprensión anatómica es esencial porque el tronco encefálico controla funciones vitales automáticas, y su compromiso requiere soporte respiratorio inmediato."
+    },
+    {
+        question: "Un paciente politraumatizado presenta fractura de fémur con deformidad evidente, pulso femoral débil ipsilateral, y pie frío y pálido del mismo lado. ¿Cuál es la correlación anatómica más importante entre el sistema vascular y óseo que explica esta complicación?",
+        options: [
+            { letter: "a", text: "La arteria femoral transcurre superficialmente y no se relaciona con el hueso" },
+            { letter: "b", text: "La arteria femoral profunda pasa cerca del tercio medio del fémur y puede lesionarse por fragmentos óseos o compresión por hematoma" },
+            { letter: "c", text: "El sistema venoso es el único comprometido en fracturas femorales" },
+            { letter: "d", text: "La circulación colateral siempre compensa las lesiones arteriales femorales" }
+        ],
+        correctAnswer: "b",
+        explanation: "La anatomía vascular del muslo es crucial en traumatología: la arteria femoral se divide en femoral superficial y femoral profunda (arteria femoris profunda). La arteria femoral profunda y sus ramas perforantes irrigan los músculos del muslo y están en íntima relación con el fémur. Las fracturas del tercio medio y distal del fémur pueden lesionar estas arterias directamente por fragmentos óseos, o indirectamente por compresión debido a hematomas en compartimentos musculares. La isquemia resultante (pie frío y pálido, pulso débil) requiere evaluación vascular urgente y posible intervención quirúrgica."
+    },
+    {
+        question: "Un paciente de 70 años presenta disnea súbita, dolor torácico pleurítico, y cianosis. Sus signos vitales muestran taquicardia, hipotensión, y distensión de venas yugulares. ¿Qué concepto fisiopatológico integra mejor la función cardiopulmonar comprometida?",
+        options: [
+            { letter: "a", text: "El problema es puramente pulmonar sin afectación cardíaca" },
+            { letter: "b", text: "La obstrucción vascular pulmonar aumenta la resistencia pulmonar, sobrecarga el ventrículo derecho, y compromete el llenado del ventrículo izquierdo" },
+            { letter: "c", text: "La disfunción es únicamente del lado izquierdo del corazón" },
+            { letter: "d", text: "El sistema nervioso autonómico está desregulado sin causa orgánica" }
+        ],
+        correctAnswer: "b",
+        explanation: "Este cuadro sugiere embolia pulmonar, que demuestra la integración cardiopulmonar: 1) la obstrucción de arterias pulmonares aumenta la resistencia vascular pulmonar, 2) esto sobrecarga agudamente el ventrículo derecho (cor pulmonale agudo), evidenciado por distensión yugular, 3) el ventrículo derecho dilatado desplaza el tabique interventricular, comprometiendo el llenado del ventrículo izquierdo, 4) resulta en disminución del gasto cardíaco (hipotensión) y congestión venosa sistémica. Esta comprensión fisiopatológica explica por qué una patología 'pulmonar' causa síntomas cardiovasculares sistémicos."
+    },
+    {
+        question: "Durante la intubación de un paciente, identifica que la epiglotis está inflamada y edematosa, obstruyendo parcialmente la visualización de las cuerdas vocales. ¿Cuál es la importancia anatómica crítica de la epiglotis en la fisiología respiratoria y digestiva?",
+        options: [
+            { letter: "a", text: "La epiglotis solo tiene función en la producción de voz" },
+            { letter: "b", text: "La epiglotis actúa como válvula protectora que dirige el flujo hacia la tráquea durante respiración y hacia el esófago durante deglución, previniendo aspiración" },
+            { letter: "c", text: "La epiglotis no tiene función fisiológica importante" },
+            { letter: "d", text: "La epiglotis solo funciona durante el sueño" }
+        ],
+        correctAnswer: "b",
+        explanation: "La epiglotis es una estructura crítica con función dual: 1) Durante la respiración normal, permanece erecta permitiendo el flujo libre de aire hacia la laringe y tráquea, 2) Durante la deglución, se inclina posteroinferormente para cubrir la entrada laríngea (aditus laríngeo), desviando alimentos y líquidos hacia el esófago y previniendo aspiración. Su inflamación (epiglotitis) es peligrosa porque puede obstruir la vía aérea y comprometer tanto la respiración como la protección contra aspiración. En el contexto prehospitalario, la epiglotitis puede requerir manejo avanzado de vía aérea, incluyendo cricotirotomía si la intubación es imposible."
+    },
+    {
+        question: "Un paciente presenta debilidad del lado derecho del cuerpo, dificultad para hablar (disartria), y desviación de la lengua hacia la derecha al protruirla. ¿Qué principio neuroanatómico explica esta distribución de déficits?",
+        options: [
+            { letter: "a", text: "Todos los nervios craneales se cruzan, por lo que una lesión derecha causa síntomas derechos" },
+            { letter: "b", text: "Una lesión del hemisferio cerebral izquierdo causa déficits contralaterales motores, pero el nervio hipogloso se cruza causando desviación ipsilateral de la lengua" },
+            { letter: "c", text: "El problema es únicamente de nervios periféricos sin compromiso central" },
+            { letter: "d", text: "Todos los síntomas son del mismo lado de la lesión" }
+        ],
+        correctAnswer: "b",
+        explanation: "Este caso ilustra principios neuroanatómicos complejos: 1) La debilidad del lado derecho indica lesión del hemisferio cerebral izquierdo, ya que las vías motoras (tracto corticoespinal) se cruzan en la decusación piramidal, 2) La disartria puede originarse por compromiso de áreas motoras del habla o núcleos de nervios craneales, 3) Crucialmente, cuando se lesiona el nervio hipogloso (XII) unilateralmente, la lengua se desvía HACIA el lado de la lesión al protruirla, porque los músculos contralaterales (intactos) empujan la lengua hacia el lado paralizado. Esta comprensión anatómica ayuda a localizar lesiones neurológicas con precisión."
+    },
+    {
+        question: "En un paciente con trauma abdominal cerrado que presenta dolor en el hombro izquierdo (signo de Kehr), distensión abdominal, e hipotensión, ¿cuál es la base anatómica que explica el dolor referido?",
+        options: [
+            { letter: "a", text: "El diafragma y el hombro comparten inervación común a través del nervio frénico (C3-C5)" },
+            { letter: "b", text: "El dolor se debe únicamente a lesión muscular del hombro" },
+            { letter: "c", text: "El dolor referido no tiene base anatómica real" },
+            { letter: "d", text: "Todos los órganos abdominales refieren dolor al hombro" }
+        ],
+        correctAnswer: "a",
+        explanation: "El signo de Kehr demuestra un principio fundamental de neuroanatomía del dolor referido: 1) El diafragma está inervado por el nervio frénico, que se origina de las raíces nerviosas C3, C4, y C5, 2) Estas mismas raíces nerviosas contribuyen a la inervación sensitiva del hombro (a través de nervios supraclaviculares), 3) Cuando la sangre irrita el diafragma (como en ruptura esplénica), el dolor es interpretado por el sistema nervioso central como originado en el hombro izquierdo. Este conocimiento es crucial porque el dolor de hombro en trauma abdominal puede ser el único signo temprano de hemorragia intraabdominal significativa, especialmente ruptura esplénica."
+    },
+    {
+        question: "Un paciente joven atleta colapsa durante ejercicio intenso, presenta taquicardia extrema (>180 lpm), sudoración profusa, temperatura corporal elevada (40°C), y alteración del estado de conciencia. ¿Qué sistema fisiológico está fallando y cuáles son las consecuencias multisistémicas?",
+        options: [
+            { letter: "a", text: "Solo el sistema cardiovascular está afectado" },
+            { letter: "b", text: "El sistema de termorregulación hipotalámico está comprometido, causando falla multisistémica: cardiovascular (taquicardia, colapso), neurológica (alteración mental), y celular (desnaturalización proteica)" },
+            { letter: "c", text: "El problema es únicamente de deshidratación" },
+            { letter: "d", text: "Solo hay fatiga muscular sin compromiso sistémico" }
+        ],
+        correctAnswer: "b",
+        explanation: "El golpe de calor representa falla del sistema de termorregulación hipotalámico con consecuencias multisistémicas: 1) Neurológicamente: el hipotálamo pierde capacidad de regular temperatura, causando alteración mental y eventualmente coma, 2) Cardiovascularmente: vasodilatación periférica masiva y pérdida de volumen causan taquicardia compensatoria e hipotensión, 3) Celularmente: temperaturas >40°C causan desnaturalización proteica y disfunción enzimática, 4) Hemostáticamente: se activa coagulación intravascular diseminada. Esta comprensión fisiopatológica es crucial porque el enfriamiento agresivo inmediato es la única intervención que puede prevenir daño irreversible multiorgánico."
+    },
+    {
+        question: "Un paciente diabético presenta respiración profunda y rápida (Kussmaul), aliento con olor a frutas, y alteración progresiva del estado de conciencia. ¿Cuál es el mecanismo fisiopatológico que integra el sistema endocrino, metabólico y respiratorio?",
+        options: [
+            { letter: "a", text: "La hiperglucemia causa únicamente deshidratación" },
+            { letter: "b", text: "La deficiencia de insulina causa cetogénesis, acidosis metabólica, y compensación respiratoria a través de hiperventilación para eliminar CO2" },
+            { letter: "c", text: "El problema es únicamente respiratorio sin componente metabólico" },
+            { letter: "d", text: "La alteración mental es independiente de los cambios metabólicos" }
+        ],
+        correctAnswer: "b",
+        explanation: "La cetoacidosis diabética demuestra integración de múltiples sistemas: 1) Endocrinológicamente: la deficiencia de insulina impide la utilización de glucosa, forzando el metabolismo de ácidos grasos, 2) Metabólicamente: la beta-oxidación produce cuerpos cetónicos (acetoacetato, beta-hidroxibutirato) que son ácidos fuertes, causando acidosis metabólica, 3) Respiratoriamente: el centro respiratorio responde a la acidosis con hiperventilación (respiración de Kussmaul) para eliminar CO2 y compensar la acidosis, 4) Neurológicamente: la acidosis y deshidratación causan alteración mental progresiva. El olor a frutas proviene de la acetona (producto de descarboxilación de acetoacetato). Esta comprensión guía el tratamiento: insulina, fluidos y corrección electrolítica."
+    },
+    {
+        question: "En un paciente con sospecha de lesión de médula espinal cervical alta (C3-C5), observa que puede mover los brazos pero presenta respiración paradójica y uso predominante de músculos accesorios del cuello. ¿Cuál es la base neuroanatómica de este patrón respiratorio?",
+        options: [
+            { letter: "a", text: "Los músculos intercostales y el diafragma tienen la misma inervación" },
+            { letter: "b", text: "La lesión cervical alta compromete la inervación del diafragma (nervio frénico C3-C5) manteniendo músculos intercostales, causando respiración predominantemente intercostal" },
+            { letter: "c", text: "Todos los músculos respiratorios están igualmente afectados" },
+            { letter: "d", text: "La respiración paradójica es normal en trauma cervical" }
+        ],
+        correctAnswer: "b",
+        explanation: "La neuroanatomía respiratoria es crítica en trauma cervical: 1) El diafragma está inervado por el nervio frénico (C3-C5), por lo que lesiones en estos niveles pueden comprometerlo, 2) Los músculos intercostales están inervados por nervios intercostales (T1-T12), que pueden estar preservados en lesiones cervicales altas, 3) Los músculos accesorios (esternocleidomastoideo, escalenos) tienen inervación cervical alta y del XI par craneal, 4) La 'respiración paradójica' describe el movimiento hacia adentro del abdomen durante inspiración (por diafragma paralizado) mientras el tórax se expande (por intercostales intactos). Esta comprensión es vital porque estos pacientes pueden requerir ventilación asistida inmediata, especialmente si la lesión progresa o se fatigan."
     }
 ];

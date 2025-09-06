@@ -26,10 +26,16 @@ import Mnemotecnias from "../../pages/EMT/Nnemotecnias/Mnemotecnias.page.tsx";
 import AirwayManage from "../../pages/EMT/AirwayManage/AirwayManage.page.tsx";
 import { airwayManagementQuestions, airwayManagementChallengingQuestions } from "../../pages/EMT/AirwayManage/AirwayManage.questions";
 import Pharmacology from "../../pages/EMT/Pharmacology/Pharmacology.page.tsx";
-import { pharmacologyQuestions } from "../../pages/EMT/Pharmacology/Pharmacology.questions.ts";
+import {
+    pharmacologyChallengeQuestions,
+    pharmacologyQuestions
+} from "../../pages/EMT/Pharmacology/Pharmacology.questions.ts";
 import MedAdmin from "../../pages/EMT/MedAdmin/MedAdmin.page.tsx";
-import { medicationAdministrationQuestions } from "../../pages/EMT/MedAdmin/MedAdmin.questions.ts";
-import { shockQuestions } from "../../pages/EMT/Shock/Shock.questions.ts";
+import {
+    medicationAdministrationChallengeQuestions,
+    medicationAdministrationQuestions
+} from "../../pages/EMT/MedAdmin/MedAdmin.questions.ts";
+import {shockChallengeQuestions, shockQuestions} from "../../pages/EMT/Shock/Shock.questions.ts";
 import Shock from "../../pages/EMT/Shock/Shock.page.tsx";
 import Resources from "../../pages/Resources/Resources.page.tsx";
 import ReanimateSvb from "../../pages/EMT/ReanimateSvb/ReanimateSvb.page.tsx";
@@ -161,11 +167,11 @@ export default function Router(){
                 <Route path={AllRoutes.AIRWAY_MANAGE} element={<AirwayManage />}/>
                 <Route path={`${AllRoutes.AIRWAY_MANAGE}/exam`} element={<Exam returnRoute={AllRoutes.AIRWAY_MANAGE} name="Manejo de la Vía Aérea" questions={airwayManagementQuestions} challengingQuestions={airwayManagementChallengingQuestions} id={11}  />}/>
                 <Route path={AllRoutes.PHARMACOLOGY} element={<Pharmacology />}/>
-                <Route path={`${AllRoutes.PHARMACOLOGY}/exam`} element={<Exam returnRoute={AllRoutes.PHARMACOLOGY} name="Principios de la Farmacología" questions={pharmacologyQuestions} id={12}  />}/>
+                <Route path={`${AllRoutes.PHARMACOLOGY}/exam`} element={<Exam returnRoute={AllRoutes.PHARMACOLOGY} name="Principios de la Farmacología" questions={pharmacologyQuestions} id={12} challengingQuestions={pharmacologyChallengeQuestions}  />}/>
                 <Route path={AllRoutes.MED_ADMIN} element={<MedAdmin />}/>
-                <Route path={`${AllRoutes.MED_ADMIN}/exam`} element={<Exam returnRoute={AllRoutes.MED_ADMIN} name="Administración de Medicamentos" questions={medicationAdministrationQuestions} id={13}  />}/>
+                <Route path={`${AllRoutes.MED_ADMIN}/exam`} element={<Exam returnRoute={AllRoutes.MED_ADMIN} name="Administración de Medicamentos" questions={medicationAdministrationQuestions} id={13} challengingQuestions={medicationAdministrationChallengeQuestions}  />}/>
                 <Route path={AllRoutes.SHOCK} element={<Shock />}/>
-                <Route path={`${AllRoutes.SHOCK}/exam`} element={<Exam returnRoute={AllRoutes.SHOCK} name="shock" questions={shockQuestions} id={14}  />}/>
+                <Route path={`${AllRoutes.SHOCK}/exam`} element={<Exam returnRoute={AllRoutes.SHOCK} name="shock" questions={shockQuestions} id={14} challengingQuestions={shockChallengeQuestions}  />}/>
                 <Route path={AllRoutes.REANIMATE_SVB} element={<ReanimateSvb />}/>
                 <Route path={`${AllRoutes.REANIMATE_SVB}/exam`} element={<Exam returnRoute={AllRoutes.REANIMATE_SVB} name="Reanimación: Soporte Vital Básico (SVB)" questions={svbQuestions} id={15}  />}/>
                 <Route path={AllRoutes.MEGA} element={<Mega />}/>

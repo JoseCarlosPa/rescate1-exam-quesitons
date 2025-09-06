@@ -209,25 +209,113 @@ export const securityQuestions: Question[] = [
 
 export const securityChallengingQuestions: Question[] = [
     {
-        question: "¿Cuál es la acción más importante si el entorno de intervención es inseguro?",
+        question: "Responde a una llamada de violencia doméstica donde una mujer de 32 años presenta múltiples contusiones y una fractura aparente de muñeca. Su esposo está presente, muy agresivo, y no permite que se acerquen a la paciente. Dice que ella 'se cayó por las escaleras' y amenaza con 'problemas' si llaman a la policía. La paciente parece aterrorizada y niega necesitar ayuda. ¿Cuál es su estrategia de seguridad más apropiada?",
         options: [
-            { letter: "a", text: "Entrar rápidamente para salvar al paciente" },
-            { letter: "b", text: "Esperar a que lleguen las autoridades competentes" },
-            { letter: "c", text: "Ignorar el peligro si el paciente está grave" },
-            { letter: "d", text: "Solicitar ayuda pero entrar de inmediato" }
+            { letter: "a", text: "Intentar separar físicamente al esposo para acceder a la paciente" },
+            { letter: "b", text: "Retirarse inmediatamente y solicitar respaldo policial, manteniendo observación desde distancia segura" },
+            { letter: "c", text: "Aceptar la explicación del esposo y marcharse" },
+            { letter: "d", text: "Confrontar al esposo sobre las evidencias de violencia" }
         ],
         correctAnswer: "b",
-        explanation: "La seguridad del personal es la prioridad. Nunca se debe entrar en un entorno peligroso sin la intervención de las autoridades competentes."
+        explanation: "En situaciones de violencia doméstica activa con agresor presente, la seguridad del personal es primordial. La presencia de amenazas y comportamiento agresivo indica un ambiente inseguro. El protocolo correcto es retirarse a una distancia segura, solicitar inmediatamente respaldo policial, y mantener observación visual de la escena para reportar cualquier escalada. Nunca se debe confrontar directamente a un agresor violento sin apoyo adecuado."
     },
     {
-        question: "¿Qué medida NO ayuda a prevenir la fatiga en el personal de emergencias?",
+        question: "Durante un turno nocturno de 24 horas, usted y su compañero han atendido 8 llamadas críticas consecutivas, incluyendo un accidente fatal pediátrico y un suicidio. Son las 3 AM y reciben otra llamada de alto estrés. Su compañero comenta que 'se siente desconectado' y ha tenido microsueños durante la última hora. Usted también siente fatiga significativa. ¿Cuál es la decisión más segura?",
         options: [
-            { letter: "a", text: "Rotación de turnos" },
-            { letter: "b", text: "Descanso adecuado" },
-            { letter: "c", text: "Uso de alcohol para relajarse" },
-            { letter: "d", text: "Apoyo emocional" }
+            { letter: "a", text: "Continuar ya que solo queda una hora más de turno" },
+            { letter: "b", text: "Solicitar al despachador cobertura de otra unidad y reportar fatiga crítica que compromete la seguridad" },
+            { letter: "c", text: "Tomar turnos para dormir 15 minutos cada uno" },
+            { letter: "d", text: "Usar cafeína y continuar el turno" }
+        ],
+        correctAnswer: "b",
+        explanation: "La fatiga crítica con microsueños es una emergencia de seguridad que compromete tanto la seguridad del personal como de los pacientes. Los microsueños indican deprivación severa del sueño y alto riesgo de errores médicos y accidentes vehiculares. Es imperativo reconocer cuando la fatiga compromete la capacidad para proporcionar atención segura y solicitar relevo inmediato. La seguridad nunca debe comprometerse por presiones operativas."
+    },
+    {
+        question: "Está atendiendo a un paciente en un edificio industrial donde se reportó exposición a químicos desconocidos. Al llegar, nota un olor químico fuerte y ve que varios trabajadores están tosiendo y con ojos llorosos. Su medidor de gases detecta niveles elevados de vapores tóxicos, pero el paciente está inconsciente en el área contaminada y requiere atención inmediata. ¿Cuál es su protocolo de seguridad?",
+        options: [
+            { letter: "a", text: "Ingresar inmediatamente con equipo de protección básico (mascarilla N95) para rescatar al paciente" },
+            { letter: "b", text: "Establecer perímetro de seguridad, solicitar equipo HAZMAT especializado, y comenzar descontaminación de víctimas que puedan caminar" },
+            { letter: "c", text: "Enviar solo a un miembro del equipo para un rescate rápido" },
+            { letter: "d", text: "Intentar ventilar el área primero y luego ingresar" }
+        ],
+        correctAnswer: "b",
+        explanation: "En incidentes con materiales peligrosos (HAZMAT), el personal SEM básico no debe ingresar a zonas calientes sin equipo especializado. La prioridad es establecer zonas de seguridad, evitar convertirse en víctima adicional, y activar recursos especializados. Se debe ayudar a las víctimas ambulatorias a salir de la zona contaminada y comenzar descontaminación, mientras se espera al equipo HAZMAT para rescate de víctimas no ambulatorias."
+    },
+    {
+        question: "Durante una emergencia en un complejo de apartamentos, usted sospecha que el paciente de 25 años tiene tuberculosis activa debido a tos persistente con sangre, pérdida de peso severa, y fiebre. Vive en condiciones de hacinamiento con múltiples personas presentes. No tienen mascarillas N95 disponibles, solo mascarillas quirúrgicas básicas. El paciente está en dificultad respiratoria moderada. ¿Cuál es su estrategia de protección?",
+        options: [
+            { letter: "a", text: "Proceder con mascarilla quirúrgica ya que el paciente necesita atención inmediata" },
+            { letter: "b", text: "Colocar mascarilla quirúrgica al paciente, usar doble mascarilla quirúrgica, ventilar el área, y limitar el personal en contacto directo" },
+            { letter: "c", text: "Negarse a atender hasta conseguir equipo adecuado" },
+            { letter: "d", text: "Atender sin protección especial ya que la tuberculosis no es tan contagiosa" }
+        ],
+        correctAnswer: "b",
+        explanation: "Ante sospecha de tuberculosis sin EPP ideal, se deben implementar medidas de reducción de riesgo: colocar mascarilla quirúrgica al paciente (control en la fuente), usar doble mascarilla quirúrgica, maximizar ventilación, limitar personal expuesto al mínimo necesario, y documentar la exposición. Aunque no es protección óptima, estas medidas reducen significativamente el riesgo mientras se proporciona atención necesaria."
+    },
+    {
+        question: "Está transportando a un paciente psiquiátrico agitado que súbitamente rompe las restricciones suaves y se vuelve violento, golpeando a su compañero en la cabeza. Usted está conduciendo la ambulancia a 80 km/h en una autopista. El paciente intenta abrir las puertas traseras mientras continúa siendo agresivo. Su compañero está aturdido pero consciente. ¿Cuál es su secuencia de acciones más segura?",
+        options: [
+            { letter: "a", text: "Detenerse inmediatamente en el acotamiento y intentar controlar físicamente al paciente" },
+            { letter: "b", text: "Conducir más rápido al hospital más cercano mientras su compañero maneja la situación" },
+            { letter: "c", text: "Detenerse de forma segura, activar emergencia, solicitar respaldo policial, y evacuar el compartimento del conductor si es necesario" },
+            { letter: "d", text: "Continuar al hospital original mientras comunica la situación por radio" }
         ],
         correctAnswer: "c",
-        explanation: "El uso de alcohol no es una medida adecuada para prevenir la fatiga y puede empeorar el estrés y la salud física y mental."
+        explanation: "La violencia en el compartimiento del paciente durante el transporte es una emergencia de seguridad crítica. La prioridad es detener el vehículo de forma segura (no abruptamente para evitar más lesiones), activar todas las luces de emergencia, solicitar respaldo policial inmediato, y estar preparado para evacuar si la violencia escala. La seguridad del personal y otros conductores es primordial - un accidente vehicular podría ser fatal para todos."
+    },
+    {
+        question: "Después de seis meses atendiendo múltiples traumas severos pediátricos, suicidios, y muertes, comienza a experimentar pesadillas recurrentes, evitación de ciertas situaciones, hipervigilancia, y pensamientos intrusivos sobre las llamadas. Sus relaciones personales se están deteriorando y ha aumentado su consumo de alcohol. Su supervisor nota cambios en su rendimiento. ¿Cuál es la acción más importante para su bienestar?",
+        options: [
+            { letter: "a", text: "Tomar vacaciones y esperar que los síntomas mejoren" },
+            { letter: "b", text: "Reconocer los signos de estrés traumático secundario y buscar ayuda profesional inmediata" },
+            { letter: "c", text: "Cambiar de turno para evitar llamadas traumáticas" },
+            { letter: "d", text: "Usar más alcohol o medicamentos para manejar los síntomas" }
+        ],
+        correctAnswer: "b",
+        explanation: "Estos síntomas indican estrés postraumático secundario o trastorno por estrés postraumático, comunes en personal de primeros auxilios. El reconocimiento temprano y la intervención profesional son cruciales para prevenir deterioro adicional y potenciales consecuencias graves. Es esencial buscar ayuda de profesionales especializados en trauma en primeros respondedores, utilizar recursos de apoyo del empleador, y desarrollar estrategias de afrontamiento saludables."
+    },
+    {
+        question: "Durante una llamada nocturna en una zona conocida por actividad de pandillas, llegan a una escena donde múltiples personas están gritando y hay un paciente con herida de bala en el pecho. Al llegar, notan que hay grupos de personas agitadas en ambos extremos de la calle, algunos portando objetos que podrían ser armas. La policía aún no ha llegado y el paciente está en paro cardíaco. ¿Cuál es su protocolo de seguridad?",
+        options: [
+            { letter: "a", text: "Correr inmediatamente hacia el paciente para comenzar RCP" },
+            { letter: "b", text: "Establecer un punto de encuentro seguro fuera de la línea de fuego, solicitar respaldo policial urgente, y esperar aseguración de la escena" },
+            { letter: "c", text: "Aproximarse lentamente al paciente mientras evalúan la situación" },
+            { letter: "d", text: "Enviar solo a un miembro del equipo mientras el otro permanece en la ambulancia" }
+        ],
+        correctAnswer: "b",
+        explanation: "En escenas de violencia activa con potencial de violencia continuada, la regla fundamental es que el personal médico no puede ayudar si se convierte en víctima. Debe establecerse un punto de encuentro seguro, solicitar respaldo policial inmediato, y esperar que la escena sea asegurada. Aunque es difícil ver a un paciente sin atender, ingresar a una zona de fuego activo pone en riesgo tanto al personal como potencialmente a más víctimas."
+    },
+    {
+        question: "Su compañero ha estado llegando tarde frecuentemente, su aliento a veces huele a alcohol, y recientemente cometió un error en la dosificación de medicamentos que afortunadamente no causó daño. Cuando lo confronta privadamente, él niega tener problemas y se vuelve hostil. Ustedes son buenos amigos fuera del trabajo. ¿Cuál es su responsabilidad profesional y ética?",
+        options: [
+            { letter: "a", text: "Mantener la lealtad como amigo y manejar la situación discretamente" },
+            { letter: "b", text: "Reportar inmediatamente las preocupaciones al supervisor para proteger la seguridad del paciente" },
+            { letter: "c", text: "Darle una última oportunidad y monitorearlo de cerca" },
+            { letter: "d", text: "Confrontarlo nuevamente con amenaza de reportarlo" }
+        ],
+        correctAnswer: "b",
+        explanation: "La seguridad del paciente es la prioridad absoluta y supera las relaciones personales. Los signos de deterioro por abuso de sustancias en un compañero representan un riesgo grave para los pacientes. Existe una obligación ética y profesional de reportar estas preocupaciones al supervisor inmediatamente. Retrasar el reporte podría resultar en daño a pacientes y responsabilidad legal personal."
+    },
+    {
+        question: "Está respondiendo a un accidente vehicular en una autopista durante una tormenta severa. Al llegar, encuentra múltiples vehículos involucrados, pacientes atrapados, y condiciones meteorológicas empeorando con vientos fuertes y lluvia intensa. Los cables eléctricos están caídos cerca de uno de los vehículos, pero no está claro si están energizados. El tráfico continúa pasando a alta velocidad cerca de la escena. ¿Cuál es su secuencia de prioridades de seguridad?",
+        options: [
+            { letter: "a", text: "Comenzar inmediatamente el triage de pacientes ya que el tiempo es crítico" },
+            { letter: "b", text: "Establecer perímetro de seguridad amplio, controlar tráfico, confirmar estado de cables eléctricos, y evaluar estabilidad de vehículos antes de acceder a pacientes" },
+            { letter: "c", text: "Enviar a un miembro del equipo a verificar los cables mientras el otro comienza atención" },
+            { letter: "d", text: "Asumir que los cables no están energizados ya que está lloviendo" }
+        ],
+        correctAnswer: "b",
+        explanation: "En escenas complejas de múltiples riesgos, se debe realizar una evaluación sistemática de todos los peligros antes de acceder a pacientes. La secuencia correcta es: establecer perímetro amplio de seguridad, controlar o solicitar control de tráfico, confirmar con la compañía eléctrica el estado de los cables, evaluar estabilidad vehicular, y solo entonces proceder con triage. Los rescatistas no pueden ayudar si se electrocutan o son atropellados."
+    },
+    {
+        question: "Durante una llamada en un edificio de apartamentos, usted y su compañero notan un fuerte olor a gas natural. El paciente está en el tercer piso con dificultad respiratoria severa y requiere atención inmediata. Otros residentes están evacuando y mencionan que 'huele a gas desde hace horas'. No han llegado los bomberos. Su equipo electrónico podría generar chispas. ¿Cuál es su protocolo de seguridad más apropiado?",
+        options: [
+            { letter: "a", text: "Subir rápidamente, apagar todos los equipos electrónicos, y evacuar al paciente inmediatamente" },
+            { letter: "b", text: "Establecer zona de seguridad, solicitar departamento de bomberos para evaluación de gases, y preparar para recibir al paciente si otros pueden evacuarlo" },
+            { letter: "c", text: "Usar solo equipo manual y proceder con cautela extrema" },
+            { letter: "d", text: "Enviar solo a un miembro del equipo sin equipos electrónicos" }
+        ],
+        correctAnswer: "b",
+        explanation: "En situaciones de fuga de gas natural, cualquier fuente de ignición puede causar explosión catastrófica. El protocolo seguro es establecer zona de exclusión, solicitar evaluación especializada de bomberos, y coordinar evacuación del paciente por personal no médico si es posible. Una explosión no solo mataría al personal médico, sino que crearía múltiples víctimas adicionales. La paciencia y coordinación con servicios especializados es esencial."
     }
 ];

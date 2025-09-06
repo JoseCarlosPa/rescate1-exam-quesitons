@@ -168,25 +168,113 @@ export const legalQuestions: Question[] = [
 
 export const legalChallengingQuestions: Question[] = [
     {
-        question: "¿Cuál es la diferencia legal entre negligencia y mala praxis?",
+        question: "Un paciente de 45 años con antecedentes de esquizofrenia presenta comportamiento agresivo tras un accidente vehicular. Está desorientado, grita incoherencias y tiene una laceración sangrante en el cuero cabelludo. Su hermana llega y dice que él 'nunca acepta tratamiento médico' y presenta un documento que parece ser una directiva anticipada. ¿Cuál es el manejo legal más apropiado?",
         options: [
-            { letter: "a", text: "La negligencia es intencional, la mala praxis no" },
-            { letter: "b", text: "La mala praxis requiere daño comprobable, la negligencia no" },
-            { letter: "c", text: "La negligencia es un error involuntario, la mala praxis implica violar estándares profesionales" },
-            { letter: "d", text: "Ambas son lo mismo" }
-        ],
-        correctAnswer: "c",
-        explanation: "La negligencia es la falta de cuidado razonable, mientras que la mala praxis implica violar estándares profesionales y causar daño por ello."
-    },
-    {
-        question: "¿En qué situación un menor puede dar consentimiento informado por sí mismo?",
-        options: [
-            { letter: "a", text: "Nunca" },
-            { letter: "b", text: "Si es emancipado legalmente" },
-            { letter: "c", text: "Solo si está acompañado de un adulto" },
-            { letter: "d", text: "Si tiene más de 16 años" }
+            { letter: "a", text: "Respetar la directiva anticipada y no tratar al paciente" },
+            { letter: "b", text: "Evaluar la capacidad actual del paciente y actuar bajo consentimiento implícito si está incapacitado" },
+            { letter: "c", text: "Esperar a que llegue la policía para autorizar el tratamiento" },
+            { letter: "d", text: "Solo tratar si la hermana firma un formulario de responsabilidad" }
         ],
         correctAnswer: "b",
-        explanation: "Un menor emancipado (casado, padre, militar) puede dar consentimiento informado por sí mismo."
+        explanation: "Las directivas anticipadas no se aplican en situaciones de emergencia aguda cuando el paciente está incapacitado debido a una lesión traumática. La desorientación y comportamiento alterado sugieren incapacidad temporal. El consentimiento implícito permite el tratamiento necesario para salvar la vida, especialmente con una laceración sangrante que requiere atención inmediata."
+    },
+    {
+        question: "Durante una emergencia médica en una escuela, una maestra de 16 años que está embarazada de 7 meses presenta trabajo de parto prematuro. Los padres de la menor no están disponibles y ella rechaza el transporte diciendo 'puedo esperar hasta mañana'. La directora de la escuela dice que autorizará el tratamiento. ¿Qué principio legal aplicaría?",
+        options: [
+            { letter: "a", text: "La directora puede dar consentimiento como autoridad escolar" },
+            { letter: "b", text: "La menor embarazada puede dar su propio consentimiento médico" },
+            { letter: "c", text: "Debe esperar a los padres sin excepción" },
+            { letter: "d", text: "Solo puede actuar si hay riesgo inmediato de muerte" }
+        ],
+        correctAnswer: "b",
+        explanation: "En la mayoría de jurisdicciones, una menor embarazada se considera emancipada para asuntos relacionados con su embarazo y puede dar consentimiento médico. Sin embargo, si su negativa pone en riesgo tanto su vida como la del feto (trabajo de parto prematuro), se debe evaluar cuidadosamente su capacidad de tomar decisiones informadas y documentar exhaustivamente mientras se busca asesoría médica."
+    },
+    {
+        question: "Responde a una llamada donde un hombre de 70 años con demencia avanzada está en paro cardíaco. Su esposa presenta una ONR firmada hace 2 años, pero su hijo adulto argumenta que 'papá había mejorado últimamente' y demanda RCP. El documento ONR no especifica las condiciones de la demencia. ¿Cuál es la acción más apropiada?",
+        options: [
+            { letter: "a", text: "Iniciar RCP porque la ONR es muy antigua" },
+            { letter: "b", text: "No iniciar RCP y proporcionar solo cuidados de confort" },
+            { letter: "c", text: "Contactar control médico para orientación mientras proporciona cuidados básicos de soporte" },
+            { letter: "d", text: "Permitir que la familia vote sobre el tratamiento" }
+        ],
+        correctAnswer: "c",
+        explanation: "Esta situación presenta un dilema ético-legal complejo. Una ONR válida debe respetarse, pero cuando hay disputas familiares y circunstancias cambiantes en la condición del paciente, es prudente contactar al control médico. Mientras tanto, se pueden proporcionar cuidados básicos de soporte (oxígeno, vía aérea) que no constituyen RCP completa, documentando todo el proceso."
+    },
+    {
+        question: "Un paramédico fuera de servicio presencia un accidente vehicular. Inicia atención de emergencia y estabiliza a un paciente crítico. Cuando llega la ambulancia oficial, el paramédico de turno tiene menos experiencia y comete un error en el manejo de la vía aérea, resultando en hipoxia prolongada. El paciente posteriormente demanda por daños. ¿Cuál es la situación legal del paramédico fuera de servicio?",
+        options: [
+            { letter: "a", text: "Es completamente responsable por no supervisar al paramédico menos experimentado" },
+            { letter: "b", text: "No tiene responsabilidad legal una vez que transfiere el cuidado apropiadamente" },
+            { letter: "c", text: "Comparte responsabilidad por no intervenir cuando vio el error" },
+            { letter: "d", text: "Solo es responsable si no documentó la transferencia adecuadamente" }
+        ],
+        correctAnswer: "b",
+        explanation: "Una vez que el paramédico fuera de servicio transfiere apropiadamente el cuidado al personal oficial con un reporte completo, su responsabilidad legal termina. No tiene autoridad para supervisar o interferir con el personal oficial en servicio, y hacerlo podría crear confusión en la cadena de mando. La responsabilidad por errores subsecuentes recae en el personal que asumió oficialmente el cuidado."
+    },
+    {
+        question: "Atiende a una mujer de 28 años víctima de violencia doméstica con m��ltiples contusiones y una posible fractura de costillas. Ella suplica que no llame a la policía porque 'él me matará si se entera'. Su esposo llega a la escena y insiste en acompañarla, mostrándose muy controlador. La paciente cambia su historia y minimiza sus lesiones. ¿Cuál es su obligación legal y ética?",
+        options: [
+            { letter: "a", text: "Respetar los deseos de la paciente y no reportar" },
+            { letter: "b", text: "Reportar inmediatamente a la policía sin consentimiento de la paciente" },
+            { letter: "c", text: "Seguir los protocolos de reporte de violencia doméstica de su jurisdicción mientras garantiza la seguridad de la paciente" },
+            { letter: "d", text: "Solo documentar las lesiones sin tomar acción adicional" }
+        ],
+        correctAnswer: "c",
+        explanation: "Las leyes de reporte de violencia doméstica varían por jurisdicción, pero generalmente los proveedores de salud tienen obligaciones específicas de reporte. Es crucial seguir los protocolos locales mientras se prioriza la seguridad de la paciente. Esto puede incluir coordinación discreta con las fuerzas del orden, documentación fotográfica si está permitida, y conexión con recursos de violencia doméstica."
+    },
+    {
+        question: "Un adolescente de 17 años busca tratamiento por una overdosis de drogas. Sus padres, al llegar, se niegan al transporte diciendo que 'solo necesita dormir' y amenazan con demandarlo si transporta a su hijo contra su voluntad. El adolescente está semiconsciente, con depresión respiratoria leve pero estable. ¿Cuál es el conflicto legal principal y cómo debe resolverse?",
+        options: [
+            { letter: "a", text: "Los derechos de los padres prevalecen; debe respetar su decisión" },
+            { letter: "b", text: "El bienestar del menor prevalece; debe transportar bajo consentimiento implícito" },
+            { letter: "c", text: "Debe esperar hasta que el adolescente esté completamente consciente para decidir" },
+            { letter: "d", text: "Solo puede actuar con una orden judicial" }
+        ],
+        correctAnswer: "b",
+        "explanation": "Cuando existe un conflicto entre el consentimiento parental y el bienestar del menor en una situación que amenaza la vida, el principio del 'mejor interés del menor' prevalece. La overdose con depresión respiratoria requiere evaluación médica hospitalaria. Los padres no pueden negar legalmente el tratamiento que salva vidas, y el paramédico debe actuar bajo consentimiento implícito para proteger al menor."
+    },
+    {
+        question: "Durante el transporte de un paciente psiquiátrico bajo custodia policial, el paciente alega que un oficial lo golpeó durante la detención y le pide que documente las lesiones como evidencia. El oficial niega las acusaciones. El paciente tiene contusiones visibles pero está confundido sobre cuándo ocurrieron. ¿Cuál es su responsabilidad profesional y legal?",
+        options: [
+            { letter: "a", text: "Ignorar las alegaciones por tratarse de un paciente psiquiátrico" },
+            { letter: "b", text: "Documentar objetivamente todas las lesiones observadas sin especular sobre su origen" },
+            { letter: "c", text: "Confrontar directamente al oficial sobre las alegaciones" },
+            { letter: "d", text: "Negarse a documentar para evitar problemas legales" }
+        ],
+        correctAnswer: "b",
+        explanation: "El deber profesional es documentar objetivamente todas las lesiones observadas, ubicación, tamaño, color, y tiempo aproximado de ocurrencia cuando sea posible, sin especular sobre la causa. Esta documentación imparcial protege tanto al paciente como al proveedor de atención médica. Las investigaciones sobre el uso de fuerza son responsabilidad de las autoridades apropiadas, no del personal médico."
+    },
+    {
+        question: "Un paciente de 85 años con deterioro cognitivo leve vive solo y presenta signos de negligencia personal severa (desnutrición, mala higiene, condiciones insalubres en el hogar). Su nieta, quien vive en otro estado, tiene poder notarial y rechaza el transporte por teléfono, preocupada por los costos médicos. El paciente está confundido pero no en peligro inmediato. ¿Cuál es la consideración legal más importante?",
+        options: [
+            { letter: "a", text: "El poder notarial de la nieta es absoluto y debe respetarse" },
+            { letter: "b", text: "Evaluar la capacidad actual del paciente para tomar decisiones sobre su propio cuidado" },
+            { letter: "c", text: "La negligencia personal no constituye una emergencia médica" },
+            { letter: "d", text: "Solo los servicios sociales pueden intervenir en estos casos" }
+        ],
+        correctAnswer: "b",
+        explanation: "Un poder notarial solo es válido cuando el individuo no puede tomar decisiones por sí mismo. Se debe evaluar la capacidad actual del paciente para tomar decisiones sobre su atención médica. Si tiene capacidad residual, sus deseos pueden prevalecer sobre el poder notarial. Además, la negligencia personal severa puede requerir reporte a servicios de protección para adultos."
+    },
+    {
+        question: "Responde a un accidente donde el conductor ebrio que causó la colisión está gravemente herido y requiere intubación inmediata. Una víctima del otro vehículo, menos grave pero consciente, le grita que 'no ayude al borracho asesino' y otros testigos expresan sentimientos similares. ¿Cuál es su obligación ética y legal principal?",
+        options: [
+            { letter: "a", text: "Priorizar al conductor según la severidad de sus lesiones, independientemente de las circunstancias" },
+            { letter: "b", text: "Atender primero a la víctima inocente por razones éticas" },
+            { letter: "c", text: "Esperar a que llegue otra ambulancia para evitar el conflicto" },
+            { letter: "d", text: "Permitir que la comunidad decida a quién atender primero" }
+        ],
+        correctAnswer: "a",
+        explanation: "El deber ético y legal fundamental es proporcionar atención médica basada únicamente en la necesidad médica, sin discriminación por raza, religión, estatus social, o circunstancias del incidente. El triage médico debe ser imparcial. La responsabilidad legal del accidente se determinará posteriormente por el sistema judicial, no por el personal médico en la escena."
+    },
+    {
+        question: "Un compañero paramédico habitualmente llega tarde, parece estar bajo influencia de sustancias y recientemente cometió varios errores en el manejo de medicamentos. Los pacientes no han resultado dañados, pero usted está preocupado por la seguridad futura. Cuando lo confronta, él niega cualquier problema y lo amenaza con 'arruinar su carrera' si reporta algo. ¿Cuál es su obligación ética y legal?",
+        options: [
+            { letter: "a", text: "Mantener la lealtad profesional y no reportar sin evidencia definitiva" },
+            { letter: "b", text: "Reportar las preocupaciones a la supervisión médica y administrativa apropiada" },
+            { letter: "c", text: "Confrontarlo nuevamente y darle una última oportunidad" },
+            { letter: "d", text: "Solo actuar si ocurre un daño real a un paciente" }
+        ],
+        correctAnswer: "b",
+        explanation: "La seguridad del paciente es la prioridad absoluta y supera cualquier lealtad personal o profesional. Existe una obligación ética y legal de reportar comportamientos que ponen en riesgo la seguridad del paciente. El reporte debe hacerse a través de los canales apropiados (supervisor médico, director del servicio) para que se pueda investigar y tomar medidas correctivas antes de que ocurra un daño."
     }
 ];

@@ -191,25 +191,113 @@ export const lifeSpecQuestions: Question[] = [
 
 export const lifeSpecChallengingQuestions: Question[] = [
     {
-        question: "¿Cuál es el principal riesgo fisiológico en el neonato durante la atención prehospitalaria?",
+        question: "Un neonato de 3 días presenta letargia, rechazo al alimento, temperatura de 35.8°C, y fontanela anterior hundida. Los padres reportan que 'no ha orinado en las últimas 8 horas'. Considerando las características fisiológicas neonatales, ¿cuál es la interpretación más crítica de esta presentación?",
         options: [
-            { letter: "a", text: "Hipertensión arterial" },
-            { letter: "b", text: "Hipotermia" },
-            { letter: "c", text: "Hiperglucemia" },
-            { letter: "d", text: "Fractura de cadera" }
+            { letter: "a", text: "Los síntomas son normales en la adaptación neonatal temprana" },
+            { letter: "b", text: "La deshidratación severa en neonatos puede presentarse con hipotermia en lugar de fiebre, y la ausencia de diuresis indica compromiso renal significativo" },
+            { letter: "c", text: "La fontanela hundida es únicamente un signo de deshidratación leve" },
+            { letter: "d", text: "El rechazo al alimento es simplemente preferencia alimentaria" }
         ],
         correctAnswer: "b",
-        explanation: "El neonato es muy susceptible a la hipotermia por su alta relación superficie/volumen y poca capacidad para regular la temperatura."
+        explanation: "Los neonatos tienen características fisiológicas únicas que alteran la presentación clínica: 1) Su sistema termorregulatorio inmaduro puede responder a infecciones graves con hipotermia en lugar de fiebre, 2) La alta proporción de agua corporal (75-80%) los hace vulnerable a deshidratación rápida, 3) La función renal inmadura hace que la oliguria sea un signo tardío pero crítico, 4) La fontanela hundida indica deshidratación significativa. Esta constelación sugiere sepsis neonatal con shock, requiriendo reanimación agresiva inmediata."
     },
     {
-        question: "¿Qué cambio fisiológico es más común en adultos mayores y afecta la atención prehospitalaria?",
+        question: "Un lactante de 8 meses presenta dificultad respiratoria severa con estridor inspiratorio, babeo, e incapacidad para recostarse. Su temperatura es 39.2°C y se ve tóxico. Al intentar examinarlo, se agita más y el estridor empeora. ¿Cuál es la consideración anatómica y fisiológica más crítica en el manejo prehospitalario?",
         options: [
-            { letter: "a", text: "Aumento de la masa muscular" },
-            { letter: "b", text: "Disminución de la función renal" },
-            { letter: "c", text: "Mejoría de la visión" },
-            { letter: "d", text: "Aumento de la elasticidad arterial" }
+            { letter: "a", text: "Los lactantes siempre toleran bien los procedimientos invasivos" },
+            { letter: "b", text: "La vía aérea pediátrica es más pequeña y cualquier edema causa obstrucción desproporcionada; la agitación puede precipitar obstrucción completa" },
+            { letter: "c", text: "Se debe intubar inmediatamente para asegurar la vía aérea" },
+            { letter: "d", text: "La posición no afecta la permeabilidad de la vía aérea en niños" }
         ],
         correctAnswer: "b",
-        explanation: "La función renal disminuye con la edad, lo que afecta la eliminación de medicamentos y toxinas, y debe considerarse en la atención prehospitalaria."
+        explanation: "La anatomía pediátrica presenta diferencias críticas: 1) La vía aérea es más pequeña (tráquea de 4-5mm vs 15-20mm en adultos), por lo que 1mm de edema reduce el área en 50-75%, 2) La epiglotitis puede causar obstrucción completa rápidamente, 3) Los niños adoptan posición de 'trípode' para optimizar flujo aéreo, 4) La agitación aumenta el consumo de oxígeno y puede precipitar colapso. El manejo requiere mantener al niño calmado, posición de confort, oxígeno humidificado, y preparación para manejo avanzado de vía aérea, evitando procedimientos que aumenten la agitación."
+    },
+    {
+        question: "Un preescolar de 4 años sufre caída desde altura considerable. Está consciente, pero presenta abdomen distendido, palidez, taquicardia (140 lpm), y presión arterial de 85/45 mmHg. Los padres insisten que 'está bien porque está despierto y hablando'. ¿Qué concepto fisiológico pediátrico es crucial para el manejo apropiado?",
+        options: [
+            { letter: "a", text: "Los niños no pueden desarrollar shock hipovolémico" },
+            { letter: "b", text: "Los niños tienen mecanismos compensatorios cardiovasculares superiores que mantienen presión arterial normal hasta perder 25-30% del volumen sanguíneo, pero pueden descompensarse abruptamente" },
+            { letter: "c", text: "La presión arterial es el mejor indicador de shock en niños" },
+            { letter: "d", text: "Un niño consciente no puede estar en estado crítico" }
+        ],
+        correctAnswer: "b",
+        explanation: "La fisiología cardiovascular pediátrica tiene características únicas: 1) Los niños tienen mecanismos compensatorios vasculares y cardíacos muy eficientes que mantienen presión arterial normal mediante vasoconstricción y taquicardia, 2) Pueden perder 25-30% del volumen sanguíneo manteniendo presión arterial relativamente normal ('shock compensado'), 3) La descompensación, cuando ocurre, es súbita y catastrófica ('shock descompensado'), 4) Los signos tempranos incluyen taquicardia, palidez, tiempo de llenado capilar prolongado. Esta presentación sugiere hemorragia intraabdominal con shock compensado, requiriendo transporte urgente y preparación para descompensación súbita."
+    },
+    {
+        question: "Un adolescente de 16 años, previamente sano, presenta comportamiento errático, confusión, sudoración profusa, y temblor. Sus amigos mencionan que 'no ha comido nada en todo el día porque quería verse bien para una cita'. Su glucemia capilar es 38 mg/dL. ¿Qué consideración del desarrollo es más relevante para el manejo y educación?",
+        options: [
+            { letter: "a", text: "Los adolescentes siempre siguen las recomendaciones médicas" },
+            { letter: "b", text: "El desarrollo cognitivo adolescente incluye pensamiento de invencibilidad y toma de riesgos, requiriendo educación específica sobre consecuencias de ayuno extremo" },
+            { letter: "c", text: "La hipoglucemia no es peligrosa en adolescentes sanos" },
+            { letter: "d", text: "Los padres son siempre la mejor fuente de información en adolescentes" }
+        ],
+        correctAnswer: "b",
+        explanation: "El desarrollo psicosocial adolescente presenta características únicas: 1) El córtex prefrontal (responsable del juicio) no madura hasta los 25 años, llevando a toma de riesgos, 2) El 'pensamiento de invencibilidad' hace que subestimen consecuencias, 3) La presión social y preocupación por imagen corporal pueden llevar a comportamientos peligrosos (ayuno, dietas extremas), 4) La hipoglucemia severa puede causar coma y daño neurológico permanente. El manejo incluye corrección inmediata de glucemia, pero también educación apropiada para la edad sobre riesgos, y consideración de trastornos alimentarios subyacentes."
+    },
+    {
+        question: "Una mujer embarazada de 32 semanas sufre accidente vehicular y presenta dolor abdominal, contracciones uterinas regulares, y sangrado vaginal moderado. Sus signos vitales muestran taquicardia (110 lpm) y presión arterial de 90/60 mmHg. ¿Cuál es la consideración fisiológica más crítica durante el embarazo?",
+        options: [
+            { letter: "a", text: "El embarazo no afecta la respuesta al trauma" },
+            { letter: "b", text: "Los cambios cardiovasculares del embarazo (aumento de volumen sanguíneo 40-50%) pueden enmascarar el shock materno inicial, pero el flujo uteroplacentario se compromete tempranamente" },
+            { letter: "c", text: "Solo la madre necesita consideración médica" },
+            { letter: "d", text: "La posición no afecta la hemodinámica en embarazadas" }
+        ],
+        correctAnswer: "b",
+        explanation: "La fisiología del embarazo altera dramáticamente la respuesta al trauma: 1) El volumen sanguíneo aumenta 40-50%, permitiendo mayor pérdida antes de mostrar signos de shock, 2) El flujo uteroplacentario (sin autorregulación) se compromete tempranamente con vasoconstricción compensatoria, 3) El útero grávido puede comprimir la vena cava inferior en posición supina (síndrome de hipotensión supina), 4) La placenta puede desprenderse (abruptio placentae) con trauma relativamente menor. El manejo requiere posición lateral izquierda, monitoreo materno y fetal, y reconocimiento que signos vitales 'normales' pueden coexistir con compromiso fetal significativo."
+    },
+    {
+        question: "Un adulto mayor de 78 años con antecedentes de fibrilación auricular presenta caída con confusión y debilidad del lado derecho. Su familia reporta que 'está tomando un anticoagulante nuevo'. La evaluación muestra presión arterial de 180/95 mmHg y glucemia normal. ¿Cuál es la consideración geriátrica más crítica?",
+        options: [
+            { letter: "a", text: "La edad avanzada no afecta el riesgo de hemorragia cerebral" },
+            { letter: "b", text: "Los adultos mayores anticoagulados tienen riesgo significativamente aumentado de hemorragia intracraneal, y la presentación puede ser sutil inicialmente" },
+            { letter: "c", text: "La confusión es normal en adultos mayores" },
+            { letter: "d", text: "La hipertensión no es relevante en este contexto" }
+        ],
+        correctAnswer: "b",
+        explanation: "Los adultos mayores presentan riesgos únicos: 1) La atrofia cerebral crea espacio que permite sangrados intracraneales más grandes antes de síntomas, 2) Los anticoagulantes aumentan dramáticamente el riesgo de hemorragia intracraneal tras trauma menor, 3) La presentación puede ser sutil (confusión, cambios sutiles de personalidad) antes de déficits neurológicos evidentes, 4) La hipertensión puede ser compensatoria (respuesta de Cushing) o contribuir al sangrado. Esta presentación sugiere posible hemorragia intracraneal traumática, requiriendo transporte urgente, monitoreo neurológico estrecho, y preparación para deterioro súbito."
+    },
+    {
+        question: "Un adulto mayor de 82 años presenta dolor torácico atípico descrito como 'presión en el estómago', náuseas, y fatiga extrema. No hay dolor clásico en el pecho. Su ECG muestra cambios sutiles y sus signos vitales son relativamente estables. Su esposa dice que 'no es el mismo desde ayer'. ¿Qué principio geriátrico es más relevante?",
+        options: [
+            { letter: "a", text: "Los adultos mayores siempre presentan síntomas clásicos de infarto" },
+            { letter: "b", text: "Los adultos mayores frecuentemente presentan infartos con síntomas atípicos (equivalentes anginosos) debido a neuropatía diabética, medicamentos, y cambios en percepción del dolor" },
+            { letter: "c", text: "Los cambios sutiles no son significativos en adultos mayores" },
+            { letter: "d", text: "Los ECG son siempre normales en infartos atípicos" }
+        ],
+        correctAnswer: "b",
+        explanation: "La presentación de enfermedad coronaria en adultos mayores difiere significativamente: 1) Hasta 60% de infartos en >75 años presentan síntomas atípicos, 2) Los 'equivalentes anginosos' incluyen disnea, fatiga, náuseas, confusión, o síncope, 3) La neuropatía diabética, medicamentos (beta-bloqueadores), y cambios en receptores de dolor alteran la percepción, 4) Los cambios cognitivos o funcionales sutiles pueden ser el único signo inicial. El manejo requiere alto índice de sospecha, ECG seriados, y tratamiento como síndrome coronario agudo incluso con presentación atípica."
+    },
+    {
+        question: "Un paciente de 85 años con demencia moderada es encontrado en el suelo de su hogar por un vecino. Presenta deshidratación severa, confusión aumentada, y múltiples lesiones cutáneas en diferentes estadios de cicatrización. No hay cuidador presente y la casa está en condiciones insalubres. ¿Cuál es la consideración ética y legal más importante?",
+        options: [
+            { letter: "a", text: "Solo tratar las condiciones médicas agudas" },
+            { letter: "b", text: "Los adultos mayores vulnerables requieren evaluación de negligencia/abuso, reporte a autoridades apropiadas, y coordinación con servicios sociales además del tratamiento médico" },
+            { letter: "c", text: "La demencia explica completamente la situación" },
+            { letter: "d", text: "No es responsabilidad del personal prehospitalario" }
+        ],
+        correctAnswer: "b",
+        explanation: "Los adultos mayores vulnerables requieren consideración especial: 1) La demencia aumenta el riesgo de negligencia y abuso por parte de cuidadores, 2) Los signos incluyen deshidratación, lesiones en diferentes estadios, condiciones de vida inadecuadas, 3) Los proveedores prehospitalarios tienen obligación legal de reportar sospecha de abuso/negligencia a Servicios de Protección para Adultos, 4) La coordinación con servicios sociales es esencial para prevenir recurrencia. El manejo incluye estabilización médica, documentación fotográfica de lesiones (si permitido), reporte obligatorio, y coordinación hospitalaria para evaluación comprehensiva."
+    },
+    {
+        question: "Durante una emergencia pediátrica, un niño de 18 meses requiere acceso vascular urgente para reanimación. Ha fallado múltiples intentos de acceso IV periférico debido a colapso vascular por shock. Los padres están presentes y extremadamente angustiados. ¿Cuál es la consideración anatómica y técnica más importante?",
+        options: [
+            { letter: "a", text: "Continuar intentando accesos IV periféricos indefinidamente" },
+            { letter: "b", text: "El acceso intraóseo es la alternativa de elección en niños cuando falla el acceso IV, proporcionando vía equivalente al acceso venoso central para reanimación" },
+            { letter: "c", text: "Los niños no necesitan acceso vascular para reanimación" },
+            { letter: "d", text: "Esperar hasta llegar al hospital para procedimientos invasivos" }
+        ],
+        correctAnswer: "b",
+        explanation: "El acceso vascular pediátrico presenta desafíos únicos: 1) Las venas son más pequeñas y colapsan fácilmente en shock, 2) El acceso intraóseo es rápido, seguro y efectivo en niños >3 meses, 3) La médula ósea proporciona acceso directo a circulación central, permitiendo administración de fluidos, medicamentos y productos sanguíneos, 4) Los sitios preferidos incluyen tibia proximal, húmero proximal, y fémur distal. El procedimiento requiere técnica estéril, analgesia local, y comunicación empática con padres explicando la necesidad y seguridad del procedimiento."
+    },
+    {
+        question: "Un adulto mayor de 74 años con múltiples comorbilidades (diabetes, hipertensión, insuficiencia cardíaca) presenta síntomas de sobredosis accidental de múltiples medicamentos. Su familia trae una bolsa con 15 frascos diferentes de medicamentos. Está confundido pero estable hemodinámicamente. ¿Cuál es la consideración farmacológica geriátrica más crítica?",
+        options: [
+            { letter: "a", text: "Los adultos mayores metabolizan medicamentos igual que adultos jóvenes" },
+            { letter: "b", text: "Los cambios fisiológicos del envejecimiento (disminución de función renal/hepática, aumento de grasa corporal, disminución de albúmina) alteran la farmacocinética, prolongando efectos y aumentando toxicidad" },
+            { letter: "c", text: "Solo los medicamentos recetados recientemente son relevantes" },
+            { letter: "d", text: "La polifarmacia no aumenta el riesgo de interacciones" }
+        ],
+        correctAnswer: "b",
+        explanation: "La farmacología geriátrica presenta complejidades únicas: 1) La disminución de función renal (10% por década después de 40 años) reduce eliminación de medicamentos, 2) La función hepática disminuida altera metabolismo de primer paso, 3) El aumento de grasa corporal prolonga vida media de medicamentos liposolubles, 4) La disminución de albúmina aumenta fracción libre de medicamentos unidos a proteínas, 5) La polifarmacia aumenta exponencialmente riesgo de interacciones. El manejo requiere identificación de todos los medicamentos (incluyendo OTC y suplementos), consideración de interacciones múltiples, y monitoreo prolongado debido a eliminación retardada."
     }
 ];

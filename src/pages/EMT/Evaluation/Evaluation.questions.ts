@@ -124,25 +124,113 @@ export const patientAssessmentQuestions: Question[] = [
 
 export const patientAssessmentChallengingQuestions: Question[] = [
     {
-        question: "¿Cuál es el principal objetivo de la evaluación primaria en un paciente politraumatizado?",
+        question: "Durante la evaluación primaria de un paciente politraumatizado consciente, identifica compromiso de vía aérea con estridor, taquipnea severa, y cianosis perioral progresiva. El paciente puede hablar pero con voz ronca y esfuerzo. ¿Cuál es la prioridad de evaluación y manejo que integra el ABCDE con toma de decisiones críticas?",
         options: [
-            { letter: "a", text: "Obtener un historial médico completo" },
-            { letter: "b", text: "Identificar y tratar amenazas inmediatas para la vida" },
-            { letter: "c", text: "Realizar un examen físico detallado" },
-            { letter: "d", text: "Determinar el mecanismo de lesión" }
+            { letter: "a", text: "Continuar con la evaluación completa de respiración y circulación antes de actuar" },
+            { letter: "b", text: "El compromiso progresivo de vía aérea es una amenaza inmediata que requiere preparación para manejo avanzado mientras se optimiza posición y oxigenación" },
+            { letter: "c", text: "Esperar hasta completar la evaluación secundaria para determinar causa" },
+            { letter: "d", text: "Proceder inmediatamente con intubación sin más evaluación" }
         ],
         correctAnswer: "b",
-        explanation: "La evaluación primaria busca identificar y tratar amenazas inmediatas para la vida, como obstrucción de vía aérea, dificultad respiratoria o shock."
+        explanation: "El ABCDE prioriza amenazas por severidad: el compromiso progresivo de vía aérea (estridor + cianosis + voz ronca) indica edema laríngeo o hematoma que puede causar obstrucción completa rápidamente. La evaluación primaria identifica esta amenaza inmediata, pero el manejo requiere: 1) Optimizar posición (Fowler o trípode), 2) Oxígeno de alta concentración, 3) Preparaci��n inmediata para manejo avanzado de vía aérea, 4) Evaluación rápida de causa (trauma cervical, quemadura por inhalación). La 'B' del ABCDE no se completa hasta asegurar vía aérea permeable."
     },
     {
-        question: "¿Qué hallazgo objetivo puede indicar shock hipovolémico en la evaluación inicial?",
+        question: "Un paciente de 65 años presenta dolor torácico con signos vitales aparentemente normales: PA 130/80, FC 88, FR 18. Sin embargo, durante la evaluación, nota sudoración diaforética, palidez, y el paciente menciona que 'siente como si fuera a desmayar'. ¿Qué principio de evaluación clínica es más relevante para interpretar esta discrepancia?",
         options: [
-            { letter: "a", text: "Dolor abdominal" },
-            { letter: "b", text: "Palidez y frialdad de la piel" },
-            { letter: "c", text: "Náuseas" },
-            { letter: "d", text: "Ansiedad" }
+            { letter: "a", text: "Los signos vitales normales descartan patología significativa" },
+            { letter: "b", text: "Los signos vitales pueden ser normales inicialmente debido a mecanismos compensatorios, pero los signos clínicos (diaforesis, palidez) pueden indicar compromiso cardiovascular significativo" },
+            { letter: "c", text: "La sudoración es únicamente por ansiedad sin significado clínico" },
+            { letter: "d", text: "Solo la presión arterial es relevante para evaluar estado cardiovascular" }
         ],
         correctAnswer: "b",
-        explanation: "La palidez y frialdad de la piel son signos objetivos de hipoperfusión, típicos del shock hipovolémico."
+        explanation: "Esta situación ilustra que la evaluación clínica integral supera los signos vitales aislados: 1) Los mecanismos compensatorios cardiovasculares pueden mantener presión arterial y frecuencia cardíaca normales inicialmente, 2) Los signos autonómicos (diaforesis, palidez) indican activación simpática por compromiso hemodinámico, 3) El pre-síncope sugiere hipoperfusión cerebral incipiente, 4) Esta constelación en contexto de dolor torácico sugiere síndrome coronario agudo con compromiso hemodinámico inicial. La evaluación debe incluir: ECG inmediato, monitoreo continuo, preparación para deterioro, y transporte prioritario."
+    },
+    {
+        question: "Durante la evaluación de un paciente con alteración del estado mental, su esposa proporciona información contradictoria sobre la historia: primero dice que 'está normal', luego menciona que 'se golpeó la cabeza ayer' y finalmente admite que 'ha estado bebiendo más últimamente'. ¿Cuál es la estrategia de evaluación más efectiva para obtener información precisa?",
+        options: [
+            { letter: "a", text: "Confiar únicamente en la información inicial para evitar confusión" },
+            { letter: "b", text: "Utilizar técnicas de entrevista empáticas, preguntas abiertas seguidas de específicas, y correlacionar información con hallazgos físicos objetivos" },
+            { letter: "c", text: "Ignorar la información de la esposa por ser contradictoria" },
+            { letter: "d", text: "Confrontar directamente las contradicciones para obtener la verdad" }
+        ],
+        correctAnswer: "b",
+        explanation: "La obtención de historia precisa requiere técnicas comunicativas sofisticadas: 1) Las contradicciones pueden reflejar ansiedad, negación, o protección del paciente, 2) Las preguntas abiertas ('¿Qué pasó?') seguidas de específicas ('¿Cuándo fue el golpe exactamente?') obtienen más información, 3) El abordaje empático y no-confrontativo reduce defensividad, 4) La correlación con hallazgos físicos objetivos (signos de trauma, signos de intoxicación) ayuda a clarificar la historia. En este caso: evaluar signos neurológicos focales, signos de trauma craneal, signos de intoxicación alcohólica, y establecer línea temporal clara de eventos."
+    },
+    {
+        question: "Un paciente inconsciente no responde a estímulos verbales, pero al aplicar presión en el lecho ungueal responde retirando la extremidad y emitiendo gemidos. Su evaluación neurológica muestra pupilas de 3mm bilaterales reactivas. ¿Qué nivel de consciencia describe esto según la Escala de Coma de Glasgow y qué implicaciones tiene?",
+        options: [
+            { letter: "a", text: "GCS 15 - paciente normal que simula inconsciencia" },
+            { letter: "b", text: "GCS aproximadamente 8-9 (M4-5, V2, O1) sugiriendo compromiso neurológico significativo pero con funciones del tronco encefálico preservadas" },
+            { letter: "c", text: "GCS 3 - coma profundo sin respuesta" },
+            { letter: "d", text: "La escala de Glasgow no es aplicable sin respuesta verbal" }
+        ],
+        correctAnswer: "b",
+        explanation: "La evaluación neurológica sistemática es crucial: 1) Respuesta motora: retirada al dolor (M4) o localización del dolor (M5), 2) Respuesta verbal: gemidos (V2), 3) Apertura ocular: solo al dolor (O2) o ninguna mencionada (O1), 4) GCS total ~8-9, indicando compromiso neurológico significativo pero no coma profundo, 5) Pupilas reactivas sugieren función del tronco encefálico preservada. Las implicaciones incluyen: necesidad de protección de vía aérea (GCS<8), evaluación de causas (trauma, tóxicos, metabólicas), monitoreo neurológico frecuente, y consideración de hipertensión intracraneal."
+    },
+    {
+        question: "Durante la evaluación secundaria de un paciente con dolor abdominal, palpa una masa pulsátil en mesogastrio de un hombre de 70 años hipertenso. El dolor es severo, de inicio súbito, e irradia a la espalda. Sus signos vitales muestran taquicardia e hipotensión leve. ¿Cuál es la consideración más crítica en la evaluación y manejo?",
+        options: [
+            { letter: "a", text: "Continuar con palpación profunda para caracterizar mejor la masa" },
+            { letter: "b", text: "Esta presentación sugiere aneurisma aórtico abdominal roto o en ruptura inminente; se debe evitar palpación adicional, establecer acceso IV, y transportar urgentemente" },
+            { letter: "c", text: "Solicitar estudios de imagen antes del transporte" },
+            { letter: "d", text: "Administrar analgésicos potentes para el dolor severo" }
+        ],
+        correctAnswer: "b",
+        explanation: "Esta presentación clásica requiere reconocimiento inmediato y manejo apropiado: 1) La tríada de dolor abdominal/dorsal, masa pulsátil, e hipotensión sugiere aneurisma aórtico abdominal (AAA) roto, 2) La palpación adicional puede precipitar ruptura completa y exanguinación, 3) La mortalidad es >90% sin cirugía urgente, 4) El manejo prehospitalario incluye: acceso IV de gran calibre (evitar sobrecarga de fluidos que puede aumentar presión y favorecer sangrado), monitoreo estricto, transporte inmediato a centro con cirugía vascular, y preparación para deterioro súbito. Los analgésicos potentes pueden enmascarar signos de deterioro."
+    },
+    {
+        question: "Un paciente joven atleta colapsa durante competencia y presenta pulso irregular con episodios de taquicardia seguidos de bradicardia severa. Durante la evaluación, alterna entre estar consciente y confundido. Su ECG muestra ritmo variable. ¿Qué enfoque de evaluación es más apropiado para esta arritmia compleja?",
+        options: [
+            { letter: "a", text: "Enfocarse únicamente en la frecuencia cardíaca promedio" },
+            { letter: "b", text: "Evaluación continua del ritmo con correlación clínica: monitoreo de perfusión cerebral durante episodios, evaluación de signos de compromiso hemodinámico, y preparación para intervenciones según severidad" },
+            { letter: "c", text: "Esperar hasta llegar al hospital para evaluación cardíaca" },
+            { letter: "d", text: "Administrar medicamentos antiarrítmicos inmediatamente" }
+        ],
+        correctAnswer: "b",
+        explanation: "Las arritmias complejas requieren evaluación dinámica: 1) La evaluación debe correlacionar cambios del ritmo con síntomas (confusión durante bradicardia sugiere hipoperfusión cerebral), 2) Los signos de compromiso incluyen: alteración mental, dolor torácico, disnea, hipotensión, 3) En atletas jóvenes considerar: cardiomiopatía hipertrófica, displasia arritmogénica, o síndrome de Brugada, 4) El manejo incluye monitoreo continuo, preparación para marcapaso transcutáneo si bradicardia sintomática, desfibrilación si taquicardia inestable, y transporte a centro cardíaco especializado. La edad y contexto (colapso durante ejercicio) aumentan sospecha de patología cardíaca estructural."
+    },
+    {
+        question: "Durante la evaluación de una mujer de 28 años con disnea severa y ansiedad, identifica taquipnea (32/min), taquicardia (130 lpm), y saturación de oxígeno del 92%. Ella insiste que es 'solo un ataque de pánico' como los anteriores. ¿Cuál es el principio de evaluación diferencial más importante?",
+        options: [
+            { letter: "a", text: "Aceptar el autodiagnóstico del paciente si tiene historia de ataques de pánico" },
+            { letter: "b", text: "Los síntomas orgánicos (hipoxemia, taquipnea severa) requieren descarte de causas físicas graves (embolia pulmonar, neumotórax, crisis asmática) antes de atribuir a ansiedad" },
+            { letter: "c", text: "Administrar ansiolíticos inmediatamente para tratar el pánico" },
+            { letter: "d", text: "La edad joven descarta patología pulmonar grave" }
+        ],
+        correctAnswer: "b",
+        explanation: "La evaluación diferencial en pacientes con síntomas psicosomáticos requiere rigor clínico: 1) Los ataques de pánico raramente causan hipoxemia (SatO2 <95%), 2) La taquipnea severa (>30/min) sugiere compromiso respiratorio real, 3) Las mujeres jóvenes tienen riesgo de embolia pulmonar (anticonceptivos orales, embarazo, viajes largos), 4) El diagnóstico de exclusión requiere descartar causas orgánicas primero. La evaluación incluye: auscultación pulmonar detallada, evaluación de dolor torácico pleurítico, signos de TVP, factores de riesgo de TEP, y considerar otras causas (asma, neumotórax). El tratamiento inicial debe ser médico, no psiquiátrico."
+    },
+    {
+        question: "Un paciente de 55 años con diabetes presenta confusión gradual a lo largo de 2 horas. Su glucemia capilar es 45 mg/dL, pero responde apropiadamente a órdenes simples y puede deglutir. Su esposa menciona que 'tomó su insulina pero no desayunó por una cita médica'. ¿Cuál es la evaluación más completa para determinar el manejo apropiado?",
+        options: [
+            { letter: "a", text: "Administrar glucosa IV inmediatamente sin más evaluación" },
+            { letter: "b", text: "Evaluar nivel de conciencia preciso (GCS), capacidad de deglución segura, tiempo de evolución, tipo de insulina administrada, y función renal para determinar riesgo de hipoglucemia recurrente" },
+            { letter: "c", text: "Solo administrar glucagón por vía intramuscular" },
+            { letter: "d", text: "Esperar hasta que pierda completamente la conciencia para intervenir" }
+        ],
+        correctAnswer: "b",
+        explanation: "La hipoglucemia en diabéticos requiere evaluación integral: 1) El GCS preciso determina si puede recibir glucosa oral (más fisiológica y duradera), 2) La capacidad de deglución segura evita aspiración, 3) El tipo de insulina (rápida vs prolongada) predice duración de hipoglucemia, 4) La función renal afecta eliminación de insulina y riesgo de recurrencia, 5) La evaluación de causas precipitantes (ayuno, ejercicio, error de dosis) informa el manejo. El tratamiento escalonado incluye: glucosa oral si consciente y puede deglutir, dextrosa IV si inconsciente o no puede deglutir, glucagón si no hay acceso IV. El monitoreo post-tratamiento es crucial por riesgo de hipoglucemia recurrente."
+    },
+    {
+        question: "Durante la evaluación de un traumatismo múltiple, aplica la regla de los 9 para calcular extensión de quemaduras en un paciente adulto que presenta quemaduras en cara, cuello, tórax anterior completo, y brazo derecho completo. Simultáneamente, tiene fractura expuesta de tibia con sangrado moderado. ¿Cómo debe integrar la evaluación de quemaduras con otras lesiones para priorización de tratamiento?",
+        options: [
+            { letter: "a", text: "Tratar únicamente las quemaduras por ser más visibles" },
+            { letter: "b", text: "Las quemaduras (aproximadamente 22.5% según regla de 9) combinadas con trauma requieren manejo integrado: vía aérea prioritaria por quemaduras faciales, control de hemorragia de fractura, reanimación con fluidos por quemaduras, y consideración de síndrome compartamental" },
+            { letter: "c", text: "La fractura es la única prioridad por el sangrado" },
+            { letter: "d", text: "Esperar hasta llegar al hospital para calcular extensión de quemaduras" }
+        ],
+        correctAnswer: "b",
+        explanation: "El politraumatismo con quemaduras requiere evaluación y manejo integrado: 1) Cálculo de quemaduras: cara/cuello (4.5%) + tórax anterior (9%) + brazo derecho (9%) = 22.5%, 2) Las prioridades incluyen: vía aérea (quemaduras faciales sugieren inhalación), respiración (compromiso torácico), circulación (pérdida de fluidos por quemaduras + sangrado de fractura), 3) El manejo específico incluye: oxígeno humidificado, control de hemorragia con presión directa/torniquete, reanimación con fluidos (fórmula de Parkland para quemaduras + reemplazo por sangrado), 4) Monitoreo de síndrome compartamental por edema post-quemadura. El transporte debe ser a centro de trauma con unidad de quemados."
+    },
+    {
+        question: "Un paciente de 32 años presenta síncope recurrente con episodios de 'desconexión' de 30 segundos seguidos de confusión prolongada. Los testigos describen movimientos rítmicos de extremidades durante los episodios. Entre episodios está completamente normal. ¿Cuál es la estrategia de evaluación más apropiada para distinguir entre síncope cardiovascular y actividad convulsiva?",
+        options: [
+            { letter: "a", text: "Asumir que es síncope si no hay convulsiones tonicoclónicas generalizadas" },
+            { letter: "b", text: "Evaluación diferencial sistemática: duración del episodio, tipo de movimientos, período post-ictal, desencadenantes, historia cardíaca y neurológica, con enfoque en características que distingan etiología" },
+            { letter: "c", text: "Solo considerar causas cardíacas si hay dolor torácico" },
+            { letter: "d", text: "Administrar anticonvulsivantes profilácticamente" }
+        ],
+        correctAnswer: "b",
+        explanation: "La evaluación diferencial entre síncope y convulsiones requiere análisis detallado: 1) Características de convulsiones: duración >2-3 minutos, movimientos tónicoclónicos, período post-ictal prolongado (confusión, somnolencia), 2) Características de síncope: duración breve (<1 minuto), recuperación rápida, posible mioclonias breves por hipoxia cerebral, 3) La evaluación incluye: factores desencadenantes (ejercicio sugiere cardíaco, privación de sueño sugiere neurológico), historia familiar, medicamentos, 4) El ECG puede revelar arritmias, QT prolongado, o signos de cardiomiopatía. Esta presentación (movimientos rítmicos + confusión prolongada) sugiere más actividad convulsiva, requiriendo evaluación neurológica especializada."
     }
 ];
