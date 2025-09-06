@@ -39,7 +39,7 @@ import {shockChallengeQuestions, shockQuestions} from "../../pages/EMT/Shock/Sho
 import Shock from "../../pages/EMT/Shock/Shock.page.tsx";
 import Resources from "../../pages/Resources/Resources.page.tsx";
 import ReanimateSvb from "../../pages/EMT/ReanimateSvb/ReanimateSvb.page.tsx";
-import { svbQuestions } from "../../pages/EMT/ReanimateSvb/ReanimateSvb.questions.ts";
+import {svbChallengeQuestions, svbQuestions} from "../../pages/EMT/ReanimateSvb/ReanimateSvb.questions.ts";
 import { megaQuestions } from "../../pages/EMT/Mega/Mega.questions.ts";
 import Mega from "../../pages/EMT/Mega/Mega.page.tsx";
 import {AllRoutes} from "./Router.constants.ts";
@@ -173,7 +173,7 @@ export default function Router(){
                 <Route path={AllRoutes.SHOCK} element={<Shock />}/>
                 <Route path={`${AllRoutes.SHOCK}/exam`} element={<Exam returnRoute={AllRoutes.SHOCK} name="shock" questions={shockQuestions} id={14} challengingQuestions={shockChallengeQuestions}  />}/>
                 <Route path={AllRoutes.REANIMATE_SVB} element={<ReanimateSvb />}/>
-                <Route path={`${AllRoutes.REANIMATE_SVB}/exam`} element={<Exam returnRoute={AllRoutes.REANIMATE_SVB} name="Reanimación: Soporte Vital Básico (SVB)" questions={svbQuestions} id={15}  />}/>
+                <Route path={`${AllRoutes.REANIMATE_SVB}/exam`} element={<Exam returnRoute={AllRoutes.REANIMATE_SVB} name="Reanimación: Soporte Vital Básico (SVB)" questions={svbQuestions} id={15} challengingQuestions={svbChallengeQuestions}  />}/>
                 <Route path={AllRoutes.MEGA} element={<Mega />}/>
                 <Route path={`${AllRoutes.MEGA}/exam`} element={<Exam returnRoute={AllRoutes.MEGA} name="Codigo Mega" questions={megaQuestions} id={16}  />}/>
                 <Route path={AllRoutes.MEDIC_VISION} element={<MedicVision />}/>
