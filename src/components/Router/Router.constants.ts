@@ -57,6 +57,7 @@ export enum AllRoutes {
     STUDENT_PROFILE= "/student-profile",
     STUDENT_GRADES= "/student-grades",
     STUDENT_FORUM= "/student-forum",
+    STUDENT_TASKS= "/student/tasks",
     ADMIN_DASHBOARD= "/admin-dashboard",
     DISCLAMER= "/disclaimer",
     PRIVACYANDTERMS = "/privacy-and-terms",

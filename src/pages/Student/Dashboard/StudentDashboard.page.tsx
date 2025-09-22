@@ -10,7 +10,8 @@ import {
   FaComments,
   FaChartLine,
   FaBook,
-  FaBell
+  FaBell,
+  FaTasks
 } from 'react-icons/fa';
 import { ImSpinner2 } from 'react-icons/im';
 import { toast } from 'sonner';
@@ -157,7 +158,7 @@ export default function StudentDashboard() {
         </div>
 
         {/* Navigation Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           <NavLink
             to={AllRoutes.STUDENT_PROFILE}
             className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow group"
@@ -181,6 +182,19 @@ export default function StudentDashboard() {
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Mis Calificaciones</h3>
             <p className="text-gray-600 text-sm">
               Revisa tus resultados de exámenes y progreso de aprendizaje
+            </p>
+          </NavLink>
+
+          <NavLink
+            to={AllRoutes.STUDENT_TASKS}
+            className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow group"
+          >
+            <div className="flex items-center justify-center w-12 h-12 bg-indigo-100 rounded-lg mb-4 group-hover:bg-indigo-200 transition-colors">
+              <FaTasks className="text-indigo-600 text-xl" />
+            </div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">Mis Tareas</h3>
+            <p className="text-gray-600 text-sm">
+              Entrega tus trabajos y revisa las calificaciones recibidas
             </p>
           </NavLink>
 

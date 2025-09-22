@@ -50,6 +50,7 @@ import StudentProfile from "../../pages/Student/Profile/StudentProfile.page.tsx"
 import StudentGrades from "../../pages/Student/Grades/StudentGrades.page.tsx";
 import StudentForum from "../../pages/Student/Forum/StudentForum.page.tsx";
 import AdminDashboard from "../../pages/Admin/Dashboard/AdminDashboard.page.tsx";
+import StudentTasksPage from "../../pages/Student/Tasks/StudentTasks.page.tsx";
 import {
     respiratoryEmergenciesChallengingExam,
     respiratoryEmergenciesExam,
@@ -138,6 +139,7 @@ export default function Router(){
                 <Route path={AllRoutes.STUDENT_PROFILE} element={<StudentProfile/>}/>
                 <Route path={AllRoutes.STUDENT_GRADES} element={<StudentGrades/>}/>
                 <Route path={AllRoutes.STUDENT_FORUM} element={<StudentForum/>}/>
+                <Route path={AllRoutes.STUDENT_TASKS} element={<StudentTasksPage/>}/>
 
                 {/* Admin Dashboard Routes */}
                 <Route path={AllRoutes.ADMIN_DASHBOARD} element={<AdminDashboard/>}/>
