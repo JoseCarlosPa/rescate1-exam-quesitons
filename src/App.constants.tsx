@@ -1,22 +1,27 @@
 import {
     FaAmbulance,
-    FaBaby, FaBacteria, FaBomb,
+    FaBaby,
+    FaBacteria,
+    FaBomb,
     FaBookMedical,
-    FaCarCrash, FaChild, FaFireAlt,
+    FaCarCrash,
+    FaChild,
+    FaFireAlt,
     FaHandHoldingMedical,
     FaHeadSideMask,
     FaNotesMedical,
-    FaQrcode, FaWineBottle
+    FaQrcode,
+    FaWineBottle
 } from "react-icons/fa";
 import {AllRoutes} from "./components/Router/Router.constants.ts";
 import {IoIosBody, IoMdBriefcase} from "react-icons/io";
 import {LuRadioTower} from "react-icons/lu";
 import {GiMedicines, GiMorgueFeet, GiProtectionGlasses, GiStomach, GiTrenchBodyArmor} from "react-icons/gi";
-import { RxLetterSpacing } from "react-icons/rx";
+import {RxLetterSpacing} from "react-icons/rx";
 import {TbBodyScan, TbDisabled, TbMedicalCrossCircle} from "react-icons/tb";
-import { CiMedicalCross } from "react-icons/ci";
+import {CiMedicalCross} from "react-icons/ci";
 import {FaHeartPulse, FaMaskVentilator, FaPersonCane, FaTruckMedical} from "react-icons/fa6";
-import { RiBrain2Fill } from "react-icons/ri";
+import {RiBrain2Fill} from "react-icons/ri";
 import {MdBloodtype, MdFace6, MdOutlineFireTruck} from "react-icons/md";
 import {BsSignStopFill} from "react-icons/bs";
 import {SiSpine} from "react-icons/si";

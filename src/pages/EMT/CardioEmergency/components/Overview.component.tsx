@@ -4,7 +4,7 @@ import {FiActivity, FiAlertTriangle, FiEye, FiHeart, FiUser} from "react-icons/f
 import {BsLightbulb, BsShield} from "react-icons/bs";
 
 export default function Overview() {
-    return(
+    return (
         <div className="space-y-8">
             {/* Importancia crítica */}
             <div className="bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-red-500 p-6 rounded-lg">
@@ -14,7 +14,8 @@ export default function Overview() {
                 </div>
                 <p className="text-gray-800 leading-relaxed text-lg">
                     Las emergencias cardiovasculares son la <strong>principal causa de muerte</strong> a nivel mundial.
-                    El reconocimiento temprano y la intervención rápida pueden ser la diferencia entre la vida y la muerte.
+                    El reconocimiento temprano y la intervención rápida pueden ser la diferencia entre la vida y la
+                    muerte.
                     <span className="text-red-600 font-bold"> Cada minuto cuenta.</span>
                 </p>
                 <div className="mt-4 grid md:grid-cols-3 gap-4">
@@ -123,33 +124,42 @@ export default function Overview() {
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div className="bg-white p-4 rounded-lg border border-orange-200">
                         <h4 className="font-bold text-red-700 mb-2">🟠 Aterosclerosis</h4>
-                        <p className="text-sm text-gray-700 mb-2">Acumulación de placa en arterias coronarias, reduce el flujo sanguíneo.</p>
-                        <p className="text-xs text-orange-600"><strong>Base para:</strong> IAM y otras afecciones coronarias</p>
+                        <p className="text-sm text-gray-700 mb-2">Acumulación de placa en arterias coronarias, reduce el
+                            flujo sanguíneo.</p>
+                        <p className="text-xs text-orange-600"><strong>Base para:</strong> IAM y otras afecciones
+                            coronarias</p>
                     </div>
                     <div className="bg-white p-4 rounded-lg border border-red-200">
                         <h4 className="font-bold text-red-700 mb-2">🟠 Síndrome Coronario Agudo</h4>
-                        <p className="text-sm text-gray-700 mb-2"><strong>Angina:</strong> Dolor por isquemia transitoria, se alivia con reposo.</p>
-                        <p className="text-sm text-gray-700"><strong>IAM:</strong> Oclusión completa, dolor mayro 15 min, no mejora con reposo.</p>
+                        <p className="text-sm text-gray-700 mb-2"><strong>Angina:</strong> Dolor por isquemia
+                            transitoria, se alivia con reposo.</p>
+                        <p className="text-sm text-gray-700"><strong>IAM:</strong> Oclusión completa, dolor mayro 15
+                            min, no mejora con reposo.</p>
                     </div>
                     <div className="bg-white p-4 rounded-lg border border-gray-200">
                         <h4 className="font-bold text-gray-700 mb-2">🟠 Shock Cardiogénico</h4>
                         <p className="text-sm text-gray-700 mb-2">↓ Capacidad de bombeo → hipoperfusión sistémica.</p>
-                        <p className="text-xs text-gray-600"><strong>Signos:</strong> Hipotensión, piel fría/húmeda, pulso débil</p>
+                        <p className="text-xs text-gray-600"><strong>Signos:</strong> Hipotensión, piel fría/húmeda,
+                            pulso débil</p>
                     </div>
                     <div className="bg-white p-4 rounded-lg border border-blue-200">
                         <h4 className="font-bold text-blue-700 mb-2">🟠 Insuficiencia Cardíaca</h4>
-                        <p className="text-sm text-gray-700 mb-2"><strong>Falla izquierda:</strong> Edema pulmonar, disnea, esputo rosado.</p>
-                        <p className="text-sm text-gray-700"><strong>Falla derecha:</strong> Edema periférico, distensión yugular.</p>
+                        <p className="text-sm text-gray-700 mb-2"><strong>Falla izquierda:</strong> Edema pulmonar,
+                            disnea, esputo rosado.</p>
+                        <p className="text-sm text-gray-700"><strong>Falla derecha:</strong> Edema periférico,
+                            distensión yugular.</p>
                     </div>
                     <div className="bg-white p-4 rounded-lg border border-red-300">
                         <h4 className="font-bold text-red-800 mb-2">🟠 Emergencias Hipertensivas</h4>
                         <p className="text-sm text-gray-700 mb-2">PA sistólica mayor a 180 mmHg con daño a órganos.</p>
-                        <p className="text-xs text-red-600"><strong>Síntomas:</strong> Cefalea intensa, visión borrosa, náuseas</p>
+                        <p className="text-xs text-red-600"><strong>Síntomas:</strong> Cefalea intensa, visión borrosa,
+                            náuseas</p>
                     </div>
                     <div className="bg-white p-4 rounded-lg border border-gray-300">
                         <h4 className="font-bold text-gray-800 mb-2">⚡ Paro Cardíaco</h4>
                         <p className="text-sm text-gray-700 mb-2">FV u otras arritmias letales. RCP inmediata + DEA.</p>
-                        <p className="text-xs text-gray-600"><strong>Protocolo:</strong> 5 ciclos (2 min) entre análisis</p>
+                        <p className="text-xs text-gray-600"><strong>Protocolo:</strong> 5 ciclos (2 min) entre análisis
+                        </p>
                     </div>
                 </div>
             </div>
@@ -183,7 +193,8 @@ export default function Overview() {
                     </div>
                 </div>
                 <div className="mt-4 p-3 bg-blue-100 rounded">
-                    <p className="text-sm text-blue-800"><strong>🔺 Tríada de Beck (Taponamiento):</strong> Distensión yugular + tonos apagados + presión de pulso ↓. Requiere intervención quirúrgica urgente.</p>
+                    <p className="text-sm text-blue-800"><strong>🔺 Tríada de Beck (Taponamiento):</strong> Distensión
+                        yugular + tonos apagados + presión de pulso ↓. Requiere intervención quirúrgica urgente.</p>
                 </div>
             </div>
 
@@ -228,7 +239,8 @@ export default function Overview() {
             <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
                 <div className="flex items-center mb-4">
                     <FiAlertTriangle className="w-6 h-6 text-yellow-600 mr-2"/>
-                    <h3 className="text-xl font-bold text-yellow-800">Signos de Emergencia Cardiovascular - Actúa INMEDIATAMENTE</h3>
+                    <h3 className="text-xl font-bold text-yellow-800">Signos de Emergencia Cardiovascular - Actúa
+                        INMEDIATAMENTE</h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
                     <div>

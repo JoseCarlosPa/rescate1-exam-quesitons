@@ -1,2 +1,2 @@
-export { default as ForumSection } from './ForumSection.component';
+export {default as ForumSection} from './ForumSection.component';
 

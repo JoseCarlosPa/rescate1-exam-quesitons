@@ -1,16 +1,14 @@
 import {useEffect, useState} from "react";
 import {caseStudies, CaseStudy} from "./StudyCase.constants.ts";
 import {AllRoutes} from "../Router/Router.constants.ts";
-import {IoReturnDownBack} from "react-icons/io5";
+import {IoClose, IoReturnDownBack} from "react-icons/io5";
 import {NavLink} from "react-router";
 import {jsPDF} from "jspdf";
 import logo from '../../assets/logo.png';
-import {FaFilePdf} from "react-icons/fa";
+import {FaFilePdf, FaSearch} from "react-icons/fa";
 import {IoMdRefresh} from "react-icons/io";
-import {FaSearch} from "react-icons/fa";
-import {IoClose} from "react-icons/io5";
 
-export default function StudyCase(){
+export default function StudyCase() {
     const [currentCase, setCurrentCase] = useState<CaseStudy | null>(null);
     const [logoBase64, setLogoBase64] = useState<string | null>(null);
     const [activeTab, setActiveTab] = useState<'descripcion' | 'preguntas' | 'manejo' | 'referencias'>('descripcion');
@@ -61,7 +59,7 @@ export default function StudyCase(){
         // Encabezado
         doc.setFontSize(18);
         doc.setFont("helvetica", "bold");
-        doc.text("Reporte de Caso Clínico", 105, yPosition + 10, { align: "center" });
+        doc.text("Reporte de Caso Clínico", 105, yPosition + 10, {align: "center"});
         yPosition += 20;
 
         doc.setFontSize(16);
@@ -146,7 +144,7 @@ export default function StudyCase(){
 
         // Pie de página
         doc.setFontSize(10);
-        doc.text("Generado automáticamente para Alumnos R1", 105, 290, { align: "center" });
+        doc.text("Generado automáticamente para Alumnos R1", 105, 290, {align: "center"});
 
         doc.save(`${currentCase.title}.pdf`);
     };
@@ -170,7 +168,7 @@ export default function StudyCase(){
                 <NavLink
                     to={AllRoutes.EMT}
                     className="flex gap-2 bg-white shadow-md rounded-lg p-2 hover:bg-orange-100 transition duration-300 ease-in-out">
-                    <IoReturnDownBack className="w-5 h-5 my-auto text-blue-700" />
+                    <IoReturnDownBack className="w-5 h-5 my-auto text-blue-700"/>
                     <p className="text-blue-700 font-medium">Regresar</p>
                 </NavLink>
 
@@ -179,21 +177,21 @@ export default function StudyCase(){
                         onClick={() => setShowCaseSelector(true)}
                         className="flex md:flex-row flex-col cursor-pointer items-center gap-2 text-sm bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition shadow-md"
                     >
-                        <FaSearch className="w-4 h-4" />
+                        <FaSearch className="w-4 h-4"/>
                         <span>Buscar casos</span>
                     </button>
                     <button
                         onClick={loadRandomCase}
                         className="flex md:flex-row flex-col cursor-pointer items-center gap-2 text-sm bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition shadow-md"
                     >
-                        <IoMdRefresh className="w-5 h-5" />
+                        <IoMdRefresh className="w-5 h-5"/>
                         <span>Nuevo caso</span>
                     </button>
                     <button
                         onClick={downloadPDF}
                         className="flex md:flex-row flex-col cursor-pointer items-center gap-2 text-sm bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition shadow-md"
                     >
-                        <FaFilePdf className="w-5 h-5" />
+                        <FaFilePdf className="w-5 h-5"/>
                         <span>Descargar PDF</span>
                     </button>
                 </div>
@@ -212,7 +210,7 @@ export default function StudyCase(){
                                 }}
                                 className="text-gray-500 hover:text-gray-700"
                             >
-                                <IoClose className="w-6 h-6" />
+                                <IoClose className="w-6 h-6"/>
                             </button>
                         </div>
 
@@ -225,7 +223,7 @@ export default function StudyCase(){
                                     onChange={(e) => setSearchTerm(e.target.value)}
                                     className="w-full p-3 pl-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                                 />
-                                <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                                <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"/>
                             </div>
 
                             <div className="overflow-y-auto max-h-[60vh]">
@@ -247,12 +245,14 @@ export default function StudyCase(){
                                                 </p>
                                                 <div className="flex flex-wrap gap-2 mt-2">
                                                     {caseStudy.findings.slice(0, 2).map((finding, idx) => (
-                                                        <span key={idx} className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">
+                                                        <span key={idx}
+                                                              className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">
                                                             {finding.split(' ').slice(0, 3).join(' ')}...
                                                         </span>
                                                     ))}
                                                     {caseStudy.findings.length > 2 && (
-                                                        <span className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">
+                                                        <span
+                                                            className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">
                                                             +{caseStudy.findings.length - 2} más
                                                         </span>
                                                     )}
@@ -386,7 +386,8 @@ export default function StudyCase(){
 
                     {!currentCase.correctManage && !currentCase.explanation && (
                         <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                            <p className="text-gray-500 italic">No hay información de manejo disponible para este caso.</p>
+                            <p className="text-gray-500 italic">No hay información de manejo disponible para este
+                                caso.</p>
                         </div>
                     )}
                 </div>

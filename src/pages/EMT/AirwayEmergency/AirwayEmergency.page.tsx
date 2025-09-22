@@ -14,7 +14,7 @@ import Overview from "./components/Overview.component.tsx";
 import Anatomy from "./components/Anatomy.component.tsx";
 import Treatment from "./components/Treatment.component.tsx";
 import Practice from "./components/Practice.component.tsx";
-import { ForumSection } from "../../../components/ForumSection";
+import {ForumSection} from "../../../components/ForumSection";
 
 export default function AirwayEmergency() {
     const [activeTab, setActiveTab] = useState<'overview' | 'anatomy' | 'treatment' | 'practice'>('overview');

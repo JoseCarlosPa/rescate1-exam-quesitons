@@ -1,7 +1,7 @@
-import { FaHandPointRight } from "react-icons/fa";
-import { BsLightbulb, BsDiagram3 } from "react-icons/bs";
-import { GiStomach, GiKidneys, GiLiver } from "react-icons/gi";
-import { RiHeartPulseLine } from "react-icons/ri";
+import {FaHandPointRight} from "react-icons/fa";
+import {BsDiagram3, BsLightbulb} from "react-icons/bs";
+import {GiKidneys, GiLiver, GiStomach} from "react-icons/gi";
+import {RiHeartPulseLine} from "react-icons/ri";
 
 export default function Anatomy() {
     return (
@@ -13,20 +13,21 @@ export default function Anatomy() {
                 </div>
                 <p className="text-gray-800 leading-relaxed text-lg">
                     Conocer la anatomía es fundamental para localizar el origen del dolor y anticipar complicaciones.
-                    Los sistemas gastrointestinal, urinario y reproductor comparten espacios anatómicos y pueden presentar dolor referido.
+                    Los sistemas gastrointestinal, urinario y reproductor comparten espacios anatómicos y pueden
+                    presentar dolor referido.
                 </p>
             </div>
 
             {/* Sistema Gastrointestinal */}
             <div>
                 <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
-                    <GiStomach className="w-6 h-6 mr-2 text-orange-500" />
+                    <GiStomach className="w-6 h-6 mr-2 text-orange-500"/>
                     Sistema Gastrointestinal
                 </h2>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div className="bg-orange-50 border border-orange-200 p-4 rounded-lg">
                         <div className="flex items-center mb-3">
-                            <GiStomach className="w-6 h-6 text-orange-600 mr-2" />
+                            <GiStomach className="w-6 h-6 text-orange-600 mr-2"/>
                             <h3 className="font-bold text-orange-700">Tracto Digestivo Superior</h3>
                         </div>
                         <ul className="text-sm text-gray-700 space-y-1">
@@ -51,7 +52,7 @@ export default function Anatomy() {
 
                     <div className="bg-green-50 border border-green-200 p-4 rounded-lg">
                         <div className="flex items-center mb-3">
-                            <GiLiver className="w-6 h-6 text-green-600 mr-2" />
+                            <GiLiver className="w-6 h-6 text-green-600 mr-2"/>
                             <h3 className="font-bold text-green-700">Órganos Accesorios</h3>
                         </div>
                         <ul className="text-sm text-gray-700 space-y-1">
@@ -66,7 +67,7 @@ export default function Anatomy() {
             {/* Sistema Urinario */}
             <div>
                 <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
-                    <GiKidneys className="w-6 h-6 mr-2 text-blue-500" />
+                    <GiKidneys className="w-6 h-6 mr-2 text-blue-500"/>
                     Sistema Urinario
                 </h2>
                 <div className="grid md:grid-cols-2 gap-6">
@@ -75,11 +76,13 @@ export default function Anatomy() {
                         <div className="space-y-3">
                             <div>
                                 <h4 className="font-semibold text-blue-600">Riñones</h4>
-                                <p className="text-sm text-gray-700">Filtración de sangre, producción de orina, regulación de electrolitos</p>
+                                <p className="text-sm text-gray-700">Filtración de sangre, producción de orina,
+                                    regulación de electrolitos</p>
                             </div>
                             <div>
                                 <h4 className="font-semibold text-blue-600">Uréteres</h4>
-                                <p className="text-sm text-gray-700">Conductos que transportan orina de riñones a vejiga</p>
+                                <p className="text-sm text-gray-700">Conductos que transportan orina de riñones a
+                                    vejiga</p>
                             </div>
                             <div>
                                 <h4 className="font-semibold text-blue-600">Vejiga</h4>
@@ -107,12 +110,13 @@ export default function Anatomy() {
             {/* Sistema Reproductor */}
             <div>
                 <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
-                    <RiHeartPulseLine className="w-6 h-6 mr-2 text-purple-500" />
+                    <RiHeartPulseLine className="w-6 h-6 mr-2 text-purple-500"/>
                     Sistema Reproductor - Emergencias Uroginecológicas
                 </h2>
                 <div className="bg-purple-50 border border-purple-200 p-4 rounded-lg">
                     <p className="text-gray-800 mb-4">
-                        El sistema reproductor puede presentar emergencias que se manifiestan como dolor abdominal o pélvico,
+                        El sistema reproductor puede presentar emergencias que se manifiestan como dolor abdominal o
+                        pélvico,
                         especialmente en mujeres en edad reproductiva.
                     </p>
                     <div className="grid md:grid-cols-2 gap-4">
@@ -141,7 +145,7 @@ export default function Anatomy() {
             {/* Cuadrantes abdominales */}
             <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
                 <div className="flex items-center mb-4">
-                    <BsDiagram3 className="w-6 h-6 text-gray-600 mr-2" />
+                    <BsDiagram3 className="w-6 h-6 text-gray-600 mr-2"/>
                     <h3 className="text-xl font-bold text-gray-700">Cuadrantes Abdominales y Órganos</h3>
                 </div>
                 <div className="grid grid-cols-2 gap-4 max-w-2xl mx-auto">
@@ -273,7 +277,7 @@ export default function Anatomy() {
             {/* Dolor referido */}
             <div className="bg-red-50 border border-red-200 rounded-lg p-6">
                 <div className="flex items-center mb-4">
-                    <FaHandPointRight className="w-6 h-6 text-red-500 mr-2" />
+                    <FaHandPointRight className="w-6 h-6 text-red-500 mr-2"/>
                     <h3 className="text-xl font-bold text-red-700">Patrones de Dolor Referido</h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
@@ -302,7 +306,7 @@ export default function Anatomy() {
             {/* Puntos clave para PAP */}
             <div className="bg-gradient-to-r from-orange-50 to-yellow-50 border-l-4 border-orange-500 p-6 rounded-lg">
                 <div className="flex items-center mb-4">
-                    <BsLightbulb className="w-8 h-8 text-orange-500 mr-3" />
+                    <BsLightbulb className="w-8 h-8 text-orange-500 mr-3"/>
                     <h2 className="text-2xl font-bold text-orange-700">Puntos Clave para el PAP</h2>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">

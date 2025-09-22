@@ -1,12 +1,11 @@
+import * as React from "react";
 import {useEffect, useState} from "react";
 import {ImSpinner2} from "react-icons/im";
 import {FcGoogle} from "react-icons/fc";
 import logo from "../../../assets/logo.png";
 import {toast} from "sonner";
-import * as React from "react";
-import {NavLink} from "react-router";
+import {NavLink, useNavigate} from "react-router";
 import {AllRoutes} from "../../../components/Router/Router.constants.ts";
-import {useNavigate} from "react-router";
 import {IoIosReturnLeft} from "react-icons/io";
 import {useAuth} from "../../../Providers/AuthProvider";
 
@@ -15,7 +14,7 @@ export default function Login() {
     const [password, setPassword] = useState<string>("");
     const [authing, setAuthing] = useState<boolean>(false);
     const navigate = useNavigate();
-    const { login, loginWithGoogle, isAuthenticated } = useAuth();
+    const {login, loginWithGoogle, isAuthenticated} = useAuth();
 
     useEffect(() => {
         if (isAuthenticated) {
@@ -112,7 +111,8 @@ export default function Login() {
 
                                 <div className="text-center">
                                     <span className="text-gray-600">¿No tienes cuenta? </span>
-                                    <NavLink to={AllRoutes.REGISTER} className="text-orange-500 hover:text-orange-600 font-medium">
+                                    <NavLink to={AllRoutes.REGISTER}
+                                             className="text-orange-500 hover:text-orange-600 font-medium">
                                         Regístrate
                                     </NavLink>
                                 </div>

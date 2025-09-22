@@ -10,7 +10,7 @@ import {BsBookHalf} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
 import {useState} from "react";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
-import { ForumSection } from "../../../components/ForumSection";
+import {ForumSection} from "../../../components/ForumSection";
 import Overview from "./components/Overview.component.tsx";
 import Scene from "./components/Scene.component.tsx";
 import Primary from "./components/Primary.component.tsx";
@@ -144,12 +144,12 @@ export default function Evaluation() {
 
                         {/* Contenido principal basado en pestañas */}
                         <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-sm p-6 mb-8">
-                            {activeTab === 'overview' && (<Overview />)}
-                            {activeTab === 'scene' && (<Scene />)}
-                            {activeTab === 'primary' && (<Primary />)}
-                            {activeTab === 'secondary' && (<Secondary />)}
-                            {activeTab === 'tools' && (<Tools />)}
-                            {activeTab === 'practice' && (<Practice />)}
+                            {activeTab === 'overview' && (<Overview/>)}
+                            {activeTab === 'scene' && (<Scene/>)}
+                            {activeTab === 'primary' && (<Primary/>)}
+                            {activeTab === 'secondary' && (<Secondary/>)}
+                            {activeTab === 'tools' && (<Tools/>)}
+                            {activeTab === 'practice' && (<Practice/>)}
                         </div>
 
                         {/* FAQ Section */}
@@ -179,8 +179,8 @@ export default function Evaluation() {
                             </div>
                         </section>
                         {/* Foro de Discusión */}
-                        <ForumSection 
-                            pagina="evaluation" 
+                        <ForumSection
+                            pagina="evaluation"
                             titulo="Foro de Discusión - Evaluation"
                         />
                         {/* Referencias y Recursos */}

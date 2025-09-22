@@ -5,15 +5,15 @@ import {faqData} from "./Pharmacology.questions.ts";
 import {GiMedicines} from "react-icons/gi";
 import {AllRoutes} from "../../../components/Router/Router.constants.ts";
 import {IoReturnDownBack} from "react-icons/io5";
-import {FaPills, FaExclamationTriangle, FaShieldAlt, FaCheckCircle} from "react-icons/fa";
+import {FaCheckCircle, FaExclamationTriangle, FaPills, FaShieldAlt} from "react-icons/fa";
 import {useState} from "react";
-import {MdQuiz, MdWarning, MdTimer} from "react-icons/md";
+import {MdQuiz, MdTimer, MdWarning} from "react-icons/md";
 import {PiChalkboardTeacher} from "react-icons/pi";
-import {BsBookHalf, BsLightbulb, BsCalculator} from "react-icons/bs";
-import {FiUser, FiClock, FiTrendingUp, FiAlertTriangle} from "react-icons/fi";
+import {BsBookHalf, BsCalculator, BsLightbulb} from "react-icons/bs";
+import {FiAlertTriangle, FiClock, FiTrendingUp, FiUser} from "react-icons/fi";
 import {TbMedicineSyrup, TbPill, TbReportMedical} from "react-icons/tb";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
-import { ForumSection } from "../../../components/ForumSection";
+import {ForumSection} from "../../../components/ForumSection";
 
 export default function Pharmacology() {
     const [activeTab, setActiveTab] = useState<'overview' | 'rights' | 'drugs' | 'tables'>('overview');
@@ -1444,13 +1444,13 @@ export default function Pharmacology() {
                                     </Disclosure>
                                 ))}
                             </div>
-                        {/* Foro de Discusión */}
-                        <ForumSection 
-                            pagina="pharmacology" 
-                            titulo="Foro de Discusión - Pharmacology"
-                        />
+                            {/* Foro de Discusión */}
+                            <ForumSection
+                                pagina="pharmacology"
+                                titulo="Foro de Discusión - Pharmacology"
+                            />
 
-                        
+
                         </section>
                     </div>
                 </div>

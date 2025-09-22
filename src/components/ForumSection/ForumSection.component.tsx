@@ -1,13 +1,13 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useForum} from '../../hooks/useForum.hook';
 import {useAuth} from '../../Providers/AuthProvider';
 import {ForumFormData} from '../../types/forum.types';
 import {
-    ChatBubbleLeftRightIcon,
-    PaperAirplaneIcon,
     ChatBubbleLeftEllipsisIcon,
+    ChatBubbleLeftRightIcon,
     ChevronDownIcon,
-    ChevronRightIcon
+    ChevronRightIcon,
+    PaperAirplaneIcon
 } from '@heroicons/react/24/outline';
 import {toast} from 'sonner';
 
@@ -93,12 +93,12 @@ export default function ForumSection({pagina, titulo = "Foro de Discusión"}: Fo
         const success = await enviarThread(formData);
 
         if (success) {
-            if(isAuthenticated){
+            if (isAuthenticated) {
                 setFormData(prev => ({
                     ...prev,
                     contenido: ''
                 }));
-            }else{
+            } else {
                 setFormData({nombre: '', correo: '', contenido: ''});
             }
             toast.success('Pregunta publicada correctamente');
@@ -118,12 +118,12 @@ export default function ForumSection({pagina, titulo = "Foro de Discusión"}: Fo
         const success = await enviarRespuesta(replyFormData, threadId);
 
         if (success) {
-            if(isAuthenticated){
+            if (isAuthenticated) {
                 setFormData(prev => ({
                     ...prev,
                     contenido: ''
                 }));
-            }else{
+            } else {
                 setFormData({nombre: '', correo: '', contenido: ''});
             }
             setReplyingTo(null);
@@ -360,26 +360,26 @@ export default function ForumSection({pagina, titulo = "Foro de Discusión"}: Fo
                                                 {!isAuthenticated &&
 
                                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                                    <input
-                                                        type="text"
-                                                        name="nombre"
-                                                        value={replyFormData.nombre}
-                                                        onChange={handleReplyInputChange}
-                                                        className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-sm"
-                                                        placeholder="Tu nombre"
-                                                        required
-                                                    />
+                                                        <input
+                                                            type="text"
+                                                            name="nombre"
+                                                            value={replyFormData.nombre}
+                                                            onChange={handleReplyInputChange}
+                                                            className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-sm"
+                                                            placeholder="Tu nombre"
+                                                            required
+                                                        />
 
-                                                    <input
-                                                        type="email"
-                                                        name="correo"
-                                                        value={replyFormData.correo}
-                                                        onChange={handleReplyInputChange}
-                                                        className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-sm"
-                                                        placeholder="tu@correo.com"
-                                                        required
-                                                    />
-                                                </div>
+                                                        <input
+                                                            type="email"
+                                                            name="correo"
+                                                            value={replyFormData.correo}
+                                                            onChange={handleReplyInputChange}
+                                                            className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-sm"
+                                                            placeholder="tu@correo.com"
+                                                            required
+                                                        />
+                                                    </div>
                                                 }
                                                 <textarea
                                                     name="contenido"

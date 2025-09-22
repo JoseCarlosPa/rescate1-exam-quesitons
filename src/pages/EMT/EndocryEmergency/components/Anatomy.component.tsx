@@ -3,8 +3,8 @@ import {FaBrain} from "react-icons/fa";
 import {BsDropletHalf} from "react-icons/bs";
 import {FiUser} from "react-icons/fi";
 
-export default function Anatomy(){
-    return(<div className="space-y-8">
+export default function Anatomy() {
+    return (<div className="space-y-8">
         {/* Sistema endocrino interactivo */}
         <div>
             <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">

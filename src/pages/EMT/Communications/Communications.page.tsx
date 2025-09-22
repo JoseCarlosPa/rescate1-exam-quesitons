@@ -10,7 +10,7 @@ import {MdQuiz,} from "react-icons/md";
 import {BsBookHalf, BsChatDots} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
-import { ForumSection } from "../../../components/ForumSection";
+import {ForumSection} from "../../../components/ForumSection";
 import Overview from "./components/Overview.components.tsx";
 import Radio from "./components/Radio.component.tsx";
 import Documentation from "./components/Documentation.component.tsx";
@@ -140,10 +140,10 @@ export default function Communications() {
 
                         {/* Contenido principal basado en pestañas */}
                         <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-sm p-6 mb-8">
-                            {activeTab === 'overview' && (<Overview />)}
-                            {activeTab === 'radio' && (<Radio />)}
-                            {activeTab === 'doc' && (<Documentation />)}
-                            {activeTab === 'practice' && (<Practice />)}
+                            {activeTab === 'overview' && (<Overview/>)}
+                            {activeTab === 'radio' && (<Radio/>)}
+                            {activeTab === 'doc' && (<Documentation/>)}
+                            {activeTab === 'practice' && (<Practice/>)}
                         </div>
 
                         {/* FAQ Section */}
@@ -173,8 +173,8 @@ export default function Communications() {
                             </div>
                         </section>
                         {/* Foro de Discusión */}
-                        <ForumSection 
-                            pagina="communications" 
+                        <ForumSection
+                            pagina="communications"
                             titulo="Foro de Discusión - Communications"
                         />
                         {/* Referencias y Recursos */}

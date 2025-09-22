@@ -8,10 +8,10 @@ import {IoReturnDownBack} from "react-icons/io5";
 import {MdQuiz} from "react-icons/md";
 import {PiChalkboardTeacher} from "react-icons/pi";
 import {BsBookHalf} from "react-icons/bs";
-import {FaUserMd, FaClipboardCheck, FaBrain} from "react-icons/fa";
+import {FaBrain, FaClipboardCheck, FaUserMd} from "react-icons/fa";
 import {useState} from "react";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
-import { ForumSection } from "../../../components/ForumSection";
+import {ForumSection} from "../../../components/ForumSection";
 
 export default function Mnemotecnias() {
     const [activeTab, setActiveTab] = useState<'overview' | 'main' | 'examples' | 'clinical'>('overview');
@@ -716,12 +716,11 @@ export default function Mnemotecnias() {
                             </div>
                         </section>
                         {/* Foro de Discusión */}
-                        <ForumSection 
-                            pagina="nnemotecnias" 
+                        <ForumSection
+                            pagina="nnemotecnias"
                             titulo="Foro de Discusión - Nnemotecnias"
                         />
 
-                        
 
                         {/* Referencias y Recursos */}
                         <section className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-sm">

@@ -1,12 +1,11 @@
+import * as React from "react";
 import {useState} from "react";
 import {ImSpinner2} from "react-icons/im";
 import {FcGoogle} from "react-icons/fc";
 import logo from "../../../assets/logo.png";
 import {toast} from "sonner";
-import * as React from "react";
-import {NavLink} from "react-router";
+import {NavLink, useNavigate} from "react-router";
 import {AllRoutes} from "../../../components/Router/Router.constants.ts";
-import {useNavigate} from "react-router";
 import {IoIosReturnLeft} from "react-icons/io";
 import {useAuth} from "../../../Providers/AuthProvider";
 
@@ -17,7 +16,7 @@ export default function Register() {
     const [fullName, setFullName] = useState<string>("");
     const [authing, setAuthing] = useState<boolean>(false);
     const navigate = useNavigate();
-    const { register, loginWithGoogle, isAuthenticated } = useAuth();
+    const {register, loginWithGoogle, isAuthenticated} = useAuth();
 
     // Redirigir si ya está autenticado
     React.useEffect(() => {
@@ -70,7 +69,8 @@ export default function Register() {
     return (
         <div className="bg-gray-100 rounded-lg">
             <div className="">
-                <div className="flex justify-center w-full h-full min-h-screen xl:gap-14 lg:justify-normal md:gap-5 draggable">
+                <div
+                    className="flex justify-center w-full h-full min-h-screen xl:gap-14 lg:justify-normal md:gap-5 draggable">
                     <NavLink to="/">
                         <IoIosReturnLeft className="h-32 w-32 p-8 absolute cursor-pointer"/>
                     </NavLink>
@@ -151,12 +151,14 @@ export default function Register() {
                                     type="submit"
                                     disabled={authing}
                                     className="w-full text-center flex justify-center cursor-pointer px-6 py-5 mb-5 text-sm font-bold leading-none text-white transition duration-300 md:w-96 rounded-2xl hover:bg-orange-400 focus:ring-4 focus:ring-purple-blue-100 bg-orange-500 disabled:opacity-50">
-                                    {authing ? <ImSpinner2 className="animate-spin w-6 h-6 text-white"/> : 'Crear cuenta'}
+                                    {authing ?
+                                        <ImSpinner2 className="animate-spin w-6 h-6 text-white"/> : 'Crear cuenta'}
                                 </button>
 
                                 <div className="text-center">
                                     <span className="text-gray-600">¿Ya tienes cuenta? </span>
-                                    <NavLink to={AllRoutes.LOGIN} className="text-orange-500 hover:text-orange-600 font-medium">
+                                    <NavLink to={AllRoutes.LOGIN}
+                                             className="text-orange-500 hover:text-orange-600 font-medium">
                                         Inicia sesión
                                     </NavLink>
                                 </div>

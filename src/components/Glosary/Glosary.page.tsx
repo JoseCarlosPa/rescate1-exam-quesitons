@@ -1,9 +1,9 @@
 import {useMemo, useState} from "react";
-import {terminosData, CLAVES} from "./Glosary.constants.ts";
+import {CLAVES, terminosData} from "./Glosary.constants.ts";
 import {AllRoutes} from "../Router/Router.constants.ts";
 import {IoReturnDownBack} from "react-icons/io5";
 import {NavLink} from "react-router";
-import {CLAVES_EXERCISES_IMPROVED, ClaveExercise} from "./Glosary.exercises.improved";
+import {ClaveExercise, CLAVES_EXERCISES_IMPROVED} from "./Glosary.exercises.improved";
 
 
 const typeOrder = {
@@ -30,8 +30,8 @@ export default function Glosary() {
     const [searchTerm, setSearchTerm] = useState('');
     const [filterType, setFilterType] = useState('todos');
     const [showClavesSection, setShowClavesSection] = useState(false);
-    const [exerciseAnswers, setExerciseAnswers] = useState<{[key:number]: string | string[]}>({});
-    const [exerciseFeedback, setExerciseFeedback] = useState<{[key:number]: string}>({});
+    const [exerciseAnswers, setExerciseAnswers] = useState<{ [key: number]: string | string[] }>({});
+    const [exerciseFeedback, setExerciseFeedback] = useState<{ [key: number]: string }>({});
 
     const filteredTerminos = useMemo(() => {
         const result = sortedData.filter(item => {
@@ -137,7 +137,7 @@ export default function Glosary() {
             {/* Claves Section - Moved to top and improved */}
             {showClavesSection && (
                 <div className="mb-8">
-                    <ClavesSection />
+                    <ClavesSection/>
                 </div>
             )}
 
@@ -146,8 +146,8 @@ export default function Glosary() {
                 <div className="bg-white rounded-lg p-1 shadow-md">
                     <button
                         className={`px-4 py-2 rounded-md transition-colors duration-200 ${
-                            !showClavesSection 
-                                ? 'bg-blue-600 text-white shadow-sm' 
+                            !showClavesSection
+                                ? 'bg-blue-600 text-white shadow-sm'
                                 : 'text-blue-600 hover:bg-blue-50'
                         }`}
                         onClick={() => setShowClavesSection(false)}
@@ -156,8 +156,8 @@ export default function Glosary() {
                     </button>
                     <button
                         className={`px-4 py-2 rounded-md transition-colors duration-200 ${
-                            showClavesSection 
-                                ? 'bg-blue-600 text-white shadow-sm' 
+                            showClavesSection
+                                ? 'bg-blue-600 text-white shadow-sm'
                                 : 'text-blue-600 hover:bg-blue-50'
                         }`}
                         onClick={() => setShowClavesSection(true)}
@@ -212,7 +212,8 @@ export default function Glosary() {
                                     </div>
 
                                     <p className="text-gray-700 mb-2 text-base md:text-lg whitespace-pre-line">
-                                        <strong className="font-medium text-gray-900">Definición:</strong> {item.definicion}
+                                        <strong
+                                            className="font-medium text-gray-900">Definición:</strong> {item.definicion}
                                     </p>
                                     {item.ejemplo && (
                                         <p className="text-gray-600 italic text-sm md:text-base whitespace-pre-line">
@@ -232,67 +233,70 @@ export default function Glosary() {
 
                     {/* Nota al final - only show in glosary mode */}
                     <p className="mt-10 text-center text-sm text-gray-500">
-                        Nota: Este glosario es una guía general y no sustituye la formación profesional. Siempre consulta a un experto o profesional de la salud para obtener información precisa y actualizada.
+                        Nota: Este glosario es una guía general y no sustituye la formación profesional. Siempre
+                        consulta a un experto o profesional de la salud para obtener información precisa y actualizada.
                     </p>
 
                     {/* Ejercicios extra de práctica - only show in glosary mode */}
                     <div className="bg-orange-50 rounded p-4 border border-orange-200 mt-6">
                         <h3 className="font-semibold text-orange-700 mb-2">Ejercicios de Práctica</h3>
-                        {['open','test','fill','simulacion'].map(tipo => (
+                        {['open', 'test', 'fill', 'simulacion'].map(tipo => (
                             <div key={tipo} className="mb-4">
                                 <h4 className="text-orange-600 font-bold mb-2 text-sm uppercase">{tipo === 'open' ? 'Respuesta Abierta' : tipo === 'test' ? 'Opción Múltiple' : tipo === 'fill' ? 'Completa el reporte' : 'Simulación de reporte'}</h4>
                                 <ul className="list-decimal ml-6 text-gray-800 space-y-2">
-                                {CLAVES_EXERCISES_IMPROVED.filter(e => e.tipo === tipo).map((exercise, idx) => (
-                                    <li key={exercise.pregunta} className="mb-2">
-                                        <strong>{exercise.pregunta}</strong>
-                                        <div className="mt-1">
-                                            {tipo === 'test' && exercise.opciones ? (
-                                                <select
-                                                    className="border rounded px-2 py-1 text-sm"
-                                                    value={exerciseAnswers[idx] || ''}
-                                                    onChange={e => handleAnswerChange(idx, e.target.value)}
-                                                >
-                                                    <option value="">Selecciona una clave</option>
-                                                    {exercise.opciones.map(op => (
-                                                        <option key={op} value={op}>{op}</option>
-                                                    ))}
-                                                </select>
-                                            ) : tipo === 'fill' && Array.isArray(exercise.respuesta) ? (
-                                                <div className="flex gap-2">
-                                                    {exercise.respuesta.map((_, i) => (
-                                                        <input
-                                                            key={i}
-                                                            type="text"
-                                                            className="border rounded px-2 py-1 text-sm w-20"
-                                                            value={Array.isArray(exerciseAnswers[idx]) ? exerciseAnswers[idx][i] || '' : ''}
-                                                            onChange={e => {
-                                                                const arr = Array.isArray(exerciseAnswers[idx]) ? [...exerciseAnswers[idx]] : Array(exercise.respuesta.length).fill('');
-                                                                arr[i] = e.target.value;
-                                                                handleAnswerChange(idx, arr);
-                                                            }}
-                                                            placeholder={`Clave ${i+1}`}
-                                                        />
-                                                    ))}
-                                                </div>
-                                            ) : (
-                                                <input
-                                                    type="text"
-                                                    className="border rounded px-2 py-1 text-sm w-full"
-                                                    value={exerciseAnswers[idx] || ''}
-                                                    onChange={e => handleAnswerChange(idx, e.target.value)}
-                                                    placeholder="Escribe tu respuesta"
-                                                />
-                                            )}
-                                            <button
-                                                className="ml-2 px-3 py-1 bg-orange-600 text-white rounded hover:bg-orange-700 text-xs"
-                                                onClick={() => validateAnswer(exercise, idx)}
-                                            >Validar</button>
-                                            {exerciseFeedback[idx] && (
-                                                <div className={`mt-2 text-sm ${exerciseFeedback[idx].startsWith('¡Correcto!') ? 'text-green-700' : 'text-red-700'}`}>{exerciseFeedback[idx]}</div>
-                                            )}
-                                        </div>
-                                    </li>
-                                ))}
+                                    {CLAVES_EXERCISES_IMPROVED.filter(e => e.tipo === tipo).map((exercise, idx) => (
+                                        <li key={exercise.pregunta} className="mb-2">
+                                            <strong>{exercise.pregunta}</strong>
+                                            <div className="mt-1">
+                                                {tipo === 'test' && exercise.opciones ? (
+                                                    <select
+                                                        className="border rounded px-2 py-1 text-sm"
+                                                        value={exerciseAnswers[idx] || ''}
+                                                        onChange={e => handleAnswerChange(idx, e.target.value)}
+                                                    >
+                                                        <option value="">Selecciona una clave</option>
+                                                        {exercise.opciones.map(op => (
+                                                            <option key={op} value={op}>{op}</option>
+                                                        ))}
+                                                    </select>
+                                                ) : tipo === 'fill' && Array.isArray(exercise.respuesta) ? (
+                                                    <div className="flex gap-2">
+                                                        {exercise.respuesta.map((_, i) => (
+                                                            <input
+                                                                key={i}
+                                                                type="text"
+                                                                className="border rounded px-2 py-1 text-sm w-20"
+                                                                value={Array.isArray(exerciseAnswers[idx]) ? exerciseAnswers[idx][i] || '' : ''}
+                                                                onChange={e => {
+                                                                    const arr = Array.isArray(exerciseAnswers[idx]) ? [...exerciseAnswers[idx]] : Array(exercise.respuesta.length).fill('');
+                                                                    arr[i] = e.target.value;
+                                                                    handleAnswerChange(idx, arr);
+                                                                }}
+                                                                placeholder={`Clave ${i + 1}`}
+                                                            />
+                                                        ))}
+                                                    </div>
+                                                ) : (
+                                                    <input
+                                                        type="text"
+                                                        className="border rounded px-2 py-1 text-sm w-full"
+                                                        value={exerciseAnswers[idx] || ''}
+                                                        onChange={e => handleAnswerChange(idx, e.target.value)}
+                                                        placeholder="Escribe tu respuesta"
+                                                    />
+                                                )}
+                                                <button
+                                                    className="ml-2 px-3 py-1 bg-orange-600 text-white rounded hover:bg-orange-700 text-xs"
+                                                    onClick={() => validateAnswer(exercise, idx)}
+                                                >Validar
+                                                </button>
+                                                {exerciseFeedback[idx] && (
+                                                    <div
+                                                        className={`mt-2 text-sm ${exerciseFeedback[idx].startsWith('¡Correcto!') ? 'text-green-700' : 'text-red-700'}`}>{exerciseFeedback[idx]}</div>
+                                                )}
+                                            </div>
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
                         ))}
@@ -374,10 +378,10 @@ export function ClavesSection() {
     const generateRandomScenario = () => {
         const locations = ["Av. Central", "Calle Principal", "Centro Comercial", "Parque Municipal", "Zona Residencial"];
         const emergencyTypes = [
-            { type: "Accidente", claves: ["29F", "29H", "29G"], resources: ["2", "3", "12"] },
-            { type: "Emergencia Médica", claves: ["29CPC", "25", "29G"], resources: ["12", "40E"] },
-            { type: "Violencia", claves: ["29A", "32", "36B"], resources: ["15", "12"] },
-            { type: "Caída", claves: ["29C", "29F", "29L"], resources: ["12", "40L"] }
+            {type: "Accidente", claves: ["29F", "29H", "29G"], resources: ["2", "3", "12"]},
+            {type: "Emergencia Médica", claves: ["29CPC", "25", "29G"], resources: ["12", "40E"]},
+            {type: "Violencia", claves: ["29A", "32", "36B"], resources: ["15", "12"]},
+            {type: "Caída", claves: ["29C", "29F", "29L"], resources: ["12", "40L"]}
         ];
 
         const randomLocation = locations[Math.floor(Math.random() * locations.length)];
@@ -422,12 +426,12 @@ export function ClavesSection() {
     const filteredClaves = useMemo(() => {
         return claves.filter(clave => {
             const searchMatch = clave.numero.toLowerCase().includes(searchClaves.toLowerCase()) ||
-                              clave.descripcion.toLowerCase().includes(searchClaves.toLowerCase());
+                clave.descripcion.toLowerCase().includes(searchClaves.toLowerCase());
 
             const categoryMatch = selectedCategory === 'todas' ||
-                                (selectedCategory === 'emergencia' && clave.numero.startsWith('29')) ||
-                                (selectedCategory === 'recursos' && (clave.numero.startsWith('2') || clave.numero.startsWith('3')) && !clave.numero.startsWith('29')) ||
-                                (selectedCategory === 'codigo' && clave.numero.includes('CPC'));
+                (selectedCategory === 'emergencia' && clave.numero.startsWith('29')) ||
+                (selectedCategory === 'recursos' && (clave.numero.startsWith('2') || clave.numero.startsWith('3')) && !clave.numero.startsWith('29')) ||
+                (selectedCategory === 'codigo' && clave.numero.includes('CPC'));
 
             return searchMatch && categoryMatch;
         });
@@ -452,8 +456,8 @@ export function ClavesSection() {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
                 <button
                     className={`p-4 rounded-lg border-2 transition-all duration-200 flex items-center justify-center gap-2 ${
-                        showTable 
-                            ? 'bg-blue-600 text-white border-blue-600 shadow-lg' 
+                        showTable
+                            ? 'bg-blue-600 text-white border-blue-600 shadow-lg'
                             : 'bg-white text-blue-600 border-blue-300 hover:bg-blue-50'
                     }`}
                     onClick={() => setShowTable(!showTable)}
@@ -464,8 +468,8 @@ export function ClavesSection() {
 
                 <button
                     className={`p-4 rounded-lg border-2 transition-all duration-200 flex items-center justify-center gap-2 ${
-                        studyMode 
-                            ? 'bg-purple-600 text-white border-purple-600 shadow-lg' 
+                        studyMode
+                            ? 'bg-purple-600 text-white border-purple-600 shadow-lg'
                             : 'bg-white text-purple-600 border-purple-300 hover:bg-purple-50'
                     }`}
                     onClick={() => setStudyMode(!studyMode)}
@@ -488,8 +492,8 @@ export function ClavesSection() {
 
                 <button
                     className={`p-4 rounded-lg border-2 transition-all duration-200 flex items-center justify-center gap-2 ${
-                        interactiveMode 
-                            ? 'bg-orange-600 text-white border-orange-600 shadow-lg' 
+                        interactiveMode
+                            ? 'bg-orange-600 text-white border-orange-600 shadow-lg'
                             : 'bg-white text-orange-600 border-orange-300 hover:bg-orange-50'
                     }`}
                     onClick={() => setInteractiveMode(!interactiveMode)}
@@ -527,22 +531,24 @@ export function ClavesSection() {
                     <div className="overflow-x-auto">
                         <table className="w-full text-sm border-collapse">
                             <thead>
-                                <tr className="bg-gradient-to-r from-blue-600 to-blue-700 text-white">
-                                    <th className="px-4 py-3 text-left rounded-tl-lg">Clave</th>
-                                    <th className="px-4 py-3 text-left rounded-tr-lg">Descripción</th>
-                                </tr>
+                            <tr className="bg-gradient-to-r from-blue-600 to-blue-700 text-white">
+                                <th className="px-4 py-3 text-left rounded-tl-lg">Clave</th>
+                                <th className="px-4 py-3 text-left rounded-tr-lg">Descripción</th>
+                            </tr>
                             </thead>
                             <tbody className="divide-y divide-gray-200">
-                                {filteredClaves.map((clave, index) => (
-                                    <tr key={clave.numero} className={`${index % 2 === 0 ? 'bg-white' : 'bg-blue-50'} hover:bg-blue-100 transition-colors duration-150`}>
-                                        <td className="px-4 py-3">
-                                            <span className="font-mono text-blue-800 font-bold bg-blue-100 px-2 py-1 rounded">
+                            {filteredClaves.map((clave, index) => (
+                                <tr key={clave.numero}
+                                    className={`${index % 2 === 0 ? 'bg-white' : 'bg-blue-50'} hover:bg-blue-100 transition-colors duration-150`}>
+                                    <td className="px-4 py-3">
+                                            <span
+                                                className="font-mono text-blue-800 font-bold bg-blue-100 px-2 py-1 rounded">
                                                 {clave.numero}
                                             </span>
-                                        </td>
-                                        <td className="px-4 py-3 text-gray-700">{clave.descripcion}</td>
-                                    </tr>
-                                ))}
+                                    </td>
+                                    <td className="px-4 py-3 text-gray-700">{clave.descripcion}</td>
+                                </tr>
+                            ))}
                             </tbody>
                         </table>
                         {filteredClaves.length === 0 && (
@@ -597,7 +603,7 @@ export function ClavesSection() {
                                 className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200 flex items-center gap-2"
                                 disabled={currentIndex === 0}
                                 onClick={() => {
-                                    setCurrentIndex(i => Math.max(0, i-1));
+                                    setCurrentIndex(i => Math.max(0, i - 1));
                                     setShowAnswer(false);
                                 }}
                             >
@@ -605,9 +611,9 @@ export function ClavesSection() {
                             </button>
                             <button
                                 className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200 flex items-center gap-2"
-                                disabled={currentIndex === total-1}
+                                disabled={currentIndex === total - 1}
                                 onClick={() => {
-                                    setCurrentIndex(i => Math.min(total-1, i+1));
+                                    setCurrentIndex(i => Math.min(total - 1, i + 1));
                                     setShowAnswer(false);
                                 }}
                             >
@@ -633,8 +639,8 @@ export function ClavesSection() {
                     <div className="flex flex-wrap gap-3 mb-6">
                         <button
                             className={`px-4 py-2 rounded-lg border-2 transition-all duration-200 ${
-                                !practiceMode 
-                                    ? 'bg-orange-600 text-white border-orange-600' 
+                                !practiceMode
+                                    ? 'bg-orange-600 text-white border-orange-600'
                                     : 'bg-white text-orange-600 border-orange-300 hover:bg-orange-50'
                             }`}
                             onClick={() => setPracticeMode(false)}
@@ -643,8 +649,8 @@ export function ClavesSection() {
                         </button>
                         <button
                             className={`px-4 py-2 rounded-lg border-2 transition-all duration-200 ${
-                                practiceMode 
-                                    ? 'bg-orange-600 text-white border-orange-600' 
+                                practiceMode
+                                    ? 'bg-orange-600 text-white border-orange-600'
                                     : 'bg-white text-orange-600 border-orange-300 hover:bg-orange-50'
                             }`}
                             onClick={() => setPracticeMode(true)}
@@ -691,8 +697,8 @@ export function ClavesSection() {
                                         <div className="mt-2 text-xs">
                                             <span className={`px-2 py-1 rounded ${
                                                 scenario.details.priority === 'Crítica' ? 'bg-red-100 text-red-700' :
-                                                scenario.details.priority === 'Alta' ? 'bg-orange-100 text-orange-700' :
-                                                'bg-yellow-100 text-yellow-700'
+                                                    scenario.details.priority === 'Alta' ? 'bg-orange-100 text-orange-700' :
+                                                        'bg-yellow-100 text-yellow-700'
                                             }`}>
                                                 {scenario.details.priority}
                                             </span>
@@ -705,7 +711,8 @@ export function ClavesSection() {
 
                     {/* Mostrar escenario activo */}
                     {((!practiceMode && practiceScenarios[selectedScenario]) || (practiceMode && generatedScenario)) && (
-                        <div className="bg-gradient-to-r from-orange-50 to-red-50 rounded-lg p-6 mb-6 border-l-4 border-orange-500">
+                        <div
+                            className="bg-gradient-to-r from-orange-50 to-red-50 rounded-lg p-6 mb-6 border-l-4 border-orange-500">
                             <h4 className="text-xl font-bold text-orange-800 mb-3 flex items-center gap-2">
                                 <span>🚨</span>
                                 {practiceMode ? "Escenario Aleatorio" : practiceScenarios[selectedScenario].title}
@@ -713,21 +720,31 @@ export function ClavesSection() {
 
                             {!practiceMode ? (
                                 <div className="space-y-3">
-                                    <p className="text-gray-700"><strong>Situación:</strong> {practiceScenarios[selectedScenario].situation}</p>
+                                    <p className="text-gray-700">
+                                        <strong>Situación:</strong> {practiceScenarios[selectedScenario].situation}</p>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         <div>
-                                            <p className="text-gray-700"><strong>📍 Ubicación:</strong> {practiceScenarios[selectedScenario].details.location}</p>
-                                            <p className="text-gray-700"><strong>👥 Pacientes:</strong> {practiceScenarios[selectedScenario].details.patients}</p>
+                                            <p className="text-gray-700"><strong>📍
+                                                Ubicación:</strong> {practiceScenarios[selectedScenario].details.location}
+                                            </p>
+                                            <p className="text-gray-700"><strong>👥
+                                                Pacientes:</strong> {practiceScenarios[selectedScenario].details.patients}
+                                            </p>
                                         </div>
                                         <div>
-                                            <p className="text-gray-700"><strong>🏥 Condiciones:</strong> {practiceScenarios[selectedScenario].details.conditions.join(', ')}</p>
-                                            <p className="text-gray-700"><strong>⚠️ Prioridad:</strong> {practiceScenarios[selectedScenario].details.priority}</p>
+                                            <p className="text-gray-700"><strong>🏥
+                                                Condiciones:</strong> {practiceScenarios[selectedScenario].details.conditions.join(', ')}
+                                            </p>
+                                            <p className="text-gray-700"><strong>⚠️
+                                                Prioridad:</strong> {practiceScenarios[selectedScenario].details.priority}
+                                            </p>
                                         </div>
                                     </div>
 
                                     {showTooltips && (
                                         <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 mt-4">
-                                            <h5 className="font-semibold text-blue-700 mb-2">💡 Claves sugeridas para este escenario:</h5>
+                                            <h5 className="font-semibold text-blue-700 mb-2">💡 Claves sugeridas para
+                                                este escenario:</h5>
                                             <div className="flex flex-wrap gap-2">
                                                 {practiceScenarios[selectedScenario].expectedClaves.map(clave => (
                                                     <span
@@ -744,9 +761,12 @@ export function ClavesSection() {
                                 </div>
                             ) : generatedScenario && (
                                 <div className="space-y-3">
-                                    <p className="text-gray-700"><strong>Situación:</strong> {generatedScenario.description}</p>
-                                    <p className="text-gray-700"><strong>📍 Ubicación:</strong> {generatedScenario.location}</p>
-                                    <p className="text-gray-700"><strong>👥 Pacientes:</strong> {generatedScenario.patients}</p>
+                                    <p className="text-gray-700">
+                                        <strong>Situación:</strong> {generatedScenario.description}</p>
+                                    <p className="text-gray-700"><strong>📍
+                                        Ubicación:</strong> {generatedScenario.location}</p>
+                                    <p className="text-gray-700"><strong>👥
+                                        Pacientes:</strong> {generatedScenario.patients}</p>
 
                                     {showTooltips && (
                                         <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 mt-4">
@@ -817,8 +837,8 @@ export function ClavesSection() {
                             {reportFeedback && (
                                 <div className={`p-4 rounded-lg border-l-4 ${
                                     reportFeedback.includes('Excelente') ? 'bg-green-50 border-green-500 text-green-800' :
-                                    reportFeedback.includes('Muy bien') ? 'bg-blue-50 border-blue-500 text-blue-800' :
-                                    'bg-orange-50 border-orange-500 text-orange-800'
+                                        reportFeedback.includes('Muy bien') ? 'bg-blue-50 border-blue-500 text-blue-800' :
+                                            'bg-orange-50 border-orange-500 text-orange-800'
                                 }`}>
                                     <p>{reportFeedback}</p>
                                 </div>
@@ -952,7 +972,8 @@ export function ClavesSection() {
                         ></div>
                     </div>
                     <div className="text-sm text-gray-600 text-center">
-                        Has revisado {currentIndex + 1} de {total} claves ({Math.round(((currentIndex + 1) / total) * 100)}%)
+                        Has revisado {currentIndex + 1} de {total} claves
+                        ({Math.round(((currentIndex + 1) / total) * 100)}%)
                     </div>
                 </div>
             )}

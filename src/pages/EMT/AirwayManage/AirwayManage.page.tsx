@@ -3,7 +3,7 @@ import {AllRoutes} from "../../../components/Router/Router.constants.ts";
 import {Disclosure} from "@headlessui/react";
 import {ChevronUpIcon} from "@heroicons/react/16/solid";
 import {faqData} from "./AirwayManage.questions.ts";
-import {FaHeadSideMask } from "react-icons/fa";
+import {FaHeadSideMask} from "react-icons/fa";
 import {IoReturnDownBack} from "react-icons/io5";
 import {MdQuiz} from "react-icons/md";
 import {BsBookHalf} from "react-icons/bs";
@@ -14,7 +14,7 @@ import Overview from "./components/Overview.component.tsx";
 import Anatomy from "./components/Anatomy.component.tsx";
 import Techniques from "./components/Techniques.component.tsx";
 import Practice from "./components/Practice.component.tsx";
-import { ForumSection } from "../../../components/ForumSection";
+import {ForumSection} from "../../../components/ForumSection";
 
 export default function AirwayManage() {
     const [activeTab, setActiveTab] = useState<'overview' | 'anatomy' | 'techniques' | 'practice'>('overview');
@@ -127,16 +127,16 @@ export default function AirwayManage() {
                         {/* Contenido principal basado en pestañas */}
                         <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-sm p-6 mb-8">
                             {activeTab === 'overview' && (
-                                <Overview />
+                                <Overview/>
                             )}
                             {activeTab === 'anatomy' && (
-                                <Anatomy />
+                                <Anatomy/>
                             )}
                             {activeTab === 'techniques' && (
-                                <Techniques />
+                                <Techniques/>
                             )}
                             {activeTab === 'practice' && (
-                                <Practice />
+                                <Practice/>
                             )}
                         </div>
 
@@ -165,12 +165,12 @@ export default function AirwayManage() {
                             </div>
                         </section>
                         {/* Foro de Discusión */}
-                        <ForumSection 
-                            pagina="airway-manage" 
+                        <ForumSection
+                            pagina="airway-manage"
                             titulo="Foro de Discusión - Airway Manage"
                         />
 
-                        
+
                         {/* Referencias y Recursos */}
                         <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">
                             <h2 className="text-2xl font-bold mb-4">Referencias y recursos adicionales</h2>

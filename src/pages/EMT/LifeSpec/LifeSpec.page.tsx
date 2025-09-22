@@ -2,16 +2,16 @@ import {NavLink} from "react-router";
 import {Disclosure} from "@headlessui/react";
 import {ChevronUpIcon} from "@heroicons/react/16/solid";
 import {faqData} from "./LifeSpec.questions.ts";
-import {FaBaby, FaChild, FaUserMd, FaHeartbeat} from "react-icons/fa";
+import {FaBaby, FaChild, FaHeartbeat, FaUserMd} from "react-icons/fa";
 import {AllRoutes} from "../../../components/Router/Router.constants.ts";
 import {IoReturnDownBack} from "react-icons/io5";
 import {useState} from "react";
-import {MdQuiz, MdAccessibility} from "react-icons/md";
+import {MdAccessibility, MdQuiz} from "react-icons/md";
 import {BsBookHalf, BsPersonCheck} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
-import {FiUsers, FiActivity} from "react-icons/fi";
+import {FiActivity, FiUsers} from "react-icons/fi";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
-import { ForumSection } from "../../../components/ForumSection";
+import {ForumSection} from "../../../components/ForumSection";
 
 export default function LifeSpec() {
     const [activeTab, setActiveTab] = useState<'overview' | 'vitals' | 'prehospital' | 'practice'>('overview');
@@ -56,7 +56,7 @@ export default function LifeSpec() {
                                 <MdQuiz className="w-10 h-10 text-orange-500 mb-2"/>
                                 <p className="text-center font-medium">Examen</p>
                             </NavLink>
-                            
+
                             <a href="https://docs.google.com/presentation/d/1Jw5ONtWNz3ajHTwdxvTE3fS8JanopiVy/edit?usp=drive_link&ouid=107287742628985461156&rtpof=true&sd=true"
                                target="_blank"
                                rel="noopener noreferrer"
@@ -74,7 +74,7 @@ export default function LifeSpec() {
                             </a>
                         </div>
 
-                        
+
                         {/* Navegación por pestañas */}
                         <div className="mb-6 border-b border-gray-200 max-w-5xl mx-auto">
                             <nav className="flex space-x-2 overflow-x-auto">
@@ -122,27 +122,34 @@ export default function LifeSpec() {
                             {activeTab === 'overview' && (
                                 <div className="space-y-6">
                                     <div>
-                                        <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">¿Qué es el desarrollo humano?</h2>
+                                        <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">¿Qué es
+                                            el desarrollo humano?</h2>
                                         <p className="text-gray-700 leading-relaxed mb-4">
-                                            El desarrollo humano es un proceso continuo que abarca cambios físicos, cognitivos, emocionales y sociales 
-                                            desde el nacimiento hasta la muerte. Para los paramédicos, comprender estas etapas es crucial para 
+                                            El desarrollo humano es un proceso continuo que abarca cambios físicos,
+                                            cognitivos, emocionales y sociales
+                                            desde el nacimiento hasta la muerte. Para los paramédicos, comprender estas
+                                            etapas es crucial para
                                             proporcionar atención médica apropiada y efectiva.
                                         </p>
                                         <p className="text-gray-700 leading-relaxed">
-                                            Cada etapa presenta características únicas en anatomía, fisiología, psicología y vulnerabilidades específicas 
-                                            que afectan directamente las estrategias de evaluación, comunicación y tratamiento prehospitalario.
+                                            Cada etapa presenta características únicas en anatomía, fisiología,
+                                            psicología y vulnerabilidades específicas
+                                            que afectan directamente las estrategias de evaluación, comunicación y
+                                            tratamiento prehospitalario.
                                         </p>
                                     </div>
 
                                     <div>
-                                        <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Etapas del Desarrollo Humano</h2>
+                                        <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Etapas
+                                            del Desarrollo Humano</h2>
                                         <div className="grid md:grid-cols-2 gap-6">
                                             {/* Infancia */}
                                             <div className="space-y-4">
                                                 <div className="bg-blue-50 p-4 rounded-lg">
                                                     <div className="flex items-center mb-3">
                                                         <FaBaby className="w-6 h-6 text-blue-600 mr-2"/>
-                                                        <h3 className="font-medium text-lg text-blue-700">Neonatos (0-1 mes)</h3>
+                                                        <h3 className="font-medium text-lg text-blue-700">Neonatos (0-1
+                                                            mes)</h3>
                                                     </div>
                                                     <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                                         <li>Respiradores nasales obligados</li>
@@ -156,7 +163,8 @@ export default function LifeSpec() {
                                                 <div className="bg-cyan-50 p-4 rounded-lg">
                                                     <div className="flex items-center mb-3">
                                                         <FaBaby className="w-6 h-6 text-cyan-600 mr-2"/>
-                                                        <h3 className="font-medium text-lg text-cyan-700">Lactantes (1 mes - 1 año)</h3>
+                                                        <h3 className="font-medium text-lg text-cyan-700">Lactantes (1
+                                                            mes - 1 año)</h3>
                                                     </div>
                                                     <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                                         <li>Crecimiento rápido peso/talla</li>
@@ -170,7 +178,8 @@ export default function LifeSpec() {
                                                 <div className="bg-green-50 p-4 rounded-lg">
                                                     <div className="flex items-center mb-3">
                                                         <FaChild className="w-6 h-6 text-green-600 mr-2"/>
-                                                        <h3 className="font-medium text-lg text-green-700">Niños pequeños (1-3 años)</h3>
+                                                        <h3 className="font-medium text-lg text-green-700">Niños
+                                                            pequeños (1-3 años)</h3>
                                                     </div>
                                                     <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                                         <li>Desarrollo del lenguaje explosivo</li>
@@ -184,7 +193,8 @@ export default function LifeSpec() {
                                                 <div className="bg-yellow-50 p-4 rounded-lg">
                                                     <div className="flex items-center mb-3">
                                                         <FaChild className="w-6 h-6 text-yellow-600 mr-2"/>
-                                                        <h3 className="font-medium text-lg text-yellow-700">Preescolares (3-6 años)</h3>
+                                                        <h3 className="font-medium text-lg text-yellow-700">Preescolares
+                                                            (3-6 años)</h3>
                                                     </div>
                                                     <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                                         <li>Pensamiento mágico y fantasioso</li>
@@ -201,7 +211,8 @@ export default function LifeSpec() {
                                                 <div className="bg-purple-50 p-4 rounded-lg">
                                                     <div className="flex items-center mb-3">
                                                         <FiUsers className="w-6 h-6 text-purple-600 mr-2"/>
-                                                        <h3 className="font-medium text-lg text-purple-700">Escolares (6-12 años)</h3>
+                                                        <h3 className="font-medium text-lg text-purple-700">Escolares
+                                                            (6-12 años)</h3>
                                                     </div>
                                                     <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                                         <li>Pensamiento lógico concreto</li>
@@ -215,7 +226,8 @@ export default function LifeSpec() {
                                                 <div className="bg-pink-50 p-4 rounded-lg">
                                                     <div className="flex items-center mb-3">
                                                         <BsPersonCheck className="w-6 h-6 text-pink-600 mr-2"/>
-                                                        <h3 className="font-medium text-lg text-pink-700">Adolescentes (12-18 años)</h3>
+                                                        <h3 className="font-medium text-lg text-pink-700">Adolescentes
+                                                            (12-18 años)</h3>
                                                     </div>
                                                     <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                                         <li>Cambios puberales significativos</li>
@@ -229,7 +241,8 @@ export default function LifeSpec() {
                                                 <div className="bg-orange-50 p-4 rounded-lg">
                                                     <div className="flex items-center mb-3">
                                                         <FaUserMd className="w-6 h-6 text-orange-600 mr-2"/>
-                                                        <h3 className="font-medium text-lg text-orange-700">Adultos jóvenes (19-40 años)</h3>
+                                                        <h3 className="font-medium text-lg text-orange-700">Adultos
+                                                            jóvenes (19-40 años)</h3>
                                                     </div>
                                                     <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                                         <li>Máxima condición física</li>
@@ -243,7 +256,8 @@ export default function LifeSpec() {
                                                 <div className="bg-gray-50 p-4 rounded-lg">
                                                     <div className="flex items-center mb-3">
                                                         <MdAccessibility className="w-6 h-6 text-gray-600 mr-2"/>
-                                                        <h3 className="font-medium text-lg text-gray-700">Adultos mayores (65+ años)</h3>
+                                                        <h3 className="font-medium text-lg text-gray-700">Adultos
+                                                            mayores (65+ años)</h3>
                                                     </div>
                                                     <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                                         <li>Declino fisiológico progresivo</li>
@@ -258,10 +272,13 @@ export default function LifeSpec() {
                                     </div>
 
                                     <div className="bg-gradient-to-r from-orange-100 to-orange-50 p-6 rounded-lg">
-                                        <h3 className="text-xl font-semibold mb-3 text-orange-800">💡 Punto clave para paramédicos</h3>
+                                        <h3 className="text-xl font-semibold mb-3 text-orange-800">💡 Punto clave para
+                                            paramédicos</h3>
                                         <p className="text-gray-700">
-                                            Cada etapa del desarrollo requiere un enfoque específico en la evaluación, comunicación y tratamiento. 
-                                            La comprensión de estas diferencias mejora significativamente la calidad de la atención prehospitalaria 
+                                            Cada etapa del desarrollo requiere un enfoque específico en la evaluación,
+                                            comunicación y tratamiento.
+                                            La comprensión de estas diferencias mejora significativamente la calidad de
+                                            la atención prehospitalaria
                                             y la cooperación del paciente.
                                         </p>
                                     </div>
@@ -271,109 +288,141 @@ export default function LifeSpec() {
                                 <div className="space-y-6">
                                     <div className="flex flex-col md:flex-row gap-6 items-center mb-6">
                                         <div className="md:w-1/2">
-                                            <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Constantes fisiológicas por edad</h2>
+                                            <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Constantes
+                                                fisiológicas por edad</h2>
                                             <p className="text-gray-700 leading-relaxed">
-                                                Los signos vitales varían significativamente según la edad y el desarrollo. Conocer estos rangos normales 
-                                                es fundamental para identificar alteraciones y determinar la gravedad de la condición del paciente.
+                                                Los signos vitales varían significativamente según la edad y el
+                                                desarrollo. Conocer estos rangos normales
+                                                es fundamental para identificar alteraciones y determinar la gravedad de
+                                                la condición del paciente.
                                             </p>
                                             <p className="text-gray-700 mt-2 leading-relaxed">
-                                                Recuerda que estos valores son rangos de referencia y siempre deben considerarse en el contexto clínico 
+                                                Recuerda que estos valores son rangos de referencia y siempre deben
+                                                considerarse en el contexto clínico
                                                 del paciente, incluyendo su condición base y factores ambientales.
                                             </p>
                                         </div>
                                         <div className="md:w-1/2 flex justify-center">
-                                            <div className="bg-gradient-to-br from-orange-100 to-orange-50 p-6 rounded-lg shadow-sm">
+                                            <div
+                                                className="bg-gradient-to-br from-orange-100 to-orange-50 p-6 rounded-lg shadow-sm">
                                                 <FaHeartbeat className="w-16 h-16 text-orange-500 mx-auto mb-3"/>
-                                                <h3 className="text-center font-semibold text-orange-700">Signos Vitales</h3>
-                                                <p className="text-center text-sm text-gray-600">Evaluación fundamental</p>
+                                                <h3 className="text-center font-semibold text-orange-700">Signos
+                                                    Vitales</h3>
+                                                <p className="text-center text-sm text-gray-600">Evaluación
+                                                    fundamental</p>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div>
-                                        <h3 className="text-xl font-semibold mb-4 text-gray-800">Tabla de referencia rápida</h3>
+                                        <h3 className="text-xl font-semibold mb-4 text-gray-800">Tabla de referencia
+                                            rápida</h3>
                                         <div className="overflow-x-auto mb-6">
-                                            <table className="min-w-full bg-white border border-gray-200 rounded-lg overflow-hidden shadow">
+                                            <table
+                                                className="min-w-full bg-white border border-gray-200 rounded-lg overflow-hidden shadow">
                                                 <thead>
-                                                    <tr className="bg-gradient-to-r from-orange-500 to-orange-600 text-white">
-                                                        <th className="py-3 px-4 text-left font-semibold">Edad</th>
-                                                        <th className="py-3 px-4 text-center font-semibold">FC (lat/min)</th>
-                                                        <th className="py-3 px-4 text-center font-semibold">FR (resp/min)</th>
-                                                        <th className="py-3 px-4 text-center font-semibold">PA sistólica (mmHg)</th>
-                                                        <th className="py-3 px-4 text-center font-semibold">Temp (°C)</th>
-                                                    </tr>
+                                                <tr className="bg-gradient-to-r from-orange-500 to-orange-600 text-white">
+                                                    <th className="py-3 px-4 text-left font-semibold">Edad</th>
+                                                    <th className="py-3 px-4 text-center font-semibold">FC (lat/min)
+                                                    </th>
+                                                    <th className="py-3 px-4 text-center font-semibold">FR (resp/min)
+                                                    </th>
+                                                    <th className="py-3 px-4 text-center font-semibold">PA sistólica
+                                                        (mmHg)
+                                                    </th>
+                                                    <th className="py-3 px-4 text-center font-semibold">Temp (°C)</th>
+                                                </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr className="border-b border-gray-200 hover:bg-blue-50">
-                                                        <td className="py-3 px-4 font-medium text-blue-700">Neonato (0 a 1 mes)</td>
-                                                        <td className="py-3 px-4 text-center">90-180</td>
-                                                        <td className="py-3 px-4 text-center">30-60</td>
-                                                        <td className="py-3 px-4 text-center">50-70</td>
-                                                        <td className="py-3 px-4 text-center">37-38</td>
-                                                    </tr>
-                                                    <tr className="border-b border-gray-200 hover:bg-cyan-50">
-                                                        <td className="py-3 px-4 font-medium text-cyan-700">Lactante (1mes a 1 año)</td>
-                                                        <td className="py-3 px-4 text-center">100-160</td>
-                                                        <td className="py-3 px-4 text-center">25-50</td>
-                                                        <td className="py-3 px-4 text-center">70-95</td>
-                                                        <td className="py-3 px-4 text-center">36-37.5</td>
-                                                    </tr>
-                                                    <tr className="border-b border-gray-200 hover:bg-green-50">
-                                                        <td className="py-3 px-4 font-medium text-green-700">Niño pequeño (1 a 3 años)</td>
-                                                        <td className="py-3 px-4 text-center">90-150</td>
-                                                        <td className="py-3 px-4 text-center">20-30</td>
-                                                        <td className="py-3 px-4 text-center">80-100</td>
-                                                        <td className="py-3 px-4 text-center">36-37.5</td>
-                                                    </tr>
-                                                    <tr className="border-b border-gray-200 hover:bg-yellow-50">
-                                                        <td className="py-3 px-4 font-medium text-yellow-700">PreEscolar (3 a 6 años)</td>
-                                                        <td className="py-3 px-4 text-center">80-140</td>
-                                                        <td className="py-3 px-4 text-center">20-25</td>
-                                                        <td className="py-3 px-4 text-center">80-100</td>
-                                                        <td className="py-3 px-4 text-center">36-37.5</td>
-                                                    </tr>
-                                                    <tr className="border-b border-gray-200 hover:bg-purple-50">
-                                                        <td className="py-3 px-4 font-medium text-purple-700">Escolar (6 a 12 años)</td>
-                                                        <td className="py-3 px-4 text-center">70-120</td>
-                                                        <td className="py-3 px-4 text-center">15-20</td>
-                                                        <td className="py-3 px-4 text-center">80-110</td>
-                                                        <td className="py-3 px-4 text-center">36-37.5</td>
-                                                    </tr>
-                                                    <tr className="border-b border-gray-200 hover:bg-pink-50">
-                                                        <td className="py-3 px-4 font-medium text-pink-700">Adolescente (12 a 18 años)</td>
-                                                        <td className="py-3 px-4 text-center">60-100</td>
-                                                        <td className="py-3 px-4 text-center">12-20</td>
-                                                        <td className="py-3 px-4 text-center">90-110</td>
-                                                        <td className="py-3 px-4 text-center">36-37.5</td>
-                                                    </tr>
-                                                    <tr className="border-b border-gray-200 hover:bg-orange-50">
-                                                        <td className="py-3 px-4 font-medium text-orange-700">Adulto Joven (19 a 40 años)</td>
-                                                        <td className="py-3 px-4 text-center">60-100</td>
-                                                        <td className="py-3 px-4 text-center">12-20</td>
-                                                        <td className="py-3 px-4 text-center">90-140</td>
-                                                        <td className="py-3 px-4 text-center">36-37.5</td>
-                                                    </tr>
-                                                    <tr className="border-b border-gray-200 hover:bg-red-50">
-                                                        <td className="py-3 px-4 font-medium text-red-700">Adulto de edad media (41 a 60 años)</td>
-                                                        <td className="py-3 px-4 text-center">60-100</td>
-                                                        <td className="py-3 px-4 text-center">12-20</td>
-                                                        <td className="py-3 px-4 text-center">90-140</td>
-                                                        <td className="py-3 px-4 text-center">36-37.5</td>
-                                                    </tr>
-                                                    <tr className="hover:bg-gray-50">
-                                                        <td className="py-3 px-4 font-medium text-gray-700">Adulto mayor (mayor a 61 años)</td>
-                                                        <td className="py-3 px-4 text-center">60-100</td>
-                                                        <td className="py-3 px-4 text-center">12-20</td>
-                                                        <td className="py-3 px-4 text-center">90-140</td>
-                                                        <td className="py-3 px-4 text-center">36-37.5</td>
-                                                    </tr>
+                                                <tr className="border-b border-gray-200 hover:bg-blue-50">
+                                                    <td className="py-3 px-4 font-medium text-blue-700">Neonato (0 a 1
+                                                        mes)
+                                                    </td>
+                                                    <td className="py-3 px-4 text-center">90-180</td>
+                                                    <td className="py-3 px-4 text-center">30-60</td>
+                                                    <td className="py-3 px-4 text-center">50-70</td>
+                                                    <td className="py-3 px-4 text-center">37-38</td>
+                                                </tr>
+                                                <tr className="border-b border-gray-200 hover:bg-cyan-50">
+                                                    <td className="py-3 px-4 font-medium text-cyan-700">Lactante (1mes a
+                                                        1 año)
+                                                    </td>
+                                                    <td className="py-3 px-4 text-center">100-160</td>
+                                                    <td className="py-3 px-4 text-center">25-50</td>
+                                                    <td className="py-3 px-4 text-center">70-95</td>
+                                                    <td className="py-3 px-4 text-center">36-37.5</td>
+                                                </tr>
+                                                <tr className="border-b border-gray-200 hover:bg-green-50">
+                                                    <td className="py-3 px-4 font-medium text-green-700">Niño pequeño (1
+                                                        a 3 años)
+                                                    </td>
+                                                    <td className="py-3 px-4 text-center">90-150</td>
+                                                    <td className="py-3 px-4 text-center">20-30</td>
+                                                    <td className="py-3 px-4 text-center">80-100</td>
+                                                    <td className="py-3 px-4 text-center">36-37.5</td>
+                                                </tr>
+                                                <tr className="border-b border-gray-200 hover:bg-yellow-50">
+                                                    <td className="py-3 px-4 font-medium text-yellow-700">PreEscolar (3
+                                                        a 6 años)
+                                                    </td>
+                                                    <td className="py-3 px-4 text-center">80-140</td>
+                                                    <td className="py-3 px-4 text-center">20-25</td>
+                                                    <td className="py-3 px-4 text-center">80-100</td>
+                                                    <td className="py-3 px-4 text-center">36-37.5</td>
+                                                </tr>
+                                                <tr className="border-b border-gray-200 hover:bg-purple-50">
+                                                    <td className="py-3 px-4 font-medium text-purple-700">Escolar (6 a
+                                                        12 años)
+                                                    </td>
+                                                    <td className="py-3 px-4 text-center">70-120</td>
+                                                    <td className="py-3 px-4 text-center">15-20</td>
+                                                    <td className="py-3 px-4 text-center">80-110</td>
+                                                    <td className="py-3 px-4 text-center">36-37.5</td>
+                                                </tr>
+                                                <tr className="border-b border-gray-200 hover:bg-pink-50">
+                                                    <td className="py-3 px-4 font-medium text-pink-700">Adolescente (12
+                                                        a 18 años)
+                                                    </td>
+                                                    <td className="py-3 px-4 text-center">60-100</td>
+                                                    <td className="py-3 px-4 text-center">12-20</td>
+                                                    <td className="py-3 px-4 text-center">90-110</td>
+                                                    <td className="py-3 px-4 text-center">36-37.5</td>
+                                                </tr>
+                                                <tr className="border-b border-gray-200 hover:bg-orange-50">
+                                                    <td className="py-3 px-4 font-medium text-orange-700">Adulto Joven
+                                                        (19 a 40 años)
+                                                    </td>
+                                                    <td className="py-3 px-4 text-center">60-100</td>
+                                                    <td className="py-3 px-4 text-center">12-20</td>
+                                                    <td className="py-3 px-4 text-center">90-140</td>
+                                                    <td className="py-3 px-4 text-center">36-37.5</td>
+                                                </tr>
+                                                <tr className="border-b border-gray-200 hover:bg-red-50">
+                                                    <td className="py-3 px-4 font-medium text-red-700">Adulto de edad
+                                                        media (41 a 60 años)
+                                                    </td>
+                                                    <td className="py-3 px-4 text-center">60-100</td>
+                                                    <td className="py-3 px-4 text-center">12-20</td>
+                                                    <td className="py-3 px-4 text-center">90-140</td>
+                                                    <td className="py-3 px-4 text-center">36-37.5</td>
+                                                </tr>
+                                                <tr className="hover:bg-gray-50">
+                                                    <td className="py-3 px-4 font-medium text-gray-700">Adulto mayor
+                                                        (mayor a 61 años)
+                                                    </td>
+                                                    <td className="py-3 px-4 text-center">60-100</td>
+                                                    <td className="py-3 px-4 text-center">12-20</td>
+                                                    <td className="py-3 px-4 text-center">90-140</td>
+                                                    <td className="py-3 px-4 text-center">36-37.5</td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>
                                     </div>
 
                                     <div>
-                                        <h3 className="text-xl font-semibold mb-4 text-gray-800">Patrones importantes a recordar</h3>
+                                        <h3 className="text-xl font-semibold mb-4 text-gray-800">Patrones importantes a
+                                            recordar</h3>
                                         <div className="grid md:grid-cols-2 gap-6">
                                             <div className="space-y-4">
                                                 <div className="p-4 bg-blue-50 rounded-lg">
@@ -390,7 +439,8 @@ export default function LifeSpec() {
                                                 </div>
 
                                                 <div className="p-4 bg-green-50 rounded-lg">
-                                                    <h4 className="font-medium text-green-800 mb-2">💨 Frecuencia Respiratoria</h4>
+                                                    <h4 className="font-medium text-green-800 mb-2">💨 Frecuencia
+                                                        Respiratoria</h4>
                                                     <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                                         <li>También disminuye con la edad</li>
                                                         <li>Neonatos: hasta 60 resp/min</li>
@@ -402,7 +452,8 @@ export default function LifeSpec() {
 
                                             <div className="space-y-4">
                                                 <div className="p-4 bg-red-50 rounded-lg">
-                                                    <h4 className="font-medium text-red-800 mb-2">🩸 Presión Arterial</h4>
+                                                    <h4 className="font-medium text-red-800 mb-2">🩸 Presión
+                                                        Arterial</h4>
                                                     <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                                         <li>Aumenta progresivamente con la edad</li>
                                                         <li>Neonatos: PA muy baja (50-70 mmHg)</li>
@@ -425,7 +476,8 @@ export default function LifeSpec() {
                                     </div>
 
                                     <div className="bg-gradient-to-r from-red-100 to-red-50 p-6 rounded-lg">
-                                        <h3 className="text-xl font-semibold mb-3 text-red-800">⚠️ Alertas clínicas importantes</h3>
+                                        <h3 className="text-xl font-semibold mb-3 text-red-800">⚠️ Alertas clínicas
+                                            importantes</h3>
                                         <div className="grid md:grid-cols-2 gap-4">
                                             <div>
                                                 <h4 className="font-medium text-red-700 mb-2">En pediatría:</h4>
@@ -450,10 +502,13 @@ export default function LifeSpec() {
                             {activeTab === 'prehospital' && (
                                 <div className="space-y-6">
                                     <div>
-                                        <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Consideraciones especiales en atención prehospitalaria</h2>
+                                        <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Consideraciones
+                                            especiales en atención prehospitalaria</h2>
                                         <p className="text-gray-700 leading-relaxed mb-6">
-                                            La atención prehospitalaria debe adaptarse a las características específicas de cada grupo etario. 
-                                            Cada etapa del desarrollo presenta desafíos únicos que requieren conocimientos, técnicas y 
+                                            La atención prehospitalaria debe adaptarse a las características específicas
+                                            de cada grupo etario.
+                                            Cada etapa del desarrollo presenta desafíos únicos que requieren
+                                            conocimientos, técnicas y
                                             aproximaciones específicas para optimizar el cuidado del paciente.
                                         </p>
                                     </div>
@@ -465,10 +520,11 @@ export default function LifeSpec() {
                                                 <FaBaby className="w-6 h-6 mr-3"/>
                                                 Pediatría (0-12 años)
                                             </h3>
-                                            
+
                                             <div className="grid md:grid-cols-2 gap-4">
                                                 <div>
-                                                    <h4 className="font-medium text-blue-700 mb-2">🫁 Vía aérea y respiración</h4>
+                                                    <h4 className="font-medium text-blue-700 mb-2">🫁 Vía aérea y
+                                                        respiración</h4>
                                                     <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                                         <li>Vía aérea proporcionalmente más pequeña</li>
                                                         <li>Laringe más anterior y superior</li>
@@ -477,7 +533,7 @@ export default function LifeSpec() {
                                                         <li>Tórax más flexible, respiración diafragmática</li>
                                                     </ul>
                                                 </div>
-                                                
+
                                                 <div>
                                                     <h4 className="font-medium text-blue-700 mb-2">🩸 Circulación</h4>
                                                     <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
@@ -488,9 +544,10 @@ export default function LifeSpec() {
                                                         <li>Riesgo alto de deshidratación</li>
                                                     </ul>
                                                 </div>
-                                                
+
                                                 <div>
-                                                    <h4 className="font-medium text-blue-700 mb-2">🧠 Aspectos neurológicos</h4>
+                                                    <h4 className="font-medium text-blue-700 mb-2">🧠 Aspectos
+                                                        neurológicos</h4>
                                                     <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                                         <li>Cabeza proporcionalmente más grande</li>
                                                         <li>Fontanelas abiertas (hasta 18 meses)</li>
@@ -499,9 +556,10 @@ export default function LifeSpec() {
                                                         <li>Escalas neurológicas específicas</li>
                                                     </ul>
                                                 </div>
-                                                
+
                                                 <div>
-                                                    <h4 className="font-medium text-blue-700 mb-2">🗣️ Comunicación y manejo</h4>
+                                                    <h4 className="font-medium text-blue-700 mb-2">🗣️ Comunicación y
+                                                        manejo</h4>
                                                     <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                                         <li>Lenguaje apropiado para la edad</li>
                                                         <li>Presencia de cuidadores esencial</li>
@@ -519,10 +577,11 @@ export default function LifeSpec() {
                                                 <BsPersonCheck className="w-6 h-6 mr-3"/>
                                                 Adolescentes (12-18 años)
                                             </h3>
-                                            
+
                                             <div className="grid md:grid-cols-2 gap-4">
                                                 <div>
-                                                    <h4 className="font-medium text-purple-700 mb-2">🔍 Consideraciones especiales</h4>
+                                                    <h4 className="font-medium text-purple-700 mb-2">🔍 Consideraciones
+                                                        especiales</h4>
                                                     <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                                         <li>Anatomía en transición a adulto</li>
                                                         <li>Cambios hormonales significativos</li>
@@ -531,7 +590,7 @@ export default function LifeSpec() {
                                                         <li>Problemas de salud mental emergentes</li>
                                                     </ul>
                                                 </div>
-                                                
+
                                                 <div>
                                                     <h4 className="font-medium text-purple-700 mb-2">🤝 Comunicación</h4>
                                                     <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
@@ -551,10 +610,11 @@ export default function LifeSpec() {
                                                 <FaUserMd className="w-6 h-6 mr-3"/>
                                                 Adultos (19-64 años)
                                             </h3>
-                                            
+
                                             <div className="grid md:grid-cols-2 gap-4">
                                                 <div>
-                                                    <h4 className="font-medium text-green-700 mb-2">💪 Características fisiológicas</h4>
+                                                    <h4 className="font-medium text-green-700 mb-2">💪 Características
+                                                        fisiológicas</h4>
                                                     <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                                         <li>Sistemas orgánicos en plenitud funcional</li>
                                                         <li>Capacidad de compensación óptima</li>
@@ -563,9 +623,10 @@ export default function LifeSpec() {
                                                         <li>Recuperación generalmente favorable</li>
                                                     </ul>
                                                 </div>
-                                                
+
                                                 <div>
-                                                    <h4 className="font-medium text-green-700 mb-2">⚠️ Factores de riesgo comunes</h4>
+                                                    <h4 className="font-medium text-green-700 mb-2">⚠️ Factores de
+                                                        riesgo comunes</h4>
                                                     <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                                         <li>Estrés laboral y familiar</li>
                                                         <li>Factores de riesgo cardiovascular</li>
@@ -583,10 +644,11 @@ export default function LifeSpec() {
                                                 <MdAccessibility className="w-6 h-6 mr-3"/>
                                                 Adultos mayores (65+ años)
                                             </h3>
-                                            
+
                                             <div className="grid md:grid-cols-2 gap-4">
                                                 <div>
-                                                    <h4 className="font-medium text-orange-700 mb-2">🏥 Consideraciones médicas</h4>
+                                                    <h4 className="font-medium text-orange-700 mb-2">🏥 Consideraciones
+                                                        médicas</h4>
                                                     <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                                         <li>Comorbilidades múltiples</li>
                                                         <li>Polifarmacia (múltiples medicamentos)</li>
@@ -595,9 +657,10 @@ export default function LifeSpec() {
                                                         <li>Capacidad de reserva limitada</li>
                                                     </ul>
                                                 </div>
-                                                
+
                                                 <div>
-                                                    <h4 className="font-medium text-orange-700 mb-2">👂 Comunicación especial</h4>
+                                                    <h4 className="font-medium text-orange-700 mb-2">👂 Comunicación
+                                                        especial</h4>
                                                     <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                                         <li>Posible deterioro auditivo/visual</li>
                                                         <li>Tiempo adicional para respuestas</li>
@@ -606,9 +669,10 @@ export default function LifeSpec() {
                                                         <li>Considerar capacidad cognitiva</li>
                                                     </ul>
                                                 </div>
-                                                
+
                                                 <div>
-                                                    <h4 className="font-medium text-orange-700 mb-2">🚨 Presentaciones atípicas</h4>
+                                                    <h4 className="font-medium text-orange-700 mb-2">🚨 Presentaciones
+                                                        atípicas</h4>
                                                     <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                                         <li>Infarto sin dolor torácico típico</li>
                                                         <li>Infección sin fiebre</li>
@@ -617,9 +681,10 @@ export default function LifeSpec() {
                                                         <li>Síntomas vagos e inespecíficos</li>
                                                     </ul>
                                                 </div>
-                                                
+
                                                 <div>
-                                                    <h4 className="font-medium text-orange-700 mb-2">📋 Evaluación integral</h4>
+                                                    <h4 className="font-medium text-orange-700 mb-2">📋 Evaluación
+                                                        integral</h4>
                                                     <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                                         <li>Historia medicamentosa completa</li>
                                                         <li>Estado funcional baseline</li>
@@ -633,7 +698,8 @@ export default function LifeSpec() {
                                     </div>
 
                                     <div className="bg-gradient-to-r from-yellow-100 to-yellow-50 p-6 rounded-lg">
-                                        <h3 className="text-xl font-semibold mb-3 text-yellow-800">🎯 Principios universales para todas las edades</h3>
+                                        <h3 className="text-xl font-semibold mb-3 text-yellow-800">🎯 Principios
+                                            universales para todas las edades</h3>
                                         <div className="grid md:grid-cols-2 gap-4">
                                             <ul className="list-disc list-inside space-y-2 text-gray-700">
                                                 <li>Evaluar ABCDE de manera sistemática</li>
@@ -653,13 +719,17 @@ export default function LifeSpec() {
                             )}
                             {activeTab === 'practice' && (
                                 <div className="space-y-6">
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Casos clínicos para análisis</h2>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Casos
+                                        clínicos para análisis</h2>
 
                                     <div className="p-5 bg-gray-50 rounded-lg shadow-sm mb-4">
-                                        <h3 className="text-xl font-semibold mb-2 text-blue-600">Caso 1: Lactante con dificultad respiratoria</h3>
+                                        <h3 className="text-xl font-semibold mb-2 text-blue-600">Caso 1: Lactante con
+                                            dificultad respiratoria</h3>
                                         <p className="italic text-gray-600 mb-4">
-                                            Lactante de 8 meses, presenta tos, fiebre de 38.5°C y dificultad respiratoria progresiva. 
-                                            Los padres refieren que "respira muy rápido" y tiene dificultad para alimentarse.
+                                            Lactante de 8 meses, presenta tos, fiebre de 38.5°C y dificultad
+                                            respiratoria progresiva.
+                                            Los padres refieren que "respira muy rápido" y tiene dificultad para
+                                            alimentarse.
                                             Al examen: FR 55, FC 160, irritable, tirajes subcostales.
                                         </p>
 
@@ -667,9 +737,14 @@ export default function LifeSpec() {
                                             <h4 className="font-medium mb-2">🔍 Evaluación sistemática:</h4>
                                             <ul className="list-disc list-inside space-y-1 text-gray-700">
                                                 <li><strong>A (Vía aérea):</strong> Permeable, sin estridor</li>
-                                                <li><strong>B (Respiración):</strong> FR elevada (normal: 25-50), tirajes presentes</li>
-                                                <li><strong>C (Circulación):</strong> FC elevada pero dentro de rango (normal: 100-160)</li>
-                                                <li><strong>D (Neurológico):</strong> Irritable, responde a estímulos</li>
+                                                <li><strong>B (Respiración):</strong> FR elevada (normal: 25-50),
+                                                    tirajes presentes
+                                                </li>
+                                                <li><strong>C (Circulación):</strong> FC elevada pero dentro de rango
+                                                    (normal: 100-160)
+                                                </li>
+                                                <li><strong>D (Neurológico):</strong> Irritable, responde a estímulos
+                                                </li>
                                                 <li><strong>E (Exposición):</strong> Fiebre 38.5°C</li>
                                             </ul>
                                         </div>
@@ -688,28 +763,39 @@ export default function LifeSpec() {
 
                                         <div className="mt-4 p-3 bg-blue-100 rounded">
                                             <p className="text-blue-800 text-sm">
-                                                <strong>💡 Punto clave:</strong> En lactantes, la taquipnea es un signo temprano de distrés respiratorio. 
+                                                <strong>💡 Punto clave:</strong> En lactantes, la taquipnea es un signo
+                                                temprano de distrés respiratorio.
                                                 La presencia de tirajes indica esfuerzo respiratorio aumentado.
                                             </p>
                                         </div>
                                     </div>
 
                                     <div className="p-5 bg-gray-50 rounded-lg shadow-sm mb-4">
-                                        <h3 className="text-xl font-semibold mb-2 text-green-600">Caso 2: Adolescente inconsciente</h3>
+                                        <h3 className="text-xl font-semibold mb-2 text-green-600">Caso 2: Adolescente
+                                            inconsciente</h3>
                                         <p className="italic text-gray-600 mb-4">
-                                            Adolescente de 16 años encontrada inconsciente en una fiesta. Amigos refieren consumo de alcohol. 
-                                            Al examen: Glasgow 9 (O2, V2, M5), FR 8, FC 50, PA 90/60, hipotermia 35°C, 
+                                            Adolescente de 16 años encontrada inconsciente en una fiesta. Amigos
+                                            refieren consumo de alcohol.
+                                            Al examen: Glasgow 9 (O2, V2, M5), FR 8, FC 50, PA 90/60, hipotermia 35°C,
                                             pupilas puntiformes, olor a alcohol en aliento.
                                         </p>
 
                                         <div className="mb-4">
                                             <h4 className="font-medium mb-2">🚨 Evaluación crítica:</h4>
                                             <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                                <li><strong>Vía aérea:</strong> Riesgo por disminución del nivel de conciencia</li>
-                                                <li><strong>Respiración:</strong> Bradipnea significativa (normal: 12-20)</li>
-                                                <li><strong>Circulación:</strong> Bradicardia y hipotensión relativa</li>
-                                                <li><strong>Neurológico:</strong> Glasgow moderado, pupilas sugieren opiáceos</li>
-                                                <li><strong>Exposición:</strong> Hipotermia, posible intoxicación mixta</li>
+                                                <li><strong>Vía aérea:</strong> Riesgo por disminución del nivel de
+                                                    conciencia
+                                                </li>
+                                                <li><strong>Respiración:</strong> Bradipnea significativa (normal:
+                                                    12-20)
+                                                </li>
+                                                <li><strong>Circulación:</strong> Bradicardia y hipotensión relativa
+                                                </li>
+                                                <li><strong>Neurológico:</strong> Glasgow moderado, pupilas sugieren
+                                                    opiáceos
+                                                </li>
+                                                <li><strong>Exposición:</strong> Hipotermia, posible intoxicación mixta
+                                                </li>
                                             </ul>
                                         </div>
 
@@ -728,27 +814,38 @@ export default function LifeSpec() {
 
                                         <div className="mt-4 p-3 bg-green-100 rounded">
                                             <p className="text-green-800 text-sm">
-                                                <strong>💡 Punto clave:</strong> En adolescentes, siempre considerar intoxicación múltiple. 
+                                                <strong>💡 Punto clave:</strong> En adolescentes, siempre considerar
+                                                intoxicación múltiple.
                                                 La privacidad es importante, pero la seguridad es prioridad.
                                             </p>
                                         </div>
                                     </div>
 
                                     <div className="p-5 bg-gray-50 rounded-lg shadow-sm mb-4">
-                                        <h3 className="text-xl font-semibold mb-2 text-orange-600">Caso 3: Adulto mayor con caída</h3>
+                                        <h3 className="text-xl font-semibold mb-2 text-orange-600">Caso 3: Adulto mayor
+                                            con caída</h3>
                                         <p className="italic text-gray-600 mb-4">
-                                            Mujer de 82 años con caída en domicilio. Antecedentes: HTA, DM2, osteoporosis. 
-                                            Medicamentos: amlodipino, metformina, calcio. Familia refiere confusión reciente. 
-                                            Al examen: PA 180/100, FC 90, FR 18, Temp 37.8°C, dolor en cadera derecha, desorientada en tiempo.
+                                            Mujer de 82 años con caída en domicilio. Antecedentes: HTA, DM2,
+                                            osteoporosis.
+                                            Medicamentos: amlodipino, metformina, calcio. Familia refiere confusión
+                                            reciente.
+                                            Al examen: PA 180/100, FC 90, FR 18, Temp 37.8°C, dolor en cadera derecha,
+                                            desorientada en tiempo.
                                         </p>
 
                                         <div className="mb-4">
                                             <h4 className="font-medium mb-2">🔍 Evaluación geriátrica integral:</h4>
                                             <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                                <li><strong>Trauma:</strong> Posible fractura de cadera (mecanismo + dolor)</li>
-                                                <li><strong>Causa de caída:</strong> ¿Sincope? ¿Infección? ¿Medicamentos?</li>
+                                                <li><strong>Trauma:</strong> Posible fractura de cadera (mecanismo +
+                                                    dolor)
+                                                </li>
+                                                <li><strong>Causa de caída:</strong> ¿Sincope? ¿Infección?
+                                                    ¿Medicamentos?
+                                                </li>
                                                 <li><strong>Comorbilidades:</strong> HTA no controlada, diabetes</li>
-                                                <li><strong>Función cognitiva:</strong> Confusión nueva (posible delirium)</li>
+                                                <li><strong>Función cognitiva:</strong> Confusión nueva (posible
+                                                    delirium)
+                                                </li>
                                                 <li><strong>Estado funcional:</strong> Evaluar independencia previa</li>
                                             </ul>
                                         </div>
@@ -768,28 +865,38 @@ export default function LifeSpec() {
 
                                         <div className="mt-4 p-3 bg-orange-100 rounded">
                                             <p className="text-orange-800 text-sm">
-                                                <strong>💡 Punto clave:</strong> En adultos mayores, una caída rara vez es "accidental". 
-                                                Siempre buscar causas médicas subyacentes y evaluar el contexto integral.
+                                                <strong>💡 Punto clave:</strong> En adultos mayores, una caída rara vez
+                                                es "accidental".
+                                                Siempre buscar causas médicas subyacentes y evaluar el contexto
+                                                integral.
                                             </p>
                                         </div>
                                     </div>
 
                                     <div className="p-5 bg-gray-50 rounded-lg shadow-sm">
-                                        <h3 className="text-xl font-semibold mb-2 text-purple-600">Caso 4: Neonato con dificultad respiratoria</h3>
+                                        <h3 className="text-xl font-semibold mb-2 text-purple-600">Caso 4: Neonato con
+                                            dificultad respiratoria</h3>
                                         <p className="italic text-gray-600 mb-4">
-                                            Neonato de 2 semanas, parto domiciliario sin complicaciones. 
-                                            Presenta dificultad respiratoria súbita, cianosis peribucal, 
+                                            Neonato de 2 semanas, parto domiciliario sin complicaciones.
+                                            Presenta dificultad respiratoria súbita, cianosis peribucal,
                                             llanto débil. FR 65, FC 180, temp 36.8°C. Aleteo nasal presente.
                                         </p>
 
                                         <div className="mb-4">
                                             <h4 className="font-medium mb-2">🚨 Evaluación neonatal especializada:</h4>
                                             <ul className="list-disc list-inside space-y-1 text-gray-700">
-                                                <li><strong>Trabajo respiratorio:</strong> FR elevada (normal: 30-60), aleteo nasal</li>
-                                                <li><strong>Coloración:</strong> Cianosis peribucal (signo de hipoxemia)</li>
+                                                <li><strong>Trabajo respiratorio:</strong> FR elevada (normal: 30-60),
+                                                    aleteo nasal
+                                                </li>
+                                                <li><strong>Coloración:</strong> Cianosis peribucal (signo de hipoxemia)
+                                                </li>
                                                 <li><strong>Circulación:</strong> Taquicardia compensatoria</li>
-                                                <li><strong>Termorregulación:</strong> Temperatura en límite inferior normal</li>
-                                                <li><strong>Respuesta:</strong> Llanto débil (posible fatiga respiratoria)</li>
+                                                <li><strong>Termorregulación:</strong> Temperatura en límite inferior
+                                                    normal
+                                                </li>
+                                                <li><strong>Respuesta:</strong> Llanto débil (posible fatiga
+                                                    respiratoria)
+                                                </li>
                                             </ul>
                                         </div>
 
@@ -808,26 +915,32 @@ export default function LifeSpec() {
 
                                         <div className="mt-4 p-3 bg-purple-100 rounded">
                                             <p className="text-purple-800 text-sm">
-                                                <strong>💡 Punto clave:</strong> Los neonatos se descompensan rápidamente. 
-                                                El control térmico y la oxigenación adecuada son fundamentales para prevenir el deterioro.
+                                                <strong>💡 Punto clave:</strong> Los neonatos se descompensan
+                                                rápidamente.
+                                                El control térmico y la oxigenación adecuada son fundamentales para
+                                                prevenir el deterioro.
                                             </p>
                                         </div>
                                     </div>
 
                                     <div className="bg-gradient-to-r from-blue-100 to-blue-50 p-6 rounded-lg">
-                                        <h3 className="text-xl font-semibold mb-3 text-blue-800">📚 Ejercicios de autoevaluación</h3>
+                                        <h3 className="text-xl font-semibold mb-3 text-blue-800">📚 Ejercicios de
+                                            autoevaluación</h3>
                                         <div className="space-y-3">
                                             <div className="p-3 bg-white rounded">
                                                 <p className="font-medium text-blue-700">Pregunta 1:</p>
-                                                <p className="text-gray-700 text-sm">¿Cuál es la principal diferencia en el manejo de vía aérea entre un lactante y un adulto?</p>
+                                                <p className="text-gray-700 text-sm">¿Cuál es la principal diferencia en
+                                                    el manejo de vía aérea entre un lactante y un adulto?</p>
                                             </div>
                                             <div className="p-3 bg-white rounded">
                                                 <p className="font-medium text-blue-700">Pregunta 2:</p>
-                                                <p className="text-gray-700 text-sm">¿Por qué la hipotensión es un signo tardío de shock en pediatría?</p>
+                                                <p className="text-gray-700 text-sm">¿Por qué la hipotensión es un signo
+                                                    tardío de shock en pediatría?</p>
                                             </div>
                                             <div className="p-3 bg-white rounded">
                                                 <p className="font-medium text-blue-700">Pregunta 3:</p>
-                                                <p className="text-gray-700 text-sm">¿Qué factores adicionales debes considerar al evaluar un adulto mayor con síntomas vagos?</p>
+                                                <p className="text-gray-700 text-sm">¿Qué factores adicionales debes
+                                                    considerar al evaluar un adulto mayor con síntomas vagos?</p>
                                             </div>
                                         </div>
                                     </div>
@@ -843,7 +956,7 @@ export default function LifeSpec() {
                                     <Disclosure key={idx}>
                                         {({open}) => (
                                             <div className="border rounded-lg overflow-hidden">
-                                <Disclosure.Button
+                                                <Disclosure.Button
                                                     className="flex w-full justify-between items-center bg-gray-100 px-4 py-3 text-left text-lg font-medium hover:bg-orange-100 transition">
                                                     <span>{faq.question}</span>
                                                     <ChevronUpIcon
@@ -860,12 +973,11 @@ export default function LifeSpec() {
                             </div>
                         </section>
                         {/* Foro de Discusión */}
-                        <ForumSection 
-                            pagina="life-spec" 
+                        <ForumSection
+                            pagina="life-spec"
                             titulo="Foro de Discusión - Life Spec"
                         />
 
-                        
 
                         {/* Referencias y Recursos */}
                         <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">
@@ -874,23 +986,41 @@ export default function LifeSpec() {
                                 <div>
                                     <h3 className="text-lg font-medium mb-2">Bibliografía principal</h3>
                                     <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                        <li>AAOS. (2021). <em>Emergencias Médicas Prehospitalarias</em> (11ª edición). Jones & Bartlett Learning.</li>
-                                        <li>American Academy of Pediatrics. (2020). <em>Pediatric Education for Prehospital Professionals (PEPP)</em> (4ª edición).</li>
-                                        <li>Geriatric Emergency Medicine. (2022). <em>Prehospital Care of the Elderly Patient</em>. Springer.</li>
-                                        <li>National Association of EMS Physicians. (2019). <em>Position Statements on Age-Specific Care</em>.</li>
+                                        <li>AAOS. (2021). <em>Emergencias Médicas Prehospitalarias</em> (11ª edición).
+                                            Jones & Bartlett Learning.
+                                        </li>
+                                        <li>American Academy of Pediatrics. (2020). <em>Pediatric Education for
+                                            Prehospital Professionals (PEPP)</em> (4ª edición).
+                                        </li>
+                                        <li>Geriatric Emergency Medicine. (2022). <em>Prehospital Care of the Elderly
+                                            Patient</em>. Springer.
+                                        </li>
+                                        <li>National Association of EMS Physicians. (2019). <em>Position Statements on
+                                            Age-Specific Care</em>.
+                                        </li>
                                     </ul>
                                 </div>
-                                
+
                                 <div>
                                     <h3 className="text-lg font-medium mb-2">Recursos en línea especializados</h3>
                                     <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                        <li><a href="https://www.pepp.com/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">PEPP - Educación pediátrica prehospitalaria</a></li>
-                                        <li><a href="https://www.ems1.com/pediatric/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">EMS1 - Sección de pediatría</a></li>
-                                        <li><a href="https://www.jems.com/patient-care/pediatric/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">JEMS - Cuidado pediátrico</a></li>
-                                        <li><a href="https://www.saem.org/about-saem/academies-interest-groups-affiliates2/interest-groups/geriatric-emergency-medicine" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">SAEM - Medicina geriátrica de emergencia</a></li>
+                                        <li><a href="https://www.pepp.com/" target="_blank" rel="noopener noreferrer"
+                                               className="text-blue-600 hover:underline">PEPP - Educación pediátrica
+                                            prehospitalaria</a></li>
+                                        <li><a href="https://www.ems1.com/pediatric/" target="_blank"
+                                               rel="noopener noreferrer" className="text-blue-600 hover:underline">EMS1
+                                            - Sección de pediatría</a></li>
+                                        <li><a href="https://www.jems.com/patient-care/pediatric/" target="_blank"
+                                               rel="noopener noreferrer" className="text-blue-600 hover:underline">JEMS
+                                            - Cuidado pediátrico</a></li>
+                                        <li><a
+                                            href="https://www.saem.org/about-saem/academies-interest-groups-affiliates2/interest-groups/geriatric-emergency-medicine"
+                                            target="_blank" rel="noopener noreferrer"
+                                            className="text-blue-600 hover:underline">SAEM - Medicina geriátrica de
+                                            emergencia</a></li>
                                     </ul>
                                 </div>
-                                
+
                                 <div>
                                     <h3 className="text-lg font-medium mb-2">Herramientas y calculadoras</h3>
                                     <ul className="list-disc list-inside space-y-2 text-gray-700">

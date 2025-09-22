@@ -1,6 +1,21 @@
-import { FaTimes, FaUser, FaEnvelope, FaCalendar, FaGraduationCap, FaClipboardList, FaComments, FaTrophy, FaChartLine, FaTasks, FaStar, FaEdit, FaCheck, FaTimes as FaCancel } from "react-icons/fa";
-import { UserDetail } from "../AdminDashboard.types";
-import { useState } from "react";
+import {
+    FaCalendar,
+    FaChartLine,
+    FaCheck,
+    FaClipboardList,
+    FaComments,
+    FaEdit,
+    FaEnvelope,
+    FaGraduationCap,
+    FaStar,
+    FaTasks,
+    FaTimes,
+    FaTimes as FaCancel,
+    FaTrophy,
+    FaUser
+} from "react-icons/fa";
+import {UserDetail} from "../AdminDashboard.types";
+import {useState} from "react";
 
 interface UserDetailModalProps {
     user: UserDetail | null;
@@ -9,7 +24,7 @@ interface UserDetailModalProps {
     onUpdateAttendance?: (userId: string, attendance: number) => Promise<void>;
 }
 
-export default function UserDetailModal({ user, onClose, isOpen, onUpdateAttendance }: UserDetailModalProps) {
+export default function UserDetailModal({user, onClose, isOpen, onUpdateAttendance}: UserDetailModalProps) {
     const [isEditingAttendance, setIsEditingAttendance] = useState(false);
     const [newAttendance, setNewAttendance] = useState(user?.attendance || 0);
 
@@ -57,39 +72,43 @@ export default function UserDetailModal({ user, onClose, isOpen, onUpdateAttenda
     };
 
     return (
-        <div className="fixed inset-0 bg-gray-600/50 bg-opacity-50 overflow-y-auto h-full w-full z-50 flex items-center justify-center">
+        <div
+            className="fixed inset-0 bg-gray-600/50 bg-opacity-50 overflow-y-auto h-full w-full z-50 flex items-center justify-center">
             <div className="relative bg-white rounded-lg shadow-xl max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
                 {/* Header */}
-                <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between rounded-t-lg">
+                <div
+                    className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between rounded-t-lg">
                     <h2 className="text-2xl font-bold text-gray-900">Ficha del Usuario</h2>
                     <button
                         onClick={onClose}
                         className="text-gray-400 hover:text-gray-600 transition-colors"
                     >
-                        <FaTimes size={20} />
+                        <FaTimes size={20}/>
                     </button>
                 </div>
 
                 <div className="p-6">
                     {/* User Info Card */}
-                    <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6 mb-6 border border-blue-200">
+                    <div
+                        className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6 mb-6 border border-blue-200">
                         <div className="flex items-center mb-4">
                             <div className="bg-blue-500 rounded-full p-3 mr-4">
-                                <FaUser className="text-white text-xl" />
+                                <FaUser className="text-white text-xl"/>
                             </div>
                             <div className="flex-1">
                                 <h3 className="text-2xl font-bold text-gray-900">{user.name || 'Sin nombre'}</h3>
                                 <div className="flex items-center mt-1">
-                                    <FaEnvelope className="text-gray-500 mr-2" />
+                                    <FaEnvelope className="text-gray-500 mr-2"/>
                                     <span className="text-gray-600">{user.email}</span>
                                 </div>
                             </div>
                             <div className="text-right">
-                                <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${getRoleColor(user.role)}`}>
+                                <span
+                                    className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${getRoleColor(user.role)}`}>
                                     {user.role}
                                 </span>
                                 <div className="text-sm text-gray-500 mt-2 flex items-center justify-end">
-                                    <FaCalendar className="mr-1" />
+                                    <FaCalendar className="mr-1"/>
                                     Registro: {user.createdAt?.toDate?.()?.toLocaleDateString() || 'N/A'}
                                 </div>
                             </div>
@@ -101,7 +120,7 @@ export default function UserDetailModal({ user, onClose, isOpen, onUpdateAttenda
                         <div className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
                             <div className="flex items-center">
                                 <div className="p-2 bg-blue-100 rounded-full">
-                                    <FaClipboardList className="text-blue-600" />
+                                    <FaClipboardList className="text-blue-600"/>
                                 </div>
                                 <div className="ml-3">
                                     <p className="text-sm text-gray-600">Exámenes Totales</p>
@@ -113,7 +132,7 @@ export default function UserDetailModal({ user, onClose, isOpen, onUpdateAttenda
                         <div className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
                             <div className="flex items-center">
                                 <div className="p-2 bg-green-100 rounded-full">
-                                    <FaTrophy className="text-green-600" />
+                                    <FaTrophy className="text-green-600"/>
                                 </div>
                                 <div className="ml-3">
                                     <p className="text-sm text-gray-600">Completados</p>
@@ -122,10 +141,11 @@ export default function UserDetailModal({ user, onClose, isOpen, onUpdateAttenda
                             </div>
                         </div>
 
-                        <div className={`bg-white border border-gray-200 rounded-lg p-4 shadow-sm ${getScoreBackground(user.averageScore)}`}>
+                        <div
+                            className={`bg-white border border-gray-200 rounded-lg p-4 shadow-sm ${getScoreBackground(user.averageScore)}`}>
                             <div className="flex items-center">
                                 <div className={`p-2 rounded-full ${getScoreBackground(user.averageScore)}`}>
-                                    <FaGraduationCap className={getScoreColor(user.averageScore)} />
+                                    <FaGraduationCap className={getScoreColor(user.averageScore)}/>
                                 </div>
                                 <div className="ml-3">
                                     <p className="text-sm text-gray-600">Promedio</p>
@@ -139,7 +159,7 @@ export default function UserDetailModal({ user, onClose, isOpen, onUpdateAttenda
                         <div className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
                             <div className="flex items-center">
                                 <div className="p-2 bg-purple-100 rounded-full">
-                                    <FaComments className="text-purple-600" />
+                                    <FaComments className="text-purple-600"/>
                                 </div>
                                 <div className="ml-3">
                                     <p className="text-sm text-gray-600">Mensajes Foro</p>
@@ -151,7 +171,7 @@ export default function UserDetailModal({ user, onClose, isOpen, onUpdateAttenda
                         <div className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
                             <div className="flex items-center">
                                 <div className="p-2 bg-orange-100 rounded-full">
-                                    <FaTasks className="text-orange-600" />
+                                    <FaTasks className="text-orange-600"/>
                                 </div>
                                 <div className="ml-3">
                                     <p className="text-sm text-gray-600">Tareas Entregadas</p>
@@ -160,10 +180,13 @@ export default function UserDetailModal({ user, onClose, isOpen, onUpdateAttenda
                             </div>
                         </div>
 
-                        <div className={`bg-white border border-gray-200 rounded-lg p-4 shadow-sm ${user.finalGrade ? getScoreBackground(user.finalGrade) : ''}`}>
+                        <div
+                            className={`bg-white border border-gray-200 rounded-lg p-4 shadow-sm ${user.finalGrade ? getScoreBackground(user.finalGrade) : ''}`}>
                             <div className="flex items-center">
-                                <div className={`p-2 rounded-full ${user.finalGrade ? getScoreBackground(user.finalGrade) : 'bg-gray-100'}`}>
-                                    <FaStar className={user.finalGrade ? getScoreColor(user.finalGrade) : 'text-gray-400'} />
+                                <div
+                                    className={`p-2 rounded-full ${user.finalGrade ? getScoreBackground(user.finalGrade) : 'bg-gray-100'}`}>
+                                    <FaStar
+                                        className={user.finalGrade ? getScoreColor(user.finalGrade) : 'text-gray-400'}/>
                                 </div>
                                 <div className="ml-3">
                                     <p className="text-sm text-gray-600">Promedio Final</p>
@@ -180,7 +203,7 @@ export default function UserDetailModal({ user, onClose, isOpen, onUpdateAttenda
                         <div className="bg-white border border-gray-200 rounded-lg shadow-sm">
                             <div className="px-6 py-4 border-b border-gray-200">
                                 <h4 className="text-lg font-semibold text-gray-900 flex items-center">
-                                    <FaChartLine className="mr-2 text-blue-500" />
+                                    <FaChartLine className="mr-2 text-blue-500"/>
                                     Historial de Exámenes
                                 </h4>
                             </div>
@@ -188,7 +211,8 @@ export default function UserDetailModal({ user, onClose, isOpen, onUpdateAttenda
                                 {user.exams && Object.keys(user.exams).length > 0 ? (
                                     <div className="space-y-3 max-h-96 overflow-y-auto">
                                         {Object.entries(user.exams).map(([examName, examData], index) => (
-                                            <div key={index} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                            <div key={index}
+                                                 className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                                                 <div className="flex-1">
                                                     <p className="font-medium text-gray-900 text-sm">{examName}</p>
                                                     <p className="text-xs text-gray-500">
@@ -197,7 +221,8 @@ export default function UserDetailModal({ user, onClose, isOpen, onUpdateAttenda
                                                 </div>
                                                 <div className="text-right">
                                                     {examData.completed ? (
-                                                        <span className={`text-sm font-bold ${getScoreColor(examData.score)}`}>
+                                                        <span
+                                                            className={`text-sm font-bold ${getScoreColor(examData.score)}`}>
                                                             {examData.score}%
                                                         </span>
                                                     ) : (
@@ -209,7 +234,7 @@ export default function UserDetailModal({ user, onClose, isOpen, onUpdateAttenda
                                     </div>
                                 ) : (
                                     <div className="text-center py-8">
-                                        <FaClipboardList className="mx-auto text-gray-300 text-3xl mb-3" />
+                                        <FaClipboardList className="mx-auto text-gray-300 text-3xl mb-3"/>
                                         <p className="text-gray-500 text-sm">No hay exámenes registrados</p>
                                     </div>
                                 )}
@@ -220,7 +245,7 @@ export default function UserDetailModal({ user, onClose, isOpen, onUpdateAttenda
                         <div className="bg-white border border-gray-200 rounded-lg shadow-sm">
                             <div className="px-6 py-4 border-b border-gray-200">
                                 <h4 className="text-lg font-semibold text-gray-900 flex items-center">
-                                    <FaTasks className="mr-2 text-orange-500" />
+                                    <FaTasks className="mr-2 text-orange-500"/>
                                     Entregas de Tareas
                                 </h4>
                             </div>
@@ -228,21 +253,25 @@ export default function UserDetailModal({ user, onClose, isOpen, onUpdateAttenda
                                 {user.taskSubmissions && user.taskSubmissions.length > 0 ? (
                                     <div className="space-y-3 max-h-96 overflow-y-auto">
                                         {user.taskSubmissions.map((submission, index) => (
-                                            <div key={index} className="p-3 bg-gray-50 rounded-lg border-l-4 border-orange-500">
+                                            <div key={index}
+                                                 className="p-3 bg-gray-50 rounded-lg border-l-4 border-orange-500">
                                                 <div className="flex items-start justify-between mb-2">
                                                     <div className="flex-1">
-                                                        <p className="font-medium text-gray-900 text-sm">Tarea #{submission.taskId.slice(-6)}</p>
+                                                        <p className="font-medium text-gray-900 text-sm">Tarea
+                                                            #{submission.taskId.slice(-6)}</p>
                                                         <p className="text-xs text-gray-500">
                                                             Entregado: {submission.submittedAt?.toDate?.()?.toLocaleDateString()}
                                                         </p>
                                                     </div>
                                                     <div className="text-right">
                                                         {submission.isGraded ? (
-                                                            <span className={`text-sm font-bold ${getScoreColor(submission.score || 0)}`}>
+                                                            <span
+                                                                className={`text-sm font-bold ${getScoreColor(submission.score || 0)}`}>
                                                                 {submission.score}/100
                                                             </span>
                                                         ) : (
-                                                            <span className="text-yellow-600 text-xs bg-yellow-100 px-2 py-1 rounded-full">
+                                                            <span
+                                                                className="text-yellow-600 text-xs bg-yellow-100 px-2 py-1 rounded-full">
                                                                 Pendiente
                                                             </span>
                                                         )}
@@ -268,7 +297,7 @@ export default function UserDetailModal({ user, onClose, isOpen, onUpdateAttenda
                                     </div>
                                 ) : (
                                     <div className="text-center py-8">
-                                        <FaTasks className="mx-auto text-gray-300 text-3xl mb-3" />
+                                        <FaTasks className="mx-auto text-gray-300 text-3xl mb-3"/>
                                         <p className="text-gray-500 text-sm">No hay tareas entregadas</p>
                                     </div>
                                 )}
@@ -279,7 +308,7 @@ export default function UserDetailModal({ user, onClose, isOpen, onUpdateAttenda
                         <div className="bg-white border border-gray-200 rounded-lg shadow-sm">
                             <div className="px-6 py-4 border-b border-gray-200">
                                 <h4 className="text-lg font-semibold text-gray-900 flex items-center">
-                                    <FaComments className="mr-2 text-green-500" />
+                                    <FaComments className="mr-2 text-green-500"/>
                                     Actividad en Foro
                                 </h4>
                             </div>
@@ -287,7 +316,8 @@ export default function UserDetailModal({ user, onClose, isOpen, onUpdateAttenda
                                 {user.forumMessages && user.forumMessages.length > 0 ? (
                                     <div className="space-y-3 max-h-96 overflow-y-auto">
                                         {user.forumMessages.slice(0, 5).map((message, index) => (
-                                            <div key={index} className="p-3 bg-gray-50 rounded-lg border-l-4 border-green-500">
+                                            <div key={index}
+                                                 className="p-3 bg-gray-50 rounded-lg border-l-4 border-green-500">
                                                 <div className="flex items-start justify-between mb-2">
                                                     <p className="font-medium text-gray-900 text-sm">{message.pagina}</p>
                                                     <span className="text-xs text-gray-500">
@@ -298,7 +328,8 @@ export default function UserDetailModal({ user, onClose, isOpen, onUpdateAttenda
                                                     {message.contenido}
                                                 </p>
                                                 <div className="flex items-center mt-2 text-xs text-gray-500">
-                                                    <span className={`px-2 py-1 rounded-full ${message.isThread ? 'bg-blue-100 text-blue-600' : 'bg-gray-100 text-gray-600'}`}>
+                                                    <span
+                                                        className={`px-2 py-1 rounded-full ${message.isThread ? 'bg-blue-100 text-blue-600' : 'bg-gray-100 text-gray-600'}`}>
                                                         {message.isThread ? 'Hilo principal' : 'Respuesta'}
                                                     </span>
                                                 </div>
@@ -312,7 +343,7 @@ export default function UserDetailModal({ user, onClose, isOpen, onUpdateAttenda
                                     </div>
                                 ) : (
                                     <div className="text-center py-8">
-                                        <FaComments className="mx-auto text-gray-300 text-3xl mb-3" />
+                                        <FaComments className="mx-auto text-gray-300 text-3xl mb-3"/>
                                         <p className="text-gray-500 text-sm">No hay actividad en el foro</p>
                                     </div>
                                 )}
@@ -329,7 +360,8 @@ export default function UserDetailModal({ user, onClose, isOpen, onUpdateAttenda
                             <div className="p-6">
                                 <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                                     <div className="text-center">
-                                        <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full ${getScoreBackground(user.averageScore)} mb-3`}>
+                                        <div
+                                            className={`inline-flex items-center justify-center w-16 h-16 rounded-full ${getScoreBackground(user.averageScore)} mb-3`}>
                                             <span className={`text-xl font-bold ${getScoreColor(user.averageScore)}`}>
                                                 {user.averageScore}%
                                             </span>
@@ -337,13 +369,14 @@ export default function UserDetailModal({ user, onClose, isOpen, onUpdateAttenda
                                         <p className="text-sm font-medium text-gray-600">Promedio Exámenes</p>
                                         <p className="text-xs text-gray-500">
                                             {user.averageScore >= 85 ? 'Excelente rendimiento' :
-                                             user.averageScore >= 70 ? 'Buen rendimiento' :
-                                             'Necesita mejorar'}
+                                                user.averageScore >= 70 ? 'Buen rendimiento' :
+                                                    'Necesita mejorar'}
                                         </p>
                                     </div>
 
                                     <div className="text-center">
-                                        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-orange-100 mb-3">
+                                        <div
+                                            className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-orange-100 mb-3">
                                             <span className="text-xl font-bold text-orange-600">
                                                 {user.taskSubmissions && user.taskSubmissions.length > 0
                                                     ? Math.round(user.taskSubmissions.filter(t => t.isGraded).reduce((sum, t) => sum + (t.score || 0), 0) / user.taskSubmissions.filter(t => t.isGraded).length) || 0
@@ -357,7 +390,8 @@ export default function UserDetailModal({ user, onClose, isOpen, onUpdateAttenda
                                     </div>
 
                                     <div className="text-center">
-                                        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-3">
+                                        <div
+                                            className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-3">
                                             <span className="text-xl font-bold text-green-600">
                                                 {user.attendance || 0}%
                                             </span>
@@ -368,8 +402,8 @@ export default function UserDetailModal({ user, onClose, isOpen, onUpdateAttenda
                                                 <div className="flex items-center">
                                                     <p className="text-xs text-gray-500 mr-2">
                                                         {(user.attendance || 0) >= 90 ? 'Excelente' :
-                                                         (user.attendance || 0) >= 80 ? 'Buena' :
-                                                         (user.attendance || 0) >= 70 ? 'Regular' : 'Baja'}
+                                                            (user.attendance || 0) >= 80 ? 'Buena' :
+                                                                (user.attendance || 0) >= 70 ? 'Regular' : 'Baja'}
                                                     </p>
                                                     <button
                                                         onClick={() => {
@@ -379,7 +413,7 @@ export default function UserDetailModal({ user, onClose, isOpen, onUpdateAttenda
                                                         className="text-gray-400 hover:text-blue-600 transition-colors"
                                                         title="Editar asistencia"
                                                     >
-                                                        <FaEdit size={12} />
+                                                        <FaEdit size={12}/>
                                                     </button>
                                                 </div>
                                             ) : (
@@ -399,7 +433,7 @@ export default function UserDetailModal({ user, onClose, isOpen, onUpdateAttenda
                                                         className="text-green-600 hover:text-green-700 transition-colors ml-1"
                                                         title="Guardar"
                                                     >
-                                                        <FaCheck size={10} />
+                                                        <FaCheck size={10}/>
                                                     </button>
                                                     <button
                                                         onClick={() => {
@@ -409,7 +443,7 @@ export default function UserDetailModal({ user, onClose, isOpen, onUpdateAttenda
                                                         className="text-red-600 hover:text-red-700 transition-colors"
                                                         title="Cancelar"
                                                     >
-                                                        <FaCancel size={10} />
+                                                        <FaCancel size={10}/>
                                                     </button>
                                                 </div>
                                             )}
@@ -417,8 +451,10 @@ export default function UserDetailModal({ user, onClose, isOpen, onUpdateAttenda
                                     </div>
 
                                     <div className="text-center">
-                                        <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full ${user.finalGrade ? getScoreBackground(user.finalGrade) : 'bg-gray-100'} mb-3`}>
-                                            <span className={`text-xl font-bold ${user.finalGrade ? getScoreColor(user.finalGrade) : 'text-gray-400'}`}>
+                                        <div
+                                            className={`inline-flex items-center justify-center w-16 h-16 rounded-full ${user.finalGrade ? getScoreBackground(user.finalGrade) : 'bg-gray-100'} mb-3`}>
+                                            <span
+                                                className={`text-xl font-bold ${user.finalGrade ? getScoreColor(user.finalGrade) : 'text-gray-400'}`}>
                                                 {user.finalGrade || 0}%
                                             </span>
                                         </div>
@@ -432,7 +468,8 @@ export default function UserDetailModal({ user, onClose, isOpen, onUpdateAttenda
 
                     {/* Grade Breakdown */}
                     {user.finalGrade && (
-                        <div className="mt-6 bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-200 rounded-lg shadow-sm">
+                        <div
+                            className="mt-6 bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-200 rounded-lg shadow-sm">
                             <div className="px-6 py-4 border-b border-indigo-200">
                                 <h4 className="text-lg font-semibold text-gray-900">Desglose de Calificación Final</h4>
                                 <p className="text-sm text-gray-600">Cálculo basado en pesos ponderados</p>
@@ -442,12 +479,13 @@ export default function UserDetailModal({ user, onClose, isOpen, onUpdateAttenda
                                     <div className="bg-white rounded-lg p-4 border border-blue-200">
                                         <div className="flex items-center justify-between mb-2">
                                             <span className="text-sm font-medium text-gray-700">Exámenes (70%)</span>
-                                            <span className="text-lg font-bold text-blue-600">{user.averageScore}%</span>
+                                            <span
+                                                className="text-lg font-bold text-blue-600">{user.averageScore}%</span>
                                         </div>
                                         <div className="w-full bg-gray-200 rounded-full h-2">
                                             <div
                                                 className="bg-blue-600 h-2 rounded-full"
-                                                style={{ width: `${user.averageScore}%` }}
+                                                style={{width: `${user.averageScore}%`}}
                                             ></div>
                                         </div>
                                         <p className="text-xs text-gray-500 mt-1">
@@ -468,7 +506,7 @@ export default function UserDetailModal({ user, onClose, isOpen, onUpdateAttenda
                                             <div
                                                 className="bg-orange-600 h-2 rounded-full"
                                                 style={{
-                                                    width: `${user.taskSubmissions && user.taskSubmissions.length > 0 
+                                                    width: `${user.taskSubmissions && user.taskSubmissions.length > 0
                                                         ? Math.round(user.taskSubmissions.filter(t => t.isGraded).reduce((sum, t) => sum + (t.score || 0), 0) / user.taskSubmissions.filter(t => t.isGraded).length) || 0
                                                         : 0}%`
                                                 }}
@@ -476,20 +514,21 @@ export default function UserDetailModal({ user, onClose, isOpen, onUpdateAttenda
                                         </div>
                                         <p className="text-xs text-gray-500 mt-1">
                                             Contribución: {Math.round(((user.taskSubmissions && user.taskSubmissions.length > 0
-                                                ? Math.round(user.taskSubmissions.filter(t => t.isGraded).reduce((sum, t) => sum + (t.score || 0), 0) / user.taskSubmissions.filter(t => t.isGraded).length) || 0
-                                                : 0) * 20) / 100)} puntos
+                                            ? Math.round(user.taskSubmissions.filter(t => t.isGraded).reduce((sum, t) => sum + (t.score || 0), 0) / user.taskSubmissions.filter(t => t.isGraded).length) || 0
+                                            : 0) * 20) / 100)} puntos
                                         </p>
                                     </div>
 
                                     <div className="bg-white rounded-lg p-4 border border-green-200">
                                         <div className="flex items-center justify-between mb-2">
                                             <span className="text-sm font-medium text-gray-700">Asistencia (10%)</span>
-                                            <span className="text-lg font-bold text-green-600">{user.attendance || 0}%</span>
+                                            <span
+                                                className="text-lg font-bold text-green-600">{user.attendance || 0}%</span>
                                         </div>
                                         <div className="w-full bg-gray-200 rounded-full h-2">
                                             <div
                                                 className="bg-green-600 h-2 rounded-full"
-                                                style={{ width: `${user.attendance || 0}%` }}
+                                                style={{width: `${user.attendance || 0}%`}}
                                             ></div>
                                         </div>
                                         <p className="text-xs text-gray-500 mt-1">
@@ -501,7 +540,8 @@ export default function UserDetailModal({ user, onClose, isOpen, onUpdateAttenda
                                 <div className="mt-6 pt-4 border-t border-indigo-200">
                                     <div className="flex items-center justify-between">
                                         <span className="text-lg font-semibold text-gray-900">Calificación Final:</span>
-                                        <span className={`text-3xl font-bold ${user.finalGrade ? getScoreColor(user.finalGrade) : 'text-gray-400'}`}>
+                                        <span
+                                            className={`text-3xl font-bold ${user.finalGrade ? getScoreColor(user.finalGrade) : 'text-gray-400'}`}>
                                             {user.finalGrade}%
                                         </span>
                                     </div>

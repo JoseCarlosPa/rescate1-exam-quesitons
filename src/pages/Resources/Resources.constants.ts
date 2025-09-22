@@ -27,7 +27,7 @@ export const resources = [
         editor: "Andrew N. Pollak, MD, FAAOS",
         category: "Manual",
         download: "https://drive.google.com/uc?export=download&id=18b2vE-8waCgmiM6ncd_uljH8fXbin7_U",
-        link: { url: "https://www.aaos.org/", label: "Sitio web" },
+        link: {url: "https://www.aaos.org/", label: "Sitio web"},
     },
     {
         img: bls,
@@ -36,7 +36,7 @@ export const resources = [
         edition: "2021",
         category: "Manual",
         download: "https://drive.google.com/uc?export=download&id=1bCx4PrzkIiNuXz-Y4ZU0jM8UFvynoufL",
-        link: { url: "https://shopcpr.heart.org/es/courses/bls", label: "Sitio web" },
+        link: {url: "https://shopcpr.heart.org/es/courses/bls", label: "Sitio web"},
     },
     {
         img: acls,
@@ -45,7 +45,7 @@ export const resources = [
         edition: "2021",
         category: "Manual",
         download: "https://drive.google.com/uc?export=download&id=1hlodASdwD_tYP4DpKLKQCzD11r81NGZ",
-        link: { url: "https://shopcpr.heart.org/es/courses/acls", label: "Sitio web" },
+        link: {url: "https://shopcpr.heart.org/es/courses/acls", label: "Sitio web"},
     },
     {
         img: phtl,
@@ -54,7 +54,10 @@ export const resources = [
         edition: "Décima edición 2023",
         category: "Manual",
         download: "https://drive.google.com/uc?export=download&id=1J0PAh0nONBGmSpiYdyyjemKb-Ujx65fC",
-        link: { url: "https://www.psglearning.com/es/phtls?srsltid=AfmBOorLGRrP95FMjmKsLpuMyQJA-dZGBP-GCCK5axFAL7XjcsSrsbGq", label: "Sitio web" },
+        link: {
+            url: "https://www.psglearning.com/es/phtls?srsltid=AfmBOorLGRrP95FMjmKsLpuMyQJA-dZGBP-GCCK5axFAL7XjcsSrsbGq",
+            label: "Sitio web"
+        },
     },
     {
         img: amls,
@@ -63,7 +66,10 @@ export const resources = [
         edition: "Tercera edición 2021",
         category: "Manual",
         download: "https://drive.google.com/file/d/12XTprKF6WJwORjNNG2CrZVbGLh8A6M8i/view?usp=share_link",
-        link: { url: "https://www.psglearning.com/catalog/productdetails/9781284241488?srsltid=AfmBOoo13GT74b4KRoovcofMkOPddJ9Y3FyN3Y_3JjYYR60QinYLe2gH", label: "Sitio web" },
+        link: {
+            url: "https://www.psglearning.com/catalog/productdetails/9781284241488?srsltid=AfmBOoo13GT74b4KRoovcofMkOPddJ9Y3FyN3Y_3JjYYR60QinYLe2gH",
+            label: "Sitio web"
+        },
 
     },
     {
@@ -73,7 +79,10 @@ export const resources = [
         edition: "8va edición 2018",
         category: "Atlas",
         download: "https://drive.google.com/uc?export=download&id=1phdI9OR9xcKwUwHiDw27P7q4Khsp6yJ0",
-        link: { url: "https://www.amazon.com.mx/Anatom%C3%83%C2%AD-orientaci%C3%83%C2%B3n-cl%C3%83%C2%ADnica-Spanish-Keith/dp/8417033637/ref=asc_df_8417033637?mcid=79e06a662b2c384092fcc0c76473e0ef&tag=gledskshopmx-20&linkCode=df0&hvadid=709881970557&hvpos=&hvnetw=g&hvrand=16981546940521121917&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1010149&hvtargid=pla-451867579848&psc=1&language=es_MX&gad_source=1", label: "Comprar" },
+        link: {
+            url: "https://www.amazon.com.mx/Anatom%C3%83%C2%AD-orientaci%C3%83%C2%B3n-cl%C3%83%C2%ADnica-Spanish-Keith/dp/8417033637/ref=asc_df_8417033637?mcid=79e06a662b2c384092fcc0c76473e0ef&tag=gledskshopmx-20&linkCode=df0&hvadid=709881970557&hvpos=&hvnetw=g&hvrand=16981546940521121917&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1010149&hvtargid=pla-451867579848&psc=1&language=es_MX&gad_source=1",
+            label: "Comprar"
+        },
     },
     {
         img: netter,
@@ -82,7 +91,10 @@ export const resources = [
         edition: "Séptima edición 2023",
         category: "Atlas",
         download: "https://drive.google.com/uc?export=download&id=1w7Zmd73CK41ia1Lok0RYL4kdc4aK5hRV",
-        link: { url: "https://www.amazon.com.mx/Netter-anatom%C3%ADa-humana-Abordaje-regional/dp/8413823986/ref=sr_1_1?__mk_es_MX=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=2LWDOLOA9WUX7&dib=eyJ2IjoiMSJ9.gkCj_-HZMdJkKvTwgd-BzlNH0bY9aRmYcShoRzuh3VbgUsFBGaivTESq9-l_l56vfK5XeqQRIl8vKYfh_W1Js2GqMzwSnVpF8-aDAvGMbXB4asHwKZokAPV9rAKknAXEq9nQr9cADfZoN91mgZ7-LlJO19X6fOAFi96tpomJKIAkp_faIf4aMmqdiN7Hd1byzWU8mHjWIAYWrR6o678BJEabsuBYO7Eolna-AQ40cVGOEau8FR-r_aqNNIA8_wxZhTFDKgJEI7-Hf2vjeLmM1w3aygDxwPcImzGoOpbE6rQ.ldXkP8YRQuCLMJ7kfO36x8IvTjHeGpBwhCMeVqkzsxw&dib_tag=se&keywords=Netter+Atlas+de+anatomia+humana&qid=1746026012&sprefix=netter+atlas+de+anatomia+humana,aps,390&sr=8-1&ufe=app_do:amzn1.fos.de93fa6a-174c-4df7-be7c-5bc8e9c5a71b", label: "Comprar" },
+        link: {
+            url: "https://www.amazon.com.mx/Netter-anatom%C3%ADa-humana-Abordaje-regional/dp/8413823986/ref=sr_1_1?__mk_es_MX=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=2LWDOLOA9WUX7&dib=eyJ2IjoiMSJ9.gkCj_-HZMdJkKvTwgd-BzlNH0bY9aRmYcShoRzuh3VbgUsFBGaivTESq9-l_l56vfK5XeqQRIl8vKYfh_W1Js2GqMzwSnVpF8-aDAvGMbXB4asHwKZokAPV9rAKknAXEq9nQr9cADfZoN91mgZ7-LlJO19X6fOAFi96tpomJKIAkp_faIf4aMmqdiN7Hd1byzWU8mHjWIAYWrR6o678BJEabsuBYO7Eolna-AQ40cVGOEau8FR-r_aqNNIA8_wxZhTFDKgJEI7-Hf2vjeLmM1w3aygDxwPcImzGoOpbE6rQ.ldXkP8YRQuCLMJ7kfO36x8IvTjHeGpBwhCMeVqkzsxw&dib_tag=se&keywords=Netter+Atlas+de+anatomia+humana&qid=1746026012&sprefix=netter+atlas+de+anatomia+humana,aps,390&sr=8-1&ufe=app_do:amzn1.fos.de93fa6a-174c-4df7-be7c-5bc8e9c5a71b",
+            label: "Comprar"
+        },
     },
     {
         img: nudos,

@@ -56,7 +56,8 @@ export default function Overview() {
                         <h4 className="font-semibold text-blue-700 mb-2">La Disnea: Síntoma Central</h4>
                         <p className="text-gray-700 mb-3">
                             La disnea (dificultad para respirar) es un síntoma común que puede tener múltiples causas,
-                            desde leves (como un resfriado) hasta graves (como embolia pulmonar o insuficiencia cardíaca).
+                            desde leves (como un resfriado) hasta graves (como embolia pulmonar o insuficiencia
+                            cardíaca).
                             Aunque no siempre se puede hacer un diagnóstico definitivo en el entorno prehospitalario,
                             los profesionales pueden tomar medidas efectivas para aliviar síntomas o salvar vidas.
                         </p>

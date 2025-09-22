@@ -1,9 +1,9 @@
 import {FaTrash} from "react-icons/fa";
 import useAdminDashboard from "../AdminDashboard.hook.ts";
 
-export default function Forum(){
-    const { forumMessages, handleDeleteForumMessage} = useAdminDashboard()
-    return(
+export default function Forum() {
+    const {forumMessages, handleDeleteForumMessage} = useAdminDashboard()
+    return (
         <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Moderación del Foro</h2>
 
@@ -51,7 +51,7 @@ export default function Forum(){
                                     onClick={() => handleDeleteForumMessage(message.id)}
                                     className="text-red-600 hover:text-red-900"
                                 >
-                                    <FaTrash />
+                                    <FaTrash/>
                                 </button>
                             </td>
                         </tr>

@@ -2,11 +2,11 @@ import {FaStethoscope} from "react-icons/fa";
 import {ChevronUpIcon} from "@heroicons/react/16/solid";
 import {useState} from "react";
 
-export default function Primary(){
+export default function Primary() {
     const [selectedStep, setSelectedStep] = useState<string | null>(null);
 
 
-    return(
+    return (
         <div className="space-y-6">
             <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2 flex items-center gap-2">
                 <FaStethoscope className="text-red-500"/>

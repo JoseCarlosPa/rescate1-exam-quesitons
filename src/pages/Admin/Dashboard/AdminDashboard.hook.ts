@@ -1,16 +1,27 @@
 import {useAuth} from "../../../Providers/AuthProvider";
-import { useNavigate } from "react-router";
+import {useNavigate} from "react-router";
 import {useCallback, useEffect, useState} from "react";
-import {ActiveTab, ExamData, ForumMessage, LessonConfig, Stats, User, UserDetail, Task, TaskSubmission, GradeWeights} from "./AdminDashboard.types";
-import { initialLessons } from "./AdminDashboard.constants";
-import {collection, deleteDoc, doc, getDocs, orderBy, query, updateDoc, addDoc, Timestamp} from "firebase/firestore";
-import { toast } from "sonner";
+import {
+    ActiveTab,
+    ExamData,
+    ForumMessage,
+    GradeWeights,
+    LessonConfig,
+    Stats,
+    Task,
+    TaskSubmission,
+    User,
+    UserDetail
+} from "./AdminDashboard.types";
+import {initialLessons} from "./AdminDashboard.constants";
+import {addDoc, collection, deleteDoc, doc, getDocs, orderBy, query, Timestamp, updateDoc} from "firebase/firestore";
+import {toast} from "sonner";
 import {AllRoutes} from "../../../components/Router/Router.constants.ts";
 import {db} from "../../../firebase/firebaseConfig.ts";
 
 export default function useAdminDashboard() {
 
-    const { user } = useAuth();
+    const {user} = useAuth();
     const navigate = useNavigate();
     const [activeTab, setActiveTab] = useState<ActiveTab>('overview');
     const [loading, setLoading] = useState(true);
@@ -182,7 +193,7 @@ export default function useAdminDashboard() {
     const handleToggleLesson = (lessonId: number) => {
         setLessons(prev => prev.map(lesson =>
             lesson.id === lessonId
-                ? { ...lesson, enabled: !lesson.enabled }
+                ? {...lesson, enabled: !lesson.enabled}
                 : lesson
         ));
         toast.success('Configuración de lección actualizada');
@@ -190,9 +201,9 @@ export default function useAdminDashboard() {
 
     const handleChangeUserRole = async (userId: string, newRole: string) => {
         try {
-            await updateDoc(doc(db, 'users', userId), { role: newRole });
+            await updateDoc(doc(db, 'users', userId), {role: newRole});
             setUsers(prev => prev.map(user =>
-                user.id === userId ? { ...user, role: newRole } : user
+                user.id === userId ? {...user, role: newRole} : user
             ));
             toast.success('Rol de usuario actualizado');
         } catch (error) {
@@ -317,7 +328,7 @@ export default function useAdminDashboard() {
 
             setTaskSubmissions(prev => prev.map(submission =>
                 submission.id === submissionId
-                    ? { ...submission, score, feedback, isGraded: true, gradedAt: Timestamp.now() }
+                    ? {...submission, score, feedback, isGraded: true, gradedAt: Timestamp.now()}
                     : submission
             ));
 
@@ -374,10 +385,10 @@ export default function useAdminDashboard() {
             for (const user of users) {
                 if (user.role === 'Alumno') {
                     const userTasks = taskSubmissions.filter(submission => submission.studentId === user.id);
-                    const userAttendance =  0;
+                    const userAttendance = 0;
                     const finalGrade = calculateFinalGrade(user.exams || {}, userTasks, userAttendance);
 
-                    await updateDoc(doc(db, 'users', user.id), { finalGrade });
+                    await updateDoc(doc(db, 'users', user.id), {finalGrade});
                 }
             }
         } catch (error) {
@@ -387,9 +398,9 @@ export default function useAdminDashboard() {
 
     const handleUpdateAttendance = async (userId: string, attendance: number) => {
         try {
-            await updateDoc(doc(db, 'users', userId), { attendance });
+            await updateDoc(doc(db, 'users', userId), {attendance});
             setUsers(prev => prev.map(user =>
-                user.id === userId ? { ...user, attendance } : user
+                user.id === userId ? {...user, attendance} : user
             ));
 
             // Recalcular promedio final del usuario
@@ -397,7 +408,7 @@ export default function useAdminDashboard() {
             if (user) {
                 const userTasks = taskSubmissions.filter(submission => submission.studentId === userId);
                 const finalGrade = calculateFinalGrade(user.exams || {}, userTasks, attendance);
-                await updateDoc(doc(db, 'users', userId), { finalGrade });
+                await updateDoc(doc(db, 'users', userId), {finalGrade});
             }
 
             toast.success('Asistencia actualizada');

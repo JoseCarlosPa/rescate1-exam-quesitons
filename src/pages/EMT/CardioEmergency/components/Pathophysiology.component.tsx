@@ -1,7 +1,7 @@
 import {FiActivity} from "react-icons/fi";
 
-export default function Pathophysiology(){
-    return(
+export default function Pathophysiology() {
+    return (
         <div className="space-y-8">
             <div>
                 <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
@@ -28,15 +28,18 @@ export default function Pathophysiology(){
                             <div className="space-y-3">
                                 <div className="bg-white p-3 rounded border">
                                     <h5 className="font-medium text-red-700">STEMI</h5>
-                                    <p className="text-sm text-gray-600">Oclusión coronaria completa. Elevación del ST en ECG. Necrosis transmural.</p>
+                                    <p className="text-sm text-gray-600">Oclusión coronaria completa. Elevación del ST
+                                        en ECG. Necrosis transmural.</p>
                                 </div>
                                 <div className="bg-white p-3 rounded border">
                                     <h5 className="font-medium text-orange-700">NSTEMI</h5>
-                                    <p className="text-sm text-gray-600">Oclusión parcial. Sin elevación del ST. Necrosis subendocárdica.</p>
+                                    <p className="text-sm text-gray-600">Oclusión parcial. Sin elevación del ST.
+                                        Necrosis subendocárdica.</p>
                                 </div>
                                 <div className="bg-white p-3 rounded border">
                                     <h5 className="font-medium text-yellow-700">Angina Inestable</h5>
-                                    <p className="text-sm text-gray-600">Isquemia sin necrosis. Trombo no oclusivo. Sin elevación de troponinas.</p>
+                                    <p className="text-sm text-gray-600">Isquemia sin necrosis. Trombo no oclusivo. Sin
+                                        elevación de troponinas.</p>
                                 </div>
                             </div>
                         </div>
@@ -121,15 +124,18 @@ export default function Pathophysiology(){
                             <div className="space-y-3">
                                 <div className="bg-white p-3 rounded border">
                                     <h5 className="font-medium text-red-600">Falla de Bomba</h5>
-                                    <p className="text-sm text-gray-600">↓ Contractilidad → ↓ GC → ↓ PA → ↓ Perfusión coronaria</p>
+                                    <p className="text-sm text-gray-600">↓ Contractilidad → ↓ GC → ↓ PA → ↓ Perfusión
+                                        coronaria</p>
                                 </div>
                                 <div className="bg-white p-3 rounded border">
                                     <h5 className="font-medium text-orange-600">Círculo Vicioso</h5>
-                                    <p className="text-sm text-gray-600">↓ Perfusión → ↑ Isquemia → ↓ Contractilidad → ↓ GC</p>
+                                    <p className="text-sm text-gray-600">↓ Perfusión → ↑ Isquemia → ↓ Contractilidad → ↓
+                                        GC</p>
                                 </div>
                                 <div className="bg-white p-3 rounded border">
                                     <h5 className="font-medium text-yellow-600">Respuesta Sistémica</h5>
-                                    <p className="text-sm text-gray-600">Vasoconstricción, retención de líquidos, inflamación</p>
+                                    <p className="text-sm text-gray-600">Vasoconstricción, retención de líquidos,
+                                        inflamación</p>
                                 </div>
                             </div>
                         </div>
@@ -146,7 +152,8 @@ export default function Pathophysiology(){
                                 <li>• Acidosis láctica</li>
                             </ul>
                             <div className="mt-3 p-2 bg-red-100 rounded">
-                                <p className="text-sm text-red-700"><strong>Mortalidad:</strong> 50-80% a pesar del tratamiento óptimo</p>
+                                <p className="text-sm text-red-700"><strong>Mortalidad:</strong> 50-80% a pesar del
+                                    tratamiento óptimo</p>
                             </div>
                         </div>
                     </div>

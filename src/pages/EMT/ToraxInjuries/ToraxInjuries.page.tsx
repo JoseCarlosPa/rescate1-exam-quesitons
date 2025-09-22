@@ -5,20 +5,20 @@ import {ChevronUpIcon} from "@heroicons/react/16/solid";
 import {faqData} from "./ToraxInjuries.questions.ts";
 import {IoReturnDownBack} from "react-icons/io5";
 import {useState} from "react";
-import {MdQuiz, MdOutlineTimer, MdCheckCircle} from "react-icons/md";
+import {MdCheckCircle, MdOutlineTimer, MdQuiz} from "react-icons/md";
 import {BsBookHalf, BsLightbulb, BsShield} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
 import {GiTrenchBodyArmor} from "react-icons/gi";
-import {FaExclamationTriangle, FaHeartbeat, FaLungsVirus, FaFirstAid} from "react-icons/fa";
-import {FiAlertTriangle, FiEye, FiActivity} from "react-icons/fi";
+import {FaExclamationTriangle, FaFirstAid, FaHeartbeat, FaLungsVirus} from "react-icons/fa";
+import {FiActivity, FiAlertTriangle, FiEye} from "react-icons/fi";
 import {RiStethoscopeLine} from "react-icons/ri";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
-import { ForumSection } from "../../../components/ForumSection";
+import {ForumSection} from "../../../components/ForumSection";
 
-export default function ToraxInjuries(){
+export default function ToraxInjuries() {
     const [activeTab, setActiveTab] = useState<'overview' | 'anatomy' | 'treatment' | 'practice'>('overview');
 
-    return(
+    return (
         <SEOWrapper
             title="Lesiones Torácicas EMT | Neumotórax, Hemotórax y Trauma de Tórax"
             description="Guía completa sobre lesiones torácicas para Técnicos en Atención Médica Prehospitalaria: evaluación, manejo de neumotórax, hemotórax, tórax inestable y casos clínicos. Aprende a reconocer y tratar emergencias torácicas."
@@ -30,12 +30,13 @@ export default function ToraxInjuries(){
             includeEducationalSchema={true}
         >
             <div className="min-h-screen bg-gray-50">
-                <div className="flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-white pb-12 px-4 p-4">
+                <div
+                    className="flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-white pb-12 px-4 p-4">
                     <div className="w-full max-w-7xl">
                         {/* Cabecera */}
                         <header className="mb-8 text-center">
                             <div className="flex justify-center">
-                                <GiTrenchBodyArmor className="w-24 h-24 mb-1 text-orange-500" />
+                                <GiTrenchBodyArmor className="w-24 h-24 mb-1 text-orange-500"/>
                             </div>
                             <h1 className="text-5xl font-bold mb-2 text-center">Lesiones en el Tórax</h1>
                             <p className="text-sm italic mb-4">Alumnos Rescate 1</p>
@@ -43,19 +44,19 @@ export default function ToraxInjuries(){
                                 <NavLink
                                     to={AllRoutes.EMT}
                                     className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 transition duration-300 ease-in-out">
-                                    <IoReturnDownBack className="w-5 h-5 my-auto" />
+                                    <IoReturnDownBack className="w-5 h-5 my-auto"/>
                                     <p className="text-lg">Regresar</p>
                                 </NavLink>
                             </div>
                         </header>
-                        
+
 
                         {/* Menú rápido de recursos */}
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8 max-w-4xl mx-auto">
                             <NavLink
                                 to={`${AllRoutes.TORAX_INJURIES}/exam`}
                                 className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
-                                <MdQuiz className="w-10 h-10 text-orange-500 mb-2" />
+                                <MdQuiz className="w-10 h-10 text-orange-500 mb-2"/>
                                 <p className="text-center font-medium">Examen</p>
                             </NavLink>
 
@@ -63,14 +64,14 @@ export default function ToraxInjuries(){
                                target="_blank"
                                rel="noopener noreferrer"
                                className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
-                                <PiChalkboardTeacher className="w-10 h-10 text-orange-500 mb-2" />
+                                <PiChalkboardTeacher className="w-10 h-10 text-orange-500 mb-2"/>
                                 <p className="text-center font-medium">Presentación</p>
                             </a>
                             <a href="https://drive.google.com/file/d/1I7KSMNRJJuFEDqTvrVCr2ccWfgehH8Ff/view?usp=drive_link"
                                target="_blank"
                                rel="noopener noreferrer"
                                className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
-                                <BsBookHalf className="w-10 h-10 text-orange-500 mb-2" />
+                                <BsBookHalf className="w-10 h-10 text-orange-500 mb-2"/>
                                 <p className="text-center font-medium">Capítulo</p>
                             </a>
                         </div>
@@ -81,8 +82,8 @@ export default function ToraxInjuries(){
                                 <button
                                     onClick={() => setActiveTab('overview')}
                                     className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
-                                        activeTab === 'overview' 
-                                            ? 'border-orange-500 text-orange-600' 
+                                        activeTab === 'overview'
+                                            ? 'border-orange-500 text-orange-600'
                                             : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                                     }`}>
                                     Generalidades
@@ -90,8 +91,8 @@ export default function ToraxInjuries(){
                                 <button
                                     onClick={() => setActiveTab('anatomy')}
                                     className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
-                                        activeTab === 'anatomy' 
-                                            ? 'border-orange-500 text-orange-600' 
+                                        activeTab === 'anatomy'
+                                            ? 'border-orange-500 text-orange-600'
                                             : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                                     }`}>
                                     Anatomía y Fisiología
@@ -99,8 +100,8 @@ export default function ToraxInjuries(){
                                 <button
                                     onClick={() => setActiveTab('treatment')}
                                     className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
-                                        activeTab === 'treatment' 
-                                            ? 'border-orange-500 text-orange-600' 
+                                        activeTab === 'treatment'
+                                            ? 'border-orange-500 text-orange-600'
                                             : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                                     }`}>
                                     Manejo y Tratamiento
@@ -108,8 +109,8 @@ export default function ToraxInjuries(){
                                 <button
                                     onClick={() => setActiveTab('practice')}
                                     className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
-                                        activeTab === 'practice' 
-                                            ? 'border-orange-500 text-orange-600' 
+                                        activeTab === 'practice'
+                                            ? 'border-orange-500 text-orange-600'
                                             : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                                     }`}>
                                     Casos Clínicos
@@ -121,33 +122,37 @@ export default function ToraxInjuries(){
                         <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-sm p-6 mb-8">
                             {activeTab === 'overview' && (
                                 <div className="space-y-8">
-                                    <div className="bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-red-500 p-6 rounded-lg mb-8 max-w-5xl mx-auto">
-                            <div className="flex items-center mb-4">
-                                <FaExclamationTriangle className="w-8 h-8 text-red-500 mr-3"/>
-                                <h2 className="text-2xl font-bold text-red-700">¡Emergencia Potencialmente Mortal!</h2>
-                            </div>
-                            <p className="text-gray-800 leading-relaxed text-lg mb-4">
-                                Las lesiones torácicas son responsables del <strong className="text-red-600">25% de las muertes traumáticas</strong>.
-                                Tu evaluación y manejo inmediato puede ser la diferencia entre la vida y la muerte.
-                            </p>
-                            <div className="grid md:grid-cols-3 gap-4">
-                                <div className="bg-white p-4 rounded shadow-sm text-center">
-                                    <MdOutlineTimer className="w-8 h-8 text-red-500 mx-auto mb-2"/>
-                                    <p className="font-bold text-red-600">Primeros 5 min</p>
-                                    <p className="text-sm">Reconocimiento crítico</p>
-                                </div>
-                                <div className="bg-white p-4 rounded shadow-sm text-center">
-                                    <FaFirstAid className="w-8 h-8 text-orange-500 mx-auto mb-2"/>
-                                    <p className="font-bold text-orange-600">Intervención</p>
-                                    <p className="text-sm">Manejo inmediato</p>
-                                </div>
-                                <div className="bg-white p-4 rounded shadow-sm text-center">
-                                    <FaHeartbeat className="w-8 h-8 text-green-500 mx-auto mb-2"/>
-                                    <p className="font-bold text-green-600">Supervivencia</p>
-                                    <p className="text-sm">Traslado rápido</p>
-                                </div>
-                            </div>
-                        </div>
+                                    <div
+                                        className="bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-red-500 p-6 rounded-lg mb-8 max-w-5xl mx-auto">
+                                        <div className="flex items-center mb-4">
+                                            <FaExclamationTriangle className="w-8 h-8 text-red-500 mr-3"/>
+                                            <h2 className="text-2xl font-bold text-red-700">¡Emergencia Potencialmente
+                                                Mortal!</h2>
+                                        </div>
+                                        <p className="text-gray-800 leading-relaxed text-lg mb-4">
+                                            Las lesiones torácicas son responsables del <strong
+                                            className="text-red-600">25% de las muertes traumáticas</strong>.
+                                            Tu evaluación y manejo inmediato puede ser la diferencia entre la vida y la
+                                            muerte.
+                                        </p>
+                                        <div className="grid md:grid-cols-3 gap-4">
+                                            <div className="bg-white p-4 rounded shadow-sm text-center">
+                                                <MdOutlineTimer className="w-8 h-8 text-red-500 mx-auto mb-2"/>
+                                                <p className="font-bold text-red-600">Primeros 5 min</p>
+                                                <p className="text-sm">Reconocimiento crítico</p>
+                                            </div>
+                                            <div className="bg-white p-4 rounded shadow-sm text-center">
+                                                <FaFirstAid className="w-8 h-8 text-orange-500 mx-auto mb-2"/>
+                                                <p className="font-bold text-orange-600">Intervención</p>
+                                                <p className="text-sm">Manejo inmediato</p>
+                                            </div>
+                                            <div className="bg-white p-4 rounded shadow-sm text-center">
+                                                <FaHeartbeat className="w-8 h-8 text-green-500 mx-auto mb-2"/>
+                                                <p className="font-bold text-green-600">Supervivencia</p>
+                                                <p className="text-sm">Traslado rápido</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                     {/* Protocolo XABCDE específico para trauma torácico */}
                                     <div>
                                         <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
@@ -155,8 +160,10 @@ export default function ToraxInjuries(){
                                             Protocolo XABCDE para Trauma Torácico
                                         </h2>
                                         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
-                                            <div className="bg-gradient-to-b from-red-50 to-red-100 p-4 rounded-lg border">
-                                                <h3 className="text-lg font-bold text-red-700 mb-2 text-center">X - Control</h3>
+                                            <div
+                                                className="bg-gradient-to-b from-red-50 to-red-100 p-4 rounded-lg border">
+                                                <h3 className="text-lg font-bold text-red-700 mb-2 text-center">X -
+                                                    Control</h3>
                                                 <ul className="space-y-1 text-sm text-gray-700">
                                                     <li className="flex items-start">
                                                         <FiEye className="w-3 h-3 mt-1 mr-1 text-red-600"/>
@@ -168,8 +175,10 @@ export default function ToraxInjuries(){
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div className="bg-gradient-to-b from-blue-50 to-blue-100 p-4 rounded-lg border">
-                                                <h3 className="text-lg font-bold text-blue-700 mb-2 text-center">A - Airway</h3>
+                                            <div
+                                                className="bg-gradient-to-b from-blue-50 to-blue-100 p-4 rounded-lg border">
+                                                <h3 className="text-lg font-bold text-blue-700 mb-2 text-center">A -
+                                                    Airway</h3>
                                                 <ul className="space-y-1 text-sm text-gray-700">
                                                     <li className="flex items-start">
                                                         <FiEye className="w-3 h-3 mt-1 mr-1 text-blue-600"/>
@@ -181,8 +190,10 @@ export default function ToraxInjuries(){
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div className="bg-gradient-to-b from-green-50 to-green-100 p-4 rounded-lg border">
-                                                <h3 className="text-lg font-bold text-green-700 mb-2 text-center">B - Breathing</h3>
+                                            <div
+                                                className="bg-gradient-to-b from-green-50 to-green-100 p-4 rounded-lg border">
+                                                <h3 className="text-lg font-bold text-green-700 mb-2 text-center">B -
+                                                    Breathing</h3>
                                                 <ul className="space-y-1 text-sm text-gray-700">
                                                     <li className="flex items-start">
                                                         <FaLungsVirus className="w-3 h-3 mt-1 mr-1 text-green-600"/>
@@ -198,8 +209,10 @@ export default function ToraxInjuries(){
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div className="bg-gradient-to-b from-purple-50 to-purple-100 p-4 rounded-lg border">
-                                                <h3 className="text-lg font-bold text-purple-700 mb-2 text-center">C - Circulation</h3>
+                                            <div
+                                                className="bg-gradient-to-b from-purple-50 to-purple-100 p-4 rounded-lg border">
+                                                <h3 className="text-lg font-bold text-purple-700 mb-2 text-center">C -
+                                                    Circulation</h3>
                                                 <ul className="space-y-1 text-sm text-gray-700">
                                                     <li className="flex items-start">
                                                         <FaHeartbeat className="w-3 h-3 mt-1 mr-1 text-purple-600"/>
@@ -215,8 +228,10 @@ export default function ToraxInjuries(){
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div className="bg-gradient-to-b from-yellow-50 to-yellow-100 p-4 rounded-lg border">
-                                                <h3 className="text-lg font-bold text-yellow-700 mb-2 text-center">D & E</h3>
+                                            <div
+                                                className="bg-gradient-to-b from-yellow-50 to-yellow-100 p-4 rounded-lg border">
+                                                <h3 className="text-lg font-bold text-yellow-700 mb-2 text-center">D &
+                                                    E</h3>
                                                 <ul className="space-y-1 text-sm text-gray-700">
                                                     <li className="flex items-start">
                                                         <FiActivity className="w-3 h-3 mt-1 mr-1 text-yellow-600"/>
@@ -233,52 +248,67 @@ export default function ToraxInjuries(){
 
                                     {/* Clasificación crítica de lesiones */}
                                     <div>
-                                        <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2">Clasificación por Prioridad de Tratamiento</h2>
+                                        <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2">Clasificación
+                                            por Prioridad de Tratamiento</h2>
                                         <div className="grid lg:grid-cols-2 gap-6">
                                             <div className="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg">
                                                 <div className="flex items-center mb-4">
                                                     <FaExclamationTriangle className="w-6 h-6 text-red-600 mr-2"/>
-                                                    <h3 className="text-xl font-bold text-red-800">Amenaza Inmediata para la Vida</h3>
+                                                    <h3 className="text-xl font-bold text-red-800">Amenaza Inmediata
+                                                        para la Vida</h3>
                                                 </div>
                                                 <div className="space-y-3">
                                                     <div className="bg-white p-3 rounded shadow-sm">
-                                                        <h4 className="font-semibold text-red-700">Neumotórax a Tensión</h4>
-                                                        <p className="text-sm text-gray-600">Acumulación progresiva de aire con compromiso circulatorio</p>
+                                                        <h4 className="font-semibold text-red-700">Neumotórax a
+                                                            Tensión</h4>
+                                                        <p className="text-sm text-gray-600">Acumulación progresiva de
+                                                            aire con compromiso circulatorio</p>
                                                     </div>
                                                     <div className="bg-white p-3 rounded shadow-sm">
                                                         <h4 className="font-semibold text-red-700">Hemotórax Masivo</h4>
-                                                        <p className="text-sm text-gray-600">&gt;1500ml de sangre en espacio pleural</p>
+                                                        <p className="text-sm text-gray-600">&gt;1500ml de sangre en
+                                                            espacio pleural</p>
                                                     </div>
                                                     <div className="bg-white p-3 rounded shadow-sm">
                                                         <h4 className="font-semibold text-red-700">Tórax Inestable</h4>
-                                                        <p className="text-sm text-gray-600">Fracturas múltiples con movimiento paradójico</p>
+                                                        <p className="text-sm text-gray-600">Fracturas múltiples con
+                                                            movimiento paradójico</p>
                                                     </div>
                                                     <div className="bg-white p-3 rounded shadow-sm">
-                                                        <h4 className="font-semibold text-red-700">Taponamiento Cardíaco</h4>
-                                                        <p className="text-sm text-gray-600">Compresión del corazón por sangre pericárdica</p>
+                                                        <h4 className="font-semibold text-red-700">Taponamiento
+                                                            Cardíaco</h4>
+                                                        <p className="text-sm text-gray-600">Compresión del corazón por
+                                                            sangre pericárdica</p>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div className="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded-lg">
                                                 <div className="flex items-center mb-4">
                                                     <FiAlertTriangle className="w-6 h-6 text-yellow-600 mr-2"/>
-                                                    <h3 className="text-xl font-bold text-yellow-800">Potencialmente Graves</h3>
+                                                    <h3 className="text-xl font-bold text-yellow-800">Potencialmente
+                                                        Graves</h3>
                                                 </div>
                                                 <div className="space-y-3">
                                                     <div className="bg-white p-3 rounded shadow-sm">
-                                                        <h4 className="font-semibold text-yellow-700">Neumotórax Simple</h4>
-                                                        <p className="text-sm text-gray-600">Aire en espacio pleural sin tensión</p>
+                                                        <h4 className="font-semibold text-yellow-700">Neumotórax
+                                                            Simple</h4>
+                                                        <p className="text-sm text-gray-600">Aire en espacio pleural sin
+                                                            tensión</p>
                                                     </div>
                                                     <div className="bg-white p-3 rounded shadow-sm">
-                                                        <h4 className="font-semibold text-yellow-700">Hemotórax Menor</h4>
+                                                        <h4 className="font-semibold text-yellow-700">Hemotórax
+                                                            Menor</h4>
                                                         <p className="text-sm text-gray-600">&lt;1500ml de sangre</p>
                                                     </div>
                                                     <div className="bg-white p-3 rounded shadow-sm">
-                                                        <h4 className="font-semibold text-yellow-700">Contusión Pulmonar</h4>
-                                                        <p className="text-sm text-gray-600">Magulladura del tejido pulmonar</p>
+                                                        <h4 className="font-semibold text-yellow-700">Contusión
+                                                            Pulmonar</h4>
+                                                        <p className="text-sm text-gray-600">Magulladura del tejido
+                                                            pulmonar</p>
                                                     </div>
                                                     <div className="bg-white p-3 rounded shadow-sm">
-                                                        <h4 className="font-semibold text-yellow-700">Fracturas Costales</h4>
+                                                        <h4 className="font-semibold text-yellow-700">Fracturas
+                                                            Costales</h4>
                                                         <p className="text-sm text-gray-600">Lesiones óseas simples</p>
                                                     </div>
                                                 </div>
@@ -290,11 +320,13 @@ export default function ToraxInjuries(){
                                     <div className="bg-orange-50 border border-orange-200 rounded-lg p-6">
                                         <div className="flex items-center mb-4">
                                             <RiStethoscopeLine className="w-6 h-6 text-orange-600 mr-2"/>
-                                            <h3 className="text-xl font-bold text-orange-800">Signos de Alarma - Evalúa INMEDIATAMENTE</h3>
+                                            <h3 className="text-xl font-bold text-orange-800">Signos de Alarma - Evalúa
+                                                INMEDIATAMENTE</h3>
                                         </div>
                                         <div className="grid md:grid-cols-3 gap-6">
                                             <div>
-                                                <h4 className="font-semibold text-orange-800 mb-2">Signos Respiratorios:</h4>
+                                                <h4 className="font-semibold text-orange-800 mb-2">Signos
+                                                    Respiratorios:</h4>
                                                 <ul className="list-disc list-inside space-y-1 text-gray-700">
                                                     <li>Disnea severa o taquipnea</li>
                                                     <li>Cianosis (labios, uñas azules)</li>
@@ -304,7 +336,8 @@ export default function ToraxInjuries(){
                                                 </ul>
                                             </div>
                                             <div>
-                                                <h4 className="font-semibold text-orange-800 mb-2">Signos Circulatorios:</h4>
+                                                <h4 className="font-semibold text-orange-800 mb-2">Signos
+                                                    Circulatorios:</h4>
                                                 <ul className="list-disc list-inside space-y-1 text-gray-700">
                                                     <li>Hipotensión progresiva</li>
                                                     <li>Taquicardia</li>
@@ -314,7 +347,8 @@ export default function ToraxInjuries(){
                                                 </ul>
                                             </div>
                                             <div>
-                                                <h4 className="font-semibold text-orange-800 mb-2">Signos Neurológicos:</h4>
+                                                <h4 className="font-semibold text-orange-800 mb-2">Signos
+                                                    Neurológicos:</h4>
                                                 <ul className="list-disc list-inside space-y-1 text-gray-700">
                                                     <li>Alteración del estado mental</li>
                                                     <li>Agitación o confusión</li>
@@ -330,7 +364,8 @@ export default function ToraxInjuries(){
                                     <div className="bg-green-50 border border-green-200 rounded-lg p-6">
                                         <div className="flex items-center mb-4">
                                             <BsLightbulb className="w-6 h-6 text-green-600 mr-2"/>
-                                            <h3 className="text-xl font-bold text-green-800">Principios Fundamentales de Manejo</h3>
+                                            <h3 className="text-xl font-bold text-green-800">Principios Fundamentales de
+                                                Manejo</h3>
                                         </div>
                                         <div className="grid md:grid-cols-2 gap-6">
                                             <div>
@@ -362,7 +397,8 @@ export default function ToraxInjuries(){
                                                 </ul>
                                             </div>
                                         </div>
-                                    </div>                                </div>
+                                    </div>
+                                </div>
                             )}
 
                             {activeTab === 'anatomy' && (
@@ -376,49 +412,66 @@ export default function ToraxInjuries(){
                                         <div className="grid lg:grid-cols-2 gap-8">
                                             <div>
                                                 <div className="bg-blue-50 p-6 rounded-lg border border-blue-200 mb-6">
-                                                    <h3 className="text-xl font-bold text-blue-700 mb-4">Estructura de la Caja Torácica</h3>
+                                                    <h3 className="text-xl font-bold text-blue-700 mb-4">Estructura de
+                                                        la Caja Torácica</h3>
                                                     <div className="space-y-4">
                                                         <div className="flex items-start space-x-3">
-                                                            <div className="w-4 h-4 bg-blue-500 rounded-full mt-1"></div>
+                                                            <div
+                                                                className="w-4 h-4 bg-blue-500 rounded-full mt-1"></div>
                                                             <div>
                                                                 <h4 className="font-semibold">Pared Torácica</h4>
-                                                                <p className="text-sm text-gray-600">12 pares de costillas, esternón, músculos intercostales</p>
-                                                                <p className="text-sm text-blue-600 font-medium">Función: Protección y mecánica respiratoria</p>
+                                                                <p className="text-sm text-gray-600">12 pares de
+                                                                    costillas, esternón, músculos intercostales</p>
+                                                                <p className="text-sm text-blue-600 font-medium">Función:
+                                                                    Protección y mecánica respiratoria</p>
                                                             </div>
                                                         </div>
                                                         <div className="flex items-start space-x-3">
-                                                            <div className="w-4 h-4 bg-green-500 rounded-full mt-1"></div>
+                                                            <div
+                                                                className="w-4 h-4 bg-green-500 rounded-full mt-1"></div>
                                                             <div>
                                                                 <h4 className="font-semibold">Espacio Pleural</h4>
-                                                                <p className="text-sm text-gray-600">Cavidad virtual entre pleura parietal y visceral</p>
-                                                                <p className="text-sm text-green-600 font-medium">Presión: -5 mmHg (negativa)</p>
+                                                                <p className="text-sm text-gray-600">Cavidad virtual
+                                                                    entre pleura parietal y visceral</p>
+                                                                <p className="text-sm text-green-600 font-medium">Presión:
+                                                                    -5 mmHg (negativa)</p>
                                                             </div>
                                                         </div>
                                                         <div className="flex items-start space-x-3">
-                                                            <div className="w-4 h-4 bg-purple-500 rounded-full mt-1"></div>
+                                                            <div
+                                                                className="w-4 h-4 bg-purple-500 rounded-full mt-1"></div>
                                                             <div>
                                                                 <h4 className="font-semibold">Mediastino</h4>
-                                                                <p className="text-sm text-gray-600">Compartimento central: corazón, grandes vasos, esófago</p>
-                                                                <p className="text-sm text-purple-600 font-medium">Crucial para función cardiopulmonar</p>
+                                                                <p className="text-sm text-gray-600">Compartimento
+                                                                    central: corazón, grandes vasos, esófago</p>
+                                                                <p className="text-sm text-purple-600 font-medium">Crucial
+                                                                    para función cardiopulmonar</p>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                
+
                                                 <div className="bg-red-50 p-6 rounded-lg border border-red-200">
-                                                    <h3 className="text-xl font-bold text-red-700 mb-4">Puntos Anatómicos Críticos</h3>
+                                                    <h3 className="text-xl font-bold text-red-700 mb-4">Puntos
+                                                        Anatómicos Críticos</h3>
                                                     <div className="space-y-3">
                                                         <div className="bg-white p-3 rounded shadow-sm">
-                                                            <h4 className="font-semibold text-red-600">Línea Medio-Clavicular</h4>
-                                                            <p className="text-sm">2º espacio intercostal - Descompresión de neumotórax</p>
+                                                            <h4 className="font-semibold text-red-600">Línea
+                                                                Medio-Clavicular</h4>
+                                                            <p className="text-sm">2º espacio intercostal -
+                                                                Descompresión de neumotórax</p>
                                                         </div>
                                                         <div className="bg-white p-3 rounded shadow-sm">
-                                                            <h4 className="font-semibold text-red-600">Línea Axilar Anterior</h4>
-                                                            <p className="text-sm">5º espacio intercostal - Toracostomía alternativa</p>
+                                                            <h4 className="font-semibold text-red-600">Línea Axilar
+                                                                Anterior</h4>
+                                                            <p className="text-sm">5º espacio intercostal - Toracostomía
+                                                                alternativa</p>
                                                         </div>
                                                         <div className="bg-white p-3 rounded shadow-sm">
-                                                            <h4 className="font-semibold text-red-600">Ángulo de Louis</h4>
-                                                            <p className="text-sm">Referencia anatómica para 2º cartílago costal</p>
+                                                            <h4 className="font-semibold text-red-600">Ángulo de
+                                                                Louis</h4>
+                                                            <p className="text-sm">Referencia anatómica para 2º
+                                                                cartílago costal</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -430,7 +483,8 @@ export default function ToraxInjuries(){
                                                         alt="Anatomía del tórax"
                                                         className="rounded-lg shadow-lg max-w-full h-auto mb-4"
                                                     />
-                                                    <p className="text-sm text-gray-600 italic">Anatomía detallada del tórax</p>
+                                                    <p className="text-sm text-gray-600 italic">Anatomía detallada del
+                                                        tórax</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -438,10 +492,13 @@ export default function ToraxInjuries(){
 
                                     {/* Fisiopatología de lesiones */}
                                     <div>
-                                        <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2">Fisiopatología de Lesiones Críticas</h2>
+                                        <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2">Fisiopatología
+                                            de Lesiones Críticas</h2>
                                         <div className="space-y-6">
-                                            <div className="bg-gradient-to-r from-red-50 to-red-100 p-6 rounded-lg border">
-                                                <h3 className="text-xl font-bold text-red-700 mb-4">Neumotórax a Tensión</h3>
+                                            <div
+                                                className="bg-gradient-to-r from-red-50 to-red-100 p-6 rounded-lg border">
+                                                <h3 className="text-xl font-bold text-red-700 mb-4">Neumotórax a
+                                                    Tensión</h3>
                                                 <div className="grid md:grid-cols-2 gap-4">
                                                     <div>
                                                         <h4 className="font-semibold mb-2">Mecanismo:</h4>
@@ -466,8 +523,10 @@ export default function ToraxInjuries(){
                                                 </div>
                                             </div>
 
-                                            <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-lg border">
-                                                <h3 className="text-xl font-bold text-blue-700 mb-4">Hemotórax Masivo</h3>
+                                            <div
+                                                className="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-lg border">
+                                                <h3 className="text-xl font-bold text-blue-700 mb-4">Hemotórax
+                                                    Masivo</h3>
                                                 <div className="grid md:grid-cols-2 gap-4">
                                                     <div>
                                                         <h4 className="font-semibold mb-2">Fuentes de sangrado:</h4>
@@ -491,8 +550,10 @@ export default function ToraxInjuries(){
                                                 </div>
                                             </div>
 
-                                            <div className="bg-gradient-to-r from-yellow-50 to-yellow-100 p-6 rounded-lg border">
-                                                <h3 className="text-xl font-bold text-yellow-700 mb-4">Taponamiento Cardíaco</h3>
+                                            <div
+                                                className="bg-gradient-to-r from-yellow-50 to-yellow-100 p-6 rounded-lg border">
+                                                <h3 className="text-xl font-bold text-yellow-700 mb-4">Taponamiento
+                                                    Cardíaco</h3>
                                                 <div className="grid md:grid-cols-2 gap-4">
                                                     <div>
                                                         <h4 className="font-semibold mb-2">Fisiopatología:</h4>
@@ -520,7 +581,7 @@ export default function ToraxInjuries(){
                                             </div>
                                         </div>
                                     </div>
-                                    </div>
+                                </div>
                             )}
 
                             {activeTab === 'treatment' && (
@@ -534,7 +595,8 @@ export default function ToraxInjuries(){
                                         <div className="bg-gray-50 p-6 rounded-lg">
                                             <div className="grid md:grid-cols-3 gap-6">
                                                 <div className="bg-red-100 p-4 rounded-lg border-l-4 border-red-500">
-                                                    <h3 className="font-bold text-red-700 mb-2">1. Evaluación Inicial</h3>
+                                                    <h3 className="font-bold text-red-700 mb-2">1. Evaluación
+                                                        Inicial</h3>
                                                     <ul className="text-sm space-y-1">
                                                         <li>• Protocolo XABCDE</li>
                                                         <li>• Control de hemorragias</li>
@@ -542,8 +604,10 @@ export default function ToraxInjuries(){
                                                         <li>• Monitorización continua</li>
                                                     </ul>
                                                 </div>
-                                                <div className="bg-yellow-100 p-4 rounded-lg border-l-4 border-yellow-500">
-                                                    <h3 className="font-bold text-yellow-700 mb-2">2. Intervenciones</h3>
+                                                <div
+                                                    className="bg-yellow-100 p-4 rounded-lg border-l-4 border-yellow-500">
+                                                    <h3 className="font-bold text-yellow-700 mb-2">2.
+                                                        Intervenciones</h3>
                                                     <ul className="text-sm space-y-1">
                                                         <li>• Sellado de heridas</li>
                                                         <li>• Soporte ventilatorio</li>
@@ -551,7 +615,8 @@ export default function ToraxInjuries(){
                                                         <li>• Manejo del dolor</li>
                                                     </ul>
                                                 </div>
-                                                <div className="bg-green-100 p-4 rounded-lg border-l-4 border-green-500">
+                                                <div
+                                                    className="bg-green-100 p-4 rounded-lg border-l-4 border-green-500">
                                                     <h3 className="font-bold text-green-700 mb-2">3. Transporte</h3>
                                                     <ul className="text-sm space-y-1">
                                                         <li>• Centro de trauma</li>
@@ -566,17 +631,20 @@ export default function ToraxInjuries(){
 
                                     {/* Tratamientos específicos */}
                                     <div>
-                                        <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2">Manejo Específico por Lesión</h2>
+                                        <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2">Manejo
+                                            Específico por Lesión</h2>
                                         <div className="space-y-6">
                                             <div className="bg-red-50 border border-red-200 rounded-lg p-6">
                                                 <div className="flex items-center mb-4">
                                                     <FaExclamationTriangle className="w-6 h-6 text-red-600 mr-2"/>
-                                                    <h3 className="text-xl font-bold text-red-800">Neumotórax Abierto</h3>
+                                                    <h3 className="text-xl font-bold text-red-800">Neumotórax
+                                                        Abierto</h3>
                                                 </div>
                                                 <div className="grid md:grid-cols-2 gap-4">
                                                     <div>
                                                         <h4 className="font-semibold mb-2">Objetivo:</h4>
-                                                        <p className="text-sm text-gray-700 mb-3">Convertir neumotórax abierto en cerrado, evitando tensión</p>
+                                                        <p className="text-sm text-gray-700 mb-3">Convertir neumotórax
+                                                            abierto en cerrado, evitando tensión</p>
                                                         <h4 className="font-semibold mb-2">Procedimiento:</h4>
                                                         <ol className="list-decimal list-inside space-y-1 text-sm text-gray-700">
                                                             <li>Sellar inmediatamente con apósito oclusivo</li>
@@ -586,7 +654,8 @@ export default function ToraxInjuries(){
                                                         </ol>
                                                     </div>
                                                     <div className="bg-white p-4 rounded">
-                                                        <h4 className="font-semibold mb-2 text-red-700">Material preferido:</h4>
+                                                        <h4 className="font-semibold mb-2 text-red-700">Material
+                                                            preferido:</h4>
                                                         <ul className="text-sm space-y-1">
                                                             <li>• Parche torácico comercial con válvula</li>
                                                             <li>• Plástico estéril + cinta adhesiva</li>
@@ -602,7 +671,8 @@ export default function ToraxInjuries(){
                                             <div className="bg-orange-50 border border-orange-200 rounded-lg p-6">
                                                 <div className="flex items-center mb-4">
                                                     <FiAlertTriangle className="w-6 h-6 text-orange-600 mr-2"/>
-                                                    <h3 className="text-xl font-bold text-orange-800">Neumotórax a Tensión</h3>
+                                                    <h3 className="text-xl font-bold text-orange-800">Neumotórax a
+                                                        Tensión</h3>
                                                 </div>
                                                 <div className="grid md:grid-cols-2 gap-4">
                                                     <div>
@@ -627,7 +697,8 @@ export default function ToraxInjuries(){
                                                         </ol>
                                                         <div className="bg-orange-100 p-2 rounded mt-3">
                                                             <p className="text-xs text-orange-700 font-medium">
-                                                                Localización: 2º EIC línea medio-clavicular o 5º EIC línea axilar anterior
+                                                                Localización: 2º EIC línea medio-clavicular o 5º EIC
+                                                                línea axilar anterior
                                                             </p>
                                                         </div>
                                                     </div>
@@ -637,13 +708,15 @@ export default function ToraxInjuries(){
                                             <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
                                                 <div className="flex items-center mb-4">
                                                     <FiActivity className="w-6 h-6 text-yellow-600 mr-2"/>
-                                                    <h3 className="text-xl font-bold text-yellow-800">Tórax Inestable</h3>
+                                                    <h3 className="text-xl font-bold text-yellow-800">Tórax
+                                                        Inestable</h3>
                                                 </div>
                                                 <div className="grid md:grid-cols-2 gap-4">
                                                     <div>
                                                         <h4 className="font-semibold mb-2">Principio clave:</h4>
                                                         <p className="text-sm text-gray-700 bg-yellow-100 p-3 rounded">
-                                                            La amenaza principal NO es el segmento inestable, sino la contusión pulmonar subyacente
+                                                            La amenaza principal NO es el segmento inestable, sino la
+                                                            contusión pulmonar subyacente
                                                         </p>
                                                         <h4 className="font-semibold mb-2 mt-3">Objetivos:</h4>
                                                         <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
@@ -674,7 +747,8 @@ export default function ToraxInjuries(){
                                             <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
                                                 <div className="flex items-center mb-4">
                                                     <FaHeartbeat className="w-6 h-6 text-blue-600 mr-2"/>
-                                                    <h3 className="text-xl font-bold text-blue-800">Hemotórax Masivo</h3>
+                                                    <h3 className="text-xl font-bold text-blue-800">Hemotórax
+                                                        Masivo</h3>
                                                 </div>
                                                 <div className="grid md:grid-cols-2 gap-4">
                                                     <div>
@@ -708,7 +782,8 @@ export default function ToraxInjuries(){
 
                                     {/* Medicamentos y soporte */}
                                     <div className="bg-green-50 border border-green-200 rounded-lg p-6">
-                                        <h3 className="text-xl font-bold text-green-800 mb-4">Soporte Farmacológico y No Farmacológico</h3>
+                                        <h3 className="text-xl font-bold text-green-800 mb-4">Soporte Farmacológico y No
+                                            Farmacológico</h3>
                                         <div className="grid md:grid-cols-3 gap-6">
                                             <div>
                                                 <h4 className="font-semibold text-green-700 mb-2">Oxigenoterapia:</h4>
@@ -720,7 +795,8 @@ export default function ToraxInjuries(){
                                                 </ul>
                                             </div>
                                             <div>
-                                                <h4 className="font-semibold text-green-700 mb-2">Analgesia (según protocolo):</h4>
+                                                <h4 className="font-semibold text-green-700 mb-2">Analgesia (según
+                                                    protocolo):</h4>
                                                 <ul className="text-sm space-y-1">
                                                     <li>• Morfina 2-4mg IV/IO</li>
                                                     <li>• Fentanilo 50-100mcg IV/IO</li>
@@ -744,22 +820,28 @@ export default function ToraxInjuries(){
 
                             {activeTab === 'practice' && (
                                 <div className="space-y-8">
-                                    <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2">Casos Clínicos Interactivos</h2>
+                                    <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2">Casos
+                                        Clínicos Interactivos</h2>
 
-                                    <div className="bg-gradient-to-r from-red-50 to-red-100 p-6 rounded-lg border-l-4 border-red-500">
-                                        <h3 className="text-xl font-semibold mb-3 text-red-700">Caso 1: Trauma Penetrante - Herida por Arma Blanca</h3>
+                                    <div
+                                        className="bg-gradient-to-r from-red-50 to-red-100 p-6 rounded-lg border-l-4 border-red-500">
+                                        <h3 className="text-xl font-semibold mb-3 text-red-700">Caso 1: Trauma
+                                            Penetrante - Herida por Arma Blanca</h3>
                                         <div className="grid lg:grid-cols-2 gap-6">
                                             <div>
                                                 <h4 className="font-semibold mb-2">Escenario:</h4>
                                                 <p className="text-gray-700 mb-4">
-                                                    Masculino de 25 años con herida por arma blanca en hemitórax derecho, 4º espacio intercostal. 
-                                                    Consciente, dificultad respiratoria severa, se escucha "succión" de la herida.
+                                                    Masculino de 25 años con herida por arma blanca en hemitórax
+                                                    derecho, 4º espacio intercostal.
+                                                    Consciente, dificultad respiratoria severa, se escucha "succión" de
+                                                    la herida.
                                                 </p>
                                                 <h4 className="font-semibold mb-2">Hallazgos iniciales:</h4>
                                                 <div className="bg-white p-4 rounded shadow-sm">
                                                     <ul className="space-y-1 text-sm">
                                                         <li><strong>A:</strong> Permeable, habla con frases cortas</li>
-                                                        <li><strong>B:</strong> FR 32/min, SpO₂ 89%, ruidos ↓ derecho</li>
+                                                        <li><strong>B:</strong> FR 32/min, SpO₂ 89%, ruidos ↓ derecho
+                                                        </li>
                                                         <li><strong>C:</strong> FC 125/min, TA 100/65, piel pálida</li>
                                                         <li><strong>D:</strong> Glasgow 15, ansioso</li>
                                                         <li><strong>E:</strong> Herida "soplante" 3cm</li>
@@ -769,17 +851,23 @@ export default function ToraxInjuries(){
                                             <div>
                                                 <h4 className="font-semibold mb-2">Tu secuencia de manejo:</h4>
                                                 <ol className="list-decimal list-inside space-y-2 text-sm text-gray-700">
-                                                    <li className="bg-green-100 p-2 rounded">Oxígeno a alto flujo (15L/min mascarilla no recirculante)</li>
-                                                    <li className="bg-green-100 p-2 rounded">Sellar herida con apósito oclusivo fijado en 3 lados</li>
+                                                    <li className="bg-green-100 p-2 rounded">Oxígeno a alto flujo
+                                                        (15L/min mascarilla no recirculante)
+                                                    </li>
+                                                    <li className="bg-green-100 p-2 rounded">Sellar herida con apósito
+                                                        oclusivo fijado en 3 lados
+                                                    </li>
                                                     <li className="bg-green-100 p-2 rounded">Posición semisentado</li>
-                                                    <li className="bg-green-100 p-2 rounded">Monitorización continua</li>
+                                                    <li className="bg-green-100 p-2 rounded">Monitorización continua
+                                                    </li>
                                                     <li className="bg-green-100 p-2 rounded">Acceso vascular</li>
                                                     <li className="bg-green-100 p-2 rounded">Transporte inmediato</li>
                                                 </ol>
                                                 <div className="mt-4 bg-yellow-100 p-3 rounded">
                                                     <h5 className="font-semibold text-yellow-800">Punto clave:</h5>
                                                     <p className="text-sm text-yellow-700">
-                                                        Monitorizar estrechamente por desarrollo de neumotórax a tensión. 
+                                                        Monitorizar estrechamente por desarrollo de neumotórax a
+                                                        tensión.
                                                         Si empeora: levantar una esquina del sello temporalmente.
                                                     </p>
                                                 </div>
@@ -787,25 +875,31 @@ export default function ToraxInjuries(){
                                         </div>
                                     </div>
 
-                                    <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-lg border-l-4 border-blue-500">
-                                        <h3 className="text-xl font-semibold mb-3 text-blue-700">Caso 2: Accidente de Tránsito - Tórax Inestable</h3>
+                                    <div
+                                        className="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-lg border-l-4 border-blue-500">
+                                        <h3 className="text-xl font-semibold mb-3 text-blue-700">Caso 2: Accidente de
+                                            Tránsito - Tórax Inestable</h3>
                                         <div className="grid lg:grid-cols-2 gap-6">
                                             <div>
                                                 <h4 className="font-semibold mb-2">Escenario:</h4>
                                                 <p className="text-gray-700 mb-4">
-                                                    Conductor de 45 años, colisión frontal sin cinturón. Impacto torácico contra volante. 
+                                                    Conductor de 45 años, colisión frontal sin cinturón. Impacto
+                                                    torácico contra volante.
                                                     Dolor intenso, "no puedo respirar bien".
                                                 </p>
                                                 <h4 className="font-semibold mb-2">Evolución del caso:</h4>
                                                 <div className="space-y-3">
                                                     <div className="bg-white p-3 rounded shadow-sm">
-                                                        <p className="text-sm"><strong>Minuto 1:</strong> Movimiento paradójico visible en hemitórax izquierdo</p>
+                                                        <p className="text-sm"><strong>Minuto 1:</strong> Movimiento
+                                                            paradójico visible en hemitórax izquierdo</p>
                                                     </div>
                                                     <div className="bg-white p-3 rounded shadow-sm">
-                                                        <p className="text-sm"><strong>Minuto 3:</strong> SpO₂ cae a 85%, respiración cada vez más superficial</p>
+                                                        <p className="text-sm"><strong>Minuto 3:</strong> SpO₂ cae a
+                                                            85%, respiración cada vez más superficial</p>
                                                     </div>
                                                     <div className="bg-white p-3 rounded shadow-sm">
-                                                        <p className="text-sm"><strong>Minuto 5:</strong> Paciente fatigado, necesita soporte ventilatorio</p>
+                                                        <p className="text-sm"><strong>Minuto 5:</strong> Paciente
+                                                            fatigado, necesita soporte ventilatorio</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -814,11 +908,13 @@ export default function ToraxInjuries(){
                                                 <div className="space-y-3">
                                                     <div className="bg-green-100 p-3 rounded">
                                                         <h5 className="font-semibold text-green-800">✓ Correcto:</h5>
-                                                        <p className="text-sm">Ventilación con presión positiva (BVM) para estabilizar segmento desde adentro</p>
+                                                        <p className="text-sm">Ventilación con presión positiva (BVM)
+                                                            para estabilizar segmento desde adentro</p>
                                                     </div>
                                                     <div className="bg-red-100 p-3 rounded">
                                                         <h5 className="font-semibold text-red-800">✗ Incorrecto:</h5>
-                                                        <p className="text-sm">Colocar peso o vendaje sobre el segmento inestable</p>
+                                                        <p className="text-sm">Colocar peso o vendaje sobre el segmento
+                                                            inestable</p>
                                                     </div>
                                                 </div>
                                                 <h4 className="font-semibold mb-2 mt-4">Manejo integral:</h4>
@@ -832,13 +928,15 @@ export default function ToraxInjuries(){
                                         </div>
                                     </div>
 
-                                    <div className="bg-gradient-to-r from-purple-50 to-purple-100 p-6 rounded-lg border-l-4 border-purple-500">
-                                        <h3 className="text-xl font-semibold mb-3 text-purple-700">Caso 3: Deterioro Rápido - Desarrollo de Tensión</h3>
+                                    <div
+                                        className="bg-gradient-to-r from-purple-50 to-purple-100 p-6 rounded-lg border-l-4 border-purple-500">
+                                        <h3 className="text-xl font-semibold mb-3 text-purple-700">Caso 3: Deterioro
+                                            Rápido - Desarrollo de Tensión</h3>
                                         <div className="grid lg:grid-cols-2 gap-6">
                                             <div>
                                                 <h4 className="font-semibold mb-2">Escenario:</h4>
                                                 <p className="text-gray-700 mb-4">
-                                                    Durante transporte del Caso 1, el paciente deteriora rápidamente. 
+                                                    Durante transporte del Caso 1, el paciente deteriora rápidamente.
                                                     Extreme ansiedad, cianosis, dificultad respiratoria severa.
                                                 </p>
                                                 <h4 className="font-semibold mb-2">Cambios en signos vitales:</h4>
@@ -880,7 +978,8 @@ export default function ToraxInjuries(){
                                                 <div className="mt-4 bg-blue-100 p-3 rounded">
                                                     <h5 className="font-semibold text-blue-800">Lección aprendida:</h5>
                                                     <p className="text-sm text-blue-700">
-                                                        El neumotórax abierto puede evolucionar a tensión si el sello no funciona como válvula. 
+                                                        El neumotórax abierto puede evolucionar a tensión si el sello no
+                                                        funciona como válvula.
                                                         La vigilancia continua es crítica.
                                                     </p>
                                                 </div>
@@ -890,26 +989,32 @@ export default function ToraxInjuries(){
 
                                     {/* Ejercicio de toma de decisiones */}
                                     <div className="bg-gray-50 p-6 rounded-lg border">
-                                        <h3 className="text-xl font-bold text-gray-800 mb-4">Ejercicio de Toma de Decisiones Rápidas</h3>
+                                        <h3 className="text-xl font-bold text-gray-800 mb-4">Ejercicio de Toma de
+                                            Decisiones Rápidas</h3>
                                         <div className="grid md:grid-cols-2 gap-6">
                                             <div>
                                                 <h4 className="font-semibold mb-3">Escenario rápido:</h4>
                                                 <p className="text-gray-700 mb-3">
-                                                    Paciente con trauma torácico. Presenta ingurgitación yugular, 
+                                                    Paciente con trauma torácico. Presenta ingurgitación yugular,
                                                     ruidos cardíacos apagados e hipotensión progresiva.
                                                 </p>
-                                                <h4 className="font-semibold mb-2">¿Cuál es tu sospecha diagnóstica?</h4>
+                                                <h4 className="font-semibold mb-2">¿Cuál es tu sospecha
+                                                    diagnóstica?</h4>
                                                 <div className="space-y-2">
-                                                    <button className="w-full text-left p-2 bg-white rounded border hover:bg-gray-100">
+                                                    <button
+                                                        className="w-full text-left p-2 bg-white rounded border hover:bg-gray-100">
                                                         A) Neumotórax a tensión
                                                     </button>
-                                                    <button className="w-full text-left p-2 bg-white rounded border hover:bg-gray-100">
+                                                    <button
+                                                        className="w-full text-left p-2 bg-white rounded border hover:bg-gray-100">
                                                         B) Hemotórax masivo
                                                     </button>
-                                                    <button className="w-full text-left p-2 bg-green-100 rounded border border-green-300">
+                                                    <button
+                                                        className="w-full text-left p-2 bg-green-100 rounded border border-green-300">
                                                         C) Taponamiento cardíaco ✓
                                                     </button>
-                                                    <button className="w-full text-left p-2 bg-white rounded border hover:bg-gray-100">
+                                                    <button
+                                                        className="w-full text-left p-2 bg-white rounded border hover:bg-gray-100">
                                                         D) Tórax inestable
                                                     </button>
                                                 </div>
@@ -917,7 +1022,8 @@ export default function ToraxInjuries(){
                                             <div>
                                                 <h4 className="font-semibold mb-2">Explicación:</h4>
                                                 <p className="text-sm text-gray-700 mb-3">
-                                                    La combinación de ingurgitación yugular, ruidos cardíacos apagados e hipotensión 
+                                                    La combinación de ingurgitación yugular, ruidos cardíacos apagados e
+                                                    hipotensión
                                                     forma la "Tríada de Beck", clásica del taponamiento cardíaco.
                                                 </p>
                                                 <h4 className="font-semibold mb-2">Manejo prehospitalario:</h4>
@@ -929,7 +1035,8 @@ export default function ToraxInjuries(){
                                                 </ul>
                                                 <div className="mt-3 p-2 bg-yellow-100 rounded">
                                                     <p className="text-xs text-yellow-700">
-                                                        <strong>Nota:</strong> La pericardiocentesis es procedimiento hospitalario
+                                                        <strong>Nota:</strong> La pericardiocentesis es procedimiento
+                                                        hospitalario
                                                     </p>
                                                 </div>
                                             </div>
@@ -946,9 +1053,10 @@ export default function ToraxInjuries(){
                             <div className="space-y-4">
                                 {faqData.map((faq, idx) => (
                                     <Disclosure key={idx}>
-                                        {({ open }) => (
+                                        {({open}) => (
                                             <div className="border rounded-lg overflow-hidden">
-                                                <Disclosure.Button className="flex w-full justify-between items-center bg-gray-100 px-4 py-3 text-left text-lg font-medium hover:bg-orange-100 transition">
+                                                <Disclosure.Button
+                                                    className="flex w-full justify-between items-center bg-gray-100 px-4 py-3 text-left text-lg font-medium hover:bg-orange-100 transition">
                                                     <span>{faq.question}</span>
                                                     <ChevronUpIcon
                                                         className={`${
@@ -966,12 +1074,11 @@ export default function ToraxInjuries(){
                             </div>
                         </section>
                         {/* Foro de Discusión */}
-                        <ForumSection 
-                            pagina="torax-injuries" 
+                        <ForumSection
+                            pagina="torax-injuries"
                             titulo="Foro de Discusión - Torax Injuries"
                         />
 
-                        
 
                         {/* Referencias y Recursos */}
                         <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">
@@ -981,19 +1088,32 @@ export default function ToraxInjuries(){
                                 <div>
                                     <h3 className="text-lg font-medium mb-2">Bibliografía principal</h3>
                                     <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                        <li>AAOS. (2021). <em>Emergencias Médicas Prehospitalarias</em> (11ª edición). Jones & Bartlett Learning.</li>
-                                        <li>American Heart Association. (2020). <em>Soporte Vital Básico y Avanzado</em>.</li>
-                                        <li>NAEMT. (2020). <em>PHTLS: Soporte Vital de Trauma Prehospitalario</em> (9ª edición).</li>
-                                        <li>Colegio Americano de Cirujanos. (2018). <em>ATLS: Advanced Trauma Life Support</em> (10ª edición).</li>
+                                        <li>AAOS. (2021). <em>Emergencias Médicas Prehospitalarias</em> (11ª edición).
+                                            Jones & Bartlett Learning.
+                                        </li>
+                                        <li>American Heart Association. (2020). <em>Soporte Vital Básico y Avanzado</em>.
+                                        </li>
+                                        <li>NAEMT. (2020). <em>PHTLS: Soporte Vital de Trauma Prehospitalario</em> (9ª
+                                            edición).
+                                        </li>
+                                        <li>Colegio Americano de Cirujanos. (2018). <em>ATLS: Advanced Trauma Life
+                                            Support</em> (10ª edición).
+                                        </li>
                                     </ul>
                                 </div>
 
                                 <div>
                                     <h3 className="text-lg font-medium mb-2">Recursos en línea especializados</h3>
                                     <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                        <li><a href="https://www.trauma.org" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Trauma.org - Base de datos de trauma</a></li>
-                                        <li><a href="https://www.east.org" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Eastern Association for Surgery of Trauma</a></li>
-                                        <li><a href="https://www.jems.com/trauma/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">JEMS - Sección de Trauma</a></li>
+                                        <li><a href="https://www.trauma.org" target="_blank" rel="noopener noreferrer"
+                                               className="text-blue-600 hover:underline">Trauma.org - Base de datos de
+                                            trauma</a></li>
+                                        <li><a href="https://www.east.org" target="_blank" rel="noopener noreferrer"
+                                               className="text-blue-600 hover:underline">Eastern Association for Surgery
+                                            of Trauma</a></li>
+                                        <li><a href="https://www.jems.com/trauma/" target="_blank"
+                                               rel="noopener noreferrer" className="text-blue-600 hover:underline">JEMS
+                                            - Sección de Trauma</a></li>
                                     </ul>
                                 </div>
 

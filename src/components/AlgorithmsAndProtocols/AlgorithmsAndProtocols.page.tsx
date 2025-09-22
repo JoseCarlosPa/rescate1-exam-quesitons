@@ -1,28 +1,24 @@
 import {
-    ReactFlow,
-    MiniMap,
-    Controls,
-    Background,
-    useNodesState,
-    useEdgesState,
     addEdge,
-    Panel
+    Background,
+    Connection,
+    Controls,
+    MiniMap,
+    Panel,
+    ReactFlow,
+    useEdgesState,
+    useNodesState
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
-import { useCallback, useState } from "react";
-import { Connection } from "@xyflow/react";
-import { 
-    allProtocols, 
-    protocolCategories,
-    Protocol
-} from "./AlgorithmsAndProtocols.constants.tsx";
-import { NavLink } from "react-router";
-import { AllRoutes } from "../Router/Router.constants";
-import { IoReturnDownBack } from "react-icons/io5";
-import { LuNetwork } from "react-icons/lu";
-import { FaInfoCircle, FaMedkit, FaBriefcaseMedical } from "react-icons/fa";
-import { TbEmergencyBed } from "react-icons/tb";
-import { GiMedicalPack } from "react-icons/gi";
+import {useCallback, useState} from "react";
+import {allProtocols, Protocol, protocolCategories} from "./AlgorithmsAndProtocols.constants.tsx";
+import {NavLink} from "react-router";
+import {AllRoutes} from "../Router/Router.constants";
+import {IoReturnDownBack} from "react-icons/io5";
+import {LuNetwork} from "react-icons/lu";
+import {FaBriefcaseMedical, FaInfoCircle, FaMedkit} from "react-icons/fa";
+import {TbEmergencyBed} from "react-icons/tb";
+import {GiMedicalPack} from "react-icons/gi";
 
 export default function AlgorithmsAndProtocols() {
     // Estado para el protocolo seleccionado
@@ -46,15 +42,15 @@ export default function AlgorithmsAndProtocols() {
     const getCategoryIcon = (categoryId: string) => {
         switch (categoryId) {
             case 'basic':
-                return <FaMedkit className="mr-2" />;
+                return <FaMedkit className="mr-2"/>;
             case 'advanced':
-                return <FaBriefcaseMedical className="mr-2" />;
+                return <FaBriefcaseMedical className="mr-2"/>;
             case 'trauma':
-                return <TbEmergencyBed className="mr-2" />;
+                return <TbEmergencyBed className="mr-2"/>;
             case 'medical':
-                return <GiMedicalPack className="mr-2" />;
+                return <GiMedicalPack className="mr-2"/>;
             default:
-                return <LuNetwork className="mr-2" />;
+                return <LuNetwork className="mr-2"/>;
         }
     };
 
@@ -77,12 +73,13 @@ export default function AlgorithmsAndProtocols() {
 
     return (
         <div className="min-h-screen bg-gray-50 pb-12">
-            <div className="flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-white py-8 px-4">
+            <div
+                className="flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-white py-8 px-4">
                 <div className="w-full max-w-7xl">
                     {/* Cabecera */}
                     <header className="mb-8 text-center">
                         <div className="flex justify-center">
-                            <LuNetwork className="w-24 h-24 mb-1 text-orange-500" />
+                            <LuNetwork className="w-24 h-24 mb-1 text-orange-500"/>
                         </div>
                         <h1 className="text-5xl font-bold mb-2 text-center">Algoritmos y Protocolos</h1>
                         <p className="text-sm italic mb-4">Alumnos Rescate 1</p>
@@ -90,7 +87,7 @@ export default function AlgorithmsAndProtocols() {
                             <NavLink
                                 to={AllRoutes.EMT}
                                 className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 transition duration-300 ease-in-out">
-                                <IoReturnDownBack className="w-5 h-5 my-auto" />
+                                <IoReturnDownBack className="w-5 h-5 my-auto"/>
                                 <p className="text-lg">Regresar</p>
                             </NavLink>
                         </div>
@@ -169,7 +166,8 @@ export default function AlgorithmsAndProtocols() {
                     )}
 
                     {/* Diagrama de flujo */}
-                    <div className="w-full h-[800px] border border-gray-300 rounded-lg overflow-hidden bg-white shadow-md">
+                    <div
+                        className="w-full h-[800px] border border-gray-300 rounded-lg overflow-hidden bg-white shadow-md">
                         <ReactFlow
                             nodes={nodes}
                             edges={edges}
@@ -187,17 +185,17 @@ export default function AlgorithmsAndProtocols() {
                                     onClick={() => setShowInfo(!showInfo)}
                                     className="flex items-center gap-2 bg-white rounded-md shadow px-3 py-2 text-sm hover:bg-gray-100 transition"
                                 >
-                                    <FaInfoCircle className="text-blue-500" />
+                                    <FaInfoCircle className="text-blue-500"/>
                                     {showInfo ? 'Ocultar info' : 'Mostrar info'}
                                 </button>
                             </Panel>
-                            <Controls />
-                            <MiniMap 
+                            <Controls/>
+                            <MiniMap
                                 nodeStrokeWidth={3}
                                 zoomable
                                 pannable
                             />
-                            <Background gap={12} size={1} color="#f1f5f9" />
+                            <Background gap={12} size={1} color="#f1f5f9"/>
                         </ReactFlow>
                     </div>
 
@@ -205,12 +203,13 @@ export default function AlgorithmsAndProtocols() {
                     <div className="mt-8 bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
                         <h3 className="text-lg font-semibold text-blue-800 mb-2">Nota importante</h3>
                         <p className="text-blue-800">
-                            Estos algoritmos son representaciones visuales de protocolos estándar con fines educativos. 
-                            En situaciones reales, sigue los protocolos actualizados de tu institución y recuerda que el juicio clínico 
+                            Estos algoritmos son representaciones visuales de protocolos estándar con fines educativos.
+                            En situaciones reales, sigue los protocolos actualizados de tu institución y recuerda que el
+                            juicio clínico
                             debe adaptarse a cada paciente.
                         </p>
                     </div>
-                    
+
                     {/* Instrucciones de uso */}
                     <div className="mt-4 bg-green-50 border-l-4 border-green-500 p-4 rounded">
                         <h3 className="text-lg font-semibold text-green-800 mb-2">Instrucciones de uso</h3>

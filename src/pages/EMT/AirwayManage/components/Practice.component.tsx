@@ -3,8 +3,8 @@ import {FiAlertTriangle, FiUser} from "react-icons/fi";
 import {BsLightbulb} from "react-icons/bs";
 import {MdCheckCircle} from "react-icons/md";
 
-export default function Practice(){
-    return(
+export default function Practice() {
+    return (
         <div className="space-y-8">
             <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
                 <FaFirstAid className="w-6 h-6 mr-2 text-orange-500"/>

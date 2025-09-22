@@ -169,28 +169,28 @@ export const topicQuestionsMap: Record<string, Question[]> = {
 };
 
 // Function to get random questions from selected topics
-export function getQuestionsFromSelectedTopics(selectedTopics: {id: string, count: number}[]): Question[] {
+export function getQuestionsFromSelectedTopics(selectedTopics: { id: string, count: number }[]): Question[] {
     const selectedQuestions: Question[] = [];
-    
+
     for (const topic of selectedTopics) {
         const questions = topicQuestionsMap[topic.id];
-        
+
         if (questions && questions.length > 0) {
             const count = Math.min(topic.count, questions.length);
             const randomIndices = new Set<number>();
-            
+
             // Get random indices for this topic
             while (randomIndices.size < count) {
                 randomIndices.add(Math.floor(Math.random() * questions.length));
             }
-            
+
             // Add the randomly selected questions to our result
             for (const index of randomIndices) {
                 selectedQuestions.push(questions[index]);
             }
         }
     }
-    
+
     // Shuffle the questions to mix them up
     return shuffleArray(selectedQuestions);
 }

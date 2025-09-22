@@ -1,9 +1,9 @@
-import  {useState} from "react";
+import {useState} from "react";
 import {FaBaby, FaBrain, FaCalculator, FaChild, FaHeartbeat, FaLungs, FaWeight} from "react-icons/fa";
 import {MdBloodtype, MdLocalHospital} from "react-icons/md";
-import {BroslowEquipment, BroslowMedications, Tool, NIHSSScore} from "./ToolsModal.types";
+import {BroslowEquipment, BroslowMedications, NIHSSScore, Tool} from "./ToolsModal.types";
 
-export default function useToolsModal(){
+export default function useToolsModal() {
 
     const [shockCalc, setShockCalc] = useState({
         heartRate: '',
@@ -224,7 +224,7 @@ export default function useToolsModal(){
     };
 
     const calculateCincinnati = () => {
-        const { facial, arm, speech } = cincinnati;
+        const {facial, arm, speech} = cincinnati;
         let positives = 0;
         if (facial === 'yes') positives++;
         if (arm === 'yes') positives++;
@@ -234,7 +234,7 @@ export default function useToolsModal(){
         else if (positives === 1) result = 'Un signo: posible ACV, evaluar más.';
         else if (positives === 2) result = 'Dos signos: alta sospecha de ACV.';
         else result = 'Tres signos: ACV muy probable, activar código ictus.';
-        setCincinnati({ ...cincinnati, result });
+        setCincinnati({...cincinnati, result});
     };
 
     const calculateParkland = () => {
@@ -547,73 +547,73 @@ export default function useToolsModal(){
         {
             id: 'shock-index' as Tool,
             name: 'Índice de Shock',
-            icon: <FaHeartbeat className="w-6 h-6" />,
+            icon: <FaHeartbeat className="w-6 h-6"/>,
             description: 'Calcula el índice de shock (FC/PAS)'
         },
         {
             id: 'bmi' as Tool,
             name: 'Calculadora IMC',
-            icon: <FaWeight className="w-6 h-6" />,
+            icon: <FaWeight className="w-6 h-6"/>,
             description: 'Índice de masa corporal'
         },
         {
             id: 'map-calculator' as Tool,
             name: 'PAM Calculator',
-            icon: <MdBloodtype className="w-6 h-6" />,
+            icon: <MdBloodtype className="w-6 h-6"/>,
             description: 'Presión arterial media'
         },
         {
             id: 'drug-calculator' as Tool,
             name: 'Calculadora de Dosis',
-            icon: <FaCalculator className="w-6 h-6" />,
+            icon: <FaCalculator className="w-6 h-6"/>,
             description: 'Cálculos de medicamentos'
         },
         {
             id: 'glasgow-scale' as Tool,
             name: 'Escala de Glasgow',
-            icon: <FaBrain className="w-6 h-6" />,
+            icon: <FaBrain className="w-6 h-6"/>,
             description: 'Evalúa el nivel de conciencia'
         },
         {
             id: 'cincinnati-scale' as Tool,
             name: 'Escala de Cincinnati',
-            icon: <FaBrain className="w-6 h-6" />,
+            icon: <FaBrain className="w-6 h-6"/>,
             description: 'Evaluación rápida de ACV',
         },
         {
             id: 'parkland-rule' as Tool,
             name: 'Regla de Parkland',
-            icon: <FaCalculator className="w-6 h-6" />,
+            icon: <FaCalculator className="w-6 h-6"/>,
             description: 'Cálculo de líquidos en quemaduras',
         },
         {
             id: 'apgar-score' as Tool,
             name: 'Puntaje APGAR',
-            icon: <FaBaby className="w-6 h-6" />,
+            icon: <FaBaby className="w-6 h-6"/>,
             description: 'Evaluación neonatal al nacimiento',
         },
         {
             id: 'rts-score' as Tool,
             name: 'Trauma Score Revisado',
-            icon: <MdLocalHospital className="w-6 h-6" />,
+            icon: <MdLocalHospital className="w-6 h-6"/>,
             description: 'Predictor de supervivencia en trauma',
         },
         {
             id: 'oxygen-calculator' as Tool,
             name: 'Calculadora de Oxígeno',
-            icon: <FaLungs className="w-6 h-6" />,
+            icon: <FaLungs className="w-6 h-6"/>,
             description: 'FiO2 según dispositivo y flujo',
         },
         {
             id: 'broselow-tape' as Tool,
             name: 'Cinta de Broselow',
-            icon: <FaChild className="w-6 h-6" />,
+            icon: <FaChild className="w-6 h-6"/>,
             description: 'Dosis pediátricas por longitud',
         },
         {
             id: 'nihss-scale' as Tool,
             name: 'Escala de NIHSS',
-            icon: <FaBrain className="w-6 h-6" />,
+            icon: <FaBrain className="w-6 h-6"/>,
             description: 'Evaluación neurológica de ACV (15 ítems)',
         },
     ];

@@ -1,6 +1,15 @@
-import { FaTasks, FaCalendar, FaClock, FaLink, FaCheckCircle, FaStar, FaExclamationTriangle, FaSpinner } from "react-icons/fa";
-import { useState } from "react";
-import useStudentTasks, { Task, TaskSubmission } from "../../hooks/useStudentTasks.hook";
+import {
+    FaCalendar,
+    FaCheckCircle,
+    FaClock,
+    FaExclamationTriangle,
+    FaLink,
+    FaSpinner,
+    FaStar,
+    FaTasks
+} from "react-icons/fa";
+import {useState} from "react";
+import useStudentTasks, {Task, TaskSubmission} from "../../hooks/useStudentTasks.hook";
 
 export default function StudentTasks() {
     const {
@@ -44,7 +53,7 @@ export default function StudentTasks() {
     if (loading) {
         return (
             <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-                <FaSpinner className="animate-spin w-8 h-8 text-blue-500" />
+                <FaSpinner className="animate-spin w-8 h-8 text-blue-500"/>
             </div>
         );
     }
@@ -56,7 +65,7 @@ export default function StudentTasks() {
                 <div className="mb-8">
                     <div className="flex items-center mb-6">
                         <div className="p-3 bg-blue-100 rounded-full mr-4">
-                            <FaTasks className="text-blue-600 text-xl" />
+                            <FaTasks className="text-blue-600 text-xl"/>
                         </div>
                         <div>
                             <h1 className="text-3xl font-bold text-gray-900">Mis Tareas</h1>
@@ -69,7 +78,7 @@ export default function StudentTasks() {
                         <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
                             <div className="flex items-center">
                                 <div className="p-2 bg-blue-100 rounded-full">
-                                    <FaTasks className="text-blue-600" />
+                                    <FaTasks className="text-blue-600"/>
                                 </div>
                                 <div className="ml-3">
                                     <p className="text-sm text-gray-600">Total Tareas</p>
@@ -81,7 +90,7 @@ export default function StudentTasks() {
                         <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
                             <div className="flex items-center">
                                 <div className="p-2 bg-green-100 rounded-full">
-                                    <FaCheckCircle className="text-green-600" />
+                                    <FaCheckCircle className="text-green-600"/>
                                 </div>
                                 <div className="ml-3">
                                     <p className="text-sm text-gray-600">Entregadas</p>
@@ -93,7 +102,7 @@ export default function StudentTasks() {
                         <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
                             <div className="flex items-center">
                                 <div className="p-2 bg-yellow-100 rounded-full">
-                                    <FaClock className="text-yellow-600" />
+                                    <FaClock className="text-yellow-600"/>
                                 </div>
                                 <div className="ml-3">
                                     <p className="text-sm text-gray-600">Pendientes</p>
@@ -107,7 +116,7 @@ export default function StudentTasks() {
                         <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
                             <div className="flex items-center">
                                 <div className="p-2 bg-purple-100 rounded-full">
-                                    <FaStar className="text-purple-600" />
+                                    <FaStar className="text-purple-600"/>
                                 </div>
                                 <div className="ml-3">
                                     <p className="text-sm text-gray-600">Calificadas</p>
@@ -129,7 +138,8 @@ export default function StudentTasks() {
                             const isSubmitted = hasSubmitted(task.id);
 
                             return (
-                                <div key={task.id} className="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
+                                <div key={task.id}
+                                     className="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
                                     <div className="p-6">
                                         <div className="flex items-start justify-between mb-4">
                                             <div className="flex-1">
@@ -137,13 +147,14 @@ export default function StudentTasks() {
                                                     <h3 className="text-xl font-bold text-gray-900">{task.title}</h3>
                                                     <span className={`px-3 py-1 rounded-full text-xs font-medium ${
                                                         taskStatus.color === 'green' ? 'bg-green-100 text-green-800' :
-                                                        taskStatus.color === 'yellow' ? 'bg-yellow-100 text-yellow-800' :
-                                                        'bg-gray-100 text-gray-800'
+                                                            taskStatus.color === 'yellow' ? 'bg-yellow-100 text-yellow-800' :
+                                                                'bg-gray-100 text-gray-800'
                                                     }`}>
                                                         {taskStatus.label}
                                                     </span>
                                                     {isSubmitted && (
-                                                        <span className="px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                                                        <span
+                                                            className="px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
                                                             Entregada
                                                         </span>
                                                     )}
@@ -152,21 +163,21 @@ export default function StudentTasks() {
 
                                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm mb-4">
                                                     <div className="flex items-center text-gray-600">
-                                                        <FaCalendar className="mr-2" />
+                                                        <FaCalendar className="mr-2"/>
                                                         <div>
                                                             <div className="font-medium">Apertura</div>
                                                             <div>{task.openDate.toDate().toLocaleDateString()}</div>
                                                         </div>
                                                     </div>
                                                     <div className="flex items-center text-gray-600">
-                                                        <FaClock className="mr-2" />
+                                                        <FaClock className="mr-2"/>
                                                         <div>
                                                             <div className="font-medium">Cierre</div>
                                                             <div>{task.closeDate.toDate().toLocaleDateString()}</div>
                                                         </div>
                                                     </div>
                                                     <div className="flex items-center text-gray-600">
-                                                        <FaStar className="mr-2" />
+                                                        <FaStar className="mr-2"/>
                                                         <div>
                                                             <div className="font-medium">Puntaje Máximo</div>
                                                             <div>{task.maxScore} puntos</div>
@@ -182,7 +193,7 @@ export default function StudentTasks() {
                                                 <h4 className="font-semibold text-gray-900 mb-3">Mi Entrega</h4>
                                                 <div className="space-y-2">
                                                     <div className="flex items-center text-sm text-gray-600">
-                                                        <FaLink className="mr-2" />
+                                                        <FaLink className="mr-2"/>
                                                         <a
                                                             href={submission.submissionLink}
                                                             target="_blank"
@@ -193,20 +204,24 @@ export default function StudentTasks() {
                                                         </a>
                                                     </div>
                                                     <div className="text-sm text-gray-600">
-                                                        <span className="font-medium">Entregado:</span> {submission.submittedAt.toDate().toLocaleString()}
+                                                        <span
+                                                            className="font-medium">Entregado:</span> {submission.submittedAt.toDate().toLocaleString()}
                                                     </div>
 
                                                     {submission.isGraded ? (
                                                         <div className="mt-3 p-3 rounded-lg bg-white border">
                                                             <div className="flex items-center justify-between mb-2">
-                                                                <span className="font-medium text-gray-900">Calificación</span>
-                                                                <span className={`text-xl font-bold ${getScoreColor(submission.score || 0)}`}>
+                                                                <span
+                                                                    className="font-medium text-gray-900">Calificación</span>
+                                                                <span
+                                                                    className={`text-xl font-bold ${getScoreColor(submission.score || 0)}`}>
                                                                     {submission.score}/{task.maxScore}
                                                                 </span>
                                                             </div>
                                                             {submission.feedback && (
                                                                 <div className="mt-2">
-                                                                    <span className="font-medium text-gray-700">Retroalimentación:</span>
+                                                                    <span
+                                                                        className="font-medium text-gray-700">Retroalimentación:</span>
                                                                     <p className="text-gray-600 mt-1">{submission.feedback}</p>
                                                                 </div>
                                                             )}
@@ -215,10 +230,12 @@ export default function StudentTasks() {
                                                             </div>
                                                         </div>
                                                     ) : (
-                                                        <div className="mt-3 p-3 rounded-lg bg-yellow-50 border border-yellow-200">
+                                                        <div
+                                                            className="mt-3 p-3 rounded-lg bg-yellow-50 border border-yellow-200">
                                                             <div className="flex items-center text-yellow-800">
-                                                                <FaClock className="mr-2" />
-                                                                <span className="font-medium">Pendiente de calificación</span>
+                                                                <FaClock className="mr-2"/>
+                                                                <span
+                                                                    className="font-medium">Pendiente de calificación</span>
                                                             </div>
                                                         </div>
                                                     )}
@@ -234,17 +251,17 @@ export default function StudentTasks() {
                                                         }}
                                                         className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors flex items-center gap-2"
                                                     >
-                                                        <FaLink />
+                                                        <FaLink/>
                                                         Entregar Tarea
                                                     </button>
                                                 ) : taskStatus.status === 'pending' ? (
                                                     <div className="text-gray-500 text-sm flex items-center gap-2">
-                                                        <FaClock />
+                                                        <FaClock/>
                                                         Aún no disponible
                                                     </div>
                                                 ) : (
                                                     <div className="text-red-500 text-sm flex items-center gap-2">
-                                                        <FaExclamationTriangle />
+                                                        <FaExclamationTriangle/>
                                                         Tiempo agotado
                                                     </div>
                                                 )}
@@ -256,7 +273,7 @@ export default function StudentTasks() {
                         })
                     ) : (
                         <div className="bg-white rounded-lg shadow-lg p-8 text-center">
-                            <FaTasks className="mx-auto text-gray-300 text-4xl mb-4" />
+                            <FaTasks className="mx-auto text-gray-300 text-4xl mb-4"/>
                             <h3 className="text-lg font-medium text-gray-900 mb-2">No hay tareas disponibles</h3>
                             <p className="text-gray-600">Las tareas aparecerán aquí cuando estén disponibles</p>
                         </div>
@@ -265,7 +282,8 @@ export default function StudentTasks() {
 
                 {/* Submission Modal */}
                 {showSubmissionModal && selectedTask && (
-                    <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50 flex items-center justify-center">
+                    <div
+                        className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50 flex items-center justify-center">
                         <div className="relative bg-white rounded-lg shadow-xl max-w-lg w-full mx-4">
                             <div className="px-6 py-4 border-b border-gray-200">
                                 <h3 className="text-lg font-semibold text-gray-900">Entregar Tarea</h3>
@@ -308,12 +326,12 @@ export default function StudentTasks() {
                                     >
                                         {submitting ? (
                                             <>
-                                                <FaSpinner className="animate-spin" />
+                                                <FaSpinner className="animate-spin"/>
                                                 Entregando...
                                             </>
                                         ) : (
                                             <>
-                                                <FaCheckCircle />
+                                                <FaCheckCircle/>
                                                 Entregar
                                             </>
                                         )}

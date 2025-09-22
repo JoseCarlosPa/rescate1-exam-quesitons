@@ -1,7 +1,7 @@
 import {FaEye} from "react-icons/fa";
 
-export default function Scene(){
-    return(
+export default function Scene() {
+    return (
         <div className="space-y-6">
             <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2 flex items-center gap-2">
                 <FaEye className="text-blue-500"/>

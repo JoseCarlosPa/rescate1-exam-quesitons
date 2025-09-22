@@ -5,8 +5,8 @@ import {FiActivity, FiAlertTriangle, FiEye, FiUser} from "react-icons/fi";
 import {FaExclamationTriangle} from "react-icons/fa";
 import {GiTornado} from "react-icons/gi";
 
-export default function Overview(){
-    return(
+export default function Overview() {
+    return (
         <div className="space-y-8">
             {/* Definición y tipos críticos */}
             <div className="bg-gradient-to-r from-blue-50 to-blue-100 border-l-4 border-blue-500 p-6 rounded-lg">
@@ -16,7 +16,8 @@ export default function Overview(){
                 </div>
                 <p className="text-gray-800 leading-relaxed text-lg mb-4">
                     Pérdida <strong>aguda</strong> de sangre del sistema circulatorio. Su gravedad depende del
-                    <strong> volumen perdido</strong>, <strong>velocidad de pérdida</strong> y <strong>localización</strong>.
+                    <strong> volumen perdido</strong>, <strong>velocidad de
+                    pérdida</strong> y <strong>localización</strong>.
                 </p>
                 <div className="grid md:grid-cols-3 gap-4">
                     <div className="bg-white p-4 rounded shadow-sm text-center">
@@ -65,7 +66,8 @@ export default function Overview(){
                             </div>
                         </div>
                     </div>
-                    <div className="bg-gradient-to-b from-purple-50 to-purple-100 p-6 rounded-lg border border-purple-200">
+                    <div
+                        className="bg-gradient-to-b from-purple-50 to-purple-100 p-6 rounded-lg border border-purple-200">
                         <h3 className="text-xl font-bold text-purple-700 mb-3 text-center flex items-center justify-center">
                             <RiDropLine className="w-6 h-6 mr-2"/>
                             VENOSA

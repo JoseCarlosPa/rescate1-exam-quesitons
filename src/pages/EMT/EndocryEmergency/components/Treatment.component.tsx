@@ -3,8 +3,8 @@ import {BsDropletHalf} from "react-icons/bs";
 import {GiMedicines} from "react-icons/gi";
 import {MdOutlineTimer, MdWarning} from "react-icons/md";
 
-export default function Treatment(){
-    return(
+export default function Treatment() {
+    return (
         <div className="space-y-8">
             {/* Protocolos de evaluación inicial */}
             <div className="bg-red-50 border border-red-200 rounded-lg p-6">
@@ -20,23 +20,28 @@ export default function Treatment(){
                         </h3>
                         <ol className="space-y-2 text-sm">
                             <li className="flex items-start">
-                                <span className="bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">1</span>
+                                <span
+                                    className="bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">1</span>
                                 <span>Asegurar vía aérea y ventilación</span>
                             </li>
                             <li className="flex items-start">
-                                <span className="bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">2</span>
+                                <span
+                                    className="bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">2</span>
                                 <span>Glucosa capilar INMEDIATA</span>
                             </li>
                             <li className="flex items-start">
-                                <span className="bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">3</span>
+                                <span
+                                    className="bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">3</span>
                                 <span>Si &lt;70 mg/dL y consciente → glucosa oral</span>
                             </li>
                             <li className="flex items-start">
-                                <span className="bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">4</span>
+                                <span
+                                    className="bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">4</span>
                                 <span>Si inconsciente → NO dar nada por boca</span>
                             </li>
                             <li className="flex items-start">
-                                <span className="bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">5</span>
+                                <span
+                                    className="bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">5</span>
                                 <span>Reevaluar cada 5 minutos</span>
                             </li>
                         </ol>
@@ -48,23 +53,28 @@ export default function Treatment(){
                         </h3>
                         <ol className="space-y-2 text-sm">
                             <li className="flex items-start">
-                                <span className="bg-blue-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">1</span>
+                                <span
+                                    className="bg-blue-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">1</span>
                                 <span>Control inmediato de hemorragia externa</span>
                             </li>
                             <li className="flex items-start">
-                                <span className="bg-blue-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">2</span>
+                                <span
+                                    className="bg-blue-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">2</span>
                                 <span>Evaluar signos de shock</span>
                             </li>
                             <li className="flex items-start">
-                                <span className="bg-blue-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">3</span>
+                                <span
+                                    className="bg-blue-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">3</span>
                                 <span>Oxígeno si SpO₂ &lt;94%</span>
                             </li>
                             <li className="flex items-start">
-                                <span className="bg-blue-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">4</span>
+                                <span
+                                    className="bg-blue-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">4</span>
                                 <span>Posición de shock si no hay trauma</span>
                             </li>
                             <li className="flex items-start">
-                                <span className="bg-blue-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">5</span>
+                                <span
+                                    className="bg-blue-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">5</span>
                                 <span>Traslado URGENTE</span>
                             </li>
                         </ol>
@@ -118,7 +128,8 @@ export default function Treatment(){
                             <div className="space-y-2 text-sm">
                                 <div className="bg-white p-3 rounded">
                                     <p className="font-semibold text-red-700 mb-1">Signos clave:</p>
-                                    <p className="text-gray-700">Respiración Kussmaul, aliento afrutado, deshidratación</p>
+                                    <p className="text-gray-700">Respiración Kussmaul, aliento afrutado,
+                                        deshidratación</p>
                                 </div>
                                 <div className="bg-white p-3 rounded">
                                     <p className="font-semibold text-red-700 mb-1">Manejo prehospitalario:</p>

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {FaTimes, FaCalculator} from 'react-icons/fa';
+import {FaCalculator, FaTimes} from 'react-icons/fa';
 import useToolsModal from "./ToolsModal.hook.tsx";
 import {Tool} from "./ToolsModal.types.ts";
 
@@ -17,9 +17,9 @@ const ToolsModal: React.FC<ToolsModalProps> = ({onClose}) => {
         cincinnati, setCincinnati,
         dosageCalc, setDosageCalc,
         calculateCincinnati, parkland, setParkland, apgarScore, setApgarScore,
-        calculateParkland, calculateApgar,rtsScore,setRtsScore,oxygenCalc,setOxygenCalc,
-        broslowCalc,setBroslowCalc,calculateRTS,calculateOxygen,calculateBroselow,tools,
-        nihssScore,setNihssScore,calculateNIHSS
+        calculateParkland, calculateApgar, rtsScore, setRtsScore, oxygenCalc, setOxygenCalc,
+        broslowCalc, setBroslowCalc, calculateRTS, calculateOxygen, calculateBroselow, tools,
+        nihssScore, setNihssScore, calculateNIHSS
     } = useToolsModal()
 
     const renderToolContent = () => {
@@ -1027,7 +1027,8 @@ const ToolsModal: React.FC<ToolsModalProps> = ({onClose}) => {
                                     <option value="">Seleccionar</option>
                                     <option value="0">0 - Alerta, responde normalmente</option>
                                     <option value="1">1 - No alerta, pero despierta con estímulo mínimo</option>
-                                    <option value="2">2 - No alerta, requiere estímulo repetido para mantener atención</option>
+                                    <option value="2">2 - No alerta, requiere estímulo repetido para mantener atención
+                                    </option>
                                     <option value="3">3 - Responde solo con estimulación refleja o no responde</option>
                                 </select>
                             </div>
@@ -1054,7 +1055,8 @@ const ToolsModal: React.FC<ToolsModalProps> = ({onClose}) => {
                             <div>
                                 <label className="block text-sm font-medium text-gray-700 mb-1">
                                     1c. Comandos (0-2)
-                                    <span className="block text-xs text-gray-500">Cerrar/abrir ojos, cerrar/abrir mano</span>
+                                    <span
+                                        className="block text-xs text-gray-500">Cerrar/abrir ojos, cerrar/abrir mano</span>
                                 </label>
                                 <select
                                     value={nihssScore.commands}
@@ -1133,8 +1135,11 @@ const ToolsModal: React.FC<ToolsModalProps> = ({onClose}) => {
                                 >
                                     <option value="">Seleccionar</option>
                                     <option value="0">0 - Sin caída; mantiene brazo 90° por 10 segundos</option>
-                                    <option value="1">1 - Caída; no mantiene posición, pero hay esfuerzo contra gravedad</option>
-                                    <option value="2">2 - Algún esfuerzo contra gravedad, pero no puede elevar brazo</option>
+                                    <option value="1">1 - Caída; no mantiene posición, pero hay esfuerzo contra
+                                        gravedad
+                                    </option>
+                                    <option value="2">2 - Algún esfuerzo contra gravedad, pero no puede elevar brazo
+                                    </option>
                                     <option value="3">3 - Sin esfuerzo contra gravedad; brazo cae</option>
                                     <option value="4">4 - Sin movimiento</option>
                                 </select>
@@ -1152,8 +1157,11 @@ const ToolsModal: React.FC<ToolsModalProps> = ({onClose}) => {
                                 >
                                     <option value="">Seleccionar</option>
                                     <option value="0">0 - Sin caída; mantiene brazo 90° por 10 segundos</option>
-                                    <option value="1">1 - Caída; no mantiene posición, pero hay esfuerzo contra gravedad</option>
-                                    <option value="2">2 - Algún esfuerzo contra gravedad, pero no puede elevar brazo</option>
+                                    <option value="1">1 - Caída; no mantiene posición, pero hay esfuerzo contra
+                                        gravedad
+                                    </option>
+                                    <option value="2">2 - Algún esfuerzo contra gravedad, pero no puede elevar brazo
+                                    </option>
                                     <option value="3">3 - Sin esfuerzo contra gravedad; brazo cae</option>
                                     <option value="4">4 - Sin movimiento</option>
                                 </select>
@@ -1171,9 +1179,13 @@ const ToolsModal: React.FC<ToolsModalProps> = ({onClose}) => {
                                 >
                                     <option value="">Seleccionar</option>
                                     <option value="0">0 - Sin caída; mantiene pierna 30° por 5 segundos</option>
-                                    <option value="1">1 - Caída; no mantiene posición, pero hay esfuerzo contra gravedad</option>
-                                    <option value="2">2 - Algún esfuerzo contra gravedad, pero no puede elevar pierna</option>
-                                    <option value="3">3 - Sin esfuerzo contra gravedad; pierna cae inmediatamente</option>
+                                    <option value="1">1 - Caída; no mantiene posición, pero hay esfuerzo contra
+                                        gravedad
+                                    </option>
+                                    <option value="2">2 - Algún esfuerzo contra gravedad, pero no puede elevar pierna
+                                    </option>
+                                    <option value="3">3 - Sin esfuerzo contra gravedad; pierna cae inmediatamente
+                                    </option>
                                     <option value="4">4 - Sin movimiento</option>
                                 </select>
                             </div>
@@ -1190,9 +1202,13 @@ const ToolsModal: React.FC<ToolsModalProps> = ({onClose}) => {
                                 >
                                     <option value="">Seleccionar</option>
                                     <option value="0">0 - Sin caída; mantiene pierna 30° por 5 segundos</option>
-                                    <option value="1">1 - Caída; no mantiene posición, pero hay esfuerzo contra gravedad</option>
-                                    <option value="2">2 - Algún esfuerzo contra gravedad, pero no puede elevar pierna</option>
-                                    <option value="3">3 - Sin esfuerzo contra gravedad; pierna cae inmediatamente</option>
+                                    <option value="1">1 - Caída; no mantiene posición, pero hay esfuerzo contra
+                                        gravedad
+                                    </option>
+                                    <option value="2">2 - Algún esfuerzo contra gravedad, pero no puede elevar pierna
+                                    </option>
+                                    <option value="3">3 - Sin esfuerzo contra gravedad; pierna cae inmediatamente
+                                    </option>
                                     <option value="4">4 - Sin movimiento</option>
                                 </select>
                             </div>
@@ -1262,7 +1278,8 @@ const ToolsModal: React.FC<ToolsModalProps> = ({onClose}) => {
                                     <option value="">Seleccionar</option>
                                     <option value="0">0 - Normal</option>
                                     <option value="1">1 - Leve a moderada; paciente arrastra algunas palabras</option>
-                                    <option value="2">2 - Severa; lenguaje del paciente es muy difícil de entender</option>
+                                    <option value="2">2 - Severa; lenguaje del paciente es muy difícil de entender
+                                    </option>
                                 </select>
                             </div>
 
@@ -1278,7 +1295,9 @@ const ToolsModal: React.FC<ToolsModalProps> = ({onClose}) => {
                                 >
                                     <option value="">Seleccionar</option>
                                     <option value="0">0 - Sin evidencia anormal</option>
-                                    <option value="1">1 - Inatención visual, táctil, auditiva o personal en una modalidad</option>
+                                    <option value="1">1 - Inatención visual, táctil, auditiva o personal en una
+                                        modalidad
+                                    </option>
                                     <option value="2">2 - Hemi-inatención severa en más de una modalidad</option>
                                 </select>
                             </div>
@@ -1318,7 +1337,8 @@ const ToolsModal: React.FC<ToolsModalProps> = ({onClose}) => {
                                         <div className="text-yellow-700 text-xs mt-1 space-y-1">
                                             <p><strong>• Activar protocolo de ACV</strong></p>
                                             <p><strong>• Evaluación urgente por neurólogo</strong></p>
-                                            <p><strong>• Considerar trombolisis si está en ventana terapéutica</strong></p>
+                                            <p><strong>• Considerar trombolisis si está en ventana terapéutica</strong>
+                                            </p>
                                             <p><strong>• TC craneal urgente</strong></p>
                                         </div>
                                     </div>
@@ -1368,7 +1388,8 @@ const ToolsModal: React.FC<ToolsModalProps> = ({onClose}) => {
                                 <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg">
                                     <p className="text-blue-800 font-bold text-xs">💡 CONSIDERACIONES IMPORTANTES:</p>
                                     <div className="text-blue-700 text-xs mt-1 space-y-1">
-                                        <p><strong>• Ventana terapéutica:</strong> tPA &lt;4.5h, trombectomía &lt;6-24h</p>
+                                        <p><strong>• Ventana terapéutica:</strong> tPA &lt;4.5h, trombectomía &lt;6-24h
+                                        </p>
                                         <p><strong>• Contraindicaciones:</strong> verificar antes de trombolisis</p>
                                         <p><strong>• Monitoreo:</strong> re-evaluar NIHSS cada 1-2 horas</p>
                                         <p><strong>• Deterioro:</strong> aumento ≥4 puntos = preocupante</p>
@@ -1388,7 +1409,8 @@ const ToolsModal: React.FC<ToolsModalProps> = ({onClose}) => {
                                 <p><strong>16-20:</strong> ACV moderado-severo</p>
                                 <p><strong>21-42:</strong> ACV severo</p>
                                 <p className="mt-2 font-semibold text-orange-600">
-                                    La escala NIHSS debe ser administrada por personal entrenado para obtener resultados precisos.
+                                    La escala NIHSS debe ser administrada por personal entrenado para obtener resultados
+                                    precisos.
                                 </p>
                             </div>
                         </div>

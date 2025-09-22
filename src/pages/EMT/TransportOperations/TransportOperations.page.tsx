@@ -9,20 +9,21 @@ import {MdQuiz} from "react-icons/md";
 import {BsBookHalf} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
 import {FaTruckMedical} from "react-icons/fa6";
-import { ForumSection } from "../../../components/ForumSection";
+import {ForumSection} from "../../../components/ForumSection";
 
-export default function TransportOperations(){
+export default function TransportOperations() {
     const [activeTab, setActiveTab] = useState<'overview' | 'equipment' | 'procedures' | 'practice'>('overview');
     const [showQuickQuiz, setShowQuickQuiz] = useState(false);
 
-    return(
+    return (
         <div className="min-h-screen bg-gray-50">
-            <div className="flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-white pb-12 px-4 p-4">
+            <div
+                className="flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-white pb-12 px-4 p-4">
                 <div className="w-full max-w-7xl">
                     {/* Cabecera */}
                     <header className="mb-8 text-center">
                         <div className="flex justify-center">
-                            <FaTruckMedical className="w-24 h-24 mb-1 text-orange-500" />
+                            <FaTruckMedical className="w-24 h-24 mb-1 text-orange-500"/>
                         </div>
                         <h1 className="text-5xl font-bold mb-2 text-center">Operaciones de transporte</h1>
                         <p className="text-sm italic mb-4">Alumnos Rescate 1</p>
@@ -30,7 +31,7 @@ export default function TransportOperations(){
                             <NavLink
                                 to={AllRoutes.EMT}
                                 className="flex gap-2 mb-4 bg-white shadow rounded p-2 hover:bg-orange-100 transition duration-300 ease-in-out">
-                                <IoReturnDownBack className="w-5 h-5 my-auto" />
+                                <IoReturnDownBack className="w-5 h-5 my-auto"/>
                                 <p className="text-lg">Regresar</p>
                             </NavLink>
                         </div>
@@ -41,7 +42,7 @@ export default function TransportOperations(){
                         <NavLink
                             to={`${AllRoutes.TRANSPORT_OPERATIONS}/exam`}
                             className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
-                            <MdQuiz className="w-10 h-10 text-orange-500 mb-2" />
+                            <MdQuiz className="w-10 h-10 text-orange-500 mb-2"/>
                             <p className="text-center font-medium">Examen</p>
                         </NavLink>
 
@@ -49,7 +50,7 @@ export default function TransportOperations(){
                            target="_blank"
                            rel="noopener noreferrer"
                            className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
-                            <PiChalkboardTeacher className="w-10 h-10 text-orange-500 mb-2" />
+                            <PiChalkboardTeacher className="w-10 h-10 text-orange-500 mb-2"/>
                             <p className="text-center font-medium">Presentación</p>
                         </a>
 
@@ -57,7 +58,7 @@ export default function TransportOperations(){
                            target="_blank"
                            rel="noopener noreferrer"
                            className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
-                            <BsBookHalf className="w-10 h-10 text-orange-500 mb-2" />
+                            <BsBookHalf className="w-10 h-10 text-orange-500 mb-2"/>
                             <p className="text-center font-medium">Capítulo</p>
                         </a>
                     </div>
@@ -65,7 +66,8 @@ export default function TransportOperations(){
                     {/* Quiz rápido */}
                     {showQuickQuiz && (
                         <div className="bg-white p-6 rounded-lg shadow-md mb-8 max-w-4xl mx-auto">
-                            <h3 className="text-xl font-bold mb-4 text-gray-800">Quiz Rápido - Pon a prueba tus conocimientos</h3>
+                            <h3 className="text-xl font-bold mb-4 text-gray-800">Quiz Rápido - Pon a prueba tus
+                                conocimientos</h3>
                             <button
                                 onClick={() => setShowQuickQuiz(false)}
                                 className="mt-4 bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded transition">
@@ -80,8 +82,8 @@ export default function TransportOperations(){
                             <button
                                 onClick={() => setActiveTab('overview')}
                                 className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
-                                    activeTab === 'overview' 
-                                        ? 'border-orange-500 text-orange-600' 
+                                    activeTab === 'overview'
+                                        ? 'border-orange-500 text-orange-600'
                                         : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                                 }`}>
                                 Generalidades
@@ -89,8 +91,8 @@ export default function TransportOperations(){
                             <button
                                 onClick={() => setActiveTab('equipment')}
                                 className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
-                                    activeTab === 'equipment' 
-                                        ? 'border-orange-500 text-orange-600' 
+                                    activeTab === 'equipment'
+                                        ? 'border-orange-500 text-orange-600'
                                         : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                                 }`}>
                                 Ambulancia y Equipamiento
@@ -98,8 +100,8 @@ export default function TransportOperations(){
                             <button
                                 onClick={() => setActiveTab('procedures')}
                                 className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
-                                    activeTab === 'procedures' 
-                                        ? 'border-orange-500 text-orange-600' 
+                                    activeTab === 'procedures'
+                                        ? 'border-orange-500 text-orange-600'
                                         : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                                 }`}>
                                 Procedimientos de Transporte
@@ -107,8 +109,8 @@ export default function TransportOperations(){
                             <button
                                 onClick={() => setActiveTab('practice')}
                                 className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
-                                    activeTab === 'practice' 
-                                        ? 'border-orange-500 text-orange-600' 
+                                    activeTab === 'practice'
+                                        ? 'border-orange-500 text-orange-600'
                                         : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                                 }`}>
                                 Casos Clínicos
@@ -122,7 +124,8 @@ export default function TransportOperations(){
                         {activeTab === 'overview' && (
                             <div className="space-y-6">
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Fases del transporte médico</h2>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Fases del
+                                        transporte médico</h2>
                                     <div className="grid md:grid-cols-2 gap-6">
                                         <div className="p-4 bg-blue-50 rounded-lg">
                                             <h3 className="font-medium text-lg mb-2 text-blue-700">1. Preparación</h3>
@@ -145,7 +148,8 @@ export default function TransportOperations(){
                                             </ul>
                                         </div>
                                         <div className="p-4 bg-yellow-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-yellow-700">3. Atención en escena</h3>
+                                            <h3 className="font-medium text-lg mb-2 text-yellow-700">3. Atención en
+                                                escena</h3>
                                             <ul className="list-disc list-inside space-y-1 text-gray-700">
                                                 <li>Evaluación primaria del paciente</li>
                                                 <li>Estabilización inicial</li>
@@ -168,31 +172,37 @@ export default function TransportOperations(){
                                 </div>
 
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Tipos de ambulancias</h2>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Tipos de
+                                        ambulancias</h2>
                                     <div className="space-y-4">
                                         <div className="p-4 bg-red-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-red-700">Tipo I - Convencional</h3>
-                                            <p className="text-gray-700 mb-2">Construida sobre chasis de camión con módulo de paciente montado.</p>
+                                            <h3 className="font-medium text-lg mb-2 text-red-700">Tipo I -
+                                                Convencional</h3>
+                                            <p className="text-gray-700 mb-2">Construida sobre chasis de camión con
+                                                módulo de paciente montado.</p>
                                             <ul className="list-disc list-inside space-y-1 text-gray-600">
                                                 <li>Mayor espacio de trabajo</li>
                                                 <li>Mejor aislamiento de ruido y vibración</li>
                                                 <li>Ideal para servicios rurales de largo alcance</li>
                                             </ul>
                                         </div>
-                                        
+
                                         <div className="p-4 bg-purple-50 rounded-lg">
                                             <h3 className="font-medium text-lg mb-2 text-purple-700">Tipo II - Van</h3>
-                                            <p className="text-gray-700 mb-2">Basada en van estándar con techo elevado.</p>
+                                            <p className="text-gray-700 mb-2">Basada en van estándar con techo
+                                                elevado.</p>
                                             <ul className="list-disc list-inside space-y-1 text-gray-600">
                                                 <li>Más económica de operar</li>
                                                 <li>Mejor maniobrabilidad urbana</li>
                                                 <li>Espacio limitado para procedimientos complejos</li>
                                             </ul>
                                         </div>
-                                        
+
                                         <div className="p-4 bg-teal-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-teal-700">Tipo III - Van modificada</h3>
-                                            <p className="text-gray-700 mb-2">Van con compartimento de paciente ampliado hacia atrás.</p>
+                                            <h3 className="font-medium text-lg mb-2 text-teal-700">Tipo III - Van
+                                                modificada</h3>
+                                            <p className="text-gray-700 mb-2">Van con compartimento de paciente ampliado
+                                                hacia atrás.</p>
                                             <ul className="list-disc list-inside space-y-1 text-gray-600">
                                                 <li>Equilibrio entre espacio y maniobrabilidad</li>
                                                 <li>Diseño más popular actualmente</li>
@@ -203,7 +213,8 @@ export default function TransportOperations(){
                                 </div>
 
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Responsabilidades del personal</h2>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Responsabilidades
+                                        del personal</h2>
                                     <div className="grid md:grid-cols-2 gap-6">
                                         <div>
                                             <h3 className="font-medium text-lg mb-2 text-gray-800">Conductor/Operador</h3>
@@ -216,7 +227,8 @@ export default function TransportOperations(){
                                             </ul>
                                         </div>
                                         <div>
-                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Técnico de atención</h3>
+                                            <h3 className="font-medium text-lg mb-2 text-gray-800">Técnico de
+                                                atención</h3>
                                             <ul className="list-disc list-inside space-y-2 text-gray-700">
                                                 <li>Evaluación y cuidado del paciente</li>
                                                 <li>Monitorización durante el transporte</li>
@@ -234,10 +246,12 @@ export default function TransportOperations(){
                         {activeTab === 'equipment' && (
                             <div className="space-y-6">
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Configuración de la ambulancia</h2>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Configuración
+                                        de la ambulancia</h2>
                                     <div className="grid md:grid-cols-2 gap-6">
                                         <div className="p-4 bg-blue-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-blue-700">Compartimento del paciente</h3>
+                                            <h3 className="font-medium text-lg mb-2 text-blue-700">Compartimento del
+                                                paciente</h3>
                                             <ul className="list-disc list-inside space-y-1 text-gray-700">
                                                 <li>Camilla principal con sistemas de sujeción</li>
                                                 <li>Asiento del técnico con cinturón</li>
@@ -248,7 +262,8 @@ export default function TransportOperations(){
                                             </ul>
                                         </div>
                                         <div className="p-4 bg-green-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-green-700">Cabina del conductor</h3>
+                                            <h3 className="font-medium text-lg mb-2 text-green-700">Cabina del
+                                                conductor</h3>
                                             <ul className="list-disc list-inside space-y-1 text-gray-700">
                                                 <li>Equipo de comunicación dual</li>
                                                 <li>GPS y sistema de navegación</li>
@@ -261,10 +276,12 @@ export default function TransportOperations(){
                                 </div>
 
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Equipamiento médico esencial</h2>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Equipamiento
+                                        médico esencial</h2>
                                     <div className="space-y-4">
                                         <div className="p-4 bg-red-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-red-700">Vía aérea y ventilación</h3>
+                                            <h3 className="font-medium text-lg mb-2 text-red-700">Vía aérea y
+                                                ventilación</h3>
                                             <div className="grid md:grid-cols-2 gap-4">
                                                 <ul className="list-disc list-inside space-y-1 text-gray-700">
                                                     <li>Cánulas orofaríngeas (todos los tamaños)</li>
@@ -284,7 +301,8 @@ export default function TransportOperations(){
                                         </div>
 
                                         <div className="p-4 bg-yellow-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-yellow-700">Circulación y acceso vascular</h3>
+                                            <h3 className="font-medium text-lg mb-2 text-yellow-700">Circulación y
+                                                acceso vascular</h3>
                                             <div className="grid md:grid-cols-2 gap-4">
                                                 <ul className="list-disc list-inside space-y-1 text-gray-700">
                                                     <li>Catéteres IV (14G, 16G, 18G, 20G)</li>
@@ -304,7 +322,8 @@ export default function TransportOperations(){
                                         </div>
 
                                         <div className="p-4 bg-purple-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-purple-700">Inmovilización y transporte</h3>
+                                            <h3 className="font-medium text-lg mb-2 text-purple-700">Inmovilización y
+                                                transporte</h3>
                                             <div className="grid md:grid-cols-2 gap-4">
                                                 <ul className="list-disc list-inside space-y-1 text-gray-700">
                                                     <li>Tabla espinal larga</li>
@@ -326,29 +345,30 @@ export default function TransportOperations(){
                                 </div>
 
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Lista de verificación diaria</h2>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Lista de
+                                        verificación diaria</h2>
                                     <div className="grid md:grid-cols-2 gap-6">
                                         <div>
                                             <h3 className="font-medium text-lg mb-2 text-gray-800">Vehículo</h3>
                                             <div className="space-y-2">
                                                 <label className="flex items-center space-x-2">
-                                                    <input type="checkbox" className="rounded" />
+                                                    <input type="checkbox" className="rounded"/>
                                                     <span className="text-gray-700">Niveles de fluidos (aceite, refrigerante, frenos)</span>
                                                 </label>
                                                 <label className="flex items-center space-x-2">
-                                                    <input type="checkbox" className="rounded" />
+                                                    <input type="checkbox" className="rounded"/>
                                                     <span className="text-gray-700">Presión de neumáticos</span>
                                                 </label>
                                                 <label className="flex items-center space-x-2">
-                                                    <input type="checkbox" className="rounded" />
+                                                    <input type="checkbox" className="rounded"/>
                                                     <span className="text-gray-700">Luces y sirenas</span>
                                                 </label>
                                                 <label className="flex items-center space-x-2">
-                                                    <input type="checkbox" className="rounded" />
+                                                    <input type="checkbox" className="rounded"/>
                                                     <span className="text-gray-700">Batería y sistema eléctrico</span>
                                                 </label>
                                                 <label className="flex items-center space-x-2">
-                                                    <input type="checkbox" className="rounded" />
+                                                    <input type="checkbox" className="rounded"/>
                                                     <span className="text-gray-700">Combustible suficiente</span>
                                                 </label>
                                             </div>
@@ -357,23 +377,23 @@ export default function TransportOperations(){
                                             <h3 className="font-medium text-lg mb-2 text-gray-800">Equipo médico</h3>
                                             <div className="space-y-2">
                                                 <label className="flex items-center space-x-2">
-                                                    <input type="checkbox" className="rounded" />
+                                                    <input type="checkbox" className="rounded"/>
                                                     <span className="text-gray-700">Inventario de medicamentos</span>
                                                 </label>
                                                 <label className="flex items-center space-x-2">
-                                                    <input type="checkbox" className="rounded" />
+                                                    <input type="checkbox" className="rounded"/>
                                                     <span className="text-gray-700">Funcionamiento del monitor</span>
                                                 </label>
                                                 <label className="flex items-center space-x-2">
-                                                    <input type="checkbox" className="rounded" />
+                                                    <input type="checkbox" className="rounded"/>
                                                     <span className="text-gray-700">Suministros descartables</span>
                                                 </label>
                                                 <label className="flex items-center space-x-2">
-                                                    <input type="checkbox" className="rounded" />
+                                                    <input type="checkbox" className="rounded"/>
                                                     <span className="text-gray-700">Sistema de oxígeno</span>
                                                 </label>
                                                 <label className="flex items-center space-x-2">
-                                                    <input type="checkbox" className="rounded" />
+                                                    <input type="checkbox" className="rounded"/>
                                                     <span className="text-gray-700">Equipo de comunicación</span>
                                                 </label>
                                             </div>
@@ -387,10 +407,12 @@ export default function TransportOperations(){
                         {activeTab === 'procedures' && (
                             <div className="space-y-6">
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Preparación para el transporte</h2>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Preparación
+                                        para el transporte</h2>
                                     <div className="space-y-4">
                                         <div className="p-4 bg-blue-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-blue-700">Evaluación previa</h3>
+                                            <h3 className="font-medium text-lg mb-2 text-blue-700">Evaluación
+                                                previa</h3>
                                             <ul className="list-disc list-inside space-y-1 text-gray-700">
                                                 <li>Estabilizar condición del paciente</li>
                                                 <li>Completar evaluación secundaria</li>
@@ -401,7 +423,8 @@ export default function TransportOperations(){
                                         </div>
 
                                         <div className="p-4 bg-green-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-green-700">Selección del hospital</h3>
+                                            <h3 className="font-medium text-lg mb-2 text-green-700">Selección del
+                                                hospital</h3>
                                             <ul className="list-disc list-inside space-y-1 text-gray-700">
                                                 <li>Hospital más cercano apropiado</li>
                                                 <li>Capacidades específicas requeridas</li>
@@ -414,10 +437,12 @@ export default function TransportOperations(){
                                 </div>
 
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Técnicas de carga y posicionamiento</h2>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Técnicas de
+                                        carga y posicionamiento</h2>
                                     <div className="grid md:grid-cols-2 gap-6">
                                         <div className="p-4 bg-yellow-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-yellow-700">Posiciones de transporte</h3>
+                                            <h3 className="font-medium text-lg mb-2 text-yellow-700">Posiciones de
+                                                transporte</h3>
                                             <ul className="list-disc list-inside space-y-1 text-gray-700">
                                                 <li><strong>Supina:</strong> Trauma, shock, inconsciente</li>
                                                 <li><strong>Fowler:</strong> Dificultad respiratoria, IAM</li>
@@ -427,7 +452,8 @@ export default function TransportOperations(){
                                             </ul>
                                         </div>
                                         <div className="p-4 bg-orange-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-orange-700">Técnicas de carga</h3>
+                                            <h3 className="font-medium text-lg mb-2 text-orange-700">Técnicas de
+                                                carga</h3>
                                             <ul className="list-disc list-inside space-y-1 text-gray-700">
                                                 <li>Uso de mecánica corporal adecuada</li>
                                                 <li>Coordinación del equipo</li>
@@ -440,10 +466,12 @@ export default function TransportOperations(){
                                 </div>
 
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Monitorización durante el transporte</h2>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Monitorización
+                                        durante el transporte</h2>
                                     <div className="space-y-4">
                                         <div className="p-4 bg-red-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-red-700">Signos vitales continuos</h3>
+                                            <h3 className="font-medium text-lg mb-2 text-red-700">Signos vitales
+                                                continuos</h3>
                                             <ul className="list-disc list-inside space-y-1 text-gray-700">
                                                 <li>Presión arterial cada 5 minutos en pacientes críticos</li>
                                                 <li>Frecuencia cardíaca y ritmo continuo</li>
@@ -455,7 +483,8 @@ export default function TransportOperations(){
                                         </div>
 
                                         <div className="p-4 bg-purple-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-purple-700">Observación clínica</h3>
+                                            <h3 className="font-medium text-lg mb-2 text-purple-700">Observación
+                                                clínica</h3>
                                             <ul className="list-disc list-inside space-y-1 text-gray-700">
                                                 <li>Color y temperatura de la piel</li>
                                                 <li>Calidad y simetría del pulso</li>
@@ -469,10 +498,12 @@ export default function TransportOperations(){
                                 </div>
 
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Comunicación durante el transporte</h2>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Comunicación
+                                        durante el transporte</h2>
                                     <div className="space-y-4">
                                         <div className="p-4 bg-yellow-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-yellow-700">Con el hospital receptor</h3>
+                                            <h3 className="font-medium text-lg mb-2 text-yellow-700">Con el hospital
+                                                receptor</h3>
                                             <ul className="list-disc list-inside space-y-1 text-gray-700">
                                                 <li>Dar reporte inicial al salir de la escena</li>
                                                 <li>Comunicar tiempo estimado de llegada</li>
@@ -483,7 +514,8 @@ export default function TransportOperations(){
                                         </div>
 
                                         <div className="p-4 bg-purple-50 rounded-lg">
-                                            <h3 className="font-medium text-lg mb-2 text-purple-700">Con central de despacho</h3>
+                                            <h3 className="font-medium text-lg mb-2 text-purple-700">Con central de
+                                                despacho</h3>
                                             <ul className="list-disc list-inside space-y-1 text-gray-700">
                                                 <li>Confirmar salida de la escena</li>
                                                 <li>Reportar destino y ruta</li>
@@ -501,19 +533,24 @@ export default function TransportOperations(){
                         {activeTab === 'practice' && (
                             <div className="space-y-6">
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Casos clínicos de transporte</h2>
-                                    <p className="text-gray-600 mb-4">Estudia estos casos para mejorar tu comprensión sobre las operaciones de transporte médico.</p>
+                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Casos
+                                        clínicos de transporte</h2>
+                                    <p className="text-gray-600 mb-4">Estudia estos casos para mejorar tu comprensión
+                                        sobre las operaciones de transporte médico.</p>
                                 </div>
 
                                 {/* Caso 1: IAM durante transporte */}
                                 <div className="p-6 bg-red-50 rounded-lg border-l-4 border-red-500">
-                                    <h3 className="text-xl font-bold mb-3 text-red-700">Caso 1: Infarto agudo de miocardio durante transporte</h3>
-                                    
+                                    <h3 className="text-xl font-bold mb-3 text-red-700">Caso 1: Infarto agudo de
+                                        miocardio durante transporte</h3>
+
                                     <div className="mb-4">
                                         <h4 className="font-medium mb-2">Situación inicial:</h4>
                                         <p className="text-gray-700 mb-2">
-                                            Masculino de 58 años con dolor torácico, transportado desde domicilio a hospital. 
-                                            Durante el transporte, presenta deterioro súbito con dolor intenso y cambios en el ECG.
+                                            Masculino de 58 años con dolor torácico, transportado desde domicilio a
+                                            hospital.
+                                            Durante el transporte, presenta deterioro súbito con dolor intenso y cambios
+                                            en el ECG.
                                         </p>
                                         <ul className="list-disc list-inside space-y-1 text-gray-700">
                                             <li>A: Vía aérea permeable</li>
@@ -540,12 +577,14 @@ export default function TransportOperations(){
 
                                 {/* Caso 2: Trauma múltiple */}
                                 <div className="p-6 bg-orange-50 rounded-lg border-l-4 border-orange-500">
-                                    <h3 className="text-xl font-bold mb-3 text-orange-700">Caso 2: Trauma múltiple con complicaciones</h3>
-                                    
+                                    <h3 className="text-xl font-bold mb-3 text-orange-700">Caso 2: Trauma múltiple con
+                                        complicaciones</h3>
+
                                     <div className="mb-4">
                                         <h4 className="font-medium mb-2">Situación inicial:</h4>
                                         <p className="text-gray-700 mb-2">
-                                            Accidente vehicular, conductor de 32 años extraído con dispositivo de extracción. 
+                                            Accidente vehicular, conductor de 32 años extraído con dispositivo de
+                                            extracción.
                                             Trauma torácico y abdominal, inmovilizado en tabla espinal.
                                         </p>
                                         <ul className="list-disc list-inside space-y-1 text-gray-700">
@@ -573,12 +612,13 @@ export default function TransportOperations(){
 
                                 {/* Caso 3: Emergencia obstétrica */}
                                 <div className="p-6 bg-pink-50 rounded-lg border-l-4 border-pink-500">
-                                    <h3 className="text-xl font-bold mb-3 text-pink-700">Caso 3: Parto precipitado en ambulancia</h3>
-                                    
+                                    <h3 className="text-xl font-bold mb-3 text-pink-700">Caso 3: Parto precipitado en
+                                        ambulancia</h3>
+
                                     <div className="mb-4">
                                         <h4 className="font-medium mb-2">Situación inicial:</h4>
                                         <p className="text-gray-700 mb-2">
-                                            Primigesta de 38 semanas con contracciones fuertes cada 2 minutos. 
+                                            Primigesta de 38 semanas con contracciones fuertes cada 2 minutos.
                                             Durante el transporte, presenta descenso de la presentación.
                                         </p>
                                         <ul className="list-disc list-inside space-y-1 text-gray-700">
@@ -617,9 +657,10 @@ export default function TransportOperations(){
                         <div className="space-y-4">
                             {faqData.map((faq, idx) => (
                                 <Disclosure key={idx}>
-                                    {({ open }) => (
+                                    {({open}) => (
                                         <div className="border rounded-lg overflow-hidden">
-                                            <Disclosure.Button className="flex w-full justify-between items-center bg-gray-100 px-4 py-3 text-left text-lg font-medium hover:bg-orange-100 transition">
+                                            <Disclosure.Button
+                                                className="flex w-full justify-between items-center bg-gray-100 px-4 py-3 text-left text-lg font-medium hover:bg-orange-100 transition">
                                                 <span>{faq.question}</span>
                                                 <ChevronUpIcon
                                                     className={`${
@@ -636,13 +677,12 @@ export default function TransportOperations(){
                             ))}
                         </div>
                     </section>
-                        {/* Foro de Discusión */}
-                        <ForumSection 
-                            pagina="transport-operations" 
-                            titulo="Foro de Discusión - Transport Operations"
-                        />
+                    {/* Foro de Discusión */}
+                    <ForumSection
+                        pagina="transport-operations"
+                        titulo="Foro de Discusión - Transport Operations"
+                    />
 
-                        
 
                     {/* Referencias y Recursos */}
                     <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">
@@ -652,18 +692,29 @@ export default function TransportOperations(){
                             <div>
                                 <h3 className="text-lg font-medium mb-2">Bibliografía principal</h3>
                                 <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                    <li>AAOS. (2021). <em>Atención Médica Prehospitalaria</em> (11ª edición). Capítulo 37: Operaciones de transporte. Jones & Bartlett Learning.</li>
-                                    <li>American Ambulance Association. (2020). <em>Estándares de operación de ambulancias</em>.</li>
-                                    <li>NHTSA. (2019). <em>Estándares federales para ambulancias</em> (KKK-A-1822F).</li>
+                                    <li>AAOS. (2021). <em>Atención Médica Prehospitalaria</em> (11ª edición). Capítulo
+                                        37: Operaciones de transporte. Jones & Bartlett Learning.
+                                    </li>
+                                    <li>American Ambulance Association. (2020). <em>Estándares de operación de
+                                        ambulancias</em>.
+                                    </li>
+                                    <li>NHTSA. (2019). <em>Estándares federales para ambulancias</em> (KKK-A-1822F).
+                                    </li>
                                 </ul>
                             </div>
 
                             <div>
                                 <h3 className="text-lg font-medium mb-2">Recursos en línea</h3>
                                 <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                    <li><a href="https://www.ambulance.org/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">American Ambulance Association</a></li>
-                                    <li><a href="https://www.ems1.com/ambulance-design/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">EMS1 - Diseño y operación de ambulancias</a></li>
-                                    <li><a href="https://www.jems.com/operations/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">JEMS - Operaciones EMS</a></li>
+                                    <li><a href="https://www.ambulance.org/" target="_blank" rel="noopener noreferrer"
+                                           className="text-blue-600 hover:underline">American Ambulance Association</a>
+                                    </li>
+                                    <li><a href="https://www.ems1.com/ambulance-design/" target="_blank"
+                                           rel="noopener noreferrer" className="text-blue-600 hover:underline">EMS1 -
+                                        Diseño y operación de ambulancias</a></li>
+                                    <li><a href="https://www.jems.com/operations/" target="_blank"
+                                           rel="noopener noreferrer" className="text-blue-600 hover:underline">JEMS -
+                                        Operaciones EMS</a></li>
                                 </ul>
                             </div>
 

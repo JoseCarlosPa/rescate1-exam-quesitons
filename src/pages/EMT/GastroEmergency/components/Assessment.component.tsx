@@ -1,6 +1,6 @@
-import {  FaStethoscope, FaAmbulance, FaEye } from "react-icons/fa";
-import { RiFirstAidKitLine, RiAlarmWarningLine } from "react-icons/ri";
-import { GiStomach, GiKidneys } from "react-icons/gi";
+import {FaAmbulance, FaEye, FaStethoscope} from "react-icons/fa";
+import {RiAlarmWarningLine, RiFirstAidKitLine} from "react-icons/ri";
+import {GiKidneys, GiStomach} from "react-icons/gi";
 
 export default function Assessment() {
     return (
@@ -8,7 +8,7 @@ export default function Assessment() {
             {/* Evaluación SAMPLE enfocada */}
             <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-500 p-6 rounded-lg">
                 <div className="flex items-center mb-4">
-                    <FaStethoscope className="w-8 h-8 text-blue-500 mr-3" />
+                    <FaStethoscope className="w-8 h-8 text-blue-500 mr-3"/>
                     <h2 className="text-2xl font-bold text-blue-700">Evaluación SAMPLE Enfocada en Abdomen</h2>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
@@ -26,7 +26,8 @@ export default function Assessment() {
                             </div>
                             <div>
                                 <h4 className="font-semibold text-blue-700">A - Alergias:</h4>
-                                <p className="ml-4 text-gray-700">Medicamentos, alimentos, especialmente si hay sospecha de reacción alérgica</p>
+                                <p className="ml-4 text-gray-700">Medicamentos, alimentos, especialmente si hay sospecha
+                                    de reacción alérgica</p>
                             </div>
                             <div>
                                 <h4 className="font-semibold text-blue-700">M - Medicamentos:</h4>
@@ -52,7 +53,8 @@ export default function Assessment() {
                             </div>
                             <div>
                                 <h4 className="font-semibold text-blue-700">E - Eventos:</h4>
-                                <p className="ml-4 text-gray-700">Qué estaba haciendo cuando comenzó, factores desencadenantes</p>
+                                <p className="ml-4 text-gray-700">Qué estaba haciendo cuando comenzó, factores
+                                    desencadenantes</p>
                             </div>
                         </div>
                     </div>
@@ -62,7 +64,7 @@ export default function Assessment() {
             {/* Evaluación abdominal sistemática */}
             <div>
                 <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
-                    <FaEye className="w-6 h-6 mr-2 text-orange-500" />
+                    <FaEye className="w-6 h-6 mr-2 text-orange-500"/>
                     Evaluación Abdominal Sistemática
                 </h2>
                 <div className="grid md:grid-cols-3 gap-6">
@@ -101,7 +103,7 @@ export default function Assessment() {
             {/* Atención médica de emergencia */}
             <div className="bg-red-50 border border-red-200 rounded-lg p-6">
                 <div className="flex items-center mb-4">
-                    <RiFirstAidKitLine className="w-6 h-6 text-red-500 mr-2" />
+                    <RiFirstAidKitLine className="w-6 h-6 text-red-500 mr-2"/>
                     <h3 className="text-xl font-bold text-red-700">Atención Médica de Emergencia</h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
@@ -130,7 +132,7 @@ export default function Assessment() {
             {/* Causas comunes por cuadrante */}
             <div>
                 <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
-                    <GiStomach className="w-6 h-6 mr-2 text-orange-500" />
+                    <GiStomach className="w-6 h-6 mr-2 text-orange-500"/>
                     Causas Comunes de Dolor por Cuadrante
                 </h2>
                 <div className="grid grid-cols-2 gap-4">
@@ -179,7 +181,7 @@ export default function Assessment() {
             {/* Emergencias urológicas específicas */}
             <div>
                 <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
-                    <GiKidneys className="w-6 h-6 mr-2 text-blue-500" />
+                    <GiKidneys className="w-6 h-6 mr-2 text-blue-500"/>
                     Emergencias Urinarias Específicas
                 </h2>
                 <div className="grid md:grid-cols-2 gap-6">
@@ -188,7 +190,8 @@ export default function Assessment() {
                         <div className="space-y-2 text-sm text-gray-700">
                             <p><strong>Síntomas:</strong> Dolor lumbar irradiado a ingle, hematuria, náuseas</p>
                             <p><strong>Características:</strong> Dolor cólico, severo, no mejora con posición</p>
-                            <p><strong>Manejo:</strong> Posición de confort, oxígeno si hipoxia, transporte para imagenología</p>
+                            <p><strong>Manejo:</strong> Posición de confort, oxígeno si hipoxia, transporte para
+                                imagenología</p>
                         </div>
                     </div>
 
@@ -224,7 +227,7 @@ export default function Assessment() {
             {/* Complicaciones en pacientes en diálisis */}
             <div className="bg-orange-50 border border-orange-200 rounded-lg p-6">
                 <div className="flex items-center mb-4">
-                    <RiAlarmWarningLine className="w-6 h-6 text-orange-500 mr-2" />
+                    <RiAlarmWarningLine className="w-6 h-6 text-orange-500 mr-2"/>
                     <h3 className="text-xl font-bold text-orange-700">Complicaciones en Pacientes en Diálisis</h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
@@ -252,7 +255,7 @@ export default function Assessment() {
             {/* Criterios de transporte prioritario */}
             <div className="bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-red-500 p-6 rounded-lg">
                 <div className="flex items-center mb-4">
-                    <FaAmbulance className="w-8 h-8 text-red-500 mr-3" />
+                    <FaAmbulance className="w-8 h-8 text-red-500 mr-3"/>
                     <h2 className="text-2xl font-bold text-red-700">Criterios de Transporte Prioritario</h2>
                 </div>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">

@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { FaUser, FaClock, FaStethoscope, FaAmbulance } from "react-icons/fa";
-import { MdExpandMore, MdExpandLess } from "react-icons/md";
-import { BiAnalyse } from "react-icons/bi";
+import {useState} from "react";
+import {FaAmbulance, FaClock, FaStethoscope, FaUser} from "react-icons/fa";
+import {MdExpandLess, MdExpandMore} from "react-icons/md";
+import {BiAnalyse} from "react-icons/bi";
 
 interface ClinicalCase {
     id: number;
@@ -126,8 +126,8 @@ const clinicalCases: ClinicalCase[] = [
 
 export default function Practice() {
     const [selectedCase, setSelectedCase] = useState<number | null>(null);
-    const [answers, setAnswers] = useState<{[key: string]: number}>({});
-    const [showResults, setShowResults] = useState<{[key: string]: boolean}>({});
+    const [answers, setAnswers] = useState<{ [key: string]: number }>({});
+    const [showResults, setShowResults] = useState<{ [key: string]: boolean }>({});
 
     const handleAnswerSelect = (caseId: number, questionIndex: number, answerIndex: number) => {
         const key = `${caseId}-${questionIndex}`;
@@ -163,9 +163,9 @@ export default function Practice() {
                         <div className="flex items-center justify-between">
                             <h3 className="text-lg font-semibold text-gray-900">{clinicalCase.title}</h3>
                             {selectedCase === clinicalCase.id ? (
-                                <MdExpandLess className="w-6 h-6 text-gray-500" />
+                                <MdExpandLess className="w-6 h-6 text-gray-500"/>
                             ) : (
-                                <MdExpandMore className="w-6 h-6 text-gray-500" />
+                                <MdExpandMore className="w-6 h-6 text-gray-500"/>
                             )}
                         </div>
                     </div>
@@ -175,7 +175,7 @@ export default function Practice() {
                             {/* Escenario */}
                             <div className="mb-6 bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
                                 <div className="flex items-center gap-2 mb-2">
-                                    <FaAmbulance className="w-5 h-5 text-blue-600" />
+                                    <FaAmbulance className="w-5 h-5 text-blue-600"/>
                                     <h4 className="font-semibold text-blue-800">Escenario</h4>
                                 </div>
                                 <p className="text-blue-700 text-sm leading-relaxed">{clinicalCase.scenario}</p>
@@ -184,13 +184,13 @@ export default function Practice() {
                             {/* Signos Vitales */}
                             <div className="mb-6 bg-green-50 border border-green-200 rounded-lg p-4">
                                 <div className="flex items-center gap-2 mb-3">
-                                    <FaStethoscope className="w-5 h-5 text-green-600" />
+                                    <FaStethoscope className="w-5 h-5 text-green-600"/>
                                     <h4 className="font-semibold text-green-800">Signos Vitales y Datos</h4>
                                 </div>
                                 <div className="grid md:grid-cols-3 gap-4">
                                     <div className="space-y-2">
                                         <div className="flex items-center gap-2">
-                                            <FaUser className="w-4 h-4 text-green-600" />
+                                            <FaUser className="w-4 h-4 text-green-600"/>
                                             <span className="text-sm">
                                                 <strong>Edad:</strong> {clinicalCase.vitals.age}
                                             </span>
@@ -218,7 +218,7 @@ export default function Practice() {
                             {/* Hallazgos */}
                             <div className="mb-6 bg-yellow-50 border border-yellow-200 rounded-lg p-4">
                                 <div className="flex items-center gap-2 mb-3">
-                                    <BiAnalyse className="w-5 h-5 text-yellow-600" />
+                                    <BiAnalyse className="w-5 h-5 text-yellow-600"/>
                                     <h4 className="font-semibold text-yellow-800">Hallazgos al Examen</h4>
                                 </div>
                                 <ul className="grid md:grid-cols-2 gap-2">
@@ -234,7 +234,7 @@ export default function Practice() {
                             {/* Preguntas */}
                             <div className="space-y-4">
                                 <h4 className="font-semibold text-gray-800 flex items-center gap-2">
-                                    <FaClock className="w-5 h-5 text-orange-500" />
+                                    <FaClock className="w-5 h-5 text-orange-500"/>
                                     Preguntas de Evaluación
                                 </h4>
 
@@ -261,11 +261,11 @@ export default function Practice() {
                                                                 ? isCorrect
                                                                     ? 'bg-green-100 border-green-400 text-green-800'
                                                                     : isSelected
-                                                                    ? 'bg-red-100 border-red-400 text-red-800'
-                                                                    : 'bg-gray-100 border-gray-300 text-gray-600'
+                                                                        ? 'bg-red-100 border-red-400 text-red-800'
+                                                                        : 'bg-gray-100 border-gray-300 text-gray-600'
                                                                 : isSelected
-                                                                ? 'bg-blue-100 border-blue-400 text-blue-800'
-                                                                : 'bg-white border-gray-300 hover:bg-gray-50'
+                                                                    ? 'bg-blue-100 border-blue-400 text-blue-800'
+                                                                    : 'bg-white border-gray-300 hover:bg-gray-50'
                                                         }`}
                                                     >
                                                         {String.fromCharCode(65 + oIndex)}. {option}

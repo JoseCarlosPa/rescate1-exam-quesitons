@@ -1,8 +1,8 @@
 import {FaHeartbeat, FaNotesMedical, FaUserMd} from "react-icons/fa";
 import {BsClockHistory} from "react-icons/bs";
 
-export default function Overview(){
-    return(
+export default function Overview() {
+    return (
         <div className="space-y-6">
             <div className="flex flex-col md:flex-row gap-6 items-center mb-6">
                 <div className="md:w-2/3">

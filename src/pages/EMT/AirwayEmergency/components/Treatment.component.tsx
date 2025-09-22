@@ -3,8 +3,8 @@ import {FaMaskVentilator} from "react-icons/fa6";
 import {MdLocalHospital, MdWarning} from "react-icons/md";
 import {GiLungs} from "react-icons/gi";
 
-export default function Treatment(){
-    return(
+export default function Treatment() {
+    return (
         <div className="space-y-8">
             {/* Algoritmo de evaluación inicial */}
             <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-l-4 border-green-500 p-6 rounded-lg">
@@ -162,7 +162,8 @@ export default function Treatment(){
                                     <li>FC &lt; 100/min</li>
                                     <li>FR &lt; 25/min</li>
                                 </ul>
-                                <p className="text-xs text-green-600 font-semibold mt-2">Tratamiento: O₂ + Broncodilatador</p>
+                                <p className="text-xs text-green-600 font-semibold mt-2">Tratamiento: O₂ +
+                                    Broncodilatador</p>
                             </div>
                             <div className="bg-white p-4 rounded">
                                 <h4 className="font-semibold text-orange-600 mb-2">Severa</h4>
@@ -172,7 +173,8 @@ export default function Treatment(){
                                     <li>FC 100-120/min</li>
                                     <li>FR 25-30/min</li>
                                 </ul>
-                                <p className="text-xs text-orange-600 font-semibold mt-2">Tratamiento: O₂ alto flujo + Broncodilatador continuo</p>
+                                <p className="text-xs text-orange-600 font-semibold mt-2">Tratamiento: O₂ alto flujo +
+                                    Broncodilatador continuo</p>
                             </div>
                             <div className="bg-white p-4 rounded">
                                 <h4 className="font-semibold text-red-600 mb-2">Crítica</h4>
@@ -182,11 +184,13 @@ export default function Treatment(){
                                     <li>FC &gt; 120/min</li>
                                     <li>FR &gt; 30/min o &lt; 10/min</li>
                                 </ul>
-                                <p className="text-xs text-red-600 font-semibold mt-2">Tratamiento: BVM + Traslado inmediato</p>
+                                <p className="text-xs text-red-600 font-semibold mt-2">Tratamiento: BVM + Traslado
+                                    inmediato</p>
                             </div>
                         </div>
                         <div className="mt-4 p-3 bg-blue-100 rounded">
-                            <p className="text-sm"><strong>Protocolo:</strong> Salbutamol 2.5-5mg nebulizado, puede repetirse cada 20 min. Considerar esteroides según protocolos locales.</p>
+                            <p className="text-sm"><strong>Protocolo:</strong> Salbutamol 2.5-5mg nebulizado, puede
+                                repetirse cada 20 min. Considerar esteroides según protocolos locales.</p>
                         </div>
                     </div>
 
@@ -223,7 +227,8 @@ export default function Treatment(){
                         </div>
                         <div className="mt-4 p-3 bg-yellow-100 rounded flex items-start">
                             <MdWarning className="w-5 h-5 text-yellow-600 mr-2 mt-0.5"/>
-                            <p className="text-sm"><strong>¡CUIDADO!</strong> El oxígeno alto flujo puede suprimir el estímulo respiratorio en pacientes con EPOC. Monitorear CO₂ si está disponible.</p>
+                            <p className="text-sm"><strong>¡CUIDADO!</strong> El oxígeno alto flujo puede suprimir el
+                                estímulo respiratorio en pacientes con EPOC. Monitorear CO₂ si está disponible.</p>
                         </div>
                     </div>
 
@@ -237,7 +242,8 @@ export default function Treatment(){
                             <div className="bg-white p-4 rounded">
                                 <h4 className="font-semibold text-purple-600 mb-2">Fisiopatología</h4>
                                 <p className="text-sm text-gray-700 mb-3">
-                                    Acumulación de líquido en los alvéolos, frecuentemente por insuficiencia cardíaca congestiva.
+                                    Acumulación de líquido en los alvéolos, frecuentemente por insuficiencia cardíaca
+                                    congestiva.
                                     Se caracteriza por esputo espumoso rosado y disnea intensa.
                                 </p>
                                 <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
@@ -251,7 +257,8 @@ export default function Treatment(){
                                 <h4 className="font-semibold text-purple-600 mb-2">Tratamiento</h4>
                                 <ol className="list-decimal list-inside space-y-1 text-sm text-gray-700">
                                     <li><strong>Posición en Fowler alta</strong> para mejorar intercambio gaseoso</li>
-                                    <li><strong>Oxígeno alto flujo (15 L/min)</strong> con mascarilla de no reinhalación</li>
+                                    <li><strong>Oxígeno alto flujo (15 L/min)</strong> con mascarilla de no reinhalación
+                                    </li>
                                     <li><strong>CPAP</strong> si disponible (presión positiva continua)</li>
                                     <li><strong>Rápido traslado</strong> al hospital</li>
                                     <li>Considerar nitroglicerina si PA sistólica mayor 100 mmHg</li>
@@ -270,7 +277,8 @@ export default function Treatment(){
                             <div className="bg-white p-4 rounded">
                                 <h4 className="font-semibold text-orange-600 mb-2">Neumotórax Espontáneo</h4>
                                 <p className="text-sm text-gray-700 mb-2">
-                                    <strong>Fisiopatología:</strong> Entrada de aire en el espacio pleural, colapsando el pulmón.
+                                    <strong>Fisiopatología:</strong> Entrada de aire en el espacio pleural, colapsando
+                                    el pulmón.
                                 </p>
                                 <p className="text-sm text-gray-700 mb-2"><strong>Tratamiento:</strong></p>
                                 <ul className="list-disc list-inside space-y-1 text-xs text-gray-700">
@@ -341,7 +349,8 @@ export default function Treatment(){
                             <div className="bg-white p-4 rounded">
                                 <h4 className="font-semibold text-yellow-600 mb-2">Hiperventilación</h4>
                                 <p className="text-sm text-gray-700 mb-2">
-                                    <strong>Fisiopatología:</strong> Respiración rápida y profunda, normalmente por ansiedad o estrés.
+                                    <strong>Fisiopatología:</strong> Respiración rápida y profunda, normalmente por
+                                    ansiedad o estrés.
                                 </p>
                                 <p className="text-sm text-gray-700 mb-2"><strong>Tratamiento:</strong></p>
                                 <ul className="list-disc list-inside space-y-1 text-xs text-gray-700">
@@ -354,7 +363,8 @@ export default function Treatment(){
                             <div className="bg-white p-4 rounded">
                                 <h4 className="font-semibold text-yellow-600 mb-2">Exposición a Gases Tóxicos/CO</h4>
                                 <p className="text-sm text-gray-700 mb-2">
-                                    <strong>Fisiopatología:</strong> Interferencia en la oxigenación por gases inhalados.
+                                    <strong>Fisiopatología:</strong> Interferencia en la oxigenación por gases
+                                    inhalados.
                                 </p>
                                 <p className="text-sm text-gray-700 mb-2"><strong>Tratamiento:</strong></p>
                                 <ul className="list-disc list-inside space-y-1 text-xs text-gray-700">
@@ -398,19 +408,23 @@ export default function Treatment(){
                         <h4 className="font-semibold text-gray-700 mb-3">Ventilación con BVM</h4>
                         <div className="bg-white p-4 rounded space-y-2">
                             <div className="flex items-start">
-                                <span className="w-6 h-6 bg-blue-500 text-white text-xs flex items-center justify-center rounded-full mr-2 mt-0.5">1</span>
+                                <span
+                                    className="w-6 h-6 bg-blue-500 text-white text-xs flex items-center justify-center rounded-full mr-2 mt-0.5">1</span>
                                 <span className="text-sm">Sellado hermético de la mascarilla</span>
                             </div>
                             <div className="flex items-start">
-                                <span className="w-6 h-6 bg-blue-500 text-white text-xs flex items-center justify-center rounded-full mr-2 mt-0.5">2</span>
+                                <span
+                                    className="w-6 h-6 bg-blue-500 text-white text-xs flex items-center justify-center rounded-full mr-2 mt-0.5">2</span>
                                 <span className="text-sm">Volumen 6-8 ml/kg (evitar hiperventilación)</span>
                             </div>
                             <div className="flex items-start">
-                                <span className="w-6 h-6 bg-blue-500 text-white text-xs flex items-center justify-center rounded-full mr-2 mt-0.5">3</span>
+                                <span
+                                    className="w-6 h-6 bg-blue-500 text-white text-xs flex items-center justify-center rounded-full mr-2 mt-0.5">3</span>
                                 <span className="text-sm">Frecuencia: 10-12/min adultos, 12-20/min niños</span>
                             </div>
                             <div className="flex items-start">
-                                <span className="w-6 h-6 bg-blue-500 text-white text-xs flex items-center justify-center rounded-full mr-2 mt-0.5">4</span>
+                                <span
+                                    className="w-6 h-6 bg-blue-500 text-white text-xs flex items-center justify-center rounded-full mr-2 mt-0.5">4</span>
                                 <span className="text-sm">Observar elevación del tórax</span>
                             </div>
                         </div>
@@ -420,7 +434,8 @@ export default function Treatment(){
                         <div className="bg-white p-4 rounded space-y-2">
                             <div className="flex items-center">
                                 <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-                                <span className="text-sm"><strong>i-gel:</strong> Fácil inserción, no requiere inflado</span>
+                                <span
+                                    className="text-sm"><strong>i-gel:</strong> Fácil inserción, no requiere inflado</span>
                             </div>
                             <div className="flex items-center">
                                 <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
@@ -430,7 +445,8 @@ export default function Treatment(){
                                 <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
                                 <span className="text-sm"><strong>King LT:</strong> Doble balón</span>
                             </div>
-                            <p className="text-xs text-gray-600 mt-2"><strong>Indicación:</strong> Ventilación difícil con BVM, paciente inconsciente</p>
+                            <p className="text-xs text-gray-600 mt-2"><strong>Indicación:</strong> Ventilación difícil
+                                con BVM, paciente inconsciente</p>
                         </div>
                     </div>
                 </div>

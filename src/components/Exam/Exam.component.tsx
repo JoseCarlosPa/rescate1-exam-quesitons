@@ -1,17 +1,16 @@
-import {useState, useEffect, useRef} from "react";
+import {useEffect, useRef, useState} from "react";
 import {Option, Question} from "../../question";
 import logo from "../../assets/logo.png";
 import {NavLink} from "react-router";
-import { ExamProps } from "./Exam.types";
+import {ExamProps} from "./Exam.types";
 import {AllRoutes} from "../Router/Router.constants.ts";
 import {auth, db} from "../../firebase/firebaseConfig.ts";
-import {doc, getDoc, updateDoc} from "firebase/firestore";
+import {doc, getDoc, Timestamp, updateDoc} from "firebase/firestore";
 import {AiOutlineLoading3Quarters} from "react-icons/ai";
-import {FaHome, FaArrowLeft, FaCheck, FaTimes, FaClock, FaPrint} from "react-icons/fa";
-import { ExamData } from "../../pages/Student/Grades/StudentGrades.page.tsx";
-import { Timestamp } from "firebase/firestore";
+import {FaArrowLeft, FaCheck, FaClock, FaHome, FaPrint, FaTimes} from "react-icons/fa";
+import {ExamData} from "../../pages/Student/Grades/StudentGrades.page.tsx";
 
-export default function Exam(props: ExamProps){
+export default function Exam(props: ExamProps) {
     const [answers, setAnswers] = useState<{ [index: number]: string }>({});
     const [submitted, setSubmitted] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -53,7 +52,7 @@ export default function Exam(props: ExamProps){
     };
 
     const handleSelect = (qIndex: number, letter: string) => {
-        setAnswers({ ...answers, [qIndex]: letter });
+        setAnswers({...answers, [qIndex]: letter});
     };
 
     const navigateToQuestion = (index: number) => {
@@ -147,12 +146,13 @@ export default function Exam(props: ExamProps){
     // Antes de mostrar el examen, pedir selección de tipo
     if (!examType) {
         return (
-            <div className="flex flex-col items-center justify-center bg-gradient-to-b from-blue-50 to-gray-100 min-h-screen w-full px-4 md:px-8">
+            <div
+                className="flex flex-col items-center justify-center bg-gradient-to-b from-blue-50 to-gray-100 min-h-screen w-full px-4 md:px-8">
                 {/* Cabecera con logo */}
                 <div className="w-full max-w-4xl bg-white rounded-lg shadow-lg p-6 mb-8 mt-8">
                     <div className="flex flex-col md:flex-row items-center justify-between">
                         <div className="flex items-center mb-4 md:mb-0">
-                            <img src={logo} alt="Logo" className="h-16 w-16 mr-4" />
+                            <img src={logo} alt="Logo" className="h-16 w-16 mr-4"/>
                             <div>
                                 <h1 className="text-2xl font-bold text-gray-800">{props.name}</h1>
                                 <p className="text-gray-600">Selecciona el tipo de examen que deseas realizar</p>
@@ -163,14 +163,14 @@ export default function Exam(props: ExamProps){
                                 to={AllRoutes.EMT}
                                 className="flex items-center gap-2 bg-gray-100 hover:bg-orange-100 text-gray-700 px-4 py-2 rounded-md shadow-sm transition duration-300 ease-in-out"
                             >
-                                <FaHome className="text-orange-500" />
+                                <FaHome className="text-orange-500"/>
                                 <span>Inicio</span>
                             </NavLink>
                             <NavLink
                                 to={props.returnRoute}
                                 className="flex items-center gap-2 bg-gray-100 hover:bg-orange-100 text-gray-700 px-4 py-2 rounded-md shadow-sm transition duration-300 ease-in-out"
                             >
-                                <FaArrowLeft className="text-orange-500" />
+                                <FaArrowLeft className="text-orange-500"/>
                                 <span>Regresar</span>
                             </NavLink>
                         </div>
@@ -193,8 +193,9 @@ export default function Exam(props: ExamProps){
                             className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer border-2 border-transparent hover:border-blue-300 transform hover:-translate-y-1"
                         >
                             <div className="p-8 text-center">
-                                <div className="bg-blue-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
-                                    <FaCheck className="text-4xl text-blue-600" />
+                                <div
+                                    className="bg-blue-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                                    <FaCheck className="text-4xl text-blue-600"/>
                                 </div>
                                 <h3 className="text-2xl font-bold text-gray-800 mb-4">Examen Normal</h3>
                                 <p className="text-gray-600 mb-6 leading-relaxed">
@@ -215,8 +216,9 @@ export default function Exam(props: ExamProps){
                                         <span className="font-semibold text-gray-700">Repaso general</span>
                                     </div>
                                 </div>
-                                <button className="w-full cursor-pointer bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2">
-                                    <FaCheck />
+                                <button
+                                    className="w-full cursor-pointer bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2">
+                                    <FaCheck/>
                                     Comenzar Examen Normal
                                 </button>
                             </div>
@@ -244,7 +246,7 @@ export default function Exam(props: ExamProps){
                                         props.challengingQuestions && props.challengingQuestions.length > 0
                                             ? 'text-orange-600'
                                             : 'text-gray-400'
-                                    }`} />
+                                    }`}/>
                                 </div>
                                 <h3 className="text-2xl font-bold text-gray-800 mb-4">Examen Retador</h3>
                                 <p className={`mb-6 leading-relaxed ${
@@ -295,7 +297,7 @@ export default function Exam(props: ExamProps){
                                     }`}
                                     disabled={!props.challengingQuestions || props.challengingQuestions.length === 0}
                                 >
-                                    <FaClock />
+                                    <FaClock/>
                                     {props.challengingQuestions && props.challengingQuestions.length > 0
                                         ? 'Comenzar Examen Retador'
                                         : 'No Disponible'
@@ -310,15 +312,15 @@ export default function Exam(props: ExamProps){
                         <h4 className="text-lg font-semibold text-gray-800 mb-3">💡 Consejos antes de comenzar</h4>
                         <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-600">
                             <div className="flex items-center justify-center gap-2">
-                                <FaClock className="text-orange-500" />
+                                <FaClock className="text-orange-500"/>
                                 <span>El tiempo se cuenta automáticamente</span>
                             </div>
                             <div className="flex items-center justify-center gap-2">
-                                <FaCheck className="text-green-500" />
+                                <FaCheck className="text-green-500"/>
                                 <span>Puedes cambiar tus respuestas antes de enviar</span>
                             </div>
                             <div className="flex items-center justify-center gap-2">
-                                <FaPrint className="text-blue-500" />
+                                <FaPrint className="text-blue-500"/>
                                 <span>Los resultados se pueden imprimir</span>
                             </div>
                         </div>
@@ -329,12 +331,13 @@ export default function Exam(props: ExamProps){
     }
 
     return (
-        <div className="flex flex-col items-center justify-center bg-gradient-to-b from-blue-50 to-gray-100 min-h-screen w-full pb-12 px-4 md:px-8">
+        <div
+            className="flex flex-col items-center justify-center bg-gradient-to-b from-blue-50 to-gray-100 min-h-screen w-full pb-12 px-4 md:px-8">
             {/* Cabecera */}
             <div className="w-full max-w-4xl bg-white rounded-lg shadow-lg p-6 mb-8 mt-8">
                 <div className="flex flex-col md:flex-row items-center justify-between">
                     <div className="flex items-center mb-4 md:mb-0">
-                        <img src={logo} alt="Logo" className="h-16 w-16 mr-4" />
+                        <img src={logo} alt="Logo" className="h-16 w-16 mr-4"/>
                         <div>
                             <h1 className="text-2xl font-bold text-gray-800">{props.name}</h1>
                         </div>
@@ -344,14 +347,14 @@ export default function Exam(props: ExamProps){
                             to={AllRoutes.EMT}
                             className="flex items-center gap-2 bg-gray-100 hover:bg-orange-100 text-gray-700 px-4 py-2 rounded-md shadow-sm transition duration-300 ease-in-out"
                         >
-                            <FaHome className="text-orange-500" />
+                            <FaHome className="text-orange-500"/>
                             <span>Inicio</span>
                         </NavLink>
                         <NavLink
                             to={props.returnRoute}
                             className="flex items-center gap-2 bg-gray-100 hover:bg-orange-100 text-gray-700 px-4 py-2 rounded-md shadow-sm transition duration-300 ease-in-out"
                         >
-                            <FaArrowLeft className="text-orange-500" />
+                            <FaArrowLeft className="text-orange-500"/>
                             <span>Regresar</span>
                         </NavLink>
                     </div>
@@ -362,7 +365,7 @@ export default function Exam(props: ExamProps){
             {loading && (
                 <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
                     <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center">
-                        <AiOutlineLoading3Quarters className="animate-spin h-12 w-12 text-orange-500 mb-4" />
+                        <AiOutlineLoading3Quarters className="animate-spin h-12 w-12 text-orange-500 mb-4"/>
                         <p className="text-lg font-medium">Procesando resultados...</p>
                     </div>
                 </div>
@@ -382,7 +385,7 @@ export default function Exam(props: ExamProps){
                         <div className="bg-white rounded-lg shadow-md p-4 mb-6">
                             <div className="flex flex-col md:flex-row justify-between items-center mb-4">
                                 <div className="flex items-center mb-4 md:mb-0">
-                                    <FaClock className="text-orange-500 mr-2" />
+                                    <FaClock className="text-orange-500 mr-2"/>
                                     <span className="text-lg font-semibold">
                                         Tiempo: {formatTime(timer)}
                                     </span>
@@ -405,7 +408,7 @@ export default function Exam(props: ExamProps){
                             <div className="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
                                 <div
                                     className="bg-orange-500 h-4"
-                                    style={{ width: `${(Object.keys(answers).length / questions.length) * 100}%` }}
+                                    style={{width: `${(Object.keys(answers).length / questions.length) * 100}%`}}
                                 ></div>
                             </div>
 
@@ -417,11 +420,11 @@ export default function Exam(props: ExamProps){
                                         key={idx}
                                         onClick={() => !showAllQuestions && navigateToQuestion(idx)}
                                         className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium transition-all
-                                            ${!showAllQuestions && currentQuestionIndex === idx 
-                                                ? 'bg-blue-500 text-white' 
-                                                : answers[idx] 
-                                                    ? 'bg-green-500 text-white' 
-                                                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
+                                            ${!showAllQuestions && currentQuestionIndex === idx
+                                            ? 'bg-blue-500 text-white'
+                                            : answers[idx]
+                                                ? 'bg-green-500 text-white'
+                                                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
                                     >
                                         {idx + 1}
                                     </button>
@@ -433,16 +436,19 @@ export default function Exam(props: ExamProps){
                         {showAllQuestions ? (
                             <div className="space-y-6">
                                 {questions.map((q, index) => (
-                                    <div key={index} className="bg-white rounded-lg shadow-md p-6 transition-all hover:shadow-lg">
+                                    <div key={index}
+                                         className="bg-white rounded-lg shadow-md p-6 transition-all hover:shadow-lg">
                                         <div className="flex items-center mb-4">
-                                            <span className="bg-orange-500 text-white text-lg font-bold rounded-full w-8 h-8 flex items-center justify-center mr-3">
+                                            <span
+                                                className="bg-orange-500 text-white text-lg font-bold rounded-full w-8 h-8 flex items-center justify-center mr-3">
                                                 {index + 1}
                                             </span>
                                             <h3 className="text-lg font-semibold text-gray-800">{q.question}</h3>
                                         </div>
                                         <div className="space-y-3 ml-11">
                                             {q.options.map((opt) => (
-                                                <label key={opt.letter} className="flex items-start p-3 rounded-md border border-gray-200 hover:bg-blue-50 transition-colors cursor-pointer">
+                                                <label key={opt.letter}
+                                                       className="flex items-start p-3 rounded-md border border-gray-200 hover:bg-blue-50 transition-colors cursor-pointer">
                                                     <input
                                                         type="radio"
                                                         name={`question-${index}`}
@@ -452,7 +458,8 @@ export default function Exam(props: ExamProps){
                                                         className="mt-1 mr-3"
                                                     />
                                                     <div>
-                                                        <span className="font-medium text-gray-700">{opt.letter.toUpperCase()}) </span>
+                                                        <span
+                                                            className="font-medium text-gray-700">{opt.letter.toUpperCase()}) </span>
                                                         <span className="text-gray-800">{opt.text}</span>
                                                     </div>
                                                 </label>
@@ -464,14 +471,16 @@ export default function Exam(props: ExamProps){
                         ) : (
                             <div className="bg-white rounded-lg shadow-md p-6 transition-all hover:shadow-lg">
                                 <div className="flex items-center mb-4">
-                                    <span className="bg-orange-500 text-white text-lg font-bold rounded-full w-8 h-8 flex items-center justify-center mr-3">
+                                    <span
+                                        className="bg-orange-500 text-white text-lg font-bold rounded-full w-8 h-8 flex items-center justify-center mr-3">
                                         {currentQuestionIndex + 1}
                                     </span>
                                     <h3 className="text-lg font-semibold text-gray-800">{questions[currentQuestionIndex]?.question}</h3>
                                 </div>
                                 <div className="space-y-3 ml-11">
                                     {questions[currentQuestionIndex]?.options.map((opt) => (
-                                        <label key={opt.letter} className="flex items-start p-3 rounded-md border border-gray-200 hover:bg-blue-50 transition-colors cursor-pointer">
+                                        <label key={opt.letter}
+                                               className="flex items-start p-3 rounded-md border border-gray-200 hover:bg-blue-50 transition-colors cursor-pointer">
                                             <input
                                                 type="radio"
                                                 name={`question-${currentQuestionIndex}`}
@@ -481,7 +490,8 @@ export default function Exam(props: ExamProps){
                                                 className="mt-1 mr-3"
                                             />
                                             <div>
-                                                <span className="font-medium text-gray-700">{opt.letter.toUpperCase()}) </span>
+                                                <span
+                                                    className="font-medium text-gray-700">{opt.letter.toUpperCase()}) </span>
                                                 <span className="text-gray-800">{opt.text}</span>
                                             </div>
                                         </label>
@@ -496,7 +506,7 @@ export default function Exam(props: ExamProps){
                                         className="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-md shadow-sm disabled:opacity-50 disabled:cursor-not-allowed transition"
                                         disabled={currentQuestionIndex === 0}
                                     >
-                                        <FaArrowLeft />
+                                        <FaArrowLeft/>
                                         <span>Anterior</span>
                                     </button>
                                     <button
@@ -506,7 +516,7 @@ export default function Exam(props: ExamProps){
                                         disabled={currentQuestionIndex === questions.length - 1}
                                     >
                                         <span>Siguiente</span>
-                                        <FaArrowLeft className="rotate-180" />
+                                        <FaArrowLeft className="rotate-180"/>
                                     </button>
                                 </div>
                             </div>
@@ -520,10 +530,10 @@ export default function Exam(props: ExamProps){
                                 disabled={Object.keys(answers).length < questions.length}
                             >
                                 {loading ? (
-                                    <AiOutlineLoading3Quarters className="animate-spin h-5 w-5" />
+                                    <AiOutlineLoading3Quarters className="animate-spin h-5 w-5"/>
                                 ) : (
                                     <>
-                                        <FaCheck /> Calificar examen
+                                        <FaCheck/> Calificar examen
                                     </>
                                 )}
                             </button>
@@ -562,10 +572,11 @@ export default function Exam(props: ExamProps){
                                         isCorrect ? 'border-green-500 bg-green-50' : 'border-red-500 bg-red-50'
                                     } rounded-lg p-6`}>
                                         <div className="flex items-start">
-                                            <div className={`rounded-full w-8 h-8 flex items-center justify-center mr-3 ${
-                                                isCorrect ? 'bg-green-500 text-white' : 'bg-red-500 text-white'
-                                            }`}>
-                                                {isCorrect ? <FaCheck /> : <FaTimes />}
+                                            <div
+                                                className={`rounded-full w-8 h-8 flex items-center justify-center mr-3 ${
+                                                    isCorrect ? 'bg-green-500 text-white' : 'bg-red-500 text-white'
+                                                }`}>
+                                                {isCorrect ? <FaCheck/> : <FaTimes/>}
                                             </div>
                                             <div className="flex-1">
                                                 <h3 className="text-lg font-semibold text-gray-800 mb-3">
@@ -590,7 +601,8 @@ export default function Exam(props: ExamProps){
 
                                                 {/* Explicación de la pregunta */}
                                                 {q?.explanation && (
-                                                    <div className="mt-3 p-3 bg-blue-50 border-l-4 border-blue-400 rounded">
+                                                    <div
+                                                        className="mt-3 p-3 bg-blue-50 border-l-4 border-blue-400 rounded">
                                                         <span className="font-medium text-blue-700">Explicación: </span>
                                                         <span className="text-blue-800">{q.explanation}</span>
                                                     </div>
@@ -607,7 +619,7 @@ export default function Exam(props: ExamProps){
                                 to={AllRoutes.EMT}
                                 className="flex items-center gap-2 bg-gray-100 hover:bg-orange-100 text-gray-700 px-6 py-3 rounded-md shadow-sm transition duration-300"
                             >
-                                <FaHome className="text-orange-500" />
+                                <FaHome className="text-orange-500"/>
                                 <span>Volver al inicio</span>
                             </NavLink>
                             <button
@@ -615,14 +627,14 @@ export default function Exam(props: ExamProps){
                                 onClick={handlePrint}
                                 className="flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-md shadow-sm transition duration-300"
                             >
-                                <FaPrint className="text-white" />
+                                <FaPrint className="text-white"/>
                                 <span>Imprimir resultados</span>
                             </button>
                             <NavLink
                                 to={props.returnRoute}
                                 className="flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-md shadow-sm transition duration-300"
                             >
-                                <FaArrowLeft className="text-white" />
+                                <FaArrowLeft className="text-white"/>
                                 <span>Regresar</span>
                             </NavLink>
                         </div>

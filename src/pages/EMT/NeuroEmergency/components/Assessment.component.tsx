@@ -1,7 +1,7 @@
-import { FaHeadSideMask, FaBolt, FaThermometerHalf, FaEye } from "react-icons/fa";
-import { MdEmergency, MdAccessTime, MdBloodtype } from "react-icons/md";
-import { GiMedicines, GiBrain } from "react-icons/gi";
-import { BiFirstAid } from "react-icons/bi";
+import {FaBolt, FaEye, FaHeadSideMask, FaThermometerHalf} from "react-icons/fa";
+import {MdAccessTime, MdBloodtype, MdEmergency} from "react-icons/md";
+import {GiBrain, GiMedicines} from "react-icons/gi";
+import {BiFirstAid} from "react-icons/bi";
 
 export default function Assessment() {
     return (
@@ -13,7 +13,7 @@ export default function Assessment() {
                 {/* Cefalea */}
                 <div className="mb-8 bg-yellow-50 border border-yellow-200 rounded-lg p-6">
                     <div className="flex items-center gap-3 mb-4">
-                        <FaHeadSideMask className="w-6 h-6 text-yellow-600" />
+                        <FaHeadSideMask className="w-6 h-6 text-yellow-600"/>
                         <h3 className="text-xl font-bold text-yellow-800">Cefalea</h3>
                     </div>
                     <div className="grid md:grid-cols-2 gap-4">
@@ -41,7 +41,7 @@ export default function Assessment() {
                 {/* Evento Vascular Cerebral */}
                 <div className="mb-8 bg-red-50 border border-red-200 rounded-lg p-6">
                     <div className="flex items-center gap-3 mb-4">
-                        <GiBrain className="w-6 h-6 text-red-600" />
+                        <GiBrain className="w-6 h-6 text-red-600"/>
                         <h3 className="text-xl font-bold text-red-800">Evento Vascular Cerebral (EVC)</h3>
                         <span className="bg-red-600 text-white px-2 py-1 rounded text-xs font-bold">CRÍTICO</span>
                     </div>
@@ -74,7 +74,7 @@ export default function Assessment() {
 
                     <div className="bg-red-100 border border-red-300 rounded p-4">
                         <h4 className="font-semibold text-red-800 mb-2 flex items-center gap-2">
-                            <BiFirstAid className="w-5 h-5" />
+                            <BiFirstAid className="w-5 h-5"/>
                             Tratamiento Prehospitalario
                         </h4>
                         <ul className="text-sm text-red-700 space-y-1">
@@ -90,7 +90,7 @@ export default function Assessment() {
                 {/* Convulsiones */}
                 <div className="mb-8 bg-purple-50 border border-purple-200 rounded-lg p-6">
                     <div className="flex items-center gap-3 mb-4">
-                        <FaBolt className="w-6 h-6 text-purple-600" />
+                        <FaBolt className="w-6 h-6 text-purple-600"/>
                         <h3 className="text-xl font-bold text-purple-800">Convulsiones</h3>
                     </div>
 
@@ -142,7 +142,7 @@ export default function Assessment() {
                 {/* Estado Mental Alterado */}
                 <div className="mb-8 bg-blue-50 border border-blue-200 rounded-lg p-6">
                     <div className="flex items-center gap-3 mb-4">
-                        <FaEye className="w-6 h-6 text-blue-600" />
+                        <FaEye className="w-6 h-6 text-blue-600"/>
                         <h3 className="text-xl font-bold text-blue-800">Estado Mental Alterado</h3>
                     </div>
 
@@ -180,7 +180,7 @@ export default function Assessment() {
                     {/* Escala de Glasgow */}
                     <div className="bg-green-50 border border-green-200 rounded-lg p-4">
                         <h3 className="font-semibold text-green-800 mb-3 flex items-center gap-2">
-                            <MdEmergency className="w-5 h-5" />
+                            <MdEmergency className="w-5 h-5"/>
                             Escala de Coma de Glasgow (ECG)
                         </h3>
                         <div className="space-y-3">
@@ -257,25 +257,25 @@ export default function Assessment() {
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">Monitoreo Continuo</h2>
                 <div className="grid md:grid-cols-4 gap-4">
                     <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-center">
-                        <MdBloodtype className="w-8 h-8 text-red-500 mx-auto mb-2" />
+                        <MdBloodtype className="w-8 h-8 text-red-500 mx-auto mb-2"/>
                         <h4 className="font-medium text-red-800 text-sm">Signos Vitales</h4>
                         <p className="text-xs text-red-600">PA, FC, FR, Temp</p>
                     </div>
 
                     <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-center">
-                        <FaEye className="w-8 h-8 text-blue-500 mx-auto mb-2" />
+                        <FaEye className="w-8 h-8 text-blue-500 mx-auto mb-2"/>
                         <h4 className="font-medium text-blue-800 text-sm">Nivel de Conciencia</h4>
                         <p className="text-xs text-blue-600">Glasgow, AVDI</p>
                     </div>
 
                     <div className="bg-green-50 border border-green-200 rounded-lg p-4 text-center">
-                        <GiMedicines className="w-8 h-8 text-green-500 mx-auto mb-2" />
+                        <GiMedicines className="w-8 h-8 text-green-500 mx-auto mb-2"/>
                         <h4 className="font-medium text-green-800 text-sm">Pupilas</h4>
                         <p className="text-xs text-green-600">Tamaño, reactividad</p>
                     </div>
 
                     <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 text-center">
-                        <FaThermometerHalf className="w-8 h-8 text-purple-500 mx-auto mb-2" />
+                        <FaThermometerHalf className="w-8 h-8 text-purple-500 mx-auto mb-2"/>
                         <h4 className="font-medium text-purple-800 text-sm">Estado Respiratorio</h4>
                         <p className="text-xs text-purple-600">Patrón, saturación</p>
                     </div>
@@ -286,7 +286,7 @@ export default function Assessment() {
             <section>
                 <div className="bg-gray-100 border border-gray-300 rounded-lg p-6">
                     <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-                        <MdAccessTime className="w-6 h-6" />
+                        <MdAccessTime className="w-6 h-6"/>
                         Algoritmo de Manejo General
                     </h3>
                     <div className="grid md:grid-cols-3 gap-4">

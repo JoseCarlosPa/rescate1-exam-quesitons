@@ -1,7 +1,7 @@
 import {FiHeart} from "react-icons/fi";
 
 export default function Anatomy() {
-    return(
+    return (
         <div className="space-y-8">
             <div>
                 <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
@@ -19,21 +19,24 @@ export default function Anatomy() {
                                     <div className="w-3 h-3 bg-blue-500 rounded-full mt-2"></div>
                                     <div>
                                         <h4 className="font-semibold">Aurículas (Cavidades Superiores)</h4>
-                                        <p className="text-sm text-gray-600">Aurícula derecha: recibe sangre venosa. Aurícula izquierda: recibe sangre oxigenada de pulmones</p>
+                                        <p className="text-sm text-gray-600">Aurícula derecha: recibe sangre venosa.
+                                            Aurícula izquierda: recibe sangre oxigenada de pulmones</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start space-x-3">
                                     <div className="w-3 h-3 bg-blue-500 rounded-full mt-2"></div>
                                     <div>
                                         <h4 className="font-semibold">Ventrículos (Cavidades Inferiores)</h4>
-                                        <p className="text-sm text-gray-600">Ventrículo derecho: bombea a pulmones. Ventrículo izquierdo: bombea a circulación sistémica</p>
+                                        <p className="text-sm text-gray-600">Ventrículo derecho: bombea a pulmones.
+                                            Ventrículo izquierdo: bombea a circulación sistémica</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start space-x-3">
                                     <div className="w-3 h-3 bg-blue-500 rounded-full mt-2"></div>
                                     <div>
                                         <h4 className="font-semibold">Válvulas Cardíacas</h4>
-                                        <p className="text-sm text-gray-600">Tricúspide, Pulmonar, Mitral (Bicúspide), Aórtica - controlan flujo unidireccional</p>
+                                        <p className="text-sm text-gray-600">Tricúspide, Pulmonar, Mitral (Bicúspide),
+                                            Aórtica - controlan flujo unidireccional</p>
                                     </div>
                                 </div>
                             </div>
@@ -55,14 +58,16 @@ export default function Anatomy() {
                                     <div className="w-3 h-3 bg-red-500 rounded-full mt-2"></div>
                                     <div>
                                         <h4 className="font-semibold">Nodo Auriculoventricular (AV)</h4>
-                                        <p className="text-sm text-gray-600">Retarda el impulso - permite llenado ventricular</p>
+                                        <p className="text-sm text-gray-600">Retarda el impulso - permite llenado
+                                            ventricular</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start space-x-3">
                                     <div className="w-3 h-3 bg-red-500 rounded-full mt-2"></div>
                                     <div>
                                         <h4 className="font-semibold">Haz de His y Fibras de Purkinje</h4>
-                                        <p className="text-sm text-gray-600">Distribuyen impulso eléctrico a ventrículos</p>
+                                        <p className="text-sm text-gray-600">Distribuyen impulso eléctrico a
+                                            ventrículos</p>
                                     </div>
                                 </div>
                             </div>
@@ -77,18 +82,30 @@ export default function Anatomy() {
                         <div>
                             <h4 className="font-semibold text-green-800 mb-3">Circulación Pulmonar (Menor)</h4>
                             <div className="space-y-2 text-gray-700">
-                                <p className="flex items-center"><span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>Ventrículo derecho → Arteria pulmonar</p>
-                                <p className="flex items-center"><span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>Pulmones (intercambio gaseoso)</p>
-                                <p className="flex items-center"><span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>Venas pulmonares → Aurícula izquierda</p>
+                                <p className="flex items-center"><span
+                                    className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>Ventrículo derecho →
+                                    Arteria pulmonar</p>
+                                <p className="flex items-center"><span
+                                    className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>Pulmones (intercambio
+                                    gaseoso)</p>
+                                <p className="flex items-center"><span
+                                    className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>Venas pulmonares → Aurícula
+                                    izquierda</p>
                                 <p className="text-sm text-green-700 font-medium">Presión baja (25/10 mmHg)</p>
                             </div>
                         </div>
                         <div>
                             <h4 className="font-semibold text-green-800 mb-3">Circulación Sistémica (Mayor)</h4>
                             <div className="space-y-2 text-gray-700">
-                                <p className="flex items-center"><span className="w-2 h-2 bg-red-500 rounded-full mr-2"></span>Ventrículo izquierdo → Aorta</p>
-                                <p className="flex items-center"><span className="w-2 h-2 bg-red-500 rounded-full mr-2"></span>Órganos y tejidos corporales</p>
-                                <p className="flex items-center"><span className="w-2 h-2 bg-red-500 rounded-full mr-2"></span>Venas cavas → Aurícula derecha</p>
+                                <p className="flex items-center"><span
+                                    className="w-2 h-2 bg-red-500 rounded-full mr-2"></span>Ventrículo izquierdo → Aorta
+                                </p>
+                                <p className="flex items-center"><span
+                                    className="w-2 h-2 bg-red-500 rounded-full mr-2"></span>Órganos y tejidos corporales
+                                </p>
+                                <p className="flex items-center"><span
+                                    className="w-2 h-2 bg-red-500 rounded-full mr-2"></span>Venas cavas → Aurícula
+                                    derecha</p>
                                 <p className="text-sm text-green-700 font-medium">Presión alta (120/80 mmHg)</p>
                             </div>
                         </div>
@@ -131,14 +148,18 @@ export default function Anatomy() {
 
                 {/* Arterias coronarias */}
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
-                    <h3 className="text-xl font-bold text-yellow-700 mb-4">Circulación Coronaria - Irrigación del Corazón</h3>
+                    <h3 className="text-xl font-bold text-yellow-700 mb-4">Circulación Coronaria - Irrigación del
+                        Corazón</h3>
                     <div className="grid md:grid-cols-2 gap-6">
                         <div>
                             <h4 className="font-semibold text-yellow-800 mb-3">Arteria Coronaria Izquierda</h4>
                             <ul className="space-y-2 text-gray-700">
                                 <li><strong>Tronco principal:</strong> Se divide en LAD y LCX</li>
-                                <li><strong>LAD (Descendente anterior):</strong> Pared anterior del VI, parte del septum</li>
-                                <li><strong>LCX (Circunfleja):</strong> Pared lateral del VI, parte de la aurícula izquierda</li>
+                                <li><strong>LAD (Descendente anterior):</strong> Pared anterior del VI, parte del septum
+                                </li>
+                                <li><strong>LCX (Circunfleja):</strong> Pared lateral del VI, parte de la aurícula
+                                    izquierda
+                                </li>
                             </ul>
                             <p className="text-sm text-yellow-700 mt-2 font-medium">Irriga ~75% del miocardio</p>
                         </div>
@@ -147,13 +168,15 @@ export default function Anatomy() {
                             <ul className="space-y-2 text-gray-700">
                                 <li><strong>RCA principal:</strong> Pared inferior del VI, VD, aurícula derecha</li>
                                 <li><strong>Arteria marginal:</strong> Borde derecho del corazón</li>
-                                <li><strong>Descendente posterior:</strong> Pared posterior del VI (en 85% de casos)</li>
+                                <li><strong>Descendente posterior:</strong> Pared posterior del VI (en 85% de casos)
+                                </li>
                             </ul>
                             <p className="text-sm text-yellow-700 mt-2 font-medium">Irriga ~25% del miocardio</p>
                         </div>
                     </div>
                     <div className="mt-4 p-3 bg-yellow-100 rounded">
-                        <p className="text-sm text-yellow-800"><strong>Nota clínica:</strong> La oclusión de LAD ("widow maker") es especialmente peligrosa por la extensión del territorio que irriga.</p>
+                        <p className="text-sm text-yellow-800"><strong>Nota clínica:</strong> La oclusión de LAD ("widow
+                            maker") es especialmente peligrosa por la extensión del territorio que irriga.</p>
                     </div>
                 </div>
 
@@ -166,12 +189,14 @@ export default function Anatomy() {
                             <div className="space-y-3">
                                 <div className="bg-white p-3 rounded border">
                                     <h5 className="font-medium text-indigo-700">Diástole (Relajación)</h5>
-                                    <p className="text-sm text-gray-600">Llenado ventricular - presión baja, válvulas AV abiertas</p>
+                                    <p className="text-sm text-gray-600">Llenado ventricular - presión baja, válvulas AV
+                                        abiertas</p>
                                     <p className="text-xs text-indigo-600">Duración: ~60% del ciclo</p>
                                 </div>
                                 <div className="bg-white p-3 rounded border">
                                     <h5 className="font-medium text-red-700">Sístole (Contracción)</h5>
-                                    <p className="text-sm text-gray-600">Eyección ventricular - presión alta, válvulas semilunares abiertas</p>
+                                    <p className="text-sm text-gray-600">Eyección ventricular - presión alta, válvulas
+                                        semilunares abiertas</p>
                                     <p className="text-xs text-red-600">Duración: ~40% del ciclo</p>
                                 </div>
                             </div>
@@ -185,7 +210,8 @@ export default function Anatomy() {
                                 <li><strong>Autorregulación:</strong> Flujo constante pese a cambios de presión</li>
                             </ul>
                             <div className="mt-3 p-2 bg-indigo-100 rounded">
-                                <p className="text-sm text-indigo-800"><strong>Clave clínica:</strong> La taquicardia reduce el tiempo de diástole, comprometiendo la perfusión coronaria</p>
+                                <p className="text-sm text-indigo-800"><strong>Clave clínica:</strong> La taquicardia
+                                    reduce el tiempo de diástole, comprometiendo la perfusión coronaria</p>
                             </div>
                         </div>
                     </div>

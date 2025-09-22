@@ -4,21 +4,25 @@ import {MdFeedback} from "react-icons/md";
 import {HiSpeakerphone} from "react-icons/hi";
 import {BsFileText} from "react-icons/bs";
 
-export default function Overview(){
-    return(
+export default function Overview() {
+    return (
         <div className="space-y-6">
             <div>
-                <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">¿Por qué es crucial la comunicación efectiva?</h2>
+                <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">¿Por qué es crucial la
+                    comunicación efectiva?</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                    En emergencias médicas, la comunicación puede ser la diferencia entre la vida y la muerte. Un mensaje mal transmitido,
-                    información omitida o documentación deficiente pueden resultar en errores de tratamiento, retrasos en la atención o
+                    En emergencias médicas, la comunicación puede ser la diferencia entre la vida y la muerte. Un
+                    mensaje mal transmitido,
+                    información omitida o documentación deficiente pueden resultar en errores de tratamiento, retrasos
+                    en la atención o
                     complicaciones legales graves.
                 </p>
                 <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-4">
                     <div className="flex">
                         <div className="ml-3">
                             <p className="text-sm text-blue-700">
-                                <strong>Estadística clave:</strong> El 80% de los errores médicos se relacionan con problemas de comunicación entre el personal de salud.
+                                <strong>Estadística clave:</strong> El 80% de los errores médicos se relacionan con
+                                problemas de comunicación entre el personal de salud.
                             </p>
                         </div>
                     </div>
@@ -33,25 +37,29 @@ export default function Overview(){
                     </div>
                     <ul className="space-y-3 text-gray-700">
                         <li className="flex items-start">
-                            <span className="inline-block w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <span
+                                className="inline-block w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                             <div>
                                 <strong>Verbal:</strong> Palabras habladas, tono de voz, claridad del mensaje.
                             </div>
                         </li>
                         <li className="flex items-start">
-                            <span className="inline-block w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <span
+                                className="inline-block w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                             <div>
                                 <strong>No verbal:</strong> Lenguaje corporal, gestos, expresiones faciales.
                             </div>
                         </li>
                         <li className="flex items-start">
-                            <span className="inline-block w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <span
+                                className="inline-block w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                             <div>
                                 <strong>Escrita:</strong> Documentación, FRAP, reportes médicos.
                             </div>
                         </li>
                         <li className="flex items-start">
-                            <span className="inline-block w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <span
+                                className="inline-block w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                             <div>
                                 <strong>Tecnológica:</strong> Radio, celular, sistemas digitales.
                             </div>
@@ -139,8 +147,10 @@ export default function Overview(){
             <div className="bg-green-50 border border-green-200 rounded-lg p-4">
                 <h3 className="text-lg font-semibold text-green-800 mb-2">💡 Tip para paramédicos</h3>
                 <p className="text-green-700">
-                    <strong>Regla del "Confirm-Back":</strong> Siempre confirma que el receptor entendió tu mensaje repitiendo la información crítica.
-                    En radio: "Centro de comando, confirma que recibiste: paciente masculino, 45 años, dolor torácico, ETA 10 minutos".
+                    <strong>Regla del "Confirm-Back":</strong> Siempre confirma que el receptor entendió tu mensaje
+                    repitiendo la información crítica.
+                    En radio: "Centro de comando, confirma que recibiste: paciente masculino, 45 años, dolor torácico,
+                    ETA 10 minutos".
                 </p>
             </div>
         </div>

@@ -1,7 +1,7 @@
-import { RiBrain2Fill } from "react-icons/ri";
-import { FaEye, FaComment, FaHandPaper } from "react-icons/fa";
-import { GiSpinalCoil } from "react-icons/gi";
-import { MdBalance } from "react-icons/md";
+import {RiBrain2Fill} from "react-icons/ri";
+import {FaComment, FaEye, FaHandPaper} from "react-icons/fa";
+import {GiSpinalCoil} from "react-icons/gi";
+import {MdBalance} from "react-icons/md";
 
 export default function Anatomy() {
     return (
@@ -9,12 +9,13 @@ export default function Anatomy() {
             {/* Anatomía del Sistema Nervioso Central */}
             <section>
                 <div className="flex items-center gap-3 mb-4">
-                    <RiBrain2Fill className="w-8 h-8 text-orange-500" />
+                    <RiBrain2Fill className="w-8 h-8 text-orange-500"/>
                     <h2 className="text-2xl font-bold text-gray-900">Sistema Nervioso Central</h2>
                 </div>
                 <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg mb-6">
                     <p className="text-gray-700 leading-relaxed">
-                        El sistema nervioso central está compuesto por el <strong>encéfalo</strong> y la <strong>médula espinal</strong>.
+                        El sistema nervioso central está compuesto por el <strong>encéfalo</strong> y la <strong>médula
+                        espinal</strong>.
                         El encéfalo controla funciones voluntarias e involuntarias, emociones y percepción.
                     </p>
                 </div>
@@ -22,7 +23,7 @@ export default function Anatomy() {
                 <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-white border border-gray-200 rounded-lg p-4">
                         <div className="flex items-center gap-2 mb-3">
-                            <RiBrain2Fill className="w-6 h-6 text-purple-500" />
+                            <RiBrain2Fill className="w-6 h-6 text-purple-500"/>
                             <h3 className="font-semibold text-purple-800">Encéfalo</h3>
                         </div>
                         <ul className="space-y-2 text-sm text-gray-700">
@@ -35,7 +36,7 @@ export default function Anatomy() {
 
                     <div className="bg-white border border-gray-200 rounded-lg p-4">
                         <div className="flex items-center gap-2 mb-3">
-                            <GiSpinalCoil className="w-6 h-6 text-green-500" />
+                            <GiSpinalCoil className="w-6 h-6 text-green-500"/>
                             <h3 className="font-semibold text-green-800">Médula Espinal</h3>
                         </div>
                         <ul className="space-y-2 text-sm text-gray-700">
@@ -54,7 +55,7 @@ export default function Anatomy() {
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
                     <div className="bg-red-50 border border-red-200 rounded-lg p-4">
                         <div className="flex items-center gap-2 mb-3">
-                            <FaHandPaper className="w-5 h-5 text-red-500" />
+                            <FaHandPaper className="w-5 h-5 text-red-500"/>
                             <h3 className="font-medium text-red-800">Lóbulo Frontal</h3>
                         </div>
                         <ul className="text-sm text-red-700 space-y-1">
@@ -68,7 +69,7 @@ export default function Anatomy() {
 
                     <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
                         <div className="flex items-center gap-2 mb-3">
-                            <MdBalance className="w-5 h-5 text-blue-500" />
+                            <MdBalance className="w-5 h-5 text-blue-500"/>
                             <h3 className="font-medium text-blue-800">Lóbulo Parietal</h3>
                         </div>
                         <ul className="text-sm text-blue-700 space-y-1">
@@ -81,7 +82,7 @@ export default function Anatomy() {
 
                     <div className="bg-green-50 border border-green-200 rounded-lg p-4">
                         <div className="flex items-center gap-2 mb-3">
-                            <FaEye className="w-5 h-5 text-green-500" />
+                            <FaEye className="w-5 h-5 text-green-500"/>
                             <h3 className="font-medium text-green-800">Lóbulo Occipital</h3>
                         </div>
                         <ul className="text-sm text-green-700 space-y-1">
@@ -93,7 +94,7 @@ export default function Anatomy() {
 
                     <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
                         <div className="flex items-center gap-2 mb-3">
-                            <FaComment className="w-5 h-5 text-purple-500" />
+                            <FaComment className="w-5 h-5 text-purple-500"/>
                             <h3 className="font-medium text-purple-800">Lóbulo Temporal</h3>
                         </div>
                         <ul className="text-sm text-purple-700 space-y-1">

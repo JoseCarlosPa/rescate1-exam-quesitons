@@ -7,7 +7,9 @@ Se ha implementado un sistema completo de SEO para la plataforma educativa EMT E
 ### 1. Componentes SEO
 
 #### `SEO.component.tsx`
+
 Componente base que maneja todos los meta tags dinámicamente:
+
 - Meta tags básicos (title, description, keywords)
 - Open Graph tags para redes sociales
 - Twitter Card tags
@@ -17,14 +19,18 @@ Componente base que maneja todos los meta tags dinámicamente:
 - Datos estructurados JSON-LD
 
 #### `SchemaEducational.component.tsx`
+
 Componente especializado para generar Schema.org markup específico para contenido educativo:
+
 - Course schema
 - LearningResource schema
 - Educational audience targeting
 - Difficulty levels y time requirements
 
 #### `SEOWrapper.component.tsx`
+
 Componente wrapper que facilita la implementación de SEO en cualquier página:
+
 - Combina el hook useSEO con SchemaEducational
 - Interface simple para uso en páginas
 - Configuración automática de schemas educativos
@@ -32,7 +38,9 @@ Componente wrapper que facilita la implementación de SEO en cualquier página:
 ### 2. Hook personalizado
 
 #### `useSEO.hook.ts`
+
 Hook de React que:
+
 - Actualiza meta tags dinámicamente basado en la ruta
 - Maneja datos estructurados para artículos
 - Permite sobrescribir SEO por página
@@ -41,14 +49,18 @@ Hook de React que:
 ### 3. Configuración SEO
 
 #### `seo.constants.ts`
+
 Contiene:
+
 - Datos SEO específicos para cada ruta de la aplicación
 - 44+ páginas con títulos, descripciones y keywords optimizados
 - Configuración de types (website/article)
 - Tags específicos por sección
 
 #### `seo.utils.ts`
+
 Utilidades para:
+
 - Configuración de sitemap
 - Generación automática de sitemap.xml
 - Generación de robots.txt
@@ -57,18 +69,21 @@ Utilidades para:
 ### 4. Archivos estáticos
 
 #### `sitemap.xml`
+
 - 44+ URLs indexadas
 - Prioridades optimizadas (1.0 para home, 0.9 para examen, 0.8 para emergencias)
 - Frecuencias de cambio apropiadas
 - Fechas de última modificación
 
 #### `robots.txt`
+
 - Permite indexación completa
 - Referencias al sitemap
 - Configuración para Googlebot y Bingbot
 - Permite acceso a assets importantes
 
 #### `index.html` actualizado
+
 - Meta tags mejorados
 - Open Graph completo
 - Twitter Cards
@@ -79,6 +94,7 @@ Utilidades para:
 ### 5. Optimizaciones implementadas
 
 #### Meta tags por página:
+
 - **Página principal**: Enfoque en plataforma educativa EMT
 - **Emergencias médicas**: Keywords específicos (ACV, IAM, trauma, etc.)
 - **Procedimientos**: Términos técnicos (RCP, SVB, intubación, etc.)
@@ -86,6 +102,7 @@ Utilidades para:
 - **Trauma**: Tipos específicos de lesiones y manejo
 
 #### Structured Data (JSON-LD):
+
 - EducationalOrganization para la institución
 - Course/LearningResource para cada sección
 - Article schema para contenido específico
@@ -93,6 +110,7 @@ Utilidades para:
 - Competency requirements
 
 #### Optimización técnica:
+
 - Canonical URLs para evitar contenido duplicado
 - Mobile-first design indicators
 - PWA compliance
@@ -102,12 +120,14 @@ Utilidades para:
 ### 6. Keywords estratégicos utilizados
 
 #### Términos principales:
+
 - EMT, técnico urgencias médicas, atención prehospitalaria
 - AAOS, rescate, primeros auxilios, paramédico
 - SVB, soporte vital básico, emergencias médicas
 - RCP, DEA, reanimación cardiopulmonar
 
 #### Keywords por especialidad:
+
 - **Neurológicas**: ACV, ictus, convulsiones, TCE, coma
 - **Cardiovasculares**: infarto, IAM, arritmias, insuficiencia cardíaca
 - **Respiratorias**: asma, EPOC, disnea, neumotórax
@@ -117,6 +137,7 @@ Utilidades para:
 ### 7. Implementación en páginas
 
 #### Uso básico con hook:
+
 ```typescript
 useSEO({
   dynamicTitle: 'Título específico',
@@ -126,6 +147,7 @@ useSEO({
 ```
 
 #### Uso con wrapper completo:
+
 ```tsx
 <SEOWrapper
   title="Emergencias Neurológicas"
@@ -152,6 +174,7 @@ useSEO({
 ### 9. Métricas esperadas
 
 Con esta implementación se espera mejora en:
+
 - Ranking en búsquedas de "EMT México", "técnico urgencias médicas"
 - Appearing en featured snippets para términos médicos
 - Mejor CTR por rich snippets educativos
@@ -161,6 +184,7 @@ Con esta implementación se espera mejora en:
 ### 10. Mantenimiento
 
 Para mantener el SEO:
+
 1. Actualizar `lastmod` en sitemap al modificar contenido
 2. Añadir nuevas rutas a `seo.constants.ts` y `seo.utils.ts`
 3. Usar el SEOWrapper en páginas nuevas

@@ -6,14 +6,34 @@ import {GiProtectionGlasses} from "react-icons/gi";
 import {AllRoutes} from "../../../components/Router/Router.constants.ts";
 import {IoReturnDownBack} from "react-icons/io5";
 import {useState} from "react";
-import {MdQuiz, MdSecurity, MdWarning, MdHealthAndSafety, MdInfo, MdTipsAndUpdates, MdEmergency, MdPsychology} from "react-icons/md";
-import {BsBookHalf, BsShieldCheck, BsPersonCheck, BsExclamationTriangle} from "react-icons/bs";
+import {
+    MdEmergency,
+    MdHealthAndSafety,
+    MdInfo,
+    MdPsychology,
+    MdQuiz,
+    MdSecurity,
+    MdTipsAndUpdates,
+    MdWarning
+} from "react-icons/md";
+import {BsBookHalf, BsExclamationTriangle, BsPersonCheck, BsShieldCheck} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
-import {FaHardHat, FaEye, FaHandsWash, FaMask, FaAmbulance, FaUsers, FaClock, FaHeart, FaBrain, FaShieldAlt} from "react-icons/fa";
-import {FiAlertTriangle, FiCheckCircle, FiActivity, FiShield, FiEye, FiHeart} from "react-icons/fi";
+import {
+    FaAmbulance,
+    FaBrain,
+    FaClock,
+    FaEye,
+    FaHandsWash,
+    FaHardHat,
+    FaHeart,
+    FaMask,
+    FaShieldAlt,
+    FaUsers
+} from "react-icons/fa";
+import {FiActivity, FiAlertTriangle, FiCheckCircle, FiEye, FiHeart, FiShield} from "react-icons/fi";
 import {HiOutlineExclamationTriangle} from "react-icons/hi2";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
-import { ForumSection } from "../../../components/ForumSection";
+import {ForumSection} from "../../../components/ForumSection";
 
 export default function SecurityOfPersonal() {
     const [activeTab, setActiveTab] = useState<'overview' | 'epp' | 'stress' | 'practice'>('overview');
@@ -74,7 +94,7 @@ export default function SecurityOfPersonal() {
                             </a>
                         </div>
 
-                    
+
                         {/* Navegación por pestañas */}
                         <div className="mb-6 border-b border-gray-200 max-w-5xl mx-auto">
                             <nav className="flex space-x-2 overflow-x-auto">
@@ -134,12 +154,14 @@ export default function SecurityOfPersonal() {
                                                 Prioridad Número Uno
                                             </h3>
                                             <p className="text-gray-700 mb-3">
-                                                La seguridad del personal es la prioridad número uno en cualquier emergencia. 
-                                                Un rescatista lesionado no puede ayudar a otros y puede convertirse en una víctima más.
+                                                La seguridad del personal es la prioridad número uno en cualquier
+                                                emergencia.
+                                                Un rescatista lesionado no puede ayudar a otros y puede convertirse en
+                                                una víctima más.
                                             </p>
                                             <div className="bg-white p-3 rounded border-l-4 border-red-500">
                                                 <p className="text-sm text-gray-600">
-                                                    <strong>Principio fundamental:</strong> "No hay paciente tan crítico 
+                                                    <strong>Principio fundamental:</strong> "No hay paciente tan crítico
                                                     que justifique crear otra víctima" - AAOS 11ª edición
                                                 </p>
                                             </div>
@@ -152,20 +174,29 @@ export default function SecurityOfPersonal() {
                                             </h3>
                                             <div className="space-y-2">
                                                 <div className="flex items-center bg-white p-2 rounded">
-                                                    <div className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm mr-3">1</div>
+                                                    <div
+                                                        className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm mr-3">1
+                                                    </div>
                                                     <span className="text-sm">Observar antes de actuar</span>
                                                 </div>
                                                 <div className="flex items-center bg-white p-2 rounded">
-                                                    <div className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm mr-3">2</div>
+                                                    <div
+                                                        className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm mr-3">2
+                                                    </div>
                                                     <span className="text-sm">Identificar riesgos potenciales</span>
                                                 </div>
                                                 <div className="flex items-center bg-white p-2 rounded">
-                                                    <div className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm mr-3">3</div>
+                                                    <div
+                                                        className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm mr-3">3
+                                                    </div>
                                                     <span className="text-sm">Evaluar la necesidad de apoyo</span>
                                                 </div>
                                                 <div className="flex items-center bg-white p-2 rounded">
-                                                    <div className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm mr-3">4</div>
-                                                    <span className="text-sm">Asegurar la escena antes de ingresar</span>
+                                                    <div
+                                                        className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm mr-3">4
+                                                    </div>
+                                                    <span
+                                                        className="text-sm">Asegurar la escena antes de ingresar</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -298,19 +329,22 @@ export default function SecurityOfPersonal() {
                                             <div className="space-y-3">
                                                 <div className="bg-white p-3 rounded border-l-4 border-yellow-500">
                                                     <p className="text-sm text-gray-700">
-                                                        <strong>Mantente alerta:</strong> Si algo te parece extraño o peligroso, 
+                                                        <strong>Mantente alerta:</strong> Si algo te parece extraño o
+                                                        peligroso,
                                                         confía en tu instinto y solicita apoyo.
                                                     </p>
                                                 </div>
                                                 <div className="bg-white p-3 rounded border-l-4 border-orange-500">
                                                     <p className="text-sm text-gray-700">
-                                                        <strong>Comunica:</strong> Informa constantemente tu estado y ubicación 
+                                                        <strong>Comunica:</strong> Informa constantemente tu estado y
+                                                        ubicación
                                                         al centro de despacho.
                                                     </p>
                                                 </div>
                                                 <div className="bg-white p-3 rounded border-l-4 border-red-500">
                                                     <p className="text-sm text-gray-700">
-                                                        <strong>No te arriesgues:</strong> Ninguna vida vale más que la tuya. 
+                                                        <strong>No te arriesgues:</strong> Ninguna vida vale más que la
+                                                        tuya.
                                                         Espera apoyo cuando sea necesario.
                                                     </p>
                                                 </div>
@@ -328,7 +362,8 @@ export default function SecurityOfPersonal() {
                                             <div className="bg-white p-4 rounded border-l-4 border-indigo-500">
                                                 <h4 className="font-bold text-indigo-700 mb-2">NOM-035-STPS-2018</h4>
                                                 <p className="text-sm text-gray-600 mb-2">
-                                                    Factores de riesgo psicosocial en el trabajo - Identificación, análisis y prevención.
+                                                    Factores de riesgo psicosocial en el trabajo - Identificación,
+                                                    análisis y prevención.
                                                 </p>
                                                 <ul className="text-xs text-gray-500 space-y-1">
                                                     <li>• Bienestar psicológico</li>
@@ -388,14 +423,16 @@ export default function SecurityOfPersonal() {
                                                     <li>• Cambio entre pacientes</li>
                                                 </ul>
                                                 <div className="mt-2 p-2 bg-blue-50 rounded text-xs text-blue-700">
-                                                    <strong>Uso:</strong> Contacto con sangre, fluidos corporales o superficies contaminadas
+                                                    <strong>Uso:</strong> Contacto con sangre, fluidos corporales o
+                                                    superficies contaminadas
                                                 </div>
                                             </div>
 
                                             <div className="bg-white p-4 rounded-lg shadow">
                                                 <div className="flex items-center mb-3">
                                                     <FaMask className="mr-2 text-green-600"/>
-                                                    <h4 className="font-bold text-green-700">Protección Respiratoria</h4>
+                                                    <h4 className="font-bold text-green-700">Protección
+                                                        Respiratoria</h4>
                                                 </div>
                                                 <ul className="text-sm text-gray-600 space-y-1">
                                                     <li>• Mascarilla quirúrgica</li>
@@ -404,7 +441,8 @@ export default function SecurityOfPersonal() {
                                                     <li>• Respirador completo</li>
                                                 </ul>
                                                 <div className="mt-2 p-2 bg-green-50 rounded text-xs text-green-700">
-                                                    <strong>Uso:</strong> Protección contra gotículas, aerosoles y contaminantes
+                                                    <strong>Uso:</strong> Protección contra gotículas, aerosoles y
+                                                    contaminantes
                                                 </div>
                                             </div>
 
@@ -452,7 +490,8 @@ export default function SecurityOfPersonal() {
                                                     <li>• Fácil descontaminación</li>
                                                 </ul>
                                                 <div className="mt-2 p-2 bg-orange-50 rounded text-xs text-orange-700">
-                                                    <strong>Uso:</strong> Protección contra fluidos y objetos punzocortantes
+                                                    <strong>Uso:</strong> Protección contra fluidos y objetos
+                                                    punzocortantes
                                                 </div>
                                             </div>
 
@@ -482,39 +521,61 @@ export default function SecurityOfPersonal() {
                                                 Colocación del EPP
                                             </h3>
                                             <div className="space-y-3">
-                                                <div className="flex items-center bg-white p-3 rounded border-l-4 border-green-500">
-                                                    <div className="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center text-sm mr-3">1</div>
+                                                <div
+                                                    className="flex items-center bg-white p-3 rounded border-l-4 border-green-500">
+                                                    <div
+                                                        className="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center text-sm mr-3">1
+                                                    </div>
                                                     <div>
-                                                        <h4 className="font-bold text-green-700 text-sm">Higiene de manos</h4>
-                                                        <p className="text-xs text-gray-600">Lavado con agua y jabón o gel antibacterial</p>
+                                                        <h4 className="font-bold text-green-700 text-sm">Higiene de
+                                                            manos</h4>
+                                                        <p className="text-xs text-gray-600">Lavado con agua y jabón o
+                                                            gel antibacterial</p>
                                                     </div>
                                                 </div>
-                                                <div className="flex items-center bg-white p-3 rounded border-l-4 border-green-500">
-                                                    <div className="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center text-sm mr-3">2</div>
+                                                <div
+                                                    className="flex items-center bg-white p-3 rounded border-l-4 border-green-500">
+                                                    <div
+                                                        className="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center text-sm mr-3">2
+                                                    </div>
                                                     <div>
                                                         <h4 className="font-bold text-green-700 text-sm">Bata/Traje</h4>
-                                                        <p className="text-xs text-gray-600">Cubrir torso desde cuello hasta rodillas</p>
+                                                        <p className="text-xs text-gray-600">Cubrir torso desde cuello
+                                                            hasta rodillas</p>
                                                     </div>
                                                 </div>
-                                                <div className="flex items-center bg-white p-3 rounded border-l-4 border-green-500">
-                                                    <div className="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center text-sm mr-3">3</div>
+                                                <div
+                                                    className="flex items-center bg-white p-3 rounded border-l-4 border-green-500">
+                                                    <div
+                                                        className="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center text-sm mr-3">3
+                                                    </div>
                                                     <div>
                                                         <h4 className="font-bold text-green-700 text-sm">Mascarilla</h4>
-                                                        <p className="text-xs text-gray-600">Ajustar sobre nariz y boca, sin tocar la parte frontal</p>
+                                                        <p className="text-xs text-gray-600">Ajustar sobre nariz y boca,
+                                                            sin tocar la parte frontal</p>
                                                     </div>
                                                 </div>
-                                                <div className="flex items-center bg-white p-3 rounded border-l-4 border-green-500">
-                                                    <div className="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center text-sm mr-3">4</div>
+                                                <div
+                                                    className="flex items-center bg-white p-3 rounded border-l-4 border-green-500">
+                                                    <div
+                                                        className="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center text-sm mr-3">4
+                                                    </div>
                                                     <div>
-                                                        <h4 className="font-bold text-green-700 text-sm">Protección ocular</h4>
-                                                        <p className="text-xs text-gray-600">Gafas o careta ajustadas correctamente</p>
+                                                        <h4 className="font-bold text-green-700 text-sm">Protección
+                                                            ocular</h4>
+                                                        <p className="text-xs text-gray-600">Gafas o careta ajustadas
+                                                            correctamente</p>
                                                     </div>
                                                 </div>
-                                                <div className="flex items-center bg-white p-3 rounded border-l-4 border-green-500">
-                                                    <div className="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center text-sm mr-3">5</div>
+                                                <div
+                                                    className="flex items-center bg-white p-3 rounded border-l-4 border-green-500">
+                                                    <div
+                                                        className="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center text-sm mr-3">5
+                                                    </div>
                                                     <div>
                                                         <h4 className="font-bold text-green-700 text-sm">Guantes</h4>
-                                                        <p className="text-xs text-gray-600">Cubrir puños de la bata, verificar integridad</p>
+                                                        <p className="text-xs text-gray-600">Cubrir puños de la bata,
+                                                            verificar integridad</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -526,39 +587,62 @@ export default function SecurityOfPersonal() {
                                                 Retiro del EPP
                                             </h3>
                                             <div className="space-y-3">
-                                                <div className="flex items-center bg-white p-3 rounded border-l-4 border-red-500">
-                                                    <div className="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center text-sm mr-3">1</div>
+                                                <div
+                                                    className="flex items-center bg-white p-3 rounded border-l-4 border-red-500">
+                                                    <div
+                                                        className="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center text-sm mr-3">1
+                                                    </div>
                                                     <div>
-                                                        <h4 className="font-bold text-red-700 text-sm">Guantes externos</h4>
-                                                        <p className="text-xs text-gray-600">Retirar sin tocar la superficie externa</p>
+                                                        <h4 className="font-bold text-red-700 text-sm">Guantes
+                                                            externos</h4>
+                                                        <p className="text-xs text-gray-600">Retirar sin tocar la
+                                                            superficie externa</p>
                                                     </div>
                                                 </div>
-                                                <div className="flex items-center bg-white p-3 rounded border-l-4 border-red-500">
-                                                    <div className="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center text-sm mr-3">2</div>
+                                                <div
+                                                    className="flex items-center bg-white p-3 rounded border-l-4 border-red-500">
+                                                    <div
+                                                        className="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center text-sm mr-3">2
+                                                    </div>
                                                     <div>
-                                                        <h4 className="font-bold text-red-700 text-sm">Protección ocular</h4>
-                                                        <p className="text-xs text-gray-600">Tomar desde la parte posterior</p>
+                                                        <h4 className="font-bold text-red-700 text-sm">Protección
+                                                            ocular</h4>
+                                                        <p className="text-xs text-gray-600">Tomar desde la parte
+                                                            posterior</p>
                                                     </div>
                                                 </div>
-                                                <div className="flex items-center bg-white p-3 rounded border-l-4 border-red-500">
-                                                    <div className="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center text-sm mr-3">3</div>
+                                                <div
+                                                    className="flex items-center bg-white p-3 rounded border-l-4 border-red-500">
+                                                    <div
+                                                        className="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center text-sm mr-3">3
+                                                    </div>
                                                     <div>
                                                         <h4 className="font-bold text-red-700 text-sm">Bata/Traje</h4>
-                                                        <p className="text-xs text-gray-600">Enrollar hacia adentro, no sacudir</p>
+                                                        <p className="text-xs text-gray-600">Enrollar hacia adentro, no
+                                                            sacudir</p>
                                                     </div>
                                                 </div>
-                                                <div className="flex items-center bg-white p-3 rounded border-l-4 border-red-500">
-                                                    <div className="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center text-sm mr-3">4</div>
+                                                <div
+                                                    className="flex items-center bg-white p-3 rounded border-l-4 border-red-500">
+                                                    <div
+                                                        className="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center text-sm mr-3">4
+                                                    </div>
                                                     <div>
                                                         <h4 className="font-bold text-red-700 text-sm">Mascarilla</h4>
-                                                        <p className="text-xs text-gray-600">Tocar solo las cintas, no la parte frontal</p>
+                                                        <p className="text-xs text-gray-600">Tocar solo las cintas, no
+                                                            la parte frontal</p>
                                                     </div>
                                                 </div>
-                                                <div className="flex items-center bg-white p-3 rounded border-l-4 border-red-500">
-                                                    <div className="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center text-sm mr-3">5</div>
+                                                <div
+                                                    className="flex items-center bg-white p-3 rounded border-l-4 border-red-500">
+                                                    <div
+                                                        className="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center text-sm mr-3">5
+                                                    </div>
                                                     <div>
-                                                        <h4 className="font-bold text-red-700 text-sm">Higiene final</h4>
-                                                        <p className="text-xs text-gray-600">Lavado de manos inmediato y completo</p>
+                                                        <h4 className="font-bold text-red-700 text-sm">Higiene
+                                                            final</h4>
+                                                        <p className="text-xs text-gray-600">Lavado de manos inmediato y
+                                                            completo</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -687,13 +771,14 @@ export default function SecurityOfPersonal() {
                                                 Estrés Prehospitalario
                                             </h3>
                                             <p className="text-gray-700 mb-3">
-                                                El trabajo en emergencias médicas es una de las profesiones con mayor estrés. 
-                                                La exposición constante a trauma, decisiones críticas y presión temporal 
+                                                El trabajo en emergencias médicas es una de las profesiones con mayor
+                                                estrés.
+                                                La exposición constante a trauma, decisiones críticas y presión temporal
                                                 puede afectar significativamente la salud mental.
                                             </p>
                                             <div className="bg-white p-3 rounded border-l-4 border-purple-500">
                                                 <p className="text-sm text-gray-600">
-                                                    <strong>Estadística:</strong> Los paramédicos tienen 1.39 veces más 
+                                                    <strong>Estadística:</strong> Los paramédicos tienen 1.39 veces más
                                                     probabilidad de desarrollar TEPT que la población general.
                                                 </p>
                                             </div>
@@ -761,7 +846,8 @@ export default function SecurityOfPersonal() {
                                                 </ul>
                                             </div>
                                             <div className="bg-white p-4 rounded border-l-4 border-purple-500">
-                                                <h4 className="font-bold text-purple-700 mb-2">Síntomas Conductuales</h4>
+                                                <h4 className="font-bold text-purple-700 mb-2">Síntomas
+                                                    Conductuales</h4>
                                                 <ul className="text-sm text-gray-600 space-y-1">
                                                     <li>• Aislamiento social</li>
                                                     <li>• Aumento en consumo de alcohol</li>
@@ -845,29 +931,34 @@ export default function SecurityOfPersonal() {
                                         <div className="grid md:grid-cols-2 gap-6">
                                             <div className="space-y-4">
                                                 <div className="bg-white p-4 rounded border-l-4 border-indigo-500">
-                                                    <h4 className="font-bold text-indigo-700 mb-2">Respiración 4-7-8</h4>
+                                                    <h4 className="font-bold text-indigo-700 mb-2">Respiración
+                                                        4-7-8</h4>
                                                     <ol className="text-sm text-gray-600 space-y-1">
                                                         <li>1. Inhala por 4 segundos</li>
                                                         <li>2. Mantén por 7 segundos</li>
                                                         <li>3. Exhala por 8 segundos</li>
                                                         <li>4. Repite 4 ciclos</li>
                                                     </ol>
-                                                    <p className="text-xs text-indigo-600 mt-2">Útil para ansiedad y antes de dormir</p>
+                                                    <p className="text-xs text-indigo-600 mt-2">Útil para ansiedad y
+                                                        antes de dormir</p>
                                                 </div>
                                                 <div className="bg-white p-4 rounded border-l-4 border-green-500">
-                                                    <h4 className="font-bold text-green-700 mb-2">Relajación Muscular</h4>
+                                                    <h4 className="font-bold text-green-700 mb-2">Relajación
+                                                        Muscular</h4>
                                                     <ol className="text-sm text-gray-600 space-y-1">
                                                         <li>1. Tensa músculos por 5 segundos</li>
                                                         <li>2. Relaja completamente</li>
                                                         <li>3. Comienza por pies, sube gradualmente</li>
                                                         <li>4. Incluye cara y cuello</li>
                                                     </ol>
-                                                    <p className="text-xs text-green-600 mt-2">Excelente para tensión física</p>
+                                                    <p className="text-xs text-green-600 mt-2">Excelente para tensión
+                                                        física</p>
                                                 </div>
                                             </div>
                                             <div className="space-y-4">
                                                 <div className="bg-white p-4 rounded border-l-4 border-purple-500">
-                                                    <h4 className="font-bold text-purple-700 mb-2">Técnica 5-4-3-2-1</h4>
+                                                    <h4 className="font-bold text-purple-700 mb-2">Técnica
+                                                        5-4-3-2-1</h4>
                                                     <ul className="text-sm text-gray-600 space-y-1">
                                                         <li>• 5 cosas que puedes ver</li>
                                                         <li>• 4 cosas que puedes tocar</li>
@@ -875,17 +966,20 @@ export default function SecurityOfPersonal() {
                                                         <li>• 2 cosas que puedes oler</li>
                                                         <li>• 1 cosa que puedes saborear</li>
                                                     </ul>
-                                                    <p className="text-xs text-purple-600 mt-2">Ideal para ataques de pánico</p>
+                                                    <p className="text-xs text-purple-600 mt-2">Ideal para ataques de
+                                                        pánico</p>
                                                 </div>
                                                 <div className="bg-white p-4 rounded border-l-4 border-orange-500">
-                                                    <h4 className="font-bold text-orange-700 mb-2">Mindfulness Básico</h4>
+                                                    <h4 className="font-bold text-orange-700 mb-2">Mindfulness
+                                                        Básico</h4>
                                                     <ul className="text-sm text-gray-600 space-y-1">
                                                         <li>• Enfócate en el momento presente</li>
                                                         <li>• Observa sin juzgar</li>
                                                         <li>• Acepta los pensamientos y emociones</li>
                                                         <li>• Practica 5-10 minutos diarios</li>
                                                     </ul>
-                                                    <p className="text-xs text-orange-600 mt-2">Reduce estrés crónico</p>
+                                                    <p className="text-xs text-orange-600 mt-2">Reduce estrés
+                                                        crónico</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -921,7 +1015,8 @@ export default function SecurityOfPersonal() {
                                                 </ul>
                                             </div>
                                             <div className="bg-white p-4 rounded">
-                                                <h4 className="font-bold text-red-700 mb-3">Estrategias de Prevención</h4>
+                                                <h4 className="font-bold text-red-700 mb-3">Estrategias de
+                                                    Prevención</h4>
                                                 <ul className="text-sm text-gray-600 space-y-1">
                                                     <li>• Rotación de turnos</li>
                                                     <li>• Pausas programadas</li>
@@ -950,12 +1045,12 @@ export default function SecurityOfPersonal() {
                                         </h3>
                                         <div className="bg-white p-4 rounded border-l-4 border-red-500 mb-4">
                                             <p className="text-gray-700 italic">
-                                                <strong>Escenario:</strong> 23:45 hrs. Colisión múltiple en autopista. 
-                                                Lluvia intensa, visibilidad reducida, tráfico pesado a alta velocidad. 
+                                                <strong>Escenario:</strong> 23:45 hrs. Colisión múltiple en autopista.
+                                                Lluvia intensa, visibilidad reducida, tráfico pesado a alta velocidad.
                                                 Dos vehículos volcados, uno en llamas. Reportan 4 víctimas.
                                             </p>
                                         </div>
-                                        
+
                                         <div className="grid md:grid-cols-2 gap-6">
                                             <div className="bg-white p-4 rounded">
                                                 <h4 className="font-bold text-red-700 mb-3 flex items-center">
@@ -965,7 +1060,8 @@ export default function SecurityOfPersonal() {
                                                 <ul className="space-y-2">
                                                     <li className="flex items-start text-gray-700">
                                                         <MdWarning className="mr-2 text-red-600 mt-0.5"/>
-                                                        <span className="text-sm">Tráfico vehicular a alta velocidad</span>
+                                                        <span
+                                                            className="text-sm">Tráfico vehicular a alta velocidad</span>
                                                     </li>
                                                     <li className="flex items-start text-gray-700">
                                                         <MdWarning className="mr-2 text-red-600 mt-0.5"/>
@@ -985,39 +1081,50 @@ export default function SecurityOfPersonal() {
                                                     </li>
                                                 </ul>
                                             </div>
-                                            
+
                                             <div className="bg-white p-4 rounded">
                                                 <h4 className="font-bold text-red-700 mb-3">Acciones Prioritarias</h4>
                                                 <ol className="space-y-2">
                                                     <li className="flex items-start text-gray-700">
-                                                        <div className="w-6 h-6 bg-red-600 text-white rounded-full flex items-center justify-center text-xs mr-2 mt-0.5">1</div>
+                                                        <div
+                                                            className="w-6 h-6 bg-red-600 text-white rounded-full flex items-center justify-center text-xs mr-2 mt-0.5">1
+                                                        </div>
                                                         <span className="text-sm">Solicitar apoyo policial inmediato para control de tráfico</span>
                                                     </li>
                                                     <li className="flex items-start text-gray-700">
-                                                        <div className="w-6 h-6 bg-red-600 text-white rounded-full flex items-center justify-center text-xs mr-2 mt-0.5">2</div>
+                                                        <div
+                                                            className="w-6 h-6 bg-red-600 text-white rounded-full flex items-center justify-center text-xs mr-2 mt-0.5">2
+                                                        </div>
                                                         <span className="text-sm">Colocarse chaleco reflectante y activar luces de emergencia</span>
                                                     </li>
                                                     <li className="flex items-start text-gray-700">
-                                                        <div className="w-6 h-6 bg-red-600 text-white rounded-full flex items-center justify-center text-xs mr-2 mt-0.5">3</div>
+                                                        <div
+                                                            className="w-6 h-6 bg-red-600 text-white rounded-full flex items-center justify-center text-xs mr-2 mt-0.5">3
+                                                        </div>
                                                         <span className="text-sm">Solicitar bomberos por incendio vehicular</span>
                                                     </li>
                                                     <li className="flex items-start text-gray-700">
-                                                        <div className="w-6 h-6 bg-red-600 text-white rounded-full flex items-center justify-center text-xs mr-2 mt-0.5">4</div>
+                                                        <div
+                                                            className="w-6 h-6 bg-red-600 text-white rounded-full flex items-center justify-center text-xs mr-2 mt-0.5">4
+                                                        </div>
                                                         <span className="text-sm">NO aproximarse hasta que la escena sea segura</span>
                                                     </li>
                                                     <li className="flex items-start text-gray-700">
-                                                        <div className="w-6 h-6 bg-red-600 text-white rounded-full flex items-center justify-center text-xs mr-2 mt-0.5">5</div>
+                                                        <div
+                                                            className="w-6 h-6 bg-red-600 text-white rounded-full flex items-center justify-center text-xs mr-2 mt-0.5">5
+                                                        </div>
                                                         <span className="text-sm">Establecer zona de seguridad 100m antes del accidente</span>
                                                     </li>
                                                 </ol>
                                             </div>
                                         </div>
-                                        
+
                                         <div className="mt-4 bg-red-100 p-3 rounded">
                                             <h4 className="font-bold text-red-800 mb-2">Lección Clave</h4>
                                             <p className="text-sm text-red-700">
-                                                <strong>"La escena no es segura hasta que esté confirmadamente segura."</strong> 
-                                                Nunca comprometas tu seguridad por la urgencia de atender pacientes. 
+                                                <strong>"La escena no es segura hasta que esté confirmadamente
+                                                    segura."</strong>
+                                                Nunca comprometas tu seguridad por la urgencia de atender pacientes.
                                                 Un rescatista herido no puede ayudar a nadie más.
                                             </p>
                                         </div>
@@ -1031,18 +1138,21 @@ export default function SecurityOfPersonal() {
                                         </h3>
                                         <div className="bg-white p-4 rounded border-l-4 border-blue-500 mb-4">
                                             <p className="text-gray-700 italic">
-                                                <strong>Escenario:</strong> Durante la atención de un paciente con hemorragia digestiva alta, 
-                                                el TUM sufre una salpicadura de sangre en el ojo derecho al momento que el paciente vomita. 
+                                                <strong>Escenario:</strong> Durante la atención de un paciente con
+                                                hemorragia digestiva alta,
+                                                el TUM sufre una salpicadura de sangre en el ojo derecho al momento que
+                                                el paciente vomita.
                                                 El paciente tiene antecedentes de hepatitis B.
                                             </p>
                                         </div>
-                                        
+
                                         <div className="grid md:grid-cols-2 gap-6">
                                             <div className="bg-white p-4 rounded">
                                                 <h4 className="font-bold text-blue-700 mb-3">Acciones Inmediatas</h4>
                                                 <div className="space-y-3">
                                                     <div className="bg-blue-50 p-3 rounded border-l-4 border-blue-500">
-                                                        <h5 className="font-bold text-blue-600 text-sm">1. Lavado Inmediato (Primeros 15 minutos)</h5>
+                                                        <h5 className="font-bold text-blue-600 text-sm">1. Lavado
+                                                            Inmediato (Primeros 15 minutos)</h5>
                                                         <ul className="text-xs text-gray-600 mt-1 space-y-1">
                                                             <li>• Irrigación abundante con solución salina estéril</li>
                                                             <li>• Si no disponible, usar agua limpia</li>
@@ -1051,7 +1161,8 @@ export default function SecurityOfPersonal() {
                                                         </ul>
                                                     </div>
                                                     <div className="bg-blue-50 p-3 rounded border-l-4 border-blue-500">
-                                                        <h5 className="font-bold text-blue-600 text-sm">2. Notificación</h5>
+                                                        <h5 className="font-bold text-blue-600 text-sm">2.
+                                                            Notificación</h5>
                                                         <ul className="text-xs text-gray-600 mt-1 space-y-1">
                                                             <li>• Informar inmediatamente al supervisor</li>
                                                             <li>• Documentar hora, lugar y tipo de exposición</li>
@@ -1060,19 +1171,23 @@ export default function SecurityOfPersonal() {
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div className="bg-white p-4 rounded">
-                                                <h4 className="font-bold text-blue-700 mb-3">Seguimiento Post-Exposición</h4>
+                                                <h4 className="font-bold text-blue-700 mb-3">Seguimiento
+                                                    Post-Exposición</h4>
                                                 <div className="space-y-3">
-                                                    <div className="bg-green-50 p-3 rounded border-l-4 border-green-500">
-                                                        <h5 className="font-bold text-green-600 text-sm">Evaluación Médica (&lt; 2 horas)</h5>
+                                                    <div
+                                                        className="bg-green-50 p-3 rounded border-l-4 border-green-500">
+                                                        <h5 className="font-bold text-green-600 text-sm">Evaluación
+                                                            Médica (&lt; 2 horas)</h5>
                                                         <ul className="text-xs text-gray-600 mt-1 space-y-1">
                                                             <li>• Acudir a urgencias del hospital base</li>
                                                             <li>• Llevar información del paciente fuente</li>
                                                             <li>• Evaluación por infectología</li>
                                                         </ul>
                                                     </div>
-                                                    <div className="bg-orange-50 p-3 rounded border-l-4 border-orange-500">
+                                                    <div
+                                                        className="bg-orange-50 p-3 rounded border-l-4 border-orange-500">
                                                         <h5 className="font-bold text-orange-600 text-sm">Laboratorios</h5>
                                                         <ul className="text-xs text-gray-600 mt-1 space-y-1">
                                                             <li>• Serología basal (VHB, VHC, VIH)</li>
@@ -1083,7 +1198,7 @@ export default function SecurityOfPersonal() {
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                         <div className="mt-4 grid md:grid-cols-2 gap-4">
                                             <div className="bg-yellow-100 p-3 rounded">
                                                 <h4 className="font-bold text-yellow-800 mb-2">Prevención</h4>
@@ -1095,7 +1210,8 @@ export default function SecurityOfPersonal() {
                                                 </ul>
                                             </div>
                                             <div className="bg-blue-100 p-3 rounded">
-                                                <h4 className="font-bold text-blue-800 mb-2">Documentación Requerida</h4>
+                                                <h4 className="font-bold text-blue-800 mb-2">Documentación
+                                                    Requerida</h4>
                                                 <ul className="text-sm text-blue-700 space-y-1">
                                                     <li>• Formato de exposición ocupacional</li>
                                                     <li>• Reporte de incidente</li>
@@ -1107,19 +1223,23 @@ export default function SecurityOfPersonal() {
                                     </div>
 
                                     {/* Caso 3: Estrés post-incidente */}
-                                    <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-lg shadow">
+                                    <div
+                                        className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-lg shadow">
                                         <h3 className="text-xl font-bold text-purple-800 mb-4 flex items-center">
                                             <FaBrain className="mr-2"/>
                                             Caso 3: Estrés Agudo Post-Incidente Crítico
                                         </h3>
                                         <div className="bg-white p-4 rounded border-l-4 border-purple-500 mb-4">
                                             <p className="text-gray-700 italic">
-                                                <strong>Escenario:</strong> Tras atender un accidente que involucró niños con múltiples 
-                                                víctimas fatales, un paramédico experimentado comienza a presentar insomnio, 
-                                                pesadillas recurrentes y evita turnos nocturnos. Su rendimiento laboral ha disminuido.
+                                                <strong>Escenario:</strong> Tras atender un accidente que involucró
+                                                niños con múltiples
+                                                víctimas fatales, un paramédico experimentado comienza a presentar
+                                                insomnio,
+                                                pesadillas recurrentes y evita turnos nocturnos. Su rendimiento laboral
+                                                ha disminuido.
                                             </p>
                                         </div>
-                                        
+
                                         <div className="grid md:grid-cols-3 gap-4">
                                             <div className="bg-white p-4 rounded">
                                                 <h4 className="font-bold text-purple-700 mb-3">Signos de Alerta</h4>
@@ -1146,12 +1266,14 @@ export default function SecurityOfPersonal() {
                                                     </li>
                                                 </ul>
                                             </div>
-                                            
+
                                             <div className="bg-white p-4 rounded">
-                                                <h4 className="font-bold text-purple-700 mb-3">Intervención Inmediata</h4>
+                                                <h4 className="font-bold text-purple-700 mb-3">Intervención
+                                                    Inmediata</h4>
                                                 <div className="space-y-2">
                                                     <div className="bg-purple-50 p-2 rounded text-sm">
-                                                        <strong>24-48 horas:</strong> Defusing - ventilación emocional informal
+                                                        <strong>24-48 horas:</strong> Defusing - ventilación emocional
+                                                        informal
                                                     </div>
                                                     <div className="bg-purple-50 p-2 rounded text-sm">
                                                         <strong>72 horas:</strong> CISD formal si los síntomas persisten
@@ -1164,7 +1286,7 @@ export default function SecurityOfPersonal() {
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div className="bg-white p-4 rounded">
                                                 <h4 className="font-bold text-purple-700 mb-3">Recursos de Apoyo</h4>
                                                 <ul className="text-sm text-gray-600 space-y-2">
@@ -1191,34 +1313,41 @@ export default function SecurityOfPersonal() {
                                                 </ul>
                                             </div>
                                         </div>
-                                        
+
                                         <div className="mt-4 bg-purple-100 p-3 rounded">
                                             <h4 className="font-bold text-purple-800 mb-2">Mensaje Importante</h4>
                                             <p className="text-sm text-purple-700">
-                                                Las reacciones de estrés post-incidente crítico son <strong>normales</strong> 
-                                                ante situaciones anormales. Buscar ayuda es signo de fortaleza, no de debilidad. 
-                                                El estigma asociado con la salud mental en servicios de emergencia debe ser eliminado.
+                                                Las reacciones de estrés post-incidente crítico
+                                                son <strong>normales</strong>
+                                                ante situaciones anormales. Buscar ayuda es signo de fortaleza, no de
+                                                debilidad.
+                                                El estigma asociado con la salud mental en servicios de emergencia debe
+                                                ser eliminado.
                                             </p>
                                         </div>
                                     </div>
 
                                     {/* Caso 4: Agresión en escena */}
-                                    <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-lg shadow">
+                                    <div
+                                        className="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-lg shadow">
                                         <h3 className="text-xl font-bold text-orange-800 mb-4 flex items-center">
                                             <FaUsers className="mr-2"/>
                                             Caso 4: Agresión y Violencia en Escena
                                         </h3>
                                         <div className="bg-white p-4 rounded border-l-4 border-orange-500 mb-4">
                                             <p className="text-gray-700 italic">
-                                                <strong>Escenario:</strong> Llamada por intoxicación etílica en zona conflictiva. 
-                                                Al llegar, el paciente está agresivo y los familiares muestran hostilidad hacia 
+                                                <strong>Escenario:</strong> Llamada por intoxicación etílica en zona
+                                                conflictiva.
+                                                Al llegar, el paciente está agresivo y los familiares muestran
+                                                hostilidad hacia
                                                 la ambulancia. Se observan personas sospechosas merodeando el área.
                                             </p>
                                         </div>
-                                        
+
                                         <div className="grid md:grid-cols-2 gap-6">
                                             <div className="bg-white p-4 rounded">
-                                                <h4 className="font-bold text-orange-700 mb-3">Evaluación de Seguridad</h4>
+                                                <h4 className="font-bold text-orange-700 mb-3">Evaluación de
+                                                    Seguridad</h4>
                                                 <div className="space-y-2">
                                                     <div className="bg-red-50 p-2 rounded text-sm">
                                                         <strong>Señales de peligro:</strong>
@@ -1230,13 +1359,15 @@ export default function SecurityOfPersonal() {
                                                         </ul>
                                                     </div>
                                                     <div className="bg-yellow-50 p-2 rounded text-sm">
-                                                        <strong>Decisión:</strong> NO ingresar hasta que policía asegure la escena
+                                                        <strong>Decisión:</strong> NO ingresar hasta que policía asegure
+                                                        la escena
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div className="bg-white p-4 rounded">
-                                                <h4 className="font-bold text-orange-700 mb-3">Protocolo de Seguridad</h4>
+                                                <h4 className="font-bold text-orange-700 mb-3">Protocolo de
+                                                    Seguridad</h4>
                                                 <ol className="text-sm text-gray-600 space-y-1">
                                                     <li>1. Mantener distancia segura (&gt; 2 cuadras)</li>
                                                     <li>2. Solicitar apoyo policial inmediato</li>
@@ -1248,7 +1379,7 @@ export default function SecurityOfPersonal() {
                                                 </ol>
                                             </div>
                                         </div>
-                                        
+
                                         <div className="mt-4 grid md:grid-cols-3 gap-4">
                                             <div className="bg-white p-3 rounded border-l-4 border-red-500">
                                                 <h4 className="font-bold text-red-700 mb-2">Nunca Hagas</h4>
@@ -1345,12 +1476,11 @@ export default function SecurityOfPersonal() {
                             </div>
                         </section>
                         {/* Foro de Discusión */}
-                        <ForumSection 
-                            pagina="security-of-personal" 
+                        <ForumSection
+                            pagina="security-of-personal"
                             titulo="Foro de Discusión - Security Of Personal"
                         />
 
-                        
 
                         {/* Referencias y Recursos */}
                         <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">

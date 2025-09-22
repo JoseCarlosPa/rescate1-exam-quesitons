@@ -3,8 +3,8 @@ import {FaEye} from "react-icons/fa";
 import {BsLightbulb} from "react-icons/bs";
 import {MdCheckCircle} from "react-icons/md";
 
-export default function Practice(){
-    return(
+export default function Practice() {
+    return (
         <div className="space-y-8">
             <div className="bg-gradient-to-r from-blue-50 to-green-50 p-6 rounded-lg border">
                 <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
@@ -20,7 +20,9 @@ export default function Practice(){
             {/* Caso 1: Hipoglucemia severa */}
             <div className="bg-red-50 border border-red-200 rounded-lg p-6">
                 <div className="flex items-center mb-4">
-                    <div className="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3">1</div>
+                    <div
+                        className="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3">1
+                    </div>
                     <h3 className="text-xl font-semibold text-red-700">Caso Clínico: Hipoglucemia Severa</h3>
                 </div>
 
@@ -67,23 +69,28 @@ export default function Practice(){
                             </h4>
                             <div className="space-y-3 text-sm">
                                 <div className="flex items-center">
-                                    <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs font-medium mr-2">A</span>
+                                    <span
+                                        className="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs font-medium mr-2">A</span>
                                     <span>Vía aérea permeable, sin secreciones</span>
                                 </div>
                                 <div className="flex items-center">
-                                    <span className="bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-medium mr-2">B</span>
+                                    <span
+                                        className="bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-medium mr-2">B</span>
                                     <span>FR: 16/min, SpO₂: 97%, sin ruidos anormales</span>
                                 </div>
                                 <div className="flex items-center">
-                                    <span className="bg-red-100 text-red-700 px-2 py-1 rounded text-xs font-medium mr-2">C</span>
+                                    <span
+                                        className="bg-red-100 text-red-700 px-2 py-1 rounded text-xs font-medium mr-2">C</span>
                                     <span>FC: 110/min, TA: 100/60 mmHg, pulso débil</span>
                                 </div>
                                 <div className="flex items-center">
-                                    <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs font-medium mr-2">D</span>
+                                    <span
+                                        className="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs font-medium mr-2">D</span>
                                     <span>Glasgow 6 (E1V1M4), pupilas reactivas</span>
                                 </div>
                                 <div className="flex items-center">
-                                    <span className="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-xs font-medium mr-2">E</span>
+                                    <span
+                                        className="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-xs font-medium mr-2">E</span>
                                     <span>Glucosa capilar: 35 mg/dL, T° 36.2°C</span>
                                 </div>
                             </div>
@@ -93,23 +100,28 @@ export default function Practice(){
                             <h4 className="font-semibold text-green-600 mb-3">Manejo Correcto Paso a Paso</h4>
                             <ol className="space-y-2 text-sm">
                                 <li className="flex items-start">
-                                    <span className="bg-green-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">1</span>
+                                    <span
+                                        className="bg-green-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">1</span>
                                     <span>Posición lateral de seguridad (proteger vía aérea)</span>
                                 </li>
                                 <li className="flex items-start">
-                                    <span className="bg-green-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">2</span>
+                                    <span
+                                        className="bg-green-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">2</span>
                                     <span><strong>NO</strong> administrar glucosa oral (riesgo aspiración)</span>
                                 </li>
                                 <li className="flex items-start">
-                                    <span className="bg-green-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">3</span>
+                                    <span
+                                        className="bg-green-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">3</span>
                                     <span>Glucagón 1mg IM si está autorizado</span>
                                 </li>
                                 <li className="flex items-start">
-                                    <span className="bg-green-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">4</span>
+                                    <span
+                                        className="bg-green-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">4</span>
                                     <span>Traslado inmediato con monitoreo continuo</span>
                                 </li>
                                 <li className="flex items-start">
-                                    <span className="bg-green-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">5</span>
+                                    <span
+                                        className="bg-green-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">5</span>
                                     <span>Reevaluar glucosa y estado mental cada 5 min</span>
                                 </li>
                             </ol>
@@ -134,8 +146,11 @@ export default function Practice(){
             {/* Caso 2: Cetoacidosis diabética */}
             <div className="bg-orange-50 border border-orange-200 rounded-lg p-6">
                 <div className="flex items-center mb-4">
-                    <div className="bg-orange-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3">2</div>
-                    <h3 className="text-xl font-semibold text-orange-700">Caso Clínico: Cetoacidosis Diabética (CAD)</h3>
+                    <div
+                        className="bg-orange-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3">2
+                    </div>
+                    <h3 className="text-xl font-semibold text-orange-700">Caso Clínico: Cetoacidosis Diabética
+                        (CAD)</h3>
                 </div>
 
                 <div className="grid lg:grid-cols-2 gap-6">
@@ -189,7 +204,9 @@ export default function Practice(){
             {/* Caso 3: Crisis de células falciformes */}
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
                 <div className="flex items-center mb-4">
-                    <div className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3">3</div>
+                    <div
+                        className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3">3
+                    </div>
                     <h3 className="text-xl font-semibold text-blue-700">Caso Clínico: Crisis Falciforme</h3>
                 </div>
 
@@ -222,7 +239,9 @@ export default function Practice(){
             {/* Caso 4: Hemofilia con sangrado */}
             <div className="bg-purple-50 border border-purple-200 rounded-lg p-6">
                 <div className="flex items-center mb-4">
-                    <div className="bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3">4</div>
+                    <div
+                        className="bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3">4
+                    </div>
                     <h3 className="text-xl font-semibold text-purple-700">Caso Clínico: Hemofilia con Sangrado</h3>
                 </div>
 
@@ -269,7 +288,8 @@ export default function Practice(){
                         <div className="space-y-2 text-sm">
                             <div className="bg-white p-3 rounded">
                                 <p className="font-medium">¿Cuándo NO dar glucosa oral?</p>
-                                <p className="text-gray-600 text-xs mt-1">Cuando el paciente está inconsciente o no puede tragar</p>
+                                <p className="text-gray-600 text-xs mt-1">Cuando el paciente está inconsciente o no
+                                    puede tragar</p>
                             </div>
                             <div className="bg-white p-3 rounded">
                                 <p className="font-medium">Signo patognomónico de CAD:</p>

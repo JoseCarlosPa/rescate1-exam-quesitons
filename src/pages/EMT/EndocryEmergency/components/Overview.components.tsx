@@ -5,7 +5,7 @@ import {FiActivity, FiAlertTriangle} from "react-icons/fi";
 import {GiMedicines, GiTestTubes} from "react-icons/gi";
 
 export default function Overview() {
-    return(
+    return (
         <div className="space-y-8">
             {/* Importancia crítica */}
             <div className="bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-red-500 p-6 rounded-lg">

@@ -1,10 +1,11 @@
 import {GiHeatHaze, GiIceCube, GiPoisonBottle, GiSpiderWeb} from "react-icons/gi";
 import {BsDropletHalf} from "react-icons/bs";
 
-export default function Types(){
-    return(
+export default function Types() {
+    return (
         <div className="space-y-8">
-            <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2">Clasificación de Emergencias Ambientales</h2>
+            <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2">Clasificación de Emergencias
+                Ambientales</h2>
 
             {/* Emergencias por temperatura */}
             <div className="grid lg:grid-cols-2 gap-6">

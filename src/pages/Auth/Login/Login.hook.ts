@@ -1,11 +1,11 @@
-import { toast } from "sonner";
+import {toast} from "sonner";
 
 interface FirebaseError {
     code: string;
     message: string;
 }
 
-export function useLogin(){
+export function useLogin() {
     function handleFirebaseError(error: FirebaseError) {
         switch (error.code) {
             case 'auth/user-not-found':
@@ -34,7 +34,7 @@ export function useLogin(){
         }
     }
 
-    return{
+    return {
         handleFirebaseError
     }
 }

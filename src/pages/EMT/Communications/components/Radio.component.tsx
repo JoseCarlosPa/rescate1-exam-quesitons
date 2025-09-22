@@ -3,12 +3,14 @@ import {BsChatDots} from "react-icons/bs";
 import {MdHeadset, MdRecordVoiceOver} from "react-icons/md";
 import {AiOutlineWarning} from "react-icons/ai";
 
-export default  function Radio(){
-    return(
+export default function Radio() {
+    return (
         <div className="space-y-6">
-            <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Comunicación por radio y reporte verbal</h2>
+            <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Comunicación por radio y reporte
+                verbal</h2>
             <p className="text-gray-600 mb-6">
-                La radio es tu línea de vida en campo. Una comunicación efectiva por radio puede acelerar el tratamiento y salvar vidas.
+                La radio es tu línea de vida en campo. Una comunicación efectiva por radio puede acelerar el tratamiento
+                y salvar vidas.
             </p>
 
             <div className="grid md:grid-cols-2 gap-6 mb-6">
@@ -82,13 +84,20 @@ export default  function Radio(){
                 </h3>
                 <div className="bg-white p-4 rounded-lg border-l-4 border-purple-400">
                     <div className="space-y-2 text-sm">
-                        <p><strong className="text-purple-800">TAMP:</strong> <span className="text-gray-700">"Hospital Central, ambulancia 15"</span></p>
-                        <p><strong className="text-purple-800">Hospital:</strong> <span className="text-gray-700">"Ambulancia 15, Hospital Central, adelante"</span></p>
-                        <p><strong className="text-purple-800">TAMP:</strong> <span className="text-gray-700">"Hospital Central, tenemos masculino de 58 años con dolor torácico opresivo de 30 minutos de evolución."</span></p>
-                        <p className="ml-4 text-gray-600">"Antecedentes: hipertensión, diabetes, alérgico a penicilina, toma metformina y enalapril."</p>
-                        <p className="ml-4 text-gray-600">"Signos vitales: FC 110, PA 160/95, FR 24, SatO2 94% ambiente. Paciente diaforético, dolor 8/10."</p>
-                        <p className="ml-4 text-gray-600">"Administrado oxígeno 4L, nitroglicerina sublingual, aspirina 325mg. ETA 8 minutos."</p>
-                        <p><strong className="text-purple-800">Hospital:</strong> <span className="text-gray-700">"Copiado ambulancia 15, activando protocolo IAM, trauma 1 preparado"</span></p>
+                        <p><strong className="text-purple-800">TAMP:</strong> <span className="text-gray-700">"Hospital Central, ambulancia 15"</span>
+                        </p>
+                        <p><strong className="text-purple-800">Hospital:</strong> <span className="text-gray-700">"Ambulancia 15, Hospital Central, adelante"</span>
+                        </p>
+                        <p><strong className="text-purple-800">TAMP:</strong> <span className="text-gray-700">"Hospital Central, tenemos masculino de 58 años con dolor torácico opresivo de 30 minutos de evolución."</span>
+                        </p>
+                        <p className="ml-4 text-gray-600">"Antecedentes: hipertensión, diabetes, alérgico a penicilina,
+                            toma metformina y enalapril."</p>
+                        <p className="ml-4 text-gray-600">"Signos vitales: FC 110, PA 160/95, FR 24, SatO2 94% ambiente.
+                            Paciente diaforético, dolor 8/10."</p>
+                        <p className="ml-4 text-gray-600">"Administrado oxígeno 4L, nitroglicerina sublingual, aspirina
+                            325mg. ETA 8 minutos."</p>
+                        <p><strong className="text-purple-800">Hospital:</strong> <span className="text-gray-700">"Copiado ambulancia 15, activando protocolo IAM, trauma 1 preparado"</span>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -148,8 +157,10 @@ export default  function Radio(){
             <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
                 <h3 className="text-lg font-semibold text-yellow-800 mb-2">⚡ Comunicación en situaciones críticas</h3>
                 <p className="text-yellow-700 text-sm">
-                    <strong>En emergencias extremas:</strong> Usa lenguaje claro y directo. "EMERGENCIA, EMERGENCIA" para prioridad máxima.
-                    Reporta estado del paciente, recursos necesarios y ETA. Mantén la calma en tu voz para transmitir confianza al equipo receptor.
+                    <strong>En emergencias extremas:</strong> Usa lenguaje claro y directo. "EMERGENCIA, EMERGENCIA"
+                    para prioridad máxima.
+                    Reporta estado del paciente, recursos necesarios y ETA. Mantén la calma en tu voz para transmitir
+                    confianza al equipo receptor.
                 </p>
             </div>
         </div>

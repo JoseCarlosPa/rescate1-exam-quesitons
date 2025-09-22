@@ -1,9 +1,9 @@
-import { FaExclamationTriangle, FaStethoscope, FaAmbulance } from "react-icons/fa";
-import {  MdOutlineTimer, MdWarning, MdPerson } from "react-icons/md";
-import { FaDroplet } from "react-icons/fa6";
-import { BsShield, BsLightbulb } from "react-icons/bs";
-import { GiStomach, GiKidneys } from "react-icons/gi";
-import { RiAlarmWarningLine } from "react-icons/ri";
+import {FaAmbulance, FaExclamationTriangle, FaStethoscope} from "react-icons/fa";
+import {MdOutlineTimer, MdPerson, MdWarning} from "react-icons/md";
+import {FaDroplet} from "react-icons/fa6";
+import {BsLightbulb, BsShield} from "react-icons/bs";
+import {GiKidneys, GiStomach} from "react-icons/gi";
+import {RiAlarmWarningLine} from "react-icons/ri";
 
 export default function Overview() {
     return (
@@ -11,12 +11,15 @@ export default function Overview() {
             {/* Introducción */}
             <div className="bg-gradient-to-r from-orange-50 to-red-50 border-l-4 border-orange-500 p-6 rounded-lg">
                 <div className="flex items-center mb-4">
-                    <RiAlarmWarningLine className="w-8 h-8 text-orange-500 mr-3" />
+                    <RiAlarmWarningLine className="w-8 h-8 text-orange-500 mr-3"/>
                     <h2 className="text-2xl font-bold text-orange-700">Emergencias Gastrointestinales y Urológicas</h2>
                 </div>
                 <p className="text-gray-800 leading-relaxed text-lg mb-4">
-                    El dolor abdominal es una <strong>causa común</strong> de llamadas a emergencias, pero identificar su causa exacta es difícil incluso para médicos.
-                    Como <span className="text-orange-600 font-bold">Proveedor de Atención Prehospitalaria (PAP)</span>, tu papel es reconocer condiciones potencialmente mortales y actuar con rapidez, más que diagnosticar con precisión.
+                    El dolor abdominal es una <strong>causa común</strong> de llamadas a emergencias, pero identificar
+                    su causa exacta es difícil incluso para médicos.
+                    Como <span className="text-orange-600 font-bold">Proveedor de Atención Prehospitalaria (PAP)</span>,
+                    tu papel es reconocer condiciones potencialmente mortales y actuar con rapidez, más que diagnosticar
+                    con precisión.
                 </p>
                 <div className="bg-white p-4 rounded-lg shadow-sm">
                     <h3 className="font-bold text-orange-600 mb-2">Objetivo Principal del PAP:</h3>
@@ -32,13 +35,13 @@ export default function Overview() {
             {/* Sistemas involucrados */}
             <div>
                 <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
-                    <BsShield className="w-6 h-6 mr-2 text-orange-500" />
+                    <BsShield className="w-6 h-6 mr-2 text-orange-500"/>
                     Sistemas Anatómicos Involucrados
                 </h2>
                 <div className="grid md:grid-cols-3 gap-6">
                     <div className="bg-gradient-to-b from-orange-50 to-orange-100 p-6 rounded-lg border">
                         <div className="flex items-center mb-3">
-                            <GiStomach className="w-8 h-8 text-orange-600 mr-2" />
+                            <GiStomach className="w-8 h-8 text-orange-600 mr-2"/>
                             <h3 className="text-xl font-bold text-orange-700">Gastrointestinal</h3>
                         </div>
                         <ul className="text-sm text-gray-700 space-y-1">
@@ -52,7 +55,7 @@ export default function Overview() {
 
                     <div className="bg-gradient-to-b from-blue-50 to-blue-100 p-6 rounded-lg border">
                         <div className="flex items-center mb-3">
-                            <GiKidneys className="w-8 h-8 text-blue-600 mr-2" />
+                            <GiKidneys className="w-8 h-8 text-blue-600 mr-2"/>
                             <h3 className="text-xl font-bold text-blue-700">Urinario</h3>
                         </div>
                         <ul className="text-sm text-gray-700 space-y-1">
@@ -65,11 +68,12 @@ export default function Overview() {
 
                     <div className="bg-gradient-to-b from-purple-50 to-purple-100 p-6 rounded-lg border">
                         <div className="flex items-center mb-3">
-                            <MdPerson className="w-8 h-8 text-purple-600 mr-2" />
+                            <MdPerson className="w-8 h-8 text-purple-600 mr-2"/>
                             <h3 className="text-xl font-bold text-purple-700">Reproductor</h3>
                         </div>
                         <p className="text-sm text-gray-700">
-                            Centrado en emergencias uroginecológicas y complicaciones reproductivas que requieren atención inmediata.
+                            Centrado en emergencias uroginecológicas y complicaciones reproductivas que requieren
+                            atención inmediata.
                         </p>
                     </div>
                 </div>
@@ -78,11 +82,12 @@ export default function Overview() {
             {/* Abdomen Agudo - Concepto Clave */}
             <div className="bg-red-50 border border-red-200 rounded-lg p-6">
                 <div className="flex items-center mb-4">
-                    <FaExclamationTriangle className="w-6 h-6 text-red-500 mr-2" />
+                    <FaExclamationTriangle className="w-6 h-6 text-red-500 mr-2"/>
                     <h3 className="text-xl font-bold text-red-700">Abdomen Agudo - Concepto Crítico</h3>
                 </div>
                 <p className="text-gray-800 mb-4">
-                    <strong>Definición:</strong> Dolor abdominal repentino asociado a irritación peritoneal que requiere tratamiento urgente.
+                    <strong>Definición:</strong> Dolor abdominal repentino asociado a irritación peritoneal que requiere
+                    tratamiento urgente.
                 </p>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                     <div className="bg-white p-4 rounded shadow-sm">
@@ -111,7 +116,7 @@ export default function Overview() {
             {/* Tipos de dolor abdominal */}
             <div>
                 <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
-                    <FaStethoscope className="w-6 h-6 mr-2 text-orange-500" />
+                    <FaStethoscope className="w-6 h-6 mr-2 text-orange-500"/>
                     Tipos de Dolor Abdominal
                 </h2>
                 <div className="grid md:grid-cols-3 gap-6">
@@ -139,7 +144,7 @@ export default function Overview() {
             {/* Evaluación del dolor */}
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
                 <div className="flex items-center mb-4">
-                    <BsLightbulb className="w-6 h-6 text-blue-500 mr-2" />
+                    <BsLightbulb className="w-6 h-6 text-blue-500 mr-2"/>
                     <h3 className="text-xl font-bold text-blue-700">Evaluación Integral del Dolor</h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
@@ -168,27 +173,27 @@ export default function Overview() {
             {/* Banderas rojas */}
             <div className="bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-red-500 p-6 rounded-lg">
                 <div className="flex items-center mb-4">
-                    <MdWarning className="w-8 h-8 text-red-500 mr-3" />
+                    <MdWarning className="w-8 h-8 text-red-500 mr-3"/>
                     <h2 className="text-2xl font-bold text-red-700">Banderas Rojas - Transporte Inmediato</h2>
                 </div>
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
                     <div className="bg-white p-4 rounded shadow-sm text-center">
-                        <MdOutlineTimer className="w-8 h-8 text-red-500 mx-auto mb-2" />
+                        <MdOutlineTimer className="w-8 h-8 text-red-500 mx-auto mb-2"/>
                         <p className="font-bold text-red-600">Signos de Shock</p>
                         <p className="text-sm">Hipotensión, taquicardia, piel fría</p>
                     </div>
                     <div className="bg-white p-4 rounded shadow-sm text-center">
-                        <FaDroplet className="w-8 h-8 text-red-500 mx-auto mb-2" />
+                        <FaDroplet className="w-8 h-8 text-red-500 mx-auto mb-2"/>
                         <p className="font-bold text-red-600">Abdomen en Tabla</p>
                         <p className="text-sm">Rigidez muscular involuntaria</p>
                     </div>
                     <div className="bg-white p-4 rounded shadow-sm text-center">
-                        <MdWarning className="w-8 h-8 text-red-500 mx-auto mb-2" />
+                        <MdWarning className="w-8 h-8 text-red-500 mx-auto mb-2"/>
                         <p className="font-bold text-red-600">Hemorragia</p>
                         <p className="text-sm">Hematemesis, melena, hematuria</p>
                     </div>
                     <div className="bg-white p-4 rounded shadow-sm text-center">
-                        <FaAmbulance className="w-8 h-8 text-red-500 mx-auto mb-2" />
+                        <FaAmbulance className="w-8 h-8 text-red-500 mx-auto mb-2"/>
                         <p className="font-bold text-red-600">Masa Pulsátil</p>
                         <p className="text-sm">Sospecha de AAA</p>
                     </div>

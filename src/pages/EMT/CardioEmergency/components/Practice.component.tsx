@@ -1,7 +1,7 @@
 import {FiUser} from "react-icons/fi";
 
-export default function Practice(){
-    return(
+export default function Practice() {
+    return (
         <div className="space-y-8">
             <div>
                 <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
@@ -17,10 +17,14 @@ export default function Practice(){
                             <h4 className="font-semibold text-red-800 mb-3">Presentación:</h4>
                             <div className="bg-white p-4 rounded border">
                                 <p className="text-gray-700 mb-2"><strong>Paciente:</strong> Hombre, 58 años</p>
-                                <p className="text-gray-700 mb-2"><strong>Motivo:</strong> Dolor torácico intenso hace 45 minutos</p>
-                                <p className="text-gray-700 mb-2"><strong>Síntomas:</strong> Dolor opresivo retroesternal, irradiación a brazo izquierdo, diaforesis, náusea</p>
-                                <p className="text-gray-700 mb-2"><strong>Antecedentes:</strong> Hipertensión, diabetes, tabaquismo</p>
-                                <p className="text-gray-700"><strong>Signos vitales:</strong> PA 140/90, FC 95, FR 22, SatO₂ 96%</p>
+                                <p className="text-gray-700 mb-2"><strong>Motivo:</strong> Dolor torácico intenso hace
+                                    45 minutos</p>
+                                <p className="text-gray-700 mb-2"><strong>Síntomas:</strong> Dolor opresivo
+                                    retroesternal, irradiación a brazo izquierdo, diaforesis, náusea</p>
+                                <p className="text-gray-700 mb-2"><strong>Antecedentes:</strong> Hipertensión, diabetes,
+                                    tabaquismo</p>
+                                <p className="text-gray-700"><strong>Signos vitales:</strong> PA 140/90, FC 95, FR 22,
+                                    SatO₂ 96%</p>
                             </div>
                         </div>
                         <div>
@@ -40,7 +44,8 @@ export default function Practice(){
                         </div>
                     </div>
                     <div className="mt-4 p-3 bg-red-100 rounded">
-                        <p className="text-sm text-red-800"><strong>Tiempo puerta-balón objetivo:</strong> &lt;90 minutos. Tu rapidez en el diagnóstico y traslado es crucial.</p>
+                        <p className="text-sm text-red-800"><strong>Tiempo puerta-balón objetivo:</strong> &lt;90
+                            minutos. Tu rapidez en el diagnóstico y traslado es crucial.</p>
                     </div>
                 </div>
 
@@ -52,10 +57,13 @@ export default function Practice(){
                             <h4 className="font-semibold text-gray-800 mb-3">Escenario:</h4>
                             <div className="bg-white p-4 rounded border">
                                 <p className="text-gray-700 mb-2"><strong>Paciente:</strong> Mujer, 65 años</p>
-                                <p className="text-gray-700 mb-2"><strong>Situación:</strong> Colapso súbito en domicilio</p>
-                                <p className="text-gray-700 mb-2"><strong>Hallazgos:</strong> Inconsciente, sin respiración, sin pulso</p>
+                                <p className="text-gray-700 mb-2"><strong>Situación:</strong> Colapso súbito en
+                                    domicilio</p>
+                                <p className="text-gray-700 mb-2"><strong>Hallazgos:</strong> Inconsciente, sin
+                                    respiración, sin pulso</p>
                                 <p className="text-gray-700 mb-2"><strong>Monitor:</strong> Fibrilación ventricular</p>
-                                <p className="text-gray-700"><strong>Tiempo de colapso:</strong> 5 minutos (estimado por familiar)</p>
+                                <p className="text-gray-700"><strong>Tiempo de colapso:</strong> 5 minutos (estimado por
+                                    familiar)</p>
                             </div>
                         </div>
                         <div>
@@ -76,10 +84,12 @@ export default function Practice(){
                     </div>
                     <div className="mt-4 grid md:grid-cols-2 gap-4">
                         <div className="p-3 bg-green-100 rounded">
-                            <p className="text-sm text-green-800"><strong>Meta:</strong> Tiempo desde colapso hasta primera descarga &lt;5 minutos</p>
+                            <p className="text-sm text-green-800"><strong>Meta:</strong> Tiempo desde colapso hasta
+                                primera descarga &lt;5 minutos</p>
                         </div>
                         <div className="p-3 bg-blue-100 rounded">
-                            <p className="text-sm text-blue-800"><strong>Calidad RCP:</strong> 100-120/min, 5-6cm profundidad, retroceso completo</p>
+                            <p className="text-sm text-blue-800"><strong>Calidad RCP:</strong> 100-120/min, 5-6cm
+                                profundidad, retroceso completo</p>
                         </div>
                     </div>
                 </div>
@@ -93,9 +103,12 @@ export default function Practice(){
                             <div className="bg-white p-4 rounded border">
                                 <p className="text-gray-700 mb-2"><strong>Paciente:</strong> Hombre, 72 años</p>
                                 <p className="text-gray-700 mb-2"><strong>Motivo:</strong> Disnea severa y ortopnea</p>
-                                <p className="text-gray-700 mb-2"><strong>Síntomas:</strong> No puede caminar, disnea paroxística nocturna</p>
-                                <p className="text-gray-700 mb-2"><strong>Examen físico:</strong> Estertores bibasales, edema en MMII, YVD</p>
-                                <p className="text-gray-700"><strong>Signos vitales:</strong> PA 180/110, FC 115, FR 28, SatO₂ 88%</p>
+                                <p className="text-gray-700 mb-2"><strong>Síntomas:</strong> No puede caminar, disnea
+                                    paroxística nocturna</p>
+                                <p className="text-gray-700 mb-2"><strong>Examen físico:</strong> Estertores bibasales,
+                                    edema en MMII, YVD</p>
+                                <p className="text-gray-700"><strong>Signos vitales:</strong> PA 180/110, FC 115, FR 28,
+                                    SatO₂ 88%</p>
                             </div>
                         </div>
                         <div>
@@ -114,7 +127,8 @@ export default function Practice(){
                         </div>
                     </div>
                     <div className="mt-4 p-3 bg-blue-100 rounded">
-                        <p className="text-sm text-blue-800"><strong>Clave:</strong> La posición sentado y el O₂ son prioritarios. El paciente puede descompensarse rápidamente.</p>
+                        <p className="text-sm text-blue-800"><strong>Clave:</strong> La posición sentado y el O₂ son
+                            prioritarios. El paciente puede descompensarse rápidamente.</p>
                     </div>
                 </div>
 
@@ -123,20 +137,27 @@ export default function Practice(){
                     <h3 className="text-xl font-bold text-green-700 mb-4">Preguntas de Autoevaluación</h3>
                     <div className="space-y-4">
                         <div className="bg-white p-4 rounded border">
-                            <p className="font-medium text-gray-800 mb-2">1. ¿Cuál es la primera prioridad en un paciente con sospecha de SCA?</p>
-                            <p className="text-sm text-gray-600">Respuesta: ECG de 12 derivaciones en los primeros 10 minutos para identificar STEMI</p>
+                            <p className="font-medium text-gray-800 mb-2">1. ¿Cuál es la primera prioridad en un
+                                paciente con sospecha de SCA?</p>
+                            <p className="text-sm text-gray-600">Respuesta: ECG de 12 derivaciones en los primeros 10
+                                minutos para identificar STEMI</p>
                         </div>
                         <div className="bg-white p-4 rounded border">
-                            <p className="font-medium text-gray-800 mb-2">2. ¿Cuándo NO debes dar nitroglicerina en un paciente con dolor torácico?</p>
-                            <p className="text-sm text-gray-600">Respuesta: PA sistólica &lt;100 mmHg, uso reciente de sildenafil, sospecha de infarto de VD</p>
+                            <p className="font-medium text-gray-800 mb-2">2. ¿Cuándo NO debes dar nitroglicerina en un
+                                paciente con dolor torácico?</p>
+                            <p className="text-sm text-gray-600">Respuesta: PA sistólica &lt;100 mmHg, uso reciente de
+                                sildenafil, sospecha de infarto de VD</p>
                         </div>
                         <div className="bg-white p-4 rounded border">
-                            <p className="font-medium text-gray-800 mb-2">3. ¿Cuál es la profundidad correcta de compresiones en RCP para adultos?</p>
+                            <p className="font-medium text-gray-800 mb-2">3. ¿Cuál es la profundidad correcta de
+                                compresiones en RCP para adultos?</p>
                             <p className="text-sm text-gray-600">Respuesta: 5-6 cm (al menos 5 cm, no más de 6 cm)</p>
                         </div>
                         <div className="bg-white p-4 rounded border">
-                            <p className="font-medium text-gray-800 mb-2">4. ¿Qué posición es ideal para un paciente con edema pulmonar agudo?</p>
-                            <p className="text-sm text-gray-600">Respuesta: Sentado (Fowler 90°) para reducir retorno venoso y mejorar ventilación</p>
+                            <p className="font-medium text-gray-800 mb-2">4. ¿Qué posición es ideal para un paciente con
+                                edema pulmonar agudo?</p>
+                            <p className="text-sm text-gray-600">Respuesta: Sentado (Fowler 90°) para reducir retorno
+                                venoso y mejorar ventilación</p>
                         </div>
                     </div>
                 </div>

@@ -4,7 +4,7 @@ import {BsLightbulb, BsShield} from "react-icons/bs";
 import {FiAlertTriangle, FiEye, FiUser} from "react-icons/fi";
 
 export default function Overview() {
-    return(
+    return (
         <div className="space-y-8">
             {/* Importancia crítica */}
             <div
@@ -239,7 +239,8 @@ export default function Overview() {
                 </div>
                 <div className="mt-4 bg-red-100 p-4 rounded-lg border border-red-300">
                     <p className="text-red-800 font-semibold text-center">
-                        ⚠️ IMPORTANCIA CLÍNICA: Indica compromiso neurológico grave o perfusión cerebral deficiente - Requiere intervención inmediata
+                        ⚠️ IMPORTANCIA CLÍNICA: Indica compromiso neurológico grave o perfusión cerebral deficiente -
+                        Requiere intervención inmediata
                     </p>
                 </div>
             </div>

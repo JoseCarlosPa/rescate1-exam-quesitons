@@ -1,15 +1,15 @@
 import {NavLink, useLocation} from "react-router";
 import {tProvidersProps} from "./Layout.types.ts";
 import {AllRoutes} from "../../components/Router/Router.constants.ts";
-import { LayoutContext } from "./Layout.context.tsx";
-import { useAuth } from "../AuthProvider";
-import { FaUser, FaSignOutAlt, FaCog } from "react-icons/fa";
-import { useState, useEffect, useRef } from "react";
+import {LayoutContext} from "./Layout.context.tsx";
+import {useAuth} from "../AuthProvider";
+import {FaCog, FaSignOutAlt, FaUser} from "react-icons/fa";
+import {useEffect, useRef, useState} from "react";
 
 export default function LayoutProvider(props: tProvidersProps) {
-    const { children } = props;
+    const {children} = props;
     const location = useLocation();
-    const { user, isAuthenticated, logout } = useAuth();
+    const {user, isAuthenticated, logout} = useAuth();
     const [showUserMenu, setShowUserMenu] = useState(false);
     const menuRef = useRef<HTMLDivElement>(null);
 
@@ -46,7 +46,8 @@ export default function LayoutProvider(props: tProvidersProps) {
             <div className="flex flex-col min-h-screen">
                 <header className="h-16 flex items-center justify-between px-4 bg-orange-500 text-white shadow-md">
                     <div className="flex items-center">
-                        <NavLink to={AllRoutes.MAIN} className="text-xl font-bold hover:text-orange-200 transition-colors">
+                        <NavLink to={AllRoutes.MAIN}
+                                 className="text-xl font-bold hover:text-orange-200 transition-colors">
                             Rescate 1
                         </NavLink>
                     </div>
@@ -65,7 +66,7 @@ export default function LayoutProvider(props: tProvidersProps) {
                                             className="w-6 h-6 rounded-full"
                                         />
                                     ) : (
-                                        <FaUser className="w-4 h-4" />
+                                        <FaUser className="w-4 h-4"/>
                                     )}
                                     <div className="hidden md:flex flex-col items-start">
                                         <span className="text-sm font-medium">
@@ -85,7 +86,7 @@ export default function LayoutProvider(props: tProvidersProps) {
                                             className="flex items-center space-x-2 px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors"
                                             onClick={() => setShowUserMenu(false)}
                                         >
-                                            <FaUser className="w-4 h-4" />
+                                            <FaUser className="w-4 h-4"/>
                                             <span>Mi Panel</span>
                                         </NavLink>
                                         <NavLink
@@ -93,7 +94,7 @@ export default function LayoutProvider(props: tProvidersProps) {
                                             className="flex items-center space-x-2 px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors"
                                             onClick={() => setShowUserMenu(false)}
                                         >
-                                            <FaCog className="w-4 h-4" />
+                                            <FaCog className="w-4 h-4"/>
                                             <span>Configuración</span>
                                         </NavLink>
                                         {user?.role === 'Admin' &&
@@ -102,17 +103,17 @@ export default function LayoutProvider(props: tProvidersProps) {
                                                 className="flex items-center space-x-2 px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors"
                                                 onClick={() => setShowUserMenu(false)}
                                             >
-                                                <FaCog className="w-4 h-4" />
+                                                <FaCog className="w-4 h-4"/>
                                                 <span>Admin</span>
                                             </NavLink>
                                         }
 
-                                        <hr className="my-1" />
+                                        <hr className="my-1"/>
                                         <button
                                             onClick={handleLogout}
                                             className="flex items-center space-x-2 w-full px-4 py-2 text-red-600 hover:bg-gray-100 transition-colors text-left"
                                         >
-                                            <FaSignOutAlt className="w-4 h-4" />
+                                            <FaSignOutAlt className="w-4 h-4"/>
                                             <span>Cerrar sesión</span>
                                         </button>
                                     </div>

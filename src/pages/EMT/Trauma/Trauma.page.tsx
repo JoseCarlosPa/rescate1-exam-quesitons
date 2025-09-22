@@ -6,13 +6,13 @@ import {faqData} from "./Trauma.questions.ts";
 import {FaCarCrash, FaExclamationTriangle, FaFirstAid, FaHeartbeat} from "react-icons/fa";
 import {IoReturnDownBack} from "react-icons/io5";
 import {useState} from "react";
-import {MdQuiz, MdOutlineTimer, MdWarning, MdCheckCircle, MdLocalHospital} from "react-icons/md";
-import {BsBookHalf, BsLightbulb, BsShield, BsClockHistory} from "react-icons/bs";
+import {MdCheckCircle, MdLocalHospital, MdOutlineTimer, MdQuiz, MdWarning} from "react-icons/md";
+import {BsBookHalf, BsClockHistory, BsLightbulb, BsShield} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
-import {FiAlertTriangle, FiUser, FiEye, FiActivity} from "react-icons/fi";
-import {GiMedicalDrip, GiStethoscope, GiBodyHeight} from "react-icons/gi";
+import {FiActivity, FiAlertTriangle, FiEye, FiUser} from "react-icons/fi";
+import {GiBodyHeight, GiMedicalDrip, GiStethoscope} from "react-icons/gi";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
-import { ForumSection } from "../../../components/ForumSection";
+import {ForumSection} from "../../../components/ForumSection";
 
 export default function Trauma() {
     const [activeTab, setActiveTab] = useState<'overview' | 'mechanism' | 'assessment' | 'management' | 'practice'>('overview');
@@ -122,10 +122,12 @@ export default function Trauma() {
                                         className="bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-red-500 p-6 rounded-lg">
                                         <div className="flex items-center mb-4">
                                             <FaExclamationTriangle className="w-8 h-8 text-red-500 mr-3"/>
-                                            <h2 className="text-2xl font-bold text-red-700">¡Prioridad Absoluta en Emergencias!</h2>
+                                            <h2 className="text-2xl font-bold text-red-700">¡Prioridad Absoluta en
+                                                Emergencias!</h2>
                                         </div>
                                         <p className="text-gray-800 leading-relaxed text-lg">
-                                            El trauma es la <strong>principal causa de muerte</strong> en personas menores de 45 años.
+                                            El trauma es la <strong>principal causa de muerte</strong> en personas
+                                            menores de 45 años.
                                             La atención prehospitalaria rápida y sistemática puede <span
                                             className="text-red-600 font-bold">salvar vidas en minutos</span>.
                                         </p>
@@ -155,8 +157,10 @@ export default function Trauma() {
                                             Protocolo XABCDE - Evaluación Sistemática
                                         </h2>
                                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                                            <div className="bg-gradient-to-b from-red-50 to-red-100 p-4 rounded-lg border">
-                                                <h3 className="text-lg font-bold text-red-700 mb-3 text-center">X - EXANGUINACIÓN</h3>
+                                            <div
+                                                className="bg-gradient-to-b from-red-50 to-red-100 p-4 rounded-lg border">
+                                                <h3 className="text-lg font-bold text-red-700 mb-3 text-center">X -
+                                                    EXANGUINACIÓN</h3>
                                                 <ul className="space-y-2 text-gray-700">
                                                     <li className="flex items-start">
                                                         <FiEye className="w-4 h-4 mt-1 mr-2 text-red-600"/>
@@ -168,8 +172,10 @@ export default function Trauma() {
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div className="bg-gradient-to-b from-blue-50 to-blue-100 p-4 rounded-lg border">
-                                                <h3 className="text-lg font-bold text-blue-700 mb-3 text-center">A - AIRWAY</h3>
+                                            <div
+                                                className="bg-gradient-to-b from-blue-50 to-blue-100 p-4 rounded-lg border">
+                                                <h3 className="text-lg font-bold text-blue-700 mb-3 text-center">A -
+                                                    AIRWAY</h3>
                                                 <ul className="space-y-2 text-gray-700">
                                                     <li className="flex items-start">
                                                         <FiEye className="w-4 h-4 mt-1 mr-2 text-blue-600"/>
@@ -181,8 +187,10 @@ export default function Trauma() {
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div className="bg-gradient-to-b from-green-50 to-green-100 p-4 rounded-lg border">
-                                                <h3 className="text-lg font-bold text-green-700 mb-3 text-center">B - BREATHING</h3>
+                                            <div
+                                                className="bg-gradient-to-b from-green-50 to-green-100 p-4 rounded-lg border">
+                                                <h3 className="text-lg font-bold text-green-700 mb-3 text-center">B -
+                                                    BREATHING</h3>
                                                 <ul className="space-y-2 text-gray-700">
                                                     <li className="flex items-start">
                                                         <FiActivity className="w-4 h-4 mt-1 mr-2 text-green-600"/>
@@ -194,8 +202,10 @@ export default function Trauma() {
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div className="bg-gradient-to-b from-purple-50 to-purple-100 p-4 rounded-lg border">
-                                                <h3 className="text-lg font-bold text-purple-700 mb-3 text-center">C - CIRCULATION</h3>
+                                            <div
+                                                className="bg-gradient-to-b from-purple-50 to-purple-100 p-4 rounded-lg border">
+                                                <h3 className="text-lg font-bold text-purple-700 mb-3 text-center">C -
+                                                    CIRCULATION</h3>
                                                 <ul className="space-y-2 text-gray-700">
                                                     <li className="flex items-start">
                                                         <FaHeartbeat className="w-4 h-4 mt-1 mr-2 text-purple-600"/>
@@ -207,8 +217,10 @@ export default function Trauma() {
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div className="bg-gradient-to-b from-yellow-50 to-yellow-100 p-4 rounded-lg border">
-                                                <h3 className="text-lg font-bold text-yellow-700 mb-3 text-center">D - DISABILITY</h3>
+                                            <div
+                                                className="bg-gradient-to-b from-yellow-50 to-yellow-100 p-4 rounded-lg border">
+                                                <h3 className="text-lg font-bold text-yellow-700 mb-3 text-center">D -
+                                                    DISABILITY</h3>
                                                 <ul className="space-y-2 text-gray-700">
                                                     <li className="flex items-start">
                                                         <FiUser className="w-4 h-4 mt-1 mr-2 text-yellow-600"/>
@@ -220,8 +232,10 @@ export default function Trauma() {
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div className="bg-gradient-to-b from-gray-50 to-gray-100 p-4 rounded-lg border">
-                                                <h3 className="text-lg font-bold text-gray-700 mb-3 text-center">E - EXPOSURE</h3>
+                                            <div
+                                                className="bg-gradient-to-b from-gray-50 to-gray-100 p-4 rounded-lg border">
+                                                <h3 className="text-lg font-bold text-gray-700 mb-3 text-center">E -
+                                                    EXPOSURE</h3>
                                                 <ul className="space-y-2 text-gray-700">
                                                     <li className="flex items-start">
                                                         <GiStethoscope className="w-4 h-4 mt-1 mr-2 text-gray-600"/>
@@ -240,7 +254,8 @@ export default function Trauma() {
                                     <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
                                         <div className="flex items-center mb-4">
                                             <FiAlertTriangle className="w-6 h-6 text-yellow-600 mr-2"/>
-                                            <h3 className="text-xl font-bold text-yellow-800">Signos de Alarma - Actúa INMEDIATAMENTE</h3>
+                                            <h3 className="text-xl font-bold text-yellow-800">Signos de Alarma - Actúa
+                                                INMEDIATAMENTE</h3>
                                         </div>
                                         <div className="grid md:grid-cols-3 gap-4">
                                             <div>
@@ -277,7 +292,8 @@ export default function Trauma() {
                                     <div className="bg-green-50 border border-green-200 rounded-lg p-6">
                                         <div className="flex items-center mb-4">
                                             <BsLightbulb className="w-6 h-6 text-green-600 mr-2"/>
-                                            <h3 className="text-xl font-bold text-green-800">Puntos Clave para Recordar</h3>
+                                            <h3 className="text-xl font-bold text-green-800">Puntos Clave para
+                                                Recordar</h3>
                                         </div>
                                         <div className="grid md:grid-cols-2 gap-6">
                                             <div>
@@ -319,29 +335,40 @@ export default function Trauma() {
                                             Mecanismos de Lesión (MOI) y Cinética del Trauma
                                         </h2>
                                         <p className="text-gray-700 leading-relaxed mb-6">
-                                            El mecanismo de lesión describe cómo la energía se transfiere al cuerpo y determina el tipo y gravedad de las lesiones. 
-                                            Comprender el MOI permite <strong>anticipar lesiones ocultas</strong> y priorizar intervenciones de manera efectiva.
+                                            El mecanismo de lesión describe cómo la energía se transfiere al cuerpo y
+                                            determina el tipo y gravedad de las lesiones.
+                                            Comprender el MOI permite <strong>anticipar lesiones ocultas</strong> y
+                                            priorizar intervenciones de manera efectiva.
                                         </p>
-                                        
+
                                         {/* Principios físicos del trauma */}
                                         <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
-                                            <h3 className="text-xl font-bold text-blue-700 mb-4">Principios Físicos Fundamentales</h3>
+                                            <h3 className="text-xl font-bold text-blue-700 mb-4">Principios Físicos
+                                                Fundamentales</h3>
                                             <div className="grid md:grid-cols-2 gap-6">
                                                 <div>
-                                                    <h4 className="font-semibold text-blue-800 mb-2">Energía Cinética</h4>
-                                                    <p className="text-sm text-gray-700 mb-2">EC = ½ × masa × velocidad²</p>
+                                                    <h4 className="font-semibold text-blue-800 mb-2">Energía
+                                                        Cinética</h4>
+                                                    <p className="text-sm text-gray-700 mb-2">EC = ½ × masa ×
+                                                        velocidad²</p>
                                                     <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
-                                                        <li>La <strong>velocidad</strong> es el factor más determinante</li>
+                                                        <li>La <strong>velocidad</strong> es el factor más determinante
+                                                        </li>
                                                         <li>Duplicar velocidad = 4 veces más energía</li>
                                                         <li>Mayor energía = mayor daño potencial</li>
                                                     </ul>
                                                 </div>
                                                 <div>
-                                                    <h4 className="font-semibold text-blue-800 mb-2">Leyes de Newton</h4>
+                                                    <h4 className="font-semibold text-blue-800 mb-2">Leyes de
+                                                        Newton</h4>
                                                     <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
-                                                        <li><strong>1ª Ley:</strong> Cuerpo en movimiento tiende a seguir en movimiento</li>
+                                                        <li><strong>1ª Ley:</strong> Cuerpo en movimiento tiende a
+                                                            seguir en movimiento
+                                                        </li>
                                                         <li><strong>2ª Ley:</strong> Fuerza = masa × aceleración</li>
-                                                        <li><strong>3ª Ley:</strong> Toda acción tiene una reacción igual y opuesta</li>
+                                                        <li><strong>3ª Ley:</strong> Toda acción tiene una reacción
+                                                            igual y opuesta
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -350,14 +377,18 @@ export default function Trauma() {
 
                                     {/* Tipos de trauma */}
                                     <div>
-                                        <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2">Clasificación del Trauma</h2>
+                                        <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2">Clasificación
+                                            del Trauma</h2>
                                         <div className="grid lg:grid-cols-2 gap-6">
                                             <div className="bg-orange-50 border border-orange-200 rounded-lg p-6">
-                                                <h3 className="text-xl font-bold text-orange-700 mb-4">Trauma Contuso</h3>
-                                                <p className="text-gray-700 mb-4">Transferencia de energía <strong>sin penetración</strong> de la piel</p>
+                                                <h3 className="text-xl font-bold text-orange-700 mb-4">Trauma
+                                                    Contuso</h3>
+                                                <p className="text-gray-700 mb-4">Transferencia de energía <strong>sin
+                                                    penetración</strong> de la piel</p>
                                                 <div className="space-y-3">
                                                     <div>
-                                                        <h4 className="font-semibold text-orange-800">Colisiones Vehiculares:</h4>
+                                                        <h4 className="font-semibold text-orange-800">Colisiones
+                                                            Vehiculares:</h4>
                                                         <ul className="list-disc list-inside text-sm text-gray-700 ml-4">
                                                             <li>Frontal: lesiones cabeza, tórax, abdomen</li>
                                                             <li>Lateral: lesiones torácicas, pélvicas</li>
@@ -383,16 +414,20 @@ export default function Trauma() {
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div className="bg-red-50 border border-red-200 rounded-lg p-6">
-                                                <h3 className="text-xl font-bold text-red-700 mb-4">Trauma Penetrante</h3>
-                                                <p className="text-gray-700 mb-4">Objeto atraviesa la piel y penetra en tejidos</p>
+                                                <h3 className="text-xl font-bold text-red-700 mb-4">Trauma
+                                                    Penetrante</h3>
+                                                <p className="text-gray-700 mb-4">Objeto atraviesa la piel y penetra en
+                                                    tejidos</p>
                                                 <div className="space-y-3">
                                                     <div>
                                                         <h4 className="font-semibold text-red-800">Arma de Fuego:</h4>
                                                         <ul className="list-disc list-inside text-sm text-gray-700 ml-4">
-                                                            <li><strong>Alta velocidad:</strong> &gt;700 m/s (rifles)</li>
-                                                            <li><strong>Baja velocidad:</strong> &lt;700 m/s (pistolas)</li>
+                                                            <li><strong>Alta velocidad:</strong> &gt;700 m/s (rifles)
+                                                            </li>
+                                                            <li><strong>Baja velocidad:</strong> &lt;700 m/s (pistolas)
+                                                            </li>
                                                             <li>Cavitación temporal y permanente</li>
                                                             <li>Trayectoria impredecible</li>
                                                         </ul>
@@ -420,7 +455,8 @@ export default function Trauma() {
 
                                     {/* Patrones de lesión específicos */}
                                     <div>
-                                        <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2">Patrones de Lesión por Región Anatómica</h2>
+                                        <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2">Patrones
+                                            de Lesión por Región Anatómica</h2>
                                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                                             <div className="bg-purple-50 p-4 rounded-lg border">
                                                 <h3 className="font-bold text-purple-700 mb-3 flex items-center">
@@ -498,7 +534,8 @@ export default function Trauma() {
                                         </h3>
                                         <div className="grid md:grid-cols-2 gap-6">
                                             <div>
-                                                <h4 className="font-semibold text-red-800 mb-2">Criterios Fisiológicos:</h4>
+                                                <h4 className="font-semibold text-red-800 mb-2">Criterios
+                                                    Fisiológicos:</h4>
                                                 <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                                     <li>Glasgow ≤13</li>
                                                     <li>TAS &lt;90 mmHg</li>
@@ -507,7 +544,8 @@ export default function Trauma() {
                                                 </ul>
                                             </div>
                                             <div>
-                                                <h4 className="font-semibold text-red-800 mb-2">Criterios Anatómicos:</h4>
+                                                <h4 className="font-semibold text-red-800 mb-2">Criterios
+                                                    Anatómicos:</h4>
                                                 <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                                     <li>Fractura pélvica inestable</li>
                                                     <li>Volet costal</li>
@@ -528,24 +566,29 @@ export default function Trauma() {
                                             Evaluación Sistemática del Paciente Traumatizado
                                         </h2>
                                         <p className="text-gray-700 leading-relaxed mb-6">
-                                            La evaluación prehospitalaria del trauma sigue un enfoque estructurado y sistemático para identificar y tratar 
-                                            amenazas vitales inmediatas. La rapidez y precisión en esta fase <strong>determinan el pronóstico del paciente</strong>.
+                                            La evaluación prehospitalaria del trauma sigue un enfoque estructurado y
+                                            sistemático para identificar y tratar
+                                            amenazas vitales inmediatas. La rapidez y precisión en esta fase <strong>determinan
+                                            el pronóstico del paciente</strong>.
                                         </p>
                                     </div>
 
                                     {/* Evaluación primaria detallada */}
-                                    <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-6">
+                                    <div
+                                        className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-6">
                                         <h3 className="text-xl font-bold text-blue-700 mb-4 flex items-center">
                                             <BsShield className="w-6 h-6 mr-2"/>
                                             Evaluación Primaria XABCDE - Paso a Paso
                                         </h3>
-                                        
+
                                         <div className="space-y-6">
                                             <div className="bg-white p-4 rounded-lg shadow-sm">
-                                                <h4 className="font-bold text-red-700 mb-3 text-lg">X - EXANGUINACIÓN (Control de Hemorragias)</h4>
+                                                <h4 className="font-bold text-red-700 mb-3 text-lg">X - EXANGUINACIÓN
+                                                    (Control de Hemorragias)</h4>
                                                 <div className="grid md:grid-cols-2 gap-4">
                                                     <div>
-                                                        <h5 className="font-semibold text-red-800 mb-2">¿Qué evaluar?</h5>
+                                                        <h5 className="font-semibold text-red-800 mb-2">¿Qué
+                                                            evaluar?</h5>
                                                         <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
                                                             <li>Hemorragias externas visibles</li>
                                                             <li>Sangrado activo masivo</li>
@@ -554,7 +597,8 @@ export default function Trauma() {
                                                         </ul>
                                                     </div>
                                                     <div>
-                                                        <h5 className="font-semibold text-red-800 mb-2">Acción inmediata:</h5>
+                                                        <h5 className="font-semibold text-red-800 mb-2">Acción
+                                                            inmediata:</h5>
                                                         <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
                                                             <li>Presión directa</li>
                                                             <li>Torniquete si es extremidad</li>
@@ -566,10 +610,12 @@ export default function Trauma() {
                                             </div>
 
                                             <div className="bg-white p-4 rounded-lg shadow-sm">
-                                                <h4 className="font-bold text-blue-700 mb-3 text-lg">A - AIRWAY (Vía Aérea)</h4>
+                                                <h4 className="font-bold text-blue-700 mb-3 text-lg">A - AIRWAY (Vía
+                                                    Aérea)</h4>
                                                 <div className="grid md:grid-cols-2 gap-4">
                                                     <div>
-                                                        <h5 className="font-semibold text-blue-800 mb-2">¿Qué evaluar?</h5>
+                                                        <h5 className="font-semibold text-blue-800 mb-2">¿Qué
+                                                            evaluar?</h5>
                                                         <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
                                                             <li>¿Puede hablar claramente?</li>
                                                             <li>Sonidos anormales (estridor, ronquidos)</li>
@@ -579,7 +625,8 @@ export default function Trauma() {
                                                         </ul>
                                                     </div>
                                                     <div>
-                                                        <h5 className="font-semibold text-blue-800 mb-2">Acción inmediata:</h5>
+                                                        <h5 className="font-semibold text-blue-800 mb-2">Acción
+                                                            inmediata:</h5>
                                                         <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
                                                             <li>Control cervical manual</li>
                                                             <li>Aspiración si es necesario</li>
@@ -591,10 +638,12 @@ export default function Trauma() {
                                             </div>
 
                                             <div className="bg-white p-4 rounded-lg shadow-sm">
-                                                <h4 className="font-bold text-green-700 mb-3 text-lg">B - BREATHING (Respiración)</h4>
+                                                <h4 className="font-bold text-green-700 mb-3 text-lg">B - BREATHING
+                                                    (Respiración)</h4>
                                                 <div className="grid md:grid-cols-2 gap-4">
                                                     <div>
-                                                        <h5 className="font-semibold text-green-800 mb-2">¿Qué evaluar?</h5>
+                                                        <h5 className="font-semibold text-green-800 mb-2">¿Qué
+                                                            evaluar?</h5>
                                                         <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
                                                             <li>Frecuencia respiratoria</li>
                                                             <li>Expansión torácica simétrica</li>
@@ -605,7 +654,8 @@ export default function Trauma() {
                                                         </ul>
                                                     </div>
                                                     <div>
-                                                        <h5 className="font-semibold text-green-800 mb-2">Acción inmediata:</h5>
+                                                        <h5 className="font-semibold text-green-800 mb-2">Acción
+                                                            inmediata:</h5>
                                                         <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
                                                             <li>Oxígeno alto flujo</li>
                                                             <li>Ventilación asistida si necesario</li>
@@ -617,10 +667,12 @@ export default function Trauma() {
                                             </div>
 
                                             <div className="bg-white p-4 rounded-lg shadow-sm">
-                                                <h4 className="font-bold text-purple-700 mb-3 text-lg">C - CIRCULATION (Circulación)</h4>
+                                                <h4 className="font-bold text-purple-700 mb-3 text-lg">C - CIRCULATION
+                                                    (Circulación)</h4>
                                                 <div className="grid md:grid-cols-2 gap-4">
                                                     <div>
-                                                        <h5 className="font-semibold text-purple-800 mb-2">¿Qué evaluar?</h5>
+                                                        <h5 className="font-semibold text-purple-800 mb-2">¿Qué
+                                                            evaluar?</h5>
                                                         <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
                                                             <li>Pulso radial y calidad</li>
                                                             <li>Color de piel y mucosas</li>
@@ -630,7 +682,8 @@ export default function Trauma() {
                                                         </ul>
                                                     </div>
                                                     <div>
-                                                        <h5 className="font-semibold text-purple-800 mb-2">Acción inmediata:</h5>
+                                                        <h5 className="font-semibold text-purple-800 mb-2">Acción
+                                                            inmediata:</h5>
                                                         <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
                                                             <li>Control definitivo de hemorragias</li>
                                                             <li>Acceso vascular</li>
@@ -642,10 +695,12 @@ export default function Trauma() {
                                             </div>
 
                                             <div className="bg-white p-4 rounded-lg shadow-sm">
-                                                <h4 className="font-bold text-yellow-700 mb-3 text-lg">D - DISABILITY (Déficit Neurológico)</h4>
+                                                <h4 className="font-bold text-yellow-700 mb-3 text-lg">D - DISABILITY
+                                                    (Déficit Neurológico)</h4>
                                                 <div className="grid md:grid-cols-2 gap-4">
                                                     <div>
-                                                        <h5 className="font-semibold text-yellow-800 mb-2">¿Qué evaluar?</h5>
+                                                        <h5 className="font-semibold text-yellow-800 mb-2">¿Qué
+                                                            evaluar?</h5>
                                                         <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
                                                             <li>Nivel de conciencia (AVDI)</li>
                                                             <li>Escala de Glasgow</li>
@@ -655,7 +710,8 @@ export default function Trauma() {
                                                         </ul>
                                                     </div>
                                                     <div>
-                                                        <h5 className="font-semibold text-yellow-800 mb-2">Acción inmediata:</h5>
+                                                        <h5 className="font-semibold text-yellow-800 mb-2">Acción
+                                                            inmediata:</h5>
                                                         <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
                                                             <li>Protección de vía aérea</li>
                                                             <li>Inmovilización cervical</li>
@@ -667,10 +723,12 @@ export default function Trauma() {
                                             </div>
 
                                             <div className="bg-white p-4 rounded-lg shadow-sm">
-                                                <h4 className="font-bold text-gray-700 mb-3 text-lg">E - EXPOSURE/ENVIRONMENT (Exposición)</h4>
+                                                <h4 className="font-bold text-gray-700 mb-3 text-lg">E -
+                                                    EXPOSURE/ENVIRONMENT (Exposición)</h4>
                                                 <div className="grid md:grid-cols-2 gap-4">
                                                     <div>
-                                                        <h5 className="font-semibold text-gray-800 mb-2">¿Qué evaluar?</h5>
+                                                        <h5 className="font-semibold text-gray-800 mb-2">¿Qué
+                                                            evaluar?</h5>
                                                         <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
                                                             <li>Exposición completa del paciente</li>
                                                             <li>Lesiones ocultas</li>
@@ -679,7 +737,8 @@ export default function Trauma() {
                                                         </ul>
                                                     </div>
                                                     <div>
-                                                        <h5 className="font-semibold text-gray-800 mb-2">Acción inmediata:</h5>
+                                                        <h5 className="font-semibold text-gray-800 mb-2">Acción
+                                                            inmediata:</h5>
                                                         <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
                                                             <li>Examinar de pies a cabeza</li>
                                                             <li>Cubrir y calentar al paciente</li>
@@ -694,13 +753,16 @@ export default function Trauma() {
 
                                     {/* Escalas de evaluación */}
                                     <div>
-                                        <h3 className="text-xl font-semibold mb-4 text-gray-800">Escalas y Herramientas de Evaluación</h3>
+                                        <h3 className="text-xl font-semibold mb-4 text-gray-800">Escalas y Herramientas
+                                            de Evaluación</h3>
                                         <div className="grid lg:grid-cols-2 gap-6">
                                             <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-                                                <h4 className="font-bold text-blue-700 mb-3">Escala de Glasgow (GCS)</h4>
+                                                <h4 className="font-bold text-blue-700 mb-3">Escala de Glasgow
+                                                    (GCS)</h4>
                                                 <div className="space-y-3">
                                                     <div>
-                                                        <h5 className="font-semibold text-blue-800">Apertura Ocular (4 puntos):</h5>
+                                                        <h5 className="font-semibold text-blue-800">Apertura Ocular (4
+                                                            puntos):</h5>
                                                         <ul className="text-sm text-gray-700 ml-4">
                                                             <li>4 - Espontánea</li>
                                                             <li>3 - Al hablar</li>
@@ -709,7 +771,8 @@ export default function Trauma() {
                                                         </ul>
                                                     </div>
                                                     <div>
-                                                        <h5 className="font-semibold text-blue-800">Respuesta Verbal (5 puntos):</h5>
+                                                        <h5 className="font-semibold text-blue-800">Respuesta Verbal (5
+                                                            puntos):</h5>
                                                         <ul className="text-sm text-gray-700 ml-4">
                                                             <li>5 - Orientado</li>
                                                             <li>4 - Confuso</li>
@@ -719,7 +782,8 @@ export default function Trauma() {
                                                         </ul>
                                                     </div>
                                                     <div>
-                                                        <h5 className="font-semibold text-blue-800">Respuesta Motora (6 puntos):</h5>
+                                                        <h5 className="font-semibold text-blue-800">Respuesta Motora (6
+                                                            puntos):</h5>
                                                         <ul className="text-sm text-gray-700 ml-4">
                                                             <li>6 - Obedece órdenes</li>
                                                             <li>5 - Localiza dolor</li>
@@ -738,7 +802,8 @@ export default function Trauma() {
                                             </div>
 
                                             <div className="bg-green-50 border border-green-200 rounded-lg p-6">
-                                                <h4 className="font-bold text-green-700 mb-3">Otras Escalas Importantes</h4>
+                                                <h4 className="font-bold text-green-700 mb-3">Otras Escalas
+                                                    Importantes</h4>
                                                 <div className="space-y-4">
                                                     <div>
                                                         <h5 className="font-semibold text-green-800">AVDI:</h5>
@@ -784,7 +849,8 @@ export default function Trauma() {
                                         </h3>
                                         <div className="grid md:grid-cols-2 gap-6">
                                             <div>
-                                                <h4 className="font-semibold text-orange-800 mb-2">Evaluación Secundaria:</h4>
+                                                <h4 className="font-semibold text-orange-800 mb-2">Evaluación
+                                                    Secundaria:</h4>
                                                 <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                                     <li>Examen físico detallado de pies a cabeza</li>
                                                     <li>Inspección, palpación, auscultación</li>
@@ -794,7 +860,8 @@ export default function Trauma() {
                                                 </ul>
                                             </div>
                                             <div>
-                                                <h4 className="font-semibold text-orange-800 mb-2">Reevaluación (cada 5 min):</h4>
+                                                <h4 className="font-semibold text-orange-800 mb-2">Reevaluación (cada 5
+                                                    min):</h4>
                                                 <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                                     <li>Repetir evaluación primaria</li>
                                                     <li>Verificar efectividad de intervenciones</li>
@@ -816,14 +883,17 @@ export default function Trauma() {
                                             Manejo Prehospitalario del Trauma
                                         </h2>
                                         <p className="text-gray-700 leading-relaxed mb-6">
-                                            El manejo prehospitalario efectivo del trauma se basa en intervenciones <strong>rápidas, 
-                                            sistemáticas y basadas en evidencia</strong> para reducir la mortalidad y morbilidad. 
+                                            El manejo prehospitalario efectivo del trauma se basa en
+                                            intervenciones <strong>rápidas,
+                                            sistemáticas y basadas en evidencia</strong> para reducir la mortalidad y
+                                            morbilidad.
                                             Cada minuto cuenta para salvar vidas.
                                         </p>
                                     </div>
 
                                     {/* Principios fundamentales */}
-                                    <div className="bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-200 rounded-lg p-6">
+                                    <div
+                                        className="bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-200 rounded-lg p-6">
                                         <h3 className="text-xl font-bold text-blue-700 mb-4 flex items-center">
                                             <BsShield className="w-6 h-6 mr-2"/>
                                             Principios Fundamentales del Manejo
@@ -867,7 +937,8 @@ export default function Trauma() {
 
                                     {/* Manejo específico por sistema */}
                                     <div>
-                                        <h3 className="text-xl font-semibold mb-4 text-gray-800">Manejo Específico por Sistema</h3>
+                                        <h3 className="text-xl font-semibold mb-4 text-gray-800">Manejo Específico por
+                                            Sistema</h3>
                                         <div className="space-y-6">
                                             <div className="bg-red-50 border border-red-200 rounded-lg p-6">
                                                 <h4 className="font-bold text-red-700 mb-4 flex items-center">
@@ -876,17 +947,26 @@ export default function Trauma() {
                                                 </h4>
                                                 <div className="grid md:grid-cols-2 gap-6">
                                                     <div>
-                                                        <h5 className="font-semibold text-red-800 mb-2">Hemorragias Externas:</h5>
+                                                        <h5 className="font-semibold text-red-800 mb-2">Hemorragias
+                                                            Externas:</h5>
                                                         <ol className="list-decimal list-inside space-y-2 text-gray-700 text-sm">
-                                                            <li><strong>Presión directa:</strong> Primera línea, aplicar firmemente</li>
+                                                            <li><strong>Presión directa:</strong> Primera línea, aplicar
+                                                                firmemente
+                                                            </li>
                                                             <li><strong>Elevación:</strong> Si no hay fractura</li>
-                                                            <li><strong>Puntos de presión:</strong> Arterias principales</li>
-                                                            <li><strong>Torniquete:</strong> Hemorragia masiva en extremidades</li>
-                                                            <li><strong>Agentes hemostáticos:</strong> En heridas profundas</li>
+                                                            <li><strong>Puntos de presión:</strong> Arterias principales
+                                                            </li>
+                                                            <li><strong>Torniquete:</strong> Hemorragia masiva en
+                                                                extremidades
+                                                            </li>
+                                                            <li><strong>Agentes hemostáticos:</strong> En heridas
+                                                                profundas
+                                                            </li>
                                                         </ol>
                                                     </div>
                                                     <div>
-                                                        <h5 className="font-semibold text-red-800 mb-2">Hemorragias Internas:</h5>
+                                                        <h5 className="font-semibold text-red-800 mb-2">Hemorragias
+                                                            Internas:</h5>
                                                         <ul className="list-disc list-inside space-y-2 text-gray-700 text-sm">
                                                             <li>Reconocer signos de shock</li>
                                                             <li>Posición adecuada (Trendelenburg modificado)</li>
@@ -898,7 +978,8 @@ export default function Trauma() {
                                                 </div>
                                                 <div className="mt-4 p-3 bg-red-100 rounded">
                                                     <p className="text-sm font-semibold text-red-800">
-                                                        ⚠️ Recordar: El shock hemorrágico puede estar presente sin hipotensión inicial 
+                                                        ⚠️ Recordar: El shock hemorrágico puede estar presente sin
+                                                        hipotensión inicial
                                                         (shock compensado)
                                                     </p>
                                                 </div>
@@ -940,7 +1021,8 @@ export default function Trauma() {
                                                 </h4>
                                                 <div className="grid md:grid-cols-2 gap-6">
                                                     <div>
-                                                        <h5 className="font-semibold text-green-800 mb-2">Acceso Vascular:</h5>
+                                                        <h5 className="font-semibold text-green-800 mb-2">Acceso
+                                                            Vascular:</h5>
                                                         <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                                             <li>Dos accesos IV periféricos calibre 14-16G</li>
                                                             <li>Acceso intraóseo si IV no factible</li>
@@ -949,7 +1031,8 @@ export default function Trauma() {
                                                         </ul>
                                                     </div>
                                                     <div>
-                                                        <h5 className="font-semibold text-green-800 mb-2">Reposición de Fluidos:</h5>
+                                                        <h5 className="font-semibold text-green-800 mb-2">Reposición de
+                                                            Fluidos:</h5>
                                                         <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                                             <li>Solución salina 0.9% o Ringer lactato</li>
                                                             <li>Bolo inicial: 20ml/kg (adultos 1-2L)</li>
@@ -967,7 +1050,8 @@ export default function Trauma() {
                                                 </h4>
                                                 <div className="grid md:grid-cols-2 gap-6">
                                                     <div>
-                                                        <h5 className="font-semibold text-yellow-800 mb-2">Traumatismo Craneoencefálico:</h5>
+                                                        <h5 className="font-semibold text-yellow-800 mb-2">Traumatismo
+                                                            Craneoencefálico:</h5>
                                                         <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                                             <li>Mantener SatO₂ &gt;95%</li>
                                                             <li>Mantener TAS &gt;90 mmHg</li>
@@ -977,7 +1061,8 @@ export default function Trauma() {
                                                         </ul>
                                                     </div>
                                                     <div>
-                                                        <h5 className="font-semibold text-yellow-800 mb-2">Lesión Medular:</h5>
+                                                        <h5 className="font-semibold text-yellow-800 mb-2">Lesión
+                                                            Medular:</h5>
                                                         <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                                             <li>Inmovilización espinal completa</li>
                                                             <li>Control cervical manual</li>
@@ -996,7 +1081,8 @@ export default function Trauma() {
                                                 </h4>
                                                 <div className="grid md:grid-cols-2 gap-6">
                                                     <div>
-                                                        <h5 className="font-semibold text-purple-800 mb-2">Inmovilización Espinal:</h5>
+                                                        <h5 className="font-semibold text-purple-800 mb-2">Inmovilización
+                                                            Espinal:</h5>
                                                         <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                                             <li>Criterios de inmovilización selectiva</li>
                                                             <li>Dispositivos de inmovilización cervical</li>
@@ -1005,7 +1091,8 @@ export default function Trauma() {
                                                         </ul>
                                                     </div>
                                                     <div>
-                                                        <h5 className="font-semibold text-purple-800 mb-2">Inmovilización de Fracturas:</h5>
+                                                        <h5 className="font-semibold text-purple-800 mb-2">Inmovilización
+                                                            de Fracturas:</h5>
                                                         <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                                             <li>Férulas rígidas o neumáticas</li>
                                                             <li>Inmovilizar articulación superior e inferior</li>
@@ -1028,12 +1115,14 @@ export default function Trauma() {
                                             <div className="bg-white p-4 rounded shadow-sm text-center">
                                                 <h4 className="font-bold text-orange-600 mb-2">Minutos Platino</h4>
                                                 <p className="text-2xl font-bold text-orange-500">0-10 min</p>
-                                                <p className="text-sm text-gray-700">Tiempo ideal en escena para trauma severo</p>
+                                                <p className="text-sm text-gray-700">Tiempo ideal en escena para trauma
+                                                    severo</p>
                                             </div>
                                             <div className="bg-white p-4 rounded shadow-sm text-center">
                                                 <h4 className="font-bold text-yellow-600 mb-2">Hora Dorada</h4>
                                                 <p className="text-2xl font-bold text-yellow-500">0-60 min</p>
-                                                <p className="text-sm text-gray-700">Tiempo crítico desde lesión hasta cirugía</p>
+                                                <p className="text-sm text-gray-700">Tiempo crítico desde lesión hasta
+                                                    cirugía</p>
                                             </div>
                                             <div className="bg-white p-4 rounded shadow-sm text-center">
                                                 <h4 className="font-bold text-red-600 mb-2">Tiempo Transporte</h4>
@@ -1042,9 +1131,12 @@ export default function Trauma() {
                                             </div>
                                         </div>
                                         <div className="mt-4 p-4 bg-orange-100 rounded">
-                                            <h4 className="font-semibold text-orange-800 mb-2">Decisión de Transporte:</h4>
+                                            <h4 className="font-semibold text-orange-800 mb-2">Decisión de
+                                                Transporte:</h4>
                                             <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
-                                                <li><strong>Transporte inmediato:</strong> Amenazas vitales no controlables</li>
+                                                <li><strong>Transporte inmediato:</strong> Amenazas vitales no
+                                                    controlables
+                                                </li>
                                                 <li><strong>Transporte urgente:</strong> Trauma severo pero estable</li>
                                                 <li><strong>Transporte rutinario:</strong> Trauma menor, estable</li>
                                             </ul>
@@ -1053,10 +1145,12 @@ export default function Trauma() {
 
                                     {/* Monitorización y reevaluación */}
                                     <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
-                                        <h3 className="text-xl font-bold text-gray-700 mb-4">Monitorización y Documentación</h3>
+                                        <h3 className="text-xl font-bold text-gray-700 mb-4">Monitorización y
+                                            Documentación</h3>
                                         <div className="grid md:grid-cols-2 gap-6">
                                             <div>
-                                                <h4 className="font-semibold text-gray-800 mb-2">Monitorización Continua:</h4>
+                                                <h4 className="font-semibold text-gray-800 mb-2">Monitorización
+                                                    Continua:</h4>
                                                 <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                                     <li>Signos vitales cada 5 minutos</li>
                                                     <li>Nivel de conciencia</li>
@@ -1066,7 +1160,8 @@ export default function Trauma() {
                                                 </ul>
                                             </div>
                                             <div>
-                                                <h4 className="font-semibold text-gray-800 mb-2">Documentación Crítica:</h4>
+                                                <h4 className="font-semibold text-gray-800 mb-2">Documentación
+                                                    Crítica:</h4>
                                                 <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                                     <li>Mecanismo de lesión detallado</li>
                                                     <li>Hallazgos de evaluación inicial</li>
@@ -1087,12 +1182,14 @@ export default function Trauma() {
                                         Casos Clínicos de Trauma - Aplicación Práctica
                                     </h2>
                                     <p className="text-gray-700 leading-relaxed mb-6">
-                                        Estos casos clínicos te ayudarán a aplicar los conceptos aprendidos en situaciones reales. 
+                                        Estos casos clínicos te ayudarán a aplicar los conceptos aprendidos en
+                                        situaciones reales.
                                         Analiza cada caso paso a paso siguiendo el protocolo XABCDE.
                                     </p>
 
                                     {/* Caso 1: Trauma multisistémico */}
-                                    <div className="p-6 bg-gradient-to-r from-red-50 to-orange-50 rounded-lg shadow-md border-l-4 border-red-500">
+                                    <div
+                                        className="p-6 bg-gradient-to-r from-red-50 to-orange-50 rounded-lg shadow-md border-l-4 border-red-500">
                                         <h3 className="text-xl font-semibold mb-3 text-red-700 flex items-center">
                                             <FaCarCrash className="w-6 h-6 mr-2"/>
                                             Caso 1: Colisión Vehicular de Alta Energía
@@ -1100,38 +1197,62 @@ export default function Trauma() {
                                         <div className="bg-white p-4 rounded mb-4">
                                             <h4 className="font-semibold text-gray-800 mb-2">Escenario:</h4>
                                             <p className="text-gray-700 italic mb-4">
-                                                Hombre de 28 años, conductor de motocicleta, colisiona contra un automóvil a 60 km/h. 
-                                                Encontrado consciente pero desorientado, con sangrado activo en muslo derecho y dificultad respiratoria. 
+                                                Hombre de 28 años, conductor de motocicleta, colisiona contra un
+                                                automóvil a 60 km/h.
+                                                Encontrado consciente pero desorientado, con sangrado activo en muslo
+                                                derecho y dificultad respiratoria.
                                                 No llevaba casco. Vehículo con deformación significativa.
                                             </p>
                                         </div>
-                                        
+
                                         <div className="grid lg:grid-cols-2 gap-6">
                                             <div className="bg-white p-4 rounded">
-                                                <h4 className="font-semibold text-red-800 mb-2">Evaluación Inicial (XABCDE):</h4>
+                                                <h4 className="font-semibold text-red-800 mb-2">Evaluación Inicial
+                                                    (XABCDE):</h4>
                                                 <ul className="space-y-2 text-sm text-gray-700">
-                                                    <li><strong>X:</strong> Hemorragia activa en muslo derecho, aproximadamente 300ml perdidos</li>
-                                                    <li><strong>A:</strong> Vía aérea permeable, responde preguntas pero confuso</li>
-                                                    <li><strong>B:</strong> FR 28/min, ruidos respiratorios disminuidos en hemitórax derecho, SatO₂ 88%</li>
-                                                    <li><strong>C:</strong> Pulso radial débil 120 lpm, piel fría y pálida, TAS 95 mmHg</li>
-                                                    <li><strong>D:</strong> Glasgow 13 (O4V4M5), pupilas iguales y reactivas</li>
-                                                    <li><strong>E:</strong> Fractura abierta de fémur derecho, abrasiones múltiples</li>
+                                                    <li><strong>X:</strong> Hemorragia activa en muslo derecho,
+                                                        aproximadamente 300ml perdidos
+                                                    </li>
+                                                    <li><strong>A:</strong> Vía aérea permeable, responde preguntas pero
+                                                        confuso
+                                                    </li>
+                                                    <li><strong>B:</strong> FR 28/min, ruidos respiratorios disminuidos
+                                                        en hemitórax derecho, SatO₂ 88%
+                                                    </li>
+                                                    <li><strong>C:</strong> Pulso radial débil 120 lpm, piel fría y
+                                                        pálida, TAS 95 mmHg
+                                                    </li>
+                                                    <li><strong>D:</strong> Glasgow 13 (O4V4M5), pupilas iguales y
+                                                        reactivas
+                                                    </li>
+                                                    <li><strong>E:</strong> Fractura abierta de fémur derecho,
+                                                        abrasiones múltiples
+                                                    </li>
                                                 </ul>
                                             </div>
                                             <div className="bg-white p-4 rounded">
-                                                <h4 className="font-semibold text-green-800 mb-2">Manejo Correcto - Secuencia:</h4>
+                                                <h4 className="font-semibold text-green-800 mb-2">Manejo Correcto -
+                                                    Secuencia:</h4>
                                                 <ol className="list-decimal list-inside space-y-2 text-sm text-gray-700">
-                                                    <li><strong>Control de hemorragia:</strong> Aplicar torniquete en muslo derecho</li>
-                                                    <li><strong>Control cervical:</strong> Inmovilización manual inmediata</li>
-                                                    <li><strong>Oxígeno:</strong> Alto flujo 15L/min con mascarilla reservorio</li>
+                                                    <li><strong>Control de hemorragia:</strong> Aplicar torniquete en
+                                                        muslo derecho
+                                                    </li>
+                                                    <li><strong>Control cervical:</strong> Inmovilización manual
+                                                        inmediata
+                                                    </li>
+                                                    <li><strong>Oxígeno:</strong> Alto flujo 15L/min con mascarilla
+                                                        reservorio
+                                                    </li>
                                                     <li><strong>Acceso vascular:</strong> IV 16G en brazo izquierdo</li>
-                                                    <li><strong>Inmovilización:</strong> Tabla espinal, collarín cervical</li>
+                                                    <li><strong>Inmovilización:</strong> Tabla espinal, collarín
+                                                        cervical
+                                                    </li>
                                                     <li><strong>Transporte:</strong> Código rojo a centro de trauma</li>
                                                     <li><strong>Notificación:</strong> Activar equipo de trauma</li>
                                                 </ol>
                                             </div>
                                         </div>
-                                        
+
                                         <div className="mt-4 p-4 bg-red-100 rounded">
                                             <h4 className="font-semibold text-red-800 mb-2">Puntos de Aprendizaje:</h4>
                                             <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
@@ -1144,7 +1265,8 @@ export default function Trauma() {
                                     </div>
 
                                     {/* Caso 2: Trauma penetrante */}
-                                    <div className="p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg shadow-md border-l-4 border-blue-500">
+                                    <div
+                                        className="p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg shadow-md border-l-4 border-blue-500">
                                         <h3 className="text-xl font-semibold mb-3 text-blue-700 flex items-center">
                                             <FaExclamationTriangle className="w-6 h-6 mr-2"/>
                                             Caso 2: Trauma Penetrante Abdominal
@@ -1152,39 +1274,61 @@ export default function Trauma() {
                                         <div className="bg-white p-4 rounded mb-4">
                                             <h4 className="font-semibold text-gray-800 mb-2">Escenario:</h4>
                                             <p className="text-gray-700 italic mb-4">
-                                                Varón de 35 años víctima de agresión con arma blanca. Presenta herida penetrante en epigastrio 
-                                                de aproximadamente 3 cm. Paciente consciente, refiere dolor abdominal intenso. 
+                                                Varón de 35 años víctima de agresión con arma blanca. Presenta herida
+                                                penetrante en epigastrio
+                                                de aproximadamente 3 cm. Paciente consciente, refiere dolor abdominal
+                                                intenso.
                                                 Objeto agresor no se encuentra en escena.
                                             </p>
                                         </div>
-                                        
+
                                         <div className="grid lg:grid-cols-2 gap-6">
                                             <div className="bg-white p-4 rounded">
-                                                <h4 className="font-semibold text-blue-800 mb-2">Evaluación Inicial:</h4>
+                                                <h4 className="font-semibold text-blue-800 mb-2">Evaluación
+                                                    Inicial:</h4>
                                                 <ul className="space-y-2 text-sm text-gray-700">
-                                                    <li><strong>X:</strong> Hemorragia externa controlada con apósito</li>
+                                                    <li><strong>X:</strong> Hemorragia externa controlada con apósito
+                                                    </li>
                                                     <li><strong>A:</strong> Vía aérea permeable, paciente hablando</li>
-                                                    <li><strong>B:</strong> FR 24/min, ventilación simétrica, SatO₂ 96%</li>
-                                                    <li><strong>C:</strong> Pulso 110 lpm, piel fría y sudorosa, TAS 85 mmHg</li>
-                                                    <li><strong>D:</strong> Alerta, orientado pero ansioso, Glasgow 15</li>
-                                                    <li><strong>E:</strong> Herida penetrante 3cm epigastrio, abdomen rígido</li>
+                                                    <li><strong>B:</strong> FR 24/min, ventilación simétrica, SatO₂ 96%
+                                                    </li>
+                                                    <li><strong>C:</strong> Pulso 110 lpm, piel fría y sudorosa, TAS 85
+                                                        mmHg
+                                                    </li>
+                                                    <li><strong>D:</strong> Alerta, orientado pero ansioso, Glasgow 15
+                                                    </li>
+                                                    <li><strong>E:</strong> Herida penetrante 3cm epigastrio, abdomen
+                                                        rígido
+                                                    </li>
                                                 </ul>
                                             </div>
                                             <div className="bg-white p-4 rounded">
-                                                <h4 className="font-semibold text-green-800 mb-2">Manejo Específico:</h4>
+                                                <h4 className="font-semibold text-green-800 mb-2">Manejo
+                                                    Específico:</h4>
                                                 <ol className="list-decimal list-inside space-y-2 text-sm text-gray-700">
-                                                    <li><strong>NO explorar herida:</strong> Riesgo de hemorragia adicional</li>
-                                                    <li><strong>Apósito estéril:</strong> Oclusivo si hay signos de aspiración</li>
+                                                    <li><strong>NO explorar herida:</strong> Riesgo de hemorragia
+                                                        adicional
+                                                    </li>
+                                                    <li><strong>Apósito estéril:</strong> Oclusivo si hay signos de
+                                                        aspiración
+                                                    </li>
                                                     <li><strong>Posición:</strong> Fowler si tolera, o supino</li>
-                                                    <li><strong>Acceso vascular:</strong> Dos IV 16G, iniciar cristaloides</li>
-                                                    <li><strong>Analgesia:</strong> Según protocolo, evitar opioides si posible</li>
-                                                    <li><strong>Transporte urgente:</strong> Centro con cirugía disponible</li>
+                                                    <li><strong>Acceso vascular:</strong> Dos IV 16G, iniciar
+                                                        cristaloides
+                                                    </li>
+                                                    <li><strong>Analgesia:</strong> Según protocolo, evitar opioides si
+                                                        posible
+                                                    </li>
+                                                    <li><strong>Transporte urgente:</strong> Centro con cirugía
+                                                        disponible
+                                                    </li>
                                                 </ol>
                                             </div>
                                         </div>
-                                        
+
                                         <div className="mt-4 p-4 bg-blue-100 rounded">
-                                            <h4 className="font-semibold text-blue-800 mb-2">Consideraciones Especiales:</h4>
+                                            <h4 className="font-semibold text-blue-800 mb-2">Consideraciones
+                                                Especiales:</h4>
                                             <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
                                                 <li>Signos de shock compensado (taquicardia, piel fría)</li>
                                                 <li>Abdomen rígido sugiere irritación peritoneal</li>
@@ -1195,7 +1339,8 @@ export default function Trauma() {
                                     </div>
 
                                     {/* Caso 3: Trauma geriátrico */}
-                                    <div className="p-6 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg shadow-md border-l-4 border-green-500">
+                                    <div
+                                        className="p-6 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg shadow-md border-l-4 border-green-500">
                                         <h3 className="text-xl font-semibold mb-3 text-green-700 flex items-center">
                                             <GiBodyHeight className="w-6 h-6 mr-2"/>
                                             Caso 3: Caída en Adulto Mayor
@@ -1203,36 +1348,50 @@ export default function Trauma() {
                                         <div className="bg-white p-4 rounded mb-4">
                                             <h4 className="font-semibold text-gray-800 mb-2">Escenario:</h4>
                                             <p className="text-gray-700 italic mb-4">
-                                                Mujer de 78 años con antecedente de osteoporosis, cae de escalera doméstica (1.5 metros). 
-                                                Refiere dolor lumbar intenso y no puede mover las piernas. Toma warfarina por fibrilación auricular. 
+                                                Mujer de 78 años con antecedente de osteoporosis, cae de escalera
+                                                doméstica (1.5 metros).
+                                                Refiere dolor lumbar intenso y no puede mover las piernas. Toma
+                                                warfarina por fibrilación auricular.
                                                 Familiar refiere que perdió conocimiento brevemente.
                                             </p>
                                         </div>
-                                        
+
                                         <div className="grid lg:grid-cols-2 gap-6">
                                             <div className="bg-white p-4 rounded">
-                                                <h4 className="font-semibold text-green-800 mb-2">Evaluación Detallada:</h4>
+                                                <h4 className="font-semibold text-green-800 mb-2">Evaluación
+                                                    Detallada:</h4>
                                                 <ul className="space-y-2 text-sm text-gray-700">
                                                     <li><strong>X:</strong> Sin hemorragias externas evidentes</li>
                                                     <li><strong>A:</strong> Vía aérea permeable, habla claramente</li>
-                                                    <li><strong>B:</strong> FR 18/min, ventilación adecuada, SatO₂ 94%</li>
-                                                    <li><strong>C:</strong> Pulso 88 lpm irregular, piel normoperfundida</li>
-                                                    <li><strong>D:</strong> Alerta, sin déficit motor en MS, ausente en MI</li>
-                                                    <li><strong>E:</strong> Dolor lumbar L2-L3, sin deformidades evidentes</li>
+                                                    <li><strong>B:</strong> FR 18/min, ventilación adecuada, SatO₂ 94%
+                                                    </li>
+                                                    <li><strong>C:</strong> Pulso 88 lpm irregular, piel normoperfundida
+                                                    </li>
+                                                    <li><strong>D:</strong> Alerta, sin déficit motor en MS, ausente en
+                                                        MI
+                                                    </li>
+                                                    <li><strong>E:</strong> Dolor lumbar L2-L3, sin deformidades
+                                                        evidentes
+                                                    </li>
                                                 </ul>
                                             </div>
                                             <div className="bg-white p-4 rounded">
-                                                <h4 className="font-semibold text-purple-800 mb-2">Consideraciones Geriátricas:</h4>
+                                                <h4 className="font-semibold text-purple-800 mb-2">Consideraciones
+                                                    Geriátricas:</h4>
                                                 <ul className="list-disc list-inside space-y-2 text-sm text-gray-700">
-                                                    <li><strong>Anticoagulación:</strong> Riesgo de hemorragia intracraneal</li>
+                                                    <li><strong>Anticoagulación:</strong> Riesgo de hemorragia
+                                                        intracraneal
+                                                    </li>
                                                     <li><strong>Osteoporosis:</strong> Fracturas con trauma menor</li>
-                                                    <li><strong>Pérdida de conciencia:</strong> Evaluar causa primaria</li>
+                                                    <li><strong>Pérdida de conciencia:</strong> Evaluar causa primaria
+                                                    </li>
                                                     <li><strong>Fragilidad:</strong> Manejo gentil, almohadillado</li>
-                                                    <li><strong>Comorbilidades:</strong> Múltiples factores de riesgo</li>
+                                                    <li><strong>Comorbilidades:</strong> Múltiples factores de riesgo
+                                                    </li>
                                                 </ul>
                                             </div>
                                         </div>
-                                        
+
                                         <div className="mt-4 grid md:grid-cols-2 gap-4">
                                             <div className="p-4 bg-green-100 rounded">
                                                 <h4 className="font-semibold text-green-800 mb-2">Manejo Inmediato:</h4>
@@ -1245,7 +1404,8 @@ export default function Trauma() {
                                                 </ol>
                                             </div>
                                             <div className="p-4 bg-green-100 rounded">
-                                                <h4 className="font-semibold text-green-800 mb-2">Evaluación Especial:</h4>
+                                                <h4 className="font-semibold text-green-800 mb-2">Evaluación
+                                                    Especial:</h4>
                                                 <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
                                                     <li>Causa de la caída (síncope, mareo)</li>
                                                     <li>Estado neurológico baseline</li>
@@ -1257,7 +1417,8 @@ export default function Trauma() {
                                     </div>
 
                                     {/* Caso 4: Trauma pediátrico */}
-                                    <div className="p-6 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg shadow-md border-l-4 border-purple-500">
+                                    <div
+                                        className="p-6 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg shadow-md border-l-4 border-purple-500">
                                         <h3 className="text-xl font-semibold mb-3 text-purple-700 flex items-center">
                                             <FiUser className="w-6 h-6 mr-2"/>
                                             Caso 4: Trauma Pediátrico
@@ -1265,39 +1426,51 @@ export default function Trauma() {
                                         <div className="bg-white p-4 rounded mb-4">
                                             <h4 className="font-semibold text-gray-800 mb-2">Escenario:</h4>
                                             <p className="text-gray-700 italic mb-4">
-                                                Niño de 8 años atropellado por automóvil a baja velocidad en zona escolar. 
-                                                Presenta llanto inconsolable, deformidad en antebrazo izquierdo y abrasiones en cara. 
-                                                Padres muy ansiosos en escena. Impacto inicial en piernas, secundario al suelo.
+                                                Niño de 8 años atropellado por automóvil a baja velocidad en zona
+                                                escolar.
+                                                Presenta llanto inconsolable, deformidad en antebrazo izquierdo y
+                                                abrasiones en cara.
+                                                Padres muy ansiosos en escena. Impacto inicial en piernas, secundario al
+                                                suelo.
                                             </p>
                                         </div>
-                                        
+
                                         <div className="grid lg:grid-cols-2 gap-6">
                                             <div className="bg-white p-4 rounded">
-                                                <h4 className="font-semibold text-purple-800 mb-2">Evaluación Pediátrica:</h4>
+                                                <h4 className="font-semibold text-purple-800 mb-2">Evaluación
+                                                    Pediátrica:</h4>
                                                 <ul className="space-y-2 text-sm text-gray-700">
                                                     <li><strong>X:</strong> Sangrado menor en abrasiones faciales</li>
                                                     <li><strong>A:</strong> Llanto fuerte, vía aérea permeable</li>
                                                     <li><strong>B:</strong> FR 32/min (normal para edad), SatO₂ 97%</li>
                                                     <li><strong>C:</strong> Pulso 140 lpm, perfusión capilar 2 seg</li>
-                                                    <li><strong>D:</strong> Alerta, llanto apropiado, moviliza extremidades</li>
-                                                    <li><strong>E:</strong> Fractura antebrazo izq, abrasiones múltiples</li>
+                                                    <li><strong>D:</strong> Alerta, llanto apropiado, moviliza
+                                                        extremidades
+                                                    </li>
+                                                    <li><strong>E:</strong> Fractura antebrazo izq, abrasiones múltiples
+                                                    </li>
                                                 </ul>
                                             </div>
                                             <div className="bg-white p-4 rounded">
-                                                <h4 className="font-semibold text-pink-800 mb-2">Consideraciones Especiales:</h4>
+                                                <h4 className="font-semibold text-pink-800 mb-2">Consideraciones
+                                                    Especiales:</h4>
                                                 <ul className="list-disc list-inside space-y-2 text-sm text-gray-700">
                                                     <li><strong>Anatomía:</strong> Cabeza proporcionalmente mayor</li>
                                                     <li><strong>Fisiología:</strong> Compensación mejor del shock</li>
-                                                    <li><strong>Psicológico:</strong> Separación de padres genera estrés</li>
+                                                    <li><strong>Psicológico:</strong> Separación de padres genera estrés
+                                                    </li>
                                                     <li><strong>Mecanismo:</strong> Atropello = lesiones múltiples</li>
-                                                    <li><strong>Hipotermia:</strong> Mayor riesgo por superficie corporal</li>
+                                                    <li><strong>Hipotermia:</strong> Mayor riesgo por superficie
+                                                        corporal
+                                                    </li>
                                                 </ul>
                                             </div>
                                         </div>
-                                        
+
                                         <div className="mt-4 grid md:grid-cols-2 gap-4">
                                             <div className="p-4 bg-purple-100 rounded">
-                                                <h4 className="font-semibold text-purple-800 mb-2">Manejo Específico:</h4>
+                                                <h4 className="font-semibold text-purple-800 mb-2">Manejo
+                                                    Específico:</h4>
                                                 <ol className="list-decimal list-inside space-y-1 text-sm text-gray-700">
                                                     <li>Permitir acompañamiento parental si es posible</li>
                                                     <li>Inmovilización cervical con almohadillado</li>
@@ -1308,7 +1481,8 @@ export default function Trauma() {
                                                 </ol>
                                             </div>
                                             <div className="p-4 bg-purple-100 rounded">
-                                                <h4 className="font-semibold text-purple-800 mb-2">Vigilar Deterioro:</h4>
+                                                <h4 className="font-semibold text-purple-800 mb-2">Vigilar
+                                                    Deterioro:</h4>
                                                 <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
                                                     <li>Cambios en nivel de conciencia</li>
                                                     <li>Signos de shock (taquicardia tardía)</li>
@@ -1320,14 +1494,16 @@ export default function Trauma() {
                                     </div>
 
                                     {/* Resumen de aprendizaje */}
-                                    <div className="bg-gradient-to-r from-gray-50 to-slate-50 border border-gray-200 rounded-lg p-6">
+                                    <div
+                                        className="bg-gradient-to-r from-gray-50 to-slate-50 border border-gray-200 rounded-lg p-6">
                                         <h3 className="text-xl font-bold text-gray-700 mb-4 flex items-center">
                                             <BsLightbulb className="w-6 h-6 mr-2"/>
                                             Puntos Clave de Aprendizaje
                                         </h3>
                                         <div className="grid md:grid-cols-2 gap-6">
                                             <div>
-                                                <h4 className="font-semibold text-gray-800 mb-2">Evaluación Consistente:</h4>
+                                                <h4 className="font-semibold text-gray-800 mb-2">Evaluación
+                                                    Consistente:</h4>
                                                 <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                                     <li>Siempre seguir protocolo XABCDE</li>
                                                     <li>No omitir pasos por aparente estabilidad</li>
@@ -1336,7 +1512,8 @@ export default function Trauma() {
                                                 </ul>
                                             </div>
                                             <div>
-                                                <h4 className="font-semibold text-gray-800 mb-2">Consideraciones Especiales:</h4>
+                                                <h4 className="font-semibold text-gray-800 mb-2">Consideraciones
+                                                    Especiales:</h4>
                                                 <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                                     <li>Edad afecta presentación y manejo</li>
                                                     <li>Comorbilidades modifican riesgo</li>
@@ -1375,12 +1552,11 @@ export default function Trauma() {
                             </div>
                         </section>
                         {/* Foro de Discusión */}
-                        <ForumSection 
-                            pagina="trauma" 
+                        <ForumSection
+                            pagina="trauma"
                             titulo="Foro de Discusión - Trauma"
                         />
 
-                        
 
                         {/* Referencias y Recursos */}
                         <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm">

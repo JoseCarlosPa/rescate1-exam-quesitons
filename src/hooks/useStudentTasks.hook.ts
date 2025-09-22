@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
-import { collection, query, where, getDocs, addDoc, Timestamp, orderBy } from 'firebase/firestore';
-import { db } from '../firebase/firebaseConfig';
-import { useAuth } from '../Providers/AuthProvider';
-import { toast } from 'sonner';
+import {useEffect, useState} from 'react';
+import {addDoc, collection, getDocs, orderBy, query, Timestamp, where} from 'firebase/firestore';
+import {db} from '../firebase/firebaseConfig';
+import {useAuth} from '../Providers/AuthProvider';
+import {toast} from 'sonner';
 
 export interface Task {
     id: string;
@@ -32,7 +32,7 @@ export interface TaskSubmission {
 }
 
 export default function useStudentTasks() {
-    const { user } = useAuth();
+    const {user} = useAuth();
     const [tasks, setTasks] = useState<Task[]>([]);
     const [mySubmissions, setMySubmissions] = useState<TaskSubmission[]>([]);
     const [loading, setLoading] = useState(true);
@@ -116,9 +116,9 @@ export default function useStudentTasks() {
         const openDate = task.openDate.toDate();
         const closeDate = task.closeDate.toDate();
 
-        if (now < openDate) return { status: 'pending', label: 'Próxima', color: 'yellow' };
-        if (now > closeDate) return { status: 'closed', label: 'Cerrada', color: 'gray' };
-        return { status: 'active', label: 'Activa', color: 'green' };
+        if (now < openDate) return {status: 'pending', label: 'Próxima', color: 'yellow'};
+        if (now > closeDate) return {status: 'closed', label: 'Cerrada', color: 'gray'};
+        return {status: 'active', label: 'Activa', color: 'green'};
     };
 
     const hasSubmitted = (taskId: string) => {

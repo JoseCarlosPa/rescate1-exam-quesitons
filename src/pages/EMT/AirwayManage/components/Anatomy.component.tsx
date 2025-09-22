@@ -1,7 +1,7 @@
 import {FaExclamationTriangle, FaLungsVirus} from "react-icons/fa";
 
-export default function Anatomy(){
-    return(
+export default function Anatomy() {
+    return (
         <div className="space-y-8">
             {/* Anatomía interactiva */}
             <div>

@@ -13,8 +13,8 @@ import {IoReturnDownBack} from "react-icons/io5";
 import {FaQuestion, FaTools} from "react-icons/fa";
 import {TbListLetters} from "react-icons/tb";
 import {GoBook, GoWorkflow} from "react-icons/go";
-import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
-import { useSEO } from "./hooks/useSEO.hook.ts";
+import {MagnifyingGlassIcon} from "@heroicons/react/24/outline";
+import {useSEO} from "./hooks/useSEO.hook.ts";
 import {useAuth} from "./Providers/AuthProvider";
 
 function App() {
@@ -75,7 +75,7 @@ function App() {
             </div>
             <div className="relative w-full max-w-md mb-6 mt-8">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <MagnifyingGlassIcon className="h-5 w-5 text-gray-400" />
+                    <MagnifyingGlassIcon className="h-5 w-5 text-gray-400"/>
                 </div>
                 <input
                     type="text"
@@ -88,54 +88,56 @@ function App() {
             <div className="grid md:grid-cols-3 lg:grid-cols-6 grid-cols-2 gap-4 w-full  max-w-7xl mb-2 mt-2">
                 <NavLink to={AllRoutes.MAIN}
                          className="flex flex-col items-center justify-center  bg-white shadow-md rounded-xl p-3 hover:bg-orange-100 border border-orange-200 transition duration-300 ease-in-out focus:ring-2 focus:ring-orange-300 outline-none">
-                    <IoReturnDownBack className="w-5 h-5 my-auto text-orange-400"  />
+                    <IoReturnDownBack className="w-5 h-5 my-auto text-orange-400"/>
                     <p className="text-lg font-medium">Regresar</p>
                 </NavLink>
                 <NavLink to={AllRoutes.GLOSARY}
                          className="flex flex-col  items-center justify-center  bg-white shadow-md rounded-xl p-3 hover:bg-orange-100 border border-orange-200 transition duration-300 ease-in-out focus:ring-2 focus:ring-orange-300 outline-none">
-                    <TbListLetters className="w-5 h-5 my-auto text-orange-400"  />
+                    <TbListLetters className="w-5 h-5 my-auto text-orange-400"/>
                     <p className="text-lg font-medium">Glosario</p>
                 </NavLink>
                 <button
                     onClick={() => setShowRandomQuestion(!showRandomQuestion)}
                     className="cursor-pointer flex flex-col items-center justify-center bg-white shadow-md rounded-xl p-3 hover:bg-orange-100 border border-orange-200 transition duration-300 ease-in-out focus:ring-2 focus:ring-orange-300 outline-none">
-                    <FaQuestion className="w-4 h-4 my-auto text-orange-400" />
-                    <span className="text-lg font-medium">{showRandomQuestion ? 'Cerrar Pregunta aleatoria ' : 'Pregunta aleatoria'}</span>
+                    <FaQuestion className="w-4 h-4 my-auto text-orange-400"/>
+                    <span
+                        className="text-lg font-medium">{showRandomQuestion ? 'Cerrar Pregunta aleatoria ' : 'Pregunta aleatoria'}</span>
                 </button>
                 <NavLink to={AllRoutes.STUDY_CASES}
                          className="flex flex-col  items-center justify-center bg-white shadow-md rounded-xl p-3 hover:bg-orange-100 border border-orange-200 transition duration-300 ease-in-out focus:ring-2 focus:ring-orange-300 outline-none">
-                    <GoBook className="w-5 h-5 my-auto text-orange-400"  />
+                    <GoBook className="w-5 h-5 my-auto text-orange-400"/>
                     <p className="text-lg font-medium">Casos de estudio</p>
                 </NavLink>
                 <NavLink to={AllRoutes.ALOGIRTHMS}
                          className="flex flex-col  items-center justify-center bg-white shadow-md rounded-xl p-3 hover:bg-orange-100 border border-orange-200 transition duration-300 ease-in-out focus:ring-2 focus:ring-orange-300 outline-none">
-                    <GoWorkflow className="w-5 h-5 my-auto text-orange-400"  />
+                    <GoWorkflow className="w-5 h-5 my-auto text-orange-400"/>
                     <p className="text-sm md:text-lg font-medium truncate">Algoritmos/Protocolos</p>
                 </NavLink>
                 <button
                     onClick={() => setShowToolsModal(true)}
                     className="cursor-pointer flex flex-col items-center justify-center bg-white shadow-md rounded-xl p-3 hover:bg-orange-100 border border-orange-200 transition duration-300 ease-in-out focus:ring-2 focus:ring-orange-300 outline-none">
-                    <FaTools className="w-4 h-4 my-auto text-orange-400" />
+                    <FaTools className="w-4 h-4 my-auto text-orange-400"/>
                     <span className="text-lg font-medium">Herramientas</span>
                 </button>
             </div>
             {showRandomQuestion && (
-                <div className="fixed inset-0 bg-black/20 bg-opacity-25 z-40 flex justify-center items-center p-4 backdrop-blur-[2px] animate-fadeIn">
+                <div
+                    className="fixed inset-0 bg-black/20 bg-opacity-25 z-40 flex justify-center items-center p-4 backdrop-blur-[2px] animate-fadeIn">
                     <div
                         className="w-full md:w-1/2 lg:w-1/3 max-h-[90vh] overflow-auto"
                         onClick={(e) => e.stopPropagation()}
                     >
-                        <RandomQuestion onClose={() => setShowRandomQuestion(false)} />
+                        <RandomQuestion onClose={() => setShowRandomQuestion(false)}/>
                     </div>
                 </div>
             )}
             {showToolsModal && (
-                    <div
-                        className="w-full md:w-1/2 lg:w-1/3 max-h-[90vh] overflow-auto"
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        <ToolsModal onClose={() => setShowToolsModal(false)} />
-                    </div>
+                <div
+                    className="w-full md:w-1/2 lg:w-1/3 max-h-[90vh] overflow-auto"
+                    onClick={(e) => e.stopPropagation()}
+                >
+                    <ToolsModal onClose={() => setShowToolsModal(false)}/>
+                </div>
             )}
 
             {loading ? <AiOutlineLoading3Quarters className="animate-spin h-20 w-20 text-orange-500 mt-8"/> : null}
@@ -156,7 +158,8 @@ function App() {
                                 </div>
                                 : null}
 
-                            <div className="mb-2 mt-2 group-hover:scale-110 transition-transform duration-200">{lection.icon}</div>
+                            <div
+                                className="mb-2 mt-2 group-hover:scale-110 transition-transform duration-200">{lection.icon}</div>
                             <p className="flex text-center text-orange-600 font-bold text-lg mt-2 group-hover:underline">{lection.title}</p>
                         </NavLink>
                     );

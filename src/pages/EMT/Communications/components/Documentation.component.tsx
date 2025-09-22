@@ -4,12 +4,14 @@ import {RiFileList3Line, RiUserVoiceLine} from "react-icons/ri";
 import {AiOutlineWarning} from "react-icons/ai";
 import {BsFileText} from "react-icons/bs";
 
-export default function Documentation(){
-    return(
+export default function Documentation() {
+    return (
         <div className="space-y-6">
-            <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Documentación prehospitalaria y FRAP</h2>
+            <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Documentación prehospitalaria y
+                FRAP</h2>
             <p className="text-gray-600 mb-6">
-                La documentación no es solo un requisito legal; es una herramienta que protege al paciente, al paramédico y mejora la continuidad de la atención.
+                La documentación no es solo un requisito legal; es una herramienta que protege al paciente, al
+                paramédico y mejora la continuidad de la atención.
             </p>
 
             <div className="grid md:grid-cols-2 gap-6 mb-6">
@@ -20,7 +22,8 @@ export default function Documentation(){
                         <h3 className="text-xl font-bold text-blue-700">¿Qué es el FRAP?</h3>
                     </div>
                     <p className="text-gray-700 mb-3">
-                        Formato de Registro de Atención Prehospitalaria: documento oficial que registra toda la atención médica brindada.
+                        Formato de Registro de Atención Prehospitalaria: documento oficial que registra toda la atención
+                        médica brindada.
                     </p>
                     <div className="bg-blue-50 p-3 rounded">
                         <strong className="text-blue-800">Funciones del FRAP:</strong>
@@ -181,8 +184,10 @@ export default function Documentation(){
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
                 <h3 className="text-lg font-semibold text-blue-800 mb-2">💡 Recordatorio legal</h3>
                 <p className="text-blue-700 text-sm">
-                    <strong>"Si no está documentado, no se hizo"</strong> - En términos legales, cualquier intervención no documentada
-                    se considera como no realizada. Tu documentación puede ser la diferencia entre protección legal y responsabilidad civil.
+                    <strong>"Si no está documentado, no se hizo"</strong> - En términos legales, cualquier intervención
+                    no documentada
+                    se considera como no realizada. Tu documentación puede ser la diferencia entre protección legal y
+                    responsabilidad civil.
                 </p>
             </div>
         </div>

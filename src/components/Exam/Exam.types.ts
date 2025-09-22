@@ -1,6 +1,6 @@
 import {Question} from "../../question";
 
-export interface ExamProps  {
+export interface ExamProps {
     questions: Question[];
     challengingQuestions?: Question[];
     returnRoute: string;

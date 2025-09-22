@@ -2,10 +2,11 @@ import {MdThermostat} from "react-icons/md";
 import {FaBug, FaSnowflake, FaWater} from "react-icons/fa";
 import {GiPoisonBottle} from "react-icons/gi";
 
-export default function Management(){
-    return(
+export default function Management() {
+    return (
         <div className="space-y-8">
-            <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2">Protocolos de Evaluación y Manejo</h2>
+            <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2">Protocolos de Evaluación y
+                Manejo</h2>
 
             {/* Protocolo general */}
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">

@@ -5,7 +5,7 @@ import {FiAlertTriangle, FiEye, FiUser} from "react-icons/fi";
 import {MdCheckCircle, MdOutlineTimer, MdWarning} from "react-icons/md";
 
 export default function Overview() {
-    return(
+    return (
         <div className="space-y-8">
             {/* Importancia crítica */}
             <div className="bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-red-500 p-6 rounded-lg">
@@ -16,7 +16,8 @@ export default function Overview() {
                 <p className="text-gray-800 leading-relaxed text-lg">
                     Las emergencias ambientales son condiciones médicas causadas por factores externos como
                     <strong> temperatura extrema, agua, animales o sustancias tóxicas</strong>. Pueden ser
-                    <span className="text-red-600 font-bold"> potencialmente mortales</span> si no se reconocen y tratan oportunamente.
+                    <span className="text-red-600 font-bold"> potencialmente mortales</span> si no se reconocen y tratan
+                    oportunamente.
                 </p>
                 <div className="mt-4 grid md:grid-cols-3 gap-4">
                     <div className="bg-white p-4 rounded shadow-sm text-center">

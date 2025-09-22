@@ -3,10 +3,11 @@ import {FaBug, FaSnowflake, FaThermometerHalf, FaWater} from "react-icons/fa";
 import {MdCheckCircle} from "react-icons/md";
 import {FiAlertTriangle, FiUser} from "react-icons/fi";
 
-export default function Prevention(){
-    return(
+export default function Prevention() {
+    return (
         <div className="space-y-8">
-            <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2">Prevención y Educación Comunitaria</h2>
+            <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2">Prevención y Educación
+                Comunitaria</h2>
 
             {/* Educación para la prevención */}
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">

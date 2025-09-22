@@ -1,6 +1,6 @@
-import { RiBrain2Fill } from "react-icons/ri";
-import { FaExclamationTriangle, FaClock, FaHeartbeat } from "react-icons/fa";
-import { MdLocalHospital } from "react-icons/md";
+import {RiBrain2Fill} from "react-icons/ri";
+import {FaClock, FaExclamationTriangle, FaHeartbeat} from "react-icons/fa";
+import {MdLocalHospital} from "react-icons/md";
 
 export default function Overview() {
     return (
@@ -8,19 +8,20 @@ export default function Overview() {
             {/* Introducción */}
             <section>
                 <div className="flex items-center gap-3 mb-4">
-                    <RiBrain2Fill className="w-8 h-8 text-orange-500" />
+                    <RiBrain2Fill className="w-8 h-8 text-orange-500"/>
                     <h2 className="text-2xl font-bold text-gray-900">Introducción</h2>
                 </div>
                 <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
                     <p className="text-gray-700 leading-relaxed">
                         Las emergencias neurológicas son afecciones que alteran el funcionamiento normal del cerebro,
-                        médula espinal o nervios periféricos. Estas pueden comprometer el estado mental, el control motor,
+                        médula espinal o nervios periféricos. Estas pueden comprometer el estado mental, el control
+                        motor,
                         el habla, la respiración y otros procesos vitales.
                     </p>
                 </div>
                 <div className="mt-4 bg-red-50 border-l-4 border-red-400 p-4 rounded-r-lg">
                     <div className="flex items-center gap-2 mb-2">
-                        <FaExclamationTriangle className="w-5 h-5 text-red-500" />
+                        <FaExclamationTriangle className="w-5 h-5 text-red-500"/>
                         <p className="font-semibold text-red-800">Importancia Crítica</p>
                     </div>
                     <p className="text-red-700">
@@ -35,7 +36,7 @@ export default function Overview() {
                 <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
                         <h3 className="font-semibold text-yellow-800 mb-3 flex items-center gap-2">
-                            <FaHeartbeat className="w-5 h-5" />
+                            <FaHeartbeat className="w-5 h-5"/>
                             Sensibilidad Cerebral
                         </h3>
                         <p className="text-yellow-700 text-sm">
@@ -74,7 +75,7 @@ export default function Overview() {
                 <div className="grid md:grid-cols-2 gap-4">
                     <div className="bg-green-50 border border-green-200 rounded-lg p-4">
                         <h3 className="font-semibold text-green-800 mb-3 flex items-center gap-2">
-                            <FaClock className="w-5 h-5" />
+                            <FaClock className="w-5 h-5"/>
                             Prioridades Inmediatas
                         </h3>
                         <ol className="list-decimal list-inside text-green-700 text-sm space-y-2">
@@ -87,7 +88,7 @@ export default function Overview() {
 
                     <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
                         <h3 className="font-semibold text-blue-800 mb-3 flex items-center gap-2">
-                            <MdLocalHospital className="w-5 h-5" />
+                            <MdLocalHospital className="w-5 h-5"/>
                             Documentación y Transporte
                         </h3>
                         <ul className="list-disc list-inside text-blue-700 text-sm space-y-2">
@@ -103,7 +104,7 @@ export default function Overview() {
             <section>
                 <div className="bg-red-100 border border-red-300 rounded-lg p-6">
                     <h3 className="text-xl font-bold text-red-800 mb-3 flex items-center gap-2">
-                        <FaClock className="w-6 h-6" />
+                        <FaClock className="w-6 h-6"/>
                         El Factor Tiempo es Crítico
                     </h3>
                     <p className="text-red-700 mb-3">

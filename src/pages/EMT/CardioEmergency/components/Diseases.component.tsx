@@ -1,8 +1,8 @@
 import {FiAlertTriangle, FiHeart} from "react-icons/fi";
 import {MdCheckCircle} from "react-icons/md";
 
-export default function Diseases(){
-    return(
+export default function Diseases() {
+    return (
         <div className="space-y-8">
             <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
                 <FiHeart className="w-6 h-6 mr-2 text-orange-500"/>
@@ -38,7 +38,8 @@ export default function Diseases(){
 
             {/* Tabla detallada de enfermedades */}
             <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
-                <h3 className="text-xl font-bold text-gray-700 mb-4 p-6 pb-0">Enfermedades Cardiovasculares - Guía de Referencia</h3>
+                <h3 className="text-xl font-bold text-gray-700 mb-4 p-6 pb-0">Enfermedades Cardiovasculares - Guía de
+                    Referencia</h3>
                 <div className="overflow-x-auto">
                     <table className="min-w-full divide-y divide-gray-200">
                         <thead className="bg-gray-100">
@@ -46,7 +47,9 @@ export default function Diseases(){
                             <th className="px-4 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Enfermedad</th>
                             <th className="px-4 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Fisiopatología</th>
                             <th className="px-4 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Signos/Síntomas</th>
-                            <th className="px-4 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Medicamento Principal</th>
+                            <th className="px-4 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Medicamento
+                                Principal
+                            </th>
                         </tr>
                         </thead>
                         <tbody className="bg-white divide-y divide-gray-200 text-gray-700">
@@ -164,7 +167,8 @@ export default function Diseases(){
 
             {/* Recomendaciones para EMT */}
             <div className="bg-green-50 border border-green-200 rounded-lg p-6">
-                <h3 className="text-xl font-bold text-green-700 mb-4">Recomendaciones Específicas para EMT en México</h3>
+                <h3 className="text-xl font-bold text-green-700 mb-4">Recomendaciones Específicas para EMT en
+                    México</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                     <div>
                         <h4 className="font-semibold text-green-800 mb-3 flex items-center">

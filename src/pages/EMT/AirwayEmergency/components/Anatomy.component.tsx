@@ -3,8 +3,8 @@ import {FiActivity, FiUser} from "react-icons/fi";
 import {BsGraphUp} from "react-icons/bs";
 import {FaExclamationTriangle} from "react-icons/fa";
 
-export default function Anatomy(){
-    return(
+export default function Anatomy() {
+    return (
         <div className="space-y-8">
             {/* Anatomía del sistema respiratorio */}
             <div className="bg-gradient-to-r from-blue-50 to-cyan-50 border-l-4 border-blue-500 p-6 rounded-lg">

@@ -1,7 +1,16 @@
-import { FaTasks, FaPlus, FaCalendar, FaEdit, FaEye, FaClock, FaCheckCircle, FaExclamationTriangle } from "react-icons/fa";
-import { useState } from "react";
+import {
+    FaCalendar,
+    FaCheckCircle,
+    FaClock,
+    FaEdit,
+    FaExclamationTriangle,
+    FaEye,
+    FaPlus,
+    FaTasks
+} from "react-icons/fa";
+import {useState} from "react";
 import useAdminDashboard from "../AdminDashboard.hook.ts";
-import { Task, TaskSubmission } from "../AdminDashboard.types";
+import {Task, TaskSubmission} from "../AdminDashboard.types";
 
 export default function Tasks() {
     const {
@@ -11,7 +20,6 @@ export default function Tasks() {
         handleCreateTask,
         handleGradeTask,
         handleUpdateGradeWeights,
-        fetchTasks
     } = useAdminDashboard();
 
     const [showCreateModal, setShowCreateModal] = useState(false);
@@ -31,21 +39,14 @@ export default function Tasks() {
     });
     const [weights, setWeights] = useState(gradeWeights);
 
-    const isTaskActive = (task: Task) => {
-        const now = new Date();
-        const openDate = task.openDate.toDate();
-        const closeDate = task.closeDate.toDate();
-        return now >= openDate && now <= closeDate;
-    };
-
     const getTaskStatus = (task: Task) => {
         const now = new Date();
         const openDate = task.openDate.toDate();
         const closeDate = task.closeDate.toDate();
 
-        if (now < openDate) return { status: 'pending', label: 'Próxima', color: 'text-yellow-600 bg-yellow-100' };
-        if (now > closeDate) return { status: 'closed', label: 'Cerrada', color: 'text-gray-600 bg-gray-100' };
-        return { status: 'active', label: 'Activa', color: 'text-green-600 bg-green-100' };
+        if (now < openDate) return {status: 'pending', label: 'Próxima', color: 'text-yellow-600 bg-yellow-100'};
+        if (now > closeDate) return {status: 'closed', label: 'Cerrada', color: 'text-gray-600 bg-gray-100'};
+        return {status: 'active', label: 'Activa', color: 'text-green-600 bg-green-100'};
     };
 
     const handleCreateTaskSubmit = async (e: React.FormEvent) => {
@@ -79,7 +80,7 @@ export default function Tasks() {
         await handleGradeTask(selectedSubmission.id, gradeForm.score, gradeForm.feedback);
         setShowGradeModal(false);
         setSelectedSubmission(null);
-        setGradeForm({ score: 0, feedback: '' });
+        setGradeForm({score: 0, feedback: ''});
     };
 
     const handleWeightsSubmit = async (e: React.FormEvent) => {
@@ -99,7 +100,7 @@ export default function Tasks() {
                 <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center">
                         <div className="p-3 bg-purple-100 rounded-full mr-4">
-                            <FaTasks className="text-purple-600 text-xl" />
+                            <FaTasks className="text-purple-600 text-xl"/>
                         </div>
                         <div>
                             <h2 className="text-3xl font-bold text-gray-900">Gestión de Tareas</h2>
@@ -111,14 +112,14 @@ export default function Tasks() {
                             onClick={() => setShowWeightsModal(true)}
                             className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors flex items-center gap-2"
                         >
-                            <FaEdit />
+                            <FaEdit/>
                             Configurar Pesos
                         </button>
                         <button
                             onClick={() => setShowCreateModal(true)}
                             className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-colors flex items-center gap-2"
                         >
-                            <FaPlus />
+                            <FaPlus/>
                             Nueva Tarea
                         </button>
                     </div>
@@ -153,13 +154,15 @@ export default function Tasks() {
                         const gradedSubmissions = submissions.filter(s => s.isGraded);
 
                         return (
-                            <div key={task.id} className="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
+                            <div key={task.id}
+                                 className="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
                                 <div className="p-6">
                                     <div className="flex items-start justify-between mb-4">
                                         <div className="flex-1">
                                             <div className="flex items-center gap-3 mb-2">
                                                 <h3 className="text-xl font-bold text-gray-900">{task.title}</h3>
-                                                <span className={`px-3 py-1 rounded-full text-xs font-medium ${taskStatus.color}`}>
+                                                <span
+                                                    className={`px-3 py-1 rounded-full text-xs font-medium ${taskStatus.color}`}>
                                                     {taskStatus.label}
                                                 </span>
                                             </div>
@@ -167,21 +170,21 @@ export default function Tasks() {
 
                                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                                                 <div className="flex items-center text-gray-600">
-                                                    <FaCalendar className="mr-2" />
+                                                    <FaCalendar className="mr-2"/>
                                                     <div>
                                                         <div className="font-medium">Apertura</div>
                                                         <div>{task.openDate.toDate().toLocaleDateString()}</div>
                                                     </div>
                                                 </div>
                                                 <div className="flex items-center text-gray-600">
-                                                    <FaClock className="mr-2" />
+                                                    <FaClock className="mr-2"/>
                                                     <div>
                                                         <div className="font-medium">Cierre</div>
                                                         <div>{task.closeDate.toDate().toLocaleDateString()}</div>
                                                     </div>
                                                 </div>
                                                 <div className="flex items-center text-gray-600">
-                                                    <FaCheckCircle className="mr-2" />
+                                                    <FaCheckCircle className="mr-2"/>
                                                     <div>
                                                         <div className="font-medium">Puntaje Máximo</div>
                                                         <div>{task.maxScore} puntos</div>
@@ -203,9 +206,11 @@ export default function Tasks() {
                                         {submissions.length > 0 ? (
                                             <div className="space-y-2">
                                                 {submissions.slice(0, 3).map((submission) => (
-                                                    <div key={submission.id} className="flex items-center justify-between py-2 px-3 bg-white rounded border">
+                                                    <div key={submission.id}
+                                                         className="flex items-center justify-between py-2 px-3 bg-white rounded border">
                                                         <div className="flex items-center">
-                                                            <div className="font-medium text-gray-900">{submission.studentName}</div>
+                                                            <div
+                                                                className="font-medium text-gray-900">{submission.studentName}</div>
                                                             <div className="ml-2 text-sm text-gray-500">
                                                                 {submission.submittedAt.toDate().toLocaleDateString()}
                                                             </div>
@@ -216,7 +221,8 @@ export default function Tasks() {
                                                                     {submission.score}/{task.maxScore}
                                                                 </span>
                                                             ) : (
-                                                                <span className="text-yellow-600 text-sm">Pendiente</span>
+                                                                <span
+                                                                    className="text-yellow-600 text-sm">Pendiente</span>
                                                             )}
                                                             <button
                                                                 onClick={() => {
@@ -229,7 +235,7 @@ export default function Tasks() {
                                                                 }}
                                                                 className="text-blue-600 hover:text-blue-800 p-1"
                                                             >
-                                                                <FaEye />
+                                                                <FaEye/>
                                                             </button>
                                                         </div>
                                                     </div>
@@ -242,7 +248,7 @@ export default function Tasks() {
                                             </div>
                                         ) : (
                                             <div className="text-center py-4 text-gray-500">
-                                                <FaExclamationTriangle className="mx-auto text-2xl mb-2" />
+                                                <FaExclamationTriangle className="mx-auto text-2xl mb-2"/>
                                                 <p>No hay entregas para esta tarea</p>
                                             </div>
                                         )}
@@ -253,9 +259,10 @@ export default function Tasks() {
                     })
                 ) : (
                     <div className="bg-white rounded-lg shadow-lg p-8 text-center">
-                        <FaTasks className="mx-auto text-gray-300 text-4xl mb-4" />
+                        <FaTasks className="mx-auto text-gray-300 text-4xl mb-4"/>
                         <h3 className="text-lg font-medium text-gray-900 mb-2">No hay tareas creadas</h3>
-                        <p className="text-gray-600 mb-4">Crea tu primera tarea para comenzar a asignar trabajos a los estudiantes</p>
+                        <p className="text-gray-600 mb-4">Crea tu primera tarea para comenzar a asignar trabajos a los
+                            estudiantes</p>
                         <button
                             onClick={() => setShowCreateModal(true)}
                             className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg transition-colors"
@@ -268,7 +275,8 @@ export default function Tasks() {
 
             {/* Create Task Modal */}
             {showCreateModal && (
-                <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50 flex items-center justify-center">
+                <div
+                    className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50 flex items-center justify-center">
                     <div className="relative bg-white rounded-lg shadow-xl max-w-lg w-full mx-4">
                         <div className="px-6 py-4 border-b border-gray-200">
                             <h3 className="text-lg font-semibold text-gray-900">Crear Nueva Tarea</h3>
@@ -297,7 +305,8 @@ export default function Tasks() {
                                 </div>
                                 <div className="grid grid-cols-2 gap-4">
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-1">Fecha Apertura</label>
+                                        <label className="block text-sm font-medium text-gray-700 mb-1">Fecha
+                                            Apertura</label>
                                         <input
                                             type="datetime-local"
                                             value={newTask.openDate}
@@ -307,7 +316,8 @@ export default function Tasks() {
                                         />
                                     </div>
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-1">Fecha Cierre</label>
+                                        <label className="block text-sm font-medium text-gray-700 mb-1">Fecha
+                                            Cierre</label>
                                         <input
                                             type="datetime-local"
                                             value={newTask.closeDate}
@@ -318,7 +328,8 @@ export default function Tasks() {
                                     </div>
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">Puntaje Máximo</label>
+                                    <label className="block text-sm font-medium text-gray-700 mb-1">Puntaje
+                                        Máximo</label>
                                     <input
                                         type="number"
                                         value={newTask.maxScore}
@@ -352,7 +363,8 @@ export default function Tasks() {
 
             {/* Grade Task Modal */}
             {showGradeModal && selectedSubmission && (
-                <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50 flex items-center justify-center">
+                <div
+                    className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50 flex items-center justify-center">
                     <div className="relative bg-white rounded-lg shadow-xl max-w-2xl w-full mx-4">
                         <div className="px-6 py-4 border-b border-gray-200">
                             <h3 className="text-lg font-semibold text-gray-900">Calificar Entrega</h3>
@@ -367,7 +379,8 @@ export default function Tasks() {
                                     </div>
                                     <div>
                                         <span className="font-medium text-gray-700">Fecha de Entrega:</span>
-                                        <div className="text-gray-900">{selectedSubmission.submittedAt.toDate().toLocaleString()}</div>
+                                        <div
+                                            className="text-gray-900">{selectedSubmission.submittedAt.toDate().toLocaleString()}</div>
                                     </div>
                                     <div className="col-span-2">
                                         <span className="font-medium text-gray-700">Link de Entrega:</span>
@@ -388,11 +401,15 @@ export default function Tasks() {
                             <form onSubmit={handleGradeSubmit}>
                                 <div className="space-y-4">
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-1">Calificación</label>
+                                        <label
+                                            className="block text-sm font-medium text-gray-700 mb-1">Calificación</label>
                                         <input
                                             type="number"
                                             value={gradeForm.score}
-                                            onChange={(e) => setGradeForm({...gradeForm, score: parseInt(e.target.value)})}
+                                            onChange={(e) => setGradeForm({
+                                                ...gradeForm,
+                                                score: parseInt(e.target.value)
+                                            })}
                                             min="0"
                                             max="100"
                                             className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
@@ -400,7 +417,8 @@ export default function Tasks() {
                                         />
                                     </div>
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-1">Retroalimentación</label>
+                                        <label
+                                            className="block text-sm font-medium text-gray-700 mb-1">Retroalimentación</label>
                                         <textarea
                                             value={gradeForm.feedback}
                                             onChange={(e) => setGradeForm({...gradeForm, feedback: e.target.value})}
@@ -436,7 +454,8 @@ export default function Tasks() {
 
             {/* Grade Weights Modal */}
             {showWeightsModal && (
-                <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50 flex items-center justify-center">
+                <div
+                    className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50 flex items-center justify-center">
                     <div className="relative bg-white rounded-lg shadow-xl max-w-md w-full mx-4">
                         <div className="px-6 py-4 border-b border-gray-200">
                             <h3 className="text-lg font-semibold text-gray-900">Configurar Pesos de Calificación</h3>
@@ -468,7 +487,8 @@ export default function Tasks() {
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">Asistencia (%)</label>
+                                    <label className="block text-sm font-medium text-gray-700 mb-1">Asistencia
+                                        (%)</label>
                                     <input
                                         type="number"
                                         value={weights.attendance}
@@ -482,7 +502,8 @@ export default function Tasks() {
                                 <div className="bg-gray-50 p-3 rounded-lg">
                                     <div className="text-sm">
                                         <span className="font-medium">Total: </span>
-                                        <span className={`${weights.exams + weights.tasks + weights.attendance === 100 ? 'text-green-600' : 'text-red-600'}`}>
+                                        <span
+                                            className={`${weights.exams + weights.tasks + weights.attendance === 100 ? 'text-green-600' : 'text-red-600'}`}>
                                             {weights.exams + weights.tasks + weights.attendance}%
                                         </span>
                                     </div>

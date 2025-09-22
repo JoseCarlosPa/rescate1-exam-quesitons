@@ -2,8 +2,8 @@ import {BsShield} from "react-icons/bs";
 import {MdCheckCircle} from "react-icons/md";
 import {FaExclamationTriangle} from "react-icons/fa";
 
-export default function Treatment(){
-    return(
+export default function Treatment() {
+    return (
         <div className="space-y-8">
             <div>
                 <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
@@ -68,7 +68,8 @@ export default function Treatment(){
                             <h4 className="font-semibold text-red-800 mb-3">Medidas Inmediatas (Primeros 10 min):</h4>
                             <ol className="list-decimal list-inside space-y-2 text-gray-700">
                                 <li><strong>O₂ suplementario</strong> si SatO₂ &lt;90%</li>
-                                <li><strong>AAS 300mg masticable</strong> (contraindicaciones: alergia, sangrado activo)</li>
+                                <li><strong>AAS 300mg masticable</strong> (contraindicaciones: alergia, sangrado activo)
+                                </li>
                                 <li><strong>Nitroglicerina SL 0.4mg</strong> (si PA sistólica &gt;100 mmHg)</li>
                                 <li><strong>Morfina 2-4mg IV</strong> para dolor severo</li>
                                 <li><strong>ECG de 12 derivaciones</strong></li>
@@ -242,7 +243,8 @@ export default function Treatment(){
                                 <li><strong>Traslado inmediato</strong> evitando movimientos bruscos</li>
                             </ol>
                             <div className="mt-3 p-2 bg-red-100 rounded">
-                                <p className="text-sm text-red-800"><strong>⚠️ Importante:</strong> La reducción rápida de PA puede causar isquemia cerebral o coronaria</p>
+                                <p className="text-sm text-red-800"><strong>⚠️ Importante:</strong> La reducción rápida
+                                    de PA puede causar isquemia cerebral o coronaria</p>
                             </div>
                         </div>
                     </div>
@@ -250,7 +252,8 @@ export default function Treatment(){
 
                 {/* Protocolo de paro cardíaco actualizado */}
                 <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
-                    <h3 className="text-xl font-bold text-gray-700 mb-4">Paro Cardíaco Súbito - Protocolo Actualizado</h3>
+                    <h3 className="text-xl font-bold text-gray-700 mb-4">Paro Cardíaco Súbito - Protocolo
+                        Actualizado</h3>
                     <div className="grid md:grid-cols-2 gap-6">
                         <div>
                             <h4 className="font-semibold text-gray-800 mb-3">Secuencia Inicial:</h4>
@@ -275,7 +278,8 @@ export default function Treatment(){
                                 </ul>
                             </ul>
                             <div className="mt-3 p-2 bg-gray-100 rounded">
-                                <p className="text-sm text-gray-800"><strong>Meta:</strong> Minimizar interrupciones de compresiones (&lt;10 segundos)</p>
+                                <p className="text-sm text-gray-800"><strong>Meta:</strong> Minimizar interrupciones de
+                                    compresiones (&lt;10 segundos)</p>
                             </div>
                         </div>
                     </div>

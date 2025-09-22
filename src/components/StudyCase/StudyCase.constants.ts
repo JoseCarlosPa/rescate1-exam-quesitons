@@ -192,9 +192,9 @@ export const caseStudies: CaseStudy[] = [
             "Sin antecedentes claros disponibles en el lugar",
         ],
         questions: [
-            { question: "¿Cuál es la intervención inmediata indicada para este paciente?" },
-            { question: "¿Cómo afecta la hipoglucemia el estado mental del paciente?" },
-            { question: "¿Qué protocolo seguir si el paciente no responde a glucosa oral?" },
+            {question: "¿Cuál es la intervención inmediata indicada para este paciente?"},
+            {question: "¿Cómo afecta la hipoglucemia el estado mental del paciente?"},
+            {question: "¿Qué protocolo seguir si el paciente no responde a glucosa oral?"},
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de emergencias endocrinas.",
@@ -227,9 +227,9 @@ export const caseStudies: CaseStudy[] = [
             "Riesgo de agotamiento respiratorio",
         ],
         questions: [
-            { question: "¿Qué indicaciones hay para administrar salbutamol en nebulización?" },
-            { question: "¿Cuándo se debe asistir la ventilación de un paciente asmático?" },
-            { question: "¿Qué signos indican inminente fallo respiratorio?" },
+            {question: "¿Qué indicaciones hay para administrar salbutamol en nebulización?"},
+            {question: "¿Cuándo se debe asistir la ventilación de un paciente asmático?"},
+            {question: "¿Qué signos indican inminente fallo respiratorio?"},
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de emergencias respiratorias.",
@@ -262,9 +262,9 @@ export const caseStudies: CaseStudy[] = [
             "Evaluación neurológica continua es clave",
         ],
         questions: [
-            { question: "¿Cuándo está indicada la inmovilización espinal completa?" },
-            { question: "¿Qué signos indican lesión medular?" },
-            { question: "¿Cómo evalúas función motora y sensitiva en escena?" },
+            {question: "¿Cuándo está indicada la inmovilización espinal completa?"},
+            {question: "¿Qué signos indican lesión medular?"},
+            {question: "¿Cómo evalúas función motora y sensitiva en escena?"},
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de trauma músculo-esquelético e inmovilización.",
@@ -296,9 +296,9 @@ export const caseStudies: CaseStudy[] = [
             "Asistencia con nitroglicerina si no hay contraindicaciones",
         ],
         questions: [
-            { question: "¿Qué medicamentos puedes administrar en sospecha de IAM?" },
-            { question: "¿Qué datos electrocardiográficos o clínicos deben reportarse al hospital?" },
-            { question: "¿Cómo evalúas el dolor torácico de manera sistemática?" },
+            {question: "¿Qué medicamentos puedes administrar en sospecha de IAM?"},
+            {question: "¿Qué datos electrocardiográficos o clínicos deben reportarse al hospital?"},
+            {question: "¿Cómo evalúas el dolor torácico de manera sistemática?"},
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de emergencias cardiovasculares.",
@@ -329,9 +329,9 @@ export const caseStudies: CaseStudy[] = [
             "Control de sangrado postparto materno",
         ],
         questions: [
-            { question: "¿Cuáles son los pasos clave para un parto asistido en el campo?" },
-            { question: "¿Cómo evalúas al recién nacido con APGAR?" },
-            { question: "¿Qué hacer en caso de hemorragia postparto?" },
+            {question: "¿Cuáles son los pasos clave para un parto asistido en el campo?"},
+            {question: "¿Cómo evalúas al recién nacido con APGAR?"},
+            {question: "¿Qué hacer en caso de hemorragia postparto?"},
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de emergencias obstétricas y neonatales.",
@@ -363,9 +363,9 @@ export const caseStudies: CaseStudy[] = [
             "Importancia de monitorización continua",
         ],
         questions: [
-            { question: "¿Por qué una quemadura eléctrica puede causar daño interno severo sin lesión externa visible?" },
-            { question: "¿Cuál es el riesgo cardíaco asociado a este tipo de trauma?" },
-            { question: "¿Qué medidas debes tomar si no tienes un monitor cardíaco disponible?" },
+            {question: "¿Por qué una quemadura eléctrica puede causar daño interno severo sin lesión externa visible?"},
+            {question: "¿Cuál es el riesgo cardíaco asociado a este tipo de trauma?"},
+            {question: "¿Qué medidas debes tomar si no tienes un monitor cardíaco disponible?"},
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de emergencias ambientales y trauma eléctrico.",
@@ -398,9 +398,9 @@ export const caseStudies: CaseStudy[] = [
             "Riesgo de edema pulmonar secundario",
         ],
         questions: [
-            { question: "¿Cuál es la prioridad en un caso de ahogamiento pediátrico?" },
-            { question: "¿Qué signos indican que el paciente podría desarrollar complicaciones como edema pulmonar?" },
-            { question: "¿Qué precauciones especiales debes tener en niños después de un rescate acuático?" },
+            {question: "¿Cuál es la prioridad en un caso de ahogamiento pediátrico?"},
+            {question: "¿Qué signos indican que el paciente podría desarrollar complicaciones como edema pulmonar?"},
+            {question: "¿Qué precauciones especiales debes tener en niños después de un rescate acuático?"},
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de emergencias pediátricas y ambientales.",
