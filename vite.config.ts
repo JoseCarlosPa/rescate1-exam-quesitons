@@ -12,7 +12,7 @@ export default defineConfig({
             registerType: 'autoUpdate',
             includeAssets: ['estrella-de-la-vida.png', 'vite.svg'],
             workbox: {
-                maximumFileSizeToCacheInBytes: 5242880, // Aumentamos el límite a 3MB
+                maximumFileSizeToCacheInBytes: 6 * 1024 * 1024, // Aumentamos el límite a 6MB
                 runtimeCaching: [
                     {
                         urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,

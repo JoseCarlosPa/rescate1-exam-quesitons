@@ -23,7 +23,6 @@ export const CaseSimulatorComponent: React.FC<CaseSimulatorComponentProps> = ({
     selectedOption,
     isLastStep,
     showGlasgowEvaluation,
-    glasgowAnswer,
     submitAnswer,
     nextStep,
     resetSimulator,
