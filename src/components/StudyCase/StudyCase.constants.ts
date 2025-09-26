@@ -14,1919 +14,557 @@ export type CaseStudy = {
 
 export const caseStudies: CaseStudy[] = [
     {
-        id: "001",
-        title: "Dolor torácico súbito en paciente masculino",
-        description: "Paciente masculino de 58 años refiere dolor torácico opresivo que inició hace 20 minutos mientras caminaba.",
-        initialAssessment: "Paciente alerta, diaforético, refiere dolor 7/10 en región retroesternal, sin irradiación. Antecedentes de hipertensión arterial.",
+        id: "trauma-geriatrico-01",
+        title: "Caída en domicilio de paciente geriátrica",
+        description: "Mujer de 82 años sufre una caída desde su propia altura en el baño. Se queja de dolor intenso en la cadera derecha y es incapaz de moverse. Tiene antecedentes de osteoporosis y toma anticoagulantes.",
+        initialAssessment: "Paciente consciente y orientada, aunque muy adolorida. Se observa acortamiento y rotación externa de la extremidad inferior derecha. La piel está pálida y fría.",
         vitalSigns: {
-            FC: "98 lpm",
-            PA: "138/88 mmHg",
-            FR: "18 rpm",
-            SpO2: "93%",
-        },
-        findings: [
-            "Dolor torácico opresivo no irradiado",
-            "Diaforesis",
-            "Disminución de saturación de oxígeno",
-        ],
-        questions: [
-            {
-                question: "¿Cuál es la sospecha clínica principal?",
-                answer: "Síndrome Coronario Agudo (SCA)",
-            },
-            {
-                question: "¿Qué medicamentos deben administrarse si no hay contraindicaciones?",
-            },
-        ],
-        references: [
-            "https://www.ahajournals.org/doi/full/10.1161/CIR.0000000000000911",
-            "https://www.uptodate.com/contents/initial-evaluation-and-management-of-acute-coronary-syndrome-acs-in-the-emergency-department",
-        ],
-        correctManage: `- Administrar ASA 300 mg VO masticable si no hay alergias.
-- Oxígeno si la SpO2 es < 94%.
-- Monitoreo cardíaco continuo (ECG 12 derivaciones).
-- Acceso IV periférico.
-- Nitroglicerina sublingual si PA sistólica > 100 mmHg.
-- Alertar al centro receptor para activación del código infarto.
-- Preparar traslado rápido.`,
-        explanation: `Este caso indica un probable infarto con elevación del ST (IAMCEST). El tratamiento prehospitalario busca reducir el daño miocárdico. La aspirina reduce la agregación plaquetaria y mejora la sobrevida. La oxigenoterapia debe usarse solo si hay hipoxia. La nitroglicerina puede aliviar el dolor y reducir la demanda de oxígeno. Es esencial un ECG de 12 derivaciones y preparar al paciente para intervención coronaria urgente si aplica.`,
-    },
-    {
-        id: "002",
-        title: "Paciente inconsciente en la vía pública",
-        description: "Hombre de 35 años encontrado inconsciente en la calle, sin testigos. No responde a estímulos verbales ni dolorosos.",
-        initialAssessment: "Paciente inconsciente, con respiración lenta e irregular. Pulso carotídeo presente. Pupilas mióticas.",
-        vitalSigns: {
-            FC: "54 lpm",
-            PA: "90/60 mmHg",
-            FR: "8 rpm",
-            SpO2: "85%",
-        },
-        findings: [
-            "Disminución del nivel de conciencia (GCS 3-4)",
-            "Bradipnea con hipoxia",
-            "Pupilas puntiformes (posible sobredosis opioide)",
-        ],
-        questions: [
-            {
-                question: "¿Cuál debe ser la prioridad en el manejo inicial?",
-                answer: "Asegurar vía aérea y ventilación asistida",
-            },
-            {
-                question: "¿Qué dispositivos puedes considerar para el manejo de la vía aérea?",
-            },
-        ],
-        references: [
-            "https://emergency.cdc.gov/han/han00384.asp",
-            "https://www.naemsp.org/Pages/Position-Statements.aspx",
-        ],
-        correctManage: `- Apertura de vía aérea con maniobra frente-mentón o tracción mandibular.
-- Insertar cánula orofaríngea si no hay reflejo nauseoso.
-- Ventilar con BVM a 10-12 rpm con oxígeno al 100%.
-- Administrar naloxona intranasal (2 mg) o IV si se sospecha sobredosis opioide.
-- Monitorizar signos vitales y nivel de conciencia.
-- Preparar traslado urgente.`,
-        explanation: `Un paciente inconsciente con respiración lenta y pupilas mióticas sugiere una posible intoxicación por opioides. La ventilación adecuada es prioritaria antes de la administración de naloxona. La hipoxia debe corregirse rápidamente. El uso de un BVM con O2 suplementario es crítico. Naloxona puede revertir la depresión respiratoria en casos de sobredosis. Siempre se debe considerar otras causas y transportar a un centro que pueda continuar el tratamiento.`,
-    },
-    {
-        id: "accidente-motocicleta-01",
-        title: "Colisión entre automóvil y motocicleta",
-        description:
-            "Un motociclista de 22 años sufre una colisión de alto impacto. Presenta alteración del estado de conciencia, respiración superficial, fractura expuesta en extremidad inferior y signos claros de shock obstructivo.",
-        initialAssessment:
-            "Inconsciente (responde a estímulos dolorosos), respiración rápida, superficial y asimétrica. Pulso radial filiforme. Fractura expuesta en fémur izquierdo con deformidad. Se observa distensión de venas yugulares y desviación traqueal. Ausencia de ruidos respiratorios en hemitórax izquierdo.",
-        vitalSigns: {
-            "Pulso inicial": "138 lpm",
-            "TA inicial": "96/54 mmHg",
-            "SpO2 inicial": "88% con BVM a O₂ 15 lpm",
-            "FR inicial": "34 rpm",
-            "Pulso final": "118 lpm",
-            "TA final": "104/62 mmHg",
-            "SpO2 final": "96%",
-            "FR final": "24 rpm",
-        },
-        findings: [
-            "Shock obstructivo secundario a neumotórax a tensión izquierdo.",
-            "Traumatismo craneoencefálico moderado.",
-            "Fractura de fémur izquierdo expuesta.",
-            "Requiere descompresión torácica con aguja de forma inmediata.",
-        ],
-        questions: [
-            {question: "¿Qué hallazgo clínico es el más indicativo de un neumotórax a tensión en este paciente?"},
-            {question: "¿Por qué mejoran la presión arterial y la frecuencia cardíaca después de la descompresión torácica?"},
-            {question: "¿Cuál es el manejo inicial prioritario para la fractura expuesta?"},
-        ],
-        references: [
-            "Capítulo 12 - Shock.pdf",
-            "https://www.naemt.org/education/phtls",
-            "https://emcrit.org/emcrit/tension-pneumothorax-needle/",
-        ],
-        correctManage: `- Evaluación rápida y control de la vía aérea (considerar intubación si deteriora).
-- Ventilación asistida con BVM y oxígeno al 100%.
-- Descompresión torácica inmediata con aguja en 2º espacio intercostal línea medio clavicular o 5º espacio línea axilar anterior.
-- Control de hemorragia externa en fractura expuesta (presión directa, apósitos estériles).
-- Inmovilización de extremidad con férula adecuada.
-- Acceso IV y reposición con líquidos si está indicado.
-- Evaluación continua del estado neurológico y signos de perfusión.
-- Traslado inmediato a centro de trauma con alerta previa.`,
-        explanation: `El paciente presenta un neumotórax a tensión, una emergencia que compromete la ventilación y circulación. La desviación traqueal, la distensión yugular y la ausencia de ruidos respiratorios lo confirman. La descompresión con aguja es la intervención que salva la vida. La fractura de fémur puede causar hemorragia significativa, por lo que debe controlarse e inmovilizarse. El manejo debe priorizar la vía aérea, ventilación efectiva y tratamiento del shock obstructivo. La pronta identificación de estos hallazgos y la intervención rápida son fundamentales para la supervivencia.`,
-    },
-    {
-        id: "paciente-inconsciente-03",
-        title: "Paciente inconsciente en domicilio",
-        description:
-            "Se encuentra a un hombre de 25 años inconsciente en su departamento. No hay signos evidentes de trauma. El paciente presenta bradicardia, hipotensión y no responde. Finalmente se diagnostica sobredosis.",
-        initialAssessment:
-            "Sin lesiones visibles, nivel de glucosa normal, ventilación inicial pobre pero mejora con oxígeno, bradicardia persistente e hipotensión, sin respuesta al estímulo.",
-        vitalSigns: {
-            Glucosa: "108 mg/dL",
-            "Frecuencia cardíaca": "Baja (bradicardia)",
-            "Presión arterial": "Hipotensa (no especificada)",
-        },
-        findings: [
-            "Paciente inconsciente sin historia clara",
-            "No hay signos de trauma",
-            "Oxigenación mejora tras intervención",
-            "Se sospecha sobredosis múltiple",
-        ],
-        questions: [
-            {question: "¿Cuáles son los componentes de la evaluación del paciente?"},
-            {question: "¿Cómo varía la evaluación si el paciente está enfermo o lesionado?"},
-            {question: "¿Está indicada la inmovilización de columna? ¿Por qué?"},
-            {question: "¿Cuál hallazgo requiere atención inmediata?"},
-            {question: "¿Requiere tratamiento adicional en la escena? ¿Cuál?"},
-            {question: "¿Debe esperar otra unidad o trasladar de inmediato? ¿Por qué?"},
-            {question: "¿Cambió la condición del paciente durante la atención? ¿Cómo responder a ello?"},
-            {question: "¿Qué elementos de la historia SAMPLE pueden obtenerse sin que el paciente responda?"},
-            {question: "¿Por qué es importante reevaluar constantemente?"},
-        ],
-        references: [
-            "AAOS Atención Prehospitalaria Básica, 11ª Edición - Capítulos de evaluación primaria, evaluación médica y emergencias por sobredosis.",
-            "https://www.samhsa.gov/medications-substance-use-disorders/medications-counseling-related-conditions/naloxone",
-        ],
-        correctManage: `- Evaluación rápida del ABCDE.
-- Asegurar vía aérea y ventilar con BVM si FR < 10 o hay hipoxia.
-- Administrar oxígeno suplementario a alto flujo.
-- Administrar naloxona intranasal (2-4 mg) o IV si se sospecha opioides.
-- Colocar en posición lateral de seguridad si no hay indicación de intubación.
-- Monitorizar signos vitales y nivel de conciencia.
-- No retrasar el traslado si el paciente no responde o recae tras la naloxona.`,
-        explanation: `La presentación clínica es compatible con una intoxicación por opioides (bradicardia, hipoventilación, inconsciencia). Aunque la glucosa es normal y no hay trauma, el paciente requiere soporte ventilatorio inmediato y naloxona como antídoto. El monitoreo continuo es clave, ya que puede requerir dosis adicionales. La reevaluación constante permite detectar recaídas. No es necesaria la inmovilización espinal si no hay mecanismo traumático. La prioridad es ventilar, revertir el efecto opioide y trasladar sin demoras.`,
-    },
-    {
-        id: "diabetico-no-responde-04",
-        title: "Paciente diabético inconsciente",
-        description:
-            "Hombre de 54 años encontrado en su oficina inconsciente. Empleados refieren que se veía confundido antes de desplomarse. Se encuentra pulso débil y piel húmeda.",
-        initialAssessment:
-            "Paciente inconsciente, piel pálida y diaforética, sin signos de trauma visibles, glucosa capilar de 36 mg/dL.",
-        vitalSigns: {
-            FC: "112 lpm",
+            FC: "110 lpm",
             TA: "100/60 mmHg",
-            SpO2: "97%",
-            Glucosa: "36 mg/dL",
-        },
-        findings: [
-            "Hipoglucemia severa",
-            "Necesita glucosa IV o glucagón IM",
-            "Sin antecedentes claros disponibles en el lugar",
-        ],
-        questions: [
-            {question: "¿Cuál es la intervención inmediata indicada para este paciente?"},
-            {question: "¿Cómo afecta la hipoglucemia el estado mental del paciente?"},
-            {question: "¿Qué protocolo seguir si el paciente no responde a glucosa oral?"},
-        ],
-        references: [
-            "AAOS 11ª Edición - Capítulo de emergencias endocrinas.",
-            "https://www.uptodate.com/contents/treatment-of-hypoglycemia-in-adults",
-        ],
-        correctManage: `- Confirmar hipoglucemia con glucometría (menor a 60 mg/dL).
-- Administrar dextrosa IV (D10 o D50) en bolo si hay acceso.
-- Si no hay vía IV, administrar glucagón IM (1 mg).
-- Monitorear signos vitales, nivel de conciencia y glucosa post-intervención.
-- Reevaluar cada 5-10 minutos y preparar traslado.
-- Obtener información adicional vía SAMPLE si es posible.`,
-        explanation: `La hipoglucemia severa puede causar deterioro neurológico agudo y pérdida de conciencia. La prioridad es restaurar rápidamente la glucosa sérica para prevenir daño cerebral. Dextrosa IV es el tratamiento de elección si hay acceso vascular; si no, se administra glucagón IM. La piel pálida, diaforesis y taquicardia son signos clásicos de hipoglucemia. Una vez consciente, se deben buscar causas y asegurar un seguimiento adecuado.`,
-    },
-    {
-        id: "asma-descompensada-05",
-        title: "Crisis asmática severa",
-        description:
-            "Mujer de 29 años con antecedentes de asma, encontrada en posición de trípode, jadeando por aire, con sibilancias audibles. No responde bien al inhalador.",
-        initialAssessment:
-            "Consciente, pero con dificultad extrema para hablar. Respiración rápida, uso de músculos accesorios, tórax hiperexpandido.",
-        vitalSigns: {
-            FC: "124 lpm",
-            FR: "30 rpm",
-            SpO2: "88%",
-            TA: "110/68 mmHg",
-        },
-        findings: [
-            "Broncoespasmo severo",
-            "Necesita oxígeno de alto flujo y broncodilatador nebulizado",
-            "Riesgo de agotamiento respiratorio",
-        ],
-        questions: [
-            {question: "¿Qué indicaciones hay para administrar salbutamol en nebulización?"},
-            {question: "¿Cuándo se debe asistir la ventilación de un paciente asmático?"},
-            {question: "¿Qué signos indican inminente fallo respiratorio?"},
-        ],
-        references: [
-            "AAOS 11ª Edición - Capítulo de emergencias respiratorias.",
-            "https://www.ginasthma.org/",
-        ],
-        correctManage: `- Administrar oxígeno de alto flujo (NRM o BVM con O₂).
-- Nebulización con salbutamol (albuterol) 2.5 mg + ipratropio 0.5 mg si disponible.
-- Repetir nebulizaciones cada 10-20 minutos si es necesario.
-- Evaluar signos de fatiga (bradipnea, disminución del esfuerzo).
-- Preparar para asistencia ventilatoria si hay deterioro.
-- Monitorear frecuencia respiratoria, SpO₂ y nivel de conciencia.
-- Traslado urgente a centro de atención avanzada.`,
-        explanation: `Una crisis asmática severa se identifica por dificultad para hablar, uso de músculos accesorios y saturación baja. El broncoespasmo debe tratarse con broncodilatadores de acción corta. El uso de salbutamol e ipratropio nebulizado mejora rápidamente la mecánica ventilatoria. La fatiga puede llevar al fallo respiratorio, por lo que es esencial vigilar signos de agotamiento como bradipnea, somnolencia o caída de la SpO₂. La ventilación asistida debe iniciarse si la condición empeora.`,
-    },
-    {
-        id: "trauma-cervical-06",
-        title: "Caída desde altura con sospecha de lesión cervical",
-        description:
-            "Joven de 17 años cayó de una escalera de 3 metros. Está consciente pero refiere adormecimiento en las extremidades y dolor en el cuello.",
-        initialAssessment:
-            "Consciente, alerta, quejoso de cuello. No puede mover las piernas. Mecanismo de lesión significativo.",
-        vitalSigns: {
-            FC: "90 lpm",
-            TA: "122/84 mmHg",
-            SpO2: "96%",
-        },
-        findings: [
-            "Sospecha de lesión medular cervical",
-            "Restricción completa de columna espinal indicada",
-            "Evaluación neurológica continua es clave",
-        ],
-        questions: [
-            {question: "¿Cuándo está indicada la inmovilización espinal completa?"},
-            {question: "¿Qué signos indican lesión medular?"},
-            {question: "¿Cómo evalúas función motora y sensitiva en escena?"},
-        ],
-        references: [
-            "AAOS 11ª Edición - Capítulo de trauma músculo-esquelético e inmovilización.",
-            "https://www.naemt.org/education/phtls",
-        ],
-        correctManage: `- Control manual inmediato de la columna cervical.
-- Evaluar función motora y sensitiva en extremidades.
-- Aplicar collar cervical rígido y tablero largo o dispositivo de inmovilización espinal.
-- Monitorear nivel de conciencia y signos neurológicos.
-- Evitar movimientos innecesarios durante el traslado.
-- Traslado urgente a hospital con capacidad para neuroimagen y trauma.`,
-        explanation: `Una caída desde más de 1.5 m se considera mecanismo de trauma significativo. La presencia de parestesias y déficit motor es indicativa de posible lesión medular. Es fundamental restringir completamente el movimiento de la columna desde la primera evaluación. La inmovilización adecuada previene un posible daño secundario irreversible. La evaluación neurológica en campo permite monitorear cambios durante el traslado.`,
-    },
-    {
-        id: "dolor-toracico-infarto-07",
-        title: "Dolor torácico sospechoso de infarto",
-        description:
-            "Hombre de 60 años con antecedentes de hipertensión y tabaquismo refiere dolor opresivo en el pecho irradiado a brazo izquierdo, con náusea y diaforesis.",
-        initialAssessment:
-            "Consciente, pálido, diaforético, dolor torácico de inicio súbito, refiere malestar desde hace 20 minutos.",
-        vitalSigns: {
-            FC: "106 lpm",
-            TA: "132/86 mmHg",
-            SpO2: "95%",
-        },
-        findings: [
-            "Infarto agudo del miocardio (IAM)",
-            "Riesgo de paro cardíaco si no se traslada de inmediato",
-            "Asistencia con nitroglicerina si no hay contraindicaciones",
-        ],
-        questions: [
-            {question: "¿Qué medicamentos puedes administrar en sospecha de IAM?"},
-            {question: "¿Qué datos electrocardiográficos o clínicos deben reportarse al hospital?"},
-            {question: "¿Cómo evalúas el dolor torácico de manera sistemática?"},
-        ],
-        references: [
-            "AAOS 11ª Edición - Capítulo de emergencias cardiovasculares.",
-            "https://www.ahajournals.org/doi/10.1161/CIR.0000000000000911",
-        ],
-        correctManage: `- Monitoreo ECG si está disponible.
-- Administrar ASA 300 mg VO (si no hay alergia o contraindicación).
-- Nitroglicerina sublingual si PA sistólica > 100 mmHg y no hay uso reciente de inhibidores PDE-5.
-- Oxígeno si SpO₂ < 94%.
-- Establecer vía IV y preparar para traslado inmediato con activación del código infarto.`,
-        explanation: `El paciente presenta signos clásicos de un infarto agudo al miocardio. El manejo incluye oxigenación (si hipoxia), antiagregantes plaquetarios (aspirina), vasodilatadores (nitroglicerina) y ECG para detección de IAM con o sin elevación del ST. El traslado rápido a un centro con capacidad de reperfusión es fundamental para el pronóstico.`,
-    },
-    {
-        id: "parto-inminente-08",
-        title: "Parto inminente en domicilio",
-        description:
-            "Mujer de 32 años embarazada de 39 semanas. Reporta contracciones intensas y sensación de pujo. El parto ocurre antes de llegar al hospital.",
-        initialAssessment:
-            "Paciente en decúbito, con contracciones cada 2 minutos. Se observa presentación cefálica. Bolsa rota. Trabajo de parto activo.",
-        vitalSigns: {
-            FC: "98 lpm",
-            TA: "120/74 mmHg",
-            SpO2: "99%",
-        },
-        findings: [
-            "Parto inminente en campo",
-            "Necesidad de asistir el parto, mantener la vía aérea del neonato, evaluar APGAR",
-            "Control de sangrado postparto materno",
-        ],
-        questions: [
-            {question: "¿Cuáles son los pasos clave para un parto asistido en el campo?"},
-            {question: "¿Cómo evalúas al recién nacido con APGAR?"},
-            {question: "¿Qué hacer en caso de hemorragia postparto?"},
-        ],
-        references: [
-            "AAOS 11ª Edición - Capítulo de emergencias obstétricas y neonatales.",
-        ],
-        correctManage: `- Preparar equipo limpio y guantes estériles.
-- Asistir el parto controlando el descenso cefálico con presión suave.
-- Limpiar vía aérea del neonato si es necesario (sin aspiración rutinaria).
-- Estimular al neonato y evaluar APGAR al minuto y a los 5 minutos.
-- Pinzar y cortar el cordón tras 1-3 minutos si no hay complicaciones.
-- Vigilar sangrado postparto y masajear fondo uterino si hay hemorragia.
-- Traslado de madre y neonato para evaluación hospitalaria.`,
-        explanation: `El parto inminente en campo debe abordarse con calma y técnica. Lo prioritario es la seguridad del neonato: despejar vía aérea, estimular, mantener temperatura y evaluar con APGAR. El manejo del alumbramiento y prevención de hemorragia postparto mediante masaje uterino también es crucial. Se debe cortar el cordón de manera segura y asegurar el bienestar de ambos pacientes.`,
-    },
-    {
-        id: "quemadura-electrica-09",
-        title: "Lesión por quemadura eléctrica",
-        description:
-            "Hombre de 35 años electrocutado al tocar un cable de alta tensión en una obra. Lo encuentran consciente, pero confuso. Presenta quemaduras en mano y pie.",
-        initialAssessment:
-            "Confuso, piel pálida, quemadura de entrada en mano derecha y salida en pie izquierdo. Pulso irregular.",
-        vitalSigns: {
-            FC: "128 lpm",
-            TA: "110/70 mmHg",
-            SpO2: "97%",
-        },
-        findings: [
-            "Quemaduras eléctricas con posible lesión interna",
-            "Riesgo de arritmias cardíacas",
-            "Importancia de monitorización continua",
-        ],
-        questions: [
-            {question: "¿Por qué una quemadura eléctrica puede causar daño interno severo sin lesión externa visible?"},
-            {question: "¿Cuál es el riesgo cardíaco asociado a este tipo de trauma?"},
-            {question: "¿Qué medidas debes tomar si no tienes un monitor cardíaco disponible?"},
-        ],
-        references: [
-            "AAOS 11ª Edición - Capítulo de emergencias ambientales y trauma eléctrico.",
-            "https://www.ncbi.nlm.nih.gov/books/NBK448117/",
-        ],
-        correctManage: `- Asegurar escena segura antes del contacto.
-- Evaluar y mantener la vía aérea y respiración.
-- Administrar oxígeno suplementario si hay hipoxia.
-- Colocar en monitor cardíaco si disponible; observar arritmias.
-- Control de quemaduras con apósitos secos estériles.
-- Vigilar signos de lesión interna (palidez, confusión, arritmias).
-- Acceso IV y traslado urgente a centro con capacidad para trauma eléctrico.`,
-        explanation: `Las quemaduras eléctricas pueden causar daño extenso en tejidos profundos, aun cuando las lesiones externas sean mínimas. El paso de corriente puede afectar el corazón, generando arritmias potencialmente letales. El monitoreo cardíaco es esencial, y debe mantenerse durante al menos 24 horas si hay sospecha de corriente de alto voltaje. El manejo incluye soporte vital, control de quemaduras y monitoreo continuo.`,
-    },
-    {
-        id: "ahogamiento-nino-10",
-        title: "Ahogamiento en piscina",
-        description:
-            "Niño de 6 años fue sacado de una piscina tras estar sumergido por aproximadamente 1 minuto. No responde, pero presenta esfuerzo respiratorio mínimo.",
-        initialAssessment:
-            "Inconsciente, respiración lenta y superficial, presencia de cianosis en labios y dedos. Pulso débil.",
-        vitalSigns: {
-            FC: "60 lpm",
-            TA: "90/60 mmHg",
-            SpO2: "85%",
-        },
-        findings: [
-            "Hipoxia severa por casi-ahogamiento",
-            "Necesita soporte ventilatorio inmediato",
-            "Riesgo de edema pulmonar secundario",
-        ],
-        questions: [
-            {question: "¿Cuál es la prioridad en un caso de ahogamiento pediátrico?"},
-            {question: "¿Qué signos indican que el paciente podría desarrollar complicaciones como edema pulmonar?"},
-            {question: "¿Qué precauciones especiales debes tener en niños después de un rescate acuático?"},
-        ],
-        references: [
-            "AAOS 11ª Edición - Capítulo de emergencias pediátricas y ambientales.",
-            "https://www.cdc.gov/drowning/index.html",
-        ],
-        correctManage: `- Evaluar vía aérea, respiración y pulso.
-- Iniciar ventilación asistida con BVM a 15 L/min O₂.
-- Si no respira y no hay pulso, iniciar RCP pediátrico inmediatamente.
-- Monitorizar signos vitales y SpO₂.
-- Mantener al niño abrigado para prevenir hipotermia.
-- Trasladar urgentemente, aunque mejore, por riesgo de complicaciones tardías (edema pulmonar, aspiración secundaria).`,
-        explanation: `Los niños pueden presentar hipoxia severa tras inmersión aunque estén conscientes brevemente. La ventilación asistida es crucial. Aun si el niño mejora, siempre debe ser evaluado en hospital por riesgo de edema pulmonar retardado. La prioridad en el prehospital es ventilación eficaz, prevención de hipotermia y transporte inmediato.`,
-    },
-    {
-        id: "abuso-anciano-11",
-        title: "Sospecha de abuso en paciente geriátrico",
-        description:
-            "Paciente masculino de 78 años, reportado por vecino que lo encontró con hematomas faciales y confusión. Vive con su hijo adulto.",
-        initialAssessment:
-            "Orientación parcial, múltiples equimosis en cara y brazos, dice haberse 'caído de nuevo', evita mirar al hijo.",
-        vitalSigns: {
-            FC: "82 lpm",
-            TA: "136/84 mmHg",
-            SpO2: "95%",
-        },
-        findings: [
-            "Signos no consistentes con trauma accidental",
-            "Potencial víctima de abuso físico",
-            "Necesidad de notificación obligatoria a autoridades",
-        ],
-        questions: [
-            {question: "¿Qué señales deben hacerte sospechar de abuso en adultos mayores?"},
-            {question: "¿Cómo debes documentar este tipo de incidentes?"},
-            {question: "¿Cuál es tu obligación legal como proveedor prehospitalario?"},
-        ],
-        references: [
-            "AAOS 11ª Edición - Capítulo de emergencias geriátricas y consideraciones éticas/legales.",
-        ],
-    },
-    {
-        id: "fractura-femur-12",
-        title: "Trauma por accidente ciclista",
-        description:
-            "Adolescente de 15 años fue atropellado por un automóvil al cruzar una avenida en bicicleta. Presenta deformidad evidente en muslo derecho y no puede mover la pierna.",
-        initialAssessment:
-            "Consciente, refiere dolor intenso. Hematoma extenso en muslo. Extremidad acortada y rotada externamente.",
-        vitalSigns: {
-            FC: "104 lpm",
-            TA: "118/76 mmHg",
-            SpO2: "98%",
-        },
-        findings: [
-            "Fractura de fémur con riesgo de hemorragia interna",
-            "Posible compromiso circulatorio distal",
-            "Requiere inmovilización con férula tracción",
-        ],
-        questions: [
-            {question: "¿Qué peligros tiene una fractura de fémur si no se trata a tiempo?"},
-            {question: "¿Cómo se evalúa la circulación distal en una extremidad lesionada?"},
-            {question: "¿Cuándo está indicada la férula de tracción?"},
-        ],
-        references: [
-            "AAOS 11ª Edición - Capítulo de trauma músculo-esquelético e inmovilización.",
-        ],
-    },
-    {
-        id: "convulsiones-post-trauma-13",
-        title: "Convulsiones tras caída de bicicleta",
-        description:
-            "Niño de 8 años cayó sin casco mientras andaba en bicicleta. Fue encontrado convulsionando brevemente. Actualmente está somnoliento y desorientado.",
-        initialAssessment:
-            "Pupilas isocóricas, respuesta lenta al estímulo, hematoma en región occipital. Vómito posterior al evento.",
-        vitalSigns: {
-            FC: "90 lpm",
-            TA: "110/72 mmHg",
-            SpO2: "96%",
-        },
-        findings: [
-            "Posible lesión cerebral traumática",
-            "Convulsión post-traumática",
-            "Requiere traslado urgente con vigilancia neurológica",
-        ],
-        questions: [
-            {question: "¿Qué indicios post-evento hacen sospechar una lesión intracraneal?"},
-            {question: "¿Por qué es importante monitorizar a niños con traumatismo craneoencefálico incluso si lucen estables?"},
-            {question: "¿Qué signos clínicos deben alertarte sobre deterioro neurológico inminente?"},
-        ],
-        references: [
-            "AAOS 11ª Edición - Capítulo de trauma pediátrico y neurológico.",
-        ],
-    },
-    {
-        id: "shock-anafilactico-14",
-        title: "Reacción alérgica severa por picadura",
-        description:
-            "Hombre de 24 años presenta dificultad respiratoria progresiva tras ser picado por una abeja. Tiene antecedentes de alergia a insectos.",
-        initialAssessment:
-            "Paciente consciente pero ansioso, ronquido laríngeo, urticaria en pecho y cuello. Pulso rápido y débil.",
-        vitalSigns: {
-            FC: "132 lpm",
-            TA: "88/50 mmHg",
-            SpO2: "89%",
-        },
-        findings: [
-            "Anafilaxia en progreso",
-            "Indicación inmediata de adrenalina intramuscular",
-            "Oxígeno de alto flujo y monitorización",
-        ],
-        questions: [
-            {question: "¿Cuáles son los signos clave de una anafilaxia?"},
-            {question: "¿Qué dosis y vía se recomienda para la adrenalina en adulto?"},
-            {question: "¿Qué hacer si no hay mejoría tras la primera dosis?"},
-        ],
-        references: [
-            "AAOS 11ª Edición - Capítulo de emergencias alérgicas y anafilaxia.",
-        ],
-    },
-    {
-        id: "intoxicacion-monoxido-15",
-        title: "Intoxicación por monóxido de carbono",
-        description:
-            "Familia completa encontrada con cefalea, náuseas y desorientación tras usar calentador de gas en ambiente cerrado. Sospecha de intoxicación por monóxido.",
-        initialAssessment:
-            "Todos los pacientes están pálidos, somnolientos, sin signos de trauma. Ambiente cerrado con calefactor portátil encendido.",
-        vitalSigns: {
-            FC: "110 lpm",
-            TA: "118/76 mmHg",
-            SpO2: "98% (lectura falsamente normal)",
-        },
-        findings: [
-            "Sospecha de intoxicación por CO",
-            "SpO2 puede ser engañosa: requiere oxígeno al 100% por mascarilla con reservorio",
-            "Necesidad de traslado urgente y posible cámara hiperbárica",
-        ],
-        questions: [
-            {question: "¿Por qué el oxímetro puede dar falsos positivos en estas situaciones?"},
-            {question: "¿Qué gas impide la correcta oxigenación en sangre en este caso?"},
-            {question: "¿Cuál es el tratamiento inicial en el entorno prehospitalario?"},
-        ],
-        references: [
-            "AAOS 11ª Edición - Capítulo de emergencias tóxicas y ambientales.",
-        ],
-    },
-    {
-        id: "hipotermia-moderada-16",
-        title: "Hipotermia en persona sin hogar",
-        description:
-            "Hombre en situación de calle es encontrado en la madrugada bajo lluvia. Está lento para responder y tiembla de forma intensa.",
-        initialAssessment:
-            "Paciente consciente, pero responde lentamente. Piel fría, extremidades entumecidas. Habla incoherente.",
-        vitalSigns: {
-            FC: "56 lpm",
-            TA: "102/58 mmHg",
-            SpO2: "93%",
-            Temp: "33°C",
-        },
-        findings: [
-            "Hipotermia moderada",
-            "Riesgo de arritmias al manipular al paciente bruscamente",
-            "Necesita recalentamiento pasivo + oxígeno",
-        ],
-        questions: [
-            {question: "¿Qué precauciones debes tener al movilizar a un paciente con hipotermia?"},
-            {question: "¿Cómo clasificas la severidad de la hipotermia según la temperatura?"},
-            {question: "¿Qué diferencia hay entre recalentamiento pasivo y activo?"},
-        ],
-        references: [
-            "AAOS 11ª Edición - Capítulo de emergencias ambientales.",
-        ],
-    },
-    {
-        id: "embarazo-ectopico-17",
-        title: "Dolor abdominal en mujer con embarazo ectópico",
-        description:
-            "Mujer de 30 años con retraso menstrual y dolor abdominal súbito e intenso en fosa iliaca derecha. Presenta mareo y diaforesis.",
-        initialAssessment:
-            "Consciente, pálida, diaforética. Dolor abdominal severo. Pulso débil. Sospecha de hemorragia interna.",
-        vitalSigns: {
-            FC: "122 lpm",
-            TA: "90/58 mmHg",
-            SpO2: "96%",
-        },
-        findings: [
-            "Embarazo ectópico roto",
-            "Sospecha de choque hipovolémico",
-            "Necesita traslado urgente a centro con cirugía",
-        ],
-        questions: [
-            {question: "¿Qué hallazgos sugieren una hemorragia interna en una paciente en edad fértil?"},
-            {question: "¿Por qué es crítica la evaluación obstétrica incluso si no hay sangrado vaginal?"},
-            {question: "¿Cuál es el tratamiento inicial prehospitalario ante sospecha de embarazo ectópico?"},
-        ],
-        references: [
-            "AAOS 11ª Edición - Capítulo de emergencias ginecológicas.",
-        ],
-    },
-    {
-        id: "ictus-accidente-cerebrovascular-18",
-        title: "Sospecha de ACV en adulto mayor",
-        description:
-            "Mujer de 66 años presenta desviación facial, habla arrastrada y debilidad en brazo izquierdo. Última vez vista normal: hace 30 minutos.",
-        initialAssessment:
-            "Paciente consciente, habla con dificultad, desviación facial derecha, sin trauma evidente. Responde a preguntas simples.",
-        vitalSigns: {
-            FC: "86 lpm",
-            TA: "144/92 mmHg",
-            SpO2: "98%",
-            Glucosa: "110 mg/dL",
-        },
-        findings: [
-            "Sospecha de accidente cerebrovascular isquémico",
-            "Tiempo de inicio <1 hora: candidato a tratamiento trombolítico",
-            "Requiere traslado prioritario a centro con TC de cráneo y neurología",
-        ],
-        questions: [
-            {question: "¿Qué herramientas puedes usar para evaluar un ACV en campo?"},
-            {question: "¿Por qué es fundamental registrar la 'última vez vista normal'?"},
-            {question: "¿Qué diagnóstico diferencial debes descartar antes de confirmar ACV?"},
-        ],
-        references: [
-            "AAOS 11ª Edición - Capítulo de emergencias neurológicas.",
-        ],
-    },
-    {
-        id: "obstruccion-via-aerea-19",
-        title: "Obstrucción de vía aérea por alimento",
-        description:
-            "Hombre de 50 años estaba comiendo carne cuando repentinamente comenzó a toser y después se llevó las manos al cuello.",
-        initialAssessment:
-            "Paciente cianótico, sin poder hablar ni respirar, consciente. Maniobra universal de asfixia evidente.",
-        vitalSigns: {
-            FC: "sin datos (prioridad es liberar vía aérea)",
-        },
-        findings: [
-            "Obstrucción completa de vía aérea",
-            "Requiere maniobra de Heimlich inmediata",
-            "Riesgo de paro respiratorio si no se resuelve rápidamente",
-        ],
-        questions: [
-            {question: "¿Cómo diferencias una obstrucción parcial de una completa?"},
-            {question: "¿Cuál es el procedimiento adecuado para pacientes conscientes con obstrucción completa?"},
-            {question: "¿Qué hacer si el paciente pierde la conciencia?"},
-        ],
-        references: [
-            "AAOS 11ª Edición - Capítulo de manejo de la vía aérea.",
-        ],
-    },
-    {
-        id: "herida-penetrante-abdomen-20",
-        title: "Herida por arma blanca en abdomen",
-        description:
-            "Joven de 22 años fue agredido con un cuchillo. Tiene una herida abierta en abdomen inferior con evisceración visible.",
-        initialAssessment:
-            "Consciente, dolor intenso, intestino parcialmente exteriorizado, hemorragia moderada.",
-        vitalSigns: {
-            FC: "124 lpm",
-            TA: "98/60 mmHg",
-            SpO2: "94%",
-        },
-        findings: [
-            "Trauma penetrante abdominal",
-            "Evisceración requiere cobertura húmeda y no reintroducción",
-            "Riesgo de shock hipovolémico",
-        ],
-        questions: [
-            {question: "¿Qué tipo de apósito se usa para cubrir evisceraciones?"},
-            {question: "¿Por qué no se deben reintroducir órganos eviscerados?"},
-            {question: "¿Cuál es la prioridad en el manejo de esta herida?"},
-        ],
-        references: [
-            "AAOS 11ª Edición - Capítulo de trauma abdominal.",
-        ],
-    },
-    {
-        id: "convulsion-febril-nino-21",
-        title: "Convulsión febril en niño pequeño",
-        description:
-            "Niña de 3 años presenta convulsión generalizada tónico-clónica de 2 minutos. Madre reporta fiebre durante el día.",
-        initialAssessment:
-            "Postictal, somnolienta, responde a estímulos. Piel caliente al tacto. No hay signos de trauma.",
-        vitalSigns: {
-            FC: "118 lpm",
-            TA: "102/62 mmHg",
-            SpO2: "96%",
-            Temp: "39.1°C",
-        },
-        findings: [
-            "Convulsión febril típica",
-            "Evaluar si hay infección activa",
-            "Monitorear respiración y nivel de conciencia",
-        ],
-        questions: [
-            {question: "¿Qué características indican convulsión febril simple?"},
-            {question: "¿Cuáles son las indicaciones para traslado urgente?"},
-            {question: "¿Qué debe hacer el personal prehospitalario tras una convulsión resuelta?"},
-        ],
-        references: [
-            "AAOS 11ª Edición - Capítulo de emergencias pediátricas y neurológicas.",
-        ],
-    },
-    {
-        id: "fractura-costilla-22",
-        title: "Dolor torácico tras caída",
-        description:
-            "Paciente masculino de 47 años resbala en escalera y cae sobre su costado. Se queja de dolor al respirar profundo.",
-        initialAssessment:
-            "Consciente, dolor localizado en hemitórax derecho, sin disnea severa. No hay trauma craneal.",
-        vitalSigns: {
-            FC: "98 lpm",
-            TA: "124/78 mmHg",
-            SpO2: "97%",
-        },
-        findings: [
-            "Posible fractura costal",
-            "Evaluar riesgo de neumotórax oculto",
-            "Tratamiento sintomático y monitorización",
-        ],
-        questions: [
-            {question: "¿Qué signos pueden indicar complicaciones asociadas a fractura de costillas?"},
-            {question: "¿Cómo diferencias un dolor musculoesquelético de un problema pulmonar?"},
-            {question: "¿Qué intervenciones son apropiadas en campo?"},
-        ],
-        references: [
-            "AAOS 11ª Edición - Capítulo de trauma torácico.",
-        ],
-    },
-    {
-        id: "intoxicacion-alcohol-etilico-23",
-        title: "Intoxicación por alcohol en adolescente",
-        description:
-            "Joven de 17 años fue encontrado en una fiesta, inconsciente y con olor etílico. Vomitó antes de que llegara el equipo de emergencias.",
-        initialAssessment:
-            "Inconsciente, vía aérea comprometida con restos de vómito. Respiración lenta. Piel caliente y enrojecida.",
-        vitalSigns: {
-            FC: "88 lpm",
-            TA: "110/70 mmHg",
-            SpO2: "90%",
-        },
-        findings: [
-            "Depresión del SNC por etanol",
-            "Riesgo de broncoaspiración",
-            "Monitorear respiración y nivel de conciencia",
-        ],
-        questions: [
-            {question: "¿Qué intervenciones debes realizar para proteger la vía aérea?"},
-            {question: "¿Qué complicaciones puede presentar un paciente intoxicado por alcohol?"},
-            {question: "¿Cómo se debe posicionar al paciente si no responde?"},
-        ],
-        references: [
-            "AAOS 11ª Edición - Capítulo de emergencias tóxicas.",
-        ],
-    },
-    {
-        id: "desmayo-calentamiento-24",
-        title: "Síncope por golpe de calor",
-        description:
-            "Mujer de 28 años colapsa durante una caminata en parque a 36°C. Piel caliente y seca. No responde brevemente, luego despierta desorientada.",
-        initialAssessment:
-            "Paciente consciente, confusa, piel seca y caliente, taquicardia, no refiere antecedentes médicos.",
-        vitalSigns: {
-            FC: "122 lpm",
-            TA: "102/60 mmHg",
-            SpO2: "95%",
-            Temp: "40°C",
-        },
-        findings: [
-            "Sospecha de golpe de calor (heatstroke)",
-            "Urgencia médica: riesgo de fallo multiorgánico",
-            "Requiere enfriamiento activo inmediato",
-        ],
-        questions: [
-            {question: "¿Qué diferencia hay entre agotamiento por calor y golpe de calor?"},
-            {question: "¿Cuál es el tratamiento prehospitalario inicial más efectivo?"},
-            {question: "¿Qué signos indican deterioro neurológico por hipertermia?"},
-        ],
-        references: [
-            "AAOS 11ª Edición - Capítulo de emergencias ambientales.",
-        ],
-    },
-    {
-        id: "trauma-columna-lumbar-25",
-        title: "Caída de caballo con dolor lumbar",
-        description:
-            "Hombre de 40 años cayó de espaldas desde un caballo. Se queja de dolor lumbar severo pero puede mover extremidades.",
-        initialAssessment:
-            "Consciente, dolor en columna lumbar sin déficit motor. No refiere pérdida de conciencia.",
-        vitalSigns: {
-            FC: "90 lpm",
-            TA: "130/80 mmHg",
-            SpO2: "98%",
-        },
-        findings: [
-            "Trauma de espalda con posible fractura vertebral",
-            "Movilización cuidadosa y restricción espinal",
-            "Evaluación neurológica periódica en traslado",
-        ],
-        questions: [
-            {question: "¿Qué criterios indican necesidad de inmovilización espinal completa?"},
-            {question: "¿Cómo se moviliza un paciente con dolor lumbar severo?"},
-            {question: "¿Por qué se debe reevaluar función neurológica durante el traslado?"},
-        ],
-        references: [
-            "AAOS 11ª Edición - Capítulo de trauma musculoesquelético e inmovilización.",
-        ],
-    },
-    {
-        id: "herida-escalpelo-26",
-        title: "Herida profunda con hemorragia activa",
-        description:
-            "Trabajador de restaurante se corta el antebrazo con cuchillo industrial. Sangrado pulsátil visible.",
-        initialAssessment:
-            "Consciente, pálido, sangrado arterial activo, sin pérdida de conciencia.",
-        vitalSigns: {
-            FC: "110 lpm",
-            TA: "100/70 mmHg",
-            SpO2: "98%",
-        },
-        findings: [
-            "Hemorragia arterial activa",
-            "Requiere control con presión directa y posible torniquete",
-            "Riesgo de shock hipovolémico",
-        ],
-        questions: [
-            {question: "¿Cuándo está indicado el uso de torniquete?"},
-            {question: "¿Qué signos indican que el paciente está entrando en shock?"},
-            {question: "¿Qué documentación debe realizarse si se aplica torniquete?"},
-        ],
-        references: [
-            "AAOS 11ª Edición - Capítulo de hemorragias y control de sangrado.",
-        ],
-    },
-    {
-        id: "picadura-arana-27",
-        title: "Reacción local severa por picadura de araña",
-        description:
-            "Niña de 10 años fue picada en la pierna por una araña negra. Presenta inflamación extensa, dolor local y fiebre leve.",
-        initialAssessment:
-            "Paciente consciente, dolor localizada, edema progresivo, sin dificultad respiratoria.",
-        vitalSigns: {
-            FC: "100 lpm",
-            TA: "106/62 mmHg",
-            SpO2: "99%",
-            Temp: "37.8°C",
-        },
-        findings: [
-            "Reacción local severa por veneno",
-            "Requiere vigilancia por necrosis tisular o reacción sistémica",
-            "Aplicar compresas frías y trasladar",
-        ],
-        questions: [
-            {question: "¿Qué signos indican una progresión sistémica de la picadura?"},
-            {question: "¿Qué medidas iniciales deben tomarse en campo?"},
-            {question: "¿Cuándo se considera urgente el traslado hospitalario?"},
-        ],
-        references: [
-            "AAOS 11ª Edición - Capítulo de emergencias ambientales y tóxicas.",
-        ],
-    },
-    {
-        id: "paro-cardiaco-ahogado-28",
-        title: "Paro cardíaco tras ahogamiento",
-        description:
-            "Adolescente de 15 años fue rescatado de alberca tras inmersión prolongada. Está inconsciente y sin pulso.",
-        initialAssessment:
-            "Inconsciente, no respira, sin pulso carotídeo. Cianosis marcada en labios y uñas. Pupilas dilatadas.",
-        vitalSigns: {
-            FC: "0",
-            TA: "0",
-            SpO2: "0%",
-        },
-        findings: [
-            "Paro cardíaco por hipoxia secundaria a ahogamiento",
-            "Iniciar RCP inmediatamente con énfasis en ventilación",
-            "Uso de DEA si disponible tras primeros ciclos",
-        ],
-        questions: [
-            {question: "¿Qué modificaciones haces a la RCP en un ahogado?"},
-            {question: "¿Cuál es la secuencia ideal de intervención en este caso?"},
-            {question: "¿Qué hacer si el paciente presenta vómito durante la RCP?"},
-        ],
-        references: [
-            "AAOS 11ª Edición - Capítulo de paro cardíaco y emergencias respiratorias.",
-        ],
-    },
-    {
-        id: "hiperglucemia-29",
-        title: "Paciente con hiperglucemia sintomática",
-        description:
-            "Hombre de 58 años con diabetes tipo 2 refiere visión borrosa, sed intensa y fatiga progresiva desde la mañana.",
-        initialAssessment:
-            "Consciente, pero letárgico. Aliento afrutado. Mucosas secas. Sin signos de trauma.",
-        vitalSigns: {
-            FC: "108 lpm",
-            TA: "132/84 mmHg",
-            SpO2: "97%",
-            Glucosa: "396 mg/dL",
-        },
-        findings: [
-            "Hiperglucemia no controlada",
-            "Posible cetoacidosis diabética (CAD)",
-            "Necesita hidratación y traslado inmediato",
-        ],
-        questions: [
-            {question: "¿Qué síntomas clínicos ayudan a diferenciar hiperglucemia de hipoglucemia?"},
-            {question: "¿Qué complicaciones puede generar una hiperglucemia mantenida?"},
-            {question: "¿Cuál es tu prioridad en el tratamiento prehospitalario?"},
-        ],
-        references: ["AAOS 11ª Edición - Capítulo de emergencias endocrinas."],
-    },
-    {
-        id: "aborto-incompleto-30",
-        title: "Sangrado vaginal en primer trimestre",
-        description:
-            "Mujer de 27 años embarazada de 10 semanas presenta sangrado vaginal con cólico abdominal severo. Dice haber expulsado un tejido.",
-        initialAssessment:
-            "Consciente, pálida, refiere dolor en hipogastrio y sensación de mareo. Sangrado activo moderado.",
-        vitalSigns: {
-            FC: "112 lpm",
-            TA: "100/64 mmHg",
-            SpO2: "98%",
-        },
-        findings: [
-            "Sospecha de aborto incompleto",
-            "Riesgo de hemorragia e infección",
-            "Requiere traslado inmediato a ginecología",
-        ],
-        questions: [
-            {question: "¿Qué signos hacen sospechar un aborto incompleto?"},
-            {question: "¿Qué cuidados emocionales debes ofrecer a esta paciente?"},
-            {question: "¿Cómo se debe manejar el tejido expulsado?"},
-        ],
-        references: ["AAOS 11ª Edición - Capítulo de emergencias ginecológicas."],
-    },
-    {
-        id: "herida-cuello-31",
-        title: "Herida penetrante en el cuello",
-        description:
-            "Joven de 20 años fue agredido con una botella rota en el cuello. Presenta sangrado pulsátil y dificultad respiratoria.",
-        initialAssessment:
-            "Consciente, ansioso, sangrado activo en lateral izquierdo del cuello. Voz ronca, salivación abundante.",
-        vitalSigns: {
-            FC: "128 lpm",
-            TA: "92/58 mmHg",
-            SpO2: "89%",
-        },
-        findings: [
-            "Sangrado arterial y riesgo de lesión de vía aérea",
-            "Requiere control de hemorragia con presión directa",
-            "Evitar ocluir ambos lados del cuello",
-        ],
-        questions: [
-            {question: "¿Qué complicaciones pueden surgir al manipular heridas cervicales?"},
-            {question: "¿Qué debe evitarse al aplicar presión en el cuello?"},
-            {question: "¿Qué signos clínicos indican compromiso de vía aérea?"},
-        ],
-        references: ["AAOS 11ª Edición - Capítulo de trauma de cuello y vía aérea."],
-    },
-    {
-        id: "ataque-panico-32",
-        title: "Paciente con crisis de ansiedad severa",
-        description:
-            "Mujer de 25 años refiere opresión torácica, dificultad para respirar y sensación de muerte inminente. No tiene antecedentes cardíacos.",
-        initialAssessment:
-            "Consciente, hiperventilando, taquicárdica, sin cianosis. Refiere 'sentirse fuera de control'.",
-        vitalSigns: {
-            FC: "110 lpm",
-            TA: "126/78 mmHg",
-            SpO2: "99%",
-        },
-        findings: [
-            "Crisis de ansiedad aguda",
-            "Importancia de tranquilizar, controlar la respiración",
-            "Descartar causas orgánicas antes de concluir diagnóstico psicológico",
-        ],
-        questions: [
-            {question: "¿Qué diferencia hay entre un ataque de pánico y un IAM?"},
-            {question: "¿Qué estrategias puedes usar para tranquilizar a la paciente?"},
-            {question: "¿Por qué es importante tomar signos vitales y glucosa aunque parezca 'solo ansiedad'?"},
-        ],
-        references: ["AAOS 11ª Edición - Capítulo de emergencias psiquiátricas."],
-    },
-    {
-        id: "paro-cardiaco-pediatrico-33",
-        title: "Paro cardíaco en lactante",
-        description:
-            "Bebé de 10 meses es encontrado sin respiración en su cuna por los padres. No responde a estímulos.",
-        initialAssessment:
-            "Inconsciente, sin pulso braquial ni movimientos respiratorios. Cianosis generalizada.",
-        vitalSigns: {
-            FC: "0",
-            TA: "indetectable",
-            SpO2: "0%",
-        },
-        findings: [
-            "Paro respiratorio y cardíaco en pediátrico",
-            "RCP pediátrica inmediata con enfoque en ventilación",
-            "Uso de DEA pediátrico si disponible",
-        ],
-        questions: [
-            {question: "¿Cuál es la relación compresiones:ventilaciones en RCP de lactantes con 2 rescatistas?"},
-            {question: "¿Qué debes tener en cuenta al usar un DEA en pediátricos?"},
-            {question: "¿Qué diferencia hay entre paro primario respiratorio y cardíaco en niños?"},
-        ],
-        references: ["AAOS 11ª Edición - Capítulo de emergencias pediátricas y RCP."],
-    },
-    {
-        id: "hombro-luxado-34",
-        title: "Luxación de hombro tras caída deportiva",
-        description:
-            "Varón de 30 años cae con el brazo extendido durante partido de fútbol. Refiere dolor intenso en hombro derecho y no puede mover el brazo.",
-        initialAssessment:
-            "Consciente, dolor intenso, deformidad visible en hombro, sin parestesias distales.",
-        vitalSigns: {
-            FC: "94 lpm",
-            TA: "122/76 mmHg",
-            SpO2: "99%",
-        },
-        findings: [
-            "Luxación glenohumeral anterior",
-            "Requiere inmovilización en posición de confort",
-            "Evaluar pulso, sensibilidad y movimiento distal",
-        ],
-        questions: [
-            {question: "¿Qué diferencias clínicas hay entre una luxación y una fractura?"},
-            {question: "¿Por qué no se recomienda reducir la luxación en el campo?"},
-            {question: "¿Qué técnicas de inmovilización son seguras para el hombro?"},
-        ],
-        references: ["AAOS 11ª Edición - Capítulo de trauma músculo-esquelético."],
-    },
-    {
-        id: "epistaxis-masiva-35",
-        title: "Hemorragia nasal incontrolable",
-        description:
-            "Paciente masculino de 68 años presenta sangrado nasal profuso que no cede con compresión. Toma anticoagulantes por fibrilación auricular.",
-        initialAssessment:
-            "Consciente, alerta, sangrado activo unilateral, refiere mareo y debilidad.",
-        vitalSigns: {
-            FC: "104 lpm",
-            TA: "98/64 mmHg",
-            SpO2: "96%",
-        },
-        findings: [
-            "Epistaxis severa por medicación anticoagulante",
-            "Compresión continua + posición sentada",
-            "Posible necesidad de taponamiento posterior en hospital",
-        ],
-        questions: [
-            {question: "¿Qué técnica es más efectiva para controlar epistaxis anterior?"},
-            {question: "¿Qué factores aumentan el riesgo de hemorragia nasal severa?"},
-            {question: "¿Por qué es peligrosa la epistaxis en pacientes anticoagulados?"},
-        ],
-        references: ["AAOS 11ª Edición - Capítulo de hemorragias y emergencias médicas."],
-    },
-    {
-        id: "dificultad-respiratoria-rn-36",
-        title: "Neonato con dificultad respiratoria postparto",
-        description:
-            "Recién nacido atendido en domicilio presenta aleteo nasal, quejido espiratorio y tiraje intercostal tras 2 minutos del parto.",
-        initialAssessment:
-            "Cianosis periférica, respiraciones rápidas e irregulares, respuesta débil al estímulo.",
-        vitalSigns: {
-            FC: "140 lpm",
-            FR: "65 rpm",
-            SpO2: "87%",
-        },
-        findings: [
-            "Sospecha de taquipnea transitoria del recién nacido o SDR",
-            "Necesita oxígeno con flujo libre y monitoreo",
-            "Evaluar con APGAR y trasladar a centro con neonatal",
-        ],
-        questions: [
-            {question: "¿Qué parámetros se evalúan en la escala de APGAR?"},
-            {question: "¿Cuándo está indicada la ventilación con BVM en neonatos?"},
-            {question: "¿Qué condiciones pueden causar dificultad respiratoria neonatal?"},
-        ],
-        references: ["AAOS 11ª Edición - Capítulo de emergencias obstétricas y neonatales."],
-    },
-    {
-        id: "shock-neurogenico-37",
-        title: "Sospecha de shock neurogénico tras accidente",
-        description:
-            "Motociclista de 35 años sufre accidente. Está consciente, con piel seca, caliente, bradicardia y presión baja. Tiene dolor en columna cervical.",
-        initialAssessment:
-            "Consciente, débil, piel rosada y seca. No puede mover las piernas. Dolor cervical.",
-        vitalSigns: {
-            FC: "54 lpm",
-            TA: "88/50 mmHg",
-            SpO2: "95%",
-        },
-        findings: [
-            "Shock neurogénico por lesión medular",
-            "No hay taquicardia compensatoria típica",
-            "Inmovilización espinal + oxígeno + monitoreo estrecho",
-        ],
-        questions: [
-            {question: "¿Qué diferencia al shock neurogénico de otros tipos de shock?"},
-            {question: "¿Por qué puede haber piel caliente en estado de shock?"},
-            {question: "¿Qué prioridad tiene el control de la vía aérea en lesiones medulares?"},
-        ],
-        references: ["AAOS 11ª Edición - Capítulo de shock y trauma de columna."],
-    },
-    {
-        id: "traumatismo-craneoencefalico-15",
-        title: "Caída de altura con lesión espinal",
-        description:
-            "Hombre de 30 años cae de una escalera de 4 metros. Reporta incapacidad para mover las piernas y sensación de hormigueo en los brazos. Se encuentra alerta pero ansioso.",
-        initialAssessment:
-            "Alerta y orientado, responde preguntas apropiadamente. Vía aérea permeable, respiración diafragmática. Piel por encima del nivel de la lesión pálida y sudorosa, pero por debajo se siente caliente y seca. Priapismo presente. Sin deformidades obvias aparte de posible lesión en columna cervical.",
-        vitalSigns: {
-            FC: "58 lpm",
-            TA: "88/50 mmHg",
-            FR: "20 rpm",
-            SpO2: "99%",
-        },
-        findings: [
-            "Shock neurogénico debido a probable lesión medular cervical.",
-            "Pérdida de la función motora y sensorial por debajo de la lesión.",
-            "Riesgo de hipotermia a pesar de la piel caliente.",
-        ],
-        questions: [
-            {question: "¿Qué diferencia al shock neurogénico de otros tipos de shock en cuanto a los signos vitales?"},
-            {question: "¿Por qué puede haber piel caliente y seca en un estado de shock distributivo como este?"},
-            {question: "¿Qué prioridad tiene el control de la vía aérea y la ventilación en lesiones medulares altas?"},
-        ],
-        references: ["Capítulo 12 - Shock.pdf", "Capítulo 17 - Emergencias Neurologicas.pdf"],
-    },
-    {
-        id: "hemorragia-rectal-38",
-        title: "Sangrado rectal abundante en paciente anciano",
-        description:
-            "Hombre de 74 años llama a emergencias por presentar sangrado rectal rojo brillante y abundante, acompañado de mareo y debilidad. Tiene historial de hipertensión y fibrilación auricular, tomando aspirina y un anticoagulante diariamente.",
-        initialAssessment:
-            "Paciente consciente pero letárgico. Piel pálida, fría y diaforética. Se observa sangre roja brillante en la ropa interior y en el inodoro. Refiere no tener dolor abdominal, solo una sensación de 'presión'.",
-        vitalSigns: {
-            FC: "118 lpm",
-            TA: "90/54 mmHg",
             FR: "22 rpm",
-            SpO2: "97% con mascarilla no recirculante",
+            SpO2: "96%",
+            "Dolor": "9/10",
         },
         findings: [
-            "Hemorragia digestiva baja activa con signos de hipoperfusión.",
-            "Shock hipovolémico descompensado inminente.",
-            "El uso de aspirina y anticoagulantes contribuye a la severidad del sangrado.",
+            "Alta sospecha de fractura de cadera.",
+            "Signos de shock hipovolémico compensado (taquicardia, hipotensión relativa).",
+            "El uso de anticoagulantes aumenta el riesgo de hemorragia interna significativa."
         ],
         questions: [
-            {question: "¿Qué signos y síntomas indican la necesidad de un traslado urgente en un sangrado gastrointestinal?"},
-            {question: "¿Qué tipo de medicamentos aumentan significativamente el riesgo de hemorragia digestiva?"},
-            {question: "¿Por qué los adultos mayores pueden descompensarse más rápido en un shock hipovolémico?"},
+            { question: "¿Cuál es el principal riesgo asociado a una fractura de pelvis o fémur en un paciente geriátrico anticoagulado?" },
+            { question: "¿Qué método de inmovilización es el más adecuado para esta lesión en el entorno prehospitalario?" },
+            { question: "¿Por qué es crucial el manejo del dolor en este tipo de pacientes?" }
         ],
-        references: ["Capítulo 12 - Shock.pdf", "Capítulo 18 - Emergencias gastrointestinales y urologicas.pdf"],
+        references: [
+            "AAOS 11ª Edición - Capítulo de Trauma Geriátrico.",
+            "PHTLS 9ª Edición - Capítulo de Trauma Musculoesquelético."
+        ],
+        correctManage: `- Estabilización manual de la extremidad lesionada.\n- Administración de oxígeno si es necesario para mantener SpO₂ >94%.\n- Establecer acceso IV para posible reposición de líquidos y analgesia.\n- Inmovilización de la extremidad con una férula de tracción si el protocolo lo permite o inmovilización en bloque sobre una camilla cuchara o de vacío, respetando la posición antiálgica.\n- Monitorización continua de signos vitales en busca de descompensación hemodinámica.\n- Traslado gentil a un centro hospitalario con capacidad de trauma ortopédico.`,
+        explanation: "La fractura de cadera en pacientes geriátricos es una emergencia grave. Puede provocar una hemorragia interna de hasta 1.5 litros, llevando al shock hipovolémico, especialmente en pacientes que toman anticoagulantes. La inmovilización adecuada reduce el dolor, minimiza el sangrado y previene lesiones adicionales. El manejo del dolor es vital, ya que reduce la respuesta fisiológica al estrés (taquicardia, hipertensión) y mejora el confort del paciente."
     },
     {
-        id: "dolor-toracico-45",
-        title: "Dolor torácico opresivo en adulto",
-        description: "Hombre de 55 años con sobrepeso y fumador presenta dolor torácico súbito y opresivo desde hace 30 minutos. El dolor se irradia a su brazo izquierdo y mandíbula. Reporta náuseas y sudoración profusa.",
-        initialAssessment: "Consciente, ansioso, pálido y diaforético. Se sujeta el pecho. Niega traumatismos. Piel fría al tacto. Pulsos radiales presentes, rítmicos y fuertes.",
+        id: "pediatria-crup-02",
+        title: "Dificultad respiratoria nocturna en lactante",
+        description: "Padres llaman por su hijo de 2 años que despertó con una tos 'perruna' y un ruido agudo al inspirar. Reportan fiebre baja durante el día. Los síntomas empeoraron en las últimas horas.",
+        initialAssessment: "Lactante consciente, sentado en el regazo de su madre. Presenta estridor inspiratorio audible, tos traqueal y tiraje subcostal leve. No hay babeo ni apariencia tóxica.",
         vitalSigns: {
-            "FC": "110 lpm",
-            "TA": "150/90 mmHg",
-            "FR": "24 rpm",
-            "SpO2": "95% (aire ambiente)",
+            FC: "130 lpm",
+            FR: "35 rpm",
+            SpO2: "95% (aire ambiente)",
+            "Temp": "38.2°C",
         },
         findings: [
-            "Presentación clásica de Síndrome Coronario Agudo (SCA).",
-            "Alto riesgo de infarto agudo de miocardio (IAM).",
-            "Requiere monitorización cardíaca y manejo inmediato del dolor y la isquemia.",
+            "Laringotraqueítis (Crup) de moderada severidad.",
+            "Obstrucción de la vía aérea superior.",
+            "Estridor y tos 'perruna' son patognomónicos."
         ],
         questions: [
-            {question: "¿Cuáles son las acciones prioritarias de manejo para este paciente según los protocolos de SCA?"},
-            {question: "¿Por qué es crucial administrar aspirina en este escenario y cuál es la dosis recomendada?"},
-            {question: "¿Qué contraindicaciones se deben verificar antes de administrar nitroglicerina?"},
+            { question: "¿Qué hallazgos clínicos ayudan a diferenciar el Crup de la Epiglotitis?" },
+            { question: "¿Cuál es el beneficio de administrar aire húmedo o frío a este paciente?" },
+            { question: "¿Cuándo está indicada la administración de epinefrina nebulizada en el Crup?" }
         ],
-        references: ["Capítulo 16 - Emergencias cardiovasculares.pdf"],
+        references: [
+            "AAOS 11ª Edición - Capítulo de Emergencias Pediátricas.",
+            "Nelson Textbook of Pediatrics, 21st Edition."
+        ],
+        correctManage: `- Mantener al niño en una posición cómoda, usualmente en brazos de los padres, para minimizar la ansiedad.\n- Administrar oxígeno humidificado si hay hipoxia o dificultad respiratoria marcada.\n- Exponer al paciente al aire frío de la noche puede ayudar a reducir el edema de la vía aérea.\n- Considerar la administración de epinefrina nebulizada si el estridor está presente en reposo o hay dificultad respiratoria severa, según protocolo.\n- Traslado tranquilo al hospital para evaluación y posible administración de corticoides.`,
+        explanation: "El Crup es una infección viral común en niños pequeños que causa inflamación en la laringe y la tráquea. El estridor es causado por el paso de aire a través de una vía aérea superior edematizada. Mantener la calma del niño es crucial, ya que el llanto puede empeorar la obstrucción. El aire frío actúa como un vasoconstrictor, reduciendo el edema y mejorando el flujo de aire. La epinefrina nebulizada se reserva para casos severos por su potente efecto vasoconstrictor."
     },
     {
-        id: "crisis-asmatica-21",
-        title: "Dificultad respiratoria severa en joven",
-        description: "Joven de 18 años con antecedentes de asma es encontrado en su habitación con dificultad respiratoria severa. Su familia indica que ha usado su inhalador de rescate varias veces sin mejoría.",
-        initialAssessment: "Sentado en posición de trípode, incapaz de hablar en frases completas. Se observa uso de músculos accesorios y tiraje intercostal. Piel pálida y cianosis peribucal. Sibilancias audibles a distancia.",
+        id: "toxicologia-co-03",
+        title: "Cefalea y mareos en múltiples pacientes",
+        description: "Se solicita una ambulancia a un domicilio en invierno por múltiples personas con cefalea, náuseas y mareos. La familia estaba usando un generador de gasolina en el sótano por un corte de luz.",
+        initialAssessment: "Se encuentran tres pacientes (dos adultos, un adolescente) conscientes pero letárgicos y confusos. Refieren sentirse muy débiles. La casa está cerrada, sin ventilación.",
         vitalSigns: {
-            "FC": "130 lpm",
-            "TA": "140/80 mmHg",
-            "FR": "32 rpm",
-            "SpO2": "90% (aire ambiente)",
+            "Paciente 1 (Adulto)": "FC: 110 lpm, TA: 130/80 mmHg, FR: 22 rpm, SpO2: 100%",
+            "Paciente 2 (Adulto)": "FC: 115 lpm, TA: 125/75 mmHg, FR: 24 rpm, SpO2: 99%",
+            "Paciente 3 (Adolescente)": "FC: 120 lpm, TA: 110/70 mmHg, FR: 26 rpm, SpO2: 100%",
         },
         findings: [
-            "Crisis asmática severa con insuficiencia respiratoria inminente.",
-            "Fatiga muscular respiratoria.",
-            "Hipoxia a pesar de la taquipnea.",
+            "Alta sospecha de intoxicación por monóxido de carbono (CO).",
+            "Múltiples pacientes con síntomas neurológicos similares.",
+            "La lectura del oxímetro de pulso es falsamente normal y no es fiable."
         ],
         questions: [
-            {question: "¿Qué hallazgo auscultatorio podría indicar un empeoramiento crítico en este paciente (un 'tórax silencioso')?"},
-            {question: "¿Cuál es el tratamiento farmacológico de primera línea en esta situación y cómo se administra?"},
-            {question: "Si la SpO2 del paciente no mejora con oxígeno suplementario, ¿qué indica esto sobre la gravedad de la obstrucción?"},
+            { question: "¿Por qué el oxímetro de pulso convencional no es útil para detectar la intoxicación por CO?" },
+            { question: "¿Cuál es el tratamiento prehospitalario inmediato y más importante para estos pacientes?" },
+            { question: "¿Qué es la carboxihemoglobina y cómo afecta el transporte de oxígeno?" }
         ],
-        references: ["Capítulo 15 - Emergencias respiratorias.pdf"],
+        references: [
+            "AAOS 11ª Edición - Capítulo de Emergencias Toxicológicas y Ambientales."
+        ],
+        correctManage: `- Retirar a todos los pacientes del ambiente contaminado inmediatamente a un área con aire fresco.\n- Administrar oxígeno al 100% a través de una mascarilla no recirculante a todos los pacientes, independientemente de la lectura de SpO₂.\n- Evaluar el estado de conciencia y prepararse para manejar la vía aérea si un paciente se deteriora.\n- Trasladar a todos los pacientes a un hospital con capacidad de medir niveles de carboxihemoglobina y, si es necesario, con acceso a cámara hiperbárica.`,
+        explanation: "El monóxido de carbono (CO) es un gas incoloro e inodoro que se une a la hemoglobina con una afinidad 200-300 veces mayor que el oxígeno, formando carboxihemoglobina. Esto impide el transporte de oxígeno a los tejidos, causando hipoxia tisular. El oxímetro de pulso no puede diferenciar entre la oxihemoglobina y la carboxihemoglobina, dando una lectura falsamente alta. El tratamiento consiste en desplazar el CO de la hemoglobina administrando la mayor concentración de oxígeno posible."
     },
     {
-        id: "evc-isquemico-68",
-        title: "Inicio súbito de debilidad facial y en brazo",
-        description: "Mujer de 78 años presenta inicio súbito de dificultad para hablar y debilidad en el lado derecho de su cara y brazo mientras desayunaba hace 45 minutos, según reporta su esposo.",
-        initialAssessment: "Alerta pero afásica (no puede formular palabras, parece entender). Se observa caída facial derecha y parálisis del brazo derecho (hemiparesia). Pupilas iguales y reactivas. La paciente parece frustrada.",
+        id: "toxicologia-organofosforados-04",
+        title: "Trabajador agrícola con salivación y debilidad",
+        description: "Hombre de 35 años que trabaja en un campo de cultivo es traído por sus compañeros. Presenta confusión, sudoración excesiva, salivación y debilidad muscular. Estuvo aplicando pesticidas sin equipo de protección.",
+        initialAssessment: "Paciente desorientado, con fasciculaciones musculares visibles. Diaforesis profusa. Pupilas puntiformes (miosis). Se auscultan crepitantes en ambos campos pulmonares. Olor a ajo en el aliento.",
         vitalSigns: {
-            "FC": "92 lpm (irregular)",
-            "TA": "180/100 mmHg",
-            "FR": "18 rpm",
-            "SpO2": "98% (aire ambiente)",
-            "Glucemia capilar": "110 mg/dL",
+            FC: "45 lpm",
+            TA: "90/50 mmHg",
+            FR: "28 rpm (superficial)",
+            SpO2: "88%",
         },
         findings: [
-            "Signos y síntomas consistentes con un Evento Vascular Cerebral (EVC) agudo.",
-            "La hipertensión y el pulso irregular (posible fibrilación auricular) son factores de riesgo importantes.",
-            "El tiempo de inicio ('última vez vista normal') es crucial para el tratamiento hospitalario (trombólisis).",
+            "Síndrome colinérgico agudo por intoxicación con organofosforados.",
+            "Crisis de broncorrea y broncoespasmo (causa de hipoxia).",
+            "Bradicardia e hipotensión severas."
         ],
         questions: [
-            {question: "¿Por qué es fundamental medir la glucemia capilar en todo paciente con sospecha de EVC?"},
-            {question: "Utilizando la escala de Cincinnati (o FAST/BE-FAST), ¿qué componentes evalúa y cómo los aplicaría en esta paciente?"},
-            {question: "¿Cuál es la prioridad absoluta en el manejo prehospitalario de un paciente en la ventana terapéutica para trombólisis?"},
+            { question: "¿Qué significa el acrónimo 'SLUDGEM' y cómo se aplica a este caso?" },
+            { question: "¿Cuál es el antídoto específico para la intoxicación por organofosforados y cómo actúa?" },
+            { question: "¿Qué precauciones de seguridad debe tomar el personal de emergencias al tratar a este paciente?" }
         ],
-        references: ["Capítulo 17 - Emergencias Neurologicas.pdf"],
+        references: [
+            "Goldfrank's Toxicologic Emergencies, 11th Edition.",
+            "AAOS 11ª Edición - Capítulo de Emergencias Toxicológicas."
+        ],
+        correctManage: `- Asegurar la protección del personal con equipo de protección personal (guantes, bata) para evitar la contaminación.\n- Descontaminar al paciente: retirar toda la ropa y lavar la piel con abundante agua y jabón.\n- Manejo agresivo de la vía aérea: aspiración frecuente de secreciones y administración de oxígeno al 100%. Estar preparado para la intubación.\n- Administrar Atropina IV en dosis altas para secar las secreciones y revertir la bradicardia.\n- Administrar Pralidoxima (2-PAM) si está disponible, para reactivar la acetilcolinesterasa.\n- Traslado urgente a un centro capaz de manejar una crisis toxicológica severa.`,
+        explanation: "Los pesticidas organofosforados inhiben la enzima acetilcolinesterasa, lo que lleva a una acumulación excesiva de acetilcolina en las sinapsis nerviosas. Esto causa una sobreestimulación del sistema nervioso parasimpático, resultando en el síndrome colinérgico (SLUDGEM: Salivation, Lacrimation, Urination, Defecation, GI upset, Emesis, Miosis). La muerte suele ocurrir por insuficiencia respiratoria debido a la broncorrea y broncoespasmo. La atropina es un antagonista competitivo que bloquea los efectos de la acetilcolina, mientras que la pralidoxima reactiva la enzima inhibida."
     },
     {
-        id: "hipoglucemia-severa-52",
-        title: "Alteración del estado de conciencia en diabético",
-        description: "Se recibe llamada por un hombre de 52 años encontrado inconsciente en su cama. Su esposa informa que es diabético tipo 1 y se administró su insulina esta mañana pero no ha comido.",
-        initialAssessment: "No responde a estímulos verbales, solo se queja ante estímulos dolorosos (GCS 7). Piel marcadamente pálida, fría y muy diaforética. Respiración superficial y rápida. No hay olor a alcohol ni signos de trauma.",
+        id: "neurologia-cefalea-05",
+        title: "Cefalea súbita 'la peor de mi vida'",
+        description: "Mujer de 45 años sin antecedentes relevantes llama por una cefalea de inicio súbito y de máxima intensidad ('como un trueno') mientras veía la televisión. Ahora presenta fotofobia y rigidez de cuello.",
+        initialAssessment: "Paciente consciente, en una habitación oscura. Refiere dolor 10/10. No puede tocar su pecho con el mentón (rigidez nucal). Pupilas isocóricas y reactivas. No hay déficits neurológicos focales.",
         vitalSigns: {
-            "FC": "115 lpm",
-            "TA": "100/60 mmHg",
-            "FR": "24 rpm",
-            "SpO2": "96% (aire ambiente)",
-            "Glucemia capilar": "35 mg/dL",
+            FC: "70 lpm",
+            TA: "170/95 mmHg",
+            FR: "16 rpm",
+            SpO2: "98%",
         },
         findings: [
-            "Estado mental alterado secundario a hipoglucemia severa.",
-            "Riesgo de daño cerebral permanente o convulsiones si no se trata.",
-            "Vía aérea comprometida debido al bajo nivel de conciencia.",
+            "Cefalea en trueno con signos meníngeos.",
+            "Alta sospecha de hemorragia subaracnoidea (HSA).",
+            "La hipertensión puede ser una causa o una consecuencia del evento."
         ],
         questions: [
-            {question: "¿Cuál es la diferencia en la presentación clínica (piel, aliento, inicio) entre la hipoglucemia y la hiperglucemia (cetoacidosis diabética)?"},
-            {question: "¿Cuál es el tratamiento indicado para un paciente hipoglucémico inconsciente y cómo se administra de forma segura?"},
-            {question: "¿Qué harías si no tuvieras acceso IV inmediato en este paciente?"},
+            { question: "¿Qué características de una cefalea son 'banderas rojas' que indican una patología grave?" },
+            { question: "¿Por qué la rigidez de nuca es un signo alarmante en este contexto?" },
+            { question: "¿Cuál es el objetivo principal del manejo prehospitalario en una sospecha de HSA?" }
         ],
-        references: ["Capítulo 19 - Emergencias endocrinas y hematologicas.pdf"],
+        references: [
+            "AAOS 11ª Edición - Capítulo de Emergencias Neurológicas."
+        ],
+        correctManage: `- Colocar al paciente en una posición cómoda, usualmente semi-sentado.\n- Minimizar estímulos externos (luces, ruido) para reducir la irritación meníngea y la presión intracraneal.\n- Establecer acceso IV para posible administración de antihipertensivos o analgésicos según protocolo.\n- Evitar maniobras que aumenten la presión intracraneal (Valsalva, tos).\n- Monitorización continua del estado neurológico (escala de Glasgow) y signos vitales.\n- Traslado prioritario a un centro con capacidad de neurocirugía y tomografía computarizada (TC).`,
+        explanation: "Una cefalea en trueno es una emergencia neurológica hasta que se demuestre lo contrario. La causa más temida es la hemorragia subaracnoidea, generalmente por la ruptura de un aneurisma cerebral. La sangre en el espacio subaracnoideo irrita las meninges, causando fotofobia y rigidez de nuca. El manejo prehospitalario se centra en mantener un ambiente tranquilo, controlar la presión arterial para prevenir un resangrado y asegurar un traslado rápido para el diagnóstico y tratamiento definitivo."
     },
     {
-        id: "shock-anafilactico-25",
-        title: "Reacción alérgica severa por picadura de abeja",
-        description: "Mujer de 25 años es picada por una abeja mientras estaba en un día de campo. A los pocos minutos, reporta dificultad para respirar y siente la garganta 'cerrada'. Es su primera reacción de este tipo.",
-        initialAssessment: "Paciente ansiosa, con urticaria generalizada y angioedema visible en labios y párpados. Se escuchan sibilancias audibles y estridor inspiratorio. Habla con voz ronca y entrecortada. Piel enrojecida y caliente al tacto.",
+        id: "ambiental-buceo-06",
+        title: "Buzo con dolor articular y dificultad para respirar",
+        description: "Buzo recreativo de 38 años emerge rápidamente de una inmersión a 30 metros. Treinta minutos después, desarrolla dolor intenso en el hombro y codo, mareos y dificultad para respirar.",
+        initialAssessment: "Paciente consciente, con dolor articular severo. Presenta livedo reticularis (una erupción cutánea moteada) en el torso. Taquipnea y tos seca.",
         vitalSigns: {
-            "FC": "128 lpm",
-            "TA": "85/45 mmHg",
-            "FR": "28 rpm",
-            "SpO2": "89% (aire ambiente)",
+            FC: "115 lpm",
+            TA: "110/70 mmHg",
+            FR: "26 rpm",
+            SpO2: "93%",
         },
         findings: [
-            "Shock anafiláctico con compromiso de la vía aérea y colapso cardiovascular.",
-            "Obstrucción de la vía aérea superior (estridor) e inferior (sibilancias).",
-            "Hipotensión severa secundaria a la vasodilatación masiva.",
+            "Enfermedad por descompresión (EDC) tipo II (afectación neurológica/cardiopulmonar).",
+            "Burbujas de nitrógeno en tejidos y torrente sanguíneo.",
+            "Requiere oxígeno al 100% y terapia de recompresión hiperbárica."
         ],
         questions: [
-            {question: "¿Cuál es el medicamento de primera línea para la anafilaxia y cuál es su mecanismo de acción principal?"},
-            {question: "¿Por qué la hipotensión es un signo tan ominoso en la anafilaxia?"},
-            {question: "Además de la epinefrina, ¿qué otras intervenciones son importantes en el manejo prehospitalario de este paciente?"},
+            { question: "¿Por qué un ascenso rápido aumenta el riesgo de enfermedad por descompresión?" },
+            { question: "¿Cuál es el mecanismo de acción del oxígeno al 100% en el tratamiento de la EDC?" },
+            { question: "¿Qué información del perfil de buceo del paciente es crucial para el hospital?" }
         ],
-        references: ["Capítulo 12 - Shock.pdf", "Capítulo 15 - Emergencias respiratorias.pdf"],
+        references: [
+            "AAOS 11ª Edición - Capítulo de Emergencias Ambientales.",
+            "Divers Alert Network (DAN) Guidelines."
+        ],
+        correctManage: `- Administrar oxígeno al 100% con una mascarilla no recirculante de manera continua.\n- Colocar al paciente en posición supina o lateral de seguridad para maximizar la perfusión.\n- Mantener una buena hidratación si el paciente puede beber líquidos.\n- Proteger del frío o del calor excesivo.\n- Trasladar urgentemente a un centro con cámara de recompresión hiperbárica, notificando al centro receptor con antelación.`,
+        explanation: "Durante una inmersión, el cuerpo absorbe nitrógeno de la mezcla de aire respirado. Si el ascenso es demasiado rápido, el nitrógeno no tiene tiempo de ser eliminado gradualmente y forma burbujas en los tejidos y la sangre, causando la EDC. El oxígeno al 100% ayuda a crear un gradiente de presión que acelera la eliminación del nitrógeno ('lavado de nitrógeno') y mejora la oxigenación de los tejidos isquémicos. El tratamiento definitivo es la recompresión en una cámara hiperbárica."
     },
     {
-        id: "icc-descompensada-72",
-        title: "Insuficiencia Cardíaca Congestiva con Edema Pulmonar",
-        description: "Hombre de 72 años con antecedentes de infarto de miocardio e hipertensión llama porque 'se está ahogando'. Despertó súbitamente con falta de aire extrema y no puede acostarse.",
-        initialAssessment: "Sentado en el borde de la cama, sudoroso, pálido y con cianosis en los labios. Usa músculos accesorios para respirar. Tose un esputo rosado y espumoso. Se auscultan estertores crepitantes en ambas bases pulmonares. Presenta edema en tobillos (fóvea ++).",
+        id: "hematologia-falciforme-07",
+        title: "Crisis de dolor agudo en paciente con anemia falciforme",
+        description: "Joven de 19 años con antecedentes de anemia de células falciformes acude por dolor agudo (10/10) en la espalda baja y piernas. No hay trauma. Refiere que es similar a sus crisis anteriores.",
+        initialAssessment: "Paciente consciente, alerta, en evidente dolor agudo. No hay fiebre ni dificultad respiratoria. Piel y mucosas pálidas.",
+        vitalSigns: {
+            FC: "110 lpm",
+            TA: "130/80 mmHg",
+            FR: "20 rpm",
+            SpO2: "98% (aire ambiente)",
+        },
+        findings: [
+            "Crisis vaso-oclusiva por anemia de células falciformes.",
+            "Dolor severo es la principal manifestación.",
+            "Riesgo de deshidratación y síndrome torácico agudo."
+        ],
+        questions: [
+            { question: "¿Qué causa la oclusión vascular y el dolor en una crisis de células falciformes?" },
+            { question: "¿Cuáles son los tres pilares del tratamiento prehospitalario para esta condición?" },
+            { question: "¿Qué es el síndrome torácico agudo y por qué es una complicación temida?" }
+        ],
+        references: [
+            "AAOS 11ª Edición - Capítulo de Emergencias Hematológicas."
+        ],
+        correctManage: `- Administración de oxígeno de alto flujo, incluso con SpO₂ normal, para maximizar la saturación de la hemoglobina restante.\n- Manejo agresivo del dolor con analgésicos narcóticos (ej. Fentanilo o Morfina) según protocolo.\n- Establecer acceso IV e iniciar rehidratación con solución salina normal para mejorar el flujo sanguíneo y reducir la viscosidad.\n- Mantener al paciente abrigado, ya que el frío puede precipitar la falciformación.\n- Traslado a un centro con capacidad para manejar crisis hematológicas.`,
+        explanation: "En la anemia de células falciformes, los glóbulos rojos adoptan una forma de hoz en condiciones de bajo oxígeno, deshidratación o estrés. Estas células rígidas ocluyen los vasos sanguíneos pequeños, causando isquemia tisular y un dolor intenso (crisis vaso-oclusiva). El tratamiento se centra en romper este ciclo mediante la oxigenación, la hidratación para mejorar el flujo sanguíneo y la analgesia para controlar el dolor severo."
+    },
+    {
+        id: "psiquiatria-agitacion-08",
+        title: "Paciente con agitación psicomotriz y paranoia",
+        description: "Hombre de 28 años es reportado por su familia por comportamiento errático y agresivo. El paciente cree que 'lo están persiguiendo para hacerle daño' y se ha encerrado en su habitación.",
+        initialAssessment: "El paciente está de pie en una esquina, hablando solo, visiblemente asustado y paranoico. Se niega a cooperar y amenaza verbalmente al equipo. La escena no es segura.",
         vitalSigns: {
             "FC": "120 lpm",
-            "TA": "190/110 mmHg",
-            "FR": "34 rpm",
-            "SpO2": "85% con mascarilla no recirculante",
-        },
-        findings: [
-            "Edema agudo de pulmón de origen cardiogénico.",
-            "Insuficiencia cardíaca congestiva (ICC) descompensada.",
-            "Emergencia hipertensiva.",
-            "El esputo rosado y espumoso es patognomónico de edema pulmonar.",
-        ],
-        questions: [
-            {question: "¿Cuál es la fisiopatología del edema agudo de pulmón en un paciente con ICC?"},
-            {question: "¿Qué beneficios puede aportar la ventilación con presión positiva (CPAP) en este escenario?"},
-            {question: "¿Por qué el paciente no tolera estar acostado (ortopnea)?"},
-        ],
-        references: ["Capítulo 16 - Emergencias cardiovasculares.pdf", "Capítulo 15 - Emergencias respiratorias.pdf"],
-    },
-    {
-        id: "convulsion-postictal-19",
-        title: "Estado postictal tras convulsión",
-        description: "Joven de 19 años sin antecedentes médicos conocidos sufre una convulsión tónico-clónica de aproximadamente 2 minutos, presenciada por su familia. A la llegada de la unidad, el paciente ya no está convulsionando.",
-        initialAssessment: "Paciente en el suelo, con respiración ruidosa y profunda. No abre los ojos ni sigue órdenes, pero se retira al estímulo doloroso (GCS 9). Piel diaforética. Se observa una pequeña laceración en la lengua y ligera incontinencia urinaria.",
-        vitalSigns: {
-            "FC": "110 lpm",
-            "TA": "145/90 mmHg",
-            "FR": "20 rpm",
-            "SpO2": "96% (aire ambiente)",
-            "Glucemia capilar": "90 mg/dL",
-        },
-        findings: [
-            "Paciente en estado postictal.",
-            "Se deben descartar causas reversibles de la convulsión (trauma, hipoxia, hipoglucemia).",
-            "Vía aérea permeable, pero con riesgo de aspiración por el nivel de conciencia.",
-        ],
-        questions: [
-            {question: "¿Cuáles son las prioridades de evaluación y manejo en un paciente en estado postictal?"},
-            {question: "¿Qué hallazgos durante la evaluación podrían indicar una causa traumática de la convulsión?"},
-            {question: "Si el paciente comenzara a convulsionar nuevamente antes de recuperar la conciencia, ¿cómo se llamaría esta condición y por qué es una emergencia crítica?"},
-        ],
-        references: ["Capítulo 17 - Emergencias Neurologicas.pdf"],
-    },
-    {
-        id: "cetoacidosis-diabetica-16",
-        title: "Cetoacidosis diabética en adolescente",
-        description: "Adolescente de 16 años, diagnosticada con diabetes tipo 1, es traída por sus padres por alteración del estado mental, náuseas y vómitos desde hace 2 días. Reportan que ha estado orinando mucho y ha tenido mucha sed. Olvidó ponerse la insulina.",
-        initialAssessment: "Paciente somnolienta, responde a la voz pero está desorientada en tiempo y lugar. Piel seca y mucosas orales secas. Se percibe un aliento con olor afrutado (acetona). La respiración es notablemente profunda y rápida.",
-        vitalSigns: {
-            "FC": "130 lpm",
-            "TA": "92/50 mmHg",
-            "FR": "28 rpm (patrón de Kussmaul)",
-            "SpO2": "97% (aire ambiente)",
-            "Glucemia capilar": "450 mg/dL",
-        },
-        findings: [
-            "Estado hiperosmolar hiperglucémico, consistente con Cetoacidosis Diabética (CAD).",
-            "Deshidratación severa y shock hipovolémico compensado.",
-            "Las respiraciones de Kussmaul son un intento del cuerpo por compensar la acidosis metabólica.",
-        ],
-        questions: [
-            {question: "¿Qué significan las '3 P' (polidipsia, polifagia, poliuria) en el contexto de la diabetes no controlada?"},
-            {question: "¿Por qué un paciente con CAD presenta hipotensión y taquicardia?"},
-            {question: "Explique el propósito fisiológico de las respiraciones de Kussmaul."},
-        ],
-        references: ["Capítulo 19 - Emergencias endocrinas y hematologicas.pdf"],
-    },
-    {
-        id: "diseccion-aortica-65",
-        title: "Dolor torácico desgarrante irradiado a la espalda",
-        description: "Hombre de 65 años con historial de hipertensión mal controlada, experimenta un dolor torácico súbito, de máxima intensidad desde el inicio, que describe como 'desgarrante' y que se irradia hacia la espalda, entre los omóplatos.",
-        initialAssessment: "Paciente pálido, ansioso y en evidente dolor. Se toca el pecho y la espalda. A la palpación de pulsos, el pulso radial derecho se siente significativamente más débil que el izquierdo.",
-        vitalSigns: {
-            "FC": "115 lpm",
-            "TA Brazo Derecho": "120/70 mmHg",
-            "TA Brazo Izquierdo": "180/100 mmHg",
+            "TA": "140/90 mmHg",
             "FR": "24 rpm",
-            "SpO2": "97% (aire ambiente)",
+            "SpO2": "99%",
         },
         findings: [
-            "Alta sospecha de Disección Aórtica Aguda.",
-            "La descripción del dolor ('desgarrante') es clásica de esta patología.",
-            "El déficit de pulso y la diferencia de presión arterial entre ambos brazos (pulso paradójico) son signos clave.",
+            "Agitación psicomotriz severa secundaria a una posible psicosis aguda.",
+            "Riesgo para la seguridad del paciente y del equipo.",
+            "Necesidad de desescalada verbal y posible sedación química."
         ],
         questions: [
-            {question: "¿Por qué este cuadro clínico es una contraindicación para la administración de aspirina, a diferencia de un infarto?"},
-            {question: "¿Cuál es la importancia de identificar una diferencia de presión arterial mayor a 20 mmHg entre las extremidades?"},
-            {question: "En el manejo de una disección aórtica, ¿cuál es el objetivo principal con respecto a la presión arterial y la frecuencia cardíaca y por qué?"},
+            { question: "¿Cuáles son las prioridades al llegar a una escena con un paciente potencialmente violento?" },
+            { question: "Describe las técnicas de desescalada verbal." },
+            { question: "¿Cuándo está indicada la restricción física o química y qué precauciones se deben tomar?" }
         ],
-        references: ["Capítulo 16 - Emergencias cardiovasculares.pdf"],
+        references: [
+            "AAOS 11ª Edición - Capítulo de Emergencias Psiquiátricas."
+        ],
+        correctManage: `- Asegurar la escena primero. Solicitar apoyo policial si aún no está presente.\n- Mantener una distancia segura y una ruta de salida clara.\n- Intentar la desescalada verbal: hablar con calma, presentarse, validar los sentimientos del paciente sin validar las alucinaciones ('Veo que estás asustado'), y ser honesto.\n- Si la desescalada falla y el paciente sigue siendo un peligro, proceder con la restricción física coordinada y segura con apoyo policial.\n- Administrar sedantes (ej. benzodiacepinas como Midazolam o antipsicóticos como Olanzapina) según protocolo para la sedación química.\n- Una vez controlado, monitorizar continuamente la vía aérea, la respiración y los signos vitales durante el traslado.`,
+        explanation: "La seguridad de la escena es la máxima prioridad. El objetivo inicial es calmar al paciente a través de la comunicación. Si esto no es posible y existe un riesgo inminente, la restricción es necesaria para proteger a todos. La sedación química ayuda a reducir la agitación, permitiendo una evaluación y un traslado más seguros. Es crucial monitorizar de cerca a los pacientes sedados por el riesgo de depresión respiratoria o compromiso de la vía aérea."
     },
     {
-        "id": "iamcest-01",
-        "title": "Dolor torácico opresivo en adulto mayor",
-        "description": "Masculino de 65 años, diabético e hipertenso, presenta dolor torácico opresivo de inicio súbito desde hace 1 hora, que irradia a brazo izquierdo y mandíbula. Refiere náuseas y sudoración profusa.",
-        "initialAssessment": "Paciente consciente, orientado, con evidente facies de dolor. Piel pálida y fría. Se observa diaforesis marcada. Refiere no tener alergias conocidas.",
-        "vitalSigns": {
-            "FC": "105 lpm (pulso irregular)",
-            "TA": "150/90 mmHg",
-            "FR": "22 rpm",
-            "SpO2": "92% (aire ambiente)"
+        id: "trauma-amputacion-09",
+        title: "Amputación traumática de miembro superior",
+        description: "Trabajador industrial de 42 años sufre la amputación de su mano derecha por debajo de la muñeca en un accidente con maquinaria pesada. Hay sangrado activo en el muñón.",
+        initialAssessment: "Paciente consciente, pálido y diaforético, sujetando el brazo lesionado. Se observa una amputación completa con hemorragia pulsátil desde el muñón.",
+        vitalSigns: {
+            FC: "125 lpm",
+            TA: "95/55 mmHg",
+            FR: "24 rpm",
+            SpO2: "97%",
         },
-        "findings": [
-            "Síndrome Coronario Agudo, probable Infarto Agudo de Miocardio con elevación del ST (IAMCEST).",
-            "Dolor torácico de origen cardiogénico.",
-            "Necesidad de monitorización cardíaca continua y traslado prioritario a un centro con capacidad de intervención coronaria percutánea (ICP)."
+        findings: [
+            "Amputación traumática con hemorragia arterial activa.",
+            "Shock hipovolémico en desarrollo.",
+            "Necesidad de control inmediato de la hemorragia y manejo adecuado de la parte amputada."
         ],
-        "questions": [
-            {"question": "¿Cuáles son los componentes clave del tratamiento prehospitalario para un paciente con sospecha de IAMCEST?"},
-            {"question": "¿Por qué es crucial realizar un electrocardiograma (ECG) de 12 derivaciones de manera temprana en este paciente?"},
-            {"question": "¿Qué precauciones se deben tomar al administrar nitroglicerina a un paciente con dolor torácico?"}
+        questions: [
+            { question: "¿Cuál es el método más efectivo y prioritario para controlar una hemorragia arterial en una amputación?" },
+            { question: "¿Cómo se debe preservar correctamente una parte del cuerpo amputada para maximizar las posibilidades de reimplante?" },
+            { question: "¿Por qué es importante establecer dos accesos IV de gran calibre en este paciente?" }
         ],
-        "references": [
-            "AAOS 11ª Edición - Capítulo de Emergencias Cardiovasculares."
-        ]
+        references: [
+            "PHTLS 9ª Edición - Capítulo de Control de Hemorragias.",
+            "AAOS 11ª Edición - Capítulo de Trauma de Extremidades."
+        ],
+        correctManage: `- Aplicar un torniquete comercial lo más alto y apretado posible en la extremidad lesionada para detener la hemorragia inmediatamente. Anotar la hora de aplicación.\n- Administrar oxígeno de alto flujo.\n- Establecer dos accesos intravenosos de gran calibre (16G o 18G) y prepararse para la reposición de volumen.\n- Manejo del dolor con analgésicos IV.\n- Cuidar la parte amputada: envolverla en gasa estéril húmeda, colocarla en una bolsa de plástico sellada y poner esa bolsa en un recipiente con agua y hielo (no directamente sobre el hielo).\n- Traslado rápido a un centro de trauma con capacidad de microcirugía.`,
+        explanation: "En una amputación con hemorragia exanguinante, el control del sangrado es la prioridad absoluta para salvar la vida, y el torniquete es la intervención de elección. El manejo adecuado de la parte amputada, manteniéndola fría y limpia sin congelarla, es crucial para su viabilidad y un posible reimplante. El shock hipovolémico debe anticiparse y tratarse agresivamente con reposición de líquidos para mantener la perfusión de los órganos vitales."
     },
     {
-        "id": "asma-severa-02",
-        "title": "Dificultad respiratoria aguda en paciente pediátrico",
-        "description": "Niña de 8 años con antecedentes de asma, presenta dificultad respiratoria severa que no mejora con su inhalador de rescate. Los padres refieren que ha estado con tos durante dos días. Presenta sibilancias audibles a distancia.",
-        "initialAssessment": "Paciente pediátrica sentada en posición de trípode, ansiosa. Uso visible de músculos accesorios para respirar. Aleteo nasal y retracción intercostal. Incapaz de hablar en oraciones completas.",
-        "vitalSigns": {
-            "FC": "130 lpm",
-            "TA": "100/65 mmHg",
-            "FR": "35 rpm",
-            "SpO2": "89% (aire ambiente)"
+        id: "medica-sepsis-10",
+        title: "Paciente con herida infectada y estado mental alterado",
+        description: "Hombre de 60 años con diabetes es traído por su familia. Tiene una úlcera en el pie que ha empeorado, ahora está roja, caliente y drena pus. En las últimas 12 horas, el paciente se ha vuelto letárgico y confundido.",
+        initialAssessment: "Paciente somnoliento, responde a estímulos verbales pero está desorientado. Piel caliente y enrojecida. Taquipnea y taquicardia. La herida en el pie derecho tiene claros signos de infección severa.",
+        vitalSigns: {
+            FC: "120 lpm",
+            TA: "88/50 mmHg",
+            FR: "28 rpm",
+            SpO2: "93% (aire ambiente)",
+            "Temp": "38.9°C",
+            "Glucosa": "250 mg/dL",
         },
-        "findings": [
-            "Crisis asmática severa / Estatus asmático.",
-            "Insuficiencia respiratoria inminente.",
-            "Hipoxia moderada."
+        findings: [
+            "Shock séptico secundario a una infección de tejidos blandos (celulitis/úlcera infectada).",
+            "Hipotensión, taquicardia, fiebre y estado mental alterado (criterios de sepsis).",
+            "Necesita reconocimiento temprano, fluidoterapia agresiva y antibióticos urgentes."
         ],
-        "questions": [
-            {"question": "¿Qué hallazgos clínicos indican una crisis asmática que pone en peligro la vida?"},
-            {"question": "¿Cuál es el tratamiento farmacológico de primera línea en el manejo prehospitalario del asma severa?"},
-            {"question": "Explique la importancia de la administración de oxígeno y cómo se debe titular en este caso."}
+        questions: [
+            { question: "¿Qué es la sepsis y cómo progresa a shock séptico?" },
+            { question: "Utilizando los criterios qSOFA (Quick SOFA), ¿cómo evaluaría a este paciente?" },
+            { question: "¿Cuál es la importancia de la 'hora de oro' en el manejo de la sepsis?" }
         ],
-        "references": [
-            "AAOS 11ª Edición - Capítulo de Emergencias Respiratorias."
-        ]
+        references: [
+            "Surviving Sepsis Campaign Guidelines.",
+            "AAOS 11ª Edición - Capítulo de Enfermedades Infecciosas y Shock."
+        ],
+        correctManage: `- Administrar oxígeno de alto flujo para corregir la hipoxia.\n- Establecer acceso IV de gran calibre e iniciar una reanimación agresiva con líquidos (bolo de solución salina de 30 ml/kg, según protocolo) para tratar la hipotensión inducida por la sepsis.\n- Realizar una evaluación completa y monitorizar los signos vitales de cerca.\n- Notificar al hospital receptor con una alerta de 'código sepsis' para que el equipo esté preparado para administrar antibióticos de amplio espectro de inmediato a la llegada.\n- Mantener al paciente abrigado.`,
+        explanation: "La sepsis es una respuesta desregulada del cuerpo a una infección, que puede llevar a una disfunción orgánica potencialmente mortal. El shock séptico ocurre cuando hay una hipotensión persistente a pesar de la reanimación con líquidos. El reconocimiento temprano y el manejo agresivo en la primera hora (la 'hora de oro'), incluyendo la administración de líquidos y antibióticos, son cruciales para mejorar la supervivencia del paciente al restaurar la perfusión de los órganos y tratar la infección subyacente."
     },
     {
-        "id": "evc-isquemico-03",
-        "title": "Inicio súbito de debilidad facial y dificultad para hablar",
-        "description": "Mujer de 72 años encontrada por su familia con debilidad súbita en el lado derecho de la cara y el brazo. Presenta dificultad para articular palabras (disartria) y parece confundida. Los síntomas iniciaron hace aproximadamente 45 minutos.",
-        "initialAssessment": "Paciente consciente, pero desorientada en tiempo y lugar. Se observa asimetría facial con caída de la comisura labial derecha. Incapacidad para levantar el brazo derecho (hemiparesia). Pupilas isocóricas y reactivas.",
-        "vitalSigns": {
-            "FC": "90 lpm (rítmico)",
-            "TA": "180/100 mmHg",
-            "FR": "18 rpm",
-            "SpO2": "97% (aire ambiente)"
+        id: "ambiental-calor-11",
+        title: "Colapso en un evento deportivo al aire libre",
+        description: "Un corredor de maratón de 28 años colapsa a pocos metros de la línea de meta en un día particularmente caluroso y húmedo. A tu llegada, lo encuentras inconsciente.",
+        initialAssessment: "Paciente masculino inconsciente, no responde a estímulos dolorosos. La piel está extremadamente caliente, enrojecida y seca al tacto. Respiraciones rápidas y superficiales. No hay evidencia de trauma.",
+        vitalSigns: {
+            FC: "140 lpm (débil)",
+            TA: "85/45 mmHg",
+            FR: "30 rpm",
+            SpO2: "94% (aire ambiente)",
+            "Temp (timpánica)": "41.1°C",
         },
-        "findings": [
-            "Sospecha de Evento Vascular Cerebral (EVC) agudo.",
-            "Déficit neurológico focal (hemiparesia derecha, disartria).",
-            "Paciente dentro de la ventana de tiempo para terapia trombolítica."
+        findings: [
+            "Golpe de calor por esfuerzo con disfunción del sistema nervioso central.",
+            "Fallo del mecanismo de termorregulación del cuerpo (cese de la sudoración).",
+            "Shock distributivo con riesgo inminente de fallo multiorgánico."
         ],
-        "questions": [
-            {"question": "¿Qué herramientas de evaluación prehospitalaria (escalas) se utilizan para identificar un posible EVC?"},
-            {"question": "¿Por qué es fundamental determinar la hora de inicio de los síntomas en un paciente con sospecha de EVC?"},
-            {"question": "¿Cuál es el manejo prioritario y el destino de traslado para este tipo de paciente?"}
+        questions: [
+            { question: "¿Cuál es la diferencia fisiopatológica clave entre el agotamiento por calor y el golpe de calor?" },
+            { question: "¿Por qué el enfriamiento rápido y agresivo es la intervención más crítica en este caso?" },
+            { question: "¿Qué métodos de enfriamiento se pueden iniciar eficazmente en el entorno prehospitalario?" }
         ],
-        "references": [
-            "AAOS 11ª Edición - Capítulo de Emergencias Neurológicas."
-        ]
-    },
-    {
-        "id": "anafilaxia-04",
-        "title": "Reacción alérgica severa tras picadura de abeja",
-        "description": "Hombre de 40 años sufre picadura de abeja en el cuello mientras trabajaba en su jardín. A los pocos minutos, desarrolla urticaria generalizada, hinchazón de labios y lengua, y siente que se le cierra la garganta.",
-        "initialAssessment": "Paciente ansioso, con voz ronca y estridor inspiratorio audible. Presenta edema facial y urticaria en tronco y extremidades. Dificultad para respirar evidente.",
-        "vitalSigns": {
-            "FC": "125 lpm",
-            "TA": "88/50 mmHg",
-            "FR": "28 rpm",
-            "SpO2": "91% (aire ambiente)"
-        },
-        "findings": [
-            "Anafilaxia con compromiso de la vía aérea y cardiovascular.",
-            "Choque anafiláctico.",
-            "Necesidad inmediata de administración de epinefrina."
-        ],
-        "questions": [
-            {"question": "¿Cuáles son los criterios para diagnosticar anafilaxia en el entorno prehospitalario?"},
-            {"question": "Describa la dosis, vía de administración y mecanismo de acción de la epinefrina en la anafilaxia."},
-            {"question": "¿Qué otros tratamientos, además de la epinefrina, son importantes en el manejo de la anafilaxia severa?"}
-        ],
-        "references": [
-            "AAOS 11ª Edición - Capítulo de Reacciones Alérgicas y Anafilaxia."
-        ]
-    },
-    {
-        "id": "hipoglucemia-05",
-        "title": "Alteración del estado mental en paciente diabético",
-        "description": "Se solicita una ambulancia para un hombre de 55 años, conocido por ser diabético tipo 1, encontrado por su esposa inconsciente en la cama. Refiere que se administró su insulina pero no ha comido.",
-        "initialAssessment": "Paciente masculino inconsciente, no responde a estímulos verbales ni dolorosos. Piel pálida, fría y diaforética. Respiración superficial y rápida. No hay evidencia de trauma.",
-        "vitalSigns": {
-            "FC": "110 lpm",
-            "TA": "105/60 mmHg",
-            "FR": "24 rpm",
-            "SpO2": "98% (aire ambiente)",
-            "Glucemia Capilar": "35 mg/dL"
-        },
-        "findings": [
-            "Hipoglucemia severa.",
-            "Alteración del estado de conciencia secundario a neuroglucopenia.",
-            "Riesgo de daño cerebral si no se revierte rápidamente."
-        ],
-        "questions": [
-            {"question": "¿Por qué un paciente con hipoglucemia severa puede presentar signos neurológicos focales o convulsiones?"},
-            {"question": "¿Cuál es el tratamiento de elección para un paciente inconsciente con hipoglucemia severa y cómo se administra?"},
-            {"question": "¿Qué se debe hacer después de que el paciente recupere la conciencia tras el tratamiento?"}
-        ],
-        "references": [
-            "AAOS 11ª Edición - Capítulo de Emergencias Diabéticas."
-        ]
-    },
-    {
-        "id": "sobredosis-opioides-06",
-        "title": "Depresión respiratoria en adulto joven",
-        "description": "Joven de 24 años encontrado inconsciente en un baño público. Amigos refieren que podría haber consumido heroína. En la escena se observa parafernalia para uso de drogas intravenosas.",
-        "initialAssessment": "Paciente cianótico, no responde. Se observa miosis puntiforme bilateral. Respiraciones agónicas, de 4 a 6 por minuto. Pulso radial débil y filiforme.",
-        "vitalSigns": {
-            "FC": "50 lpm",
-            "TA": "80/40 mmHg",
-            "FR": "4 rpm",
-            "SpO2": "75% (aire ambiente)"
-        },
-        "findings": [
-            "Sobredosis de opioides.",
-            "Depresión respiratoria severa y paro respiratorio inminente.",
-            "Hipoxia y bradicardia secundarias."
-        ],
-        "questions": [
-            {"question": "¿Cuál es la tríada clásica de una sobredosis de opioides?"},
-            {"question": "Describa el manejo inicial de la vía aérea y la ventilación antes de administrar el antídoto."},
-            {"question": "¿Cuál es el fármaco revertor, su vía de administración preferida en el ámbito prehospitalario y qué se debe anticipar después de su administración?"}
-        ],
-        "references": [
-            "AAOS 11ª Edición - Capítulo de Emergencias Toxicológicas."
-        ]
-    },
-    {
-        "id": "tce-severo-07",
-        "title": "Caída de altura con alteración de conciencia",
-        "description": "Trabajador de la construcción de 35 años cae de un andamio de aproximadamente 6 metros de altura. No llevaba casco. Presenta pérdida de conciencia inicial, seguida de un periodo de lucidez y posterior deterioro neurológico.",
-        "initialAssessment": "Paciente masculino con respuesta motora de decorticación al estímulo doloroso. Emite sonidos incomprensibles y no abre los ojos. Se observa una herida en la región temporal derecha y otorragia del mismo lado. Restricción de movimiento espinal en progreso.",
-        "vitalSigns": {
-            "FC": "55 lpm",
-            "TA": "190/110 mmHg",
-            "FR": "12 rpm (patrón irregular)",
-            "SpO2": "90% (con O2 a 15L/min)"
-        },
-        "findings": [
-            "Traumatismo Craneoencefálico (TCE) severo (Glasgow de 5).",
-            "Sospecha de hematoma epidural por el intervalo lúcido.",
-            "Signos de hipertensión intracraneal (Tríada de Cushing)."
-        ],
-        "questions": [
-            {"question": "Explique los componentes de la Tríada de Cushing y su significado clínico en el TCE."},
-            {"question": "¿Cuál es el manejo prioritario de la vía aérea en un paciente con TCE severo y Glasgow bajo?"},
-            {"question": "¿Cómo se debe manejar la presión arterial y la oxigenación para prevenir lesiones secundarias en el cerebro?"}
-        ],
-        "references": [
-            "AAOS 11ª Edición - Capítulo de Trauma Craneoencefálico."
-        ]
-    },
-    {
-        "id": "neumotorax-tension-08",
-        "title": "Dolor torácico y disnea tras herida punzante",
-        "description": "Hombre de 28 años involucrado en una riña, sufre una herida por arma blanca en el hemitórax derecho, a nivel del 4º espacio intercostal. Presenta dolor agudo y dificultad respiratoria que empeora rápidamente.",
-        "initialAssessment": "Paciente ansioso, con dificultad respiratoria severa. Ausencia unilateral de ruidos respiratorios en el hemitórax derecho. Hiperresonancia a la percusión en el mismo lado. Se observa ingurgitación yugular y desviación de la tráquea hacia el lado izquierdo.",
-        "vitalSigns": {
-            "FC": "140 lpm",
-            "TA": "85/55 mmHg",
-            "FR": "38 rpm",
-            "SpO2": "85% (aire ambiente)"
-        },
-        "findings": [
-            "Neumotórax a tensión derecho.",
-            "Choque obstructivo.",
-            "Necesidad de descompresión torácica inmediata."
-        ],
-        "questions": [
-            {"question": "¿Cuáles son los signos y síntomas cardinales que diferencian un neumotórax simple de uno a tensión?"},
-            {"question": "Describa el procedimiento de descompresión con aguja, incluyendo el punto de inserción anatómico correcto."},
-            {"question": "¿Qué cambios en los signos vitales se esperan inmediatamente después de una descompresión exitosa?"}
-        ],
-        "references": [
-            "AAOS 11ª Edición - Capítulo de Trauma Torácico."
-        ]
-    },
-    {
-        "id": "quemadura-electrica-09",
-        "title": "Lesión por electrocución en trabajador de línea eléctrica",
-        "description": "Masculino de 42 años recibe descarga de una línea de alto voltaje. Fue lanzado varios metros. Se aseguró la escena y se cortó la corriente. El paciente está desorientado.",
-        "initialAssessment": "Paciente confuso, responde a órdenes simples. Presenta quemaduras de entrada en mano derecha y de salida en pie izquierdo, ambas carbonizadas y de espesor total. Se sospecha trauma cerrado por la caída. Se inmoviliza la columna cervical.",
-        "vitalSigns": {
-            "FC": "130 lpm (con extrasístoles ventriculares en monitor)",
-            "TA": "100/70 mmHg",
-            "FR": "22 rpm",
-            "SpO2": "99% (con O2 a 15L/min)"
-        },
-        "findings": [
-            "Quemadura eléctrica de alto voltaje.",
-            "Arritmias cardíacas.",
-            "Alto riesgo de rabdomiólisis y daño renal agudo.",
-            "Traumatismo cerrado asociado por la caída."
-        ],
-        "questions": [
-            {"question": "¿Por qué las quemaduras eléctricas son a menudo más graves de lo que aparentan en la superficie de la piel?"},
-            {"question": "¿Cuál es la importancia de la monitorización cardíaca continua en un paciente con electrocución de alto voltaje?"},
-            {"question": "Explique el fundamento para iniciar una reposición agresiva de líquidos intravenosos en este tipo de quemadura."}
-        ],
-        "references": [
-            "AAOS 11ª Edición - Capítulo de Lesiones por Quemaduras."
-        ]
-    },
-    {
-        "id": "parto-emergencia-10",
-        "title": "Atención de parto inminente en domicilio",
-        "description": "Llamada por mujer de 28 años, G3 P2, con 39 semanas de gestación. Presenta contracciones cada 2 minutos y siente una fuerte necesidad de pujar. La fuente se rompió hace 10 minutos. El hospital está a 30 minutos de distancia.",
-        "initialAssessment": "Paciente en trabajo de parto activo, se observa coronamiento de la cabeza fetal durante una contracción. La atención del parto en el lugar es inevitable. Se prepara el equipo de obstetricia.",
-        "vitalSigns": {
-            "FC": "100 lpm",
-            "TA": "120/75 mmHg",
-            "FR": "20 rpm",
-            "SpO2": "98% (aire ambiente)"
-        },
-        "findings": [
-            "Parto inminente en el segundo período del trabajo de parto.",
-            "Necesidad de asistir el parto fuera del hospital.",
-            "Preparación para posible reanimación neonatal."
-        ],
-        "questions": [
-            {"question": "Describa los pasos clave para asistir un parto normal no complicado en el entorno prehospitalario."},
-            {"question": "¿Cuáles son las tres preguntas críticas que se deben hacer inmediatamente después del nacimiento para evaluar la necesidad de reanimación neonatal?"},
-            {"question": "Si un recién nacido presenta apnea y flacidez, ¿cuáles son los pasos iniciales y más importantes de la reanimación?"}
-        ],
-        "references": [
-            "AAOS 11ª Edición - Capítulo de Obstetricia y Atención Neonatal."
-        ]
-    },
-    {
-        "id": "sepsis-urinaria-11",
-        "title": "Fiebre y alteración del estado mental en anciana",
-        "description": "Mujer de 82 años residente de un asilo, con sonda urinaria permanente. El personal reporta que desde la mañana está letárgica, no quiere comer y tiene la piel caliente. Refieren que la orina en la bolsa colectora es turbia y de mal olor.",
-        "initialAssessment": "Paciente somnolienta, responde a estímulos verbales pero está desorientada en tiempo y lugar. Piel enrojecida, caliente y seca al tacto. No hay signos de trauma. Taquipnea evidente.",
-        "vitalSigns": {
-            "FC": "115 lpm",
-            "TA": "85/45 mmHg",
-            "FR": "28 rpm",
-            "SpO2": "93% (aire ambiente)",
-            "Temp": "39.1 °C"
-        },
-        "findings": [
-            "Sospecha de sepsis severa, probable foco infeccioso urinario (urosepsis).",
-            "Choque séptico manifestado por hipotensión y alteración del estado mental.",
-            "Necesidad de alerta por sepsis en el hospital receptor y manejo agresivo de líquidos."
-        ],
-        "questions": [
-            {"question": "¿Cuáles son los criterios (como qSOFA) que se pueden usar en el campo para identificar a un paciente con alto riesgo de sepsis?"},
-            {"question": "Explique la fisiopatología del choque séptico y por qué causa hipotensión."},
-            {"question": "¿Cuál es la importancia de la administración temprana de líquidos intravenosos y oxígeno en el manejo prehospitalario de la sepsis?"}
-        ],
-        "references": [
-            "AAOS 11ª Edición - Capítulo de Enfermedades Infecciosas."
-        ]
-    },
-    {
-        "id": "estatus-epileptico-12",
-        "title": "Convulsiones continuas en paciente adulto",
-        "description": "Hombre de 30 años con antecedentes de epilepsia mal controlada. Su familia llama porque ha tenido una convulsión tónico-clónica generalizada que ha durado más de 5 minutos sin recuperar la conciencia.",
-        "initialAssessment": "Paciente en el suelo con movimientos tónico-clónicos activos en las cuatro extremidades. Cianosis peribucal. Salivación excesiva. No responde a ningún estímulo. La escena es segura.",
-        "vitalSigns": {
-            "FC": "140 lpm",
-            "TA": "160/95 mmHg",
-            "FR": "Irregular/Apneica durante la convulsión",
-            "SpO2": "84% (durante la actividad convulsiva)"
-        },
-        "findings": [
-            "Estatus epiléptico.",
-            "Riesgo elevado de hipoxia cerebral y broncoaspiración.",
-            "Necesidad de manejo farmacológico inmediato para detener la convulsión y asegurar la vía aérea."
-        ],
-        "questions": [
-            {"question": "¿Cuál es la definición de estatus epiléptico y por qué es una emergencia médica que amenaza la vida?"},
-            {"question": "Describa el manejo inicial de la vía aérea en un paciente con convulsiones activas."},
-            {"question": "¿Qué clase de medicamentos se utilizan para tratar el estatus epiléptico en el entorno prehospitalario y cuáles son sus vías de administración?"}
-        ],
-        "references": [
-            "AAOS 11ª Edición - Capítulo de Emergencias Neurológicas."
-        ]
-    },
-    {
-        "id": "aaa-roto-13",
-        "title": "Dolor abdominal y de espalda súbito con síncope",
-        "description": "Hombre de 70 años con historial de tabaquismo e hipertensión, se desploma en su casa. Al recuperar la conciencia, se queja de un dolor abdominal y de espalda insoportable, descrito como 'desgarrador'.",
-        "initialAssessment": "Paciente pálido, diaforético y ansioso. Pulso periférico apenas palpable. Abdomen distendido y sensible a la palpación. Es posible palpar una masa pulsátil en la región periumbilical.",
-        "vitalSigns": {
-            "FC": "128 lpm (filiforme)",
-            "TA": "80/50 mmHg",
-            "FR": "26 rpm (superficial)",
-            "SpO2": "92% (con O2 a 15L/min)"
-        },
-        "findings": [
-            "Sospecha de ruptura de Aneurisma de Aorta Abdominal (AAA).",
-            "Choque hipovolémico severo de origen hemorrágico.",
-            "Paciente en estado crítico que requiere traslado inmediato a un centro con capacidad quirúrgica vascular."
-        ],
-        "questions": [
-            {"question": "¿Cuál es la tríada clásica de síntomas de una ruptura de AAA?"},
-            {"question": "¿Por qué es controvertida la reanimación con grandes volúmenes de líquidos (hipotensión permisiva) en este tipo de pacientes?"},
-            {"question": "¿Qué acciones deben ser prioritarias y cuáles deben evitarse (ej. palpación abdominal vigorosa) durante el manejo prehospitalario?"}
-        ],
-        "references": [
-            "AAOS 11ª Edición - Capítulo de Emergencias Cardiovasculares y Capítulo de Trauma Abdominal."
-        ]
-    },
-    {
-        "id": "golpe-de-calor-14",
-        "title": "Colapso de un atleta durante una maratón",
-        "description": "Corredora de 25 años colapsa cerca de la línea de meta durante una maratón en un día caluroso y húmedo. Los organizadores del evento solicitan ayuda al encontrarla inconsciente.",
-        "initialAssessment": "Paciente femenina inconsciente, no responde a estímulos dolorosos. Piel extremadamente caliente al tacto, enrojecida y seca (cese de la sudoración). Respiraciones rápidas y superficiales. Se retira del ambiente caluroso de inmediato.",
-        "vitalSigns": {
-            "FC": "150 lpm",
-            "TA": "90/55 mmHg",
-            "FR": "32 rpm",
-            "SpO2": "95% (aire ambiente)",
-            "Temp": "41.5 °C (rectal)"
-        },
-        "findings": [
-            "Golpe de calor por esfuerzo, una emergencia médica verdadera.",
-            "Disfunción del sistema nervioso central (inconsciencia).",
-            "Falla multiorgánica inminente si no se inicia un enfriamiento rápido y agresivo."
-        ],
-        "questions": [
-            {"question": "¿Cuál es la diferencia fisiopatológica clave entre el agotamiento por calor y el golpe de calor?"},
-            {"question": "¿Cuál es el método de enfriamiento más efectivo que se puede iniciar en el campo para un paciente con golpe de calor?"},
-            {"question": "¿Por qué los medicamentos antipiréticos (como el paracetamol o el ibuprofeno) no son efectivos para tratar la hipertermia en un golpe de calor?"}
-        ],
-        "references": [
+        references: [
             "AAOS 11ª Edición - Capítulo de Emergencias Ambientales."
-        ]
+        ],
+        correctManage: `- Mover al paciente inmediatamente a un ambiente fresco (la sombra o la ambulancia con aire acondicionado).\n- Quitar la mayor cantidad de ropa posible.\n- Iniciar el enfriamiento activo y agresivo: rociar al paciente con agua a temperatura ambiente y ventilarlo para promover la evaporación. Aplicar compresas frías en axilas, ingles, cuello y cabeza.\n- Administrar oxígeno de alto flujo para satisfacer la alta demanda metabólica.\n- Establecer acceso IV para reposición de líquidos, con precaución para no sobrecargar de fluidos.\n- Monitorizar continuamente la temperatura y detener el enfriamiento activo cuando la temperatura central baje a 39°C para evitar la hipotermia iatrogénica.\n- Traslado urgente al hospital.`,
+        explanation: "El golpe de calor es una emergencia médica real donde la temperatura corporal central supera los 40°C, causando disfunción del SNC. A diferencia del agotamiento por calor, el cuerpo pierde su capacidad para sudar y enfriarse. El objetivo principal es reducir la temperatura corporal lo más rápido posible, ya que la duración de la hipertermia se correlaciona directamente con la mortalidad. El enfriamiento por evaporación es uno de los métodos más efectivos en el campo."
     },
     {
-        "id": "fractura-pelvis-15",
-        "title": "Dolor pélvico severo tras accidente de motocicleta",
-        "description": "Motociclista de 22 años impacta a alta velocidad contra un vehículo. Es encontrado en el suelo quejándose de un dolor intenso en la cadera y la pelvis, e incapacidad para mover las piernas.",
-        "initialAssessment": "Paciente consciente, orientado, con dolor severo (10/10). Deformidad y crepitación a la compresión suave de la pelvis (inestabilidad pélvica). No hay hemorragia externa evidente, pero se sospecha sangrado interno masivo. Se observan abrasiones en el abdomen y las extremidades inferiores.",
-        "vitalSigns": {
-            "FC": "135 lpm",
-            "TA": "88/60 mmHg",
-            "FR": "28 rpm",
-            "SpO2": "96% (con O2)"
+        id: "pediatria-intoxicacion-12",
+        title: "Ingesta accidental de medicamento en preescolar",
+        description: "Una madre llama al 911 porque su hijo de 3 años fue encontrado jugando con el frasco de pastillas para la presión de su abuela (un betabloqueador). El niño ahora está somnoliento y pálido.",
+        initialAssessment: "Niño letárgico, responde lentamente a la voz de su madre. Piel pálida, fría y ligeramente diaforética. Vía aérea permeable, pero con riesgo por disminución del nivel de conciencia.",
+        vitalSigns: {
+            FC: "55 lpm",
+            TA: "70/40 mmHg",
+            FR: "18 rpm",
+            SpO2: "96%",
+            "Glucosa": "50 mg/dL",
         },
-        "findings": [
-            "Traumatismo de alta energía con fractura de pelvis inestable (libro abierto).",
-            "Choque hipovolémico secundario a hemorragia pélvica.",
-            "Alto riesgo de lesiones asociadas en órganos abdominales y genitourinarios."
+        findings: [
+            "Intoxicación por betabloqueadores.",
+            "Bradicardia e hipotensión significativas.",
+            "Hipoglucemia, un efecto secundario común de los betabloqueadores en niños."
         ],
-        "questions": [
-            {"question": "¿Por qué una fractura de pelvis inestable puede causar una hemorragia potencialmente mortal?"},
-            {"question": "Describa la técnica correcta para la estabilización pélvica en el campo utilizando un dispositivo comercial o una sábana."},
-            {"question": "¿Cuál es el objetivo principal del manejo prehospitalario en un paciente con este tipo de lesión?"}
+        questions: [
+            { question: "¿Cuáles son los dos efectos cardiovasculares principales de una sobredosis de betabloqueadores?" },
+            { question: "¿Por qué los niños son particularmente susceptibles a la hipoglucemia en esta intoxicación?" },
+            { question: "¿Cuál es el antídoto de primera línea para la toxicidad severa por betabloqueadores?" }
         ],
-        "references": [
-            "AAOS 11ª Edición - Capítulo de Trauma Musculoesquelético."
-        ]
+        references: [
+            "AAOS 11ª Edición - Capítulo de Emergencias Toxicológicas y Pediátricas."
+        ],
+        correctManage: `- Asegurar y mantener la vía aérea. Administrar oxígeno suplementario.\n- Establecer acceso IV y administrar un bolo de dextrosa (D10 o D25) para corregir la hipoglucemia.\n- Administrar un bolo de solución salina para tratar la hipotensión.\n- Si la bradicardia y la hipotensión persisten, administrar Glucagón IV según protocolo, ya que actúa como un inotrópico y cronotrópico positivo sin depender de los receptores beta.\n- Monitorización cardíaca continua y traslado urgente a un centro pediátrico.`,
+        explanation: "Los betabloqueadores antagonizan los receptores beta-adrenérgicos, causando bradicardia (efecto cronotrópico negativo) e hipotensión (efecto inotrópico negativo). En los niños, también inhiben la glucogenólisis, lo que puede llevar a una hipoglucemia severa. Mientras que la atropina puede ser ineficaz, el glucagón es el antídoto de elección porque estimula la producción de AMPc a través de una vía diferente a los receptores beta, aumentando así la frecuencia y contractilidad cardíaca."
     },
     {
-        "id": "eclampsia-39",
-        "title": "Convulsión en paciente embarazada",
-        "description": "Mujer de 28 años, con 34 semanas de gestación, presenta una convulsión tónico-clónica generalizada presenciada por su pareja. A la llegada de la unidad, la paciente se encuentra en estado postictal.",
-        "initialAssessment": "Paciente somnolienta, responde a estímulos verbales pero está desorientada. Piel pálida y diaforética. Se observa edema facial y en extremidades (fóvea ++). No hay evidencia de trauma. Vía aérea permeable.",
-        "vitalSigns": {
-            "FC": "108 lpm",
-            "TA": "170/110 mmHg",
-            "FR": "22 rpm",
-            "SpO2": "95% (aire ambiente)",
-            "Glucemia Capilar": "98 mg/dL"
+        id: "obstetricia-preeclampsia-13",
+        title: "Cefalea y trastornos visuales en paciente embarazada",
+        description: "Mujer de 32 años con 36 semanas de gestación llama por una cefalea intensa que no mejora con analgésicos, visión de 'luces parpadeantes' y dolor en la parte superior derecha del abdomen.",
+        initialAssessment: "Paciente consciente y alerta, pero ansiosa. Se observa edema facial y en manos (los anillos le aprietan). Dolor a la palpación en el hipocondrio derecho. Reflejos osteotendinosos exaltados (hiperreflexia).",
+        vitalSigns: {
+            FC: "95 lpm",
+            TA: "165/110 mmHg",
+            FR: "20 rpm",
+            SpO2: "98%",
         },
-        "findings": [
-            "Eclampsia, una emergencia hipertensiva del embarazo.",
-            "Riesgo de convulsiones recurrentes, desprendimiento de placenta y EVC.",
-            "Necesidad de manejo cuidadoso de la vía aérea y traslado urgente a un centro obstétrico.",
-            "La administración de sulfato de magnesio es el tratamiento de elección en el hospital."
+        findings: [
+            "Preeclampsia con datos de severidad.",
+            "Riesgo inminente de convulsión (eclampsia) y síndrome de HELLP.",
+            "La cefalea, los trastornos visuales y el dolor epigástrico son signos de alarma."
         ],
-        "questions": [
-            {"question": "¿Cuáles son los signos y síntomas que definen la preeclampsia severa y la eclampsia?"},
-            {"question": "¿Por qué es crucial el manejo de la presión arterial en esta paciente, y qué precauciones se deben tomar?"},
-            {"question": "En el entorno prehospitalario, ¿cuál es la prioridad principal además de prevenir lesiones durante una convulsión?"}
+        questions: [
+            { question: "¿Qué define a la preeclampsia y qué la diferencia de la hipertensión gestacional?" },
+            { question: "¿Cuál es el tratamiento definitivo para la preeclampsia severa?" },
+            { question: "En el entorno prehospitalario, ¿cuál es la prioridad en el manejo de esta paciente?" }
         ],
-        "references": [
-            "AAOS 11ª Edición - Capítulo de Emergencias Obstétricas y Neonatales."
-        ]
+        references: [
+            "AAOS 11ª Edición - Capítulo de Emergencias Obstétricas."
+        ],
+        correctManage: `- Asegurar un ambiente tranquilo y con pocos estímulos para reducir el riesgo de convulsiones.\n- Colocar a la paciente en decúbito lateral izquierdo para mejorar el retorno venoso y la perfusión placentaria.\n- Administrar oxígeno suplementario.\n- Establecer acceso IV para una posible administración de sulfato de magnesio en el hospital (o en campo si el protocolo lo permite para prevenir convulsiones).\n- Monitorización continua de la presión arterial y estar preparado para manejar una convulsión eclámptica.\n- Traslado rápido y gentil a un centro obstétrico.`,
+        explanation: "La preeclampsia es un trastorno hipertensivo multisistémico del embarazo. Los datos de severidad indican una disfunción orgánica significativa y un alto riesgo de progresar a eclampsia (convulsiones) o síndrome de HELLP (hemólisis, enzimas hepáticas elevadas, plaquetas bajas). El manejo prehospitalario se centra en la prevención de convulsiones y el control de la hipertensión, siendo el parto del bebé y la placenta el único tratamiento curativo."
     },
     {
-        "id": "crisis-celulas-falciformes-40",
-        "title": "Dolor severo en paciente con anemia falciforme",
-        "description": "Paciente masculino de 24 años con antecedentes conocidos de anemia de células falciformes, llama a emergencias por un dolor severo (10/10) en espalda, pecho y extremidades que comenzó hace varias horas y no cede con sus analgésicos habituales.",
-        "initialAssessment": "Paciente consciente y alerta, en posición fetal por el dolor. No presenta disnea ni signos de trauma. Piel seca y caliente al tacto. Se muestra ansioso y pide alivio para el dolor.",
-        "vitalSigns": {
-            "FC": "115 lpm",
-            "TA": "130/80 mmHg",
-            "FR": "24 rpm",
-            "SpO2": "97% (aire ambiente)",
-            "Temp": "38.1 °C"
+        id: "gastro-sangrado-14",
+        title: "Vómito con sangre y debilidad en paciente cirrótico",
+        description: "Hombre de 58 años con antecedentes de cirrosis hepática por alcoholismo es encontrado por su familia débil y mareado después de vomitar una gran cantidad de sangre roja brillante.",
+        initialAssessment: "Paciente pálido, con la piel fría y húmeda. Ictericia (coloración amarilla) en esclerótica. Abdomen distendido (ascitis). Responde a estímulos verbales pero está confundido. Olor a alcohol en el aliento.",
+        vitalSigns: {
+            FC: "125 lpm (filiforme)",
+            TA: "80/40 mmHg",
+            FR: "26 rpm",
+            SpO2: "92%",
         },
-        "findings": [
-            "Crisis vaso-oclusiva por anemia de células falciformes.",
-            "Dolor severo como principal manifestación.",
-            "Riesgo de síndrome torácico agudo si presenta síntomas respiratorios.",
-            "Requiere manejo agresivo del dolor, hidratación y oxígeno."
+        findings: [
+            "Hemorragia digestiva alta masiva, probablemente por várices esofágicas rotas.",
+            "Shock hipovolémico descompensado.",
+            "Estado mental alterado por hipoperfusión cerebral y/o encefalopatía hepática."
         ],
-        "questions": [
-            {"question": "¿Cuál es la fisiopatología de una crisis vaso-oclusiva en la anemia de células falciformes?"},
-            {"question": "¿Por qué es importante administrar oxígeno a estos pacientes, incluso si su SpO2 es normal?"},
-            {"question": "¿Qué es el síndrome torácico agudo y por qué es una complicación mortal de esta enfermedad?"}
+        questions: [
+            { question: "¿Qué son las várices esofágicas y por qué se forman en pacientes con cirrosis?" },
+            { question: "¿Por qué una hemorragia por várices esofágicas es tan peligrosa y tiene una alta mortalidad?" },
+            { question: "¿Cuál es la prioridad absoluta en el manejo de este paciente?" }
         ],
-        "references": [
-            "AAOS 11ª Edición - Capítulo de Emergencias Hematológicas."
-        ]
+        references: [
+            "AAOS 11ª Edición - Capítulo de Emergencias Gastrointestinales y Urológicas."
+        ],
+        correctManage: `- Manejo agresivo de la vía aérea: colocar al paciente en posición de recuperación y tener lista la aspiración. Considerar la intubación temprana por el alto riesgo de aspiración masiva de sangre.\n- Administrar oxígeno de alto flujo.\n- Establecer dos accesos IV de gran calibre (16G o mayor) e iniciar una reanimación agresiva con cristaloides para tratar el shock.\n- Notificar al hospital receptor sobre una hemorragia digestiva masiva para que puedan activar el protocolo de transfusión masiva.\n- Traslado emergente a un centro con capacidad de endoscopia y cuidados intensivos.`,
+        explanation: "La cirrosis causa hipertensión portal, lo que provoca la dilatación de las venas en el esófago (várices). Estas venas son frágiles y pueden romperse, causando una hemorragia catastrófica. El manejo se centra en proteger la vía aérea del vómito sanguíneo y reponer agresivamente el volumen perdido para tratar el shock hipovolémico. Estos pacientes a menudo tienen coagulopatías, lo que complica aún más el control de la hemorragia."
     },
     {
-        "id": "intoxicacion-cianuro-incendio-41",
-        "title": "Inconsciencia y hollín tras incendio en casa",
-        "description": "Bomberos rescatan a un hombre de 45 años de un incendio estructural. El paciente fue encontrado en una habitación llena de humo denso por quema de plásticos y alfombras. Está inconsciente.",
-        "initialAssessment": "Paciente no responde a estímulos. Presenta hollín en la boca y fosas nasales. Piel de color rojo cereza brillante. No hay quemaduras corporales evidentes. Taquipnea marcada.",
-        "vitalSigns": {
-            "FC": "140 lpm",
-            "TA": "80/40 mmHg",
-            "FR": "35 rpm",
-            "SpO2": "100% (lectura falsamente alta)"
+        id: "psiquiatria-suicidio-15",
+        title: "Paciente con ideación suicida activa",
+        description: "Adolescente de 17 años llama a una línea de crisis y expresa su deseo de 'terminar con todo'. Menciona que tiene un plan y acceso a medicamentos. El operador de la línea de crisis solicita una unidad de emergencias.",
+        initialAssessment: "El paciente está en su habitación, llorando y angustiado. Verbaliza sentimientos de desesperanza. Confirma que ha pensado en tomar una sobredosis de los analgésicos de su padre y los tiene en su poder. La escena es segura.",
+        vitalSigns: {
+            FC: "100 lpm",
+            TA: "120/80 mmHg",
+            FR: "18 rpm",
+            SpO2: "99%",
         },
-        "findings": [
-            "Intoxicación por monóxido de carbono y sospecha alta de intoxicación por cianuro.",
-            "Shock profundo y acidosis metabólica severa.",
-            "La lectura de SpO2 no es fiable; el paciente sufre de hipoxia tisular extrema.",
-            "Requiere antídoto específico (hidroxocobalamina) si está disponible."
+        findings: [
+            "Ideación suicida con plan y medios.",
+            "Alto riesgo de intento de suicidio inminente.",
+            "Necesidad de un entorno seguro y una evaluación psiquiátrica urgente."
         ],
-        "questions": [
-            {"question": "En un incendio, ¿qué materiales al quemarse liberan gas cianuro?"},
-            {"question": "Explique por qué tanto el monóxido de carbono como el cianuro pueden dar una lectura de SpO2 falsamente normal o alta."},
-            {"question": "¿Cuál es el mecanismo por el cual el cianuro causa hipoxia celular, y cómo actúa el antídoto como la hidroxocobalamina?"}
+        questions: [
+            { question: "¿Cuáles son los factores de riesgo más importantes a evaluar en un paciente con ideación suicida?" },
+            { question: "¿Cómo se debe abordar la conversación con un paciente que expresa deseos de morir?" },
+            { question: "¿Cuál es la responsabilidad legal y ética del paramédico en esta situación?" }
         ],
-        "references": [
-            "AAOS 11ª Edición - Capítulo de Emergencias Toxicológicas y Ambientales."
-        ]
+        references: [
+            "AAOS 11ª Edición - Capítulo de Emergencias Psiquiátricas."
+        ],
+        correctManage: `- Establecer una relación de confianza y empatía. Escuchar activamente sin juzgar.\n- Evaluar directamente el riesgo: preguntar sobre el plan, los medios, la intención y si ha habido intentos previos.\n- Asegurar el entorno: con el permiso del paciente o la familia, retirar los medios letales (en este caso, los medicamentos).\n- Expresar claramente la preocupación por su seguridad y la necesidad de una evaluación adicional.\n- Persuadir al paciente para que acepte el traslado voluntario a un servicio de urgencias para una evaluación de salud mental.\n- Si el paciente se niega y representa un peligro inminente para sí mismo, se debe considerar una retención involuntaria para el transporte según las leyes locales y con apoyo policial si es necesario.`,
+        explanation: "Evaluar a un paciente con ideación suicida es una de las tareas más delicadas. La prioridad es garantizar la seguridad del paciente. Esto implica una comunicación empática para establecer una alianza terapéutica y una evaluación directa del riesgo. El objetivo es facilitar el acceso del paciente a la atención de salud mental, ya sea de forma voluntaria o, si es absolutamente necesario para proteger su vida, de forma involuntaria. Nunca se debe dejar solo a un paciente con alto riesgo de suicidio."
     },
     {
-        "id": "delirium-tremens-42",
-        "title": "Agitación y alucinaciones en paciente alcohólico",
-        "description": "Hombre de 50 años, con historial de alcoholismo crónico, es reportado por su familia por agitación extrema, temblores y alucinaciones visuales. Su último trago fue hace 3 días, cuando fue hospitalizado por una fractura.",
-        "initialAssessment": "Paciente desorientado, extremadamente agitado, diaforético. Intenta quitarse las vías que tiene puestas. Grita sobre 'insectos en las paredes'. No colabora con la evaluación.",
-        "vitalSigns": {
-            "FC": "135 lpm",
-            "TA": "175/95 mmHg",
-            "FR": "28 rpm",
-            "SpO2": "96% (aire ambiente)",
-            "Temp": "38.5 °C"
+        id: "trauma-quemadura-16",
+        title: "Quemadura por líquido hirviendo en un niño",
+        description: "Un niño de 4 años tira accidentalmente una olla de agua hirviendo sobre su pecho y abdomen. Los padres le quitaron la ropa y lo envolvieron en una toalla.",
+        initialAssessment: "Niño llorando desconsoladamente por el dolor. Se observan quemaduras de segundo grado (ampollas y piel enrojecida) en el pecho y la parte superior del abdomen. No hay compromiso de la vía aérea.",
+        vitalSigns: {
+            FC: "140 lpm",
+            FR: "30 rpm",
+            TA: "90/50 mmHg",
+            SpO2: "99%",
         },
-        "findings": [
-            "Delirium Tremens (DT), la manifestación más severa del síndrome de abstinencia alcohólica.",
-            "Emergencia médica con alta mortalidad si no se trata.",
-            "Riesgo de arritmias, convulsiones y rabdomiólisis.",
-            "Requiere sedación (usualmente con benzodiacepinas) y soporte vital."
+        findings: [
+            "Quemadura por escaldadura de segundo grado.",
+            "Superficie corporal quemada (SCQ) de aproximadamente 10-12%.",
+            "Dolor severo y riesgo de hipotermia e infección."
         ],
-        "questions": [
-            {"question": "¿Qué diferencia al Delirium Tremens de las fases más leves de la abstinencia alcohólica?"},
-            {"question": "¿Por qué es fundamental medir la glucosa en un paciente con estado mental alterado y antecedentes de alcoholismo?"},
-            {"question": "Desde el punto de vista de la seguridad, ¿cuál es la prioridad al manejar a un paciente tan agitado?"}
+        questions: [
+            { question: "¿Cuál es el primer paso y el más importante en el manejo de una quemadura térmica?" },
+            { question: "Utilizando la 'regla de los nueves' adaptada para niños o la palma de la mano del paciente, ¿cómo se estima la SCQ?" },
+            { question: "¿Por qué los niños pequeños tienen un mayor riesgo de hipotermia después de una quemadura?" }
         ],
-        "references": [
-            "AAOS 11ª Edición - Capítulo de Emergencias Psiquiátricas y Abuso de Sustancias."
-        ]
+        references: [
+            "AAOS 11ª Edición - Capítulo de Lesiones por Quemaduras."
+        ],
+        correctManage: `- Detener el proceso de la quemadura enfriando la zona con agua corriente a temperatura ambiente durante al menos 10 minutos. No usar hielo.\n- Cubrir la quemadura con apósitos estériles y secos o una sábana limpia y seca para prevenir la infección y la pérdida de calor.\n- Manejar el dolor de forma agresiva con analgésicos intranasales o intravenosos según el protocolo pediátrico.\n- Mantener al paciente abrigado con mantas para prevenir la hipotermia.\n- Iniciar la reposición de líquidos IV si la SCQ es >10%, utilizando la fórmula de Parkland como guía.\n- Trasladar a un centro con capacidad para tratar quemaduras pediátricas.`,
+        explanation: "El manejo inicial de las quemaduras se centra en detener el daño tisular, aliviar el dolor, prevenir la infección y evitar la hipotermia. Los niños tienen una mayor superficie corporal en relación con su masa, lo que los hace más susceptibles a la pérdida de calor y a la deshidratación. El cálculo preciso de la SCQ es fundamental para guiar la reanimación con líquidos y determinar la necesidad de un centro especializado en quemaduras."
     },
     {
-        "id": "neumotorax-espontaneo-43",
-        "title": "Dolor torácico súbito y disnea en joven alto y delgado",
-        "description": "Hombre de 21 años, alto y delgado, sin antecedentes médicos, experimenta un dolor torácico agudo y punzante en el lado derecho, seguido de dificultad para respirar mientras veía televisión.",
-        "initialAssessment": "Paciente consciente, ansioso, con disnea moderada. Refiere que el dolor aumenta con la inspiración profunda. A la auscultación, los ruidos respiratorios están marcadamente disminuidos en el hemitórax derecho en comparación con el izquierdo.",
-        "vitalSigns": {
-            "FC": "110 lpm",
-            "TA": "125/80 mmHg",
-            "FR": "24 rpm",
-            "SpO2": "94% (aire ambiente)"
+        id: "trauma-aplastamiento-17",
+        title: "Trabajador atrapado bajo un objeto pesado",
+        description: "Un trabajador de la construcción de 45 años ha tenido ambas piernas atrapadas bajo una losa de concreto que cayó hace aproximadamente 45 minutos. Los equipos de rescate están a punto de liberarlo.",
+        initialAssessment: "Paciente consciente y alerta, con dolor intenso. Las piernas están pálidas y frías al tacto distalmente. El pulso pedio no es palpable. Se anticipa la liberación en los próximos minutos.",
+        vitalSigns: {
+            FC: "110 lpm",
+            TA: "105/70 mmHg",
+            FR: "22 rpm",
+            SpO2: "98%",
         },
-        "findings": [
-            "Alta sospecha de Neumotórax espontáneo primario.",
-            "Dolor de tipo pleurítico.",
-            "Riesgo de progresión a un neumotórax a tensión, aunque es raro.",
-            "El manejo es de soporte (oxígeno) y traslado en posición cómoda."
+        findings: [
+            "Síndrome de aplastamiento con atrapamiento prolongado.",
+            "Isquemia en las extremidades inferiores.",
+            "Riesgo inminente de síndrome de reperfusión al ser liberado."
         ],
-        "questions": [
-            {"question": "¿Cuál es el perfil de paciente clásico para un neumotórax espontáneo primario?"},
-            {"question": "¿Qué signos y síntomas indicarían que este neumotórax simple está evolucionando a un neumotórax a tensión?"},
-            {"question": "Si no hay trauma, ¿cuál es la causa subyacente de este tipo de neumotórax?"}
+        questions: [
+            { question: "¿Qué es el síndrome de reperfusión y por qué es tan peligroso?" },
+            { question: "¿Qué intervenciones médicas deben realizarse ANTES de que se libere la presión sobre las extremidades?" },
+            { question: "¿Qué arritmia cardíaca es más probable que ocurra inmediatamente después de la liberación?" }
         ],
-        "references": [
-            "AAOS 11ª Edición - Capítulo de Emergencias Respiratorias."
-        ]
+        references: [
+            "PHTLS 9ª Edición - Capítulo de Trauma de Tejidos Blandos."
+        ],
+        correctManage: `- ANTES de la liberación: establecer dos accesos IV de gran calibre e iniciar una reanimación agresiva con bolos de solución salina normal para aumentar el volumen intravascular.\n- Administrar Bicarbonato de Sodio IV según protocolo para alcalinizar la sangre y proteger contra la hiperkalemia y la acidosis.\n- Considerar la administración de Albuterol nebulizado, ya que puede ayudar a desplazar el potasio hacia el interior de las células.\n- Colocar al paciente en un monitor cardíaco antes de la liberación.\n- INMEDIATAMENTE después de la liberación: continuar la reanimación con líquidos, monitorizar el ritmo cardíaco en busca de ondas T picudas (hiperkalemia) y arritmias ventriculares. Estar preparado para administrar Cloruro de Calcio si hay signos de toxicidad cardíaca por potasio.`,
+        explanation: "Durante el aplastamiento, los músculos isquémicos acumulan productos de desecho tóxicos (potasio, mioglobina, ácido láctico). Al liberar la presión, estas sustancias inundan la circulación sistémica (síndrome de reperfusión), causando acidosis metabólica, hiperkalemia (que puede provocar arritmias fatales como la fibrilación ventricular) y lesión renal aguda por la mioglobina. El tratamiento anticipatorio antes de la liberación es clave para mitigar estos efectos potencialmente letales."
     },
     {
-        "id": "aspiracion-cuerpo-extrano-pediatrico-44",
-        "title": "Atragantamiento y tos súbita en lactante",
-        "description": "Bebé de 11 meses estaba comiendo trozos de salchicha cuando de repente comenzó a toser vigorosamente, con estridor y dificultad para respirar. Los padres intentaron darle palmadas en la espalda sin éxito.",
-        "initialAssessment": "Lactante consciente, con mirada de pánico. Presenta tos ineficaz, estridor inspiratorio y cianosis peribucal que empeora. No vocaliza. A la auscultación se escuchan sibilancias unilaterales en el pulmón derecho.",
-        "vitalSigns": {
-            "FC": "150 lpm",
-            "FR": "40 rpm (con dificultad)",
-            "SpO2": "88% y bajando"
+        id: "ambiental-age-18",
+        title: "Convulsiones y pérdida de conciencia tras emerger del buceo",
+        description: "Buzo de 40 años asciende de emergencia desde 20 metros por un problema con su equipo. Al llegar a la superficie, se queja de mareos y dolor torácico, y a los pocos minutos sufre una convulsión y pierde la conciencia.",
+        initialAssessment: "Paciente inconsciente, con respiración agónica. Cianosis central. Se observa enfisema subcutáneo en el cuello y la parte superior del tórax. No responde a estímulos.",
+        vitalSigns: {
+            FC: "130 lpm (irregular)",
+            TA: "80/40 mmHg",
+            FR: "6 rpm (agonal)",
+            SpO2: "80%",
         },
-        "findings": [
-            "Obstrucción de la vía aérea por cuerpo extraño (OVACE) severa.",
-            "Signos de obstrucción parcial con progresión a completa.",
-            "Riesgo inminente de paro respiratorio.",
-            "Requiere intervención inmediata con maniobras para lactantes."
+        findings: [
+            "Embolia gaseosa arterial (EGA) por barotrauma pulmonar.",
+            "Burbujas de aire en la circulación arterial, causando isquemia cerebral (convulsiones, ACV) y cardíaca (infarto).",
+            "Emergencia de buceo más grave y de inicio más rápido."
         ],
-        "questions": [
-            {"question": "Describa la secuencia correcta de maniobras (palmadas en la espalda y compresiones torácicas) para un lactante consciente con OVACE severa."},
-            {"question": "¿Qué se debe hacer de manera diferente si el lactante pierde la conciencia?"},
-            {"question": "¿Por qué un cuerpo extraño aspirado tiende a alojarse con más frecuencia en el bronquio principal derecho?"}
+        questions: [
+            { question: "¿Cuál es el mecanismo fisiopatológico del barotrauma pulmonar y la embolia gaseosa arterial?" },
+            { question: "¿Qué diferencia a la EGA de la enfermedad por descompresión en términos de tiempo de inicio y gravedad?" },
+            { question: "¿Por qué el traslado inmediato a una cámara hiperbárica es aún más urgente en la EGA que en la EDC?" }
         ],
-        "references": [
-            "AAOS 11ª Edición - Capítulo de Manejo de la Vía Aérea y Emergencias Pediátricas."
-        ]
+        references: [
+            "AAOS 11ª Edición - Capítulo de Emergencias Ambientales.",
+            "Divers Alert Network (DAN) Guidelines."
+        ],
+        correctManage: `- Manejo inmediato y agresivo de la vía aérea y la ventilación (ABC). Iniciar ventilación con BVM y oxígeno al 100%.\n- Colocar al paciente en posición supina. La posición de Trendelenburg ya no se recomienda de forma rutinaria.\n- Establecer acceso IV y administrar líquidos para tratar la hipotensión.\n- Cargar y trasladar de inmediato. Notificar al hospital y a la red de emergencias de buceo (DAN) para coordinar el traslado a la cámara hiperbárica más cercana.\n- La terapia de recompresión es el único tratamiento definitivo y debe iniciarse lo antes posible.`,
+        explanation: "La EGA ocurre cuando un buzo asciende conteniendo la respiración, lo que provoca la sobreexpansión y ruptura de los alvéolos (barotrauma). El aire de los pulmones pasa directamente a la circulación arterial, formando émbolos gaseosos que viajan al cerebro, el corazón y otros órganos, causando un daño isquémico masivo. A diferencia de la EDC que tarda minutos u horas en manifestarse, la EGA es inmediata y a menudo fatal si no se trata con recompresión urgente para reducir el tamaño de las burbujas."
     },
     {
-        "id": "epiglotitis-pediatrica-45",
-        "title": "Fiebre, babeo y estridor en niño preescolar",
-        "description": "Padres llaman al 911 porque su hijo de 4 años, no vacunado, desarrolló fiebre alta y dolor de garganta rápidamente. Ahora está sentado, inclinado hacia adelante, babeando y haciendo un ruido agudo al respirar.",
-        "initialAssessment": "Niño con apariencia tóxica, sentado en posición de olfateo. Presenta estridor inspiratorio, voz apagada ('de papa caliente') y babeo profuso, ya que se niega a tragar. No tose. Se ve aterrorizado.",
-        "vitalSigns": {
-            "FC": "145 lpm",
-            "FR": "30 rpm",
-            "SpO2": "91% (aire ambiente)",
-            "Temp": "40.1 °C"
+        id: "infecciosas-meningitis-19",
+        title: "Fiebre, cefalea y rigidez de cuello en estudiante universitario",
+        description: "Joven de 19 años que vive en una residencia estudiantil es traído por sus compañeros. Presenta fiebre alta, cefalea intensa, fotofobia y vómitos desde esta mañana. Se siente muy rígido.",
+        initialAssessment: "Paciente letárgico, pero responde a la voz. Se queja de dolor de cabeza severo. Presenta rigidez de nuca (no puede tocar el pecho con el mentón). Se observa una erupción petequial/purpúrica que no palidece con la presión en el torso y las piernas.",
+        vitalSigns: {
+            FC: "120 lpm",
+            TA: "90/50 mmHg",
+            FR: "24 rpm",
+            SpO2: "95%",
+            "Temp": "40.0°C",
         },
-        "findings": [
-            "Alta sospecha de Epiglotitis, una emergencia de la vía aérea potencialmente mortal.",
-            "La presentación de las '4 D' (Disfagia, Disfonía, Dificultad respiratoria y Babeo - Drooling) es clásica.",
-            "Riesgo de obstrucción completa y súbita de la vía aérea.",
-            "El manejo debe minimizar la agitación del niño."
+        findings: [
+            "Meningitis bacteriana meningocócica (meningococcemia).",
+            "Sepsis meningocócica con shock séptico.",
+            "La erupción purpúrica es un signo ominoso de coagulación intravascular diseminada (CID)."
         ],
-        "questions": [
-            {"question": "¿Por qué está contraindicado intentar visualizar la garganta con un abatelenguas en un caso de sospecha de epiglotitis en el campo?"},
-            {"question": "¿Cuál es la prioridad absoluta en el manejo prehospitalario de este paciente?"},
-            {"question": "¿Qué patógeno bacteriano es la causa clásica de la epiglotitis y por qué es menos común ahora?"}
+        questions: [
+            { question: "¿Qué son los signos de Kernig y Brudzinski y qué indican?" },
+            { question: "¿Por qué la meningitis bacteriana es una emergencia médica de tiempo crítico?" },
+            { question: "¿Qué precauciones de bioseguridad debe tomar el equipo de emergencias?" }
         ],
-        "references": [
-            "AAOS 11ª Edición - Capítulo de Emergencias Pediátricas y Emergencias Respiratorias."
-        ]
+        references: [
+            "AAOS 11ª Edición - Capítulo de Enfermedades Infecciosas."
+        ],
+        correctManage: `- Tomar precauciones de gotas: usar una mascarilla quirúrgica en el paciente y en el personal de atención.\n- Administrar oxígeno de alto flujo.\n- Establecer acceso IV e iniciar una reanimación agresiva con líquidos para tratar el shock séptico.\n- Administrar antibióticos IV lo antes posible si el protocolo local lo permite.\n- Monitorización continua del estado neurológico (riesgo de convulsiones y aumento de la PIC) y hemodinámico.\n- Traslado urgente al hospital, notificando una alta sospecha de meningitis meningocócica para que se inicien los protocolos de aislamiento.`,
+        explanation: "La meningitis meningocócica es una infección bacteriana grave de las meninges que puede progresar rápidamente a sepsis, shock y muerte en cuestión de horas. La erupción purpúrica indica sangrado debajo de la piel debido al daño vascular y la CID, y es un signo de enfermedad grave. El tratamiento inmediato con antibióticos y el soporte hemodinámico agresivo son cruciales para la supervivencia. Debido a su naturaleza contagiosa, es vital que el personal tome precauciones de gotas."
+    },
+    {
+        id: "necesidades-especiales-20",
+        title: "Crisis respiratoria en paciente con distrofia muscular",
+        description: "Se recibe una llamada para un paciente de 22 años con distrofia muscular de Duchenne que presenta dificultad respiratoria progresiva. Utiliza un ventilador no invasivo (BiPAP) por la noche, pero ahora se siente 'sin aire' incluso con la máquina.",
+        initialAssessment: "Paciente en silla de ruedas, consciente y ansioso. Habla con frases de una o dos palabras. Uso de músculos accesorios del cuello. Respiración abdominal paradójica (el abdomen se hunde durante la inspiración). Secreciones audibles en la vía aérea.",
+        vitalSigns: {
+            FC: "115 lpm",
+            TA: "130/80 mmHg",
+            FR: "30 rpm (superficial)",
+            SpO2: "88% (con su BiPAP encendido)",
+        },
+        findings: [
+            "Insuficiencia respiratoria aguda en un paciente con enfermedad neuromuscular crónica.",
+            "Debilidad de los músculos respiratorios e incapacidad para manejar las secreciones.",
+            "Fallo del soporte ventilatorio no invasivo."
+        ],
+        questions: [
+            { question: "¿Por qué los pacientes con distrofia muscular avanzada desarrollan insuficiencia respiratoria?" },
+            { question: "¿Qué es la respiración paradójica y qué indica en este paciente?" },
+            { question: "¿Cuál es la intervención más importante para ayudar a este paciente a respirar mejor en el campo?" }
+        ],
+        references: [
+            "Manual de Cuidados de Emergencia para Pacientes con Necesidades Especiales."
+        ],
+        correctManage: `- Sentar al paciente en una posición erguida para maximizar la excursión diafragmática.\n- Ayudar al paciente a manejar las secreciones con aspiración oral o nasofaríngea, o mediante técnicas de tos asistida si el personal está entrenado.\n- Quitar el BiPAP del paciente y comenzar la ventilación con presión positiva asistida usando una bolsa-válvula-mascarilla (BVM) sincronizada con los esfuerzos inspiratorios del paciente. Esto proporciona un mayor volumen corriente y alivia el trabajo respiratorio.\n- Administrar oxígeno suplementario a través del reservorio de la BVM.\n- Traslado a un hospital con capacidad para manejar pacientes con ventilación crónica.`,
+        explanation: "En la distrofia muscular de Duchenne, los músculos respiratorios, incluido el diafragma, se debilitan progresivamente. Esto conduce a una hipoventilación crónica y a una tos ineficaz, lo que dificulta la eliminación de secreciones. La insuficiencia respiratoria aguda a menudo es precipitada por una infección respiratoria. La ventilación asistida con BVM es una intervención que salva vidas, ya que toma el control del trabajo respiratorio que los músculos fatigados del paciente ya no pueden realizar."
     }
+
 
 ]
