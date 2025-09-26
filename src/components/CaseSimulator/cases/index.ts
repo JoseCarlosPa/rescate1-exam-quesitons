@@ -22,21 +22,10 @@ export const allSimulatorCases: SimulatorCase[] = [
   intoxicacionComplexCase   // Protocolo ABCDE - Toxicología avanzada
 ];
 
-// Exportar casos individuales para uso específico
-export {
-  traumaCaderaCase,
-  pediatriaCrupCase,
-  paroCardiacoCase,
-  dolotToracicoCase,
-  convulsionFebrilCase,
-  politraumatismoCase,
-  intoxicacionComplexCase
-};
-
 // Casos existentes actualizados
 export { paroCardiacoCase } from './paroCardiaco.case';
 export { traumaCaderaCase } from './traumaCadera.case';
-export { dolorToracicoCase } from './dolorToracico.case';
+export { dolotToracicoCase } from './dolorToracico.case';
 export { convulsionFebrilCase } from './convulsionFebril.case';
 export { pediatriaCrupCase } from './pediatriaCrup.case';
 export { politraumatismoCase } from './politraumatismo.case';

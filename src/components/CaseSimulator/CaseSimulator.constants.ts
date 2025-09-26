@@ -3,7 +3,7 @@ import {
   // Casos existentes actualizados
   paroCardiacoCase,
   traumaCaderaCase,
-  dolorToracicoCase,
+    dolotToracicoCase,
   convulsionFebrilCase,
   pediatriaCrupCase,
   politraumatismoCase,
@@ -18,7 +18,7 @@ export const simulatorCases: SimulatorCase[] = [
   // Casos principiantes/sencillos
   laseracionMenorCase,      // Nuevo - Trauma menor con ABCDE
   convulsionFebrilCase,     // Protocolo ABCDE - Pediatría básica
-  dolorToracicoCase,        // Protocolo ABCDE - Medicina
+    dolotToracicoCase,        // Protocolo ABCDE - Medicina
 
   // Casos intermedios
   diabeticoHipoglicemicoCase, // Nuevo - Emergencia metabólica
