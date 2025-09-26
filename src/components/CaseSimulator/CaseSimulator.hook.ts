@@ -15,6 +15,8 @@ export const useCaseSimulator = (simulatorCase: SimulatorCase) => {
   const [currentStepStartTime, setCurrentStepStartTime] = useState(Date.now());
   const [showFeedback, setShowFeedback] = useState(false);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
+  const [showGlasgowEvaluation, setShowGlasgowEvaluation] = useState(false);
+  const [glasgowAnswer, setGlasgowAnswer] = useState<number | null>(null);
 
   const currentStep = simulatorCase.steps[progress.currentStep];
   const isLastStep = progress.currentStep === simulatorCase.steps.length - 1;
@@ -84,6 +86,24 @@ export const useCaseSimulator = (simulatorCase: SimulatorCase) => {
     return recommendations;
   }, []);
 
+  const submitGlasgowScore = useCallback((score: number) => {
+    setProgress(prev => ({
+      ...prev,
+      glasgowAnswer: score
+    }));
+    setGlasgowAnswer(score);
+    setShowGlasgowEvaluation(false);
+    setIsCompleted(true);
+  }, []);
+
+  const shouldShowGlasgowEvaluation = useCallback(() => {
+    return simulatorCase.glasgowScore &&
+           isLastStep &&
+           showFeedback &&
+           !showGlasgowEvaluation &&
+           !isCompleted;
+  }, [simulatorCase.glasgowScore, isLastStep, showFeedback, showGlasgowEvaluation, isCompleted]);
+
   const submitAnswer = useCallback((optionId: string) => {
     if (!currentStep || showFeedback) return;
 
@@ -100,46 +120,67 @@ export const useCaseSimulator = (simulatorCase: SimulatorCase) => {
       timeSpent
     };
 
+    setProgress(prev => ({
+      ...prev,
+      userAnswers: [...prev.userAnswers, newAnswer],
+      mistakes: prev.mistakes + (isCorrect ? 0 : 1),
+      criticalErrors: prev.criticalErrors + (isCorrect ? 0 : (currentStep.criticalStep ? 1 : 0))
+    }));
+
     setSelectedOption(optionId);
     setShowFeedback(true);
-
-    setProgress(prev => {
-      const newProgress = {
-        ...prev,
-        userAnswers: [...prev.userAnswers, newAnswer],
-        mistakes: prev.mistakes + (isCorrect ? 0 : 1),
-        criticalErrors: prev.criticalErrors + (!isCorrect && currentStep.criticalStep ? 1 : 0)
-      };
-
-      // Si es un error crítico, terminar simulación
-      if (!isCorrect && currentStep.criticalStep) {
-        setIsCompleted(true);
-      }
-
-      return newProgress;
-    });
   }, [currentStep, showFeedback, currentStepStartTime]);
 
   const nextStep = useCallback(() => {
-    if (!showFeedback) return;
-
-    // Si hay error crítico, la simulación ya terminó
-    if (!selectedOption || (currentStep?.criticalStep && !currentStep.options.find(opt => opt.id === selectedOption)?.isCorrect)) {
-      return;
-    }
-
     if (isLastStep) {
-      setIsCompleted(true);
+      if (simulatorCase.glasgowScore) {
+        setShowGlasgowEvaluation(true);
+      } else {
+        setIsCompleted(true);
+      }
     } else {
       setProgress(prev => ({
         ...prev,
         currentStep: prev.currentStep + 1
       }));
-      setCurrentStepStartTime(Date.now());
       setShowFeedback(false);
       setSelectedOption(null);
+      setCurrentStepStartTime(Date.now());
     }
-  }, [showFeedback, selectedOption, currentStep, isLastStep]);
+  }, [isLastStep, simulatorCase.glasgowScore]);
+
+  const getResults = useCallback((): SimulatorResult => {
+    const correctAnswers = progress.userAnswers.filter(answer => answer.isCorrect).length;
+    const totalTime = Date.now() - progress.startTime;
+    const score = calculateScore();
+    const performance = getPerformanceLevel(score);
+
+    let glasgowEvaluation;
+    if (simulatorCase.glasgowScore && progress.glasgowAnswer !== undefined) {
+      const glasgowCorrect = progress.glasgowAnswer === simulatorCase.glasgowScore.expected;
+      glasgowEvaluation = {
+        userAnswer: progress.glasgowAnswer,
+        correctAnswer: simulatorCase.glasgowScore.expected,
+        isCorrect: glasgowCorrect,
+        feedback: glasgowCorrect
+          ? `¡Correcto! El paciente presenta un Glasgow de ${simulatorCase.glasgowScore.expected}. ${simulatorCase.glasgowScore.contextInfo}`
+          : `Incorrecto. El Glasgow correcto es ${simulatorCase.glasgowScore.expected}, no ${progress.glasgowAnswer}. ${simulatorCase.glasgowScore.contextInfo}`
+      };
+    }
+
+    return {
+      finalScore: score,
+      totalTime,
+      correctAnswers,
+      totalQuestions: simulatorCase.steps.length,
+      mistakes: progress.mistakes,
+      criticalErrors: progress.criticalErrors,
+      performance,
+      feedback: generateFeedback(performance),
+      recommendations: generateRecommendations(performance, progress.criticalErrors, progress.mistakes),
+      glasgowEvaluation
+    };
+  }, [progress, simulatorCase, calculateScore, getPerformanceLevel, generateFeedback, generateRecommendations]);
 
   const resetSimulator = useCallback(() => {
     setProgress({
@@ -151,29 +192,12 @@ export const useCaseSimulator = (simulatorCase: SimulatorCase) => {
       criticalErrors: 0
     });
     setIsCompleted(false);
-    setCurrentStepStartTime(Date.now());
     setShowFeedback(false);
     setSelectedOption(null);
+    setShowGlasgowEvaluation(false);
+    setGlasgowAnswer(null);
+    setCurrentStepStartTime(Date.now());
   }, []);
-
-  const getResults = useCallback((): SimulatorResult => {
-    const finalScore = calculateScore();
-    const performance = getPerformanceLevel(finalScore);
-    const totalTime = Date.now() - progress.startTime;
-    const correctAnswers = progress.userAnswers.filter(answer => answer.isCorrect).length;
-
-    return {
-      finalScore,
-      totalTime,
-      correctAnswers,
-      totalQuestions: simulatorCase.steps.length,
-      mistakes: progress.mistakes,
-      criticalErrors: progress.criticalErrors,
-      performance,
-      feedback: generateFeedback(performance),
-      recommendations: generateRecommendations(performance, progress.criticalErrors, progress.mistakes)
-    };
-  }, [calculateScore, getPerformanceLevel, generateFeedback, generateRecommendations, progress, simulatorCase.steps.length]);
 
   // Actualizar score en tiempo real
   useEffect(() => {
@@ -188,9 +212,13 @@ export const useCaseSimulator = (simulatorCase: SimulatorCase) => {
     showFeedback,
     selectedOption,
     isLastStep,
+    showGlasgowEvaluation,
+    glasgowAnswer,
     submitAnswer,
     nextStep,
     resetSimulator,
-    getResults
+    getResults,
+    submitGlasgowScore,
+    shouldShowGlasgowEvaluation
   };
 };

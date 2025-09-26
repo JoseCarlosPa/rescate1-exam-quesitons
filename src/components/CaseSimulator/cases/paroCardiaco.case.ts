@@ -18,6 +18,11 @@ export const paroCardiacoCase: SimulatorCase = {
     'Color': 'Cianótico',
     'Pupilas': 'Dilatadas'
   },
+  glasgowScore: {
+    expected: 3,
+    timing: 'final_assessment',
+    contextInfo: 'Tras 20 minutos de RCP avanzado, el paciente recupera circulación espontánea pero permanece inconsciente. No abre los ojos, no emite sonidos y presenta postura de decorticación al estímulo doloroso. Requiere intubación y ventilación mecánica.'
+  },
   steps: [
     {
       id: 'step-c-compressions',
@@ -53,174 +58,142 @@ export const paroCardiacoCase: SimulatorCase = {
       criticalStep: true
     },
     {
-      id: 'step-a-airway-rcp',
+      id: 'step-a-airway',
       stepNumber: 2,
-      title: 'A - Vía Aérea durante RCP',
-      description: 'Después de iniciar compresiones, ¿cómo manejas la vía aérea?',
+      title: 'A - Vía Aérea',
+      description: 'Durante las compresiones, ¿cómo manejas la vía aérea?',
       options: [
         {
           id: 'a-1',
-          text: 'Apertura básica (elevación de mentón), continuar con ventilaciones 30:2',
+          text: 'Continuar RCP, abrir vía aérea con maniobra frente-mentón',
           isCorrect: true,
-          consequence: 'Correcto. Manejo básico efectivo de vía aérea durante RCP inicial.'
+          consequence: 'Correcto. Apertura básica de vía aérea sin interrumpir compresiones.'
         },
         {
           id: 'a-2',
-          text: 'Intubación endotraqueal inmediata',
+          text: 'Detener compresiones para intubar inmediatamente',
           isCorrect: false,
-          consequence: 'Incorrecto. No debe interrumpir compresiones para vía aérea avanzada inicialmente.'
+          consequence: 'Incorrecto. No interrumpir compresiones para procedimientos avanzados inicialmente.'
         },
         {
           id: 'a-3',
-          text: 'Solo compresiones, omitir ventilaciones',
+          text: 'Ignorar vía aérea hasta después de desfibrilación',
           isCorrect: false,
-          consequence: 'Subóptimo. Las ventilaciones son importantes especialmente en paro prolongado.'
+          consequence: 'Incorrecto. La vía aérea debe asegurarse para ventilación efectiva.'
         }
       ],
       correctOptionId: 'a-1',
       feedback: {
-        correct: 'Perfecto. La vía aérea básica es suficiente inicialmente sin interrumpir compresiones.',
-        incorrect: 'La vía aérea avanzada no debe retrasar o interrumpir compresiones de alta calidad.',
-        explanation: 'Durante RCP, minimizar interrupciones de compresiones es más importante que vía aérea avanzada.'
+        correct: 'Perfecto. Mantienes las prioridades correctas sin interrumpir compresiones.',
+        incorrect: 'En RCP, las compresiones continuas son más importantes que procedimientos avanzados de vía aérea.',
+        explanation: 'La apertura básica de vía aérea permite ventilación efectiva sin comprometer las compresiones.'
       }
     },
     {
-      id: 'step-b-breathing-rcp',
+      id: 'step-b-breathing',
       stepNumber: 3,
-      title: 'B - Respiración durante RCP',
-      description: 'Durante las ventilaciones de rescate, ¿cuál es la técnica correcta?',
+      title: 'B - Respiración',
+      description: 'Relación compresión-ventilación apropiada en RCP básico:',
       options: [
         {
           id: 'b-1',
-          text: 'Ventilaciones de 1 segundo cada una, volumen suficiente para elevar tórax',
+          text: '30 compresiones : 2 ventilaciones',
           isCorrect: true,
-          consequence: 'Correcto. Ventilaciones efectivas sin hiperventilación.'
+          consequence: 'Correcto. Relación estándar para RCP básico en adultos.'
         },
         {
           id: 'b-2',
-          text: 'Ventilaciones rápidas y profundas para maximizar oxigenación',
+          text: '15 compresiones : 2 ventilaciones',
           isCorrect: false,
-          consequence: 'Incorrecto. La hiperventilación reduce el retorno venoso y eficacia de RCP.'
+          consequence: 'Incorrecto. Esta relación es para RCP pediátrico con 2 reanimadores.'
         },
         {
           id: 'b-3',
-          text: 'Ventilaciones mínimas, concentrarse solo en compresiones',
+          text: 'Solo compresiones, sin ventilaciones',
           isCorrect: false,
-          consequence: 'Insuficiente. Las ventilaciones son necesarias para oxigenación.'
+          consequence: 'Incorrecto. Las ventilaciones son necesarias en RCP básico.'
         }
       ],
       correctOptionId: 'b-1',
       feedback: {
-        correct: 'Excelente. Has aplicado la técnica correcta de ventilación durante RCP.',
-        incorrect: 'Las ventilaciones deben ser controladas para evitar efectos adversos hemodinámicos.',
-        explanation: 'Ventilaciones excesivas aumentan la presión intratorácica y reducen la eficacia de las compresiones.'
+        correct: 'Excelente. Conoces la relación correcta para RCP básico.',
+        incorrect: 'La relación 30:2 es el estándar internacional para RCP básico en adultos.',
+        explanation: 'Esta relación optimiza la perfusión manteniendo oxigenación adecuada.'
       }
     },
     {
       id: 'step-d-defibrillation',
       stepNumber: 4,
       title: 'D - Desfibrilación',
-      description: 'Llega el desfibrilador. Al analizar el ritmo encuentras fibrilación ventricular.',
+      description: 'Llega el desfibrilador. Al conectarlo, el ritmo muestra fibrilación ventricular:',
       options: [
         {
           id: 'd-1',
-          text: 'Desfibrilar inmediatamente con energía apropiada, reanudar RCP',
+          text: 'Detener RCP, cargar desfibrilador, descargar inmediatamente',
           isCorrect: true,
-          consequence: 'Correcto. La desfibrilación precoz es crítica en ritmos desfibrilables.'
+          consequence: 'Correcto. FV es ritmo desfibrilable, requiere choque inmediato.'
         },
         {
           id: 'd-2',
           text: 'Continuar RCP 2 minutos más antes de desfibrilar',
           isCorrect: false,
-          consequence: 'Incorrecto. En FV/TV sin pulso, la desfibrilación debe ser inmediata.'
+          consequence: 'Incorrecto. FV requiere desfibrilación inmediata cuando se detecta.'
         },
         {
           id: 'd-3',
           text: 'Administrar epinefrina antes de desfibrilar',
           isCorrect: false,
-          consequence: 'Incorrecto. La desfibrilación tiene prioridad sobre medicamentos en ritmos desfibrilables.'
+          consequence: 'Incorrecto. La desfibrilación tiene prioridad sobre medicamentos en FV.'
         }
       ],
       correctOptionId: 'd-1',
       feedback: {
         correct: 'Perfecto. Has priorizado correctamente la desfibrilación en ritmo desfibrilable.',
-        incorrect: 'En fibrilación ventricular, la desfibrilación inmediata ofrece la mejor oportunidad de supervivencia.',
-        explanation: 'Cada minuto de retraso en desfibrilación reduce las posibilidades de supervivencia en 7-10%.'
+        incorrect: 'La fibrilación ventricular requiere desfibrilación inmediata para ser efectiva.',
+        explanation: 'Cada minuto de retraso en desfibrilación reduce las posibilidades de supervivencia en 10%.'
       },
       criticalStep: true
     },
     {
       id: 'step-post-shock',
       stepNumber: 5,
-      title: 'Manejo Post-Desfibrilación',
-      description: 'Después del shock, ¿cuál es tu acción inmediata?',
+      title: 'Post-Desfibrilación',
+      description: 'Inmediatamente después del choque eléctrico, ¿cuál es tu acción?',
       options: [
         {
-          id: 'ps-1',
-          text: 'Reanudar RCP inmediatamente por 2 minutos antes de verificar pulso',
+          id: 'post-1',
+          text: 'Reanudar RCP inmediatamente por 2 minutos',
           isCorrect: true,
-          consequence: 'Correcto. RCP inmediato post-shock maximiza las posibilidades de ROSC.'
+          consequence: 'Correcto. RCP inmediato post-desfibrilación es esencial.'
         },
         {
-          id: 'ps-2',
-          text: 'Verificar pulso inmediatamente después del shock',
+          id: 'post-2',
+          text: 'Verificar pulso inmediatamente',
           isCorrect: false,
-          consequence: 'Incorrecto. Verificar pulso retrasa reinicio de compresiones críticas.'
+          consequence: 'Incorrecto. No verificar pulso inmediatamente post-desfibrilación.'
         },
         {
-          id: 'ps-3',
-          text: 'Administrar epinefrina antes de reanudar compresiones',
+          id: 'post-3',
+          text: 'Esperar a ver si recupera consciencia',
           isCorrect: false,
-          consequence: 'Incorrecto. Las compresiones son más urgentes que la medicación.'
+          consequence: 'Incorrecto. No esperar, continuar RCP inmediatamente.'
         }
       ],
-      correctOptionId: 'ps-1',
+      correctOptionId: 'post-1',
       feedback: {
-        correct: 'Excelente. El RCP inmediato post-desfibrilación es crucial para mantener perfusión.',
-        incorrect: 'Incluso después de desfibrilación exitosa, el corazón necesita soporte circulatorio inmediato.',
-        explanation: 'El miocardio post-desfibrilación está aturdido y necesita soporte con compresiones hasta recuperarse.'
-      }
-    },
-    {
-      id: 'step-medications',
-      stepNumber: 6,
-      title: 'Farmacología en RCP',
-      description: 'Después de 2 ciclos de RCP, ¿cuál es el manejo farmacológico apropiado?',
-      options: [
-        {
-          id: 'm-1',
-          text: 'Epinefrina 1mg IV cada 3-5 minutos durante RCP',
-          isCorrect: true,
-          consequence: 'Correcto. Epinefrina mejora la perfusión coronaria durante compresiones.'
-        },
-        {
-          id: 'm-2',
-          text: 'Atropina para aumentar frecuencia cardiaca',
-          isCorrect: false,
-          consequence: 'Incorrecto. Atropina no está indicada en paro cardiorrespiratorio.'
-        },
-        {
-          id: 'm-3',
-          text: 'Amiodarona como primera línea antes que epinefrina',
-          isCorrect: false,
-          consequence: 'Incorrecto. Epinefrina tiene prioridad sobre antiarrítmicos.'
-        }
-      ],
-      correctOptionId: 'm-1',
-      feedback: {
-        correct: 'Perfecto. Has aplicado correctamente las guías farmacológicas de RCP avanzado.',
-        incorrect: 'La epinefrina es el medicamento de primera línea en paro cardiorrespiratorio.',
-        explanation: 'La epinefrina aumenta la presión de perfusión coronaria, mejorando las posibilidades de ROSC.'
+        correct: 'Excelente. Conoces el protocolo post-desfibrilación correctamente.',
+        incorrect: 'Después de cualquier desfibrilación, se debe reanudar RCP inmediatamente.',
+        explanation: 'El RCP post-desfibrilación ayuda a mantener cualquier ritmo organizado que pueda haberse generado.'
       }
     }
   ],
   learningObjectives: [
     'Aplicar correctamente el protocolo CABD en paro cardiorrespiratorio',
-    'Priorizar compresiones torácicas de alta calidad',
-    'Reconocer ritmos desfibrilables y actuar apropiadamente',
-    'Integrar manejo de vía aérea sin comprometer compresiones',
-    'Aplicar farmacología apropiada durante RCP avanzado'
+    'Identificar ritmos desfibrilables vs no desfibrilables',
+    'Ejecutar RCP de alta calidad con mínimas interrupciones',
+    'Priorizar correctamente desfibrilación vs medicamentos',
+    'Comprender la importancia del RCP post-desfibrilación'
   ],
   difficulty: 'advanced',
-  estimatedTime: '15-20 minutos'
+  estimatedTime: '20-25 minutos'
 };

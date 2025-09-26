@@ -32,3 +32,17 @@ export {
   politraumatismoCase,
   intoxicacionComplexCase
 };
+
+// Casos existentes actualizados
+export { paroCardiacoCase } from './paroCardiaco.case';
+export { traumaCaderaCase } from './traumaCadera.case';
+export { dolorToracicoCase } from './dolorToracico.case';
+export { convulsionFebrilCase } from './convulsionFebril.case';
+export { pediatriaCrupCase } from './pediatriaCrup.case';
+export { politraumatismoCase } from './politraumatismo.case';
+export { intoxicacionComplexCase } from './intoxicacionComplex.case';
+
+// Casos nuevos con evaluación de Glasgow
+export { laseracionMenorCase } from './laseracionMenor.case';
+export { diabeticoHipoglicemicoCase } from './diabeticoHipoglicemico.case';
+export { politraumatismoComplexCase } from './politraumatismoComplex.case';

@@ -11,6 +11,7 @@ export interface SimulatorStep {
     explanation: string;
   };
   criticalStep?: boolean; // Si es verdadero, un error aquí termina la simulación
+  stepType?: 'normal' | 'glasgow'; // Nuevo tipo para pasos especiales
 }
 
 export interface SimulatorOption {
@@ -36,6 +37,11 @@ export interface SimulatorCase {
   learningObjectives: string[];
   difficulty: 'beginner' | 'intermediate' | 'advanced';
   estimatedTime: string;
+  glasgowScore?: {
+    expected: number;
+    timing: 'during_neurological' | 'final_assessment';
+    contextInfo: string;
+  };
 }
 
 export interface SimulatorProgress {
@@ -50,6 +56,7 @@ export interface SimulatorProgress {
   startTime: number;
   mistakes: number;
   criticalErrors: number;
+  glasgowAnswer?: number;
 }
 
 export interface SimulatorResult {
@@ -62,4 +69,10 @@ export interface SimulatorResult {
   performance: 'excellent' | 'good' | 'needs_improvement' | 'poor';
   feedback: string;
   recommendations: string[];
+  glasgowEvaluation?: {
+    userAnswer: number;
+    correctAnswer: number;
+    isCorrect: boolean;
+    feedback: string;
+  };
 }

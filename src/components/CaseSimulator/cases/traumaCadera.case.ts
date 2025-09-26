@@ -16,8 +16,12 @@ export const traumaCaderaCase: SimulatorCase = {
     'PA': '140/85 mmHg',
     'FR': '22 rpm',
     'SatO2': '96%',
-    'Temp': '36.5°C',
-    'Glasgow': '15/15'
+    'Temp': '36.5°C'
+  },
+  glasgowScore: {
+    expected: 15,
+    timing: 'during_neurological',
+    contextInfo: 'Durante la evaluación neurológica observas que la paciente está despierta, alerta, responde preguntas de manera coherente y orientada en tiempo, espacio y persona. Obedece órdenes simples como "mueva los dedos de la mano" sin dificultad. Sus pupilas son reactivas y simétricas.'
   },
   steps: [
     {
