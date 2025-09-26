@@ -136,6 +136,7 @@ import MedicVision from "../../pages/EMT/MedicVision/MedicVision.page.tsx";
 import {visionMedicGeneralQuestions} from "../../pages/EMT/MedicVision/MedicVision.questions.ts";
 import {semSystemChallengingQuestions, semSystemQuestions} from "../../pages/EMT/SEM/Sem.questions.ts";
 import {nemotecniasQuestions} from "../../pages/EMT/Nnemotecnias/Mnemotecnias.questions.ts";
+import CaseSimulatorPage from "../CaseSimulator/CaseSimulator.page.tsx";
 
 export default function Router() {
     return (
@@ -361,6 +362,7 @@ export default function Router() {
                 <Route path={AllRoutes.RESOURCES} element={<Resources/>}/>
                 <Route path={AllRoutes.DISCLAMER} element={<Disclaimer/>}/>
                 <Route path={AllRoutes.PRIVACYANDTERMS} element={<PrivacyAndTerms/>}/>
+                <Route path={AllRoutes.CASE_SIMULATOR} element={<CaseSimulatorPage />} />
 
             </Routes>
         </Suspense>

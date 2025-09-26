@@ -5,6 +5,7 @@ import {FaHandScissors} from "react-icons/fa";
 import {ImBooks} from "react-icons/im";
 import {AllRoutes} from "../../components/Router/Router.constants.ts";
 import SEOWrapper from "../../components/SEOWrapper/SEOWrapper.component.tsx";
+import {MdLocalHospital} from "react-icons/md";
 
 export default function Main() {
     return (
@@ -25,7 +26,7 @@ export default function Main() {
                          alt="Logo" className="h-24 w-24 mb-4"/>
                     <p className="text-5xl font-bold mb-12 flex text-center">Rescate 1: Alumnos</p>
 
-                    <div className="grid md:grid-cols-3 grid-cols-2 gap-4">
+                    <div className="grid md:grid-cols-4 grid-cols-2 gap-4">
                         <NavLink to={AllRoutes.EMT}
                                  className="flex flex-col items-center justify-center gap-2 mb-4 bg-white rounded-lg shadow-md p-4   hover:bg-orange-100 hover:scale-105 transition duration-300 ease-in-out h-32 md:w-52 w-full">
                             <TbMedicalCrossFilled className="text-orange-500 w-10 h-10"/>
@@ -36,11 +37,17 @@ export default function Main() {
                             <FaHandScissors className="text-orange-500 w-10 h-10"/>
                             <p className="text-lg text-orange-500">Lengua de señas</p>
                         </NavLink>
+                        <NavLink to={AllRoutes.CASE_SIMULATOR}
+                                 className="flex flex-col items-center justify-center gap-2 mb-4 bg-white rounded-lg shadow-md p-4   hover:bg-orange-100 hover:scale-105 transition duration-300 ease-in-out h-32 md:w-52 w-full">
+                            <MdLocalHospital className="text-orange-500 w-10 h-10"/>
+                            <p className="text-lg text-orange-500 text-center">Casos Clínicos</p>
+                        </NavLink>
                         <NavLink to={AllRoutes.RESOURCES}
                                  className="flex flex-col items-center justify-center gap-2 mb-4 bg-white rounded-lg shadow-md p-4   hover:bg-orange-100 hover:scale-105 transition duration-300 ease-in-out h-32 md:w-52 w-full">
                             <ImBooks className="text-orange-500 w-10 h-10"/>
                             <p className="text-lg text-orange-500">Recursos</p>
                         </NavLink>
+
                     </div>
                 </div>
             </div>

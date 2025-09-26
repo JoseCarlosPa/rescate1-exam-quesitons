@@ -61,4 +61,5 @@ export enum AllRoutes {
     ADMIN_DASHBOARD = "/admin-dashboard",
     DISCLAMER = "/disclaimer",
     PRIVACYANDTERMS = "/privacy-and-terms",
+    CASE_SIMULATOR = "/case-simulator"
 }
