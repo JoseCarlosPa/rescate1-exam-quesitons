@@ -1639,6 +1639,276 @@ export const caseStudies: CaseStudy[] = [
         ],
         correctManage: `- Colocar la extremidad a nivel del corazón. NO elevarla, ya que esto puede disminuir aún más la perfusión arterial al compartimento.\n- Aflojar o retirar cualquier vendaje o férula que esté apretado para eliminar la compresión externa.\n- Administrar oxígeno y establecer acceso IV.\n- Manejo agresivo del dolor con analgésicos narcóticos, aunque es probable que no sea muy efectivo.\n- Notificar al hospital receptor sobre una alta sospecha de 'código compartimental'.\n- Traslado urgente para medición de presiones compartimentales y posible fasciotomía de emergencia.`,
         explanation: "El síndrome compartimental ocurre cuando la presión dentro de un compartimento muscular (un espacio cerrado por fascia inelástica) aumenta a un nivel que compromete la perfusión sanguínea de los músculos y nervios dentro de ese espacio. Es una emergencia quirúrgica. El dolor intenso y desproporcionado es la clave del diagnóstico temprano. El tratamiento definitivo es una fasciotomía, una incisión quirúrgica que abre la fascia y libera la presión. Sin un tratamiento rápido, puede resultar en necrosis muscular, daño nervioso permanente y la posible amputación de la extremidad."
+    },
+    {
+        id: "pediatria-aspiracion-61",
+        title: "Atragantamiento súbito en un niño pequeño",
+        description: "Un niño de 2 años estaba comiendo uvas cuando de repente comenzó a toser, se llevó las manos al cuello y su cara se puso azul. A tu llegada, está flácido en los brazos de su madre.",
+        initialAssessment: "Niño inconsciente, flácido y cianótico. No hay movimientos respiratorios visibles. No hay respuesta a estímulos verbales o dolorosos.",
+        vitalSigns: {
+            "FC": "40 lpm (bradicardia severa)",
+            "FR": "0",
+            "SpO2": "Inmedible",
+        },
+        findings: [
+            "Obstrucción completa de la vía aérea por cuerpo extraño (OVACE).",
+            "Paro respiratorio con paro cardíaco inminente por hipoxia severa.",
+            "Emergencia pediátrica de máxima prioridad."
+        ],
+        questions: [
+            { question: "¿Cuál es la secuencia de acciones para un niño inconsciente con sospecha de OVACE?" },
+            { question: "¿Qué modificación se hace al iniciar las compresiones torácicas en este escenario en comparación con un paro cardíaco primario?" },
+            { question: "Si el cuerpo extraño es visible en la boca, ¿qué debes hacer?" }
+        ],
+        references: [
+            "AHA Guidelines for Pediatric Advanced Life Support (PALS).",
+            "AAOS 11ª Edición - Capítulo de Manejo de la Vía Aérea."
+        ],
+        correctManage: `- Colocar al niño en una superficie dura e iniciar RCP inmediatamente, comenzando con las compresiones torácicas.\n- Antes de intentar ventilar, abrir la boca y buscar el objeto. Si el objeto es visible, intentar retirarlo con una maniobra de barrido digital. NO realizar barridos a ciegas.\n- Intentar dar 2 ventilaciones. Si el pecho no se eleva, reposicionar la cabeza e intentar ventilar de nuevo.\n- Continuar ciclos de compresiones y ventilaciones (con la inspección de la vía aérea antes de cada intento de ventilación).\n- Si la obstrucción persiste, considerar el uso de laringoscopio y pinzas de Magill para la extracción directa del cuerpo extraño, si el protocolo y la formación lo permiten.\n- El objetivo es aliviar la obstrucción lo antes posible para poder oxigenar al paciente.`,
+        explanation: "En un niño inconsciente con OVACE, la RCP es la intervención clave. Las compresiones torácicas ayudan a aumentar la presión intratorácica, lo que puede ayudar a desalojar el objeto, funcionando como una 'maniobra de Heimlich' interna. A diferencia de un paro cardíaco estándar, la prioridad es la obstrucción. Cada vez que se abre la vía aérea para ventilar, se debe buscar el objeto. La laringoscopia directa es a menudo la mejor oportunidad para resolver la obstrucción si las maniobras básicas fallan."
+    },
+    {
+        id: "sepsis-anciano-62",
+        title: "Alteración del estado mental en residente de asilo",
+        description: "Mujer de 85 años, residente de un asilo y con una sonda urinaria permanente, es encontrada por el personal más somnolienta de lo normal. No quiere comer y se siente caliente al tacto.",
+        initialAssessment: "Paciente letárgica, responde a la voz pero está desorientada en tiempo y lugar ('no es su estado basal'). Piel caliente, seca y enrojecida. La orina en la bolsa colectora es turbia y maloliente.",
+        vitalSigns: {
+            "FC": "110 lpm",
+            "TA": "88/50 mmHg",
+            "FR": "26 rpm",
+            "SpO2": "93% (aire ambiente)",
+            "Temp": "38.8°C",
+        },
+        findings: [
+            "Shock séptico, probablemente de origen urinario (urosepsis).",
+            "Los signos de infección en los ancianos pueden ser sutiles (cambio en el estado mental) en lugar de específicos.",
+            "Cumple con los criterios de qSOFA (estado mental alterado, FR >22, PAS <100)."
+        ],
+        questions: [
+            { question: "¿Por qué la alteración del estado mental es a menudo el primer y único signo de una infección grave en los ancianos?" },
+            { question: "¿Qué es el lactato sérico y por qué es un marcador importante en la sepsis?" },
+            { question: "En el manejo prehospitalario, ¿cuál es la intervención más importante para mejorar la supervivencia en el shock séptico?" }
+        ],
+        references: [
+            "Surviving Sepsis Campaign Guidelines.",
+            "AAOS 11ª Edición - Capítulo de Emergencias Geriátricas."
+        ],
+        correctManage: `- Administrar oxígeno de alto flujo para corregir la hipoxia y satisfacer la demanda metabólica.\n- Establecer acceso IV de gran calibre (o IO si es necesario) e iniciar una reanimación agresiva con líquidos (bolo de 30 ml/kg de solución salina, según protocolo) para tratar la hipotensión por vasodilatación.\n- Obtener una muestra de glucosa en sangre.\n- Notificar al hospital receptor con una alerta de 'código sepsis' para facilitar la administración rápida de antibióticos.\n- Mantener a la paciente abrigada y monitorizar continuamente su estado hemodinámico y mental.`,
+        explanation: "La sepsis es una disfunción orgánica potencialmente mortal causada por una respuesta desregulada a la infección. En los ancianos, la respuesta inmunitaria puede estar atenuada, por lo que los signos clásicos de infección pueden estar ausentes. El shock séptico causa una vasodilatación masiva ('shock distributivo'), lo que lleva a una hipotensión profunda. La administración temprana y agresiva de líquidos intravenosos para restaurar el volumen circulante y la perfusión de los órganos es la piedra angular del manejo prehospitalario y ha demostrado mejorar significativamente los resultados."
+    },
+    {
+        id: "toxicologia-viuda-negra-63",
+        title: "Calambres abdominales severos tras picadura de araña",
+        description: "Un granjero de 45 años estaba limpiando un granero cuando sintió un piquete agudo en el antebrazo. Vio una pequeña araña negra con una marca roja. Una hora después, desarrolla un dolor muscular intenso que se extiende desde el brazo al pecho y al abdomen.",
+        initialAssessment: "Paciente en evidente dolor, diaforético y ansioso. Presenta calambres musculares generalizados. El abdomen está rígido como una tabla, pero no hay sensibilidad a la palpación que sugiera peritonitis.",
+        vitalSigns: {
+            "FC": "120 lpm",
+            "TA": "160/100 mmHg",
+            "FR": "24 rpm",
+            "Dolor": "10/10",
+        },
+        findings: [
+            "Envenenamiento por araña viuda negra (latrodectismo).",
+            "El veneno es una neurotoxina que causa una liberación masiva de neurotransmisores.",
+            "El 'abdomen en tabla' sin sensibilidad a la palpación es un signo clásico."
+        ],
+        questions: [
+            { question: "¿Cuál es el principal componente del veneno de la viuda negra y cuál es su mecanismo de acción?" },
+            { question: "¿Cómo se puede diferenciar clínicamente un abdomen rígido por latrodectismo de un abdomen agudo quirúrgico?" },
+            { question: "¿Cuál es el tratamiento principal para los espasmos musculares y el dolor severo?" }
+        ],
+        references: [
+            "Goldfrank's Toxicologic Emergencies, 11th Edition."
+        ],
+        correctManage: `- Colocar al paciente en una posición cómoda y tranquilizarlo.\n- Administrar oxígeno de alto flujo.\n- Establecer acceso IV. El tratamiento se centra en el control del dolor y los espasmos musculares.\n- Administrar benzodiacepinas (ej. Diazepam o Midazolam IV) para la relajación muscular y la sedación.\n- Administrar analgésicos opiáceos (ej. Fentanilo o Morfina IV) para el dolor severo.\n- Monitorización cardíaca y de la presión arterial continua.\n- Traslado al hospital para un manejo continuo. El antídoto (Antivenina Latrodectus) se reserva para los casos más graves.`,
+        explanation: "El veneno de la viuda negra contiene alfa-latrotoxina, que se une a las terminaciones nerviosas presinápticas y provoca una liberación masiva y descontrolada de acetilcolina y norepinefrina. Esto conduce a espasmos musculares generalizados (incluyendo la pared abdominal) e hipertensión/taquicardia. A diferencia de un abdomen quirúrgico, el dolor es en el músculo de la pared, no en el peritoneo, por lo que la palpación profunda no suele empeorar el dolor. El tratamiento es de soporte, enfocado en controlar los síntomas con benzodiacepinas y opiáceos."
+    },
+    {
+        id: "trauma-fractura-abierta-64",
+        title: "Fractura abierta de tibia con hemorragia activa",
+        description: "Un esquiador de 28 años pierde el control y choca contra un árbol. Presenta una deformidad severa en la pierna derecha, con un fragmento de hueso visible que protruye a través de la piel y un sangrado arterial pulsátil.",
+        initialAssessment: "Paciente consciente, con dolor extremo. Se observa una fractura abierta de tibia y peroné con un fragmento óseo expuesto y una herida sangrante. El pie distal está pálido y frío.",
+        vitalSigns: {
+            "FC": "125 lpm",
+            "TA": "100/70 mmHg",
+            "FR": "24 rpm",
+        },
+        findings: [
+            "Fractura abierta (expuesta) de tibia y peroné (Grado III).",
+            "Hemorragia arterial activa con riesgo de shock hipovolémico.",
+            "Compromiso neurovascular distal."
+        ],
+        questions: [
+            { question: "¿Cuál es la primera y más importante prioridad en el manejo de una fractura abierta con sangrado activo?" },
+            { question: "Describe el procedimiento para irrigar y cubrir una fractura abierta en el campo." },
+            { question: "¿Cómo se debe alinear e inmovilizar una fractura angulada con compromiso vascular?" }
+        ],
+        references: [
+            "PHTLS 9ª Edición - Capítulo de Trauma Musculoesquelético."
+        ],
+        correctManage: `- ¡Controlar la hemorragia! Aplicar presión directa sobre la herida. Si no es suficiente, aplicar un torniquete proximal a la fractura y apretarlo hasta que cese el sangrado. Anotar la hora.\n- Administrar oxígeno y manejar el shock.\n- Establecer acceso IV.\n- Irrigar la herida con solución salina estéril para eliminar la contaminación visible.\n- Cubrir el hueso expuesto y la herida con un apósito estéril y húmedo, y luego cubrir con un vendaje seco.\n- Evaluar el pulso, la función motora y la sensibilidad distal (PMS). Si el pulso está ausente, aplicar una tracción longitudinal suave para realinear la extremidad a una posición anatómica y reevaluar el pulso.\n- Inmovilizar la extremidad con una férula rígida o de vacío, incluyendo la rodilla y el tobillo.\n- Traslado al centro de trauma.`,
+        explanation: "En una fractura abierta, las prioridades son las mismas que en cualquier trauma: controlar la hemorragia masiva es lo primero (X-ABCDE). Un torniquete es la herramienta de elección para el sangrado arterial no controlado en una extremidad. Una vez controlada la hemorragia, los objetivos son prevenir la infección (irrigando y cubriendo la herida) y estabilizar la fractura para prevenir más daño, reducir el dolor y restaurar la perfusión si está comprometida. La alineación de la fractura puede aliviar la presión sobre los vasos sanguíneos y restaurar el flujo sanguíneo distal."
+    },
+    {
+        id: "neuro-reaccion-distonica-65",
+        title: "Espasmos faciales y de cuello de inicio súbito",
+        description: "Paciente psiquiátrico de 25 años, que recientemente comenzó a tomar un nuevo antipsicótico (Haloperidol), desarrolla espasmos involuntarios y dolorosos de los músculos del cuello (tortícolis), la mandíbula (trismo) y los ojos (crisis oculógira).",
+        initialAssessment: "Paciente consciente y aterrorizado, incapaz de controlar sus movimientos. El cuello está torcido hacia un lado, los ojos están desviados hacia arriba y la lengua protruye. Habla con dificultad pero la vía aérea no está comprometida.",
+        vitalSigns: {
+            "FC": "110 lpm",
+            "TA": "140/90 mmHg",
+            "FR": "20 rpm",
+            "SpO2": "99%",
+        },
+        findings: [
+            "Reacción distónica aguda, un efecto secundario extrapiramidal de los antipsicóticos.",
+            "Aunque no suele ser mortal, es extremadamente angustiante y dolorosa.",
+            "Riesgo de compromiso de la vía aérea si se produce un laringoespasmo (raro)."
+        ],
+        questions: [
+            { question: "¿Qué clase de medicamentos son conocidos por causar reacciones distónicas agudas?" },
+            { question: "¿Cuál es el mecanismo de acción de esta reacción adversa?" },
+            { question: "¿Cuál es el antídoto de primera línea y qué tan rápido funciona?" }
+        ],
+        references: [
+            "AAOS 11ª Edición - Capítulo de Emergencias Psiquiátricas."
+        ],
+        correctManage: `- Asegurar al paciente que se trata de una reacción a su medicamento y que es reversible. La tranquilidad es clave.\n- Mantener una vía aérea permeable y administrar oxígeno. Estar atento a cualquier signo de laringoespasmo.\n- Establecer acceso IV.\n- Administrar el antídoto: Difenhidramina (un antihistamínico con fuertes propiedades anticolinérgicas), usualmente 25-50 mg IV lento.\n- La mejoría suele ser dramática y ocurre en 2 a 5 minutos.\n- Transportar al paciente para una evaluación médica, ya que puede requerir un cambio en su medicación.`,
+        explanation: "Los antipsicóticos (especialmente los de primera generación como el Haloperidol) y algunos antieméticos (Metoclopramida) pueden bloquear los receptores de dopamina en los ganglios basales del cerebro. Este desequilibrio entre la dopamina y la acetilcolina provoca contracciones musculares sostenidas e involuntarias (distonía). La difenhidramina, con su potente efecto anticolinérgico central, restablece rápidamente este equilibrio, aliviando los síntomas de manera espectacular. Es una de las emergencias médicas más gratificantes de tratar en el campo."
+    },
+    {
+        id: "ginecologia-ectopico-roto-66",
+        title: "Síncope y dolor abdominal en mujer joven",
+        description: "Mujer de 28 años sufre un episodio de síncope en casa. A tu llegada, está consciente pero pálida y mareada. Se queja de un dolor abdominal bajo, agudo y punzante, que irradia al hombro derecho. Refiere un retraso menstrual de 6 semanas.",
+        initialAssessment: "Paciente pálida, con la piel fría y húmeda. Taquicárdica y taquipneica. El abdomen está distendido y presenta una marcada sensibilidad a la palpación en el cuadrante inferior derecho, con defensa involuntaria.",
+        vitalSigns: {
+            "FC": "135 lpm",
+            "TA": "85/45 mmHg",
+            "FR": "28 rpm",
+            "SpO2": "95%",
+        },
+        findings: [
+            "Embarazo ectópico roto con hemorragia intraabdominal masiva.",
+            "Shock hipovolémico descompensado.",
+            "El dolor referido al hombro (signo de Kehr) se debe a la irritación del diafragma por la sangre."
+        ],
+        questions: [
+            { question: "¿Qué es un embarazo ectópico y por qué su ruptura es una emergencia mortal?" },
+            { question: "¿Qué tres hallazgos (la 'tríada clásica') sugieren un embarazo ectópico?" },
+            { question: "¿Cuál es la prioridad absoluta en el manejo de esta paciente?" }
+        ],
+        references: [
+            "AAOS 11ª Edición - Capítulo de Emergencias Ginecológicas."
+        ],
+        correctManage: `- Administrar oxígeno de alto flujo.\n- Colocar a la paciente en posición supina. Considerar la posición de Trendelenburg si la hipotensión es severa.\n- Establecer dos accesos IV de gran calibre e iniciar una reanimación agresiva con cristaloides para tratar el shock.\n- NO administrar analgésicos que puedan enmascarar los signos peritoneales.\n- Traslado emergente ('load and go') a un hospital con capacidad de cirugía y obstetricia de emergencia. Notificar al hospital sobre una alta sospecha de 'ectópico roto'.`,
+        explanation: "Un embarazo ectópico ocurre cuando un óvulo fertilizado se implanta fuera del útero, comúnmente en la trompa de Falopio. A medida que crece, puede romper la trompa, causando una hemorragia arterial masiva en la cavidad abdominal. La tríada clásica es dolor abdominal, amenorrea (retraso menstrual) y sangrado vaginal (aunque puede estar ausente). Es una de las principales causas de mortalidad materna en el primer trimestre. El tratamiento es una cirugía de emergencia para detener la hemorragia, por lo que la velocidad del diagnóstico y el transporte son esenciales."
+    },
+    {
+        id: "ambiental-rayo-67",
+        title: "Múltiples víctimas tras la caída de un rayo",
+        description: "Durante una tormenta eléctrica, un rayo cae cerca de un grupo de personas en un campo de golf. Se reportan dos víctimas: una está inconsciente y sin respiración, la otra está consciente pero confundida y no puede mover las piernas.",
+        initialAssessment: "Escena segura (la tormenta ha pasado). Víctima 1: Inconsciente, apneica, sin pulso, pupilas fijas y dilatadas. Víctima 2: Consciente, gritando, con paraparesia (debilidad) en las piernas y quemaduras superficiales en forma de helecho (figuras de Lichtenberg) en la espalda.",
+        vitalSigns: {
+            "Víctima 1": "En paro cardiorrespiratorio.",
+            "Víctima 2": "FC: 110 lpm, TA: 130/80 mmHg, FR: 22 rpm",
+        },
+        findings: [
+            "Lesión por rayo con múltiples víctimas.",
+            "Paro cardiorrespiratorio en la víctima 1 (causa principal de muerte inmediata).",
+            "Lesiones neurológicas y cutáneas en la víctima 2."
+        ],
+        questions: [
+            { question: "Explica el principio de 'triage inverso' y por qué se aplica a las víctimas de un rayo." },
+            { question: "¿Cuál es el mecanismo más común de muerte en una víctima de rayo?" },
+            { question: "¿Qué son las figuras de Lichtenberg?" }
+        ],
+        references: [
+            "AAOS 11ª Edición - Capítulo de Emergencias Ambientales."
+        ],
+        correctManage: `- Aplicar el triage inverso: la prioridad es la víctima en paro cardiorrespiratorio (Víctima 1).\n- Iniciar RCP de alta calidad inmediatamente en la Víctima 1. La desfibrilación es a menudo necesaria. La reanimación prolongada puede tener éxito.\n- Una vez que haya suficientes rescatadores, otro equipo debe atender a la Víctima 2.\n- Para la Víctima 2: Inmovilización espinal completa debido al mecanismo de trauma (puede haber sido lanzada por la onda expansiva). Administrar oxígeno, establecer acceso IV y tratar las quemaduras como quemaduras térmicas.\n- Transportar a ambas víctimas al hospital.`,
+        explanation: "El triage inverso se aplica en incidentes con rayos porque las víctimas que parecen muertas (en paro cardiorrespiratorio) pueden ser reanimadas con éxito si se inicia la RCP de inmediato. La corriente eléctrica masiva despolariza todo el miocardio a la vez (asistolia) y paraliza el centro respiratorio del cerebro. A menudo, el corazón puede reiniciar su ritmo espontáneamente, pero el paciente no respira, lo que conduce a un segundo paro hipóxico. La ventilación y la RCP tempranas pueden ser salvadoras. Las víctimas que están conscientes y respirando al principio, probablemente sobrevivirán. Las figuras de Lichtenberg son patrones cutáneos patognomónicos causados por la ruptura de capilares."
+    },
+    {
+        id: "trauma-estrangulamiento-68",
+        title: "Víctima de violencia doméstica con dificultad para respirar",
+        description: "Mujer de 35 años llama al 911 después de que su pareja la estrangulara durante un altercado. Está consciente y respirando, pero se queja de dolor de garganta, voz ronca y dificultad para tragar.",
+        initialAssessment: "Paciente sentada, ansiosa. Se observan petequias en la cara y las conjuntivas. Hay marcas de dedos rojas en el cuello. La voz es notablemente ronca. No hay estridor en reposo, pero sí al respirar profundamente.",
+        vitalSigns: {
+            "FC": "105 lpm",
+            "TA": "140/90 mmHg",
+            "FR": "22 rpm",
+            "SpO2": "96%",
+        },
+        findings: [
+            "Lesión por estrangulamiento.",
+            "Alto riesgo de edema de la vía aérea de aparición tardía.",
+            "Posibles lesiones ocultas en la arteria carótida, la laringe y la columna cervical."
+        ],
+        questions: [
+            { question: "¿Por qué el estrangulamiento, incluso sin pérdida de conciencia, es una lesión potencialmente letal?" },
+            { question: "¿Qué son las petequias y por qué aparecen en la cara y los ojos en estos casos?" },
+            { question: "Además del edema de la vía aérea, ¿qué otra complicación vascular grave puede ocurrir días después?" }
+        ],
+        references: [
+            "Journal of Emergency Medicine - Strangulation Injuries."
+        ],
+        correctManage: `- Inmovilización espinal cervical por el mecanismo de lesión.\n- Administrar oxígeno humidificado de alto flujo para disminuir la irritación de la vía aérea.\n- Colocar a la paciente en una posición cómoda (semi-sentado) y minimizar la agitación.\n- Establecer acceso IV.\n- Monitorización continua y muy cercana de la vía aérea. Estar preparado para una vía aérea difícil si el edema progresa. Tener a mano múltiples opciones de manejo de la vía aérea.\n- Trasladar a todos los pacientes con sospecha de estrangulamiento para observación hospitalaria, incluso si parecen estar bien inicialmente.`,
+        explanation: "El estrangulamiento es una forma de violencia extremadamente peligrosa. La presión sobre el cuello puede fracturar la laringe o el hioides, y causar un edema interno que progresa lentamente hasta obstruir por completo la vía aérea horas después del incidente. También puede dañar la capa interna de las arterias carótidas, lo que lleva a la formación de coágulos y a un ACV días después. Las petequias se forman por la ruptura de capilares debido al aumento de la presión venosa por encima del punto de compresión. Todo paciente víctima de estrangulamiento requiere una evaluación médica exhaustiva."
+    },
+    {
+        id: "neuro-crisis-miastenica-69",
+        title: "Debilidad muscular y dificultad respiratoria progresiva",
+        description: "Paciente de 40 años con diagnóstico de Miastenia Gravis llama por una debilidad generalizada que ha empeorado rápidamente en las últimas horas. Ahora tiene dificultad para mantener la cabeza erguida y siente que no puede respirar profundo.",
+        initialAssessment: "Paciente en silla de ruedas, con ptosis palpebral bilateral (párpados caídos). Habla con una voz nasal y débil que se fatiga rápidamente. Respiraciones superficiales. Es incapaz de levantar los brazos por encima de los hombros.",
+        vitalSigns: {
+            "FC": "110 lpm",
+            "TA": "130/80 mmHg",
+            "FR": "28 rpm (superficial)",
+            "SpO2": "91%",
+        },
+        findings: [
+            "Crisis miasténica, una exacerbación potencialmente mortal de la Miastenia Gravis.",
+            "Insuficiencia respiratoria inminente por debilidad de los músculos respiratorios (diafragma e intercostales).",
+            "Incapacidad para manejar secreciones por debilidad de los músculos bulbares."
+        ],
+        questions: [
+            { question: "¿Qué es la Miastenia Gravis?" },
+            { question: "¿Cómo se puede evaluar rápidamente la gravedad de la debilidad respiratoria en el campo?" },
+            { question: "Diferencia entre una crisis miasténica y una crisis colinérgica." }
+        ],
+        references: [
+            "Tintinalli's Emergency Medicine: A Comprehensive Study Guide, 9th Edition."
+        ],
+        correctManage: `- Soporte agresivo de la ventilación. La prioridad es asistir la respiración del paciente. Utilizar una BVM con oxígeno al 100% para ayudar en cada respiración del paciente, asegurando una buena elevación del pecho.\n- Colocar al paciente en posición sentada para maximizar la mecánica ventilatoria.\n- Estar preparado para aspirar secreciones.\n- Establecer acceso IV.\n- Notificar al hospital receptor sobre una crisis miasténica para que preparen la unidad de cuidados intensivos y posibles tratamientos como la plasmaféresis o inmunoglobulina IV.\n- El soporte ventilatorio es la clave del manejo prehospitalario; no retrasar el traslado.`,
+        explanation: "La Miastenia Gravis es una enfermedad autoinmune donde los anticuerpos bloquean los receptores de acetilcolina en la unión neuromuscular, causando debilidad muscular fluctuante. Una crisis miasténica es una exacerbación tan severa que la debilidad de los músculos respiratorios conduce a la insuficiencia ventilatoria. Es una emergencia de la vía aérea y la respiración. A diferencia de otras causas de dificultad respiratoria, el problema aquí no es la obstrucción, sino la 'falla de la bomba' muscular. El soporte ventilatorio es la intervención que salva la vida hasta que el tratamiento específico pueda iniciarse."
+    },
+    {
+        id: "shock-cardiogenico-70",
+        title: "Infarto masivo con hipotensión y signos de shock",
+        description: "Hombre de 60 años con dolor torácico severo. A tu llegada, está pálido, con la piel fría, moteada y sudorosa. Está confundido y tiene dificultad para respirar.",
+        initialAssessment: "Paciente letárgico, responde a la voz. Piel fría, diaforética y con livedo reticularis (moteado) en las rodillas. Estertores crepitantes en todos los campos pulmonares. Pulsos periféricos muy débiles.",
+        vitalSigns: {
+            "FC": "120 lpm",
+            "TA": "75/50 mmHg",
+            "FR": "30 rpm",
+            "SpO2": "85% (con mascarilla no recirculante)",
+        },
+        findings: [
+            "Shock cardiogénico, probablemente secundario a un infarto agudo de miocardio (IAM) extenso.",
+            "Fallo agudo de la bomba cardíaca, lo que lleva a hipoperfusión tisular y congestión pulmonar (edema pulmonar).",
+            "Paciente en estado crítico con alta mortalidad."
+        ],
+        questions: [
+            { question: "¿Cómo se diferencia clínicamente el shock cardiogénico del shock hipovolémico?" },
+            { question: "¿Por qué la administración de grandes bolos de líquidos puede ser perjudicial o incluso mortal en el shock cardiogénico?" },
+            { question: "¿Qué es un vasopresor y por qué es el tratamiento farmacológico de elección en este tipo de shock?" }
+        ],
+        references: [
+            "AHA Guidelines for ACLS.",
+            "AAOS 11ª Edición - Capítulo de Shock."
+        ],
+        correctManage: `- Manejo de la vía aérea y la ventilación. Considerar el soporte con presión positiva (CPAP/BiPAP) para tratar el edema pulmonar si el paciente puede cooperar, o la intubación si no puede.\n- Obtener un ECG de 12 derivaciones para confirmar el IAM y activar el laboratorio de cateterismo cardíaco.\n- Administrar aspirina si no se ha hecho.\n- La reanimación con líquidos debe ser extremadamente cautelosa. Se puede administrar un pequeño bolo (ej. 250 ml) y reevaluar. Si los estertores empeoran, detener los líquidos.\n- Iniciar una infusión de un vasopresor (como Norepinefrina o Dopamina) según el protocolo de cuidados críticos para aumentar la presión arterial y la perfusión de los órganos coronarios y sistémicos.\n- Traslado inmediato al centro cardíaco más cercano.`,
+        explanation: "El shock cardiogénico es un estado de hipoperfusión causado por un fallo cardíaco severo. El corazón no puede bombear suficiente sangre para satisfacer las demandas del cuerpo. A diferencia del shock hipovolémico donde el 'tanque está vacío', aquí el 'tanque está lleno' (incluso sobrecargado, como demuestran los pulmones húmedos), pero la 'bomba' está rota. Dar grandes cantidades de líquido solo empeorará la congestión pulmonar. El tratamiento se centra en mejorar la función cardíaca (reperfusión urgente mediante cateterismo) y dar soporte a la presión arterial con medicamentos vasopresores."
     }
 
 
