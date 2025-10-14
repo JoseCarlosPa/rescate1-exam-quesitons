@@ -1909,6 +1909,277 @@ export const caseStudies: CaseStudy[] = [
         ],
         correctManage: `- Manejo de la vía aérea y la ventilación. Considerar el soporte con presión positiva (CPAP/BiPAP) para tratar el edema pulmonar si el paciente puede cooperar, o la intubación si no puede.\n- Obtener un ECG de 12 derivaciones para confirmar el IAM y activar el laboratorio de cateterismo cardíaco.\n- Administrar aspirina si no se ha hecho.\n- La reanimación con líquidos debe ser extremadamente cautelosa. Se puede administrar un pequeño bolo (ej. 250 ml) y reevaluar. Si los estertores empeoran, detener los líquidos.\n- Iniciar una infusión de un vasopresor (como Norepinefrina o Dopamina) según el protocolo de cuidados críticos para aumentar la presión arterial y la perfusión de los órganos coronarios y sistémicos.\n- Traslado inmediato al centro cardíaco más cercano.`,
         explanation: "El shock cardiogénico es un estado de hipoperfusión causado por un fallo cardíaco severo. El corazón no puede bombear suficiente sangre para satisfacer las demandas del cuerpo. A diferencia del shock hipovolémico donde el 'tanque está vacío', aquí el 'tanque está lleno' (incluso sobrecargado, como demuestran los pulmones húmedos), pero la 'bomba' está rota. Dar grandes cantidades de líquido solo empeorará la congestión pulmonar. El tratamiento se centra en mejorar la función cardíaca (reperfusión urgente mediante cateterismo) y dar soporte a la presión arterial con medicamentos vasopresores."
+    },
+    {
+        "id": "alergia-anafilaxia-71",
+        "title": "Reacción alérgica severa tras picadura de abeja",
+        "description": "Hombre de 45 años se encontraba trabajando en su jardín cuando fue picado por una abeja en el cuello. A los pocos minutos, comenzó a sentir que 'se le cerraba la garganta', mareos y una erupción generalizada.",
+        "initialAssessment": "Paciente ansioso, con dificultad para hablar. Presenta urticaria generalizada (ronchas rojas) y un marcado edema en cara y cuello (angioedema). A la auscultación se escuchan sibilancias en ambos campos pulmonares. Estridor inspiratorio audible.",
+        "vitalSigns": {
+            "FC": "130 lpm",
+            "TA": "80/40 mmHg",
+            "FR": "28 rpm",
+            "SpO2": "88% (aire ambiente)"
+        },
+        "findings": [
+            "Shock anafiláctico.",
+            "Compromiso severo de la vía aérea por angioedema.",
+            "Broncoespasmo e hipoxia."
+        ],
+        "questions": [
+            { "question": "¿Cuál es el medicamento de primera línea en la anafilaxia y cuál es su mecanismo de acción?" },
+            { "question": "¿Por qué la hipotensión es un hallazgo clave en el shock anafiláctico?" },
+            { "question": "Además del medicamento principal, ¿qué otras dos intervenciones son cruciales en este paciente?" }
+        ],
+        "references": [
+            "Atención medica prehospitalaria básica de la AAOS - Capítulo de Anafilaxia y Reacciones Alérgicas."
+        ],
+        "correctManage": "- Administración inmediata de Epinefrina por vía intramuscular (IM) en la cara lateral del muslo.\n- Administrar oxígeno de alto flujo para tratar la hipoxia.\n- Establecer un acceso IV de gran calibre e iniciar una reanimación agresiva con líquidos (bolos de solución salina) para tratar la hipotensión por vasodilatación.\n- Considerar la administración de broncodilatadores nebulizados (Salbutamol) para las sibilancias.\n- Prepararse para un manejo avanzado de la vía aérea si el edema progresa.\n- Traslado urgente al hospital.",
+        "explanation": "La anafilaxia es una reacción alérgica sistémica y potencialmente mortal. La exposición a un alérgeno desencadena una liberación masiva de histamina y otros mediadores, causando vasodilatación (hipotensión), aumento de la permeabilidad capilar (edema) y broncoconstricción (sibilancias). La epinefrina es el tratamiento que salva la vida, ya que contrarresta estos efectos al ser un potente vasoconstrictor y broncodilatador."
+    },
+    {
+        "id": "endocrino-hipoglucemia-72",
+        "title": "Alteración del estado mental en paciente diabético",
+        "description": "Familia llama porque su abuelo de 70 años, diabético tipo 1, está 'actuando de forma extraña'. Está combativo, confundido y no coordina sus movimientos. Se administró su insulina hace una hora pero no ha comido.",
+        "initialAssessment": "Paciente desorientado y combativo. Piel pálida, fría y profusamente diaforética (sudorosa). Habla incoherencias. No hay evidencia de trauma. Aliento no cetónico.",
+        "vitalSigns": {
+            "FC": "115 lpm",
+            "TA": "130/80 mmHg",
+            "FR": "20 rpm",
+            "SpO2": "97%",
+            "Glucosa": "35 mg/dL"
+        },
+        "findings": [
+            "Hipoglucemia severa.",
+            "Alteración del estado mental secundaria a neuroglucopenia (falta de glucosa en el cerebro).",
+            "Respuesta simpática activada (taquicardia, diaforesis)."
+        ],
+        "questions": [
+            { "question": "¿Por qué el cerebro es tan vulnerable a los niveles bajos de glucosa?" },
+            { "question": "¿Cuál es la vía de administración y el tratamiento de elección para un paciente hipoglucémico que no puede tragar de forma segura?" },
+            { "question": "Si no se pudiera obtener un acceso IV, ¿cuál sería el tratamiento alternativo?" }
+        ],
+        "references": [
+            "Atención medica prehospitalaria básica de la AAOS - Capítulo de Emergencias Diabéticas."
+        ],
+        "correctManage": "- Asegurar la vía aérea del paciente, especialmente por su combatividad y confusión.\n- Administrar oxígeno si es necesario.\n- Establecer un acceso IV y administrar Dextrosa al 50% (D50) o D10 según el protocolo local. La mejoría del estado mental suele ser casi inmediata.\n- Si no se puede obtener un acceso IV, administrar Glucagón por vía IM.\n- Reevaluar el nivel de glucosa y el estado mental del paciente después de la intervención.\n- Una vez que el paciente esté consciente y pueda tragar, animarle a consumir carbohidratos complejos.",
+        "explanation": "La hipoglucemia es una emergencia médica donde el nivel de glucosa en sangre cae peligrosamente. El cerebro depende casi exclusivamente de la glucosa para funcionar, por lo que su deficiencia (neuroglucopenia) causa rápidamente disfunción neurológica, desde confusión y cambios de comportamiento hasta convulsiones y coma. El tratamiento consiste en reponer rápidamente la glucosa, ya sea directamente en el torrente sanguíneo (Dextrosa IV) o estimulando al hígado a liberar sus reservas (Glucagón IM)."
+    },
+    {
+        "id": "neurologia-convulsion-activa-73",
+        "title": "Convulsión tónico-clónica generalizada activa",
+        "description": "Se recibe una llamada por un hombre de 30 años con antecedentes de epilepsia que comenzó a convulsionar hace 5 minutos y no se ha detenido. Es la convulsión más larga que ha tenido.",
+        "initialAssessment": "Paciente en el suelo, inconsciente, con movimientos rítmicos tónico-clónicos en las cuatro extremidades. Presenta cianosis peribucal. Se observa espuma en la boca. No responde a ningún estímulo.",
+        "vitalSigns": {
+            "FC": "140 lpm",
+            "TA": "160/95 mmHg",
+            "FR": "Irregular/Apneica durante la fase tónica",
+            "SpO2": "85%"
+        },
+        "findings": [
+            "Estatus epiléptico (convulsión prolongada).",
+            "Compromiso de la vía aérea y la ventilación.",
+            "Hipoxia secundaria a la actividad muscular intensa y la alteración del patrón respiratorio."
+        ],
+        "questions": [
+            { "question": "¿Cuál es la prioridad número uno en el manejo de un paciente con una convulsión activa?" },
+            { "question": "¿Cuál es la clase de medicamento de elección para detener una convulsión y cuál es la vía de administración preferida en el entorno prehospitalario?" },
+            { "question": "¿Qué es el estado postictal y cómo se debe manejar al paciente durante esta fase?" }
+        ],
+        "references": [
+            "Atención medica prehospitalaria básica de la AAOS - Capítulo de Emergencias Neurológicas."
+        ],
+        "correctManage": "- Proteger al paciente de lesiones: retirar objetos cercanos y colocar algo blando bajo su cabeza. No restringir los movimientos.\n- Manejar la vía aérea con posicionamiento y aspiración de secreciones según sea necesario.\n- Administrar oxígeno de alto flujo.\n- Administrar una benzodiazepina para detener la convulsión. La vía intranasal o intramuscular (Midazolam) es a menudo la más rápida y segura en el campo. Si hay un acceso IV, se puede usar Lorazepam o Diazepam.\n- Establecer acceso IV y evaluar la glucosa en sangre.\n- Una vez que la convulsión cese, manejar al paciente en la fase postictal, manteniéndolo en posición de recuperación y asegurando la permeabilidad de la vía aérea.",
+        "explanation": "El estatus epiléptico es una emergencia neurológica que requiere una intervención inmediata para detener la actividad convulsiva. La actividad muscular masiva aumenta drásticamente el consumo de oxígeno y glucosa del cerebro, y la alteración de la respiración conduce a la hipoxia. Las benzodiazepinas actúan potenciando el efecto del neurotransmisor inhibidor GABA, lo que ayuda a 'calmar' la actividad eléctrica cerebral y detener la convulsión. El manejo rápido previene el daño neuronal secundario."
+    },
+    {
+        "id": "obstetricia-parto-inminente-74",
+        "title": "Parto inminente en domicilio",
+        "description": "Mujer de 29 años, en su semana 39 de gestación, llama al 911 reportando contracciones cada 2 minutos. Grita que 'siente que el bebé ya viene' y tiene una fuerte necesidad de pujar. Es su segundo bebé.",
+        "initialAssessment": "Paciente en el suelo del dormitorio, en trabajo de parto activo. A la inspección visual, la cabeza del bebé es visible en la apertura vaginal durante las contracciones (coronamiento).",
+        "vitalSigns": {
+            "Maternos": "FC: 110 lpm, TA: 135/85 mmHg, FR: 24 rpm"
+        },
+        "findings": [
+            "Parto vaginal inminente (segunda etapa del trabajo de parto).",
+            "El transporte al hospital no es seguro ni factible; el parto debe ser atendido en la escena.",
+            "Multípara (ha tenido partos previos), lo que a menudo indica un trabajo de parto más rápido."
+        ],
+        "questions": [
+            { "question": "¿Cuáles son los tres signos inequívocos de un parto inminente?" },
+            { "question": "Describe los pasos clave para asistir un parto normal y no complicado." },
+            { "question": "Inmediatamente después del nacimiento, ¿cuáles son las tres prioridades en el cuidado del recién nacido?" }
+        ],
+        "references": [
+            "Atención medica prehospitalaria básica de la AAOS - Capítulo de Emergencias Obstétricas."
+        ],
+        "correctManage": "- Preparar el kit de obstetricia y crear un campo estéril alrededor de la madre.\n- Tranquilizar a la madre y animarla a pujar con las contracciones.\n- A medida que la cabeza emerge, aplicar una presión suave sobre el perineo para prevenir desgarros y controlar la salida de la cabeza.\n- Una vez que la cabeza ha salido, revisar si el cordón umbilical está alrededor del cuello (cordón nucal) y deslizarlo suavemente sobre la cabeza si es posible.\n- Aspirar la boca y luego la nariz del bebé solo si hay secreciones obvias que obstruyen la respiración.\n- Guiar el hombro anterior y luego el posterior. El resto del cuerpo saldrá rápidamente.\n- Secar, calentar y estimular al recién nacido vigorosamente. Evaluar su respiración y frecuencia cardíaca (APGAR).\n- Colocar al bebé sobre el abdomen de la madre para mantener el calor.\n- Pinzar y cortar el cordón umbilical después de que deje de pulsar.",
+        "explanation": "En un parto inminente, el rol del paramédico es facilitar un parto seguro y controlado, y proporcionar cuidados iniciales cruciales al recién nacido. La prevención de una salida explosiva de la cabeza, el manejo de un posible cordón nucal y, lo más importante, asegurar que el bebé esté caliente, seco y respirando bien, son las claves para un buen resultado en el entorno prehospitalario."
+    },
+    {
+        "id": "trauma-neumotorax-tension-75",
+        "title": "Dificultad respiratoria progresiva tras trauma torácico",
+        "description": "Joven de 19 años es apuñalado en el pecho, en la parte superior derecha, durante un asalto. Inicialmente estaba alerta, pero su dificultad para respirar ha empeorado drásticamente en los últimos 5 minutos.",
+        "initialAssessment": "Paciente en extrema dificultad respiratoria, usando músculos accesorios. Los ruidos respiratorios están ausentes en el hemitórax derecho. Las venas del cuello están marcadamente distendidas (distensión yugular). La tráquea parece desviarse hacia el lado izquierdo. Piel cianótica.",
+        "vitalSigns": {
+            "FC": "145 lpm",
+            "TA": "70/40 mmHg",
+            "FR": "38 rpm (superficial)",
+            "SpO2": "80% (con O2)"
+        },
+        "findings": [
+            "Neumotórax a tensión.",
+            "Shock obstructivo.",
+            "Insuficiencia respiratoria y paro cardiorrespiratorio inminente."
+        ],
+        "questions": [
+            { "question": "¿Cuál es la fisiopatología de un neumotórax a tensión y por qué es inmediatamente mortal?" },
+            { "question": "¿Qué tres hallazgos conforman la 'tríada clásica' del neumotórax a tensión?" },
+            { "question": "¿Cuál es la intervención prehospitalaria definitiva para esta condición y dónde se realiza?" }
+        ],
+        "references": [
+            "Atención medica prehospitalaria básica de la AAOS - Capítulo de Trauma Torácico."
+        ],
+        "correctManage": "- Reconocimiento inmediato de la condición potencialmente mortal.\n- Administrar oxígeno al 100% con BVM para asistir las ventilaciones.\n- Realizar una descompresión con aguja de forma inmediata. Insertar una aguja de gran calibre (14G) en el segundo espacio intercostal, línea media clavicular, o en el quinto espacio intercostal, línea axilar anterior, del lado afectado.\n- Se debe escuchar una liberación de aire a presión, y el estado del paciente debería mejorar drásticamente (aumento de la SpO2 y la TA, disminución de la FC).\n- Establecer acceso IV para reanimación de líquidos para el shock.\n- Traslado urgente a un centro de trauma para la colocación de un tubo torácico.",
+        "explanation": "Un neumotórax a tensión ocurre cuando el aire se acumula en el espacio pleural a través de un mecanismo de 'válvula unidireccional', colapsando el pulmón y empujando el corazón y los grandes vasos (mediastino) hacia el lado opuesto. Este desplazamiento acoda la vena cava, impidiendo el retorno de sangre al corazón y causando un shock obstructivo fatal. La descompresión con aguja es un procedimiento que salva la vida al liberar el aire atrapado, convirtiendo el neumotórax a tensión en un neumotórax simple y permitiendo que el corazón se vuelva a llenar."
+    },
+    {
+        "id": "geriatria-iam-atipico-76",
+        "title": "Debilidad y síncope en paciente anciana diabética",
+        "description": "Mujer de 82 años con antecedentes de hipertensión y diabetes tipo 2 es encontrada en el suelo por su cuidador. No se golpeó la cabeza, simplemente 'se desvaneció'. Niega dolor de pecho, pero se queja de una fatiga abrumadora y náuseas.",
+        "initialAssessment": "Paciente letárgica, pálida y diaforética. Responde a órdenes verbales con lentitud. A la auscultación se escuchan crepitantes leves en ambas bases pulmonares.",
+        "vitalSigns": {
+            "FC": "110 lpm (irregular)",
+            "TA": "90/55 mmHg",
+            "FR": "22 rpm",
+            "SpO2": "91% (aire ambiente)",
+            "Glucosa": "190 mg/dL"
+        },
+        "findings": [
+            "Alta sospecha de Síndrome Coronario Agudo (SCA) con presentación atípica.",
+            "Shock cardiogénico incipiente.",
+            "La debilidad, el síncope y las náuseas son 'equivalentes anginosos' comunes en pacientes geriátricos y diabéticos."
+        ],
+        "questions": [
+            { "question": "¿Por qué los pacientes ancianos, especialmente mujeres y diabéticos, a menudo no presentan dolor torácico clásico durante un infarto?" },
+            { "question": "¿Qué intervención diagnóstica es la más importante a realizar en el campo para esta paciente?" },
+            { "question": "¿Por qué se debe administrar la nitroglicerina con extrema precaución o evitarla en un paciente con estos signos vitales?" }
+        ],
+        "references": [
+            "Atención medica prehospitalaria básica de la AAOS - Capítulos de Emergencias Geriátricas y Emergencias Cardiovasculares."
+        ],
+        "correctManage": "- Mantener un alto índice de sospecha de un evento cardíaco.\n- Administrar oxígeno para mantener SpO₂ >94%.\n- Obtener un ECG de 12 derivaciones lo antes posible. Es la herramienta más importante para identificar un infarto.\n- Administrar 300 mg de aspirina masticable si no hay contraindicaciones.\n- Establecer un acceso IV y administrar un pequeño bolo de fluidos (250 ml) con cautela, reevaluando los sonidos pulmonares para no empeorar la congestión.\n- La nitroglicerina está contraindicada por la hipotensión.\n- Notificar al hospital receptor con una alerta de 'código infarto' basado en la sospecha clínica y los hallazgos del ECG.\n- Traslado prioritario a un centro con capacidad de intervención coronaria percutánea.",
+        "explanation": "La neuropatía diabética y los cambios fisiológicos del envejecimiento pueden alterar la percepción del dolor. Por ello, los infartos en la población geriátrica a menudo se manifiestan como debilidad súbita, confusión, disnea, síncope o malestar epigástrico. La hipotensión y los signos de congestión pulmonar sugieren que el infarto es extenso y está causando que el corazón falle como bomba (shock cardiogénico), lo que requiere un manejo cuidadoso y un traslado rápido para la reperfusión."
+    },
+    {
+        "id": "geriatria-sepsis-neumonia-77",
+        "title": "Fiebre y deterioro mental en residente de asilo",
+        "description": "Hombre de 88 años con antecedentes de Alzheimer, postrado en cama, ha tenido una tos productiva durante dos días. Hoy, el personal de enfermería lo encuentra 'más dormido de lo normal', no quiere comer y su respiración es rápida.",
+        "initialAssessment": "Paciente somnoliento, abre los ojos al estímulo doloroso pero no sigue órdenes. Piel caliente y enrojecida. A la auscultación se escuchan roncus y crepitantes gruesos en el lóbulo inferior derecho del pulmón.",
+        "vitalSigns": {
+            "FC": "125 lpm",
+            "TA": "85/50 mmHg",
+            "FR": "30 rpm",
+            "SpO2": "89% (aire ambiente)",
+            "Temp": "39.0°C"
+        },
+        "findings": [
+            "Shock séptico secundario a una neumonía.",
+            "El estado mental alterado es el principal signo de infección grave.",
+            "Insuficiencia respiratoria hipoxémica."
+        ],
+        "questions": [
+            { "question": "¿Por qué los pacientes postrados en cama y con demencia tienen un riesgo tan alto de desarrollar neumonía?" },
+            { "question": "Utilizando los criterios qSOFA, ¿cómo calificaría a este paciente?" },
+            { "question": "¿Cuál es la intervención prehospitalaria más importante para tratar la hipotensión inducida por la sepsis?" }
+        ],
+        "references": [
+            "Atención medica prehospitalaria básica de la AAOS - Capítulos de Emergencias Geriátricas y Enfermedades Infecciosas."
+        ],
+        "correctManage": "- Administrar oxígeno de alto flujo para corregir la hipoxia.\n- Establecer un acceso IV de gran calibre e iniciar una reanimación agresiva con líquidos (bolo de 30 ml/kg de solución salina, según protocolo) para tratar la vasodilatación y la hipoperfusión.\n- Evaluar la glucosa en sangre.\n- Notificar al hospital con una alerta de 'código sepsis' para preparar la administración inmediata de antibióticos.\n- Mantener al paciente abrigado, ya que los ancianos pierden calor fácilmente, incluso con fiebre.",
+        "explanation": "En los ancianos, la respuesta inmunitaria está atenuada y los signos clásicos de infección pueden estar ausentes. La confusión o el letargo (un cambio agudo del estado mental basal) es a menudo el signo más sensible de sepsis. La inmovilidad y la dificultad para tragar aumentan el riesgo de aspiración y neumonía. El tratamiento prehospitalario se centra en el soporte hemodinámico y la oxigenación para prevenir el fallo multiorgánico."
+    },
+    {
+        "id": "geriatria-deshidratacion-78",
+        "title": "Anciano encontrado en domicilio tras varios días",
+        "description": "Se solicita una ambulancia para un hombre de 90 años que vive solo. Sus vecinos no lo habían visto en 3 días. Lo encontraron en el suelo de su cocina, consciente pero demasiado débil para levantarse.",
+        "initialAssessment": "Paciente alerta pero apático. Mucosas orales secas, lengua fisurada. Los ojos parecen hundidos. Al pellizcar la piel del dorso de la mano, esta permanece levantada (signo del pliegue o pobre turgencia).",
+        "vitalSigns": {
+            "FC": "115 lpm",
+            "TA": "95/60 mmHg (acostado)",
+            "FR": "20 rpm",
+            "SpO2": "96%"
+        },
+        "findings": [
+            "Deshidratación severa con hipovolemia.",
+            "Riesgo de lesión renal aguda (insuficiencia pre-renal).",
+            "Posibles desequilibrios electrolíticos que pueden causar debilidad y arritmias."
+        ],
+        "questions": [
+            { "question": "¿Qué factores ponen a los ancianos en mayor riesgo de deshidratación?" },
+            { "question": "¿Qué es la hipotensión ortostática y cómo se evaluaría en este paciente si fuera posible?" },
+            { "question": "Además de la hipovolemia, ¿qué complicación cardíaca se debe vigilar en un paciente con deshidratación y posible desequilibrio electrolítico?" }
+        ],
+        "references": [
+            "Atención medica prehospitalaria básica de la AAOS - Capítulo de Emergencias Geriátricas."
+        ],
+        "correctManage": "- Manejar al paciente con gentileza, asumiendo posibles lesiones por la caída prolongada.\n- Administrar oxígeno.\n- Establecer un acceso IV e iniciar una reanimación cuidadosa con bolos de solución salina (ej. 500 ml), reevaluando la respuesta hemodinámica y buscando signos de sobrecarga de líquidos.\n- Realizar un ECG de 12 derivaciones para buscar signos de alteraciones electrolíticas (ej. ondas T picudas por hiperkalemia).\n- Evaluar la glucosa en sangre.\n- Traslado cuidadoso al hospital para rehidratación continua y análisis de laboratorio.",
+        "explanation": "Los ancianos tienen una menor reserva de agua corporal, una disminución de la sensación de sed y a menudo toman diuréticos, todo lo cual aumenta el riesgo de deshidratación. La deshidratación severa reduce el volumen sanguíneo, causando taquicardia e hipotensión, y puede llevar a una concentración peligrosa de electrolitos como el sodio y el potasio, afectando la función cerebral y cardíaca. El tratamiento es la rehidratación intravenosa cuidadosa."
+    },
+    {
+        "id": "geriatria-acv-tardio-79",
+        "title": "Inicio incierto de ACV en paciente que vive solo",
+        "description": "Hijo visita a su madre de 78 años y la encuentra en el suelo, incapaz de hablar o mover su lado derecho. Estaba bien cuando hablaron por teléfono la noche anterior, hace unas 15 horas.",
+        "initialAssessment": "Paciente despierta, con los ojos abiertos, pero no puede hablar ni seguir órdenes (afasia global). Presenta una parálisis facial derecha marcada y no mueve el brazo ni la pierna derechos (hemiplejía). La cabeza y los ojos están desviados hacia la izquierda.",
+        "vitalSigns": {
+            "FC": "90 lpm (FA)",
+            "TA": "190/105 mmHg",
+            "FR": "18 rpm",
+            "SpO2": "97%",
+            "Glucosa": "140 mg/dL"
+        },
+        "findings": [
+            "Accidente Cerebrovascular (ACV) agudo con un tiempo de 'última vez vista normal' prolongado.",
+            "Signos de una oclusión de un vaso grande (arteria cerebral media izquierda).",
+            "Fuera de la ventana para terapia trombolítica (tPA)."
+        ],
+        "questions": [
+            { "question": "¿Por qué es tan importante determinar la hora exacta de la 'última vez visto normal' en un paciente con ACV?" },
+            { "question": "Aunque este paciente no sea candidato a trombolíticos, ¿por qué es vital el traslado rápido a un centro de ACV integral?" },
+            { "question": "¿Qué significa la desviación de la mirada en un ACV?" }
+        ],
+        "references": [
+            "Atención medica prehospitalaria básica de la AAOS - Capítulos de Emergencias Neurológicas y Geriátricas."
+        ],
+        "correctManage": "- Manejo del ABC. Mantener la vía aérea permeable y aspirar si es necesario.\n- Administrar oxígeno solo si la SpO₂ es <94%.\n- Realizar una evaluación de ACV prehospitalaria (escala de Cincinnati o FAST).\n- Establecer acceso IV en el brazo no afectado. No retrasar el transporte para esto.\n- No administrar medicamentos para bajar la presión arterial en el campo.\n- Notificar al hospital receptor con una alerta de 'código ictus', especificando la hora de la última vez vista normal y la alta probabilidad de una oclusión de vaso grande.\n- Traslado emergente.",
+        "explanation": "La terapia trombolítica (tPA), que disuelve el coágulo, solo puede administrarse dentro de una ventana de tiempo estricta (generalmente 3-4.5 horas). Sin embargo, los pacientes con oclusiones de vasos grandes pueden ser candidatos a una trombectomía mecánica (extracción física del coágulo), que tiene una ventana de hasta 24 horas. Por lo tanto, el traslado rápido a un centro capaz de realizar este procedimiento sigue siendo la máxima prioridad. La desviación de la mirada 'mira hacia la lesión' en el cerebro."
+    },
+    {
+        "id": "geriatria-tep-postqx-80",
+        "title": "Disnea súbita en paciente postoperado de cadera",
+        "description": "Se recibe una llamada para una mujer de 81 años que fue dada de alta hace 3 días después de una cirugía de reemplazo de cadera. Despertó esta mañana con un inicio repentino y severo de falta de aire y un dolor agudo en el pecho.",
+        "initialAssessment": "Paciente sentada en una silla, muy ansiosa y taquipneica. Refiere que el dolor empeora al respirar. Piel pálida y sudorosa. A la auscultación, los campos pulmonares están limpios y claros. La pantorrilla de la pierna no operada está hinchada y sensible.",
+        "vitalSigns": {
+            "FC": "120 lpm (Taquicardia sinusal)",
+            "TA": "105/70 mmHg",
+            "FR": "32 rpm",
+            "SpO2": "88% (aire ambiente)"
+        },
+        "findings": [
+            "Alta sospecha de Tromboembolia Pulmonar (TEP) masiva.",
+            "Factores de riesgo claros (cirugía mayor reciente, inmovilidad).",
+            "La hipoxia con campos pulmonares limpios es un signo clásico de TEP."
+        ],
+        "questions": [
+            { "question": "Explica la 'Tríada de Virchow' y cómo se aplica a este paciente." },
+            { "question": "¿Cuál es el significado de encontrar los pulmones 'limpios' en un paciente con disnea e hipoxia agudas?" },
+            { "question": "¿De dónde provienen la gran mayoría de las embolias pulmonares?" }
+        ],
+        "references": [
+            "Atención medica prehospitalaria básica de la AAOS - Capítulos de Emergencias Respiratorias y Geriátricas."
+        ],
+        "correctManage": "- Administrar oxígeno de alto flujo con una mascarilla no recirculante para corregir la hipoxemia.\n- Colocar a la paciente en una posición de confort, usualmente sentada.\n- Establecer acceso IV.\n- Obtener un ECG de 12 derivaciones para descartar un IAM y buscar signos de sobrecarga del ventrículo derecho (ej. patrón S1Q3T3).\n- Mantener un alto índice de sospecha y transportar rápidamente.\n- Notificar al hospital receptor la sospecha de TEP para que puedan preparar el equipo de tomografía computarizada.",
+        "explanation": "La cirugía mayor y la inmovilidad son los principales factores de riesgo para desarrollar una Trombosis Venosa Profunda (TVP), generalmente en las piernas. Si un fragmento de este coágulo se desprende, viaja a los pulmones y obstruye el flujo sanguíneo, causando una embolia pulmonar. Esto crea un desequilibrio ventilación/perfusión (el aire llega pero la sangre no), lo que resulta en una hipoxia severa a pesar de tener pulmones físicamente sanos y limpios a la auscultación. Es una emergencia de tiempo crítico."
     }
 
 
