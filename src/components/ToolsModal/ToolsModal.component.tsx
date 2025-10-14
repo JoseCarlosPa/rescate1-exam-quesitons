@@ -31,6 +31,7 @@ const ToolsModal: React.FC<ToolsModalProps> = ({onClose}) => {
                         <p className="text-sm text-gray-600">
                             El índice de shock se calcula dividiendo la frecuencia cardíaca entre la presión arterial
                             sistólica.
+                            se calcula dividiendo la frecuencia cardíaca entre la presión arterial sistólica. Un índice mayor a 0.9 puede indicar shock.
                         </p>
 
                         <div className="grid grid-cols-2 gap-4">
@@ -137,7 +138,8 @@ const ToolsModal: React.FC<ToolsModalProps> = ({onClose}) => {
                     <div className="space-y-4">
                         <h3 className="text-xl font-bold text-orange-600">Calculadora de PAM</h3>
                         <p className="text-sm text-gray-600">
-                            La Presión Arterial Media indica la perfusión de órganos vitales.
+                            La Presión Arterial Media indica la perfusión de órganos vitales. Se calcula como:
+                            PAM = (Presión Sistólica + 2 x Presión Diastólica) / 3
                         </p>
 
                         <div className="grid grid-cols-2 gap-4">
@@ -594,7 +596,9 @@ const ToolsModal: React.FC<ToolsModalProps> = ({onClose}) => {
                     <div className="space-y-4">
                         <h3 className="text-xl font-bold text-orange-600">Regla de Parkland</h3>
                         <p className="text-sm text-gray-600 mb-2">Calcula la reposición de líquidos en quemaduras
-                            graves.</p>
+                            graves.
+                            se calcula como: 4 mL x kg de peso x %SCQ (Superficie Corporal Quemada)
+                        </p>
                         <div className="grid grid-cols-2 gap-4">
                             <div>
                                 <label className="block text-sm font-medium text-gray-700 mb-1">Peso (kg)</label>

@@ -1,38 +1,13 @@
 import {MarkerType} from "@xyflow/react";
-import React from 'react'; // Necesario para usar JSX
-
-// Interfaz base para los nodos
-export interface FlowNode {
-    id: string;
-    type?: 'input' | 'output' | 'default'; // El tipo es opcional en la definición base pero requerido en la práctica
-    data: {
-        label: React.ReactNode;
-    };
-    position: { x: number; y: number };
-    style?: React.CSSProperties;
-}
-
-// Interfaz base para las conexiones
-export interface FlowEdge {
-    id: string;
-    source: string;
-    target: string;
-    label?: string;
-    type?: string;
-    markerEnd?: { type: MarkerType };
-    style?: React.CSSProperties;
-    animated?: boolean;
-}
-
-// Interfaz para definir un protocolo completo
-export interface Protocol {
-    id: string;
-    name: string;
-    description: string;
-    category: 'basic' | 'advanced' | 'trauma' | 'medical';
-    nodes: FlowNode[];
-    edges: FlowEdge[];
-}
+import {Protocol} from "./AlgorithmsAndProtocols.types.ts";
+import {
+    triageStartProtocol,
+    triageJumpStartProtocol,
+    viaAereaProtocol,
+    shockProtocol,
+    sindromeCoronarioProtocol,
+    acvProtocol
+} from './AlgorithmsAndProtocols.additional.tsx';
 
 // Protocolos disponibles
 
@@ -1031,7 +1006,13 @@ export const allProtocols: Protocol[] = [
     blsProtocol,
     xabcdeProtocol,
     aclsProtocol,
-    phtlsProtocol
+    phtlsProtocol,
+    triageStartProtocol,
+    triageJumpStartProtocol,
+    viaAereaProtocol,
+    shockProtocol,
+    sindromeCoronarioProtocol,
+    acvProtocol
 ];
 
 // Categorías de protocolos
@@ -1040,5 +1021,6 @@ export const protocolCategories = [
     {id: 'basic', name: 'Básicos'},
     {id: 'advanced', name: 'Avanzados'},
     {id: 'trauma', name: 'Trauma'},
-    {id: 'medical', name: 'Médicos'}
+    {id: 'medical', name: 'Médicos'},
+    {id: 'triage', name: 'Triage'}
 ];
