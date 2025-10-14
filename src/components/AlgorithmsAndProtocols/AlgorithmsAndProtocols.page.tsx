@@ -11,7 +11,7 @@ import {
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 import {useCallback, useState} from "react";
-import {allProtocols, Protocol, protocolCategories} from "./AlgorithmsAndProtocols.constants.tsx";
+import {allProtocols, protocolCategories} from "./AlgorithmsAndProtocols.constants.tsx";
 import {NavLink} from "react-router";
 import {AllRoutes} from "../Router/Router.constants";
 import {IoReturnDownBack} from "react-icons/io5";
@@ -19,6 +19,7 @@ import {LuNetwork} from "react-icons/lu";
 import {FaBriefcaseMedical, FaInfoCircle, FaMedkit} from "react-icons/fa";
 import {TbEmergencyBed} from "react-icons/tb";
 import {GiMedicalPack} from "react-icons/gi";
+import {Protocol} from "./AlgorithmsAndProtocols.types.ts";
 
 export default function AlgorithmsAndProtocols() {
     // Estado para el protocolo seleccionado
