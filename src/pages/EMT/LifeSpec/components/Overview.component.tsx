@@ -4,7 +4,7 @@ import {BsPersonCheck} from "react-icons/bs";
 import {MdAccessibility} from "react-icons/md";
 
 export default function Overview() {
-    return(
+    return (
         <div className="space-y-6">
             <div>
                 <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">¿Qué es

@@ -1,7 +1,7 @@
 import {MdLightbulb, MdPlayArrow, MdSchool} from "react-icons/md";
 
-export default function Roots(){
-    return(
+export default function Roots() {
+    return (
         <div className="space-y-6">
             <div>
                 <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Prefijos

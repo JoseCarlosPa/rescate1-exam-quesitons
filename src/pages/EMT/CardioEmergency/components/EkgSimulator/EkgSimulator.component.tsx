@@ -1,6 +1,6 @@
-import { motion, AnimatePresence } from 'framer-motion';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from 'recharts';
-import { RhythmType} from "./EkgSimulator.types.ts";
+import {AnimatePresence, motion} from 'framer-motion';
+import {CartesianGrid, Line, LineChart, ResponsiveContainer, XAxis, YAxis} from 'recharts';
+import {RhythmType} from "./EkgSimulator.types.ts";
 import useEkgSimulator from "./EkgSimulator.hook.ts";
 import {ekgExplanations, pqrstInfo} from "./EkgSimultaro.constants.ts";
 import {useState} from "react";
@@ -39,7 +39,7 @@ export default function EkgSimulator() {
                 <div className="h-64 bg-black">
                     <ResponsiveContainer width="100%" height="100%">
                         <LineChart data={ekgData}>
-                            <CartesianGrid strokeDasharray="3 3" stroke="#1a3a1a" />
+                            <CartesianGrid strokeDasharray="3 3" stroke="#1a3a1a"/>
                             <XAxis
                                 dataKey="time"
                                 stroke="#00ff00"
@@ -49,7 +49,7 @@ export default function EkgSimulator() {
                             <YAxis
                                 stroke="#00ff00"
                                 domain={[-1, 3]}
-                                tick={{ fill: '#00ff00', fontSize: 12 }}
+                                tick={{fill: '#00ff00', fontSize: 12}}
                             />
                             <Line
                                 type="monotone"
@@ -67,7 +67,7 @@ export default function EkgSimulator() {
                 {currentInfo.bpm > 0 && (
                     <motion.div
                         className="absolute bottom-6 right-6 w-12 h-12 bg-green-500 rounded-full"
-                        animate={{ scale: [1, 1.3, 1], opacity: [0.7, 1, 0.7] }}
+                        animate={{scale: [1, 1.3, 1], opacity: [0.7, 1, 0.7]}}
                         transition={{
                             duration: 60 / currentInfo.bpm,
                             repeat: Infinity,
@@ -82,8 +82,8 @@ export default function EkgSimulator() {
                 <button
                     onClick={() => setIsPlaying(!isPlaying)}
                     className={`px-6 py-2 rounded-lg font-semibold transition ${
-                        isPlaying 
-                            ? 'bg-red-500 hover:bg-red-600 text-white' 
+                        isPlaying
+                            ? 'bg-red-500 hover:bg-red-600 text-white'
                             : 'bg-green-500 hover:bg-green-600 text-white'
                     }`}
                 >
@@ -106,9 +106,9 @@ export default function EkgSimulator() {
             {/* Controles Personalizados */}
             {showCustomControls && (
                 <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: 'auto' }}
-                    exit={{ opacity: 0, height: 0 }}
+                    initial={{opacity: 0, height: 0}}
+                    animate={{opacity: 1, height: 'auto'}}
+                    exit={{opacity: 0, height: 0}}
                     className="bg-indigo-50 p-6 rounded-lg mb-6 border-2 border-indigo-300"
                 >
                     <h3 className="text-xl font-bold mb-4 text-indigo-800">
@@ -150,7 +150,10 @@ export default function EkgSimulator() {
                                 max="0.5"
                                 step="0.05"
                                 value={customParams.pWaveAmplitude}
-                                onChange={(e) => setCustomParams({...customParams, pWaveAmplitude: parseFloat(e.target.value)})}
+                                onChange={(e) => setCustomParams({
+                                    ...customParams,
+                                    pWaveAmplitude: parseFloat(e.target.value)
+                                })}
                                 className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer"
                                 disabled={selectedRhythm !== 'custom'}
                             />
@@ -168,7 +171,10 @@ export default function EkgSimulator() {
                                 max="4"
                                 step="0.1"
                                 value={customParams.qrsAmplitude}
-                                onChange={(e) => setCustomParams({...customParams, qrsAmplitude: parseFloat(e.target.value)})}
+                                onChange={(e) => setCustomParams({
+                                    ...customParams,
+                                    qrsAmplitude: parseFloat(e.target.value)
+                                })}
                                 className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer"
                                 disabled={selectedRhythm !== 'custom'}
                             />
@@ -186,7 +192,10 @@ export default function EkgSimulator() {
                                 max="0.8"
                                 step="0.05"
                                 value={customParams.tWaveAmplitude}
-                                onChange={(e) => setCustomParams({...customParams, tWaveAmplitude: parseFloat(e.target.value)})}
+                                onChange={(e) => setCustomParams({
+                                    ...customParams,
+                                    tWaveAmplitude: parseFloat(e.target.value)
+                                })}
                                 className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer"
                                 disabled={selectedRhythm !== 'custom'}
                             />
@@ -204,7 +213,10 @@ export default function EkgSimulator() {
                                 max="1"
                                 step="0.1"
                                 value={customParams.stElevation}
-                                onChange={(e) => setCustomParams({...customParams, stElevation: parseFloat(e.target.value)})}
+                                onChange={(e) => setCustomParams({
+                                    ...customParams,
+                                    stElevation: parseFloat(e.target.value)
+                                })}
                                 className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer"
                                 disabled={selectedRhythm !== 'custom'}
                             />
@@ -263,9 +275,9 @@ export default function EkgSimulator() {
             <AnimatePresence mode="wait">
                 <motion.div
                     key={selectedRhythm}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
+                    initial={{opacity: 0, y: 20}}
+                    animate={{opacity: 1, y: 0}}
+                    exit={{opacity: 0, y: -20}}
                     className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-lg mb-8 border-l-4 border-blue-500"
                 >
                     <h3 className={`text-2xl font-bold mb-3 ${currentInfo.color}`}>
@@ -302,11 +314,11 @@ export default function EkgSimulator() {
                         {pqrstInfo.map((item, index) => (
                             <motion.div
                                 key={item.label}
-                                initial={{ opacity: 0, x: -20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: index * 0.1 }}
+                                initial={{opacity: 0, x: -20}}
+                                animate={{opacity: 1, x: 0}}
+                                transition={{delay: index * 0.1}}
                                 className="bg-white rounded-lg shadow border-l-4 overflow-hidden"
-                                style={{ borderColor: item.color.replace('bg-', '#') }}
+                                style={{borderColor: item.color.replace('bg-', '#')}}
                             >
                                 <button
                                     onClick={() => setExpandedPQRST(expandedPQRST === item.label ? null : item.label)}
@@ -325,9 +337,9 @@ export default function EkgSimulator() {
                                 <AnimatePresence>
                                     {expandedPQRST === item.label && (
                                         <motion.div
-                                            initial={{ height: 0, opacity: 0 }}
-                                            animate={{ height: 'auto', opacity: 1 }}
-                                            exit={{ height: 0, opacity: 0 }}
+                                            initial={{height: 0, opacity: 0}}
+                                            animate={{height: 'auto', opacity: 1}}
+                                            exit={{height: 0, opacity: 0}}
                                             className="px-4 pb-4 bg-gray-50"
                                         >
                                             <div className="pt-2 border-t border-gray-200">
@@ -357,7 +369,8 @@ export default function EkgSimulator() {
             )}
 
             {/* Sistema de Conducción */}
-            <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-lg mb-6 border-l-4 border-purple-500">
+            <div
+                className="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-lg mb-6 border-l-4 border-purple-500">
                 <h3 className="text-xl font-bold mb-3 text-purple-800">
                     {ekgExplanations.conductionSystem.title}
                 </h3>

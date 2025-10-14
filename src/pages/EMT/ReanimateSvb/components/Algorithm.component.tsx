@@ -3,8 +3,8 @@ import {BsStopwatch} from "react-icons/bs";
 import {FiClock} from "react-icons/fi";
 import {MdSpeed} from "react-icons/md";
 
-export default function Algorithm(){
-    return(<div className="space-y-6">
+export default function Algorithm() {
+    return (<div className="space-y-6">
         <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
             <FaUserMd className="w-6 h-6 mr-2 text-orange-500"/>
             Algoritmo de Soporte Vital Básico (SVB) - AHA 2020

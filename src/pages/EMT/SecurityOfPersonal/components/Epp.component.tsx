@@ -3,8 +3,8 @@ import {BsPersonCheck, BsShieldCheck} from "react-icons/bs";
 import {MdEmergency, MdHealthAndSafety, MdSecurity, MdWarning} from "react-icons/md";
 import {FiAlertTriangle, FiCheckCircle, FiHeart} from "react-icons/fi";
 
-export default function Epp(){
-    return(
+export default function Epp() {
+    return (
         <div className="space-y-6">
             <h2 className="text-3xl font-bold text-gray-800 mb-6 border-b border-gray-200 pb-3">
                 <FaHardHat className="inline mr-3 text-blue-500"/>

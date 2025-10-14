@@ -1,8 +1,8 @@
 import {FaHeartbeat} from "react-icons/fa";
 import {FiActivity} from "react-icons/fi";
 
-export default function Vitals(){
-    return(
+export default function Vitals() {
+    return (
         <div className="space-y-6">
             <div className="flex flex-col md:flex-row gap-6 items-center mb-6">
                 <div className="md:w-1/2">

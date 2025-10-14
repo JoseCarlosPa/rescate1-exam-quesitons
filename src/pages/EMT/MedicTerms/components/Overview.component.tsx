@@ -3,7 +3,7 @@ import {BsLightning} from "react-icons/bs";
 import {MdLightbulb} from "react-icons/md";
 import {FaBrain, FaEye, FaHeart, FaLungs} from "react-icons/fa";
 
-export default function Overview(){
+export default function Overview() {
     const anatomicalTerms = [
         {system: "Cardiovascular", icon: FaHeart, color: "text-red-500", terms: ["Cardio-", "Angio-", "Vaso-"]},
         {system: "Respiratorio", icon: FaLungs, color: "text-blue-500", terms: ["Pneumo-", "Pulmo-", "Bronco-"]},
@@ -11,7 +11,7 @@ export default function Overview(){
         {system: "Oftalmológico", icon: FaEye, color: "text-green-500", terms: ["Oftalmo-", "Oculo-", "Irido-"]},
     ];
 
-    return(
+    return (
         <div className="space-y-6">
             <div>
                 <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">¿Qué es

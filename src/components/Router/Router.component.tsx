@@ -362,7 +362,7 @@ export default function Router() {
                 <Route path={AllRoutes.RESOURCES} element={<Resources/>}/>
                 <Route path={AllRoutes.DISCLAMER} element={<Disclaimer/>}/>
                 <Route path={AllRoutes.PRIVACYANDTERMS} element={<PrivacyAndTerms/>}/>
-                <Route path={AllRoutes.CASE_SIMULATOR} element={<CaseSimulatorPage />} />
+                <Route path={AllRoutes.CASE_SIMULATOR} element={<CaseSimulatorPage/>}/>
 
             </Routes>
         </Suspense>

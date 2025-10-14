@@ -2,8 +2,8 @@ import {FaExclamationTriangle, FaGavel, FaUserMd} from "react-icons/fa";
 import {AiOutlineWarning} from "react-icons/ai";
 import {BsShieldCheck} from "react-icons/bs";
 
-export default function Legal(){
-    return(
+export default function Legal() {
+    return (
         <div className="space-y-6">
             <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Principios
                 legales en la atención prehospitalaria</h2>

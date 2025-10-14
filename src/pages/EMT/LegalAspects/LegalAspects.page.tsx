@@ -6,10 +6,10 @@ import {faqData} from "./LegalAspects.questions.ts";
 import {IoMdBriefcase} from "react-icons/io";
 import {IoReturnDownBack} from "react-icons/io5";
 import {useState} from "react";
-import { MdQuiz} from "react-icons/md";
+import {MdQuiz} from "react-icons/md";
 import {PiChalkboardTeacher} from "react-icons/pi";
 import {BsBookHalf} from "react-icons/bs";
-import { RiGovernmentLine} from "react-icons/ri";
+import {RiGovernmentLine} from "react-icons/ri";
 
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
 import {ForumSection} from "../../../components/ForumSection";
@@ -128,10 +128,10 @@ export default function LegalAspects() {
 
                         {/* Contenido principal basado en pestañas */}
                         <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-sm p-6 mb-8">
-                            {activeTab === 'overview' && (<Overview />)}
-                            {activeTab === 'legal' && (<Legal />)}
-                            {activeTab === 'consent' && (<Consent />)}
-                            {activeTab === 'practice' && (<Practice />)}
+                            {activeTab === 'overview' && (<Overview/>)}
+                            {activeTab === 'legal' && (<Legal/>)}
+                            {activeTab === 'consent' && (<Consent/>)}
+                            {activeTab === 'practice' && (<Practice/>)}
                         </div>
 
                         {/* FAQ Section */}
@@ -182,7 +182,8 @@ export default function LegalAspects() {
                                     <h3 className="text-lg font-medium mb-2">Recursos en línea</h3>
                                     <ul className="list-disc list-inside space-y-2 text-gray-700">
                                         <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4909960/" target="_blank"
-                                               rel="noopener noreferrer" className="text-blue-600 hover:underline">National Medicine Library</a></li>
+                                               rel="noopener noreferrer" className="text-blue-600 hover:underline">National
+                                            Medicine Library</a></li>
                                     </ul>
                                 </div>
                                 <div>

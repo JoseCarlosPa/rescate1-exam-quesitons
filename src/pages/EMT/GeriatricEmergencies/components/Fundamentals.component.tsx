@@ -4,8 +4,8 @@ import {BsLightbulb, BsShield} from "react-icons/bs";
 import {FiActivity, FiAlertTriangle} from "react-icons/fi";
 import {FaBrain, FaThermometer} from "react-icons/fa6";
 
-export default function Fundamentals(){
-    return(<div className="space-y-8">
+export default function Fundamentals() {
+    return (<div className="space-y-8">
         {/* Importancia crítica del tema */}
         <div
             className="bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-red-500 p-6 rounded-lg">

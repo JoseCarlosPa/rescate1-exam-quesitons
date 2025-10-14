@@ -3,8 +3,8 @@ import {MdCheckCircle, MdOutlineTimer, MdWarning} from "react-icons/md";
 import {FiActivity} from "react-icons/fi";
 import {BsLightbulb, BsShield} from "react-icons/bs";
 
-export default function Overview(){
-    return(
+export default function Overview() {
+    return (
         <div className="space-y-8">
             {/* Importancia crítica del RCP */}
             <div

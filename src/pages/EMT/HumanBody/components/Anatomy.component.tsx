@@ -2,8 +2,8 @@ import {FaEye, FaHeart, FaLungs} from "react-icons/fa";
 import {GiKidneys, GiLiver} from "react-icons/gi";
 import {MdBloodtype, MdThermostat} from "react-icons/md";
 
-export default function Anatomy(){
-    return(
+export default function Anatomy() {
+    return (
         <div className="space-y-6">
             <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Anatomía y
                 fisiología crítica para paramédicos</h2>

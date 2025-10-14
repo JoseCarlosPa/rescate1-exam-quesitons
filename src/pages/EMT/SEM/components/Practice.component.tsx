@@ -5,8 +5,8 @@ import {FaAmbulance, FaClock, FaShieldAlt, FaUsers} from "react-icons/fa";
 import {BsTelephone} from "react-icons/bs";
 import {MdEmergency, MdSecurity, MdTipsAndUpdates} from "react-icons/md";
 
-export default function Practice(){
-    return(
+export default function Practice() {
+    return (
         <div className="space-y-6">
             <h2 className="text-3xl font-bold text-gray-800 mb-6 border-b border-gray-200 pb-3">
                 <PiChalkboardTeacher className="inline mr-3 text-orange-500"/>

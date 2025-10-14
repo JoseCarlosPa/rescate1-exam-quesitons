@@ -4,8 +4,8 @@ import {MdEmergency, MdInfo} from "react-icons/md";
 import {FiActivity, FiCheckCircle} from "react-icons/fi";
 import {FaRadio} from "react-icons/fa6";
 
-export default function Activation(){
-    return(
+export default function Activation() {
+    return (
         <div className="space-y-6">
             <h2 className="text-3xl font-bold text-gray-800 mb-6 border-b border-gray-200 pb-3">
                 <BsTelephone className="inline mr-3 text-green-500"/>
@@ -88,7 +88,8 @@ export default function Activation(){
                             <p className="text-sm text-gray-600">
                                 Condición seria, requiere atención pronta.
                             </p>
-                            <span className="text-xs text-yellow-600 font-medium">Tiempo objetivo: &lt; 15 minutos</span>
+                            <span
+                                className="text-xs text-yellow-600 font-medium">Tiempo objetivo: &lt; 15 minutos</span>
                         </div>
                         <div className="bg-green-50 p-3 rounded border-l-4 border-green-600">
                             <h4 className="font-bold text-green-700">Código Verde - No

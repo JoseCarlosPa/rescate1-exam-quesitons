@@ -1,8 +1,8 @@
 import {FaBone, FaBrain, FaHandSparkles, FaHeart, FaLungs} from "react-icons/fa";
 import {GiKidneys, GiStomach} from "react-icons/gi";
 
-export default function Systems(){
-    return(
+export default function Systems() {
+    return (
         <div className="space-y-6">
             <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Sistemas
                 principales del cuerpo humano</h2>

@@ -4,8 +4,8 @@ import {FiAlertTriangle} from "react-icons/fi";
 import {MdPsychology, MdTipsAndUpdates, MdWarning} from "react-icons/md";
 import {FaAmbulance, FaBrain, FaHeart, FaMask, FaUsers} from "react-icons/fa";
 
-export default function Practice(){
-    return(
+export default function Practice() {
+    return (
         <div className="space-y-6">
             <h2 className="text-3xl font-bold text-gray-800 mb-6 border-b border-gray-200 pb-3">
                 <PiChalkboardTeacher className="inline mr-3 text-orange-500"/>
@@ -64,13 +64,15 @@ export default function Practice(){
                                 <div
                                     className="w-6 h-6 bg-red-600 text-white rounded-full flex items-center justify-center text-xs mr-2 mt-0.5">1
                                 </div>
-                                <span className="text-sm">Solicitar apoyo policial inmediato para control de tráfico</span>
+                                <span
+                                    className="text-sm">Solicitar apoyo policial inmediato para control de tráfico</span>
                             </li>
                             <li className="flex items-start text-gray-700">
                                 <div
                                     className="w-6 h-6 bg-red-600 text-white rounded-full flex items-center justify-center text-xs mr-2 mt-0.5">2
                                 </div>
-                                <span className="text-sm">Colocarse chaleco reflectante y activar luces de emergencia</span>
+                                <span
+                                    className="text-sm">Colocarse chaleco reflectante y activar luces de emergencia</span>
                             </li>
                             <li className="flex items-start text-gray-700">
                                 <div

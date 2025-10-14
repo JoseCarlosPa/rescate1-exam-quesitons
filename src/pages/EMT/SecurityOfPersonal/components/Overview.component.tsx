@@ -4,7 +4,7 @@ import {FiActivity, FiCheckCircle, FiShield} from "react-icons/fi";
 import {HiOutlineExclamationTriangle} from "react-icons/hi2";
 
 export default function Overview() {
-    return(
+    return (
         <div className="space-y-6">
             <h2 className="text-3xl font-bold text-gray-800 mb-6 border-b border-gray-200 pb-3">
                 <FaShieldAlt className="inline mr-3 text-orange-500"/>

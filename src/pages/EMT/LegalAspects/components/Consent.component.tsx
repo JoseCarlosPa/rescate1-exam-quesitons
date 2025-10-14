@@ -3,8 +3,8 @@ import {MdHealthAndSafety, MdSecurity} from "react-icons/md";
 import {AiOutlineWarning} from "react-icons/ai";
 import {BsFileText} from "react-icons/bs";
 
-export default function Consent(){
-    return(
+export default function Consent() {
+    return (
         <div className="space-y-6">
             <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Consentimiento
                 informado y ética profesional</h2>

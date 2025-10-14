@@ -2,8 +2,8 @@ import {FaBrain, FaHeart, FaLungs} from "react-icons/fa";
 import {MdLightbulb, MdSchool} from "react-icons/md";
 import {BsLightning} from "react-icons/bs";
 
-export default function Abbreviations(){
-    return(
+export default function Abbreviations() {
+    return (
         <div className="space-y-6">
             <div>
                 <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Abreviaturas

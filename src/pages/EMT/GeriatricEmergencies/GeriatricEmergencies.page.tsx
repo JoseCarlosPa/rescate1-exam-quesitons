@@ -8,7 +8,7 @@ import {useState} from "react";
 import {MdQuiz} from "react-icons/md";
 import {BsBookHalf} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
-import { FaPersonCane} from "react-icons/fa6";
+import {FaPersonCane} from "react-icons/fa6";
 
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
 import {ForumSection} from "../../../components/ForumSection";
@@ -132,15 +132,15 @@ export default function GeriatricEmergencies() {
 
                         {/* Contenido principal basado en pestañas */}
                         <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-sm p-6 mb-8">
-                            {activeTab === 'fundamentals' && (<Fundamentals />)}
+                            {activeTab === 'fundamentals' && (<Fundamentals/>)}
 
-                            {activeTab === 'assessment' && (<Assessment />)}
+                            {activeTab === 'assessment' && (<Assessment/>)}
 
-                            {activeTab === 'conditions' && (<Conditions />)}
+                            {activeTab === 'conditions' && (<Conditions/>)}
 
-                            {activeTab === 'management' && (<Management />)}
+                            {activeTab === 'management' && (<Management/>)}
 
-                            {activeTab === 'cases' && (<Cases />)}
+                            {activeTab === 'cases' && (<Cases/>)}
                         </div>
 
                         {/* FAQ Section */}

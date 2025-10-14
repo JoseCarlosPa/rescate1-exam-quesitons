@@ -1,7 +1,7 @@
 import {FaExclamationTriangle, FaFirstAid, FaHandHoldingMedical} from "react-icons/fa";
 
-export default function Techniques(){
-    return(<div className="space-y-8">
+export default function Techniques() {
+    return (<div className="space-y-8">
         <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
             <FaFirstAid className="w-6 h-6 mr-2 text-orange-500"/>
             Técnicas y Dispositivos en SVB

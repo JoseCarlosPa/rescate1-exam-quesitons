@@ -3,10 +3,10 @@ import {AllRoutes} from "../../../components/Router/Router.constants.ts";
 import {Disclosure} from "@headlessui/react";
 import {ChevronUpIcon} from "@heroicons/react/16/solid";
 import {faqData} from "./ReanimateSvb.questions.ts";
-import { FaHandHoldingMedical, FaHeartbeat, FaUserMd} from "react-icons/fa";
+import {FaHandHoldingMedical, FaHeartbeat, FaUserMd} from "react-icons/fa";
 import {IoReturnDownBack} from "react-icons/io5";
 import {useState} from "react";
-import { MdOutlineTimer, MdQuiz, MdSpeed} from "react-icons/md";
+import {MdOutlineTimer, MdQuiz, MdSpeed} from "react-icons/md";
 import {BsBookHalf, BsLightbulb, BsStopwatch} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
@@ -128,16 +128,16 @@ export default function ReanimateSvb() {
                         {/* Contenido principal basado en pestañas */}
                         <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-sm p-6 mb-8">
                             {activeTab === 'overview' && (
-                                <Overview />
+                                <Overview/>
                             )}
                             {activeTab === 'algorithm' && (
-                                <Algorithm />
+                                <Algorithm/>
                             )}
                             {activeTab === 'techniques' && (
-                                <Techniques />
+                                <Techniques/>
                             )}
                             {activeTab === 'practice' && (
-                                <Practice />
+                                <Practice/>
                             )}
                         </div>
 

@@ -4,7 +4,7 @@ import {FiAlertTriangle, FiCheckCircle, FiEye, FiHeart} from "react-icons/fi";
 import {BsExclamationTriangle} from "react-icons/bs";
 
 export default function Stress() {
-    return(
+    return (
         <div className="space-y-6">
             <h2 className="text-3xl font-bold text-gray-800 mb-6 border-b border-gray-200 pb-3">
                 <FaBrain className="inline mr-3 text-purple-500"/>

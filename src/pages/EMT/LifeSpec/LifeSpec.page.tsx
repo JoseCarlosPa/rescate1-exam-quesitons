@@ -2,11 +2,11 @@ import {NavLink} from "react-router";
 import {Disclosure} from "@headlessui/react";
 import {ChevronUpIcon} from "@heroicons/react/16/solid";
 import {faqData} from "./LifeSpec.questions.ts";
-import {FaBaby } from "react-icons/fa";
+import {FaBaby} from "react-icons/fa";
 import {AllRoutes} from "../../../components/Router/Router.constants.ts";
 import {IoReturnDownBack} from "react-icons/io5";
 import {useState} from "react";
-import { MdQuiz} from "react-icons/md";
+import {MdQuiz} from "react-icons/md";
 import {BsBookHalf} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
@@ -122,10 +122,10 @@ export default function LifeSpec() {
 
                         {/* Contenido principal basado en pestañas */}
                         <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-sm p-6 mb-8">
-                            {activeTab === 'overview' && (<Overview />)}
-                            {activeTab === 'vitals' && (<Vitals />)}
-                            {activeTab === 'prehospital' && (<Prehospital />)}
-                            {activeTab === 'practice' && (<Practice />)}
+                            {activeTab === 'overview' && (<Overview/>)}
+                            {activeTab === 'vitals' && (<Vitals/>)}
+                            {activeTab === 'prehospital' && (<Prehospital/>)}
+                            {activeTab === 'practice' && (<Practice/>)}
                         </div>
 
                         {/* FAQ Section */}

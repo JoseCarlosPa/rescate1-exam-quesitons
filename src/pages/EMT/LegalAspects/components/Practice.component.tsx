@@ -1,7 +1,7 @@
 import {RiFileList3Line} from "react-icons/ri";
 
-export default function Practice(){
-    return(
+export default function Practice() {
+    return (
         <div className="space-y-6">
             <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Casos
                 prácticos y análisis legal</h2>

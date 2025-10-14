@@ -1,7 +1,5 @@
 import {NavLink} from "react-router";
-import {
-    FaAmbulance,
-} from "react-icons/fa";
+import {FaAmbulance,} from "react-icons/fa";
 import {Disclosure} from "@headlessui/react";
 import {ChevronUpIcon} from "@heroicons/react/16/solid";
 import {faqData} from "./Sem.questions.ts";
@@ -121,10 +119,10 @@ export default function Sem() {
 
                         {/* Contenido principal basado en pestañas */}
                         <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-sm p-6 mb-8">
-                            {activeTab === 'overview' && (<Overview />)}
+                            {activeTab === 'overview' && (<Overview/>)}
                             {activeTab === 'structure' && (<Structure/>)}
-                            {activeTab === 'activation' && (<Activation />)}
-                            {activeTab === 'practice' && (<Practice />)}
+                            {activeTab === 'activation' && (<Activation/>)}
+                            {activeTab === 'practice' && (<Practice/>)}
                         </div>
 
                         {/* FAQ Section */}

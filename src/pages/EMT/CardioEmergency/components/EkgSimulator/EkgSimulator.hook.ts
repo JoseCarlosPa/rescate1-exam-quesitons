@@ -1,6 +1,6 @@
 import {CustomParameters, EKGPoint, RhythmType} from "./EkgSimulator.types.ts";
 import {rhythmData} from "./EkgSimultaro.constants.ts";
-import {useEffect, useState, useCallback} from "react";
+import {useCallback, useEffect, useState} from "react";
 
 export default function useEkgSimulator() {
     const [selectedRhythm, setSelectedRhythm] = useState<RhythmType>('normal');
@@ -50,7 +50,7 @@ export default function useEkgSimulator() {
         if (rhythm === 'asystole') {
             // Línea plana con mínimo ruido
             for (let i = 0; i < totalPoints; i++) {
-                data.push({ time: i, voltage: (Math.random() - 0.5) * 0.05 });
+                data.push({time: i, voltage: (Math.random() - 0.5) * 0.05});
             }
             return data;
         }
@@ -60,7 +60,7 @@ export default function useEkgSimulator() {
             for (let i = 0; i < totalPoints; i++) {
                 const chaos = Math.sin(i * 0.5) * Math.random() * 2;
                 const noise = (Math.random() - 0.5) * 1.5;
-                data.push({ time: i, voltage: chaos + noise });
+                data.push({time: i, voltage: chaos + noise});
             }
             return data;
         }
@@ -128,7 +128,7 @@ export default function useEkgSimulator() {
                 }
             }
 
-            data.push({ time: i, voltage });
+            data.push({time: i, voltage});
         }
 
         return data;

@@ -6,9 +6,7 @@ import {GiProtectionGlasses} from "react-icons/gi";
 import {AllRoutes} from "../../../components/Router/Router.constants.ts";
 import {IoReturnDownBack} from "react-icons/io5";
 import {useState} from "react";
-import {
-    MdQuiz,
-} from "react-icons/md";
+import {MdQuiz,} from "react-icons/md";
 import {BsBookHalf} from "react-icons/bs";
 import {PiChalkboardTeacher} from "react-icons/pi";
 
@@ -123,10 +121,10 @@ export default function SecurityOfPersonal() {
 
                         {/* Contenido principal basado en pestañas */}
                         <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-sm p-6 mb-8">
-                            {activeTab === 'overview' && (<Overview />)}
-                            {activeTab === 'epp' && (<Epp />)}
-                            {activeTab === 'stress' && (<Stress />)}
-                            {activeTab === 'practice' && (<Practice />)}
+                            {activeTab === 'overview' && (<Overview/>)}
+                            {activeTab === 'epp' && (<Epp/>)}
+                            {activeTab === 'stress' && (<Stress/>)}
+                            {activeTab === 'practice' && (<Practice/>)}
                         </div>
 
                         {/* FAQ Section */}

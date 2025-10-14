@@ -23,4 +23,13 @@ export interface CustomParameters {
     stElevation: number;
 }
 
-export type RhythmType = 'normal' | 'tachycardia' | 'bradycardia' | 'vfib' | 'afib' | 'vtach' | 'asystole' | 'stemi' | 'custom';
+export type RhythmType =
+    'normal'
+    | 'tachycardia'
+    | 'bradycardia'
+    | 'vfib'
+    | 'afib'
+    | 'vtach'
+    | 'asystole'
+    | 'stemi'
+    | 'custom';

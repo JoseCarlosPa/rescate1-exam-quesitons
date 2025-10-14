@@ -3,8 +3,8 @@ import {MdInfo, MdTipsAndUpdates} from "react-icons/md";
 import {BsClockHistory} from "react-icons/bs";
 import {FiActivity, FiCheckCircle} from "react-icons/fi";
 
-export default function Overview(){
-    return(
+export default function Overview() {
+    return (
         <div className="space-y-6">
             <h2 className="text-3xl font-bold text-gray-800 mb-6 border-b border-gray-200 pb-3">
                 <FaAmbulance className="inline mr-3 text-orange-500"/>

@@ -31,9 +31,9 @@ export const caseStudies: CaseStudy[] = [
             "El uso de anticoagulantes aumenta el riesgo de hemorragia interna significativa."
         ],
         questions: [
-            { question: "¿Cuál es el principal riesgo asociado a una fractura de pelvis o fémur en un paciente geriátrico anticoagulado?" },
-            { question: "¿Qué método de inmovilización es el más adecuado para esta lesión en el entorno prehospitalario?" },
-            { question: "¿Por qué es crucial el manejo del dolor en este tipo de pacientes?" }
+            {question: "¿Cuál es el principal riesgo asociado a una fractura de pelvis o fémur en un paciente geriátrico anticoagulado?"},
+            {question: "¿Qué método de inmovilización es el más adecuado para esta lesión en el entorno prehospitalario?"},
+            {question: "¿Por qué es crucial el manejo del dolor en este tipo de pacientes?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Trauma Geriátrico.",
@@ -59,9 +59,9 @@ export const caseStudies: CaseStudy[] = [
             "Estridor y tos 'perruna' son patognomónicos."
         ],
         questions: [
-            { question: "¿Qué hallazgos clínicos ayudan a diferenciar el Crup de la Epiglotitis?" },
-            { question: "¿Cuál es el beneficio de administrar aire húmedo o frío a este paciente?" },
-            { question: "¿Cuándo está indicada la administración de epinefrina nebulizada en el Crup?" }
+            {question: "¿Qué hallazgos clínicos ayudan a diferenciar el Crup de la Epiglotitis?"},
+            {question: "¿Cuál es el beneficio de administrar aire húmedo o frío a este paciente?"},
+            {question: "¿Cuándo está indicada la administración de epinefrina nebulizada en el Crup?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Emergencias Pediátricas.",
@@ -86,9 +86,9 @@ export const caseStudies: CaseStudy[] = [
             "La lectura del oxímetro de pulso es falsamente normal y no es fiable."
         ],
         questions: [
-            { question: "¿Por qué el oxímetro de pulso convencional no es útil para detectar la intoxicación por CO?" },
-            { question: "¿Cuál es el tratamiento prehospitalario inmediato y más importante para estos pacientes?" },
-            { question: "¿Qué es la carboxihemoglobina y cómo afecta el transporte de oxígeno?" }
+            {question: "¿Por qué el oxímetro de pulso convencional no es útil para detectar la intoxicación por CO?"},
+            {question: "¿Cuál es el tratamiento prehospitalario inmediato y más importante para estos pacientes?"},
+            {question: "¿Qué es la carboxihemoglobina y cómo afecta el transporte de oxígeno?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Emergencias Toxicológicas y Ambientales."
@@ -113,9 +113,9 @@ export const caseStudies: CaseStudy[] = [
             "Bradicardia e hipotensión severas."
         ],
         questions: [
-            { question: "¿Qué significa el acrónimo 'SLUDGEM' y cómo se aplica a este caso?" },
-            { question: "¿Cuál es el antídoto específico para la intoxicación por organofosforados y cómo actúa?" },
-            { question: "¿Qué precauciones de seguridad debe tomar el personal de emergencias al tratar a este paciente?" }
+            {question: "¿Qué significa el acrónimo 'SLUDGEM' y cómo se aplica a este caso?"},
+            {question: "¿Cuál es el antídoto específico para la intoxicación por organofosforados y cómo actúa?"},
+            {question: "¿Qué precauciones de seguridad debe tomar el personal de emergencias al tratar a este paciente?"}
         ],
         references: [
             "Goldfrank's Toxicologic Emergencies, 11th Edition.",
@@ -141,9 +141,9 @@ export const caseStudies: CaseStudy[] = [
             "La hipertensión puede ser una causa o una consecuencia del evento."
         ],
         questions: [
-            { question: "¿Qué características de una cefalea son 'banderas rojas' que indican una patología grave?" },
-            { question: "¿Por qué la rigidez de nuca es un signo alarmante en este contexto?" },
-            { question: "¿Cuál es el objetivo principal del manejo prehospitalario en una sospecha de HSA?" }
+            {question: "¿Qué características de una cefalea son 'banderas rojas' que indican una patología grave?"},
+            {question: "¿Por qué la rigidez de nuca es un signo alarmante en este contexto?"},
+            {question: "¿Cuál es el objetivo principal del manejo prehospitalario en una sospecha de HSA?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Emergencias Neurológicas."
@@ -168,9 +168,9 @@ export const caseStudies: CaseStudy[] = [
             "Requiere oxígeno al 100% y terapia de recompresión hiperbárica."
         ],
         questions: [
-            { question: "¿Por qué un ascenso rápido aumenta el riesgo de enfermedad por descompresión?" },
-            { question: "¿Cuál es el mecanismo de acción del oxígeno al 100% en el tratamiento de la EDC?" },
-            { question: "¿Qué información del perfil de buceo del paciente es crucial para el hospital?" }
+            {question: "¿Por qué un ascenso rápido aumenta el riesgo de enfermedad por descompresión?"},
+            {question: "¿Cuál es el mecanismo de acción del oxígeno al 100% en el tratamiento de la EDC?"},
+            {question: "¿Qué información del perfil de buceo del paciente es crucial para el hospital?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Emergencias Ambientales.",
@@ -196,9 +196,9 @@ export const caseStudies: CaseStudy[] = [
             "Riesgo de deshidratación y síndrome torácico agudo."
         ],
         questions: [
-            { question: "¿Qué causa la oclusión vascular y el dolor en una crisis de células falciformes?" },
-            { question: "¿Cuáles son los tres pilares del tratamiento prehospitalario para esta condición?" },
-            { question: "¿Qué es el síndrome torácico agudo y por qué es una complicación temida?" }
+            {question: "¿Qué causa la oclusión vascular y el dolor en una crisis de células falciformes?"},
+            {question: "¿Cuáles son los tres pilares del tratamiento prehospitalario para esta condición?"},
+            {question: "¿Qué es el síndrome torácico agudo y por qué es una complicación temida?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Emergencias Hematológicas."
@@ -223,9 +223,9 @@ export const caseStudies: CaseStudy[] = [
             "Necesidad de desescalada verbal y posible sedación química."
         ],
         questions: [
-            { question: "¿Cuáles son las prioridades al llegar a una escena con un paciente potencialmente violento?" },
-            { question: "Describe las técnicas de desescalada verbal." },
-            { question: "¿Cuándo está indicada la restricción física o química y qué precauciones se deben tomar?" }
+            {question: "¿Cuáles son las prioridades al llegar a una escena con un paciente potencialmente violento?"},
+            {question: "Describe las técnicas de desescalada verbal."},
+            {question: "¿Cuándo está indicada la restricción física o química y qué precauciones se deben tomar?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Emergencias Psiquiátricas."
@@ -250,9 +250,9 @@ export const caseStudies: CaseStudy[] = [
             "Necesidad de control inmediato de la hemorragia y manejo adecuado de la parte amputada."
         ],
         questions: [
-            { question: "¿Cuál es el método más efectivo y prioritario para controlar una hemorragia arterial en una amputación?" },
-            { question: "¿Cómo se debe preservar correctamente una parte del cuerpo amputada para maximizar las posibilidades de reimplante?" },
-            { question: "¿Por qué es importante establecer dos accesos IV de gran calibre en este paciente?" }
+            {question: "¿Cuál es el método más efectivo y prioritario para controlar una hemorragia arterial en una amputación?"},
+            {question: "¿Cómo se debe preservar correctamente una parte del cuerpo amputada para maximizar las posibilidades de reimplante?"},
+            {question: "¿Por qué es importante establecer dos accesos IV de gran calibre en este paciente?"}
         ],
         references: [
             "PHTLS 9ª Edición - Capítulo de Control de Hemorragias.",
@@ -280,9 +280,9 @@ export const caseStudies: CaseStudy[] = [
             "Necesita reconocimiento temprano, fluidoterapia agresiva y antibióticos urgentes."
         ],
         questions: [
-            { question: "¿Qué es la sepsis y cómo progresa a shock séptico?" },
-            { question: "Utilizando los criterios qSOFA (Quick SOFA), ¿cómo evaluaría a este paciente?" },
-            { question: "¿Cuál es la importancia de la 'hora de oro' en el manejo de la sepsis?" }
+            {question: "¿Qué es la sepsis y cómo progresa a shock séptico?"},
+            {question: "Utilizando los criterios qSOFA (Quick SOFA), ¿cómo evaluaría a este paciente?"},
+            {question: "¿Cuál es la importancia de la 'hora de oro' en el manejo de la sepsis?"}
         ],
         references: [
             "Surviving Sepsis Campaign Guidelines.",
@@ -309,9 +309,9 @@ export const caseStudies: CaseStudy[] = [
             "Shock distributivo con riesgo inminente de fallo multiorgánico."
         ],
         questions: [
-            { question: "¿Cuál es la diferencia fisiopatológica clave entre el agotamiento por calor y el golpe de calor?" },
-            { question: "¿Por qué el enfriamiento rápido y agresivo es la intervención más crítica en este caso?" },
-            { question: "¿Qué métodos de enfriamiento se pueden iniciar eficazmente en el entorno prehospitalario?" }
+            {question: "¿Cuál es la diferencia fisiopatológica clave entre el agotamiento por calor y el golpe de calor?"},
+            {question: "¿Por qué el enfriamiento rápido y agresivo es la intervención más crítica en este caso?"},
+            {question: "¿Qué métodos de enfriamiento se pueden iniciar eficazmente en el entorno prehospitalario?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Emergencias Ambientales."
@@ -337,9 +337,9 @@ export const caseStudies: CaseStudy[] = [
             "Hipoglucemia, un efecto secundario común de los betabloqueadores en niños."
         ],
         questions: [
-            { question: "¿Cuáles son los dos efectos cardiovasculares principales de una sobredosis de betabloqueadores?" },
-            { question: "¿Por qué los niños son particularmente susceptibles a la hipoglucemia en esta intoxicación?" },
-            { question: "¿Cuál es el antídoto de primera línea para la toxicidad severa por betabloqueadores?" }
+            {question: "¿Cuáles son los dos efectos cardiovasculares principales de una sobredosis de betabloqueadores?"},
+            {question: "¿Por qué los niños son particularmente susceptibles a la hipoglucemia en esta intoxicación?"},
+            {question: "¿Cuál es el antídoto de primera línea para la toxicidad severa por betabloqueadores?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Emergencias Toxicológicas y Pediátricas."
@@ -364,9 +364,9 @@ export const caseStudies: CaseStudy[] = [
             "La cefalea, los trastornos visuales y el dolor epigástrico son signos de alarma."
         ],
         questions: [
-            { question: "¿Qué define a la preeclampsia y qué la diferencia de la hipertensión gestacional?" },
-            { question: "¿Cuál es el tratamiento definitivo para la preeclampsia severa?" },
-            { question: "En el entorno prehospitalario, ¿cuál es la prioridad en el manejo de esta paciente?" }
+            {question: "¿Qué define a la preeclampsia y qué la diferencia de la hipertensión gestacional?"},
+            {question: "¿Cuál es el tratamiento definitivo para la preeclampsia severa?"},
+            {question: "En el entorno prehospitalario, ¿cuál es la prioridad en el manejo de esta paciente?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Emergencias Obstétricas."
@@ -391,9 +391,9 @@ export const caseStudies: CaseStudy[] = [
             "Estado mental alterado por hipoperfusión cerebral y/o encefalopatía hepática."
         ],
         questions: [
-            { question: "¿Qué son las várices esofágicas y por qué se forman en pacientes con cirrosis?" },
-            { question: "¿Por qué una hemorragia por várices esofágicas es tan peligrosa y tiene una alta mortalidad?" },
-            { question: "¿Cuál es la prioridad absoluta en el manejo de este paciente?" }
+            {question: "¿Qué son las várices esofágicas y por qué se forman en pacientes con cirrosis?"},
+            {question: "¿Por qué una hemorragia por várices esofágicas es tan peligrosa y tiene una alta mortalidad?"},
+            {question: "¿Cuál es la prioridad absoluta en el manejo de este paciente?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Emergencias Gastrointestinales y Urológicas."
@@ -418,9 +418,9 @@ export const caseStudies: CaseStudy[] = [
             "Necesidad de un entorno seguro y una evaluación psiquiátrica urgente."
         ],
         questions: [
-            { question: "¿Cuáles son los factores de riesgo más importantes a evaluar en un paciente con ideación suicida?" },
-            { question: "¿Cómo se debe abordar la conversación con un paciente que expresa deseos de morir?" },
-            { question: "¿Cuál es la responsabilidad legal y ética del paramédico en esta situación?" }
+            {question: "¿Cuáles son los factores de riesgo más importantes a evaluar en un paciente con ideación suicida?"},
+            {question: "¿Cómo se debe abordar la conversación con un paciente que expresa deseos de morir?"},
+            {question: "¿Cuál es la responsabilidad legal y ética del paramédico en esta situación?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Emergencias Psiquiátricas."
@@ -445,9 +445,9 @@ export const caseStudies: CaseStudy[] = [
             "Dolor severo y riesgo de hipotermia e infección."
         ],
         questions: [
-            { question: "¿Cuál es el primer paso y el más importante en el manejo de una quemadura térmica?" },
-            { question: "Utilizando la 'regla de los nueves' adaptada para niños o la palma de la mano del paciente, ¿cómo se estima la SCQ?" },
-            { question: "¿Por qué los niños pequeños tienen un mayor riesgo de hipotermia después de una quemadura?" }
+            {question: "¿Cuál es el primer paso y el más importante en el manejo de una quemadura térmica?"},
+            {question: "Utilizando la 'regla de los nueves' adaptada para niños o la palma de la mano del paciente, ¿cómo se estima la SCQ?"},
+            {question: "¿Por qué los niños pequeños tienen un mayor riesgo de hipotermia después de una quemadura?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Lesiones por Quemaduras."
@@ -472,9 +472,9 @@ export const caseStudies: CaseStudy[] = [
             "Riesgo inminente de síndrome de reperfusión al ser liberado."
         ],
         questions: [
-            { question: "¿Qué es el síndrome de reperfusión y por qué es tan peligroso?" },
-            { question: "¿Qué intervenciones médicas deben realizarse ANTES de que se libere la presión sobre las extremidades?" },
-            { question: "¿Qué arritmia cardíaca es más probable que ocurra inmediatamente después de la liberación?" }
+            {question: "¿Qué es el síndrome de reperfusión y por qué es tan peligroso?"},
+            {question: "¿Qué intervenciones médicas deben realizarse ANTES de que se libere la presión sobre las extremidades?"},
+            {question: "¿Qué arritmia cardíaca es más probable que ocurra inmediatamente después de la liberación?"}
         ],
         references: [
             "PHTLS 9ª Edición - Capítulo de Trauma de Tejidos Blandos."
@@ -499,9 +499,9 @@ export const caseStudies: CaseStudy[] = [
             "Emergencia de buceo más grave y de inicio más rápido."
         ],
         questions: [
-            { question: "¿Cuál es el mecanismo fisiopatológico del barotrauma pulmonar y la embolia gaseosa arterial?" },
-            { question: "¿Qué diferencia a la EGA de la enfermedad por descompresión en términos de tiempo de inicio y gravedad?" },
-            { question: "¿Por qué el traslado inmediato a una cámara hiperbárica es aún más urgente en la EGA que en la EDC?" }
+            {question: "¿Cuál es el mecanismo fisiopatológico del barotrauma pulmonar y la embolia gaseosa arterial?"},
+            {question: "¿Qué diferencia a la EGA de la enfermedad por descompresión en términos de tiempo de inicio y gravedad?"},
+            {question: "¿Por qué el traslado inmediato a una cámara hiperbárica es aún más urgente en la EGA que en la EDC?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Emergencias Ambientales.",
@@ -528,9 +528,9 @@ export const caseStudies: CaseStudy[] = [
             "La erupción purpúrica es un signo ominoso de coagulación intravascular diseminada (CID)."
         ],
         questions: [
-            { question: "¿Qué son los signos de Kernig y Brudzinski y qué indican?" },
-            { question: "¿Por qué la meningitis bacteriana es una emergencia médica de tiempo crítico?" },
-            { question: "¿Qué precauciones de bioseguridad debe tomar el equipo de emergencias?" }
+            {question: "¿Qué son los signos de Kernig y Brudzinski y qué indican?"},
+            {question: "¿Por qué la meningitis bacteriana es una emergencia médica de tiempo crítico?"},
+            {question: "¿Qué precauciones de bioseguridad debe tomar el equipo de emergencias?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Enfermedades Infecciosas."
@@ -555,9 +555,9 @@ export const caseStudies: CaseStudy[] = [
             "Fallo del soporte ventilatorio no invasivo."
         ],
         questions: [
-            { question: "¿Por qué los pacientes con distrofia muscular avanzada desarrollan insuficiencia respiratoria?" },
-            { question: "¿Qué es la respiración paradójica y qué indica en este paciente?" },
-            { question: "¿Cuál es la intervención más importante para ayudar a este paciente a respirar mejor en el campo?" }
+            {question: "¿Por qué los pacientes con distrofia muscular avanzada desarrollan insuficiencia respiratoria?"},
+            {question: "¿Qué es la respiración paradójica y qué indica en este paciente?"},
+            {question: "¿Cuál es la intervención más importante para ayudar a este paciente a respirar mejor en el campo?"}
         ],
         references: [
             "Manual de Cuidados de Emergencia para Pacientes con Necesidades Especiales."
@@ -582,9 +582,9 @@ export const caseStudies: CaseStudy[] = [
             "Alto riesgo de progresión a un neumotórax a tensión."
         ],
         questions: [
-            { question: "¿Cuál es la fisiopatología de una herida torácica succionante y por qué compromete la respiración?" },
-            { question: "¿Cómo se debe aplicar correctamente un sello torácico oclusivo de tres lados y cuál es su propósito?" },
-            { question: "¿Qué signos indicarían que el neumotórax abierto ha evolucionado a un neumotórax a tensión después de colocar el sello?" }
+            {question: "¿Cuál es la fisiopatología de una herida torácica succionante y por qué compromete la respiración?"},
+            {question: "¿Cómo se debe aplicar correctamente un sello torácico oclusivo de tres lados y cuál es su propósito?"},
+            {question: "¿Qué signos indicarían que el neumotórax abierto ha evolucionado a un neumotórax a tensión después de colocar el sello?"}
         ],
         references: [
             "PHTLS 9ª Edición - Capítulo de Trauma Torácico.",
@@ -610,9 +610,9 @@ export const caseStudies: CaseStudy[] = [
             "Riesgo de efectos sistémicos como coagulopatía y neurotoxicidad."
         ],
         questions: [
-            { question: "¿Qué acciones están absolutamente contraindicadas en el manejo prehospitalario de una mordedura de serpiente?" },
-            { question: "¿Cuál es la posición correcta para inmovilizar la extremidad afectada y por qué?" },
-            { question: "¿Qué información es crucial obtener y transmitir al hospital receptor?" }
+            {question: "¿Qué acciones están absolutamente contraindicadas en el manejo prehospitalario de una mordedura de serpiente?"},
+            {question: "¿Cuál es la posición correcta para inmovilizar la extremidad afectada y por qué?"},
+            {question: "¿Qué información es crucial obtener y transmitir al hospital receptor?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Emergencias Ambientales: Mordeduras y Picaduras."
@@ -635,9 +635,9 @@ export const caseStudies: CaseStudy[] = [
             "Riesgo extremo de asfixia fetal y lesión del plexo braquial si no se resuelve rápidamente."
         ],
         questions: [
-            { question: "¿Qué es el 'signo de la tortuga' y cuál es su significado?" },
-            { question: "Describe la secuencia de maniobras (ej. McRoberts, presión suprapúbica) para resolver una distocia de hombros." },
-            { question: "¿Por qué está absolutamente contraindicado aplicar presión en el fondo uterino?" }
+            {question: "¿Qué es el 'signo de la tortuga' y cuál es su significado?"},
+            {question: "Describe la secuencia de maniobras (ej. McRoberts, presión suprapúbica) para resolver una distocia de hombros."},
+            {question: "¿Por qué está absolutamente contraindicado aplicar presión en el fondo uterino?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Emergencias Obstétricas.",
@@ -664,9 +664,9 @@ export const caseStudies: CaseStudy[] = [
             "Emergencia hipertensiva y taquicardia severa con posible isquemia miocárdica."
         ],
         questions: [
-            { question: "¿Qué efectos fisiológicos causa una sobredosis de estimulantes del sistema nervioso central?" },
-            { question: "¿Por qué el dolor torácico en este contexto es una emergencia que debe tomarse en serio?" },
-            { question: "¿Cuál es el tratamiento farmacológico de elección para controlar la agitación y la hipertensión en esta intoxicación?" }
+            {question: "¿Qué efectos fisiológicos causa una sobredosis de estimulantes del sistema nervioso central?"},
+            {question: "¿Por qué el dolor torácico en este contexto es una emergencia que debe tomarse en serio?"},
+            {question: "¿Cuál es el tratamiento farmacológico de elección para controlar la agitación y la hipertensión en esta intoxicación?"}
         ],
         references: [
             "Goldfrank's Toxicologic Emergencies, 11th Edition."
@@ -690,9 +690,9 @@ export const caseStudies: CaseStudy[] = [
             "Hemorragia oral activa."
         ],
         questions: [
-            { question: "¿Qué signos y síntomas sugieren que un cuerpo extraño (como un diente) ha sido aspirado?" },
-            { question: "¿Cómo se debe manejar un diente avulsionado si se encuentra, para preservar su viabilidad?" },
-            { question: "¿Cuál es la prioridad en el manejo de este paciente?" }
+            {question: "¿Qué signos y síntomas sugieren que un cuerpo extraño (como un diente) ha sido aspirado?"},
+            {question: "¿Cómo se debe manejar un diente avulsionado si se encuentra, para preservar su viabilidad?"},
+            {question: "¿Cuál es la prioridad en el manejo de este paciente?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Trauma Facial y de Cuello."
@@ -717,9 +717,9 @@ export const caseStudies: CaseStudy[] = [
             "Emergencia hipertensiva con sobrecarga de volumen."
         ],
         questions: [
-            { question: "¿Qué es la ortopnea y por qué ocurre en pacientes con ICC?" },
-            { question: "¿Cuál es el beneficio de la ventilación con presión positiva no invasiva (CPAP/BiPAP) en el edema agudo de pulmón?" },
-            { question: "¿Qué efecto tiene la nitroglicerina en estos pacientes?" }
+            {question: "¿Qué es la ortopnea y por qué ocurre en pacientes con ICC?"},
+            {question: "¿Cuál es el beneficio de la ventilación con presión positiva no invasiva (CPAP/BiPAP) en el edema agudo de pulmón?"},
+            {question: "¿Qué efecto tiene la nitroglicerina en estos pacientes?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Emergencias Cardiovasculares."
@@ -745,9 +745,9 @@ export const caseStudies: CaseStudy[] = [
             "El sistema inmunitario del paciente está severamente comprometido, lo que lo hace vulnerable a infecciones masivas."
         ],
         questions: [
-            { question: "¿Qué es la neutropenia y por qué la quimioterapia la causa?" },
-            { question: "¿Por qué una fiebre en un paciente neutropénico se considera una emergencia potencialmente mortal?" },
-            { question: "Además de los signos vitales, ¿qué información sobre el historial del paciente es crucial comunicar al hospital?" }
+            {question: "¿Qué es la neutropenia y por qué la quimioterapia la causa?"},
+            {question: "¿Por qué una fiebre en un paciente neutropénico se considera una emergencia potencialmente mortal?"},
+            {question: "Además de los signos vitales, ¿qué información sobre el historial del paciente es crucial comunicar al hospital?"}
         ],
         references: [
             "Oncology Nursing Society (ONS) guidelines for febrile neutropenia."
@@ -773,9 +773,9 @@ export const caseStudies: CaseStudy[] = [
             "Las escalas de ACV convencionales como FAST/Cincinnati pueden ser negativas."
         ],
         questions: [
-            { question: "¿Por qué las escalas de ACV comunes pueden no detectar un ACV de la circulación posterior?" },
-            { question: "¿Qué es la ataxia y por qué es un signo neurológico alarmante?" },
-            { question: "Además de un ACV, ¿cuál es el principal diagnóstico diferencial para el vértigo agudo?" }
+            {question: "¿Por qué las escalas de ACV comunes pueden no detectar un ACV de la circulación posterior?"},
+            {question: "¿Qué es la ataxia y por qué es un signo neurológico alarmante?"},
+            {question: "Además de un ACV, ¿cuál es el principal diagnóstico diferencial para el vértigo agudo?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Emergencias Neurológicas."
@@ -800,9 +800,9 @@ export const caseStudies: CaseStudy[] = [
             "Tríada clásica: dolor, hipotensión y masa abdominal pulsátil."
         ],
         questions: [
-            { question: "¿Qué factores de riesgo están fuertemente asociados con el desarrollo de un AAA?" },
-            { question: "¿Por qué está contraindicada la palpación abdominal vigorosa en este paciente?" },
-            { question: "Explica el concepto de 'hipotensión permisiva' en el manejo de este tipo de hemorragia." }
+            {question: "¿Qué factores de riesgo están fuertemente asociados con el desarrollo de un AAA?"},
+            {question: "¿Por qué está contraindicada la palpación abdominal vigorosa en este paciente?"},
+            {question: "Explica el concepto de 'hipotensión permisiva' en el manejo de este tipo de hemorragia."}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Emergencias Gastrointestinales y Urológicas.",
@@ -828,9 +828,9 @@ export const caseStudies: CaseStudy[] = [
             "La orina oscura (mioglobinuria) es el signo clínico clave."
         ],
         questions: [
-            { question: "¿Qué es la rabdomiólisis y qué sustancias se liberan al torrente sanguíneo?" },
-            { question: "¿Por qué la mioglobina es tóxica para los riñones?" },
-            { question: "¿Cuál es el objetivo principal de la reanimación con líquidos en la rabdomiólisis?" }
+            {question: "¿Qué es la rabdomiólisis y qué sustancias se liberan al torrente sanguíneo?"},
+            {question: "¿Por qué la mioglobina es tóxica para los riñones?"},
+            {question: "¿Cuál es el objetivo principal de la reanimación con líquidos en la rabdomiólisis?"}
         ],
         references: [
             "Tintinalli's Emergency Medicine: A Comprehensive Study Guide, 9th Edition."
@@ -856,9 +856,9 @@ export const caseStudies: CaseStudy[] = [
             "La diabetes y el género femenino aumentan la probabilidad de síntomas atípicos."
         ],
         questions: [
-            { question: "¿Cuáles son considerados 'equivalentes anginosos' o síntomas atípicos de un infarto, especialmente en mujeres y diabéticos?" },
-            { question: "¿Por qué un ECG de 12 derivaciones es crucial en esta paciente a pesar de la ausencia de dolor torácico clásico?" },
-            { question: "¿Qué hallazgo en el ECG buscarías para confirmar un infarto inferior y qué implicaciones tiene para el uso de nitroglicerina?" }
+            {question: "¿Cuáles son considerados 'equivalentes anginosos' o síntomas atípicos de un infarto, especialmente en mujeres y diabéticos?"},
+            {question: "¿Por qué un ECG de 12 derivaciones es crucial en esta paciente a pesar de la ausencia de dolor torácico clásico?"},
+            {question: "¿Qué hallazgo en el ECG buscarías para confirmar un infarto inferior y qué implicaciones tiene para el uso de nitroglicerina?"}
         ],
         references: [
             "AHA Guidelines for Acute Coronary Syndromes in Women.",
@@ -884,9 +884,9 @@ export const caseStudies: CaseStudy[] = [
             "Alto riesgo de peritonitis e isquemia del tejido eviscerado."
         ],
         questions: [
-            { question: "¿Cuál es el procedimiento correcto para manejar el tejido eviscerado en el campo?" },
-            { question: "¿Por qué nunca se debe intentar reintroducir los órganos en la cavidad abdominal?" },
-            { question: "Además de la herida visible, ¿qué otras lesiones internas deben sospecharse?" }
+            {question: "¿Cuál es el procedimiento correcto para manejar el tejido eviscerado en el campo?"},
+            {question: "¿Por qué nunca se debe intentar reintroducir los órganos en la cavidad abdominal?"},
+            {question: "Además de la herida visible, ¿qué otras lesiones internas deben sospecharse?"}
         ],
         references: [
             "PHTLS 9ª Edición - Capítulo de Trauma Abdominal y Pélvico."
@@ -911,9 +911,9 @@ export const caseStudies: CaseStudy[] = [
             "Necesidad de descartar una causa infecciosa grave subyacente (ej. meningitis)."
         ],
         questions: [
-            { question: "¿Cuáles son las características que definen una convulsión febril 'simple' vs. una 'compleja'?" },
-            { question: "En el estado postictal, ¿cuál es la prioridad en la evaluación y manejo del niño?" },
-            { question: "¿Por qué, a pesar de ser a menudo benignas, las primeras convulsiones febriles suelen requerir un traslado al hospital?" }
+            {question: "¿Cuáles son las características que definen una convulsión febril 'simple' vs. una 'compleja'?"},
+            {question: "En el estado postictal, ¿cuál es la prioridad en la evaluación y manejo del niño?"},
+            {question: "¿Por qué, a pesar de ser a menudo benignas, las primeras convulsiones febriles suelen requerir un traslado al hospital?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Emergencias Pediátricas."
@@ -937,9 +937,9 @@ export const caseStudies: CaseStudy[] = [
             "El dolor intenso y el blefaroespasmo dificultan la irrigación."
         ],
         questions: [
-            { question: "¿Por qué las quemaduras por álcalis son generalmente más peligrosas para los ojos que las quemaduras por ácidos?" },
-            { question: "¿Cuál es la intervención más importante y de tiempo crítico en el manejo de una quemadura química ocular?" },
-            { question: "¿Durante cuánto tiempo se debe irrigar el ojo afectado en el campo?" }
+            {question: "¿Por qué las quemaduras por álcalis son generalmente más peligrosas para los ojos que las quemaduras por ácidos?"},
+            {question: "¿Cuál es la intervención más importante y de tiempo crítico en el manejo de una quemadura química ocular?"},
+            {question: "¿Durante cuánto tiempo se debe irrigar el ojo afectado en el campo?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Trauma Facial y Ocular."
@@ -965,9 +965,9 @@ export const caseStudies: CaseStudy[] = [
             "El temblor es un mecanismo compensatorio que aún está presente."
         ],
         questions: [
-            { question: "¿Cuáles son las etapas de la hipotermia y qué hallazgos clínicos las caracterizan?" },
-            { question: "¿Por qué se debe manejar a un paciente hipotérmico con extrema gentileza?" },
-            { question: "Explica la diferencia entre recalentamiento pasivo y activo." }
+            {question: "¿Cuáles son las etapas de la hipotermia y qué hallazgos clínicos las caracterizan?"},
+            {question: "¿Por qué se debe manejar a un paciente hipotérmico con extrema gentileza?"},
+            {question: "Explica la diferencia entre recalentamiento pasivo y activo."}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Emergencias Ambientales."
@@ -991,9 +991,9 @@ export const caseStudies: CaseStudy[] = [
             "Riesgo de lesión del tímpano por el insecto o por intentos de extracción incorrectos."
         ],
         questions: [
-            { question: "¿Cuál es el primer paso para manejar un insecto vivo en el canal auditivo y por qué?" },
-            { question: "¿Qué líquidos son seguros para instilar en el oído en esta situación?" },
-            { question: "¿Por qué está contraindicado irrigar el oído si se sospecha la presencia de materia orgánica vegetal (ej. un frijol)?" }
+            {question: "¿Cuál es el primer paso para manejar un insecto vivo en el canal auditivo y por qué?"},
+            {question: "¿Qué líquidos son seguros para instilar en el oído en esta situación?"},
+            {question: "¿Por qué está contraindicado irrigar el oído si se sospecha la presencia de materia orgánica vegetal (ej. un frijol)?"}
         ],
         references: [
             "Tintinalli's Emergency Medicine: A Comprehensive Study Guide, 9th Edition."
@@ -1015,9 +1015,9 @@ export const caseStudies: CaseStudy[] = [
             "La prioridad es hacer 'el mayor bien para el mayor número de personas'."
         ],
         questions: [
-            { question: "¿Cuáles son las cuatro categorías de triage del sistema START (Simple Triage and Rapid Treatment)?" },
-            { question: "Usando el sistema START, ¿cómo clasificarías a un paciente que no puede caminar, tiene una frecuencia respiratoria de 26, pulso radial presente y obedece órdenes?" },
-            { question: "¿Cuál es el papel del primer paramédico en llegar a un IMV?" }
+            {question: "¿Cuáles son las cuatro categorías de triage del sistema START (Simple Triage and Rapid Treatment)?"},
+            {question: "Usando el sistema START, ¿cómo clasificarías a un paciente que no puede caminar, tiene una frecuencia respiratoria de 26, pulso radial presente y obedece órdenes?"},
+            {question: "¿Cuál es el papel del primer paramédico en llegar a un IMV?"}
         ],
         references: [
             "PHTLS 9ª Edición - Capítulo de Triage en Desastres e Incidentes con Múltiples Víctimas."
@@ -1042,9 +1042,9 @@ export const caseStudies: CaseStudy[] = [
             "Factores de riesgo presentes (inmovilización prolongada)."
         ],
         questions: [
-            { question: "¿Qué es una embolia pulmonar y de dónde provienen la mayoría de los coágulos?" },
-            { question: "¿Cuál es la tríada de Virchow y cómo se relaciona con el riesgo de TEP?" },
-            { question: "Aunque el diagnóstico definitivo se hace en el hospital, ¿qué hallazgos en la evaluación prehospitalaria aumentan la sospecha de TEP?" }
+            {question: "¿Qué es una embolia pulmonar y de dónde provienen la mayoría de los coágulos?"},
+            {question: "¿Cuál es la tríada de Virchow y cómo se relaciona con el riesgo de TEP?"},
+            {question: "Aunque el diagnóstico definitivo se hace en el hospital, ¿qué hallazgos en la evaluación prehospitalaria aumentan la sospecha de TEP?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Emergencias Respiratorias."
@@ -1068,9 +1068,9 @@ export const caseStudies: CaseStudy[] = [
             "Alto riesgo de toxicidad cardiovascular (hipotensión, arritmias) y neurológica (convulsiones, coma)."
         ],
         questions: [
-            { question: "¿Cuál es el hallazgo más ominoso y característico en el ECG de una sobredosis de ATC y qué indica?" },
-            { question: "¿Cuál es el tratamiento farmacológico de elección para la cardiotoxicidad inducida por los ATC?" },
-            { question: "Además del corazón, ¿qué otro sistema de órganos está en grave riesgo?" }
+            {question: "¿Cuál es el hallazgo más ominoso y característico en el ECG de una sobredosis de ATC y qué indica?"},
+            {question: "¿Cuál es el tratamiento farmacológico de elección para la cardiotoxicidad inducida por los ATC?"},
+            {question: "Además del corazón, ¿qué otro sistema de órganos está en grave riesgo?"}
         ],
         references: [
             "Goldfrank's Toxicologic Emergencies, 11th Edition."
@@ -1095,9 +1095,9 @@ export const caseStudies: CaseStudy[] = [
             "El dolor referido al hombro izquierdo (signo de Kehr) es clásico de la irritación diafragmática por sangre."
         ],
         questions: [
-            { question: "¿Por qué la mononucleosis infecciosa aumenta drásticamente el riesgo de ruptura esplénica?" },
-            { question: "¿Qué es el signo de Kehr y cuál es su mecanismo fisiológico?" },
-            { question: "¿Cuál es la prioridad en el manejo de un paciente con sospecha de hemorragia intraabdominal masiva?" }
+            {question: "¿Por qué la mononucleosis infecciosa aumenta drásticamente el riesgo de ruptura esplénica?"},
+            {question: "¿Qué es el signo de Kehr y cuál es su mecanismo fisiológico?"},
+            {question: "¿Cuál es la prioridad en el manejo de un paciente con sospecha de hemorragia intraabdominal masiva?"}
         ],
         references: [
             "PHTLS 9ª Edición - Capítulo de Trauma Abdominal y Pélvico."
@@ -1123,9 +1123,9 @@ export const caseStudies: CaseStudy[] = [
             "El dolor 'desgarrante' que migra es clásico de esta patología."
         ],
         questions: [
-            { question: "¿Por qué este cuadro clínico es una contraindicación absoluta para la administración de aspirina o anticoagulantes?" },
-            { question: "¿Cuál es la importancia de medir la presión arterial en ambos brazos en un paciente con dolor torácico severo?" },
-            { question: "En el manejo prehospitalario, ¿cuáles son los dos objetivos principales del control de la presión arterial y la frecuencia cardíaca?" }
+            {question: "¿Por qué este cuadro clínico es una contraindicación absoluta para la administración de aspirina o anticoagulantes?"},
+            {question: "¿Cuál es la importancia de medir la presión arterial en ambos brazos en un paciente con dolor torácico severo?"},
+            {question: "En el manejo prehospitalario, ¿cuáles son los dos objetivos principales del control de la presión arterial y la frecuencia cardíaca?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Emergencias Cardiovasculares."
@@ -1150,9 +1150,9 @@ export const caseStudies: CaseStudy[] = [
             "La ausencia del reflejo cremastérico es un hallazgo muy sensible."
         ],
         questions: [
-            { question: "¿Cuál es el mecanismo fisiopatológico de la torsión testicular y por qué es una emergencia?" },
-            { question: "¿Cuál es la ventana de tiempo desde el inicio del dolor para salvar el testículo?" },
-            { question: "En el campo, ¿hay alguna maniobra que se pueda intentar si el traslado es prolongado y se tiene la formación adecuada?" }
+            {question: "¿Cuál es el mecanismo fisiopatológico de la torsión testicular y por qué es una emergencia?"},
+            {question: "¿Cuál es la ventana de tiempo desde el inicio del dolor para salvar el testículo?"},
+            {question: "En el campo, ¿hay alguna maniobra que se pueda intentar si el traslado es prolongado y se tiene la formación adecuada?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Emergencias Gastrointestinales y Urológicas."
@@ -1178,9 +1178,9 @@ export const caseStudies: CaseStudy[] = [
             "El factor precipitante es probablemente la infección reciente."
         ],
         questions: [
-            { question: "¿Qué es una tormenta tiroidea y qué puede desencadenarla?" },
-            { question: "¿Por qué la fibrilación auricular con respuesta ventricular rápida es común en esta condición?" },
-            { question: "Además del soporte vital, ¿cuál es el enfoque del tratamiento en el hospital?" }
+            {question: "¿Qué es una tormenta tiroidea y qué puede desencadenarla?"},
+            {question: "¿Por qué la fibrilación auricular con respuesta ventricular rápida es común en esta condición?"},
+            {question: "Además del soporte vital, ¿cuál es el enfoque del tratamiento en el hospital?"}
         ],
         references: [
             "Tintinalli's Emergency Medicine: A Comprehensive Study Guide, 9th Edition."
@@ -1204,9 +1204,9 @@ export const caseStudies: CaseStudy[] = [
             "Los síntomas sistémicos (náuseas, vómitos) pueden confundir el diagnóstico."
         ],
         questions: [
-            { question: "¿Qué causa el aumento súbito de la presión intraocular en el glaucoma de ángulo cerrado?" },
-            { question: "¿Por qué la pupila se encuentra fija y en midriasis?" },
-            { question: "¿Cuál es el objetivo del tratamiento prehospitalario y hospitalario?" }
+            {question: "¿Qué causa el aumento súbito de la presión intraocular en el glaucoma de ángulo cerrado?"},
+            {question: "¿Por qué la pupila se encuentra fija y en midriasis?"},
+            {question: "¿Cuál es el objetivo del tratamiento prehospitalario y hospitalario?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Trauma Facial y Ocular."
@@ -1231,9 +1231,9 @@ export const caseStudies: CaseStudy[] = [
             "El estado mental alterado es un signo de retención severa de CO₂ (narcosis por CO₂)."
         ],
         questions: [
-            { question: "Explica el concepto de 'impulso hipóxico' y por qué se debe administrar oxígeno con cautela (pero sin negarlo) en estos pacientes." },
-            { question: "¿Qué tratamiento farmacológico en nebulización es el pilar del manejo prehospitalario?" },
-            { question: "¿Qué herramienta de soporte ventilatorio no invasivo es extremadamente útil si el paciente no mejora?" }
+            {question: "Explica el concepto de 'impulso hipóxico' y por qué se debe administrar oxígeno con cautela (pero sin negarlo) en estos pacientes."},
+            {question: "¿Qué tratamiento farmacológico en nebulización es el pilar del manejo prehospitalario?"},
+            {question: "¿Qué herramienta de soporte ventilatorio no invasivo es extremadamente útil si el paciente no mejora?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Emergencias Respiratorias."
@@ -1256,9 +1256,9 @@ export const caseStudies: CaseStudy[] = [
             "Necesidad de un cuidado local meticuloso de la herida."
         ],
         questions: [
-            { question: "¿Qué es la rabia y por qué es casi 100% fatal una vez que aparecen los síntomas?" },
-            { question: "¿Cuál es el paso más importante en el manejo inmediato de la herida para prevenir la rabia?" },
-            { question: "¿En qué consiste la profilaxis post-exposición (PEP) para la rabia?" }
+            {question: "¿Qué es la rabia y por qué es casi 100% fatal una vez que aparecen los síntomas?"},
+            {question: "¿Cuál es el paso más importante en el manejo inmediato de la herida para prevenir la rabia?"},
+            {question: "¿En qué consiste la profilaxis post-exposición (PEP) para la rabia?"}
         ],
         references: [
             "CDC Guidelines for Rabies Prevention."
@@ -1282,9 +1282,9 @@ export const caseStudies: CaseStudy[] = [
             "Riesgo de progresión a fases más graves, incluyendo shock y fallo hepático."
         ],
         questions: [
-            { question: "¿Por qué las vitaminas prenatales son particularmente peligrosas para los niños?" },
-            { question: "Describe las fases de la toxicidad por hierro." },
-            { question: "¿Está indicado el carbón activado en esta intoxicación?" }
+            {question: "¿Por qué las vitaminas prenatales son particularmente peligrosas para los niños?"},
+            {question: "Describe las fases de la toxicidad por hierro."},
+            {question: "¿Está indicado el carbón activado en esta intoxicación?"}
         ],
         references: [
             "Goldfrank's Toxicologic Emergencies, 11th Edition."
@@ -1310,9 +1310,9 @@ export const caseStudies: CaseStudy[] = [
             "Riesgo de shock séptico."
         ],
         questions: [
-            { question: "¿Qué es la endometritis postparto y cuáles son sus factores de riesgo?" },
-            { question: "¿Por qué esta condición puede progresar rápidamente a sepsis severa?" },
-            { question: "¿Cuál es el manejo prehospitalario clave para un paciente con sospecha de sepsis?" }
+            {question: "¿Qué es la endometritis postparto y cuáles son sus factores de riesgo?"},
+            {question: "¿Por qué esta condición puede progresar rápidamente a sepsis severa?"},
+            {question: "¿Cuál es el manejo prehospitalario clave para un paciente con sospecha de sepsis?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Emergencias Ginecológicas."
@@ -1335,9 +1335,9 @@ export const caseStudies: CaseStudy[] = [
             "Cualquier manipulación puede causar la extrusión del contenido intraocular."
         ],
         questions: [
-            { question: "¿Cuál es la regla de oro para manejar cualquier objeto empalado en el cuerpo?" },
-            { question: "Describe el procedimiento correcto para estabilizar el objeto y proteger el ojo lesionado." },
-            { question: "¿Por qué es crucial cubrir también el ojo no lesionado?" }
+            {question: "¿Cuál es la regla de oro para manejar cualquier objeto empalado en el cuerpo?"},
+            {question: "Describe el procedimiento correcto para estabilizar el objeto y proteger el ojo lesionado."},
+            {question: "¿Por qué es crucial cubrir también el ojo no lesionado?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Trauma Facial y Ocular."
@@ -1362,9 +1362,9 @@ export const caseStudies: CaseStudy[] = [
             "El roce por fricción es patognomónico pero no siempre está presente."
         ],
         questions: [
-            { question: "¿Cómo se diferencia clínicamente el dolor de la pericarditis del dolor de un infarto de miocardio?" },
-            { question: "¿Qué es un roce por fricción pericárdico y qué lo causa?" },
-            { question: "Aunque la mayoría de los casos son benignos, ¿cuál es la complicación más temida de la pericarditis?" }
+            {question: "¿Cómo se diferencia clínicamente el dolor de la pericarditis del dolor de un infarto de miocardio?"},
+            {question: "¿Qué es un roce por fricción pericárdico y qué lo causa?"},
+            {question: "Aunque la mayoría de los casos son benignos, ¿cuál es la complicación más temida de la pericarditis?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Emergencias Cardiovasculares."
@@ -1390,9 +1390,9 @@ export const caseStudies: CaseStudy[] = [
             "Traumatismo craneoencefálico (TCE) severo y posible trauma torácico (tórax inestable/contusión pulmonar)."
         ],
         questions: [
-            { question: "¿Cuáles son las prioridades inmediatas en el manejo de un paciente con trauma multisistémico y shock?" },
-            { question: "¿Qué es la 'tríada letal' del trauma y cómo se previene en el entorno prehospitalario?" },
-            { question: "¿Por qué el control de la temperatura es un componente crítico en el manejo de este paciente?" }
+            {question: "¿Cuáles son las prioridades inmediatas en el manejo de un paciente con trauma multisistémico y shock?"},
+            {question: "¿Qué es la 'tríada letal' del trauma y cómo se previene en el entorno prehospitalario?"},
+            {question: "¿Por qué el control de la temperatura es un componente crítico en el manejo de este paciente?"}
         ],
         references: [
             "PHTLS 9ª Edición - Capítulos de Shock, Trauma Torácico y Trauma Abdominal."
@@ -1417,9 +1417,9 @@ export const caseStudies: CaseStudy[] = [
             "Alto riesgo de lesiones asociadas en vejiga, uretra y vasos sanguíneos pélvicos."
         ],
         questions: [
-            { question: "¿Cuánta sangre puede perderse en el retroperitoneo por una fractura de pelvis inestable?" },
-            { question: "¿Cuál es el propósito de aplicar un cinturón pélvico o una sábana para estabilizar la pelvis?" },
-            { question: "¿Por qué se deben realizar un mínimo de manipulaciones en una pelvis que se sospecha inestable?" }
+            {question: "¿Cuánta sangre puede perderse en el retroperitoneo por una fractura de pelvis inestable?"},
+            {question: "¿Cuál es el propósito de aplicar un cinturón pélvico o una sábana para estabilizar la pelvis?"},
+            {question: "¿Por qué se deben realizar un mínimo de manipulaciones en una pelvis que se sospecha inestable?"}
         ],
         references: [
             "PHTLS 9ª Edición - Capítulo de Trauma Musculoesquelético."
@@ -1443,9 +1443,9 @@ export const caseStudies: CaseStudy[] = [
             "Pérdida de la perfusión distal (ausencia de pulso)."
         ],
         questions: [
-            { question: "¿Qué es una quemadura circunferencial y por qué representa una emergencia para la extremidad?" },
-            { question: "¿Cuáles son las '6 P' del síndrome compartimental?" },
-            { question: "Además de la extremidad, ¿qué otra área del cuerpo, si sufre una quemadura circunferencial, puede comprometer la vida?" }
+            {question: "¿Qué es una quemadura circunferencial y por qué representa una emergencia para la extremidad?"},
+            {question: "¿Cuáles son las '6 P' del síndrome compartimental?"},
+            {question: "Además de la extremidad, ¿qué otra área del cuerpo, si sufre una quemadura circunferencial, puede comprometer la vida?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Lesiones por Quemaduras."
@@ -1470,9 +1470,9 @@ export const caseStudies: CaseStudy[] = [
             "Tríada de Cushing presente, indicando una presión intracraneal (PIC) críticamente elevada."
         ],
         questions: [
-            { question: "Describe la Tríada de Cushing y explica su fisiopatología." },
-            { question: "¿Qué significa una pupila dilatada y no reactiva unilateral en el contexto de un TCE?" },
-            { question: "¿Cuál es el objetivo de la hiperventilación controlada en este paciente y cuáles son sus riesgos?" }
+            {question: "Describe la Tríada de Cushing y explica su fisiopatología."},
+            {question: "¿Qué significa una pupila dilatada y no reactiva unilateral en el contexto de un TCE?"},
+            {question: "¿Cuál es el objetivo de la hiperventilación controlada en este paciente y cuáles son sus riesgos?"}
         ],
         references: [
             "PHTLS 9ª Edición - Capítulo de Trauma Craneoencefálico y Espinal."
@@ -1497,9 +1497,9 @@ export const caseStudies: CaseStudy[] = [
             "Alto riesgo de lesión de órganos sólidos (hígado) y estructuras vasculares."
         ],
         questions: [
-            { question: "¿Cuál es la regla de oro para manejar cualquier objeto empalado?" },
-            { question: "Describe el proceso para estabilizar un objeto empalado largo antes del transporte." },
-            { question: "¿Por qué un sangrado mínimo externo no descarta una hemorragia interna grave?" }
+            {question: "¿Cuál es la regla de oro para manejar cualquier objeto empalado?"},
+            {question: "Describe el proceso para estabilizar un objeto empalado largo antes del transporte."},
+            {question: "¿Por qué un sangrado mínimo externo no descarta una hemorragia interna grave?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Trauma Abdominal."
@@ -1524,9 +1524,9 @@ export const caseStudies: CaseStudy[] = [
             "Los niños pueden compensar el shock durante un tiempo y luego deteriorarse rápidamente."
         ],
         questions: [
-            { question: "En trauma pediátrico, ¿cuáles son los órganos abdominales más comúnmente lesionados por un golpe del manillar?" },
-            { question: "¿Por qué la frecuencia cardíaca y el tiempo de llenado capilar son indicadores más fiables de shock en niños que la presión arterial?" },
-            { question: "¿Qué consideraciones especiales se aplican al administrar líquidos a un niño en shock?" }
+            {question: "En trauma pediátrico, ¿cuáles son los órganos abdominales más comúnmente lesionados por un golpe del manillar?"},
+            {question: "¿Por qué la frecuencia cardíaca y el tiempo de llenado capilar son indicadores más fiables de shock en niños que la presión arterial?"},
+            {question: "¿Qué consideraciones especiales se aplican al administrar líquidos a un niño en shock?"}
         ],
         references: [
             "PHTLS 9ª Edición - Capítulo de Trauma Pediátrico."
@@ -1550,9 +1550,9 @@ export const caseStudies: CaseStudy[] = [
             "Necesidad de un cuidado meticuloso de las partes amputadas para un posible reimplante."
         ],
         questions: [
-            { question: "¿Cuál es el procedimiento paso a paso para preservar correctamente una parte amputada?" },
-            { question: "¿Por qué nunca se debe colocar una parte amputada directamente sobre el hielo?" },
-            { question: "En este caso, ¿es necesario un torniquete?" }
+            {question: "¿Cuál es el procedimiento paso a paso para preservar correctamente una parte amputada?"},
+            {question: "¿Por qué nunca se debe colocar una parte amputada directamente sobre el hielo?"},
+            {question: "En este caso, ¿es necesario un torniquete?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Trauma de Extremidades."
@@ -1577,9 +1577,9 @@ export const caseStudies: CaseStudy[] = [
             "Alta probabilidad de lesión de la columna cervical (a menudo pasada por alto)."
         ],
         questions: [
-            { question: "¿Cuáles son los dos mecanismos principales de lesión en un ahorcamiento (judicial vs. no judicial)?" },
-            { question: "¿Por qué se debe asumir siempre una lesión de la columna cervical en estos pacientes?" },
-            { question: "¿Qué complicaciones de la vía aérea se deben anticipar en el manejo de este paciente?" }
+            {question: "¿Cuáles son los dos mecanismos principales de lesión en un ahorcamiento (judicial vs. no judicial)?"},
+            {question: "¿Por qué se debe asumir siempre una lesión de la columna cervical en estos pacientes?"},
+            {question: "¿Qué complicaciones de la vía aérea se deben anticipar en el manejo de este paciente?"}
         ],
         references: [
             "PHTLS 9ª Edición - Capítulo de Trauma de Cabeza y Cuello."
@@ -1604,9 +1604,9 @@ export const caseStudies: CaseStudy[] = [
             "Posible intoxicación por monóxido de carbono y cianuro."
         ],
         questions: [
-            { question: "¿Cuáles son los signos clínicos que predicen una obstrucción inminente de la vía aérea en un paciente quemado?" },
-            { question: "¿Por qué la intubación temprana es crucial en estos pacientes, incluso si inicialmente parecen estables?" },
-            { question: "Además del daño térmico, ¿qué dos intoxicaciones potencialmente letales se deben sospechar?" }
+            {question: "¿Cuáles son los signos clínicos que predicen una obstrucción inminente de la vía aérea en un paciente quemado?"},
+            {question: "¿Por qué la intubación temprana es crucial en estos pacientes, incluso si inicialmente parecen estables?"},
+            {question: "Además del daño térmico, ¿qué dos intoxicaciones potencialmente letales se deben sospechar?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Lesiones por Quemaduras."
@@ -1630,9 +1630,9 @@ export const caseStudies: CaseStudy[] = [
             "La pérdida de pulso es un signo muy tardío e indica daño irreversible."
         ],
         questions: [
-            { question: "¿Cuál es la fisiopatología del síndrome compartimental?" },
-            { question: "Describe las '6 P' del síndrome compartimental y cuál de ellas es la más importante en la evaluación temprana." },
-            { question: "¿Qué acciones prehospitalarias se deben tomar para no empeorar la condición?" }
+            {question: "¿Cuál es la fisiopatología del síndrome compartimental?"},
+            {question: "Describe las '6 P' del síndrome compartimental y cuál de ellas es la más importante en la evaluación temprana."},
+            {question: "¿Qué acciones prehospitalarias se deben tomar para no empeorar la condición?"}
         ],
         references: [
             "PHTLS 9ª Edición - Capítulo de Trauma Musculoesquelético."
@@ -1656,9 +1656,9 @@ export const caseStudies: CaseStudy[] = [
             "Emergencia pediátrica de máxima prioridad."
         ],
         questions: [
-            { question: "¿Cuál es la secuencia de acciones para un niño inconsciente con sospecha de OVACE?" },
-            { question: "¿Qué modificación se hace al iniciar las compresiones torácicas en este escenario en comparación con un paro cardíaco primario?" },
-            { question: "Si el cuerpo extraño es visible en la boca, ¿qué debes hacer?" }
+            {question: "¿Cuál es la secuencia de acciones para un niño inconsciente con sospecha de OVACE?"},
+            {question: "¿Qué modificación se hace al iniciar las compresiones torácicas en este escenario en comparación con un paro cardíaco primario?"},
+            {question: "Si el cuerpo extraño es visible en la boca, ¿qué debes hacer?"}
         ],
         references: [
             "AHA Guidelines for Pediatric Advanced Life Support (PALS).",
@@ -1685,9 +1685,9 @@ export const caseStudies: CaseStudy[] = [
             "Cumple con los criterios de qSOFA (estado mental alterado, FR >22, PAS <100)."
         ],
         questions: [
-            { question: "¿Por qué la alteración del estado mental es a menudo el primer y único signo de una infección grave en los ancianos?" },
-            { question: "¿Qué es el lactato sérico y por qué es un marcador importante en la sepsis?" },
-            { question: "En el manejo prehospitalario, ¿cuál es la intervención más importante para mejorar la supervivencia en el shock séptico?" }
+            {question: "¿Por qué la alteración del estado mental es a menudo el primer y único signo de una infección grave en los ancianos?"},
+            {question: "¿Qué es el lactato sérico y por qué es un marcador importante en la sepsis?"},
+            {question: "En el manejo prehospitalario, ¿cuál es la intervención más importante para mejorar la supervivencia en el shock séptico?"}
         ],
         references: [
             "Surviving Sepsis Campaign Guidelines.",
@@ -1713,9 +1713,9 @@ export const caseStudies: CaseStudy[] = [
             "El 'abdomen en tabla' sin sensibilidad a la palpación es un signo clásico."
         ],
         questions: [
-            { question: "¿Cuál es el principal componente del veneno de la viuda negra y cuál es su mecanismo de acción?" },
-            { question: "¿Cómo se puede diferenciar clínicamente un abdomen rígido por latrodectismo de un abdomen agudo quirúrgico?" },
-            { question: "¿Cuál es el tratamiento principal para los espasmos musculares y el dolor severo?" }
+            {question: "¿Cuál es el principal componente del veneno de la viuda negra y cuál es su mecanismo de acción?"},
+            {question: "¿Cómo se puede diferenciar clínicamente un abdomen rígido por latrodectismo de un abdomen agudo quirúrgico?"},
+            {question: "¿Cuál es el tratamiento principal para los espasmos musculares y el dolor severo?"}
         ],
         references: [
             "Goldfrank's Toxicologic Emergencies, 11th Edition."
@@ -1739,9 +1739,9 @@ export const caseStudies: CaseStudy[] = [
             "Compromiso neurovascular distal."
         ],
         questions: [
-            { question: "¿Cuál es la primera y más importante prioridad en el manejo de una fractura abierta con sangrado activo?" },
-            { question: "Describe el procedimiento para irrigar y cubrir una fractura abierta en el campo." },
-            { question: "¿Cómo se debe alinear e inmovilizar una fractura angulada con compromiso vascular?" }
+            {question: "¿Cuál es la primera y más importante prioridad en el manejo de una fractura abierta con sangrado activo?"},
+            {question: "Describe el procedimiento para irrigar y cubrir una fractura abierta en el campo."},
+            {question: "¿Cómo se debe alinear e inmovilizar una fractura angulada con compromiso vascular?"}
         ],
         references: [
             "PHTLS 9ª Edición - Capítulo de Trauma Musculoesquelético."
@@ -1766,9 +1766,9 @@ export const caseStudies: CaseStudy[] = [
             "Riesgo de compromiso de la vía aérea si se produce un laringoespasmo (raro)."
         ],
         questions: [
-            { question: "¿Qué clase de medicamentos son conocidos por causar reacciones distónicas agudas?" },
-            { question: "¿Cuál es el mecanismo de acción de esta reacción adversa?" },
-            { question: "¿Cuál es el antídoto de primera línea y qué tan rápido funciona?" }
+            {question: "¿Qué clase de medicamentos son conocidos por causar reacciones distónicas agudas?"},
+            {question: "¿Cuál es el mecanismo de acción de esta reacción adversa?"},
+            {question: "¿Cuál es el antídoto de primera línea y qué tan rápido funciona?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Emergencias Psiquiátricas."
@@ -1793,9 +1793,9 @@ export const caseStudies: CaseStudy[] = [
             "El dolor referido al hombro (signo de Kehr) se debe a la irritación del diafragma por la sangre."
         ],
         questions: [
-            { question: "¿Qué es un embarazo ectópico y por qué su ruptura es una emergencia mortal?" },
-            { question: "¿Qué tres hallazgos (la 'tríada clásica') sugieren un embarazo ectópico?" },
-            { question: "¿Cuál es la prioridad absoluta en el manejo de esta paciente?" }
+            {question: "¿Qué es un embarazo ectópico y por qué su ruptura es una emergencia mortal?"},
+            {question: "¿Qué tres hallazgos (la 'tríada clásica') sugieren un embarazo ectópico?"},
+            {question: "¿Cuál es la prioridad absoluta en el manejo de esta paciente?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Emergencias Ginecológicas."
@@ -1818,9 +1818,9 @@ export const caseStudies: CaseStudy[] = [
             "Lesiones neurológicas y cutáneas en la víctima 2."
         ],
         questions: [
-            { question: "Explica el principio de 'triage inverso' y por qué se aplica a las víctimas de un rayo." },
-            { question: "¿Cuál es el mecanismo más común de muerte en una víctima de rayo?" },
-            { question: "¿Qué son las figuras de Lichtenberg?" }
+            {question: "Explica el principio de 'triage inverso' y por qué se aplica a las víctimas de un rayo."},
+            {question: "¿Cuál es el mecanismo más común de muerte en una víctima de rayo?"},
+            {question: "¿Qué son las figuras de Lichtenberg?"}
         ],
         references: [
             "AAOS 11ª Edición - Capítulo de Emergencias Ambientales."
@@ -1845,9 +1845,9 @@ export const caseStudies: CaseStudy[] = [
             "Posibles lesiones ocultas en la arteria carótida, la laringe y la columna cervical."
         ],
         questions: [
-            { question: "¿Por qué el estrangulamiento, incluso sin pérdida de conciencia, es una lesión potencialmente letal?" },
-            { question: "¿Qué son las petequias y por qué aparecen en la cara y los ojos en estos casos?" },
-            { question: "Además del edema de la vía aérea, ¿qué otra complicación vascular grave puede ocurrir días después?" }
+            {question: "¿Por qué el estrangulamiento, incluso sin pérdida de conciencia, es una lesión potencialmente letal?"},
+            {question: "¿Qué son las petequias y por qué aparecen en la cara y los ojos en estos casos?"},
+            {question: "Además del edema de la vía aérea, ¿qué otra complicación vascular grave puede ocurrir días después?"}
         ],
         references: [
             "Journal of Emergency Medicine - Strangulation Injuries."
@@ -1872,9 +1872,9 @@ export const caseStudies: CaseStudy[] = [
             "Incapacidad para manejar secreciones por debilidad de los músculos bulbares."
         ],
         questions: [
-            { question: "¿Qué es la Miastenia Gravis?" },
-            { question: "¿Cómo se puede evaluar rápidamente la gravedad de la debilidad respiratoria en el campo?" },
-            { question: "Diferencia entre una crisis miasténica y una crisis colinérgica." }
+            {question: "¿Qué es la Miastenia Gravis?"},
+            {question: "¿Cómo se puede evaluar rápidamente la gravedad de la debilidad respiratoria en el campo?"},
+            {question: "Diferencia entre una crisis miasténica y una crisis colinérgica."}
         ],
         references: [
             "Tintinalli's Emergency Medicine: A Comprehensive Study Guide, 9th Edition."
@@ -1899,9 +1899,9 @@ export const caseStudies: CaseStudy[] = [
             "Paciente en estado crítico con alta mortalidad."
         ],
         questions: [
-            { question: "¿Cómo se diferencia clínicamente el shock cardiogénico del shock hipovolémico?" },
-            { question: "¿Por qué la administración de grandes bolos de líquidos puede ser perjudicial o incluso mortal en el shock cardiogénico?" },
-            { question: "¿Qué es un vasopresor y por qué es el tratamiento farmacológico de elección en este tipo de shock?" }
+            {question: "¿Cómo se diferencia clínicamente el shock cardiogénico del shock hipovolémico?"},
+            {question: "¿Por qué la administración de grandes bolos de líquidos puede ser perjudicial o incluso mortal en el shock cardiogénico?"},
+            {question: "¿Qué es un vasopresor y por qué es el tratamiento farmacológico de elección en este tipo de shock?"}
         ],
         references: [
             "AHA Guidelines for ACLS.",
@@ -1927,9 +1927,9 @@ export const caseStudies: CaseStudy[] = [
             "Broncoespasmo e hipoxia."
         ],
         "questions": [
-            { "question": "¿Cuál es el medicamento de primera línea en la anafilaxia y cuál es su mecanismo de acción?" },
-            { "question": "¿Por qué la hipotensión es un hallazgo clave en el shock anafiláctico?" },
-            { "question": "Además del medicamento principal, ¿qué otras dos intervenciones son cruciales en este paciente?" }
+            {"question": "¿Cuál es el medicamento de primera línea en la anafilaxia y cuál es su mecanismo de acción?"},
+            {"question": "¿Por qué la hipotensión es un hallazgo clave en el shock anafiláctico?"},
+            {"question": "Además del medicamento principal, ¿qué otras dos intervenciones son cruciales en este paciente?"}
         ],
         "references": [
             "Atención medica prehospitalaria básica de la AAOS - Capítulo de Anafilaxia y Reacciones Alérgicas."
@@ -1955,9 +1955,9 @@ export const caseStudies: CaseStudy[] = [
             "Respuesta simpática activada (taquicardia, diaforesis)."
         ],
         "questions": [
-            { "question": "¿Por qué el cerebro es tan vulnerable a los niveles bajos de glucosa?" },
-            { "question": "¿Cuál es la vía de administración y el tratamiento de elección para un paciente hipoglucémico que no puede tragar de forma segura?" },
-            { "question": "Si no se pudiera obtener un acceso IV, ¿cuál sería el tratamiento alternativo?" }
+            {"question": "¿Por qué el cerebro es tan vulnerable a los niveles bajos de glucosa?"},
+            {"question": "¿Cuál es la vía de administración y el tratamiento de elección para un paciente hipoglucémico que no puede tragar de forma segura?"},
+            {"question": "Si no se pudiera obtener un acceso IV, ¿cuál sería el tratamiento alternativo?"}
         ],
         "references": [
             "Atención medica prehospitalaria básica de la AAOS - Capítulo de Emergencias Diabéticas."
@@ -1982,9 +1982,9 @@ export const caseStudies: CaseStudy[] = [
             "Hipoxia secundaria a la actividad muscular intensa y la alteración del patrón respiratorio."
         ],
         "questions": [
-            { "question": "¿Cuál es la prioridad número uno en el manejo de un paciente con una convulsión activa?" },
-            { "question": "¿Cuál es la clase de medicamento de elección para detener una convulsión y cuál es la vía de administración preferida en el entorno prehospitalario?" },
-            { "question": "¿Qué es el estado postictal y cómo se debe manejar al paciente durante esta fase?" }
+            {"question": "¿Cuál es la prioridad número uno en el manejo de un paciente con una convulsión activa?"},
+            {"question": "¿Cuál es la clase de medicamento de elección para detener una convulsión y cuál es la vía de administración preferida en el entorno prehospitalario?"},
+            {"question": "¿Qué es el estado postictal y cómo se debe manejar al paciente durante esta fase?"}
         ],
         "references": [
             "Atención medica prehospitalaria básica de la AAOS - Capítulo de Emergencias Neurológicas."
@@ -2006,9 +2006,9 @@ export const caseStudies: CaseStudy[] = [
             "Multípara (ha tenido partos previos), lo que a menudo indica un trabajo de parto más rápido."
         ],
         "questions": [
-            { "question": "¿Cuáles son los tres signos inequívocos de un parto inminente?" },
-            { "question": "Describe los pasos clave para asistir un parto normal y no complicado." },
-            { "question": "Inmediatamente después del nacimiento, ¿cuáles son las tres prioridades en el cuidado del recién nacido?" }
+            {"question": "¿Cuáles son los tres signos inequívocos de un parto inminente?"},
+            {"question": "Describe los pasos clave para asistir un parto normal y no complicado."},
+            {"question": "Inmediatamente después del nacimiento, ¿cuáles son las tres prioridades en el cuidado del recién nacido?"}
         ],
         "references": [
             "Atención medica prehospitalaria básica de la AAOS - Capítulo de Emergencias Obstétricas."
@@ -2033,9 +2033,9 @@ export const caseStudies: CaseStudy[] = [
             "Insuficiencia respiratoria y paro cardiorrespiratorio inminente."
         ],
         "questions": [
-            { "question": "¿Cuál es la fisiopatología de un neumotórax a tensión y por qué es inmediatamente mortal?" },
-            { "question": "¿Qué tres hallazgos conforman la 'tríada clásica' del neumotórax a tensión?" },
-            { "question": "¿Cuál es la intervención prehospitalaria definitiva para esta condición y dónde se realiza?" }
+            {"question": "¿Cuál es la fisiopatología de un neumotórax a tensión y por qué es inmediatamente mortal?"},
+            {"question": "¿Qué tres hallazgos conforman la 'tríada clásica' del neumotórax a tensión?"},
+            {"question": "¿Cuál es la intervención prehospitalaria definitiva para esta condición y dónde se realiza?"}
         ],
         "references": [
             "Atención medica prehospitalaria básica de la AAOS - Capítulo de Trauma Torácico."
@@ -2061,9 +2061,9 @@ export const caseStudies: CaseStudy[] = [
             "La debilidad, el síncope y las náuseas son 'equivalentes anginosos' comunes en pacientes geriátricos y diabéticos."
         ],
         "questions": [
-            { "question": "¿Por qué los pacientes ancianos, especialmente mujeres y diabéticos, a menudo no presentan dolor torácico clásico durante un infarto?" },
-            { "question": "¿Qué intervención diagnóstica es la más importante a realizar en el campo para esta paciente?" },
-            { "question": "¿Por qué se debe administrar la nitroglicerina con extrema precaución o evitarla en un paciente con estos signos vitales?" }
+            {"question": "¿Por qué los pacientes ancianos, especialmente mujeres y diabéticos, a menudo no presentan dolor torácico clásico durante un infarto?"},
+            {"question": "¿Qué intervención diagnóstica es la más importante a realizar en el campo para esta paciente?"},
+            {"question": "¿Por qué se debe administrar la nitroglicerina con extrema precaución o evitarla en un paciente con estos signos vitales?"}
         ],
         "references": [
             "Atención medica prehospitalaria básica de la AAOS - Capítulos de Emergencias Geriátricas y Emergencias Cardiovasculares."
@@ -2089,9 +2089,9 @@ export const caseStudies: CaseStudy[] = [
             "Insuficiencia respiratoria hipoxémica."
         ],
         "questions": [
-            { "question": "¿Por qué los pacientes postrados en cama y con demencia tienen un riesgo tan alto de desarrollar neumonía?" },
-            { "question": "Utilizando los criterios qSOFA, ¿cómo calificaría a este paciente?" },
-            { "question": "¿Cuál es la intervención prehospitalaria más importante para tratar la hipotensión inducida por la sepsis?" }
+            {"question": "¿Por qué los pacientes postrados en cama y con demencia tienen un riesgo tan alto de desarrollar neumonía?"},
+            {"question": "Utilizando los criterios qSOFA, ¿cómo calificaría a este paciente?"},
+            {"question": "¿Cuál es la intervención prehospitalaria más importante para tratar la hipotensión inducida por la sepsis?"}
         ],
         "references": [
             "Atención medica prehospitalaria básica de la AAOS - Capítulos de Emergencias Geriátricas y Enfermedades Infecciosas."
@@ -2116,9 +2116,9 @@ export const caseStudies: CaseStudy[] = [
             "Posibles desequilibrios electrolíticos que pueden causar debilidad y arritmias."
         ],
         "questions": [
-            { "question": "¿Qué factores ponen a los ancianos en mayor riesgo de deshidratación?" },
-            { "question": "¿Qué es la hipotensión ortostática y cómo se evaluaría en este paciente si fuera posible?" },
-            { "question": "Además de la hipovolemia, ¿qué complicación cardíaca se debe vigilar en un paciente con deshidratación y posible desequilibrio electrolítico?" }
+            {"question": "¿Qué factores ponen a los ancianos en mayor riesgo de deshidratación?"},
+            {"question": "¿Qué es la hipotensión ortostática y cómo se evaluaría en este paciente si fuera posible?"},
+            {"question": "Además de la hipovolemia, ¿qué complicación cardíaca se debe vigilar en un paciente con deshidratación y posible desequilibrio electrolítico?"}
         ],
         "references": [
             "Atención medica prehospitalaria básica de la AAOS - Capítulo de Emergencias Geriátricas."
@@ -2144,9 +2144,9 @@ export const caseStudies: CaseStudy[] = [
             "Fuera de la ventana para terapia trombolítica (tPA)."
         ],
         "questions": [
-            { "question": "¿Por qué es tan importante determinar la hora exacta de la 'última vez visto normal' en un paciente con ACV?" },
-            { "question": "Aunque este paciente no sea candidato a trombolíticos, ¿por qué es vital el traslado rápido a un centro de ACV integral?" },
-            { "question": "¿Qué significa la desviación de la mirada en un ACV?" }
+            {"question": "¿Por qué es tan importante determinar la hora exacta de la 'última vez visto normal' en un paciente con ACV?"},
+            {"question": "Aunque este paciente no sea candidato a trombolíticos, ¿por qué es vital el traslado rápido a un centro de ACV integral?"},
+            {"question": "¿Qué significa la desviación de la mirada en un ACV?"}
         ],
         "references": [
             "Atención medica prehospitalaria básica de la AAOS - Capítulos de Emergencias Neurológicas y Geriátricas."
@@ -2171,9 +2171,9 @@ export const caseStudies: CaseStudy[] = [
             "La hipoxia con campos pulmonares limpios es un signo clásico de TEP."
         ],
         "questions": [
-            { "question": "Explica la 'Tríada de Virchow' y cómo se aplica a este paciente." },
-            { "question": "¿Cuál es el significado de encontrar los pulmones 'limpios' en un paciente con disnea e hipoxia agudas?" },
-            { "question": "¿De dónde provienen la gran mayoría de las embolias pulmonares?" }
+            {"question": "Explica la 'Tríada de Virchow' y cómo se aplica a este paciente."},
+            {"question": "¿Cuál es el significado de encontrar los pulmones 'limpios' en un paciente con disnea e hipoxia agudas?"},
+            {"question": "¿De dónde provienen la gran mayoría de las embolias pulmonares?"}
         ],
         "references": [
             "Atención medica prehospitalaria básica de la AAOS - Capítulos de Emergencias Respiratorias y Geriátricas."

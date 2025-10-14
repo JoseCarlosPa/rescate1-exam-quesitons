@@ -3,8 +3,8 @@ import {FaRadio} from "react-icons/fa6";
 import {MdEmergency, MdLocalHospital, MdSecurity, MdWarning} from "react-icons/md";
 import {FiCheckCircle} from "react-icons/fi";
 
-export default function Structure(){
-    return(
+export default function Structure() {
+    return (
         <div className="space-y-6">
             <h2 className="text-3xl font-bold text-gray-800 mb-6 border-b border-gray-200 pb-3">
                 <FaHospital className="inline mr-3 text-blue-500"/>
