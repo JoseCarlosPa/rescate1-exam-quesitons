@@ -17,9 +17,10 @@ import Treatment from "./components/Treatment.component.tsx";
 import Practice from "./components/Practice.component.tsx";
 import Diseases from "./components/Diseases.component.tsx";
 import {ForumSection} from "../../../components/ForumSection";
+import EkgSimulator from "./components/EkgSimulator/EkgSimulator.component.tsx";
 
 export default function CardioEmergency() {
-    const [activeTab, setActiveTab] = useState<'overview' | 'anatomy' | 'treatment' | 'practice' | 'diseases' | 'pathophysiology'>('overview');
+    const [activeTab, setActiveTab] = useState<'overview' | 'anatomy' | 'treatment' | 'practice' | 'diseases' | 'pathophysiology' | 'ekg'>('overview');
     return (
         <SEOWrapper
             title="Emergencias Cardiovasculares - Infarto, Arritmias | EMT EXAM"
@@ -134,6 +135,15 @@ export default function CardioEmergency() {
                                     }`}>
                                     Casos practicos
                                 </button>
+                                <button
+                                    onClick={() => setActiveTab('ekg')}
+                                    className={`py-3 px-4 font-medium text-sm border-b-2 transition ${
+                                        activeTab === 'ekg'
+                                            ? 'border-orange-500 text-orange-600'
+                                            : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                                    }`}>
+                                    🫀 Simulador EKG
+                                </button>
                             </nav>
                         </div>
 
@@ -156,6 +166,9 @@ export default function CardioEmergency() {
                             )}
                             {activeTab === 'diseases' && (
                                 <Diseases/>
+                            )}
+                            {activeTab === 'ekg' && (
+                                <EkgSimulator/>
                             )}
                         </div>
 
@@ -233,4 +246,3 @@ export default function CardioEmergency() {
         </SEOWrapper>
     );
 }
-
