@@ -2,9 +2,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from 'recharts';
 import { RhythmType} from "./EkgSimulator.types.ts";
 import useEkgSimulator from "./EkgSimulator.hook.ts";
-import {pqrstInfo} from "./EkgSimultaro.constants.ts";
-
-
+import {ekgExplanations, pqrstInfo} from "./EkgSimultaro.constants.ts";
+import {useState} from "react";
 
 export default function EkgSimulator() {
 
@@ -18,7 +17,12 @@ export default function EkgSimulator() {
         setShowLabels,
         currentInfo,
         rhythmData,
+        customParams,
+        setCustomParams,
     } = useEkgSimulator();
+
+    const [showCustomControls, setShowCustomControls] = useState(false);
+    const [expandedPQRST, setExpandedPQRST] = useState<string | null>(null);
 
     return (
         <div className="w-full max-w-7xl mx-auto p-6 bg-white rounded-lg shadow-lg">
@@ -91,7 +95,144 @@ export default function EkgSimulator() {
                 >
                     {showLabels ? '🏷 Ocultar Etiquetas' : '🏷 Mostrar Etiquetas'}
                 </button>
+                <button
+                    onClick={() => setShowCustomControls(!showCustomControls)}
+                    className="px-6 py-2 bg-indigo-500 hover:bg-indigo-600 text-white rounded-lg font-semibold transition"
+                >
+                    {showCustomControls ? '🎛 Ocultar Controles' : '🎛 Personalizar EKG'}
+                </button>
             </div>
+
+            {/* Controles Personalizados */}
+            {showCustomControls && (
+                <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    className="bg-indigo-50 p-6 rounded-lg mb-6 border-2 border-indigo-300"
+                >
+                    <h3 className="text-xl font-bold mb-4 text-indigo-800">
+                        🎛️ Controles Personalizados - Modo Educativo
+                    </h3>
+                    <p className="text-sm text-gray-700 mb-4">
+                        Experimenta modificando los parámetros del EKG para entender cómo afectan el trazado.
+                        Primero selecciona "Ritmo Personalizado" abajo.
+                    </p>
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {/* Frecuencia Cardíaca */}
+                        <div>
+                            <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                ❤️ Frecuencia Cardíaca: {customParams.bpm} lpm
+                            </label>
+                            <input
+                                type="range"
+                                min="30"
+                                max="200"
+                                value={customParams.bpm}
+                                onChange={(e) => setCustomParams({...customParams, bpm: parseInt(e.target.value)})}
+                                className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer"
+                                disabled={selectedRhythm !== 'custom'}
+                            />
+                            <p className="text-xs text-gray-600 mt-1">
+                                {customParams.bpm < 60 ? 'Bradicardia' : customParams.bpm > 100 ? 'Taquicardia' : 'Normal'}
+                            </p>
+                        </div>
+
+                        {/* Amplitud Onda P */}
+                        <div>
+                            <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                🔵 Amplitud Onda P: {customParams.pWaveAmplitude.toFixed(2)} mV
+                            </label>
+                            <input
+                                type="range"
+                                min="0"
+                                max="0.5"
+                                step="0.05"
+                                value={customParams.pWaveAmplitude}
+                                onChange={(e) => setCustomParams({...customParams, pWaveAmplitude: parseFloat(e.target.value)})}
+                                className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer"
+                                disabled={selectedRhythm !== 'custom'}
+                            />
+                            <p className="text-xs text-gray-600 mt-1">Despolarización auricular</p>
+                        </div>
+
+                        {/* Amplitud QRS */}
+                        <div>
+                            <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                🟢 Amplitud QRS: {customParams.qrsAmplitude.toFixed(1)} mV
+                            </label>
+                            <input
+                                type="range"
+                                min="0.5"
+                                max="4"
+                                step="0.1"
+                                value={customParams.qrsAmplitude}
+                                onChange={(e) => setCustomParams({...customParams, qrsAmplitude: parseFloat(e.target.value)})}
+                                className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer"
+                                disabled={selectedRhythm !== 'custom'}
+                            />
+                            <p className="text-xs text-gray-600 mt-1">Despolarización ventricular</p>
+                        </div>
+
+                        {/* Amplitud Onda T */}
+                        <div>
+                            <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                🔴 Amplitud Onda T: {customParams.tWaveAmplitude.toFixed(2)} mV
+                            </label>
+                            <input
+                                type="range"
+                                min="0"
+                                max="0.8"
+                                step="0.05"
+                                value={customParams.tWaveAmplitude}
+                                onChange={(e) => setCustomParams({...customParams, tWaveAmplitude: parseFloat(e.target.value)})}
+                                className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer"
+                                disabled={selectedRhythm !== 'custom'}
+                            />
+                            <p className="text-xs text-gray-600 mt-1">Repolarización ventricular</p>
+                        </div>
+
+                        {/* Elevación ST */}
+                        <div>
+                            <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                🟡 Elevación ST: {customParams.stElevation.toFixed(2)} mV
+                            </label>
+                            <input
+                                type="range"
+                                min="0"
+                                max="1"
+                                step="0.1"
+                                value={customParams.stElevation}
+                                onChange={(e) => setCustomParams({...customParams, stElevation: parseFloat(e.target.value)})}
+                                className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer"
+                                disabled={selectedRhythm !== 'custom'}
+                            />
+                            <p className="text-xs text-gray-600 mt-1">
+                                {customParams.stElevation > 0.3 ? '⚠️ Indica lesión miocárdica' : 'Normal'}
+                            </p>
+                        </div>
+
+                        {/* Botón Reset */}
+                        <div className="flex items-end">
+                            <button
+                                onClick={() => setCustomParams({
+                                    bpm: 75,
+                                    pWaveAmplitude: 0.25,
+                                    qrsAmplitude: 2.0,
+                                    tWaveAmplitude: 0.3,
+                                    prInterval: 0.15,
+                                    qrsWidth: 0.1,
+                                    stElevation: 0
+                                })}
+                                className="w-full px-4 py-2 bg-gray-500 hover:bg-gray-600 text-white rounded-lg font-semibold transition"
+                            >
+                                🔄 Restaurar Valores
+                            </button>
+                        </div>
+                    </div>
+                </motion.div>
+            )}
 
             {/* Selector de Ritmos */}
             <div className="mb-8">
@@ -143,15 +284,19 @@ export default function EkgSimulator() {
                             <span className="font-semibold text-gray-700">💊 Tratamiento:</span>
                             <p className="text-gray-800 ml-6">{currentInfo.treatment}</p>
                         </div>
+                        <div className="bg-yellow-50 p-4 rounded-lg mt-4 border-l-4 border-yellow-400">
+                            <span className="font-semibold text-gray-700">🧠 ¿Por qué ocurre este ritmo?</span>
+                            <p className="text-gray-800 ml-6 mt-2">{currentInfo.explanation}</p>
+                        </div>
                     </div>
                 </motion.div>
             </AnimatePresence>
 
-            {/* Componentes PQRST */}
+            {/* Componentes PQRST Expandibles */}
             {showLabels && (
-                <div className="bg-gray-50 p-6 rounded-lg">
+                <div className="bg-gray-50 p-6 rounded-lg mb-6">
                     <h3 className="text-xl font-bold mb-4 text-gray-800">
-                        📚 Componentes del Electrocardiograma (PQRST)
+                        📚 Componentes del Electrocardiograma (PQRST) - Explicación Detallada
                     </h3>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                         {pqrstInfo.map((item, index) => (
@@ -160,19 +305,71 @@ export default function EkgSimulator() {
                                 initial={{ opacity: 0, x: -20 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: index * 0.1 }}
-                                className="bg-white p-4 rounded-lg shadow border-l-4"
+                                className="bg-white rounded-lg shadow border-l-4 overflow-hidden"
                                 style={{ borderColor: item.color.replace('bg-', '#') }}
                             >
-                                <div className="flex items-center gap-2 mb-2">
-                                    <div className={`w-4 h-4 ${item.color} rounded`}></div>
-                                    <h4 className="font-bold text-gray-800">{item.label}</h4>
-                                </div>
-                                <p className="text-sm text-gray-600">{item.description}</p>
+                                <button
+                                    onClick={() => setExpandedPQRST(expandedPQRST === item.label ? null : item.label)}
+                                    className="w-full p-4 text-left hover:bg-gray-50 transition"
+                                >
+                                    <div className="flex items-center gap-2 mb-2">
+                                        <div className={`w-4 h-4 ${item.color} rounded`}></div>
+                                        <h4 className="font-bold text-gray-800">{item.label}</h4>
+                                        <span className="ml-auto text-gray-400">
+                                            {expandedPQRST === item.label ? '▼' : '▶'}
+                                        </span>
+                                    </div>
+                                    <p className="text-sm text-gray-600">{item.description}</p>
+                                </button>
+
+                                <AnimatePresence>
+                                    {expandedPQRST === item.label && (
+                                        <motion.div
+                                            initial={{ height: 0, opacity: 0 }}
+                                            animate={{ height: 'auto', opacity: 1 }}
+                                            exit={{ height: 0, opacity: 0 }}
+                                            className="px-4 pb-4 bg-gray-50"
+                                        >
+                                            <div className="pt-2 border-t border-gray-200">
+                                                <p className="text-sm text-gray-700 mb-3">
+                                                    {item.detailedExplanation}
+                                                </p>
+                                                <div className="bg-white p-2 rounded mb-2">
+                                                    <p className="text-xs font-semibold text-green-700">
+                                                        ✅ Valores Normales:
+                                                    </p>
+                                                    <p className="text-xs text-gray-600">{item.normalValues}</p>
+                                                </div>
+                                                <div className="bg-red-50 p-2 rounded">
+                                                    <p className="text-xs font-semibold text-red-700">
+                                                        ⚠️ Anormalidades:
+                                                    </p>
+                                                    <p className="text-xs text-gray-600">{item.abnormalities}</p>
+                                                </div>
+                                            </div>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
                             </motion.div>
                         ))}
                     </div>
                 </div>
             )}
+
+            {/* Sistema de Conducción */}
+            <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-lg mb-6 border-l-4 border-purple-500">
+                <h3 className="text-xl font-bold mb-3 text-purple-800">
+                    {ekgExplanations.conductionSystem.title}
+                </h3>
+                <div className="prose prose-sm text-gray-700">
+                    {ekgExplanations.conductionSystem.content.split('\n').map((line, i) => {
+                        if (line.trim()) {
+                            return <p key={i} className="mb-2">{line.trim()}</p>;
+                        }
+                        return null;
+                    })}
+                </div>
+            </div>
 
             {/* Información Educativa Adicional */}
             <div className="mt-8 grid md:grid-cols-2 gap-6">
@@ -219,3 +416,4 @@ export default function EkgSimulator() {
         </div>
     );
 }
+

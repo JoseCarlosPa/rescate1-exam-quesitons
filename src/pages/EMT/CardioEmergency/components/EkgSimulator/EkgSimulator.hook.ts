@@ -1,6 +1,6 @@
-import {EKGPoint, RhythmType} from "./EkgSimulator.types.ts";
+import {CustomParameters, EKGPoint, RhythmType} from "./EkgSimulator.types.ts";
 import {rhythmData} from "./EkgSimultaro.constants.ts";
-import {useEffect, useState} from "react";
+import {useEffect, useState, useCallback} from "react";
 
 export default function useEkgSimulator() {
     const [selectedRhythm, setSelectedRhythm] = useState<RhythmType>('normal');
@@ -8,48 +8,40 @@ export default function useEkgSimulator() {
     const [isPlaying, setIsPlaying] = useState(true);
     const [showLabels, setShowLabels] = useState(true);
     const [timeOffset, setTimeOffset] = useState(0);
+    const [customParams, setCustomParams] = useState<CustomParameters>({
+        bpm: 75,
+        pWaveAmplitude: 0.25,
+        qrsAmplitude: 2.0,
+        tWaveAmplitude: 0.3,
+        prInterval: 0.15,
+        qrsWidth: 0.1,
+        stElevation: 0
+    });
 
-    // Actualizar datos del EKG
-    useEffect(() => {
-        if (isPlaying) {
-            const interval = setInterval(() => {
-                setTimeOffset(prev => prev + 2);
-            }, 20);
-            return () => clearInterval(interval);
-        }
-    }, [isPlaying]);
-
-    useEffect(() => {
-        const newData = generateEKGData(selectedRhythm, timeOffset);
-        setEkgData(newData);
-    }, [selectedRhythm, timeOffset]);
-
-    const currentInfo = rhythmData[selectedRhythm];
-
-// Funciones para generar ondas individuales
-    const generatePWave = (t: number): number => {
-        return 0.25 * Math.sin(t * Math.PI);
+    // Funciones para generar ondas individuales
+    const generatePWave = (t: number, amplitude: number): number => {
+        return amplitude * Math.sin(t * Math.PI);
     };
 
-    const generateQRS = (t: number): number => {
-        if (t < 0.3) return -0.3 * Math.sin(t * Math.PI * 3.33); // Q
-        if (t < 0.6) return 2.0 * Math.sin((t - 0.3) * Math.PI * 3.33); // R
-        return -0.4 * Math.sin((t - 0.6) * Math.PI * 2.5); // S
+    const generateQRS = (t: number, amplitude: number): number => {
+        if (t < 0.3) return -0.15 * amplitude * Math.sin(t * Math.PI * 3.33); // Q
+        if (t < 0.6) return amplitude * Math.sin((t - 0.3) * Math.PI * 3.33); // R
+        return -0.2 * amplitude * Math.sin((t - 0.6) * Math.PI * 2.5); // S
     };
 
-    const generateWideQRS = (t: number): number => {
+    const generateWideQRS = (t: number, amplitude: number): number => {
         // QRS más ancho para taquicardia ventricular
-        if (t < 0.4) return -0.4 * Math.sin(t * Math.PI * 2.5);
-        if (t < 0.7) return 2.2 * Math.sin((t - 0.4) * Math.PI * 3.33);
-        return -0.5 * Math.sin((t - 0.7) * Math.PI * 3.33);
+        if (t < 0.4) return -0.2 * amplitude * Math.sin(t * Math.PI * 2.5);
+        if (t < 0.7) return 1.1 * amplitude * Math.sin((t - 0.4) * Math.PI * 3.33);
+        return -0.25 * amplitude * Math.sin((t - 0.7) * Math.PI * 3.33);
     };
 
-    const generateTWave = (t: number): number => {
-        return 0.3 * Math.sin(t * Math.PI);
+    const generateTWave = (t: number, amplitude: number): number => {
+        return amplitude * Math.sin(t * Math.PI);
     };
 
-// Generar datos del EKG según el ritmo seleccionado
-    const generateEKGData = (rhythm: RhythmType, offset: number): EKGPoint[] => {
+    // Generar datos del EKG según el ritmo seleccionado
+    const generateEKGData = useCallback((rhythm: RhythmType, offset: number, params: CustomParameters): EKGPoint[] => {
         const data: EKGPoint[] = [];
         const pointsPerSecond = 100;
         const duration = 5; // 5 segundos
@@ -73,8 +65,13 @@ export default function useEkgSimulator() {
             return data;
         }
 
-        const info = rhythmData[rhythm];
-        const bpm = info.bpm;
+        // Usar parámetros personalizados si está en modo custom
+        const bpm = rhythm === 'custom' ? params.bpm : rhythmData[rhythm].bpm;
+        const pAmp = rhythm === 'custom' ? params.pWaveAmplitude : 0.25;
+        const qrsAmp = rhythm === 'custom' ? params.qrsAmplitude : 2.0;
+        const tAmp = rhythm === 'custom' ? params.tWaveAmplitude : 0.3;
+        const stElev = rhythm === 'custom' ? params.stElevation : (rhythm === 'stemi' ? 0.5 : 0);
+
         const beatInterval = (60 / bpm) * pointsPerSecond; // puntos entre latidos
 
         for (let i = 0; i < totalPoints; i++) {
@@ -93,43 +90,41 @@ export default function useEkgSimulator() {
 
                 // Sin onda P definida, QRS irregular
                 if (normPos > 0.15 && normPos < 0.25) {
-                    voltage = generateQRS((normPos - 0.15) / 0.1) * 1.5;
+                    voltage = generateQRS((normPos - 0.15) / 0.1, 1.5);
                 } else if (normPos > 0.35 && normPos < 0.55) {
-                    voltage = generateTWave((normPos - 0.35) / 0.2) * 0.7;
+                    voltage = generateTWave((normPos - 0.35) / 0.2, 0.7);
                 } else {
                     voltage = (Math.random() - 0.5) * 0.3; // Ondas f (fibrilación)
                 }
             } else if (rhythm === 'vtach') {
                 // Taquicardia ventricular - QRS anchos
                 if (normalizedPosition < 0.4) {
-                    voltage = generateWideQRS(normalizedPosition / 0.4) * 2;
+                    voltage = generateWideQRS(normalizedPosition / 0.4, 2);
                 } else if (normalizedPosition > 0.5 && normalizedPosition < 0.8) {
-                    voltage = generateTWave((normalizedPosition - 0.5) / 0.3) * 0.8;
+                    voltage = generateTWave((normalizedPosition - 0.5) / 0.3, 0.8);
                 }
             } else {
-                // Ritmos sinusales normales
+                // Ritmos sinusales normales o personalizados
                 // Onda P
                 if (normalizedPosition > 0.05 && normalizedPosition < 0.15) {
-                    voltage = generatePWave((normalizedPosition - 0.05) / 0.1);
+                    voltage = generatePWave((normalizedPosition - 0.05) / 0.1, pAmp);
                 }
                 // Complejo QRS
                 else if (normalizedPosition > 0.2 && normalizedPosition < 0.3) {
-                    voltage = generateQRS((normalizedPosition - 0.2) / 0.1);
+                    voltage = generateQRS((normalizedPosition - 0.2) / 0.1, qrsAmp);
                 }
                 // Onda T
                 else if (normalizedPosition > 0.4 && normalizedPosition < 0.6) {
-                    voltage = generateTWave((normalizedPosition - 0.4) / 0.2);
+                    voltage = generateTWave((normalizedPosition - 0.4) / 0.2, tAmp);
 
-                    // Elevación ST para STEMI
-                    if (rhythm === 'stemi') {
-                        voltage += 0.4;
+                    // Elevación ST
+                    if (stElev > 0) {
+                        voltage += stElev * 0.8;
                     }
                 }
                 // Segmento ST (entre QRS y T)
                 else if (normalizedPosition > 0.3 && normalizedPosition < 0.4) {
-                    if (rhythm === 'stemi') {
-                        voltage = 0.5; // Elevación
-                    }
+                    voltage = stElev;
                 }
             }
 
@@ -137,9 +132,24 @@ export default function useEkgSimulator() {
         }
 
         return data;
-    };
+    }, []);
 
+    // Actualizar datos del EKG
+    useEffect(() => {
+        if (isPlaying) {
+            const interval = setInterval(() => {
+                setTimeOffset(prev => prev + 2);
+            }, 20);
+            return () => clearInterval(interval);
+        }
+    }, [isPlaying]);
 
+    useEffect(() => {
+        const newData = generateEKGData(selectedRhythm, timeOffset, customParams);
+        setEkgData(newData);
+    }, [selectedRhythm, timeOffset, customParams, generateEKGData]);
+
+    const currentInfo = rhythmData[selectedRhythm];
 
     return {
         selectedRhythm,
@@ -151,5 +161,7 @@ export default function useEkgSimulator() {
         setShowLabels,
         currentInfo,
         rhythmData,
+        customParams,
+        setCustomParams,
     };
 }
