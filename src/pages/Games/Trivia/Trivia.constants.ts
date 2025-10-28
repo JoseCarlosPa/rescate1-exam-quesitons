@@ -10,23 +10,23 @@ export const DIFFICULTY_CONFIGS: Record<string, DifficultyConfig> = {
     },
     medium: {
         label: 'Medio',
-        questionCount: 15,
+        questionCount: 10,
         timePerQuestion: 25,
-        description: '15 preguntas, 25 segundos cada una',
+        description: '10 preguntas, 25 segundos cada una',
         color: 'yellow'
     },
     hard: {
         label: 'Difícil',
-        questionCount: 20,
+        questionCount: 10,
         timePerQuestion: 20,
-        description: '20 preguntas, 20 segundos cada una',
+        description: '10 preguntas, 20 segundos cada una',
         color: 'orange'
     },
     expert: {
         label: 'Experto',
-        questionCount: 30,
+        questionCount: 10,
         timePerQuestion: 15,
-        description: '30 preguntas, 15 segundos cada una',
+        description: '10 preguntas, 15 segundos cada una',
         color: 'red'
     }
 };

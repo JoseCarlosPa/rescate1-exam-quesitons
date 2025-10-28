@@ -147,6 +147,7 @@ import Games from "../../pages/Games/Games.page.tsx";
 import Jeopardy from "../../pages/Games/Jeopardy/Jeopardy.page.tsx";
 import MemoryMatch from "../../pages/Games/MemoryMatch/MemoryMatch.page.tsx";
 import Trivia from "../../pages/Games/Trivia/Trivia.page.tsx";
+import BuzzerBattle from "../../pages/Games/BuzzerBattle/BuzzerBattle.page.tsx";
 
 export default function Router() {
     return (
@@ -377,6 +378,7 @@ export default function Router() {
                 <Route path={AllRoutes.JEOPARDY} element={<Jeopardy/>}/>
                 <Route path={AllRoutes.MEMORY_MATCH} element={<MemoryMatch/>}/>
                 <Route path={AllRoutes.TRIVIA} element={<Trivia/>}/>
+                <Route path={AllRoutes.BUZZER_BATTLE} element={<BuzzerBattle/>}/>
 
             </Routes>
         </Suspense>
