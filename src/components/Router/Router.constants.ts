@@ -66,5 +66,6 @@ export enum AllRoutes {
     JEOPARDY = "/jeopardy",
     MEMORY_MATCH = "/memory-match",
     TRIVIA = "/trivia",
-    BUZZER_BATTLE = "/buzzer-battle"
+    BUZZER_BATTLE = "/buzzer-battle",
+    RAPID_RESPONSE = "/rapid-response"
 }

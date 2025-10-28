@@ -148,6 +148,7 @@ import Jeopardy from "../../pages/Games/Jeopardy/Jeopardy.page.tsx";
 import MemoryMatch from "../../pages/Games/MemoryMatch/MemoryMatch.page.tsx";
 import Trivia from "../../pages/Games/Trivia/Trivia.page.tsx";
 import BuzzerBattle from "../../pages/Games/BuzzerBattle/BuzzerBattle.page.tsx";
+import RapidResponse from "../../pages/Games/RapidResponse/RapidResponse.page.tsx";
 
 export default function Router() {
     return (
@@ -378,6 +379,7 @@ export default function Router() {
                 <Route path={AllRoutes.JEOPARDY} element={<Jeopardy/>}/>
                 <Route path={AllRoutes.MEMORY_MATCH} element={<MemoryMatch/>}/>
                 <Route path={AllRoutes.TRIVIA} element={<Trivia/>}/>
+                <Route path={AllRoutes.RAPID_RESPONSE} element={<RapidResponse/>}/>
                 <Route path={AllRoutes.BUZZER_BATTLE} element={<BuzzerBattle/>}/>
 
             </Routes>

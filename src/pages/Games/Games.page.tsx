@@ -21,7 +21,36 @@ export default function Games() {
                 </div>
 
                 {/* Games Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 max-w-7xl mx-auto">
+
+                    {/* Rapid Response Card - NEW */}
+                    <NavLink
+                        to={AllRoutes.RAPID_RESPONSE}
+                        className="group bg-gradient-to-br from-yellow-600 to-red-600 rounded-2xl shadow-2xl p-8 hover:scale-105 transform transition duration-300 border-4 border-yellow-400 hover:border-yellow-300"
+                    >
+                        <div className="text-center">
+                            <div className="bg-yellow-400 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 group-hover:rotate-12 transition-transform">
+                                <span className="text-5xl">⚡</span>
+                            </div>
+                            <h2 className="text-3xl font-bold text-white mb-3">
+                                Rapid Response
+                            </h2>
+                            <p className="text-gray-200 mb-4">
+                                ¡Duelo de 2 jugadores! Responde rápido y gana puntos con rachas
+                            </p>
+                            <div className="flex flex-wrap gap-2 justify-center mb-4">
+                                <span className="bg-yellow-400 text-red-900 px-3 py-1 rounded-full text-sm font-semibold">
+                                    2 Jugadores
+                                </span>
+                                <span className="bg-green-400 text-green-900 px-3 py-1 rounded-full text-sm font-semibold">
+                                    25+ Preguntas
+                                </span>
+                                <span className="bg-pink-400 text-pink-900 px-3 py-1 rounded-full text-sm font-semibold">
+                                    ¡NUEVO!
+                                </span>
+                            </div>
+                        </div>
+                    </NavLink>
 
                     {/* Buzzer Battle Card - NEW */}
                     <NavLink
