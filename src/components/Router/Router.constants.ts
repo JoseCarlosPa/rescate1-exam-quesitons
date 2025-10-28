@@ -64,5 +64,6 @@ export enum AllRoutes {
     CASE_SIMULATOR = "/case-simulator",
     GAMES = "/games",
     JEOPARDY = "/jeopardy",
-    MEMORY_MATCH = "/memory-match"
+    MEMORY_MATCH = "/memory-match",
+    TRIVIA = "/trivia"
 }

@@ -146,6 +146,7 @@ import CaseSimulatorPage from "../CaseSimulator/CaseSimulator.page.tsx";
 import Games from "../../pages/Games/Games.page.tsx";
 import Jeopardy from "../../pages/Games/Jeopardy/Jeopardy.page.tsx";
 import MemoryMatch from "../../pages/Games/MemoryMatch/MemoryMatch.page.tsx";
+import Trivia from "../../pages/Games/Trivia/Trivia.page.tsx";
 
 export default function Router() {
     return (
@@ -375,6 +376,7 @@ export default function Router() {
                 <Route path={AllRoutes.GAMES} element={<Games/>}/>
                 <Route path={AllRoutes.JEOPARDY} element={<Jeopardy/>}/>
                 <Route path={AllRoutes.MEMORY_MATCH} element={<MemoryMatch/>}/>
+                <Route path={AllRoutes.TRIVIA} element={<Trivia/>}/>
 
             </Routes>
         </Suspense>
