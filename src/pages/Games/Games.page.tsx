@@ -23,7 +23,7 @@ export default function Games() {
                 {/* Games Grid */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
 
-                    {/* Medical Quiz Arena Card - MULTIPLAYER ONLINE */}
+                    {/* Medical Quiz Arena Card
                     <NavLink
                         to={AllRoutes.MEDICAL_QUIZ_ARENA}
                         className="group bg-gradient-to-br from-cyan-600 to-blue-600 rounded-2xl shadow-2xl p-8 hover:scale-105 transform transition duration-300 border-4 border-cyan-400 hover:border-cyan-300"
@@ -52,7 +52,7 @@ export default function Games() {
                             </div>
                         </div>
                     </NavLink>
-
+                    - MULTIPLAYER ONLINE */}
                     {/* Rapid Response Card - NEW */}
                     <NavLink
                         to={AllRoutes.RAPID_RESPONSE}

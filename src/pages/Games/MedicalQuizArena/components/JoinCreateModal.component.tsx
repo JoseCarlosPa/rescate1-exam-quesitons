@@ -105,7 +105,7 @@ export default function JoinCreateModal({
                                     value={roomCode}
                                     onChange={(e) => setRoomCode(e.target.value.toUpperCase())}
                                     placeholder="Ej: ABC123"
-                                    className="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 text-white placeholder-gray-300 border-2 border-white border-opacity-30 focus:border-yellow-400 focus:outline-none uppercase text-center text-2xl font-bold tracking-widest"
+                                    className="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20  placeholder-gray-300 border-2 border-white border-opacity-30 focus:border-yellow-400 focus:outline-none uppercase text-center text-2xl font-bold tracking-widest"
                                     maxLength={6}
                                     required
                                 />

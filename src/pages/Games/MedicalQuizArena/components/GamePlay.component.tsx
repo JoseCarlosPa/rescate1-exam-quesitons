@@ -68,7 +68,7 @@ export default function GamePlay({
     if (!currentQuestion) {
         return (
             <div className="container mx-auto px-4 py-8 text-center">
-                <div className="text-white text-2xl">Cargando siguiente pregunta...</div>
+                <div className="text-gray-600 text-2xl">Cargando siguiente pregunta...</div>
             </div>
         );
     }
@@ -82,17 +82,17 @@ export default function GamePlay({
                 <div className="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-3xl p-6 mb-6 border-4 border-yellow-400">
                     <div className="flex items-center justify-between mb-4">
                         <div className="flex items-center gap-4">
-                            <h1 className="text-3xl font-bold text-white">
+                            <h1 className="text-3xl font-bold text-gray-600">
                                 Pregunta {gameRoom.currentQuestionIndex + 1}/{gameRoom.totalQuestions}
                             </h1>
                             <span className={`px-3 py-1 rounded-full text-sm font-bold ${
                                 currentQuestion.difficulty === 'Fácil' ? 'bg-green-500' :
                                 currentQuestion.difficulty === 'Media' ? 'bg-yellow-500' :
                                 'bg-red-500'
-                            } text-white`}>
+                            } text-gray-600`}>
                                 {currentQuestion.difficulty}
                             </span>
-                            <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            <span className="bg-blue-500 text-gray-600 px-3 py-1 rounded-full text-sm font-bold">
                                 {currentQuestion.category}
                             </span>
                         </div>
@@ -101,16 +101,16 @@ export default function GamePlay({
                             <div className={`flex items-center gap-2 px-4 py-2 rounded-lg ${
                                 timeLeft <= 5 ? 'bg-red-500 animate-pulse' : 'bg-white bg-opacity-20'
                             }`}>
-                                <FaClock className="text-white" />
-                                <span className="text-white font-bold text-xl">
+                                <FaClock className="text-gray-600" />
+                                <span className="text-gray-600 font-bold text-xl">
                                     {timeLeft}s
                                 </span>
                             </div>
 
                             {currentPlayer && currentPlayer.streak > 0 && (
                                 <div className="flex items-center gap-2 bg-orange-500 px-4 py-2 rounded-lg">
-                                    <FaFire className="text-white" />
-                                    <span className="text-white font-bold">
+                                    <FaFire className="text-gray-600" />
+                                    <span className="text-gray-600 font-bold">
                                         {currentPlayer.streak}x Racha
                                     </span>
                                 </div>
@@ -129,7 +129,7 @@ export default function GamePlay({
                                 style={{ borderLeft: `4px solid ${player.color}` }}
                             >
                                 {index === 0 && <span className="text-yellow-400">🏆</span>}
-                                <span className="text-white font-semibold text-sm">
+                                <span className="text-gray-600 font-semibold text-sm">
                                     {player.name}
                                 </span>
                                 <span className="text-yellow-300 font-bold">
@@ -144,7 +144,7 @@ export default function GamePlay({
                     {/* Pregunta y respuestas */}
                     <div className="md:col-span-3">
                         <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-3xl p-8 border-4 border-yellow-400 mb-6">
-                            <h2 className="text-2xl font-bold text-white mb-6">
+                            <h2 className="text-2xl font-bold text-gray-600 mb-6">
                                 {currentQuestion.question}
                             </h2>
 
@@ -171,7 +171,7 @@ export default function GamePlay({
                                             key={index}
                                             onClick={() => handleAnswerClick(option)}
                                             disabled={hasAnswered || timeLeft === 0}
-                                            className={`${buttonClass} text-white font-semibold text-lg p-4 rounded-xl transition-all duration-200 text-left disabled:cursor-not-allowed transform hover:scale-102`}
+                                            className={`${buttonClass} text-gray-600 font-semibold text-lg p-4 rounded-xl transition-all duration-200 text-left disabled:cursor-not-allowed transform hover:scale-102`}
                                         >
                                             <span className="inline-flex items-center gap-3">
                                                 <span className="bg-white bg-opacity-20 rounded-full w-8 h-8 flex items-center justify-center font-bold">
@@ -187,7 +187,7 @@ export default function GamePlay({
 
                             {hasAnswered && currentQuestion.explanation && (
                                 <div className="mt-6 bg-blue-500 bg-opacity-30 border-2 border-blue-400 rounded-xl p-4">
-                                    <p className="text-white font-semibold mb-1">💡 Explicación:</p>
+                                    <p className="text-gray-600 font-semibold mb-1">💡 Explicación:</p>
                                     <p className="text-gray-200">{currentQuestion.explanation}</p>
                                 </div>
                             )}
@@ -196,10 +196,10 @@ export default function GamePlay({
                         {/* Indicador de respuestas */}
                         <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-3xl p-6 border-4 border-yellow-400">
                             <div className="flex items-center justify-between mb-3">
-                                <h3 className="text-white font-bold">
+                                <h3 className="text-gray-600 font-bold">
                                     Progreso de Respuestas
                                 </h3>
-                                <span className="text-white font-bold">
+                                <span className="text-gray-600 font-bold">
                                     {gameRoom.answers.length}/{gameRoom.players.length}
                                 </span>
                             </div>
@@ -212,8 +212,8 @@ export default function GamePlay({
                                             key={player.id}
                                             className={`px-3 py-1 rounded-full text-sm font-semibold ${
                                                 hasPlayerAnswered
-                                                    ? 'bg-green-500 text-white'
-                                                    : 'bg-gray-500 text-white'
+                                                    ? 'bg-green-500 text-gray-600'
+                                                    : 'bg-gray-500 text-gray-600'
                                             }`}
                                         >
                                             {player.avatar} {player.name}
@@ -226,7 +226,7 @@ export default function GamePlay({
                             {isHost && allAnswered && (
                                 <button
                                     onClick={onNextQuestion}
-                                    className="w-full mt-4 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold py-3 px-6 rounded-xl transition duration-200 flex items-center justify-center gap-2"
+                                    className="w-full mt-4 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-gray-600 font-bold py-3 px-6 rounded-xl transition duration-200 flex items-center justify-center gap-2"
                                 >
                                     <FaBolt />
                                     Siguiente Pregunta
@@ -239,7 +239,7 @@ export default function GamePlay({
                     <div className="space-y-6">
                         {/* Ranking */}
                         <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-3xl p-4 border-4 border-yellow-400">
-                            <h3 className="text-white font-bold text-xl mb-3">🏆 Ranking</h3>
+                            <h3 className="text-gray-600 font-bold text-xl mb-3">🏆 Ranking</h3>
                             <div className="space-y-2">
                                 {sortedPlayers.map((player, index) => (
                                     <div
@@ -251,11 +251,11 @@ export default function GamePlay({
                                     >
                                         <div className="flex items-center justify-between">
                                             <div className="flex items-center gap-2">
-                                                <span className="text-2xl font-bold text-white">
+                                                <span className="text-2xl font-bold text-gray-600">
                                                     #{index + 1}
                                                 </span>
                                                 <span className="text-lg">{player.avatar}</span>
-                                                <span className="text-white font-semibold text-sm">
+                                                <span className="text-gray-600 font-semibold text-sm">
                                                     {player.name}
                                                 </span>
                                             </div>
@@ -270,7 +270,7 @@ export default function GamePlay({
 
                         {/* Mini Chat */}
                         <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-3xl p-4 border-4 border-yellow-400 flex flex-col max-h-[300px]">
-                            <h3 className="text-white font-bold mb-2">💬 Chat</h3>
+                            <h3 className="text-gray-600 font-bold mb-2">💬 Chat</h3>
 
                             <div className="flex-1 overflow-y-auto mb-2 space-y-1">
                                 {chatMessages.slice(-5).map((msg) => (
@@ -278,7 +278,7 @@ export default function GamePlay({
                                         <p className="text-yellow-300 text-xs font-semibold">
                                             {msg.playerName}
                                         </p>
-                                        <p className="text-white text-sm">{msg.message}</p>
+                                        <p className="text-gray-600 text-sm">{msg.message}</p>
                                     </div>
                                 ))}
                                 <div ref={chatEndRef} />
@@ -290,7 +290,7 @@ export default function GamePlay({
                                     value={message}
                                     onChange={(e) => setMessage(e.target.value)}
                                     placeholder="Mensaje..."
-                                    className="flex-1 px-2 py-1 rounded bg-white bg-opacity-20 text-white placeholder-gray-300 text-sm focus:outline-none"
+                                    className="flex-1 px-2 py-1 rounded bg-white bg-opacity-20 text-gray-600 placeholder-gray-300 text-sm focus:outline-none"
                                     maxLength={100}
                                 />
                                 <button
@@ -304,7 +304,7 @@ export default function GamePlay({
 
                         <button
                             onClick={onLeaveRoom}
-                            className="w-full bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-xl transition duration-200 flex items-center justify-center gap-2"
+                            className="w-full bg-red-500 hover:bg-red-600 text-gray-600 font-bold py-2 px-4 rounded-xl transition duration-200 flex items-center justify-center gap-2"
                         >
                             <FaSignOutAlt />
                             Salir

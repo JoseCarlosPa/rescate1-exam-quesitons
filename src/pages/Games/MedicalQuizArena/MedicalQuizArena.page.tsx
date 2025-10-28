@@ -18,6 +18,7 @@ export default function MedicalQuizArena() {
         subscribeToChat,
         addChatMessage,
         setPlayerReady,
+        removePlayer,
         startGame,
         submitAnswer,
         nextQuestion,
@@ -69,10 +70,15 @@ export default function MedicalQuizArena() {
             });
         }
     };
-
-    const handlePlayerReady = async () => {
+    const handlePlayerReady = async (isReady: boolean) => {
         if (state.gameRoom && state.currentPlayer) {
-            await setPlayerReady(state.gameRoom.id, state.currentPlayer.id);
+            await setPlayerReady(state.gameRoom.id, state.currentPlayer.id, isReady);
+        }
+    };
+
+    const handleRemovePlayer = async (playerId: string) => {
+        if (state.gameRoom && state.currentPlayer) {
+            await removePlayer(state.gameRoom.id, playerId, state.currentPlayer.id);
         }
     };
 
@@ -121,6 +127,7 @@ export default function MedicalQuizArena() {
                     chatMessages={state.chatMessages}
                     onSendMessage={handleSendMessage}
                     onPlayerReady={handlePlayerReady}
+                    onRemovePlayer={handleRemovePlayer}
                     onStartGame={handleStartGame}
                     onLeaveRoom={handleLeaveRoom}
                 />

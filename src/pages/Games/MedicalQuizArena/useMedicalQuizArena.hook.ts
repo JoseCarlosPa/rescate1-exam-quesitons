@@ -178,8 +178,16 @@ export function useMedicalQuizArena() {
                 type: 'system',
             });
 
+            // Actualizar el estado con la sala y el jugador
+            const updatedRoomData = {
+                ...roomData,
+                id: roomDoc.id,
+                players: updatedPlayers,
+            };
+
             setState(prev => ({
                 ...prev,
+                gameRoom: updatedRoomData,
                 currentPlayer: player,
                 isHost: false,
                 loading: false,
@@ -255,16 +263,16 @@ export function useMedicalQuizArena() {
         }
     };
 
-    // Marcar jugador como listo
-    const setPlayerReady = async (roomId: string, playerId: string) => {
+    // Marcar jugador como listo o no listo
+    const setPlayerReady = async (roomId: string, playerId: string, isReady: boolean) => {
         try {
             const roomRef = doc(db, 'quizArenaRooms', roomId);
             const roomDoc = await getDoc(roomRef);
 
             if (roomDoc.exists()) {
                 const roomData = roomDoc.data() as GameRoom;
-                const updatedPlayers = roomData.players.map(p =>
-                    p.id === playerId ? { ...p, isReady: true } : p
+                const updatedPlayers = roomData.players.map((p: Player) =>
+                    p.id === playerId ? { ...p, isReady } : p
                 );
 
                 await updateDoc(roomRef, {
@@ -273,6 +281,49 @@ export function useMedicalQuizArena() {
             }
         } catch (error) {
             console.error('Error setting player ready:', error);
+        }
+    };
+
+    // Eliminar un jugador de la sala (solo el host)
+    const removePlayer = async (roomId: string, playerId: string, hostId: string) => {
+        try {
+            const roomRef = doc(db, 'quizArenaRooms', roomId);
+            const roomDoc = await getDoc(roomRef);
+
+            if (roomDoc.exists()) {
+                const roomData = roomDoc.data() as GameRoom;
+
+                // Verificar que quien hace la petición es el host
+                if (roomData.hostId !== hostId) {
+                    console.error('Solo el host puede eliminar jugadores');
+                    return;
+                }
+
+                // No permitir que el host se elimine a sí mismo
+                if (playerId === hostId) {
+                    console.error('El host no puede eliminarse a sí mismo');
+                    return;
+                }
+
+                const player = roomData.players.find((p: Player) => p.id === playerId);
+                const updatedPlayers = roomData.players.filter((p: Player) => p.id !== playerId);
+
+                await updateDoc(roomRef, {
+                    players: updatedPlayers,
+                });
+
+                // Enviar mensaje de sistema
+                if (player) {
+                    await addChatMessage(roomId, {
+                        playerId: 'system',
+                        playerName: 'Sistema',
+                        message: `${player.name} fue expulsado de la sala`,
+                        type: 'system',
+                    });
+                }
+            }
+        } catch (error) {
+            console.error('Error removing player:', error);
         }
     };
 
@@ -439,7 +490,7 @@ export function useMedicalQuizArena() {
 
             if (roomDoc.exists()) {
                 const roomData = roomDoc.data() as GameRoom;
-                const player = roomData.players.find(p => p.id === playerId);
+                const player = roomData.players.find((p: Player) => p.id === playerId);
 
                 if (roomData.hostId === playerId) {
                     // Si es el host, eliminar la sala
@@ -481,6 +532,7 @@ export function useMedicalQuizArena() {
         subscribeToChat,
         addChatMessage,
         setPlayerReady,
+        removePlayer,
         startGame,
         submitAnswer,
         nextQuestion,
