@@ -1,5 +1,6 @@
 import { GameDifficulty } from '../MemoryMatch.types';
 import { DIFFICULTY_CONFIG } from '../MemoryMatch.constants';
+import {AllRoutes} from "../../../../components/Router/Router.constants.ts";
 
 interface GameSetupProps {
     onStartGame: (difficulty: GameDifficulty, category: string) => void;
@@ -106,7 +107,7 @@ export default function GameSetup({ onStartGame }: GameSetupProps) {
                 {/* Back Button */}
                 <div className="text-center mt-8">
                     <a
-                        href="/games"
+                        href={AllRoutes.GAMES}
                         className="inline-block bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-lg transition duration-200"
                     >
                         ← Volver a Juegos

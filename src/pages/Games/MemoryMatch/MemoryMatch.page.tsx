@@ -3,6 +3,7 @@ import { MemoryCard, FlippedCard, GameStats, GameDifficulty } from './MemoryMatc
 import { MEMORY_PAIRS, DIFFICULTY_CONFIG } from './MemoryMatch.constants';
 import GameSetup from './components/GameSetup.component';
 import MemoryCardComponent from './components/MemoryCardComponent';
+import {AllRoutes} from "../../../components/Router/Router.constants.ts";
 
 export default function MemoryMatch() {
     const [gameStarted, setGameStarted] = useState(false);
@@ -171,7 +172,7 @@ export default function MemoryMatch() {
 
                     <div className="mt-6">
                         <a
-                            href="/games"
+                            href={AllRoutes.GAMES}
                             className="inline-block text-gray-300 hover:text-white transition duration-200"
                         >
                             ← Volver a Juegos
