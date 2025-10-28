@@ -8,8 +8,11 @@ import {IoReturnDownBack} from "react-icons/io5";
 import {useState} from "react";
 import {MdQuiz} from "react-icons/md";
 import {BsBookHalf} from "react-icons/bs";
-import {PiChalkboardTeacher} from "react-icons/pi";
 import {ForumSection} from "../../../components/ForumSection";
+import Overview from "./components/Overview.component.tsx";
+import Steps from "./components/Steps.component.tsx";
+import Practice from "./components/Practice.component.tsx";
+import {PiChalkboardTeacher} from "react-icons/pi";
 
 export default function Mega() {
     const [activeTab, setActiveTab] = useState<'overview' | 'steps' | 'practice'>('overview');
@@ -25,7 +28,8 @@ export default function Mega() {
                         <div className="flex justify-center">
                             <FaQrcode className="w-24 h-24 mb-1 text-orange-500"/>
                         </div>
-                        <h1 className="text-5xl font-bold mb-2 text-center">Código MEGA</h1>
+                        <h1 className="text-5xl font-bold mb-2 text-center">Código Mega</h1>
+                        <p className="text-lg text-gray-600 mb-2">Simulación de Paro Cardíaco</p>
                         <p className="text-sm italic mb-4">Alumnos Rescate 1</p>
                         <div className="flex justify-center">
                             <NavLink
@@ -94,7 +98,7 @@ export default function Mega() {
                                         ? 'border-orange-500 text-orange-600'
                                         : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                                 }`}>
-                                Pasos del Código MEGA
+                                Roles y Secuencia
                             </button>
                             <button
                                 onClick={() => setActiveTab('practice')}
@@ -103,7 +107,7 @@ export default function Mega() {
                                         ? 'border-orange-500 text-orange-600'
                                         : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                                 }`}>
-                                Casos Clínicos
+                                Escenarios de Práctica
                             </button>
                         </nav>
                     </div>
@@ -111,134 +115,13 @@ export default function Mega() {
                     {/* Contenido principal basado en pestañas */}
                     <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-sm p-6 mb-8">
                         {activeTab === 'overview' && (
-                            <div className="space-y-6">
-                                <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">¿Qué es el
-                                        Código MEGA?</h2>
-                                    <p className="text-gray-700 leading-relaxed">
-                                        El Código MEGA es una herramienta para la evaluación inicial prehospitalaria
-                                        rápida, estructurada y segura del paciente en situaciones de emergencia. Es una
-                                        estrategia para tomar decisiones clínicas priorizadas y reducir el riesgo tanto
-                                        para el paciente como para el TAMP.
-                                    </p>
-                                </div>
-                                <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Significado
-                                        de MEGA</h2>
-                                    <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                        <li><strong>M:</strong> Mecanismo de lesión o naturaleza de la enfermedad.</li>
-                                        <li><strong>E:</strong> Entorno seguro para el equipo y la víctima.</li>
-                                        <li><strong>G:</strong> Generalidades del paciente: nivel de conciencia,
-                                            posición, edad, sexo, etc.
-                                        </li>
-                                        <li><strong>A:</strong> ABCDE – Evaluación primaria (A: Vía aérea, B:
-                                            Respiración, C: Circulación, D: Déficit neurológico, E: Exposición).
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Importancia
-                                        del Código MEGA</h2>
-                                    <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                        <li>Establece prioridades en la atención de pacientes críticos.</li>
-                                        <li>Previene riesgos adicionales para el personal y los pacientes.</li>
-                                        <li>Facilita una revaluación constante del estado del paciente.</li>
-                                        <li>Permite una transición clara a la evaluación secundaria.</li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <Overview />
                         )}
                         {activeTab === 'steps' && (
-                            <div className="space-y-6">
-                                <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Pasos del Código
-                                    MEGA</h2>
-                                <ol className="list-decimal list-inside space-y-2 text-gray-700">
-                                    <li><strong>Mecanismo de lesión / naturaleza de la enfermedad:</strong> ¿Qué
-                                        sucedió? ¿Trauma, enfermedad súbita, accidente?
-                                    </li>
-                                    <li><strong>Entorno seguro:</strong> Evalúa riesgos para el equipo y la víctima
-                                        (tráfico, fuego, armas, etc.).
-                                    </li>
-                                    <li><strong>Generalidades del paciente:</strong> Observa nivel de conciencia,
-                                        posición, edad, sexo, signos evidentes de gravedad.
-                                    </li>
-                                    <li><strong>ABCDE:</strong> Realiza evaluación primaria:
-                                        <ul className="list-disc list-inside ml-6 mt-2">
-                                            <li><strong>A:</strong> Vía aérea permeable</li>
-                                            <li><strong>B:</strong> Respiración: frecuencia, esfuerzo, ruidos</li>
-                                            <li><strong>C:</strong> Circulación: pulso, sangrado, color</li>
-                                            <li><strong>D:</strong> Déficit neurol��gico: respuesta, Glasgow</li>
-                                            <li><strong>E:</strong> Exposición: busca lesiones, hipotermia, etc.</li>
-                                        </ul>
-                                    </li>
-                                </ol>
-                                <div className="flex justify-center mt-4">
-                                    <img src="/codes.png" alt="Código MEGA" className="max-h-64 rounded shadow"/>
-                                </div>
-                            </div>
+                            <Steps />
                         )}
                         {activeTab === 'practice' && (
-                            <div className="space-y-6">
-                                <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Casos clínicos
-                                    para análisis</h2>
-                                <div className="p-5 bg-gray-50 rounded-lg shadow-sm mb-4">
-                                    <h3 className="text-xl font-semibold mb-2 text-orange-600">Caso 1: Accidente
-                                        vehicular</h3>
-                                    <p className="italic text-gray-600 mb-4">
-                                        Hombre de 30 años, conductor de motocicleta, colisiona contra un automóvil. Se
-                                        encuentra en el suelo, inconsciente, con sangrado visible en la pierna.
-                                    </p>
-                                    <div className="mb-4">
-                                        <h4 className="font-medium mb-2">Aplicación del Código MEGA:</h4>
-                                        <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                            <li>M: Trauma por colisión vehicular</li>
-                                            <li>E: Evaluar tráfico, derrames, riesgo de incendio</li>
-                                            <li>G: Paciente masculino, inconsciente, sangrado activo</li>
-                                            <li>A: Vía aérea permeable, B: FR rápida, C: Sangrado activo, pulso débil,
-                                                D: Inconsciente, E: Exponer para buscar más lesiones
-                                            </li>
-                                        </ol>
-                                    </div>
-                                </div>
-                                <div className="p-5 bg-gray-50 rounded-lg shadow-sm mb-4">
-                                    <h3 className="text-xl font-semibold mb-2 text-blue-600">Caso 2: Dolor torácico
-                                        súbito</h3>
-                                    <p className="italic text-gray-600 mb-4">
-                                        Mujer de 58 años, súbitamente presenta dolor torácico intenso y dificultad
-                                        respiratoria en su domicilio.
-                                    </p>
-                                    <div className="mb-4">
-                                        <h4 className="font-medium mb-2">Aplicación del Código MEGA:</h4>
-                                        <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                            <li>M: Enfermedad súbita, posible infarto</li>
-                                            <li>E: Entorno seguro en domicilio</li>
-                                            <li>G: Paciente femenina, consciente, pálida, sudorosa</li>
-                                            <li>A: Vía aérea permeable, B: Disnea, C: Pulso rápido, D: Alerta, E:
-                                                Exponer tórax para buscar signos
-                                            </li>
-                                        </ol>
-                                    </div>
-                                </div>
-                                <div className="p-5 bg-gray-50 rounded-lg shadow-sm">
-                                    <h3 className="text-xl font-semibold mb-2 text-green-600">Caso 3: Intoxicación en
-                                        vía pública</h3>
-                                    <p className="italic text-gray-600 mb-4">
-                                        Adolescente encontrado en la calle, inconsciente, con olor a alcohol y vómito en
-                                        la ropa.
-                                    </p>
-                                    <div className="mb-4">
-                                        <h4 className="font-medium mb-2">Aplicación del Código MEGA:</h4>
-                                        <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                                            <li>M: Intoxicación aguda</li>
-                                            <li>E: Evaluar seguridad (agresores, tráfico)</li>
-                                            <li>G: Adolescente masculino, inconsciente, vómito</li>
-                                            <li>A: Vía aérea con riesgo, B: Respiración lenta, C: Pulso débil, D:
-                                                Glasgow bajo, E: Exponer para buscar lesiones
-                                            </li>
-                                        </ol>
-                                    </div>
-                                </div>
-                            </div>
+                            <Practice />
                         )}
                     </div>
 
@@ -280,13 +163,17 @@ export default function Mega() {
                             <div>
                                 <h3 className="text-lg font-medium mb-2">Bibliografía principal</h3>
                                 <ul className="list-disc list-inside space-y-2 text-gray-700">
+                                    <li>American Heart Association. (2020). <em>Soporte Vital Cardiovascular Avanzado (ACLS/SVAA)</em>.
+                                        Guía del Proveedor.
+                                    </li>
+                                    <li>American Heart Association. (2020). <em>Aspectos Destacados de las Guías de la American Heart
+                                        Association para RCP y ACE</em>.
+                                    </li>
                                     <li>AAOS. (2021). <em>Emergencias Médicas Prehospitalarias</em> (11ª edición). Jones
-                                        & Bartlett Learning.
+                                        & Bartlett Learning. Capítulo sobre Emergencias Cardiovasculares.
                                     </li>
-                                    <li>American Heart Association. (2020). <em>Soporte Vital Básico y Avanzado</em>.
-                                    </li>
-                                    <li>NAEMT. (2020). <em>PHTLS: Soporte Vital de Trauma Prehospitalario</em> (9ª
-                                        edición).
+                                    <li>Link, M. S., et al. (2020). <em>Parte 7: Soporte vital avanzado cardiovascular del adulto</em>.
+                                        Circulation, 142(16_suppl_2).
                                     </li>
                                 </ul>
                             </div>
@@ -296,19 +183,28 @@ export default function Mega() {
                                     <li><a
                                         href="https://www.ems1.com/ems-products/assessment/articles/what-is-the-mega-code-and-how-do-you-use-it-1e1b1b1b/"
                                         target="_blank" rel="noopener noreferrer"
-                                        className="text-blue-600 hover:underline">EMS1 - Artículo sobre Código MEGA</a>
+                                        className="text-blue-600 hover:underline">EMS1 - What is the Mega Code and How Do You Use It?</a>
+                                    </li>
+                                    <li><a href="https://cpr.heart.org/" target="_blank"
+                                           rel="noopener noreferrer" className="text-blue-600 hover:underline">American Heart Association
+                                           - Recursos de RCP y ACE</a>
                                     </li>
                                     <li><a href="https://www.youtube.com/c/MedicTests" target="_blank"
                                            rel="noopener noreferrer" className="text-blue-600 hover:underline">MedicTests
-                                        - Canal de YouTube con videos educativos</a></li>
+                                        - Canal de YouTube con simulaciones de Código Mega</a>
+                                    </li>
+                                    <li><a href="https://www.resus.org.uk/" target="_blank"
+                                           rel="noopener noreferrer" className="text-blue-600 hover:underline">Resuscitation Council UK
+                                        - Guías y algoritmos de reanimación</a>
+                                    </li>
                                 </ul>
                             </div>
                             <div>
                                 <h3 className="text-lg font-medium mb-2">Aplicaciones recomendadas</h3>
                                 <ul className="list-disc list-inside space-y-2 text-gray-700">
-                                    <li>Medscape - Referencias médicas y calculadoras</li>
-                                    <li>ALS Simulator - Escenarios de práctica</li>
-                                    <li>Paramedicine - Guías clínicas y medicamentos</li>
+                                    <li><strong>ACLS Sim 2023</strong> - Simulador de escenarios ACLS con Código Mega</li>
+                                    <li><strong>Resuscitation!</strong> - Práctica de algoritmos de paro cardíaco</li>
+                                    <li><strong>PulsePoint</strong> - Notificaciones de emergencias cardíacas cercanas</li>
                                 </ul>
                             </div>
                         </div>

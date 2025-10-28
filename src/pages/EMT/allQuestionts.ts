@@ -12,7 +12,6 @@ import {communicationsQuestions} from "./Communications/Communications.questions
 import {endocrineHematologicQuestions} from "./EndocryEmergency/EndocryEmergency.questions.ts";
 import {patientAssessmentQuestions} from "./Evaluation/Evaluation.questions.ts";
 import {gastrointestinalUrologicQuestions} from "./GastroEmergency/GastroEmergency.questions.ts";
-import {generalExamQuestions} from "./GeneralExam/GeneralExam.questions.ts";
 import {humanBodyQuestions} from "./HumanBody/HumanBody.questions.ts";
 import {immobilizationQuestions} from "./Immobilization/Immobilization.questionts.ts";
 import {legalQuestions} from "./LegalAspects/LegalAspects.questions.ts";
@@ -66,7 +65,6 @@ export function getRandomQuestionsFromEachCategory(n: number): Question[] {
         endocrineHematologicQuestions,
         patientAssessmentQuestions,
         gastrointestinalUrologicQuestions,
-        generalExamQuestions,
         humanBodyQuestions,
         immobilizationQuestions,
         legalQuestions,
@@ -215,7 +213,6 @@ export const allQuestions: Question[] = [
     ...endocrineHematologicQuestions,
     ...patientAssessmentQuestions,
     ...gastrointestinalUrologicQuestions,
-    ...generalExamQuestions,
     ...humanBodyQuestions,
     ...immobilizationQuestions,
     ...legalQuestions,

@@ -119,7 +119,10 @@ import PsiquiatricEmergencies from "../../pages/EMT/PsiquiatricEmergencies/Psiqu
 import GineEmergencies from "../../pages/EMT/GineEmergencies/GineEmergencies.page.tsx";
 import {gineQuestions} from "../../pages/EMT/GineEmergencies/GineEmergencies.questions.ts";
 import ObstreticCare from "../../pages/EMT/ObstreticCare/ObstreticCare.page.tsx";
-import {obstetricQuestions} from "../../pages/EMT/ObstreticCare/ObstreticCare.questions.ts";
+import {
+    obstetricChallengeQuestions,
+    obstetricQuestions
+} from "../../pages/EMT/ObstreticCare/ObstreticCare.questions.ts";
 import PediatricEmergencies from "../../pages/EMT/PediatricEmergencies/PediatricEmergencies.page.tsx";
 import {pediatricQuestions} from "../../pages/EMT/PediatricEmergencies/PediatricEmergencies.questions.ts";
 import GeriatricEmergencies from "../../pages/EMT/GeriatricEmergencies/GeriatricEmergencies.page.tsx";
@@ -133,7 +136,10 @@ import {incidentManageQuestions} from "../../pages/EMT/IncidentManage/IncidentMa
 import TerroristManage from "../../pages/EMT/TerroristManage/TerroristManage.page.tsx";
 import {terroristManageQuestions} from "../../pages/EMT/TerroristManage/TerroristManage.questions.ts";
 import MedicVision from "../../pages/EMT/MedicVision/MedicVision.page.tsx";
-import {visionMedicGeneralQuestions} from "../../pages/EMT/MedicVision/MedicVision.questions.ts";
+import {
+    visionMedicChallengeQuestions,
+    visionMedicGeneralQuestions
+} from "../../pages/EMT/MedicVision/MedicVision.questions.ts";
 import {semSystemChallengingQuestions, semSystemQuestions} from "../../pages/EMT/SEM/Sem.questions.ts";
 import {nemotecniasQuestions} from "../../pages/EMT/Nnemotecnias/Mnemotecnias.questions.ts";
 import CaseSimulatorPage from "../CaseSimulator/CaseSimulator.page.tsx";
@@ -233,7 +239,7 @@ export default function Router() {
                 <Route path={AllRoutes.MEDIC_VISION} element={<MedicVision/>}/>
                 <Route path={`${AllRoutes.MEDIC_VISION}/exam`}
                        element={<Exam returnRoute={AllRoutes.MEDIC_VISION} name="Vision médica general"
-                                      questions={visionMedicGeneralQuestions} id={17}/>}/>
+                                      questions={visionMedicGeneralQuestions} id={17} challengingQuestions={visionMedicChallengeQuestions}/>}/>
                 <Route path={AllRoutes.AIRWAY_EMERGENCY} element={<AirwayEmergency/>}/>
                 <Route path={`${AllRoutes.AIRWAY_EMERGENCY}/exam`}
                        element={<Exam returnRoute={AllRoutes.AIRWAY_EMERGENCY} name="Emergencias respiratorias"
@@ -320,8 +326,8 @@ export default function Router() {
                                       questions={gineQuestions} id={37}/>}/>
                 <Route path={AllRoutes.OBSTETRIC_CARE} element={<ObstreticCare/>}/>
                 <Route path={`${AllRoutes.OBSTETRIC_CARE}/exam`}
-                       element={<Exam returnRoute={AllRoutes.OBSTETRIC_CARE} name="Cuidados obstétricos y neonatales"
-                                      questions={obstetricQuestions} id={38}/>}/>
+                       element={<Exam returnRoute={AllRoutes.OBSTETRIC_CARE} name="Cuidados obstétricos y neonatales" challengingQuestions={obstetricChallengeQuestions}
+                                      questions={obstetricQuestions} id={38}/>} />
                 <Route path={AllRoutes.PEDIATRIC_EMERGENCIES} element={<PediatricEmergencies/>}/>
                 <Route path={`${AllRoutes.PEDIATRIC_EMERGENCIES}/exam`}
                        element={<Exam returnRoute={AllRoutes.PEDIATRIC_EMERGENCIES} name="Emergencias pediátricas"
