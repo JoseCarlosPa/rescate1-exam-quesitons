@@ -16,7 +16,7 @@ export default function Jeopardy() {
 
     const [showWinner, setShowWinner] = useState(false);
 
-    const handleStartGame = (config: GameConfig, teamsData: Array<{ name: string; players: string[] }>) => {
+    const handleStartGame = (_config: GameConfig, teamsData: Array<{ name: string; players: string[] }>) => {
         const teams: Team[] = teamsData.map((team, index) => ({
             id: `team-${index}`,
             name: team.name,
@@ -40,7 +40,7 @@ export default function Jeopardy() {
         }));
     };
 
-    const handleAnswer = (isCorrect: boolean, selectedAnswer: string) => {
+    const handleAnswer = (isCorrect: boolean) => {
         if (!gameState.selectedQuestion) return;
 
         const points = gameState.selectedQuestion.points;

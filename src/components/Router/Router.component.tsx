@@ -143,8 +143,8 @@ import {
 import {semSystemChallengingQuestions, semSystemQuestions} from "../../pages/EMT/SEM/Sem.questions.ts";
 import {nemotecniasQuestions} from "../../pages/EMT/Nnemotecnias/Mnemotecnias.questions.ts";
 import CaseSimulatorPage from "../CaseSimulator/CaseSimulator.page.tsx";
-import Jeopardy from "../../pages/Jeopardy/Jeopardy.page.tsx";
 import Games from "../../pages/Games/Games.page.tsx";
+import Jeopardy from "../../pages/Games/Jeopardy/Jeopardy.page.tsx";
 
 export default function Router() {
     return (
