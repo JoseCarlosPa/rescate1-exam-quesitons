@@ -43,10 +43,10 @@ export default function Main() {
                             <MdLocalHospital className="text-orange-500 w-10 h-10"/>
                             <p className="text-lg text-orange-500 text-center">Casos Clínicos</p>
                         </NavLink>
-                        <NavLink to={AllRoutes.JEOPARDY}
+                        <NavLink to={AllRoutes.GAMES}
                                  className="flex flex-col items-center justify-center gap-2 mb-4 bg-white rounded-lg shadow-md p-4   hover:bg-orange-100 hover:scale-105 transition duration-300 ease-in-out h-32 md:w-52 w-full">
                             <IoGameController className="text-orange-500 w-10 h-10"/>
-                            <p className="text-lg text-orange-500 text-center">Jeopardy</p>
+                            <p className="text-lg text-orange-500 text-center">Juegos</p>
                         </NavLink>
                         <NavLink to={AllRoutes.RESOURCES}
                                  className="flex flex-col items-center justify-center gap-2 mb-4 bg-white rounded-lg shadow-md p-4   hover:bg-orange-100 hover:scale-105 transition duration-300 ease-in-out h-32 md:w-52 w-full">

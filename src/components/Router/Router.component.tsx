@@ -144,6 +144,7 @@ import {semSystemChallengingQuestions, semSystemQuestions} from "../../pages/EMT
 import {nemotecniasQuestions} from "../../pages/EMT/Nnemotecnias/Mnemotecnias.questions.ts";
 import CaseSimulatorPage from "../CaseSimulator/CaseSimulator.page.tsx";
 import Jeopardy from "../../pages/Jeopardy/Jeopardy.page.tsx";
+import Games from "../../pages/Games/Games.page.tsx";
 
 export default function Router() {
     return (
@@ -370,6 +371,7 @@ export default function Router() {
                 <Route path={AllRoutes.DISCLAMER} element={<Disclaimer/>}/>
                 <Route path={AllRoutes.PRIVACYANDTERMS} element={<PrivacyAndTerms/>}/>
                 <Route path={AllRoutes.CASE_SIMULATOR} element={<CaseSimulatorPage/>}/>
+                <Route path={AllRoutes.GAMES} element={<Games/>}/>
                 <Route path={AllRoutes.JEOPARDY} element={<Jeopardy/>}/>
 
             </Routes>
