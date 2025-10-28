@@ -67,7 +67,7 @@ export default function WinnerScreen({ players, onRestart }: WinnerScreenProps) 
                                 </div>
                             )}
 
-                            <div className="text-white mt-4">
+                            <div className="text-gray-600 mt-4">
                                 <h3 className="text-2xl font-bold mb-4 text-center">
                                     {player.name}
                                 </h3>
@@ -163,13 +163,13 @@ export default function WinnerScreen({ players, onRestart }: WinnerScreenProps) 
                 <div className="flex gap-4">
                     <button
                         onClick={onRestart}
-                        className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-xl font-bold text-xl hover:shadow-2xl transform hover:scale-105 transition duration-200"
+                        className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 text-gray-200 py-4 rounded-xl font-bold text-xl hover:shadow-2xl transform hover:scale-105 transition duration-200"
                     >
                         🔄 Jugar de Nuevo
                     </button>
                     <button
                         onClick={() => window.history.back()}
-                        className="flex-1 bg-gray-600 text-white py-4 rounded-xl font-bold text-xl hover:bg-gray-700 hover:shadow-2xl transform hover:scale-105 transition duration-200"
+                        className="flex-1 bg-gray-600 text-gray-200 py-4 rounded-xl font-bold text-xl hover:bg-gray-700 hover:shadow-2xl transform hover:scale-105 transition duration-200"
                     >
                         🏠 Menú Principal
                     </button>

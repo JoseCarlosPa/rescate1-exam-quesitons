@@ -34,7 +34,7 @@ export default function Scoreboard({ players, currentPlayer }: ScoreboardProps) 
                             </div>
                         )}
 
-                        <div className="text-white">
+                        <div className="text-gray-600">
                             <div className="flex items-center justify-between mb-3">
                                 <h3 className="text-2xl font-bold truncate">
                                     {player.name}

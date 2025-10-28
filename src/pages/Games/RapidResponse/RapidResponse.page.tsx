@@ -3,6 +3,7 @@ import {
     RapidResponseGameState,
     RapidResponseGameConfig,
     RapidResponsePlayer,
+    RapidResponseQuestion,
 } from './RapidResponse.types';
 import {
     RAPID_RESPONSE_QUESTIONS,
@@ -32,6 +33,15 @@ export default function RapidResponse() {
     });
 
     const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
+
+    // Función para mezclar las opciones de respuesta
+    const shuffleOptions = (question: RapidResponseQuestion): RapidResponseQuestion => {
+        const shuffledOptions = [...question.options].sort(() => Math.random() - 0.5);
+        return {
+            ...question,
+            options: shuffledOptions,
+        };
+    };
 
     // Limpiar timer al desmontar
     useEffect(() => {
@@ -74,7 +84,7 @@ export default function RapidResponse() {
 
         // Mezclar preguntas
         const shuffledQuestions = filteredQuestions.sort(() => Math.random() - 0.5);
-        const firstQuestion = shuffledQuestions[0];
+        const firstQuestion = shuffleOptions(shuffledQuestions[0]);
 
         setGameState({
             players,
@@ -189,7 +199,7 @@ export default function RapidResponse() {
             return;
         }
 
-        const nextQuestion = questions[Math.floor(Math.random() * questions.length)];
+        const nextQuestion = shuffleOptions(questions[Math.floor(Math.random() * questions.length)]);
         const nextPlayer = (gameState.currentPlayer + 1) % 2;
 
         setGameState((prev) => ({
