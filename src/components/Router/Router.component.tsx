@@ -145,6 +145,7 @@ import {nemotecniasQuestions} from "../../pages/EMT/Nnemotecnias/Mnemotecnias.qu
 import CaseSimulatorPage from "../CaseSimulator/CaseSimulator.page.tsx";
 import Games from "../../pages/Games/Games.page.tsx";
 import Jeopardy from "../../pages/Games/Jeopardy/Jeopardy.page.tsx";
+import MemoryMatch from "../../pages/Games/MemoryMatch/MemoryMatch.page.tsx";
 
 export default function Router() {
     return (
@@ -373,6 +374,7 @@ export default function Router() {
                 <Route path={AllRoutes.CASE_SIMULATOR} element={<CaseSimulatorPage/>}/>
                 <Route path={AllRoutes.GAMES} element={<Games/>}/>
                 <Route path={AllRoutes.JEOPARDY} element={<Jeopardy/>}/>
+                <Route path={AllRoutes.MEMORY_MATCH} element={<MemoryMatch/>}/>
 
             </Routes>
         </Suspense>

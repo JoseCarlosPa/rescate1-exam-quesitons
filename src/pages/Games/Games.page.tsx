@@ -107,31 +107,37 @@ export default function Games() {
                         </div>
                     </div>
 
-                    {/* Placeholder for Future Game 3 */}
-                    <div className="bg-gradient-to-br from-gray-700 to-gray-800 rounded-2xl shadow-2xl p-8 opacity-60 border-4 border-gray-600 relative overflow-hidden">
-                        <div className="absolute top-4 right-4 bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold rotate-12">
-                            Próximamente
-                        </div>
+                    {/* Memory Match Card */}
+                    <NavLink
+                        to={AllRoutes.MEMORY_MATCH}
+                        className="group bg-gradient-to-br from-pink-600 to-purple-600 rounded-2xl shadow-2xl p-8 hover:scale-105 transform transition duration-300 border-4 border-pink-400 hover:border-pink-300"
+                    >
                         <div className="text-center">
-                            <div className="bg-gray-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
-                                <GiBrain className="text-gray-400 w-12 h-12"/>
+                            <div className="bg-pink-400 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 group-hover:rotate-12 transition-transform">
+                                <GiBrain className="text-purple-700 w-12 h-12"/>
                             </div>
-                            <h2 className="text-3xl font-bold text-gray-300 mb-3">
+                            <h2 className="text-3xl font-bold text-white mb-3">
                                 Memory Match
                             </h2>
-                            <p className="text-gray-400 mb-4">
+                            <p className="text-gray-200 mb-4">
                                 Encuentra las parejas de términos médicos y sus definiciones
                             </p>
-                            <div className="flex flex-wrap gap-2 justify-center">
-                                <span className="bg-gray-600 text-gray-300 px-3 py-1 rounded-full text-sm">
-                                    Memoria
+                            <div className="flex flex-wrap gap-2 justify-center mb-4">
+                                <span className="bg-pink-400 text-purple-900 px-3 py-1 rounded-full text-sm font-semibold">
+                                    Individual
                                 </span>
-                                <span className="bg-gray-600 text-gray-300 px-3 py-1 rounded-full text-sm">
-                                    Parejas
+                                <span className="bg-green-400 text-green-900 px-3 py-1 rounded-full text-sm font-semibold">
+                                    30 Parejas
+                                </span>
+                                <span className="bg-blue-400 text-blue-900 px-3 py-1 rounded-full text-sm font-semibold">
+                                    3 Niveles
                                 </span>
                             </div>
+                            <div className="text-pink-300 font-semibold text-lg">
+                                ¡Disponible ahora! →
+                            </div>
                         </div>
-                    </div>
+                    </NavLink>
 
                     {/* Placeholder for Future Game 4 */}
                     <div className="bg-gradient-to-br from-gray-700 to-gray-800 rounded-2xl shadow-2xl p-8 opacity-60 border-4 border-gray-600 relative overflow-hidden">

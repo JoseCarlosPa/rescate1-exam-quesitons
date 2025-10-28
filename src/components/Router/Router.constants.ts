@@ -63,5 +63,6 @@ export enum AllRoutes {
     PRIVACYANDTERMS = "/privacy-and-terms",
     CASE_SIMULATOR = "/case-simulator",
     GAMES = "/games",
-    JEOPARDY = "/jeopardy"
+    JEOPARDY = "/jeopardy",
+    MEMORY_MATCH = "/memory-match"
 }
