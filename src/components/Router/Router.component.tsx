@@ -149,6 +149,7 @@ import MemoryMatch from "../../pages/Games/MemoryMatch/MemoryMatch.page.tsx";
 import Trivia from "../../pages/Games/Trivia/Trivia.page.tsx";
 import BuzzerBattle from "../../pages/Games/BuzzerBattle/BuzzerBattle.page.tsx";
 import RapidResponse from "../../pages/Games/RapidResponse/RapidResponse.page.tsx";
+import MedicalQuizArena from "../../pages/Games/MedicalQuizArena";
 
 export default function Router() {
     return (
@@ -381,6 +382,7 @@ export default function Router() {
                 <Route path={AllRoutes.TRIVIA} element={<Trivia/>}/>
                 <Route path={AllRoutes.RAPID_RESPONSE} element={<RapidResponse/>}/>
                 <Route path={AllRoutes.BUZZER_BATTLE} element={<BuzzerBattle/>}/>
+                <Route path={AllRoutes.MEDICAL_QUIZ_ARENA} element={<MedicalQuizArena/>}/>
 
             </Routes>
         </Suspense>
