@@ -35,7 +35,6 @@ export const faqData = [
     },
 ];
 
-
 export const pediatricQuestions: Question[] = [
     {
         "question": "Un niño de 2 años presenta fiebre baja, tos perruna y estridor inspiratorio que empeoró durante la noche. Estos hallazgos son más consistentes con:",
@@ -156,4 +155,121 @@ export const pediatricQuestions: Question[] = [
         "correctAnswer": "c",
         "explanation": "El lado del 'Trabajo Respiratorio' del TEP evalúa el esfuerzo que el niño está realizando para respirar. Los ruidos respiratorios audibles (como estridor, quejido, sibilancias o ronquidos) son indicadores clave de una patología y un aumento del trabajo para respirar."
     }
-]
+];
+
+
+/**
+ * Preguntas de desafío sobre Emergencias Pediátricas
+ */
+export const pediatricChallengeQuestions: Question[] = [
+    {
+        question: "¿Cuál es la relación compresión-ventilación correcta en la RCP de un niño (no lactante) con dos reanimadores?",
+        options: [
+            { letter: "a", text: "30:2" },
+            { letter: "b", text: "15:2" },
+            { letter: "c", text: "3:1" },
+            { letter: "d", text: "Compresiones continuas sin pausas" }
+        ],
+        correctAnswer: "b",
+        explanation: "Para 2 reanimadores en niños y lactantes (excluyendo neonatos), la relación cambia a 15:2 para maximizar la perfusión y oxigenación. 30:2 se usa para 1 reanimador. 3:1 es para neonatos."
+    },
+    {
+        question: "Un lactante presenta letargo, piel caliente y enrojecida (hiperémica), y pulsos saltones, con TA 70/30 (baja para la edad). ¿Qué tipo de shock es más probable?",
+        options: [
+            { letter: "a", text: "Shock Hipovolémico (frío)" },
+            { letter: "b", text: "Shock Séptico (caliente/distributivo)" },
+            { letter: "c", text: "Shock Cardiogénico" },
+            { letter: "d", text: "Shock Neurogénico" }
+        ],
+        correctAnswer: "b",
+        explanation: "La presentación 'caliente' (vasodilatación, piel enrojecida, pulsos saltones) es clásica del shock distributivo, comúnmente por sepsis en pediatría. El shock hipovolémico y cardiogénico suelen presentarse 'fríos' (vasoconstricción)."
+    },
+    {
+        question: "¿Cuál es la dosis inicial de bolo de fluido (cristaloide isotónico) para un niño en shock hipovolémico?",
+        options: [
+            { letter: "a", text: "5 ml/kg" },
+            { letter: "b", text: "10 ml/kg" },
+            { letter: "c", text: "20 ml/kg" },
+            { letter: "d", text: "50 ml/kg" }
+        ],
+        correctAnswer: "c",
+        explanation: "La dosis estándar de PALS para un bolo de fluido en shock (hipovolémico o séptico) es de 20 ml/kg de peso, administrado rápidamente."
+    },
+    {
+        question: "Un niño es encontrado jugando con frascos de pesticidas y ahora presenta salivación excesiva, lagrimeo, miosis (pupilas puntiformes) y bradicardia. ¿Qué toxíndrome sospecha?",
+        options: [
+            { letter: "a", text: "Colinérgico (Organofosforados)" },
+            { letter: "b", text: "Anticolinérgico (Atropina)" },
+            { letter: "c", text: "Simpaticomimético (Cocaína)" },
+            { letter: "d", text: "Opiáceo" }
+        ],
+        correctAnswer: "a",
+        explanation: "Estos son los signos clásicos de una sobreestimulación parasimpática (toxíndrome colinérgico), recordado por mnemotecnias como SLUDGE/DUMBELS. Es causado por organofosforados. El antídoto es Atropina."
+    },
+    {
+        question: "Un niño con dificultad respiratoria severa que de repente deja de tener sibilancias audibles, se vuelve letárgico y su EtCO2 comienza a subir. Esto indica:",
+        options: [
+            { letter: "a", text: "Mejoría clínica y resolución del broncoespasmo" },
+            { letter: "b", text: "Falla respiratoria inminente (fatiga y 'tórax silencioso')" },
+            { letter: "c", text: "Desarrollo de un neumotórax" },
+            { letter: "d", "text": "Hipoglucemia concurrente" }
+        ],
+        correctAnswer: "b",
+        explanation: "El 'tórax silencioso' (pérdida de sibilancias) no es mejoría; significa que el niño está demasiado fatigado para mover aire. El aumento del EtCO2 confirma la hipoventilación y la falla respiratoria inminente."
+    },
+    {
+        question: "Un niño es atropellado a baja velocidad. Presenta trauma craneal, trauma torácico y fractura de fémur del mismo lado. Esta constelación de lesiones se conoce como:",
+        options: [
+            { letter: "a", text: "Tríada de Beck" },
+            { letter: "b", text: "Tríada de Cushing" },
+            { letter: "c", text: "Tríada de Waddell" },
+            { letter: "d", text: "Signo de Battle" }
+        ],
+        correctAnswer: "c",
+        explanation: "La Tríada de Waddell describe el patrón de lesión de un peatón pediátrico: 1) Impacto de parachoques (fractura de fémur/tibia), 2) Impacto de capó (trauma torácico/abdominal), y 3) Caída (trauma craneal/cervical)."
+    },
+    {
+        question: "¿Cuál es una fórmula comúnmente usada para estimar el tamaño (diámetro interno) de un tubo endotraqueal (TET) sin manguito en un niño mayor de 1 año?",
+        options: [
+            { letter: "a", text: "(Edad en años) + 16 / 4" },
+            { letter: "b", text: "(Edad en años / 4) + 4" },
+            { letter: "c", text: "El tamaño del dedo meñique del niño" },
+            { letter: "d", text: "Peso en kg / 10" }
+        ],
+        correctAnswer: "b",
+        explanation: "La fórmula (Edad en años / 4) + 4 da una estimación rápida del tamaño del TET sin manguito. (La fórmula (Edad+16)/4 es la misma, solo escrita diferente). El tamaño del dedo meñique es un mito poco fiable."
+    },
+    {
+        question: "Un lactante de 10 meses presenta episodios de llanto inconsolable y súbito, seguidos de letargo. Los padres reportan heces 'en jalea de grosella'. ¿Qué sospecha?",
+        options: [
+            { letter: "a", text: "Apendicitis" },
+            { letter: "b", text: "Intususcepción (Invaginación intestinal)" },
+            { letter: "c", text: "Gastroenteritis viral" },
+            { letter: "d", text: "Cólico del lactante" }
+        ],
+        correctAnswer: "b",
+        explanation: "El llanto cíclico (por dolor cólico) y el letargo intermitente, junto con las heces en 'jalea de grosella' (sangre y moco), son la presentación clásica de la intususcepción, una emergencia abdominal."
+    },
+    {
+        question: "Según PALS, un niño de 5 años con FC de 50 lpm, alteración mental y mala perfusión (bradicardia sintomática), ¿cuál es el tratamiento inicial después de asegurar ABC?",
+        options: [
+            { letter: "a", text: "Iniciar compresiones torácicas inmediatamente" },
+            { letter: "b", text: "Administrar Amiodarona 150 mg" },
+            { letter: "c", text: "Administrar Adrenalina 0.01 mg/kg IV/IO" },
+            { letter: "d", text: "Desfibrilar a 2 J/kg" }
+        ],
+        correctAnswer: "c",
+        explanation: "En bradicardia sintomática (FC < 60 con mala perfusión), si no responde a oxígeno y ventilación, la Adrenalina es el fármaco de elección. Las compresiones solo se inician si la FC < 60 lpm *a pesar* de oxigenación y ventilación."
+    },
+    {
+        question: "Al calcular el área de superficie corporal quemada (SCT) en un lactante usando la Regla de los 9, ¿qué parte del cuerpo tiene una proporción porcentual MAYOR que en un adulto?",
+        options: [
+            { letter: "a", text: "Cada pierna" },
+            { letter: "b", text: "El área genital" },
+            { letter: "c", text: "La cabeza y el cuello" },
+            { letter: "d", text: "Cada brazo" }
+        ],
+        correctAnswer: "c",
+        explanation: "En lactantes y niños pequeños, la cabeza es proporcionalmente mucho más grande. En la Regla de los 9 modificada para pediatría, la cabeza y cuello cuentan como 18% (a diferencia del 9% en adultos), y las piernas cuentan menos."
+    }
+];

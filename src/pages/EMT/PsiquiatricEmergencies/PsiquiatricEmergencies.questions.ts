@@ -35,7 +35,6 @@ export const faqData = [
     },
 ];
 
-
 export const psiquiatricQuestions: Question[] = [
     {
         "question": "Usted es llamado a una escena donde un hombre de 30 años está actuando de forma errática. ¿Cuál de las siguientes acciones debe realizar PRIMERO?",
@@ -153,4 +152,121 @@ export const psiquiatricQuestions: Question[] = [
         "correctAnswer": "c",
         "explanation": "El papel de la policía en una emergencia médica o psiquiátrica es garantizar la seguridad de la escena. Su presencia es necesaria cuando un paciente representa un peligro para sí mismo o para otros, permitiendo que el personal del SEM pueda realizar su trabajo de evaluación y tratamiento de forma segura."
     }
-]
+];
+
+
+/**
+ * Preguntas de desafío sobre Emergencias Psiquiátricas
+ */
+export const psiquiatricChallengeQuestions: Question[] = [
+    {
+        question: "Un paciente está agitado, taquicárdico, hipertenso, con pupilas midriáticas (dilatadas) y piel CALIENTE, ROJA y SECA. ¿Qué toxíndrome es más probable?",
+        options: [
+            { letter: "a", text: "Simpaticomimético (ej. Cocaína)" },
+            { letter: "b", text: "Anticolinérgico (ej. Difenhidramina)" },
+            { letter: "c", text: "Colinérgico (ej. Organofosforados)" },
+            { letter: "d", text: "Opiáceo (ej. Fentanilo)" }
+        ],
+        correctAnswer: "b",
+        explanation: "La mnemotecnia 'Rojo como un tomate, caliente como el infierno, seco como un hueso, ciego como un murciélago, loco como una cabra' describe el síndrome Anticolinérgico. La clave que lo diferencia del Simpaticomimético es la piel SECA (el simpaticomimético es sudoroso)."
+    },
+    {
+        question: "Un paciente con esquizofrenia, que toma antipsicóticos, presenta fiebre alta, rigidez muscular extrema ('en tubo de plomo') y estado mental alterado. ¿Qué emergencia médica debe sospechar?",
+        options: [
+            { letter: "a", text: "Síndrome Serotoninérgico" },
+            { letter: "b", text: "Síndrome Neuroléptico Maligno (SNM)" },
+            { letter: "c", text: "Delirio Agitado" },
+            { letter: "d", "text": "Rabdomiólisis simple" }
+        ],
+        correctAnswer: "b",
+        explanation: "El SNM es una reacción idiosincrática y potencialmente mortal a los antipsicóticos (neurolépticos), caracterizada por la tríada de fiebre, rigidez muscular extrema y disfunción autonómica."
+    },
+    {
+        question: "¿Cuál es el pilar farmacológico para la 'restricción química' de un paciente con delirio agitado severo para permitir la evaluación y el transporte?",
+        options: [
+            { letter: "a", text: "Naloxona" },
+            { letter: "b", text: "Glucosa" },
+            { letter: "c", text: "Una Benzodiazepina (ej. Midazolam)" },
+            { letter: "d", text: "Aspirina" }
+        ],
+        correctAnswer: "c",
+        explanation: "Las benzodiazepinas (como el Midazolam o el Lorazepam) son los fármacos de primera línea para la sedación rápida y segura de pacientes con agitación severa, especialmente en el contexto de delirio agitado o intoxicación por estimulantes."
+    },
+    {
+        question: "Un paciente anciano en un asilo se vuelve súbitamente combativo y confuso. Sus pulmones suenan con estertores. Antes de asumir una demencia agudizada, ¿qué causa médica de agitación debe descartarse?",
+        options: [
+            { letter: "a", text: "Hipoxia (por Neumonía o ICC)" },
+            { letter: "b", text: "Trastorno de personalidad" },
+            { letter: "c", text: "Manía" },
+            { letter: "d", text: "Esquizofrenia de inicio tardío" }
+        ],
+        correctAnswer: "a",
+        explanation: "La hipoxia es una causa médica común y letal de agitación y alteración del estado mental (delirio) en la población geriátrica. La agitación puede ser un signo de 'hambre de aire'."
+    },
+    {
+        question: "Al intentar una desescalada verbal con un paciente agitado, ¿cuál de las siguientes acciones está CONTRAINDICADA?",
+        options: [
+            { letter: "a", text: "Mantener una distancia segura (espacio personal)" },
+            { letter: "b", text: "Usar un tono de voz calmado y no amenazante" },
+            { letter: "c", text: "Mentirle al paciente o 'seguirle el juego' a sus delirios" },
+            { letter: "d", text: "Ser honesto, claro y establecer límites" }
+        ],
+        correctAnswer: "c",
+        explanation: "Mentir o hacer promesas falsas destruye la confianza. Si el paciente descubre el engaño, es probable que escale la agitación. La honestidad y la validación de sus sentimientos (sin validar el delirio) es la mejor táctica."
+    },
+    {
+        question: "Para que un paciente tenga 'capacidad' para rechazar un tratamiento que amenaza su vida, ¿qué debe demostrar el paciente?",
+        options: [
+            { letter: "a", text: "Que tiene más de 18 años" },
+            { letter: "b", text: "Que tiene un historial psiquiátrico limpio" },
+            { letter: "c", text: "Que puede explicar los riesgos y beneficios de su decisión" },
+            { letter: "d", text: "Que un familiar está de acuerdo con su decisión" }
+        ],
+        correctAnswer: "c",
+        explanation: "La capacidad legal no es solo estar 'Alerta y Orientado'. El paciente debe demostrar que entiende la información (su condición, el tratamiento, los riesgos de rechazarlo) y puede usar esa información para tomar una decisión."
+    },
+    {
+        question: "Un paciente finge síntomas de dolor abdominal severo con el objetivo de obtener una receta de analgésicos opiáceos. Este comportamiento se define como:",
+        options: [
+            { letter: "a", text: "Trastorno Facticio (Munchausen)" },
+            { letter: "b", text: "Simulación (Malingering)" },
+            { letter: "c", text: "Trastorno de Somatización" },
+            { letter: "d", text: "Hipocondría" }
+        ],
+        correctAnswer: "b",
+        explanation: "La Simulación (Malingering) es la producción intencional de síntomas falsos motivada por un beneficio externo (ej. drogas, dinero, evitar el trabajo). El Trastorno Facticio busca un beneficio interno (asumir el 'rol de enfermo')."
+    },
+    {
+        question: "Un paciente con historial de alcoholismo crónico es traído por confusión, marcha inestable (ataxia) y nistagmo (movimientos oculares). ¿Qué emergencia neurológica por deficiencia vitamínica debe sospechar?",
+        options: [
+            { letter: "a", text: "Encefalopatía de Wernicke" },
+            { letter: "b", text: "Delirium Tremens" },
+            { letter: "c", text: "EVC hemorrágico" },
+            { letter: "d", text: "Hipoglucemia severa" }
+        ],
+        correctAnswer: "a",
+        explanation: "Esta es la tríada clásica (confusión, ataxia, oftalmoplejía/nistagmo) de la Encefalopatía de Wernicke, una emergencia neurológica causada por la deficiencia de Tiamina (Vitamina B1) común en alcohólicos crónicos."
+    },
+    {
+        question: "¿Cuál es la diferencia clave entre 'Delirio' y 'Demencia'?",
+        options: [
+            { letter: "a", text: "El delirio es un inicio AGUDO y fluctuante; la demencia es CRÓNICA y progresiva" },
+            { letter: "b", text: "La demencia causa alucinaciones; el delirio no" },
+            { letter: "c", text: "El delirio es irreversible; la demencia es tratable" },
+            { letter: "d", text: "La demencia solo afecta la memoria; el delirio afecta la atención" }
+        ],
+        correctAnswer: "a",
+        explanation: "La característica definitoria del Delirio es su inicio agudo (horas o días) y un curso fluctuante, casi siempre causado por una condición médica subyacente. La Demencia es una disminución cognitiva crónica, lenta y progresiva."
+    },
+    {
+        question: "¿Cuál es el hallazgo clínico clave que ayuda a diferenciar el Síndrome Serotoninérgico del Síndrome Neuroléptico Maligno (SNM)?",
+        options: [
+            { letter: "a", text: "Fiebre (solo ocurre en SNM)" },
+            { letter: "b", text: "Estado mental alterado (solo en SS)" },
+            { letter: "c", text: "Hiperreflexia y clonus (típicos de SS)" },
+            { letter: "d", text: "Rigidez (solo ocurre en SNM)" }
+        ],
+        correctAnswer: "c",
+        explanation: "Ambos síndromes causan fiebre y estado mental alterado. Sin embargo, el Síndrome Serotoninérgico (SS) se caracteriza por hiperreflexia y clonus (temblores rítmicos). El SNM se caracteriza por una rigidez muscular extrema 'en tubo de plomo' (hiporreflexia)."
+    }
+];

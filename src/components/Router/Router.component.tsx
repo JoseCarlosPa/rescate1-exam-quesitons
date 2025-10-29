@@ -114,7 +114,10 @@ import {toxicologyQuestions} from "../../pages/EMT/Toxicology/Toxicology.questio
 import Toxicology from "../../pages/EMT/Toxicology/Toxicology.page.tsx";
 import {environmentalEmergencyQuestions} from "../../pages/EMT/AmbientalEmergencies/AmbientalEmergencies.questions.ts";
 import AmbientalEmergencies from "../../pages/EMT/AmbientalEmergencies/AmbientalEmergencies.page.tsx";
-import {psiquiatricQuestions} from "../../pages/EMT/PsiquiatricEmergencies/PsiquiatricEmergencies.questions.ts";
+import {
+    psiquiatricChallengeQuestions,
+    psiquiatricQuestions
+} from "../../pages/EMT/PsiquiatricEmergencies/PsiquiatricEmergencies.questions.ts";
 import PsiquiatricEmergencies from "../../pages/EMT/PsiquiatricEmergencies/PsiquiatricEmergencies.page.tsx";
 import GineEmergencies from "../../pages/EMT/GineEmergencies/GineEmergencies.page.tsx";
 import {gineQuestions} from "../../pages/EMT/GineEmergencies/GineEmergencies.questions.ts";
@@ -124,7 +127,10 @@ import {
     obstetricQuestions
 } from "../../pages/EMT/ObstreticCare/ObstreticCare.questions.ts";
 import PediatricEmergencies from "../../pages/EMT/PediatricEmergencies/PediatricEmergencies.page.tsx";
-import {pediatricQuestions} from "../../pages/EMT/PediatricEmergencies/PediatricEmergencies.questions.ts";
+import {
+    pediatricChallengeQuestions,
+    pediatricQuestions
+} from "../../pages/EMT/PediatricEmergencies/PediatricEmergencies.questions.ts";
 import GeriatricEmergencies from "../../pages/EMT/GeriatricEmergencies/GeriatricEmergencies.page.tsx";
 import {geriatricQuestions} from "../../pages/EMT/GeriatricEmergencies/GeriatricEmergencies.questions.ts";
 import {specialNeedsPacientQuestions} from "../../pages/EMT/SpecialNeedsPacient/SpecialNeedsPacient.questions.ts";
@@ -325,7 +331,7 @@ export default function Router() {
                                       questions={environmentalEmergencyQuestions} id={35}/>}/>
                 <Route path={AllRoutes.PSIQUIATRIC_EMERGENCY} element={<PsiquiatricEmergencies/>}/>
                 <Route path={`${AllRoutes.PSIQUIATRIC_EMERGENCY}/exam`}
-                       element={<Exam returnRoute={AllRoutes.PSIQUIATRIC_EMERGENCY} name="Emergencias Psiquiatricas"
+                       element={<Exam returnRoute={AllRoutes.PSIQUIATRIC_EMERGENCY} name="Emergencias Psiquiatricas" challengingQuestions={psiquiatricChallengeQuestions}
                                       questions={psiquiatricQuestions} id={36}/>}/>
                 <Route path={AllRoutes.GINE_EMERGENCY} element={<GineEmergencies/>}/>
                 <Route path={`${AllRoutes.GINE_EMERGENCY}/exam`}
@@ -337,7 +343,7 @@ export default function Router() {
                                       questions={obstetricQuestions} id={38}/>} />
                 <Route path={AllRoutes.PEDIATRIC_EMERGENCIES} element={<PediatricEmergencies/>}/>
                 <Route path={`${AllRoutes.PEDIATRIC_EMERGENCIES}/exam`}
-                       element={<Exam returnRoute={AllRoutes.PEDIATRIC_EMERGENCIES} name="Emergencias pediátricas"
+                       element={<Exam returnRoute={AllRoutes.PEDIATRIC_EMERGENCIES} name="Emergencias pediátricas" challengingQuestions={pediatricChallengeQuestions}
                                       questions={pediatricQuestions} id={39}/>}/>
                 <Route path={AllRoutes.GERIATRIC_EMERGENCIES} element={<GeriatricEmergencies/>}/>
                 <Route path={`${AllRoutes.GERIATRIC_EMERGENCIES}/exam`}
