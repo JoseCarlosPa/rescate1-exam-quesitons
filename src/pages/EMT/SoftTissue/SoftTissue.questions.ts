@@ -34,7 +34,6 @@ export const faqData = [
         answer: "Primero, se debe cepillar la mayor cantidad posible del químico seco de la piel, evitando contaminarse o al paciente. Después de retirar el polvo, se debe irrigar la zona abundantemente con agua durante 15 a 20 minutos.",
     },
 ];
-
 export const softTissueExam: Question[] = [
     {
         "question": "Un paciente adulto presenta quemaduras de espesor parcial en todo el tórax anterior y en la totalidad de su brazo derecho. Usando la Regla de los Nueves, ¿qué porcentaje de superficie corporal está quemado?",
@@ -149,4 +148,121 @@ export const softTissueExam: Question[] = [
         "correctAnswer": "c",
         "explanation": "Por definición, una laceración es un desgarro del tejido blando que produce una herida con bordes irregulares o aserrados, a menudo causada por un traumatismo contuso. Una incisión es un corte limpio con bordes lisos, típicamente hecho por un objeto afilado como un cuchillo o un bisturí."
     }
-]
+];
+
+
+/**
+ * Preguntas de desafío sobre Lesiones al Tejido Blando
+ */
+export const softTissueChallengeQuestions: Question[] = [
+    {
+        question: "Un paciente tiene una hemorragia arterial exanguinante en el antebrazo que no se controla con presión directa. ¿Cuál es la acción correcta al aplicar un torniquete?",
+        options: [
+            {letter: "a", text: "Aflojarlo cada 5 minutos para permitir la perfusión"},
+            {letter: "b", text: "Colocarlo directamente sobre la articulación del codo"},
+            {letter: "c", text: "Apretarlo solo hasta que el sangrado venoso se detenga"},
+            {letter: "d", text: "Apretarlo hasta que cese el sangrado arterial y el pulso distal desaparezca"}
+        ],
+        correctAnswer: "d",
+        explanation: "Un torniquete es un dispositivo de 'todo o nada'. Debe apretarse lo suficiente para ocluir el flujo arterial, lo que se confirma por el cese del sangrado y la ausencia de pulso distal. Nunca debe aflojarse en el entorno prehospitalario."
+    },
+    {
+        question: "Un paciente presenta una quemadura por un químico en polvo seco (como cal viva). ¿Cuál es el paso inicial en el manejo de esta quemadura?",
+        options: [
+            {letter: "a", text: "Irrigar inmediatamente con abundante agua"},
+            {letter: "b", text: "Cepillar el polvo químico seco de la piel antes de irrigar"},
+            {letter: "c", text: "Neutralizar el químico con un ácido débil (vinagre)"},
+            {letter: "d", text: "Cubrir la quemadura con un apósito oclusivo"}
+        ],
+        correctAnswer: "b",
+        explanation: "Los químicos en polvo seco deben ser cepillados de la piel ANTES de irrigar. Añadir agua a ciertos químicos secos (como la cal) puede crear una reacción exotérmica que empeora la quemadura."
+    },
+    {
+        question: "La principal complicación sistémica que se debe anticipar en una quemadura eléctrica de alto voltaje, independientemente del tamaño de la quemadura cutánea, es:",
+        options: [
+            {letter: "a", text: "Infección bacteriana severa"},
+            {letter: "b", text: "Hipotermia por pérdida de piel"},
+            {letter: "c", text: "Arritmias cardíacas letales y Rabdomiólisis"},
+            {letter: "d", text: "Deshidratación por pérdida de líquidos"}
+        ],
+        correctAnswer: "c",
+        explanation: "La corriente eléctrica altera la conducción cardíaca, pudiendo causar arritmias (FV, asistolia). Además, la electroporación destruye masivamente las células musculares, liberando mioglobina (Rabdomiólisis) que daña los riñones."
+    },
+    {
+        question: "¿Cuál es el método correcto para preservar una parte amputada (ej. un dedo) para su transporte al hospital?",
+        options: [
+            {letter: "a", text: "Colocar el dedo directamente en hielo"},
+            {letter: "b", text: "Sumergir el dedo en solución salina estéril"},
+            {letter: "c", text: "Envolver en gasa seca y ponerlo en una bolsa de plástico"},
+            {letter: "d", text: "Envolver en gasa húmeda, poner en bolsa sellada, y colocar esa bolsa en hielo/agua"}
+        ],
+        correctAnswer: "d",
+        explanation: "La parte amputada debe mantenerse fría pero no congelada. El contacto directo con el hielo causa congelación. Debe envolverse en gasa estéril (ligeramente húmeda), sellarse en una bolsa, y colocar esa bolsa en un recipiente con hielo y agua."
+    },
+    {
+        question: "Un paciente ha estado atrapado bajo un pilar de concreto por 4 horas. Antes de liberarlo, el equipo de SVA debe prepararse para tratar el 'Síndrome de Aplastamiento' (Crush Syndrome), que incluye:",
+        options: [
+            {letter: "a", text: "Hipertensión severa por la liberación de adrenalina"},
+            {letter: "b", text: "Alcalosis respiratoria por el pánico"},
+            {letter: "c", text: "Hiperkalemia y Rabdomiólisis por la lisis celular"},
+            {letter: "d", text: "Hipoglucemia por el gasto de energía"}
+        ],
+        correctAnswer: "c",
+        explanation: "La destrucción de las células musculares (Rabdomiólisis) libera su contenido al torrente sanguíneo. Esto incluye grandes cantidades de potasio (Hiperkalemia) y mioglobina. Al liberar la presión, estas sustancias inundan la circulación sistémica, causando arritmias letales e insuficiencia renal."
+    },
+    {
+        question: "En las primeras 24 horas de una quemadura mayor (>20% SCT), ¿cuál es la causa fisiopatológica principal del shock?",
+        options: [
+            {letter: "a", text: "Shock cardiogénico por daño al miocardio"},
+            {letter: "b", text: "Shock neurogénico por el dolor intenso"},
+            {letter: "c", "text": "Shock hipovolémico por la pérdida de sangre en la herida"},
+            {letter: "d", text: "Shock hipovolémico (distributivo) por fuga masiva de plasma al tercer espacio"}
+        ],
+        correctAnswer: "d",
+        explanation: "Las quemaduras mayores causan una respuesta inflamatoria sistémica que aumenta masivamente la permeabilidad capilar. Esto hace que el plasma (la parte líquida de la sangre) se fugue de los vasos al espacio intersticial (tercer espacio), causando hipovolemia severa."
+    },
+    {
+        question: "Un paciente presenta una herida punzante en el cuello (Zona II) que succiona aire con cada inspiración. ¿Cuál es la complicación inmediata más peligrosa?",
+        options: [
+            {letter: "a", text: "Embolia aérea venosa"},
+            {letter: "b", text: "Infección de la herida"},
+            {letter: "c", text: "Lesión de la médula espinal"},
+            {letter: "d", "text": "Hemorragia arterial"}
+        ],
+        correctAnswer: "a",
+        explanation: "Una lesión en una vena grande del cuello (como la yugular) puede aspirar aire hacia la circulación venosa debido a la presión negativa durante la inspiración. Este aire puede viajar al corazón y los pulmones, creando una embolia aérea masiva y fatal."
+    },
+    {
+        question: "De las '6 P' del Síndrome Compartimental, ¿cuál es considerado el signo más TEMPRANO y sensible?",
+        options: [
+            {letter: "a", text: "Ausencia de Pulso (Pulselessness)"},
+            {letter: "b", text: "Palidez (Pallor)"},
+            {letter: "c", text: "Dolor desproporcionado a la lesión (Pain)"},
+            {letter: "d", text: "Parálisis (Paralysis)"}
+        ],
+        correctAnswer: "c",
+        explanation: "El dolor severo, especialmente cuando es desproporcionado al hallazgo físico (ej. dolor extremo al estirar pasivamente los dedos), es el síntoma cardinal y más temprano. La pérdida de pulso y la parálisis son signos muy tardíos e indican muerte tisular inminente."
+    },
+    {
+        question: "Un paciente con una laceración profunda en la muñeca sangra profusamente. La sangre es de un rojo brillante y sale a chorros. Esto indica una lesión:",
+        options: [
+            {letter: "a", text: "Arterial"},
+            {letter: "b", text: "Venosa"},
+            {letter: "c", text: "Capilar"},
+            {letter: "d", "text": "Linfática"}
+        ],
+        correctAnswer: "a",
+        explanation: "El sangrado arterial se caracteriza por sangre de color rojo brillante (rica en oxígeno) que sale de forma pulsátil o 'a chorros', sincronizada con el latido del corazón, debido a la alta presión del sistema arterial."
+    },
+    {
+        question: "En una lesión por explosión (blast), las lesiones 'Terciarias' se refieren a:",
+        options: [
+            {letter: "a", text: "El daño por la onda de presión (ej. ruptura de pulmón)"},
+            {letter: "b", text: "El daño por fragmentos y escombros (ej. laceraciones)"},
+            {letter: "c", text: "El daño por ser lanzado contra un objeto (ej. fracturas)"},
+            {letter: "d", text: "El daño por quemaduras, inhalación de gases o radiación"}
+        ],
+        correctAnswer: "c",
+        explanation: "Lesión Primaria = Onda de presión. Lesión Secundaria = Fragmentos. Lesión Terciaria = Impacto del cuerpo al ser lanzado. Lesión Cuaternaria/Quinaria = Quemaduras, tóxicos, radiación."
+    }
+];

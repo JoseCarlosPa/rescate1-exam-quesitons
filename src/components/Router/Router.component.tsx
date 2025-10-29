@@ -98,7 +98,7 @@ import StudyCase from "../StudyCase/StudyCase.page.tsx";
 import AlgorithmsAndProtocols from "../AlgorithmsAndProtocols/AlgorithmsAndProtocols.page.tsx";
 import FaceAndNeck from "../../pages/EMT/FaceAndNeck/FaceAndNeck.page.tsx";
 import {faceAndNeckExamen} from "../../pages/EMT/FaceAndNeck/FaceAndNeck.questions.ts";
-import {softTissueExam} from "../../pages/EMT/SoftTissue/SoftTissue.questions.ts";
+import {softTissueChallengeQuestions, softTissueExam} from "../../pages/EMT/SoftTissue/SoftTissue.questions.ts";
 import SoftTissue from "../../pages/EMT/SoftTissue/SoftTissue.page.tsx";
 import HeadAndColumnInjuries from "../../pages/EMT/HeadAndColumnInjuries/HeadAndColumnInjuries.page.tsx";
 import {headAndColumnInjuriesQuestions} from "../../pages/EMT/HeadAndColumnInjuries/HeadAndColumnInjuries.questions.ts";
@@ -297,7 +297,7 @@ export default function Router() {
                                       questions={faceAndNeckExamen} id={27}/>}/>
                 <Route path={AllRoutes.SOFT_TISSUE} element={<SoftTissue/>}/>
                 <Route path={`${AllRoutes.SOFT_TISSUE}/exam`}
-                       element={<Exam returnRoute={AllRoutes.HEAD_AND_COLUMN_INJURIES} name="Lesiones del tejido blando"
+                       element={<Exam returnRoute={AllRoutes.HEAD_AND_COLUMN_INJURIES} name="Lesiones del tejido blando" challengingQuestions={softTissueChallengeQuestions}
                                       questions={softTissueExam} id={28}/>}/>
                 <Route path={AllRoutes.HEAD_AND_COLUMN_INJURIES} element={<HeadAndColumnInjuries/>}/>
                 <Route path={`${AllRoutes.HEAD_AND_COLUMN_INJURIES}/exam`}
