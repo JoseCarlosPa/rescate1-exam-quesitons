@@ -146,4 +146,121 @@ export const specialNeedsPacientQuestions: Question[] = [
         "correctAnswer": "b",
         "explanation": "La vía aérea del paciente es a través del estoma en el cuello. La acumulación de secreciones puede causar una obstrucción potencialmente mortal. La prioridad es despejar la vía aérea aspirando el tubo de traqueostomía con un catéter de succión de tamaño adecuado."
     }
-]
+];
+
+
+/**
+ * Preguntas de desafío sobre Pacientes con Necesidades Especiales
+ */
+export const specialNeedsChallengeQuestions: Question[] = [
+    {
+        question: "Un paciente con traqueostomía se desatura. Usted intenta ventilar con BVM (conectado al estoma) pero encuentra resistencia extrema y no hay elevación torácica. ¿Cuál es la causa más probable y la acción inmediata?",
+        options: [
+            { letter: "a", text: "Falla del BVM; debe cambiar el dispositivo" },
+            { letter: "b", text: "Un neumotórax; debe realizar descompresión torácica" },
+            { letter: "c", text: "Obstrucción por tapón mucoso; debe intentar aspirar la cánula" },
+            { letter: "d", text: "El paciente está intubado esofágicamente" }
+        ],
+        correctAnswer: "c",
+        explanation: "En un paciente con vía aérea artificial, la resistencia súbita a la ventilación es frecuentemente causada por una obstrucción. La causa más común y reversible en el campo es un tapón mucoso espeso. La aspiración (succión) es la intervención inmediata."
+    },
+    {
+        question: "Al inmovilizar a un paciente con Síndrome de Down después de una caída, se debe tener especial precaución con la vía aérea y el cuello debido al alto riesgo de:",
+        options: [
+            { letter: "a", text: "Respuesta vagal exagerada" },
+            { letter: "b", text: "Inestabilidad Atlantoaxial (AAI)" },
+            { letter: "c", text: "Alergia al material del collarín" },
+            { letter: "d", text: "Osificación prematura de las vértebras" }
+        ],
+        correctAnswer: "b",
+        explanation: "Un porcentaje significativo de personas con Síndrome de Down tiene Inestabilidad Atlantoaxial (un movimiento anormal entre las vértebras C1 y C2). Una hiperextensión o flexión forzada (como en una intubación o trauma) puede causar una lesión medular grave."
+    },
+    {
+        question: "Para optimizar la vía aérea y la ventilación en un paciente bariátrico (obeso mórbido) en paro respiratorio, la mejor posición es:",
+        options: [
+            { letter: "a", text: "Supina estricta (plana)" },
+            { letter: "b", text: "Trendelenburg (cabeza abajo)" },
+            { letter: "c", text: "Posición de 'rampa' (RAMP) o 'con oreja al nivel del esternón'" },
+            { letter: "d", text: "Decúbito lateral izquierdo" }
+        ],
+        correctAnswer: "c",
+        explanation: "La posición de 'rampa', lograda elevando la cabeza, hombros y torso del paciente, alinea el conducto auditivo externo con el hueco esternal. Esto alinea los ejes de la vía aérea y aleja el tejido blando (peso del tórax y abdomen) de los pulmones, facilitando la ventilación y la intubación."
+    },
+    {
+        question: "¿Cuál es el indicador más fiable de dolor en un paciente adulto no verbal con una discapacidad intelectual severa?",
+        options: [
+            { letter: "a", text: "Un aumento en la presión arterial" },
+            { letter: "b", text: "El informe del cuidador sobre la ausencia de dolor" },
+            { letter: "c", text: "Cambios en su comportamiento basal (gemidos, agitación, rigidez)" },
+            { letter: "d", text: "La falta de respuesta a un estímulo doloroso (pellizco)" }
+        ],
+        correctAnswer: "c",
+        explanation: "Los pacientes no verbales a menudo expresan el dolor a través de cambios en su comportamiento habitual. El personal debe buscar un aumento en la agitación, vocalizaciones (gemidos), rigidez, protección de un área (guarding) o rechazo al movimiento."
+    },
+    {
+        question: "Un cuidador llama porque la sonda de gastrostomía (G-tube) de un paciente se salió. La principal preocupación y por la que debe ser visto en el hospital es:",
+        options: [
+            { letter: "a", text: "El riesgo de hemorragia masiva por el estoma" },
+            { letter: "b", text: "El estoma (orificio) puede cerrarse rápidamente (en horas)" },
+            { letter: "c", text: "El riesgo de que el paciente desarrolle hambre" },
+            { letter: "d", text: "La sonda ya no puede ser reutilizada" }
+        ],
+        correctAnswer: "b",
+        explanation: "Los estomas de los tubos de gastrostomía, especialmente los que no están maduros, pueden comenzar a cerrarse en cuestión de horas. El paciente necesita una evaluación hospitalaria para reemplazar la sonda antes de que el tracto se cierre por completo."
+    },
+    {
+        question: "Los pacientes con espina bífida (mielomeningocele) tienen una incidencia extremadamente alta de una alergia potencialmente mortal. ¿Cuál es?",
+        options: [
+            { letter: "a", text: "Penicilina" },
+            { letter: "b", text: "Látex" },
+            { letter: "c", text: "Aspirina" },
+            { letter: "d", text: "Mariscos" }
+        ],
+        correctAnswer: "b",
+        explanation: "Debido a la exposición repetida a productos médicos de látex (guantes, catéteres) desde el nacimiento, los pacientes con espina bífida tienen un riesgo muy elevado de desarrollar una alergia grave al látex, que puede llevar a la anafilaxia."
+    },
+    {
+        question: "Al evaluar a un paciente con parálisis cerebral (PC) que presenta espasticidad severa y dificultades del habla, ¿qué debe asumir el paramédico sobre su estado cognitivo?",
+        options: [
+            { letter: "a", text: "Que su nivel cognitivo está severamente afectado" },
+            { letter: "b", text: "Que su nivel cognitivo es independiente de su discapacidad física; puede estar intacto" },
+            { letter: "c", text: "Que no puede entender lo que se le dice" },
+            { letter: "d", text: "Que no puede sentir dolor" }
+        ],
+        correctAnswer: "b",
+        explanation: "La parálisis cerebral es un trastorno del movimiento y el tono muscular. No predice el nivel de inteligencia. Muchos pacientes con discapacidades físicas severas tienen una función cognitiva completamente intacta. Siempre asuma capacidad cognitiva hasta que se demuestre lo contrario."
+    },
+    {
+        question: "Usted atiende a un paciente con un Dispositivo de Asistencia Ventricular (LVAD) que está inconsciente. No se palpa pulso. ¿Cuál es la acción correcta?",
+        options: [
+            { letter: "a", text: "Declarar al paciente fallecido ya que no tiene pulso" },
+            { letter: "b", text: "Auscultar el tórax para oír el 'zumbido' del motor y usar un Doppler para la PAM" },
+            { letter: "c", text: "La RCP y la desfibrilación están contraindicadas en estos pacientes" },
+            { letter: "d", text: "Administrar un golpe precordial para reiniciar el dispositivo" }
+        ],
+        correctAnswer: "b",
+        explanation: "Los LVAD (bombas de flujo continuo) a menudo no generan un pulso palpable. La evaluación de la perfusión se realiza escuchando el 'zumbido' del motor de la bomba y midiendo la Presión Arterial Media (PAM) con un manguito manual y un Doppler. La RCP solo se inicia si el dispositivo ha fallado y el paciente no responde."
+    },
+    {
+        question: "Un paciente de 80 años con Alzheimer (demencia) presenta un empeoramiento AGUDO de la confusión y agitación en las últimas 24 horas. ¿Qué debe sospecharse primero?",
+        options: [
+            { letter: "a", text: "Progresión natural de la demencia" },
+            { letter: "b", text: "Delirio, probablemente secundario a una infección (ej. ITU, neumonía)" },
+            { letter: "c", text: "Un evento psiquiátrico (psicosis)" },
+            { letter: "d", text: "Simulación para llamar la atención" }
+        ],
+        correctAnswer: "b",
+        explanation: "La demencia es crónica y progresiva (lenta). Un cambio agudo (súbito) en el estado mental se define como Delirio. El delirio es un síntoma de una causa médica subyacente, siendo las infecciones (como ITU o neumonía) las más comunes en los ancianos."
+    },
+    {
+        question: "Un paciente bariátrico y agitado es restringido en posición prona (boca abajo) por 4 personas y de repente deja de luchar y se queda callado. ¿Qué complicación letal debe sospecharse de inmediato?",
+        options: [
+            { letter: "a", text: "Resolución súbita de la agitación" },
+            { letter: "b", text: "Asfixia posicional (compresión respiratoria)" },
+            { letter: "c", text: "Hipoglucemia severa" },
+            { letter: "d", text: "Síncope vasovagal" }
+        ],
+        correctAnswer: "b",
+        explanation: "La posición prona, especialmente en un paciente bariátrico o agitado (que respira con dificultad), puede impedir el movimiento del diafragma y el tórax, llevando a una asfixia posicional. Este 'cese súbito de la lucha' es un signo ominoso de paro respiratorio o cardíaco."
+    }
+];

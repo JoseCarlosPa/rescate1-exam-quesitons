@@ -133,7 +133,10 @@ import {
 } from "../../pages/EMT/PediatricEmergencies/PediatricEmergencies.questions.ts";
 import GeriatricEmergencies from "../../pages/EMT/GeriatricEmergencies/GeriatricEmergencies.page.tsx";
 import {geriatricQuestions} from "../../pages/EMT/GeriatricEmergencies/GeriatricEmergencies.questions.ts";
-import {specialNeedsPacientQuestions} from "../../pages/EMT/SpecialNeedsPacient/SpecialNeedsPacient.questions.ts";
+import {
+    specialNeedsChallengeQuestions,
+    specialNeedsPacientQuestions
+} from "../../pages/EMT/SpecialNeedsPacient/SpecialNeedsPacient.questions.ts";
 import SpecialNeedsPacient from "../../pages/EMT/SpecialNeedsPacient/SpecialNeedsPacient.page.tsx";
 import {transportOperationsQuestions} from "../../pages/EMT/TransportOperations/TransportOperations.questions.ts";
 import TransportOperations from "../../pages/EMT/TransportOperations/TransportOperations.page.tsx";
@@ -352,7 +355,7 @@ export default function Router() {
                 <Route path={AllRoutes.SPECIAL_NEEDS_PACIENT} element={<SpecialNeedsPacient/>}/>
                 <Route path={`${AllRoutes.SPECIAL_NEEDS_PACIENT}/exam`}
                        element={<Exam returnRoute={AllRoutes.SPECIAL_NEEDS_PACIENT}
-                                      name="Pacientes con necesidades especiales"
+                                      name="Pacientes con necesidades especiales" challengingQuestions={specialNeedsChallengeQuestions}
                                       questions={specialNeedsPacientQuestions} id={41}/>}/>
                 <Route path={AllRoutes.TRANSPORT_OPERATIONS} element={<TransportOperations/>}/>
                 <Route path={`${AllRoutes.TRANSPORT_OPERATIONS}/exam`}
