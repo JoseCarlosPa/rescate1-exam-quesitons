@@ -9,6 +9,7 @@ import {FaClock, FaMinus, FaPlus, FaPrint} from "react-icons/fa";
 import {getQuestionsFromSelectedTopics} from "../allQuestionts.ts";
 import {ForumSection} from "../../../components/ForumSection";
 import "./GeneralExam.css";
+import {examQuestions} from "./FinalExamExample.questions.ts";
 
 export default function GeneralExam() {
     // Setup states
@@ -94,6 +95,19 @@ export default function GeneralExam() {
         startTimer();
     };
 
+    // Load the final exam demo with predefined questions
+    const loadFinalExamDemo = () => {
+        setGeneratedQuestions(examQuestions);
+        setShowTopicSelection(false);
+        setAnswers({});
+        setSubmitted(false);
+        setTimer(0);
+        setTimerStarted(false);
+        setCurrentQuestionIndex(0);
+        stopTimer();
+        startTimer();
+    };
+
     // Handle option selection for a question
     const handleSelect = (qIndex: number, letter: string) => {
         setAnswers({...answers, [qIndex]: letter});
@@ -158,6 +172,12 @@ export default function GeneralExam() {
                 <IoReturnDownBack className="w-5 h-5 my-auto"/>
                 <p className="text-lg">Regresar</p>
             </NavLink>
+            <button
+                onClick={loadFinalExamDemo}
+                className="cursor-pointer mb-6 bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-6 rounded-md shadow-md transition duration-300"
+            >
+                Examen Final (Demo)
+            </button>
 
             {showTopicSelection ? (
                 <div className="w-full max-w-4xl bg-white rounded-lg shadow-lg p-6 mt-4">

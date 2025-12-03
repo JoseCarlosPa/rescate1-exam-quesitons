@@ -100,17 +100,27 @@
 <div id="root"></div>
 <script type="module" src="/src/main.tsx"></script>
 <script>
-    if ('serviceWorker' in navigator) {
+    (function() {
+        // No registrar el Service Worker en entornos de desarrollo.
+        if (!('serviceWorker' in navigator)) return;
+
+        const hostname = location.hostname;
+        const isLocalhost = hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '::1';
+        // Rangos de red privados: 10.x.x.x, 192.168.x.x, 172.16.x.x - 172.31.x.x
+        const isPrivateIP = /^(10\.|192\.168\.|172\.(1[6-9]|2[0-9]|3[0-1])\.)/.test(hostname);
+        const isDev = isLocalhost || isPrivateIP;
+
+        if (isDev) {
+            console.log('Service Worker omitido en entorno de desarrollo (hostname):', hostname);
+            return;
+        }
+
         window.addEventListener('load', () => {
             navigator.serviceWorker.register('/sw.js')
-                .then(registration => {
-                    console.log('Service Worker registrado con éxito:', registration);
-                })
-                .catch(error => {
-                    console.log('Error al registrar el Service Worker:', error);
-                });
+                .then(registration => console.log('Service Worker registrado con éxito:', registration))
+                .catch(error => console.log('Error al registrar el Service Worker:', error));
         });
-    }
+    })();
 </script>
 </body>
 </html>
