@@ -1,6 +1,6 @@
 import {Timestamp} from "firebase/firestore";
 
-export type ActiveTab = 'overview' | 'users' | 'forum' | 'lessons' | 'tasks';
+export type ActiveTab = 'overview' | 'users' | 'forum' | 'lessons' | 'tasks' | 'checklists';
 
 export interface ExamData {
     completed: boolean;

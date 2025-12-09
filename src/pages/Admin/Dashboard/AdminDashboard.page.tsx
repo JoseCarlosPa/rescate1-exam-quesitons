@@ -1,4 +1,4 @@
-import {FaBook, FaChartBar, FaComments, FaTasks, FaUsers,} from 'react-icons/fa';
+import {FaAmbulance, FaBook, FaChartBar, FaComments, FaTasks, FaUsers,} from 'react-icons/fa';
 import {ImSpinner2} from 'react-icons/im';
 import useAdminDashboard from "./AdminDashboard.hook.ts";
 import {ActiveTab} from "./AdminDashboard.types.ts";
@@ -7,6 +7,7 @@ import Users from "./components/Users.component.tsx";
 import Forum from "./components/Forum.component.tsx";
 import Lessons from "./components/Lessons.component.tsx";
 import Tasks from "./components/Tasks.component.tsx";
+import Checklists from "./components/Checklists.component.tsx";
 
 export default function AdminDashboard() {
 
@@ -36,7 +37,8 @@ export default function AdminDashboard() {
                             {key: 'users', label: 'Usuarios', icon: FaUsers},
                             {key: 'forum', label: 'Foro', icon: FaComments},
                             {key: 'lessons', label: 'Lecciones', icon: FaBook},
-                            {key: 'tasks', label: 'Tareas', icon: FaTasks}
+                            {key: 'tasks', label: 'Tareas', icon: FaTasks},
+                            {key: 'checklists', label: 'Checklists', icon: FaAmbulance}
                         ].map(({key, label, icon: Icon}) => (
                             <button
                                 key={key}
@@ -59,6 +61,7 @@ export default function AdminDashboard() {
                 {activeTab === 'forum' && (<Forum/>)}
                 {activeTab === 'lessons' && (<Lessons/>)}
                 {activeTab === 'tasks' && (<Tasks/>)}
+                {activeTab === 'checklists' && (<Checklists/>)}
             </div>
         </div>
     );

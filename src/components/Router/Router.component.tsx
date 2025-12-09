@@ -161,6 +161,7 @@ import RapidResponse from "../../pages/Games/RapidResponse/RapidResponse.page.ts
 import MedicalQuizArena from "../../pages/Games/MedicalQuizArena";
 import RopesPage from "../../pages/Ropes/Ropes.page.tsx";
 import { ropeRescueQuestions, ropeRescueChallengeQuestions } from "../../pages/Ropes/Ropes.questions.ts";
+import AmbulanceChecklist from "../../pages/AmbulanceChecklist/AmbulanceChecklist.page.tsx";
 
 export default function Router() {
     return (
@@ -399,6 +400,9 @@ export default function Router() {
                        element={<Exam returnRoute={AllRoutes.ROPE_RESCUE} name="Rescate con Cuerdas"
                                       questions={ropeRescueQuestions} id={45}
                                       challengingQuestions={ropeRescueChallengeQuestions}/>}/>
+
+                {/* Ambulance Checklist */}
+                <Route path={AllRoutes.AMBULANCE_CHECKLIST} element={<AmbulanceChecklist/>}/>
 
             </Routes>
         </Suspense>

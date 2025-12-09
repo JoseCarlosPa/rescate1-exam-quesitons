@@ -53,6 +53,7 @@ export default function LayoutProvider(props: tProvidersProps) {
                     </div>
 
                     <div className="flex items-center">
+
                         {isAuthenticated && user ? (
                             <div className="relative" ref={menuRef}>
                                 <button
@@ -121,6 +122,7 @@ export default function LayoutProvider(props: tProvidersProps) {
                             </div>
                         ) : (
                             <div className="flex items-center space-x-3">
+
                                 <NavLink
                                     to={AllRoutes.LOGIN}
                                     className="bg-white text-orange-500 px-4 py-2 rounded-lg font-medium hover:bg-orange-50 transition-colors"
@@ -135,7 +137,18 @@ export default function LayoutProvider(props: tProvidersProps) {
                                 </NavLink>
                             </div>
                         )}
+                        {/*
+                        <NavLink
+                            to={AllRoutes.AMBULANCE_CHECKLIST}
+                            className="flex items-center bg-orange-600 text-white px-3 py-2 rounded-lg font-medium hover:bg-orange-700 transition-colors mx-4"
+                            title="Checklist Ambulancia"
+                        >
+                            <FaClipboardCheck className="w-4 h-4 md:mr-2"/>
+                            <span className="hidden md:inline">Checklist</span>
+                        </NavLink>
+                        */}
                     </div>
+
                 </header>
 
                 <main className="flex-1">
