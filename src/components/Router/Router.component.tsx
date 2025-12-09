@@ -159,6 +159,8 @@ import Trivia from "../../pages/Games/Trivia/Trivia.page.tsx";
 import BuzzerBattle from "../../pages/Games/BuzzerBattle/BuzzerBattle.page.tsx";
 import RapidResponse from "../../pages/Games/RapidResponse/RapidResponse.page.tsx";
 import MedicalQuizArena from "../../pages/Games/MedicalQuizArena";
+import RopesPage from "../../pages/Ropes/Ropes.page.tsx";
+import { ropeRescueQuestions, ropeRescueChallengeQuestions } from "../../pages/Ropes/Ropes.questions.ts";
 
 export default function Router() {
     return (
@@ -392,6 +394,11 @@ export default function Router() {
                 <Route path={AllRoutes.RAPID_RESPONSE} element={<RapidResponse/>}/>
                 <Route path={AllRoutes.BUZZER_BATTLE} element={<BuzzerBattle/>}/>
                 <Route path={AllRoutes.MEDICAL_QUIZ_ARENA} element={<MedicalQuizArena/>}/>
+                <Route path={AllRoutes.ROPE_RESCUE} element={<RopesPage />}/>
+                <Route path={`${AllRoutes.ROPE_RESCUE}/exam`}
+                       element={<Exam returnRoute={AllRoutes.ROPE_RESCUE} name="Rescate con Cuerdas"
+                                      questions={ropeRescueQuestions} id={45}
+                                      challengingQuestions={ropeRescueChallengeQuestions}/>}/>
 
             </Routes>
         </Suspense>

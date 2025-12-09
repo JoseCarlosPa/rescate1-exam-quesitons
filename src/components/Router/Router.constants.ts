@@ -68,5 +68,6 @@ export enum AllRoutes {
     TRIVIA = "/trivia",
     BUZZER_BATTLE = "/buzzer-battle",
     RAPID_RESPONSE = "/rapid-response",
-    MEDICAL_QUIZ_ARENA = "/medical-quiz-arena"
+    MEDICAL_QUIZ_ARENA = "/medical-quiz-arena",
+    ROPE_RESCUE = "/rope-rescue"
 }
