@@ -61,7 +61,7 @@ export default function LegalAspects() {
                                 <MdQuiz className="w-10 h-10 text-orange-500 mb-2"/>
                                 <p className="text-center font-medium">Examen</p>
                             </NavLink>
-                            <a href="https://docs.google.com/presentation/d/1a2LmZGb5lIg9ZN__5t0sspwiev13kUpj/edit?usp=sharing&ouid=107287742628985461156&rtpof=true&sd=true"
+                            <a href="https://docs.google.com/presentation/d/1INImCF3Doc-1wWSpY0w4_6TN3L6GcK7G/edit?usp=sharing&ouid=107287742628985461156&rtpof=true&sd=true"
                                target="_blank"
                                rel="noopener noreferrer"
                                className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
