@@ -45,7 +45,7 @@ export default function MedAdmin() {
                             <MdQuiz className="w-10 h-10 text-orange-500 mb-2"/>
                             <p className="text-center font-medium">Examen</p>
                         </NavLink>
-                        <a href="https://docs.google.com/presentation/d/1gwDn5-fcA1qLFbYfkqIPET6kvnzZAvmu/edit?usp=drive_link&ouid=107287742628985461156&rtpof=true&sd=true"
+                        <a href="https://docs.google.com/presentation/d/1xKP5H5dE3XbNLZllcdf20L405GbQn95V/edit?usp=sharing&ouid=107287742628985461156&rtpof=true&sd=true"
                            target="_blank"
                            rel="noopener noreferrer"
                            className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">

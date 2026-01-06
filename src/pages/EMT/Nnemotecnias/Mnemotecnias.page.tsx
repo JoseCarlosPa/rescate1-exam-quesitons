@@ -50,34 +50,13 @@ export default function Mnemotecnias() {
                         </header>
 
                         {/* Menú rápido de recursos */}
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 max-w-4xl mx-auto">
+                        <div className="grid grid-cols-1 md:grid-cols-1 gap-4 mb-8 max-w-4xl mx-auto">
                             <NavLink
                                 to="/mnemotecnias/exam"
                                 className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
                                 <MdQuiz className="w-10 h-10 text-orange-500 mb-2"/>
                                 <p className="text-center font-medium">Examen</p>
                             </NavLink>
-                            <a href="https://docs.google.com/presentation/d/15fdQZsSUuF9ViCqGwilGhDpF4zVoU5f8/edit?usp=drive_link&ouid=107287742628985461156&rtpof=true&sd=true"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
-                                <PiChalkboardTeacher className="w-10 h-10 text-orange-500 mb-2"/>
-                                <p className="text-center font-medium">Presentación</p>
-                            </a>
-                            <a href="https://www.youtube.com/watch?v=3K7eWN_A8sM"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
-                                <BsBookHalf className="w-10 h-10 text-orange-500 mb-2"/>
-                                <p className="text-center font-medium">Video Tutorial</p>
-                            </a>
-                            <a href="https://quizlet.com/subject/mnemonic-paramedic/"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
-                                <FaBrain className="w-10 h-10 text-orange-500 mb-2"/>
-                                <p className="text-center font-medium">Memoria</p>
-                            </a>
                         </div>
 
                         {/* Navegación por pestañas */}
