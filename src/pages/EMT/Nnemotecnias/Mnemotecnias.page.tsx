@@ -6,8 +6,6 @@ import {faqData} from "./Mnemotecnias.questions.ts";
 import {AllRoutes} from "../../../components/Router/Router.constants.ts";
 import {IoReturnDownBack} from "react-icons/io5";
 import {MdQuiz} from "react-icons/md";
-import {PiChalkboardTeacher} from "react-icons/pi";
-import {BsBookHalf} from "react-icons/bs";
 import {FaBrain, FaClipboardCheck, FaUserMd} from "react-icons/fa";
 import {useState} from "react";
 import SEOWrapper from "../../../components/SEOWrapper/SEOWrapper.component.tsx";
