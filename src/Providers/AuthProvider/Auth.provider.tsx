@@ -14,7 +14,8 @@ import {auth, db} from '../../firebase/firebaseConfig';
 import {AuthContext, AuthContextType} from './Auth.context';
 import {toast} from 'sonner';
 import {tUser} from "./Auth.types.ts";
-import {ExamData, examNames} from "../../pages/Student/Grades/StudentGrades.page.tsx";
+import {ExamData} from "../../pages/Student/Grades/StudentGrades.page.tsx";
+import {examNamesExported} from "../../constants/exam.constants.ts";
 
 interface AuthProviderProps {
     children: ReactNode;
@@ -147,7 +148,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({children}) => {
         const initialExams: Record<string, ExamData> = {};
 
         // Crear un examen inicial para cada uno de los 44 exámenes
-        Object.keys(examNames).forEach((examId) => {
+        Object.keys(examNamesExported).forEach((examId) => {
             initialExams[examId] = {
                 completed: false,
                 score: 0,

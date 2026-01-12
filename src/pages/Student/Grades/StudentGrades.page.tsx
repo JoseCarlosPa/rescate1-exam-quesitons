@@ -7,6 +7,7 @@ import {FaArrowLeft, FaChartLine, FaCheck, FaGraduationCap, FaTimes, FaTrophy,} 
 import {ImSpinner2} from 'react-icons/im';
 import {toast} from 'sonner';
 import {useAuth} from "../../../Providers/AuthProvider";
+import {examNamesExported} from "../../../constants/exam.constants.ts";
 
 interface ExamResult {
     id: number;
@@ -24,6 +25,7 @@ export interface ExamData {
     totalQuestions: number;
     correctAnswers: number;
     completedAt?: Timestamp;
+    name?: string;
 }
 
 interface StudentData {
@@ -36,51 +38,6 @@ interface StudentData {
 type FilterType = 'all' | 'completed' | 'pending';
 type SortType = 'name' | 'score' | 'date';
 
-export const examNames: Record<number, string> = {
-    1: "Examen General",
-    2: "Aspectos Legales",
-    3: "Comunicaciones y documentación",
-    4: "Sistema SEM",
-    5: "Seguridad y bienestar del personal",
-    6: "Términos Médicos",
-    7: "El Cuerpo Humano",
-    8: "Desarrollo y esperanza de vida",
-    9: "Evaluación del paciente",
-    10: "Mnemotecnias",
-    11: "Manejo de la Vía Aérea",
-    12: "Principios de la Farmacología",
-    13: "Administración de Medicamentos",
-    14: "Shock",
-    15: "Reanimación: Soporte Vital Básico (SVB)",
-    16: "Código Mega",
-    17: "Visión médica general",
-    18: "Emergencias respiratorias",
-    19: "Emergencias Cardiovasculares",
-    20: "Emergencias Neurológicas",
-    21: "Emergencias gastrointestinales y urológicas",
-    22: "Emergencias endocrinas y hematológicas",
-    23: "Conceptos generales de trauma",
-    24: "Inmovilización",
-    25: "Hemorragias",
-    27: "Lesiones de cara y cuello",
-    28: "Lesiones del tejido blando",
-    29: "Lesiones de cabeza y columna vertebral",
-    30: "Lesiones del tórax",
-    31: "Lesiones Ortopédicas",
-    32: "Lesiones Abdominales y genitourinarias",
-    33: "Emergencias inmunológicas",
-    34: "Toxicología",
-    35: "Emergencias Ambientales",
-    36: "Emergencias Psiquiátricas",
-    37: "Emergencias Ginecológicas",
-    38: "Cuidados obstétricos y neonatales",
-    39: "Emergencias pediátricas",
-    40: "Emergencias Geriátricas",
-    41: "Pacientes con necesidades especiales",
-    42: "Operaciones de transporte",
-    43: "Manejo de incidentes",
-    44: "Respuesta al terrorismo y manejo de desastres"
-};
 
 export default function StudentGrades() {
     const {user} = useAuth();
@@ -118,8 +75,9 @@ export default function StudentGrades() {
 
     const processExamResults = (exams: Record<string, ExamData>) => {
         const results: ExamResult[] = [];
+        console.log('exams data:', examNamesExported);
 
-        Object.entries(examNames).forEach(([id, name]) => {
+        Object.entries(examNamesExported).forEach(([id, name]) => {
             const examId = parseInt(id);
             const examData = exams[examId] || {};
 

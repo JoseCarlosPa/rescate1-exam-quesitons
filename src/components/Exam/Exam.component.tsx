@@ -97,7 +97,8 @@ export default function Exam(props: ExamProps) {
                         score: finalScore,
                         totalQuestions: questions?.length,
                         correctAnswers: correctAnswers,
-                        completedAt: Timestamp.now()
+                        completedAt: Timestamp.now(),
+                        name: props.name
                     };
 
                     // Actualizar el examen específico usando el ID del examen

@@ -5,6 +5,7 @@ export type ActiveTab = 'overview' | 'users' | 'forum' | 'lessons' | 'tasks' | '
 export interface ExamData {
     completed: boolean;
     score: number;
+    name?: string;
 }
 
 export interface User {

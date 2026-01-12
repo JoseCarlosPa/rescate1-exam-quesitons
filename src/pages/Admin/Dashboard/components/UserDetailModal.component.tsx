@@ -16,6 +16,7 @@ import {
 } from "react-icons/fa";
 import {UserDetail} from "../AdminDashboard.types";
 import {useState} from "react";
+import {examNamesExported} from "../../../../constants/exam.constants.ts";
 
 interface UserDetailModalProps {
     user: UserDetail | null;
@@ -210,27 +211,32 @@ export default function UserDetailModal({user, onClose, isOpen, onUpdateAttendan
                             <div className="p-6">
                                 {user.exams && Object.keys(user.exams).length > 0 ? (
                                     <div className="space-y-3 max-h-96 overflow-y-auto">
-                                        {Object.entries(user.exams).map(([examName, examData], index) => (
-                                            <div key={index}
-                                                 className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                                                <div className="flex-1">
-                                                    <p className="font-medium text-gray-900 text-sm">{examName}</p>
-                                                    <p className="text-xs text-gray-500">
-                                                        Estado: {examData.completed ? 'Completado' : 'Pendiente'}
-                                                    </p>
+                                        {Object.entries(user.exams).map(([examId, examData], index) => {
+                                            // Obtener el nombre del examen: primero desde examData.name, luego desde el mapeo
+                                            const displayName = examData.name || examNamesExported[parseInt(examId)] || `Examen #${examId}`;
+
+                                            return (
+                                                <div key={index}
+                                                     className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                                    <div className="flex-1">
+                                                        <p className="font-medium text-gray-900 text-sm">{displayName}</p>
+                                                        <p className="text-xs text-gray-500">
+                                                            Estado: {examData.completed ? 'Completado' : 'Pendiente'}
+                                                        </p>
+                                                    </div>
+                                                    <div className="text-right">
+                                                        {examData.completed ? (
+                                                            <span
+                                                                className={`text-sm font-bold ${getScoreColor(examData.score)}`}>
+                                                                {examData.score}%
+                                                            </span>
+                                                        ) : (
+                                                            <span className="text-gray-400 text-sm">-</span>
+                                                        )}
+                                                    </div>
                                                 </div>
-                                                <div className="text-right">
-                                                    {examData.completed ? (
-                                                        <span
-                                                            className={`text-sm font-bold ${getScoreColor(examData.score)}`}>
-                                                            {examData.score}%
-                                                        </span>
-                                                    ) : (
-                                                        <span className="text-gray-400 text-sm">-</span>
-                                                    )}
-                                                </div>
-                                            </div>
-                                        ))}
+                                            );
+                                        })}
                                     </div>
                                 ) : (
                                     <div className="text-center py-8">

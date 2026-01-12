@@ -14,7 +14,7 @@ export default function Users() {
         handleUpdateAttendance
     } = useAdminDashboard();
     const [searchTerm, setSearchTerm] = useState("");
-    const [roleFilter, setRoleFilter] = useState("all");
+    const [roleFilter, setRoleFilter] = useState("Alumno");
 
     const filteredUsers = users.filter(user => {
         const matchesSearch = user.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -90,6 +90,7 @@ export default function Users() {
                                 <option value="all">Todos los roles</option>
                                 <option value="Alumno">Alumno</option>
                                 <option value="Admin">Admin</option>
+                                <option value="Elemento">Elemento</option>
                                 <option value="Moderador">Moderador</option>
                             </select>
                         </div>
@@ -152,6 +153,7 @@ export default function Users() {
                                             >
                                                 <option value="Alumno">Alumno</option>
                                                 <option value="Admin">Admin</option>
+                                                <option value="Elemento">Elemento</option>
                                                 <option value="Moderador">Moderador</option>
                                             </select>
                                         </td>
@@ -220,7 +222,7 @@ export default function Users() {
             </div>
 
             {/* Statistics Footer */}
-            <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
                 <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-lg border border-blue-200">
                     <div className="flex items-center justify-between">
                         <div>
@@ -231,27 +233,51 @@ export default function Users() {
                     </div>
                 </div>
 
-                <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-4 rounded-lg border border-green-200">
+                <div className="bg-gradient-to-r from-cyan-50 to-blue-50 p-4 rounded-lg border border-cyan-200">
                     <div className="flex items-center justify-between">
                         <div>
-                            <p className="text-sm font-medium text-green-800">Usuarios Activos</p>
-                            <p className="text-2xl font-bold text-green-900">
-                                {users.filter(user => user.exams && Object.values(user.exams).some((exam: any) => exam.completed)).length}
+                            <p className="text-sm font-medium text-cyan-800">Alumnos</p>
+                            <p className="text-2xl font-bold text-cyan-900">
+                                {users.filter(user => user.role === 'Alumno').length}
                             </p>
                         </div>
-                        <FaUsers className="text-green-500 text-2xl"/>
+                        <FaUsers className="text-cyan-500 text-2xl"/>
+                    </div>
+                </div>
+
+                <div className="bg-gradient-to-r from-red-50 to-orange-50 p-4 rounded-lg border border-red-200">
+                    <div className="flex items-center justify-between">
+                        <div>
+                            <p className="text-sm font-medium text-red-800">Administradores</p>
+                            <p className="text-2xl font-bold text-red-900">
+                                {users.filter(user => user.role === 'Admin').length}
+                            </p>
+                        </div>
+                        <FaUsers className="text-red-500 text-2xl"/>
                     </div>
                 </div>
 
                 <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-lg border border-purple-200">
                     <div className="flex items-center justify-between">
                         <div>
-                            <p className="text-sm font-medium text-purple-800">Administradores</p>
+                            <p className="text-sm font-medium text-purple-800">Moderadores</p>
                             <p className="text-2xl font-bold text-purple-900">
-                                {users.filter(user => user.role === 'Admin').length}
+                                {users.filter(user => user.role === 'Moderador').length}
                             </p>
                         </div>
                         <FaUsers className="text-purple-500 text-2xl"/>
+                    </div>
+                </div>
+
+                <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-4 rounded-lg border border-green-200">
+                    <div className="flex items-center justify-between">
+                        <div>
+                            <p className="text-sm font-medium text-green-800">Elementos</p>
+                            <p className="text-2xl font-bold text-green-900">
+                                {users.filter(user => user.role === 'Elemento').length}
+                            </p>
+                        </div>
+                        <FaUsers className="text-green-500 text-2xl"/>
                     </div>
                 </div>
             </div>
