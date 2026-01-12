@@ -39,8 +39,6 @@ export default function Trauma() {
                             </div>
                             <h1 className="text-5xl font-bold mb-2 text-center text-orange-700">Conceptos Generales de
                                 Trauma</h1>
-                            <p className="text-sm italic mb-4 text-gray-600">Basado en AAOS 11ª edición | Alumnos
-                                Generación 2025 Sábados Rescate 1</p>
                             <div className="flex justify-center">
                                 <NavLink
                                     to={AllRoutes.EMT}
@@ -59,7 +57,7 @@ export default function Trauma() {
                                 <MdQuiz className="w-10 h-10 text-orange-500 mb-2"/>
                                 <p className="text-center font-medium">Examen</p>
                             </NavLink>
-                            <a href="https://docs.google.com/presentation/d/1cshonwi1NXgFzcxxmJYUUDFBMNabtgjg/edit?usp=drive_link&ouid=107287742628985461156&rtpof=true&sd=true"
+                            <a href="https://docs.google.com/presentation/d/1NtbHU5T_BU3wk0L40Jy0pIWMiw6EAL0k/edit?usp=sharing&ouid=107287742628985461156&rtpof=true&sd=true"
                                target="_blank"
                                rel="noopener noreferrer"
                                className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">

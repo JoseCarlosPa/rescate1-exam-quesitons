@@ -58,7 +58,7 @@ export default function Immobilization() {
                                 <p className="text-center font-medium">Examen</p>
                             </NavLink>
 
-                            <a href="https://docs.google.com/presentation/d/1Rnfsa9yfGk1X8vWPptTCUSNO46Snf2nq/edit?usp=drive_link&ouid=107287742628985461156&rtpof=true&sd=true"
+                            <a href="https://docs.google.com/presentation/d/1R-qFFADJWgdVo7IK_V4n3kvX7ji_RDH_/edit?usp=sharing&ouid=107287742628985461156&rtpof=true&sd=true"
                                target="_blank"
                                rel="noopener noreferrer"
                                className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">

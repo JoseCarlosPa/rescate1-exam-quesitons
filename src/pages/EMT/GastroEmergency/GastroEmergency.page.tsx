@@ -62,7 +62,7 @@ export default function GastroEmergency() {
                                 <p className="text-center font-medium">Examen</p>
                             </NavLink>
 
-                            <a href="https://docs.google.com/presentation/d/1vI8Dc6pfyv3jVunQdy99BFJlJ4dpdBiy/edit?usp=drive_link&ouid=107287742628985461156&rtpof=true&sd=true"
+                            <a href="https://docs.google.com/presentation/d/1S_aGmnA3EVYR3clHc489J7gBRx_LduWC/edit?usp=sharing&ouid=107287742628985461156&rtpof=true&sd=true"
                                target="_blank"
                                rel="noopener noreferrer"
                                className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md">
