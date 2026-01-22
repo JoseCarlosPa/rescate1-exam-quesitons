@@ -7,6 +7,8 @@ import netter from "../../assets/netter.webp";
 import acls from "../../assets/acls.avif";
 import moore from "../../assets/moore.webp";
 import amls from "../../assets/amls.jpg";
+import guyton from "../../assets/guyton.jpg";
+
 
 
 export const resources = [
@@ -65,7 +67,7 @@ export const resources = [
         subtitle: "National Association of Emergency Medical Technicians",
         edition: "Tercera edición 2021",
         category: "Manual",
-        download: "https://drive.google.com/file/d/12XTprKF6WJwORjNNG2CrZVbGLh8A6M8i/view?usp=share_link",
+        download: "https://drive.google.com/uc?export=download&id=12XTprKF6WJwORjNNG2CrZVbGLh8A6M8i",
         link: {
             url: "https://www.psglearning.com/catalog/productdetails/9781284241488?srsltid=AfmBOoo13GT74b4KRoovcofMkOPddJ9Y3FyN3Y_3JjYYR60QinYLe2gH",
             label: "Sitio web"
@@ -81,6 +83,18 @@ export const resources = [
         download: "https://drive.google.com/uc?export=download&id=1phdI9OR9xcKwUwHiDw27P7q4Khsp6yJ0",
         link: {
             url: "https://www.amazon.com.mx/Anatom%C3%83%C2%AD-orientaci%C3%83%C2%B3n-cl%C3%83%C2%ADnica-Spanish-Keith/dp/8417033637/ref=asc_df_8417033637?mcid=79e06a662b2c384092fcc0c76473e0ef&tag=gledskshopmx-20&linkCode=df0&hvadid=709881970557&hvpos=&hvnetw=g&hvrand=16981546940521121917&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1010149&hvtargid=pla-451867579848&psc=1&language=es_MX&gad_source=1",
+            label: "Comprar"
+        },
+    },
+    {
+        img: guyton,
+        title: "Tratado de Fisiología Médica By Guyton & Hall. Hall, J.E.",
+        subtitle: "Guyton y Hall.",
+        edition: "Edición 2021",
+        category: "Atlas",
+        download: "https://drive.google.com/uc?export=download&id=1VgkXcLljuACETKFas_5o_l3OtW6XqWxO",
+        link: {
+            url: "https://www.amazon.com/-/es/Guyton-Hall-Tratado-Fisiologia-Médica/dp/8535262857",
             label: "Comprar"
         },
     },
