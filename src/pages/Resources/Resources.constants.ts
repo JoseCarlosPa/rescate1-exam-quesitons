@@ -46,7 +46,7 @@ export const resources = [
         subtitle: "American Heart Association",
         edition: "2021",
         category: "Manual",
-        download: "https://drive.google.com/uc?export=download&id=1hlodASdwD_tYP4DpKLKQCzD11r81NGZ",
+        download: "https://drive.google.com/file/d/1hlodASdwD_tYP4DpKLKQCzD11r81NGZ-/view?usp=drive_link",
         link: {url: "https://shopcpr.heart.org/es/courses/acls", label: "Sitio web"},
     },
     {
