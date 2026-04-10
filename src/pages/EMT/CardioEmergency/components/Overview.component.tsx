@@ -7,7 +7,7 @@ export default function Overview() {
     return (
         <div className="space-y-8">
             {/* Importancia crítica */}
-            <div className="bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-red-500 p-6 rounded-lg">
+            <div className="bg-linear-to-r from-red-50 to-orange-50 border-l-4 border-red-500 p-6 rounded-lg">
                 <div className="flex items-center mb-4">
                     <FaExclamationTriangle className="w-8 h-8 text-red-500 mr-3"/>
                     <h2 className="text-2xl font-bold text-red-700">¡Prioridad Absoluta!</h2>
@@ -44,7 +44,7 @@ export default function Overview() {
                     Cadena de Supervivencia Cardiovascular
                 </h2>
                 <div className="grid md:grid-cols-4 gap-6">
-                    <div className="bg-gradient-to-b from-blue-50 to-blue-100 p-6 rounded-lg border">
+                    <div className="bg-linear-to-b from-blue-50 to-blue-100 p-6 rounded-lg border">
                         <h3 className="text-lg font-bold text-blue-700 mb-3 text-center">1. Reconocimiento</h3>
                         <ul className="space-y-2 text-gray-700 text-sm">
                             <li className="flex items-start">
@@ -61,7 +61,7 @@ export default function Overview() {
                             </li>
                         </ul>
                     </div>
-                    <div className="bg-gradient-to-b from-green-50 to-green-100 p-6 rounded-lg border">
+                    <div className="bg-linear-to-b from-green-50 to-green-100 p-6 rounded-lg border">
                         <h3 className="text-lg font-bold text-green-700 mb-3 text-center">2. RCP Precoz</h3>
                         <ul className="space-y-2 text-gray-700 text-sm">
                             <li className="flex items-start">
@@ -78,7 +78,7 @@ export default function Overview() {
                             </li>
                         </ul>
                     </div>
-                    <div className="bg-gradient-to-b from-yellow-50 to-yellow-100 p-6 rounded-lg border">
+                    <div className="bg-linear-to-b from-yellow-50 to-yellow-100 p-6 rounded-lg border">
                         <h3 className="text-lg font-bold text-yellow-700 mb-3 text-center">3. Desfibrilación</h3>
                         <ul className="space-y-2 text-gray-700 text-sm">
                             <li className="flex items-start">
@@ -95,7 +95,7 @@ export default function Overview() {
                             </li>
                         </ul>
                     </div>
-                    <div className="bg-gradient-to-b from-red-50 to-red-100 p-6 rounded-lg border">
+                    <div className="bg-linear-to-b from-red-50 to-red-100 p-6 rounded-lg border">
                         <h3 className="text-lg font-bold text-red-700 mb-3 text-center">4. SVA</h3>
                         <ul className="space-y-2 text-gray-700 text-sm">
                             <li className="flex items-start">
@@ -133,8 +133,8 @@ export default function Overview() {
                         <h4 className="font-bold text-red-700 mb-2">🟠 Síndrome Coronario Agudo</h4>
                         <p className="text-sm text-gray-700 mb-2"><strong>Angina:</strong> Dolor por isquemia
                             transitoria, se alivia con reposo.</p>
-                        <p className="text-sm text-gray-700"><strong>IAM:</strong> Oclusión completa, dolor mayro 15
-                            min, no mejora con reposo.</p>
+                                <p className="text-sm text-gray-700"><strong>IAM:</strong> Oclusión completa, dolor mayor 15
+                                        min, no mejora con reposo.</p>
                     </div>
                     <div className="bg-white p-4 rounded-lg border border-gray-200">
                         <h4 className="font-bold text-gray-700 mb-2">🟠 Shock Cardiogénico</h4>

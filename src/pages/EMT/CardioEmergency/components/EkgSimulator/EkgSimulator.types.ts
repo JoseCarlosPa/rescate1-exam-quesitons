@@ -32,4 +32,8 @@ export type RhythmType =
     | 'vtach'
     | 'asystole'
     | 'stemi'
+    | 'nstemi'
+    | 'flutter_auricular'
+    | 'tsv'
+    | 'av_block_3'
     | 'custom';

@@ -11,6 +11,101 @@ export interface TemaLSM {
     referencias: ReferenciaLSM[];
 }
 
+export interface AlphabetLetter {
+    letter: string;
+    description: string;
+    image?: string;
+}
+
+export interface QuizQuestion {
+    id: number;
+    question: string;
+    options: string[];
+    correctAnswer: string;
+    explanation: string;
+}
+
+export const lsmAlphabet: AlphabetLetter[] = [
+    { letter: 'A', description: 'Puño cerrado con el pulgar a un lado.', image: './alphabet/A.svg' },
+    { letter: 'B', description: 'Mano abierta con los cuatro dedos juntos y extendidos hacia arriba; el pulgar se dobla hacia la palma.', image: './alphabet/B.svg' },
+    { letter: 'C', description: 'Los dedos se curvan formando la letra "C".', image: './alphabet/C.svg' },
+    { letter: 'D', description: 'El dedo índice apunta hacia arriba, mientras que los demás dedos se curvan para tocar la punta del pulgar.', image: './alphabet/D.svg' },
+    { letter: 'E', description: 'Los dedos se doblan hacia la palma (como una garra cerrada), mostrando las uñas al frente.', image: './alphabet/E.svg' },
+    { letter: 'F', description: 'Se tocan las puntas del índice y el pulgar, y los otros tres dedos quedan extendidos y juntos hacia arriba.', image: './alphabet/F.svg' },
+    { letter: 'G', description: 'El dedo índice y el pulgar se extienden horizontalmente, con la palma mirando hacia ti.', image: './alphabet/G.svg' },
+    { letter: 'H', description: 'Igual que la G, pero extendiendo también el dedo medio junto al índice.', image: './alphabet/H.svg' },
+    { letter: 'I', description: 'Puño cerrado con el dedo meñique extendido hacia arriba.', image: './alphabet/I.svg' },
+    { letter: 'J', description: 'Con la posición de la I, dibujas una "J" en el aire.', image: './alphabet/J.svg' },
+    { letter: 'K', description: 'Dedos índice y medio en "V", el pulgar se apoya entre ellos y se hace un ligero movimiento hacia arriba.', image: './alphabet/K.svg' },
+    { letter: 'L', description: 'Dedo índice hacia arriba y pulgar hacia un lado, formando una "L".', image: './alphabet/L.svg' },
+    { letter: 'M', description: 'Los dedos índice, medio y anular se doblan hacia abajo sobre el pulgar.', image: './alphabet/M.svg' },
+    { letter: 'N', description: 'Solo los dedos índice y medio se doblan hacia abajo sobre el pulgar.', image: './alphabet/N.svg' },
+    { letter: 'Ñ', description: 'Igual que la N, pero se mueve la muñeca de un lado a otro (balanceo).', image: './alphabet/Ñ.svg' },
+    { letter: 'O', description: 'Todos los dedos se curvan hasta tocarse las puntas, formando un círculo.', image: './alphabet/O.svg' },
+    { letter: 'P', description: 'Posición similar a la K, pero la mano se mantiene estática.', image: './alphabet/P.svg' },
+    { letter: 'Q', description: 'El dedo índice y el pulgar forman una "garra" apuntando hacia abajo, moviendo la muñeca.', image: './alphabet/Q.svg' },
+    { letter: 'R', description: 'Los dedos índice y medio se cruzan.', image: './alphabet/R.svg' },
+    { letter: 'S', description: 'Puño cerrado con el pulgar cruzado por enfrente de los demás dedos.', image: './alphabet/S.svg' },
+    { letter: 'T', description: 'Puño cerrado con el pulgar metido entre el dedo índice y el medio.', image: './alphabet/T.svg' },
+    { letter: 'U', description: 'Dedos índice y medio extendidos y juntos hacia arriba.', image: './alphabet/U.svg' },
+    { letter: 'V', description: 'Dedos índice y medio extendidos y separados (formando una "V").', image: './alphabet/V.svg' },
+    { letter: 'W', description: 'Dedos índice, medio y anular extendidos y separados.', image: './alphabet/W.svg' },
+    { letter: 'X', description: 'Con la mano en forma de "garra", se jala la mano hacia el cuerpo.', image: './alphabet/X.svg' },
+    { letter: 'Y', description: 'Dedos pulgar y meñique extendidos, los demás doblados hacia la palma.', image: './alphabet/Y.svg' },
+    { letter: 'Z', description: 'Con el dedo índice extendido, dibujas una "Z" en el aire.', image: './alphabet/Z.svg' },
+];
+
+export const lsmQuiz: QuizQuestion[] = [
+    {
+        id: 1,
+        question: '¿Qué es la Lengua de Señas Mexicana (LSM)?',
+        options: [
+            'Un sistema de mímica universal',
+            'Una lengua natural con gramática y sintaxis propia',
+            'Una traducción literal del español con las manos',
+            'Un conjunto de gestos para personas que no pueden hablar'
+        ],
+        correctAnswer: 'Una lengua natural con gramática y sintaxis propia',
+        explanation: 'La LSM es una lengua completa, reconocida oficialmente en México, con su propia estructura gramatical distinta al español.'
+    },
+    {
+        id: 2,
+        question: '¿Cuál es la forma correcta de deletrear una palabra en LSM?',
+        options: [
+            'Usando ambas manos para cada letra',
+            'Moviendo la mano exageradamente por cada letra',
+            'Manteniendo la mano dominante en una posición estable y clara',
+            'Gritando la letra mientras se hace la seña'
+        ],
+        correctAnswer: 'Manteniendo la mano dominante en una posición estable y clara',
+        explanation: 'La dactilología debe ser clara, fluida y realizada preferentemente con la mano dominante frente al hombro.'
+    },
+    {
+        id: 3,
+        question: '¿La LSM es igual en todo el mundo?',
+        options: [
+            'Sí, es un lenguaje universal',
+            'No, cada país tiene su propia lengua de señas',
+            'Solo cambia el alfabeto, las señas son las mismas',
+            'Es igual en todos los países de habla hispana'
+        ],
+        correctAnswer: 'No, cada país tiene su propia lengua de señas',
+        explanation: 'Al igual que las lenguas orales, las lenguas de señas varían por país y cultura. Existe la ASL (EE.UU.), LSE (España), etc.'
+    },
+    {
+        id: 4,
+        question: '¿Qué letra se dibuja en el aire?',
+        options: [
+            'La letra L',
+            'La letra Z',
+            'La letra O',
+            'La letra A'
+        ],
+        correctAnswer: 'La letra Z',
+        explanation: 'Para la letra Z, se utiliza el dedo índice para trazar la forma de la letra en el espacio frente al cuerpo.'
+    }
+];
+
 
 export const temasLSM: TemaLSM[] = [
     {

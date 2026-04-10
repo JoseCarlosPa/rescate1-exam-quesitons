@@ -8,8 +8,10 @@ import acls from "../../assets/acls.avif";
 import moore from "../../assets/moore.webp";
 import amls from "../../assets/amls.jpg";
 import guyton from "../../assets/guyton.jpg";
-
-
+import atls from "../../assets/Atls.png"
+import reneo from "../../assets/reneo.png";
+import ekg from "../../assets/ekg.jpg"
+import farma from "../../assets/farma.jpg"
 
 export const resources = [
     {
@@ -50,6 +52,14 @@ export const resources = [
         link: {url: "https://shopcpr.heart.org/es/courses/acls", label: "Sitio web"},
     },
     {
+        img: atls,
+        title: "ATLS - Advance Trauma Life Support",
+        subtitle: "Standardized trauma care",
+        edition: "Unidecima edicion",
+        category: "Manual",
+        download: "https://drive.google.com/file/d/1sCL4ti5ACbI5tsG_ncMg_5j4o3lrCRKb/view?usp=sharing",
+    },
+    {
         img: phtl,
         title: "PHTLS Soporte Vital Prehospitalario para Traumatismos",
         subtitle: "American College of Surgeons Association",
@@ -72,6 +82,33 @@ export const resources = [
             url: "https://www.psglearning.com/catalog/productdetails/9781284241488?srsltid=AfmBOoo13GT74b4KRoovcofMkOPddJ9Y3FyN3Y_3JjYYR60QinYLe2gH",
             label: "Sitio web"
         },
+
+    },
+    {
+        img: reneo,
+        title: "Reanimación neonatal",
+        subtitle: "",
+        edition: "Octava edicion",
+        category: "Manual",
+        download: "https://drive.google.com/file/d/1RTVddJhW3qAPmpjLTjsigwQ_kaCdMLHi/view?usp=sharing",
+
+    },
+    {
+        img: ekg,
+        title: "Manual De Electrocardiografía Código Efrahin:",
+        subtitle: "La Clave Para La Interpretación Del Electrocardiograma",
+        edition: "Edicion 2022",
+        category: "Manual",
+        download: "https://drive.google.com/file/d/1iubeDAgkfCiOQmSwqW_6ka15IJ6WJ_tm/view?usp=sharing",
+
+    },
+    {
+        img: farma,
+        title: "Farmacología básica y clínica",
+        subtitle: "Katzung",
+        edition: "Edicion 15 - 2021",
+        category: "Manual",
+        download: "https://drive.google.com/file/d/1iubeDAgkfCiOQmSwqW_6ka15IJ6WJ_tm/view?usp=sharing",
 
     },
     {

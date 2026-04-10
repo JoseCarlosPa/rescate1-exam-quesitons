@@ -6,15 +6,20 @@ export default function Diseases() {
         <div className="space-y-8">
             <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2 flex items-center">
                 <FiHeart className="w-6 h-6 mr-2 text-orange-500"/>
-                Enfermedades Cardiovasculares Comunes en México (2025)
+                Enfermedades Cardiovasculares Comunes en México
             </h2>
+            <p className="text-xs text-gray-400 mb-6 italic">
+                Fuentes: INEGI — Estadísticas de Mortalidad 2022; ENSANUT 2022 (INSP/SSA); datos usados con fines educativos.
+            </p>
 
             {/* Principales causas */}
             <div className="bg-red-50 border border-red-200 rounded-lg p-6">
                 <h3 className="text-xl font-bold text-red-700 mb-4">Principales Causas de Muerte Cardiovascular</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                        <h4 className="font-semibold text-red-800 mb-3">Estadísticas México 2025:</h4>
+                        <h4 className="font-semibold text-red-800 mb-3">
+                            Estadísticas México — INEGI 2022:
+                        </h4>
                         <ul className="space-y-2 text-gray-700">
                             <li><strong>1°.</strong> Enfermedad isquémica del corazón (28.5%)</li>
                             <li><strong>2°.</strong> Enfermedad cerebrovascular (15.2%)</li>
@@ -22,16 +27,22 @@ export default function Diseases() {
                             <li><strong>4°.</strong> Hipertensión arterial (8.9%)</li>
                             <li><strong>5°.</strong> Miocardiopatías (6.4%)</li>
                         </ul>
+                        <p className="text-xs text-gray-400 mt-2 italic">
+                            Fuente: <a href="https://www.inegi.org.mx/temas/mortalidad/" target="_blank" rel="noopener noreferrer" className="underline hover:text-red-500">INEGI — Estadísticas de Mortalidad 2022</a>
+                        </p>
                     </div>
                     <div>
-                        <h4 className="font-semibold text-red-800 mb-3">Factores de Riesgo Prevalentes:</h4>
+                        <h4 className="font-semibold text-red-800 mb-3">Factores de Riesgo Prevalentes — ENSANUT 2022:</h4>
                         <ul className="space-y-2 text-gray-700">
-                            <li>• <strong>Obesidad:</strong> 75.2% adultos con sobrepeso</li>
+                            <li>• <strong>Obesidad:</strong> 75.2% adultos con sobrepeso u obesidad</li>
                             <li>• <strong>Diabetes:</strong> 14.4% población adulta</li>
                             <li>• <strong>Hipertensión:</strong> 30.2% población adulta</li>
                             <li>• <strong>Tabaquismo:</strong> 16.4% población adulta</li>
                             <li>• <strong>Sedentarismo:</strong> 58.3% población adulta</li>
                         </ul>
+                        <p className="text-xs text-gray-400 mt-2 italic">
+                            Fuente: <a href="https://ensanut.insp.mx/" target="_blank" rel="noopener noreferrer" className="underline hover:text-red-500">ENSANUT 2022 — INSP/SSA</a>
+                        </p>
                     </div>
                 </div>
             </div>

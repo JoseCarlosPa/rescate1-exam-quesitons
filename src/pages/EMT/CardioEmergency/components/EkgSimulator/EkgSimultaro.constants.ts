@@ -69,9 +69,45 @@ export const rhythmData: Record<RhythmType, RhythmInfo> = {
         bpm: 85,
         description: 'Elevación del segmento ST indicando infarto agudo transmural.',
         clinical: 'EMERGENCIA. IAM en curso. Dolor torácico, diaforesis.',
-        treatment: 'Aspirina, nitroglicerina, morfina, trombólisis o cateterismo.',
+        treatment: 'AAS, nitroglicerina (si PA >100), trombólisis o cateterismo urgente. Morfina: uso controversial.',
         color: 'text-purple-600',
         explanation: 'Una arteria coronaria está completamente ocluida (trombo), causando isquemia transmural (todo el espesor del miocardio). Las células miocárdicas lesionadas alteran la repolarización ventricular, elevando el segmento ST. Es una emergencia tiempo-dependiente: "Tiempo es músculo".'
+    },
+    nstemi: {
+        name: 'NSTEMI / Isquemia Subendocárdica',
+        bpm: 88,
+        description: 'Depresión del segmento ST: isquemia subendocárdica activa o NSTEMI.',
+        clinical: 'EMERGENCIA. Dolor torácico, troponinas elevadas. Sin elevación de ST.',
+        treatment: 'AAS, anticoagulación, clopidogrel, beta-bloqueadores, cateterismo urgente.',
+        color: 'text-orange-700',
+        explanation: 'Oclusión coronaria parcial o isquemia subendocárdica. No hay elevación del ST pero sí depresión, que indica isquemia activa sin infarto transmural completo. Las troponinas se elevan confirmando necrosis. No requiere reperfusión tan inmediata como el STEMI pero sí manejo urgente.'
+    },
+    flutter_auricular: {
+        name: 'Flutter Auricular',
+        bpm: 150,
+        description: 'Actividad auricular regular a ~300 lpm con bloqueo 2:1. Patrón en "dientes de sierra".',
+        clinical: 'Palpitaciones, disnea, mareo. Más regular que FA pero igualmente requiere tratamiento.',
+        treatment: 'Control de frecuencia (beta-bloqueadores, diltiazem), anticoagulación, cardioversión.',
+        color: 'text-orange-500',
+        explanation: 'Un circuito de reentrada macroentrante en la aurícula derecha genera impulsos a 250-350 lpm. El nodo AV bloquea la mayoría (conducción 2:1 o 4:1), produciendo respuesta ventricular regular. El patrón en dientes de sierra ("flutter waves" o "ondas F") es la firma electrocardiográfica. Alto riesgo de formación de trombos.'
+    },
+    tsv: {
+        name: 'Taquicardia Supraventricular (TSV)',
+        bpm: 165,
+        description: 'Taquicardia regular de origen supraventricular, QRS estrecho, inicio y fin súbito.',
+        clinical: 'Palpitaciones súbitas, mareo, síncope. Frecuente en adultos jóvenes sin cardiopatía.',
+        treatment: 'Maniobras vagales (Valsalva), adenosina 6mg IV rápida, cardioversión si inestable.',
+        color: 'text-yellow-600',
+        explanation: 'Un circuito de reentrada en o cerca del nodo AV (TRNAV) genera impulsos rápidos y regulares. El ventrículo se despolariza normalmente por las vías His-Purkinje, por eso el QRS es estrecho (<0.12s). Puede terminar súbitamente con maniobras vagales que aumentan el tono parasimpático. Las ondas P suelen estar ocultas dentro o justo detrás del QRS.'
+    },
+    av_block_3: {
+        name: 'Bloqueo AV de 3er Grado (Completo)',
+        bpm: 35,
+        description: 'Disociación AV completa. Aurículas y ventrículos laten de forma completamente independiente.',
+        clinical: 'URGENCIA. Síncope, presíncope, mareo severo, hipotensión, bradicardia extrema.',
+        treatment: 'Atropina 0.5mg IV (máx 3mg), marcapasos transcutáneo urgente, traslado inmediato.',
+        color: 'text-red-700',
+        explanation: 'Ningún impulso auricular atraviesa el nodo AV. El ventrículo escapa con su propio ritmo idioventricular (20-40 lpm) o de la unión (40-60 lpm). Las ondas P y QRS son completamente independientes (disociación AV). El QRS es ancho si el escape es ventricular, estrecho si es nodal. Causas: isquemia, cardiopatía degenerativa, medicamentos.'
     },
     custom: {
         name: 'Ritmo Personalizado',
@@ -129,7 +165,25 @@ export const pqrstInfo = [
         color: 'bg-red-500',
         detailedExplanation: 'Repolarización de los ventrículos (retorno al estado de reposo). Normalmente en la misma dirección que el QRS. Representa la fase de relajación ventricular y llenado de las coronarias.',
         normalValues: 'Amplitud: 0.1-0.5mV, misma dirección que QRS',
-        abnormalities: 'Invertida: isquemia. Picuda: hiperpotasemia. Aplanada: hipopotasemia, isquemia'
+        abnormalities: 'Invertida: isquemia. Picuda y simétrica: hiperpotasemia. Aplanada: hipopotasemia, isquemia'
+    },
+    {
+        label: 'Intervalo QT',
+        description: 'Actividad eléctrica ventricular total (QRS + ST + T)',
+        position: 'bottom',
+        color: 'bg-purple-500',
+        detailedExplanation: 'Mide desde el inicio del QRS hasta el final de la onda T. Representa el tiempo total de activación y recuperación ventricular. Se corrige por frecuencia cardíaca (QTc = QT/√RR, fórmula de Bazett). A mayor FC, el QT se acorta fisiológicamente.',
+        normalValues: 'QTc: <440ms (hombres), <460ms (mujeres). A 60 lpm: ~400ms',
+        abnormalities: 'Prolongado: amiodarona, macrólidos, fluoroquinolonas, hipocalcemia, hipopotasemia → riesgo de Torsades de Pointes. Corto: hipercalcemia, digoxina'
+    },
+    {
+        label: 'Onda U',
+        description: 'Repolarización tardía (músculos papilares / Purkinje)',
+        position: 'top',
+        color: 'bg-pink-400',
+        detailedExplanation: 'Pequeña deflexión positiva que sigue a la onda T. Su origen exacto es debatido; se cree que representa la repolarización tardía de los músculos papilares o fibras de Purkinje. Visible en derivaciones precordiales V2-V3 a frecuencias cardíacas bajas.',
+        normalValues: 'Amplitud: <0.1mV, misma dirección que onda T. No siempre visible.',
+        abnormalities: 'Prominente (>1mm o mayor que onda T): hipopotasemia (signo clásico), bradicardia. Invertida: isquemia miocárdica activa, hipertensión arterial sistémica'
     }
 ];
 
@@ -137,14 +191,14 @@ export const pqrstInfo = [
 export const ekgExplanations = {
     conductionSystem: {
         title: '⚡ Sistema de Conducción Cardíaco',
-        content: `
-            1. **Nodo Sinusal (SA)**: Marcapasos natural (60-100 lpm)
-            2. **Vías Internodales**: Conducen impulso por aurículas
-            3. **Nodo Auriculoventricular (AV)**: Retrasa impulso (permite llenado ventricular)
-            4. **Haz de His**: Conduce a ventrículos
-            5. **Ramas Derecha e Izquierda**: Distribuyen impulso
-            6. **Fibras de Purkinje**: Despolarización rápida ventricular
-        `
+        steps: [
+            { number: '1', label: 'Nodo Sinusal (SA)', detail: 'Marcapasos natural. Frecuencia intrínseca: 60-100 lpm.' },
+            { number: '2', label: 'Vías Internodales', detail: 'Conducen el impulso por ambas aurículas → onda P.' },
+            { number: '3', label: 'Nodo AV', detail: 'Retrasa el impulso 0.12-0.20s → permite llenado ventricular → intervalo PR.' },
+            { number: '4', label: 'Haz de His', detail: 'Conduce el impulso hacia los ventrículos.' },
+            { number: '5', label: 'Ramas D/I del Haz de His', detail: 'Distribuyen el impulso a ventrículos derecho e izquierdo.' },
+            { number: '6', label: 'Fibras de Purkinje', detail: 'Despolarización rápida del miocardio ventricular → complejo QRS.' },
+        ]
     },
     rhythmCategories: {
         title: '📊 Categorías de Ritmos',

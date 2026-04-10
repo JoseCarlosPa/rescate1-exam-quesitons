@@ -26,9 +26,9 @@ export default function Treatment() {
                         <div className="bg-white p-4 rounded-lg border">
                             <h4 className="font-bold text-green-600 mb-2">B - Breathing</h4>
                             <ul className="text-sm text-gray-700 space-y-1">
-                                <li>• O₂ suplementario (8-12 L/min)</li>
+                                <li>• O₂ <strong>solo si SpO₂ &lt; 94%</strong> (guías AHA 2020)</li>
                                 <li>• Frecuencia respiratoria</li>
-                                <li>• Saturación de O₂ (objetivo &gt;94%)</li>
+                                <li>• Objetivo de saturación: 94-99%</li>
                             </ul>
                         </div>
                         <div className="bg-white p-4 rounded-lg border">
@@ -67,13 +67,14 @@ export default function Treatment() {
                         <div>
                             <h4 className="font-semibold text-red-800 mb-3">Medidas Inmediatas (Primeros 10 min):</h4>
                             <ol className="list-decimal list-inside space-y-2 text-gray-700">
-                                <li><strong>O₂ suplementario</strong> si SatO₂ &lt;90%</li>
-                                <li><strong>AAS 300mg masticable</strong> (contraindicaciones: alergia, sangrado activo)
+                                <li><strong>O₂ suplementario</strong> <span className="text-blue-700 font-medium">solo si SpO₂ &lt; 94%</span> — el O₂ rutinario no mejora outcomes (AHA 2020)</li>
+                                <li><strong>AAS 160-325 mg masticable</strong> (contraindicaciones: alergia, sangrado activo)</li>
+                                <li><strong>Nitroglicerina SL 0.4 mg</strong> (si PA sistólica &gt;100 mmHg y sin sospecha de infarto de VD)</li>
+                                <li>
+                                    <strong>Morfina 2-4 mg IV</strong> — <span className="text-orange-600 font-medium">uso controversial</span>: el estudio CRUSADE (2005) y guías ESC 2017 la desaconsejan de rutina; puede enmascarar síntomas y retrasar diagnóstico. Usar solo si dolor severo refractario a nitroglicerina y con monitoreo estrecho.
                                 </li>
-                                <li><strong>Nitroglicerina SL 0.4mg</strong> (si PA sistólica &gt;100 mmHg)</li>
-                                <li><strong>Morfina 2-4mg IV</strong> para dolor severo</li>
-                                <li><strong>ECG de 12 derivaciones</strong></li>
-                                <li><strong>Acceso IV</strong> y monitorización</li>
+                                <li><strong>ECG de 12 derivaciones</strong> — objetivo: &lt; 10 min desde contacto</li>
+                                <li><strong>Acceso IV</strong> y monitorización continua</li>
                             </ol>
                         </div>
                         <div>
@@ -176,6 +177,14 @@ export default function Treatment() {
                             </tr>
                             </tbody>
                         </table>
+                    </div>
+                    <div className="mt-4 p-3 bg-orange-50 border-l-4 border-orange-400 rounded">
+                        <p className="text-sm text-orange-800">
+                            <strong>⚠️ Nota sobre Morfina en SCA (AHA/ESC 2020):</strong> La morfina ya <em>no</em> se
+                            recomienda de rutina en SCA. Evidencia del estudio CRUSADE (2005) sugiere que puede retrasar
+                            la absorción de antiplaquetarios orales y asociarse con mayor mortalidad. Reservar para dolor
+                            refractario severo, bajo protocolo local autorizado y con monitoreo estrecho.
+                        </p>
                     </div>
                 </div>
 
