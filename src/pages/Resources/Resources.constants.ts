@@ -108,7 +108,7 @@ export const resources = [
         subtitle: "Katzung",
         edition: "Edicion 15 - 2021",
         category: "Manual",
-        download: "https://drive.google.com/file/d/1iubeDAgkfCiOQmSwqW_6ka15IJ6WJ_tm/view?usp=sharing",
+        download: "https://drive.google.com/file/d/1IVkfXz7asTQY1G_VlXVRqpNacUtaV-zl/view?usp=sharing",
 
     },
     {
