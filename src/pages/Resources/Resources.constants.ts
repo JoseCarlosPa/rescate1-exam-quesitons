@@ -12,6 +12,7 @@ import atls from "../../assets/Atls.png"
 import reneo from "../../assets/reneo.png";
 import ekg from "../../assets/ekg.jpg"
 import farma from "../../assets/farma.jpg"
+import tcc from "../../assets/tecc.jpg"
 
 export const resources = [
     {
@@ -70,6 +71,15 @@ export const resources = [
             url: "https://www.psglearning.com/es/phtls?srsltid=AfmBOorLGRrP95FMjmKsLpuMyQJA-dZGBP-GCCK5axFAL7XjcsSrsbGq",
             label: "Sitio web"
         },
+    },
+
+    {
+        img: tcc,
+        title: "Tactical Emergency Casualty Care Course Manual",
+        subtitle: "",
+        edition: "Segunda Edicion",
+        category: "Manual",
+        download: "https://drive.google.com/file/d/1er3CR6Uoh3hjse7lJ0Z-w1ewh2WoPNYH/view?usp=sharing",
     },
     {
         img: amls,
