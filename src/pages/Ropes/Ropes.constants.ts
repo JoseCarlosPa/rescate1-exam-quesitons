@@ -518,6 +518,193 @@ export const ESSENTIAL_KNOTS: RopeKnot[] = [
             'Mínimo 8cm de cola',
             'No usar con cuerdas, solo cintas'
         ]
+    },
+    {
+        id: 'overhand-knot',
+        name: 'Overhand Knot / Safety Knot',
+        spanishName: 'Nudo Simple / Nudo de Seguridad',
+        category: 'stopper',
+        difficulty: 'beginner',
+        uses: [
+            'Nudo de seguridad en otros nudos',
+            'Nudo de tope en extremos de cuerda',
+            'Evitar que la cuerda pase por un dispositivo',
+            'Bloquear el extremo del rappel'
+        ],
+        steps: [
+            'Formar una gaza con la cuerda',
+            'Pasar el extremo libre por la gaza',
+            'Ajustar el nudo apretando'
+        ],
+        tips: [
+            'Es el componente base de muchos nudos complejos',
+            'Dejar siempre suficiente cola para verificarlo',
+            'Se puede hacer con guantes puestos fácilmente'
+        ],
+        safetyNotes: [
+            'No es un nudo principal de carga por sí solo',
+            'Muy difícil de desatar después de cargar',
+            'Siempre dejar un mínimo de 10 cm de cola',
+            'Verificar que quede bien cerrado antes de cargar'
+        ]
+    },
+    {
+        id: 'inline-figure-eight',
+        name: 'Inline Figure Eight / Figure Eight on a Bight (directional)',
+        spanishName: 'Ocho en Línea (Gaza Direccional)',
+        category: 'loop',
+        difficulty: 'intermediate',
+        uses: [
+            'Gaza direccional en medio de la cuerda',
+            'Sistemas de anclaje en línea',
+            'Reducir longitud de cuerda manteniendo gaza',
+            'Punto de conexión intermedio en sistemas de izado'
+        ],
+        steps: [
+            'Trabajar con el seno (parte media) de la cuerda',
+            'Doblar el seno formando un bucle largo',
+            'Dar una vuelta completa con el bucle',
+            'Pasar el extremo del bucle por la primera gaza',
+            'Ajustar el tamaño de la gaza resultante',
+            'Tensar para que quede compacto'
+        ],
+        tips: [
+            'La carga debe ir siempre en la dirección del nudo',
+            'Carga bidireccional reduce significativamente su resistencia',
+            'Ideal para puntos de paso en líneas de vida horizontales'
+        ],
+        safetyNotes: [
+            'Solo cargar en la dirección correcta — unidireccional',
+            'Verificar orientación antes de cargar',
+            'Inspeccionar que el nudo quede bien vestido',
+            'No sustituye al Mariposa Alpina en cargas multidireccionales'
+        ]
+    },
+    {
+        id: 'tensionless-hitch',
+        name: 'Tensionless Hitch',
+        spanishName: 'Vuelta Tensionless / Anclaje Tensionless',
+        category: 'anchorage',
+        difficulty: 'beginner',
+        uses: [
+            'Anclaje directo a árbol o poste',
+            'Conservar máxima resistencia de la cuerda',
+            'Sistemas de rescate de alta carga',
+            'Cuando se necesita anclar rápido sin perder resistencia'
+        ],
+        steps: [
+            'Pasar la cuerda alrededor de un árbol o anclaje sólido',
+            'Dar mínimo 3-4 vueltas completas alrededor del objeto',
+            'Asegurar el extremo libre con un mosquetón conectado a la cuerda',
+            'El mosquetón va al lado donde viene la carga (no al firme)',
+            'No hay nudo — las vueltas hacen la fricción'
+        ],
+        tips: [
+            'El objeto de anclaje debe tener al menos 20 cm de diámetro',
+            'Más vueltas = más fricción pero más resistencia conservada',
+            'Es el anclaje que más resistencia conserva (~100%)'
+        ],
+        safetyNotes: [
+            'El árbol/poste debe ser completamente sólido',
+            'Las vueltas no deben superponerse desigualmente',
+            'El mosquetón debe quedar fuera de la línea de carga',
+            'Verificar que ninguna vuelta pueda deslizarse sobre otra'
+        ]
+    },
+    {
+        id: 'radium-release-hitch',
+        name: 'Radium Release Hitch',
+        spanishName: 'Hitch de Liberación Rádium',
+        category: 'hitch',
+        difficulty: 'advanced',
+        uses: [
+            'Liberar un sistema de anclaje bajo carga',
+            'Transición entre sistemas con víctima cargada',
+            'Emergencias donde hay que soltar carga controladamente',
+            'Sistemas de rescate de alta complejidad'
+        ],
+        steps: [
+            'Pasar la cuerda por un mosquetón en el anclaje',
+            'Hacer una vuelta de mula (Mule Hitch) con el extremo libre',
+            'Asegurar con varios nudos simples para bloquear',
+            'El extremo libre queda bloqueado pero accesible',
+            'Para soltar: deshacer los nudos de seguridad uno por uno',
+            'Soltar la vuelta de mula de forma controlada'
+        ],
+        tips: [
+            'Practicar MUCHO antes de usar en situación real',
+            'Siempre tener control del extremo libre antes de soltar',
+            'Comunicar claramente con el equipo antes de liberar'
+        ],
+        safetyNotes: [
+            'Solo personal entrenado debe usar este sistema',
+            'NUNCA soltar sin comunicación previa con el equipo',
+            'Siempre mantener control de la cuerda durante la liberación',
+            'Practicar primero sin carga real hasta dominarlo completamente'
+        ]
+    },
+    {
+        id: 'load-releasing-hitch',
+        name: 'Load-Releasing Hitch (Münter Mule Overhand)',
+        spanishName: 'Hitch de Liberación de Carga (Mula-Münter)',
+        category: 'friction',
+        difficulty: 'advanced',
+        uses: [
+            'Liberar carga atrapada bajo tensión',
+            'Cambio de sistema en rapel con paciente',
+            'Emergencia si el rescatista queda incapacitado',
+            'Transición entre sistemas de izado y descenso'
+        ],
+        steps: [
+            'Con el nudo Münter activo en mosquetón HMS',
+            'Pasar el extremo libre por encima del Münter',
+            'Hacer una vuelta de mula (bight a través del seno)',
+            'Asegurar con nudo simple sobre todo el conjunto',
+            'Para liberar: quitar el nudo simple y soltar la mula',
+            'El Münter vuelve a funcionar como descensor'
+        ],
+        tips: [
+            'Requiere un mosquetón HMS de tamaño adecuado',
+            'El nudo de seguridad es crítico para no soltar accidentalmente',
+            'Este nudo es fundamental en el currículo NFPA 1006 Nivel 2'
+        ],
+        safetyNotes: [
+            'Solo para personal certificado en rescate técnico',
+            'Practicar extensivamente antes de operaciones reales',
+            'Verificar que el Münter quede en posición de frenado',
+            'La liberación debe ser gradual y controlada'
+        ]
+    },
+    {
+        id: 'mariner-hitch',
+        name: "Mariner's Hitch",
+        spanishName: 'Nudo Marinero / Hitch Marinero',
+        category: 'hitch',
+        difficulty: 'advanced',
+        uses: [
+            'Extensión ajustable de sistemas de anclaje',
+            'Conectar un sistema a otro con posibilidad de ajuste',
+            'Rescate cuando se necesita longitud variable',
+            'Alternativa al cordino prusik en algunos sistemas'
+        ],
+        steps: [
+            'Con un anillo de cordino, pasar por el mosquetón de anclaje',
+            'Dar vueltas alrededor del mosquetón de trabajo',
+            'Asegurar con un nudo de seguridad al final',
+            'El número de vueltas determina la longitud',
+            'Para ajustar: cambiar el número de vueltas'
+        ],
+        tips: [
+            'Permite ajustar longitud sin quitar la carga',
+            'Muy usado en sistemas de altura donde se cambia de nivel',
+            'Más seguro con abundantes vueltas al mosquetón'
+        ],
+        safetyNotes: [
+            'Solo para personal entrenado NFPA 1006 Nivel 2+',
+            'Verificar que todas las vueltas queden ordenadas',
+            'El nudo de seguridad es obligatorio',
+            'No cargar hasta verificar que todas las vueltas sean correctas'
+        ]
     }
 ];
 
@@ -713,6 +900,92 @@ export const RESCUE_EQUIPMENT: RescueEquipment[] = [
             'Inspeccionar casco y arnés interno',
             'Vida útil típica: 5 años'
         ]
+    },
+    {
+        id: 'rescue-litter',
+        name: 'Camilla de Rescate (Stokes/SKED)',
+        category: 'anchor',
+        description: 'Sistema de transporte de víctimas para operaciones de rescate técnico vertical y horizontal. Las camillas Stokes son rígidas de malla metálica o plástico; las SKED son flexibles y enrollables.',
+        uses: [
+            'Evacuación vertical de víctimas',
+            'Transporte horizontal en terreno difícil',
+            'Inmovilización de pacientes con trauma espinal',
+            'Rescate en espacios confinados (SKED)',
+            'Operaciones en pendiente'
+        ],
+        safetyConsiderations: [
+            'Asegurar la cabeza del paciente con almohadillado o casco',
+            'Verificar todas las correas antes del movimiento',
+            'Mantener acceso para intervención médica de emergencia',
+            'En vertical: usar mínimo 2 puntos de conexión con el sistema de cuerdas',
+            'El tillerMan (guía en la cabeza) controla la orientación',
+            'Proteger al paciente de los elementos (viento, lluvia)'
+        ],
+        maintenance: [
+            'Inspeccionar soldaduras y estructura metálica por fisuras',
+            'Verificar integridad de la malla',
+            'Revisar hebillas y anillos de conexión',
+            'Limpiar con agua y desinfectante después de cada uso',
+            'Lubricar partes metálicas para prevenir corrosión',
+            'Almacenar en funda protectora'
+        ]
+    },
+    {
+        id: 'tubular-webbing',
+        name: 'Cinta Tubular (Webbing)',
+        category: 'anchor',
+        description: 'Cinta de nylon o Dyneema en forma tubular, esencial en rescate técnico para construir anclajes, extensiones, sistemas de arnés improvisado y conexiones rápidas.',
+        uses: [
+            'Construcción de anclajes',
+            'Extensiones de anclaje (slings)',
+            'Arnés improvisado de emergencia',
+            'Anclajes tipo tensionless en árboles',
+            'Conexión a puntos de anclaje',
+            'Protección de cuerda contra aristas'
+        ],
+        safetyConsiderations: [
+            'Nunca usar cinta sobre cinta directamente (girth hitch en cinta)',
+            'Verificar que el nudo de cinta (Water Knot) no esté aflojado',
+            'Revisar desgaste, cortes y decoloración antes de cada uso',
+            'La resistencia se reduce significativamente en nudos',
+            'Evitar exposición a químicos, especialmente ácidos',
+            'No mezclar materiales diferentes (nylon con Dyneema) en mismo sistema'
+        ],
+        maintenance: [
+            'Lavar con agua fría y jabón neutro',
+            'No exponer al calor directo o luz solar prolongada',
+            'Almacenar seca en lugar oscuro',
+            'Inspeccionar costura periódica (si la tiene)',
+            'Revisar marcas permanentes de carga previa (deformaciones)',
+            'Vida útil máxima: 10 años sin uso, menos con uso frecuente'
+        ]
+    },
+    {
+        id: 'rope-bag-kit',
+        name: 'Bolsa de Cuerda y Kit de Rescate',
+        category: 'protection',
+        description: 'Sistema de transporte y despliegue rápido de cuerdas de rescate. Las bolsas apiladas permiten lanzar la cuerda sin nudos. El kit incluye todo el equipo mínimo para una operación de rescate con cuerdas.',
+        uses: [
+            'Transporte organizado de cuerdas',
+            'Despliegue rápido sin enredos (throw bag)',
+            'Almacenamiento sistemático del equipo',
+            'Rescate acuático con cuerda de lanzamiento',
+            'Organización del equipo en la escena'
+        ],
+        safetyConsiderations: [
+            'Verificar que la cuerda esté correctamente apilada antes de lanzar',
+            'Nunca lanzar sin verificar que el extremo esté asegurado al rescatista',
+            'Mantener el equipo organizado para acceso rápido en emergencias',
+            'Verificar peso máximo de carga del kit',
+            'Etiquetar claramente el tipo y longitud de cuerda en cada bolsa'
+        ],
+        maintenance: [
+            'Revisar cuerdas dentro de la bolsa regularmente',
+            'Secar completamente antes de guardar',
+            'Inspeccionar el cierre y asas de la bolsa',
+            'Mantener inventario actualizado del kit',
+            'Revisar fechas de fabricación de cada elemento'
+        ]
     }
 ];
 
@@ -897,6 +1170,123 @@ export const RESCUE_TECHNIQUES: RescueTechnique[] = [
             'Falta de redundancia',
             'No considerar todas las direcciones de carga posibles'
         ]
+    },
+    {
+        id: 'hauling-5-1-piggyback',
+        name: 'Polipasto Compuesto 5:1 (Piggyback)',
+        category: 'hauling',
+        difficulty: 'advanced',
+        description: 'Sistema de ventaja mecánica 5:1 construido "montando" un sistema 2:1 sobre un Z-rig 3:1. Permite mayor izado con el mismo equipo disponible en campo.',
+        steps: [
+            'Construir primero un sistema Z-rig 3:1 estándar',
+            'Conectar un bloqueador mecánico adicional al punto de tracción del 3:1',
+            'Pasar una segunda cuerda o el extremo libre por una polea adicional',
+            'Conectar esta cuerda al bloqueador del paso anterior',
+            'La segunda persona tracciona el segundo sistema (2:1)',
+            'El 2:1 tira del 3:1, logrando ventaja combinada de 6:1 real (menos fricción)',
+            'Mantener sincronización entre los dos equipos de tracción',
+            'Resetear bloqueadores según avanza la carga'
+        ],
+        equipment: [
+            'Poleas de rescate (mínimo 3)',
+            'Bloqueadores mecánicos (2)',
+            'Mosquetones de seguridad (4+)',
+            'Cuerda estática (longitud extra)',
+            'Anclaje principal sólido',
+            'Personal adicional (mínimo 3-4 personas)'
+        ],
+        safetyConsiderations: [
+            'Las fuerzas sobre el anclaje son muy elevadas — verificar resistencia mínima 3x la carga',
+            'Coordinación estricta entre todos los operadores',
+            'No exceder la capacidad de la cuerda con las fuerzas generadas',
+            'Un sistema de comunicación claro es crítico',
+            'Calcular la carga real antes de construir el sistema'
+        ],
+        commonMistakes: [
+            'Anclaje insuficiente para las fuerzas amplificadas',
+            'Mala sincronización entre equipo de tracción',
+            'Poleas con mucha fricción que anulan la ventaja mecánica',
+            'No contar el período de reseteo del sistema',
+            'Confundir la ventaja mecánica teórica con la real (pérdida por fricción ~10% por polea)'
+        ]
+    },
+    {
+        id: 'lowering-system',
+        name: 'Sistema de Descenso de Carga (Lowering)',
+        category: 'lowering',
+        difficulty: 'basic',
+        description: 'Técnica para bajar cargas o víctimas de manera controlada usando fricción como freno. Es la operación más segura y sencilla en rescate vertical cuando la geometría del terreno lo permite.',
+        steps: [
+            'Establecer anclaje principal sólido en la parte superior',
+            'Pasar la cuerda por el dispositivo de descenso conectado al anclaje',
+            'Conectar el extremo a la camilla/víctima o a un arnés con mosquetón',
+            'Verificar que hay suficiente cuerda para llegar al fondo',
+            'Comunicar al equipo y al paciente el inicio del descenso',
+            'El operador de freno controla la velocidad mediante la cuerda de freno',
+            'Descender lentamente — 30-60 cm por segundo como máximo',
+            'El acompañante guía la camilla alejándola de paredes si es necesario',
+            'Al llegar abajo, señal "LIBRE" antes de soltar el sistema'
+        ],
+        equipment: [
+            'Cuerda estática de longitud suficiente',
+            'Dispositivo de descenso (Munter, 8, ID, Rack)',
+            'Mosquetones de seguridad (mínimo 2 en el anclaje)',
+            'Anclaje principal redundante',
+            'Cuerda de guía (tag line) si es necesario',
+            'Comunicación entre operadores'
+        ],
+        safetyConsiderations: [
+            'Siempre tener un backup/antipanico en el sistema',
+            'El operador de freno nunca debe soltar la cuerda de freno',
+            'Calcular necesidad de cuerda extra para maniobras',
+            'El descenso es controlado — velocidad nunca mayor a 1 m/s',
+            'Proteger la cuerda de aristas cortantes en el borde'
+        ],
+        commonMistakes: [
+            'Soltar o aflojar demasiado la cuerda de freno',
+            'No verificar longitud de cuerda antes de iniciar',
+            'Falta de comunicación antes de iniciar el descenso',
+            'No proteger la cuerda de aristas en el borde de la estructura',
+            'No tener plan alternativo si el sistema se atasca'
+        ]
+    },
+    {
+        id: 'changeover-rappel-to-ascent',
+        name: 'Cambio de Sistema: Rapel a Ascenso',
+        category: 'ascent',
+        difficulty: 'advanced',
+        description: 'Técnica NFPA 1006 para cambiar de un sistema de descenso (rapel) a un sistema de ascenso (prusiks o bloqueadores) y viceversa. Esencial para autorescate y escenarios de rescate.',
+        steps: [
+            'En posición segura, colocar prusik superior en la cuerda sobre el dispositivo de descenso',
+            'Conectar el prusik superior al arnés mediante mosquetón',
+            'Colocar el segundo prusik o estribo para el pie debajo del dispositivo',
+            'Cargar el prusik superior transfiriendo el peso desde el dispositivo de descenso',
+            'Liberar el dispositivo de descenso de la cuerda',
+            'Ahora estás en sistema de ascenso con dos prusiks',
+            'Para descenso inverso: con los prusiks cargados, reconectar el dispositivo debajo de los mismos',
+            'Transferir el peso al dispositivo y liberar los prusiks'
+        ],
+        equipment: [
+            'Cordinos para prusik (2 — uno para pecho, uno para pie)',
+            'Dispositivo de descenso original',
+            'Arnés de asiento o cuerpo completo',
+            'Mosquetones de seguridad (3+)',
+            'Estribo opcional (para el pie)'
+        ],
+        safetyConsiderations: [
+            'Nunca quedar sin conexión a la cuerda durante el cambio',
+            'Verificar que los prusiks agarren ANTES de liberar el descensor',
+            'Si hay mucho frío, los prusiks pueden deslizar — usar más vueltas',
+            'Practicar en tierra a baja altura antes de usar en situación real',
+            'No apresurarse — cada paso debe ser deliberado y verificado'
+        ],
+        commonMistakes: [
+            'No poner el prusik antes de liberar el descensor',
+            'Prusiks con pocas vueltas que no agarran',
+            'Perder contacto mental con los pasos bajo estrés',
+            'No tener el estribo preparado antes de empezar',
+            'Cordino de diámetro inadecuado para los prusiks'
+        ]
     }
 ];
 
@@ -904,35 +1294,51 @@ export const RESCUE_TECHNIQUES: RescueTechnique[] = [
 export const ROPE_RESCUE_FAQ: FAQ[] = [
     {
         question: '¿Cuál es la diferencia entre una cuerda estática y dinámica?',
-        answer: 'La cuerda estática tiene un estiramiento mínimo (<5%) y se usa para trabajo en altura, rescate y descenso de cargas. La cuerda dinámica tiene alto estiramiento (25-35%) y absorbe la energía de impacto en caídas, ideal para escalada donde hay riesgo de caídas con factor de caída alto.'
+        answer: 'La cuerda estática tiene estiramiento mínimo (<5%) y se usa para trabajo en altura, rescate y descenso de cargas. La cuerda dinámica tiene alto estiramiento (25-35%) y absorbe la energía de impacto en caídas, ideal para escalada donde hay riesgo de caídas. Según NFPA 1983, las cuerdas para life safety deben ser de tipo estático o semi-estático certificadas.'
     },
     {
         question: '¿Cada cuánto tiempo debo retirar una cuerda de rescate?',
-        answer: 'Depende del uso e inspección. Guía general: vida útil máxima de 10 años sin usar, 5 años con uso ocasional, 1-3 años con uso frecuente. Siempre retirar después de una caída con factor alto, exposición a químicos, daño visible o falla en inspección.'
+        answer: 'Depende del uso e inspección. Guía general: vida útil máxima de 10 años sin usar, 5 años con uso ocasional, 1-3 años con uso frecuente. Siempre retirar INMEDIATAMENTE después de: caída con factor >1, exposición a químicos, daño visible en funda o alma, historial desconocido de la cuerda, o si la inspección revela cualquier anomalía.'
     },
     {
-        question: '¿Qué nudo es el más seguro para encordamiento?',
-        answer: 'El ocho doble (figure eight follow-through) es considerado el más seguro para encordamiento al arnés. Conserva aproximadamente 75-80% de la resistencia de la cuerda, es fácil de verificar visualmente y no se afloja bajo carga.'
+        question: '¿Qué nudo es el más seguro para encordamiento al arnés?',
+        answer: 'El ocho doble (figure eight follow-through) es el estándar en rescate técnico para encordarse al arnés. Conserva aproximadamente 75-80% de la resistencia de la cuerda, es fácil de verificar visualmente por un compañero, y no se afloja bajo carga. Siempre se debe dejar mínimo 15 cm de cola y se puede añadir un nudo de seguridad adicional.'
     },
     {
         question: '¿Por qué es importante el ángulo en un anclaje ecualizado?',
-        answer: 'El ángulo entre los brazos del anclaje afecta la fuerza en cada punto. A 0° cada punto recibe 50% de la carga. A 60° cada punto recibe 58%. A 90° recibe 71%. A 120° recibe 100% (el total de la carga). Por eso se recomienda mantener ángulos menores a 60°.'
+        answer: 'El ángulo entre los brazos del anclaje determina la carga en cada punto. A 0°: 50% cada punto. A 60°: 58% cada punto. A 90°: 71%. A 120°: 100% (cada punto soporta la carga total). Por eso SERENE-A recomienda ángulos menores a 60°. A más de 120° el sistema se vuelve más peligroso que un solo punto.'
     },
     {
-        question: '¿Qué es el factor de caída y por qué es importante?',
-        answer: 'El factor de caída es la relación entre la distancia de caída y la longitud de cuerda disponible para absorberla (Factor = Caída/Cuerda). Un factor 2 es el máximo posible y muy peligroso. Cuanto mayor el factor, mayor la fuerza de impacto. Por eso en rescate con cuerdas estáticas evitamos cualquier posibilidad de caída.'
+        question: '¿Qué es el factor de caída y por qué es importante en rescate?',
+        answer: 'El factor de caída = distancia de caída ÷ longitud de cuerda disponible. Factor 0 = carga estática (ideal en rescate). Factor 2 = máximo posible (muy peligroso). En rescate con cuerdas estáticas el objetivo es siempre mantener el factor lo más cercano a 0 porque las cuerdas estáticas no absorben energía de impacto como las dinámicas.'
     },
     {
-        question: '¿Cuándo debo usar un backup o autoseguro en rapel?',
-        answer: 'SIEMPRE. Un prusik o dispositivo autobloqueante bajo el dispositivo de descenso es estándar de seguridad. Si pierdes el control de la cuerda de freno (desmayo, impacto con roca, etc.), el backup detendrá la caída.'
+        question: '¿Cuándo debo usar backup o autoseguro en rapel?',
+        answer: 'SIEMPRE, sin excepción. Un prusik o dispositivo autobloqueante bajo el descensor es el estándar NFPA 1006. Si el rescatista pierde el control de la cuerda de freno por cualquier razón (desmayo, impacto, espasmo muscular), el backup detiene automáticamente el descenso. No usar backup es una falta grave de protocolo.'
     },
     {
-        question: '¿Qué significa SERENE-A en anclajes?',
-        answer: 'SERENE-A es un acrónimo para evaluar anclajes: Solid (sólido), Equalized (ecualizado), Redundant (redundante), Efficient (eficiente), No Extension (sin extensión en falla), Angles (ángulos apropiados). Todo anclaje de rescate debe cumplir estos criterios.'
+        question: '¿Qué significa SERENE-A en la evaluación de anclajes?',
+        answer: 'SERENE-A: Solid (Sólido — puntos de anclaje confiables), Equalized (Ecualizado — carga distribuida entre puntos), Redundant (Redundante — múltiples puntos independientes), Efficient (Eficiente — fácil de construir y verificar), No Extension (Sin Extensión — no falla catastrófica si un punto cede), Angles (Ángulos menores a 60° entre brazos). Es el criterio de oro para anclajes de rescate.'
     },
     {
         question: '¿Qué diferencia hay entre un bloqueador mecánico y un prusik?',
-        answer: 'Los bloqueadores mecánicos (puños, bloqueadores de pecho) son más eficientes, cómodos y confiables en condiciones adversas, pero son específicos para dirección y pueden dañar la cuerda si se cargan dinámicamente. Los prusiks son versátiles, baratos y suaves con la cuerda, pero menos eficientes y pueden fallar en cuerdas mojadas o heladas.'
+        answer: 'Bloqueadores mecánicos (puños, bloqueadores de pecho): más eficientes, cómodos y confiables en condiciones adversas (frío, humedad), específicos para una dirección. Prusiks: versátiles, económicos, suaves con la cuerda, omnidireccionales; pero menos eficientes y pueden fallar con cuerdas mojadas, heladas o cordino desgastado. NFPA 1006 acepta ambos como sistemas de progresión.'
+    },
+    {
+        question: '¿Qué es un "lowering" y cuándo se prefiere sobre un "raising"?',
+        answer: 'Lowering = bajar la carga usando la gravedad con la cuerda como freno controlado. Raising = subir la carga contra la gravedad usando un polipasto. El lowering es siempre preferido cuando la geometría del terreno lo permite porque: es más simple, requiere menos personal, menos equipo, menos riesgo de error y es más rápido. Solo se usa raising cuando no hay acceso desde arriba o la víctima está en un nivel inferior al rescatista.'
+    },
+    {
+        question: '¿Cómo se construye un sistema Z-rig (polipasto 3:1)?',
+        answer: 'Z-rig 3:1: 1) Anclaje sólido en la parte superior. 2) Polea A en el anclaje. 3) Pasar la cuerda de carga por la polea A. 4) Colocar prusik o bloqueador mecánico en la cuerda de carga. 5) Polea B en ese prusik. 6) Pasar la cuerda por la polea B regresando hacia el anclaje. 7) Colocar bloqueador de retroceso en la cuerda entre la carga y la polea A. 8) Traccionar el extremo libre. La cuerda hace una forma de Z, de ahí su nombre.'
+    },
+    {
+        question: '¿Qué es el "edge protection" y por qué es obligatorio en operaciones verticales?',
+        answer: 'El edge protection (protección de arista) son dispositivos o materiales (rodillos, mantas, protectores) que se colocan en el borde de la estructura donde la cuerda hace contacto. Es obligatorio porque los bordes afilados pueden abrazar la funda de la cuerda y cortarla bajo la carga, comprometiendo el alma y reduciendo la resistencia a niveles peligrosos. Sin protección, incluso bordes aparentemente suaves pueden generar abrasión severa.'
+    },
+    {
+        question: '¿Cuál es el protocolo correcto para inspeccionar una cuerda antes de usarla?',
+        answer: 'Inspección visual y táctil de toda la longitud: 1) Pasar la cuerda completamente entre los dedos sintiendo el alma (sin bultos, sin flujos, resistencia uniforme). 2) Inspeccionar visualmente la funda por cortes, abrasiones, decoloración, aplastamiento. 3) Verificar los extremos (no deshilachados). 4) Revisar la etiqueta (fecha de fabricación, certificaciones). 5) Confirmar el historial del registro de uso. Si hay cualquier duda: NO USAR.'
     }
 ];
 
@@ -1102,6 +1508,260 @@ export const ROPE_RESCUE_QUESTIONS: RopeQuestion[] = [
         ],
         correctAnswer: 'd',
         explanation: 'SERENE-A establece que un buen anclaje debe ser: Sólido, Ecualizado, Redundante, Eficiente, sin Extensión en falla, y con Ángulos apropiados.'
+    },
+    // ===== NUEVAS PREGUNTAS — Manual 6th Edition =====
+    {
+        question: 'Según NFPA 1006, ¿cuántas veces debe ser la resistencia mínima de un anclaje de rescate respecto a la carga esperada?',
+        options: [
+            { letter: 'a', text: '3 veces (factor de seguridad 3:1)' },
+            { letter: 'b', text: '5 veces (factor de seguridad 5:1)' },
+            { letter: 'c', text: '10 veces (factor de seguridad 10:1)' },
+            { letter: 'd', text: '15 veces (factor de seguridad 15:1)' },
+        ],
+        correctAnswer: 'c',
+        explanation: 'NFPA 1006 y 1983 establecen un factor de seguridad mínimo de 10:1 para sistemas de vida (life safety). Esto significa que el sistema debe poder sostener 10 veces la carga esperada.'
+    },
+    {
+        question: '¿Cuál es la diferencia principal entre una camilla Stokes y una SKED?',
+        options: [
+            { letter: 'a', text: 'La SKED es más resistente que la Stokes' },
+            { letter: 'b', text: 'La Stokes es rígida de malla; la SKED es flexible y enrollable' },
+            { letter: 'c', text: 'La SKED es para espacios abiertos; la Stokes para espacios confinados' },
+            { letter: 'd', text: 'No hay diferencia, son el mismo producto' },
+        ],
+        correctAnswer: 'b',
+        explanation: 'La camilla Stokes es de estructura rígida (metal o polímero), ideal para terreno abierto. La SKED es flexible y enrollable, perfecta para espacios confinados y extracciones en ángulos difíciles.'
+    },
+    {
+        question: '¿Qué es el "tensionless hitch" y cuál es su principal ventaja?',
+        options: [
+            { letter: 'a', text: 'Un nudo de fricción; fácil de desatar' },
+            { letter: 'b', text: 'Un anclaje con vueltas a árbol/poste que conserva ~100% de resistencia' },
+            { letter: 'c', text: 'Un nudo autobloqueante para sistemas de izado' },
+            { letter: 'd', text: 'Un nudo de unión de cuerdas de diferente diámetro' },
+        ],
+        correctAnswer: 'b',
+        explanation: 'El tensionless hitch no tiene nudo propiamente dicho — la fricción de las vueltas alrededor del anclaje absorbe la tensión, conservando prácticamente el 100% de la resistencia de la cuerda.'
+    },
+    {
+        question: '¿Qué señal de voz indica que todos deben detener INMEDIATAMENTE el movimiento?',
+        options: [
+            { letter: 'a', text: '¡FIRME!' },
+            { letter: 'b', text: '¡ALTO!' },
+            { letter: 'c', text: '¡LIBRE!' },
+            { letter: 'd', text: '¡FLOJO!' },
+        ],
+        correctAnswer: 'b',
+        explanation: '"¡ALTO!" es la señal de parada de emergencia inmediata. "¡FIRME!" significa mantener posición sin movimiento adicional. Son señales diferentes con implicaciones distintas.'
+    },
+    {
+        question: '¿Cuál es la ventaja mecánica real aproximada de un polipasto Z-rig 3:1 con poleas al 85% de eficiencia?',
+        options: [
+            { letter: 'a', text: '3:1 exacto' },
+            { letter: 'b', text: '2.5:1 aproximado' },
+            { letter: 'c', text: '2.2:1 aproximado' },
+            { letter: 'd', text: '1.8:1 aproximado' },
+        ],
+        correctAnswer: 'b',
+        explanation: 'Cada polea pierde aproximadamente 10-15% de eficiencia por fricción. Un Z-rig 3:1 con dos poleas al 85% tiene una ventaja real de aproximadamente 3 × 0.85 × 0.85 ≈ 2.17, redondeando a ~2.5:1 en campo.'
+    },
+    {
+        question: '¿Cuántas vueltas mínimas debe dar un prusik alrededor de la cuerda principal en condiciones normales?',
+        options: [
+            { letter: 'a', text: '1 vuelta' },
+            { letter: 'b', text: '2 vueltas' },
+            { letter: 'c', text: '3 vueltas' },
+            { letter: 'd', text: '5 vueltas' },
+        ],
+        correctAnswer: 'c',
+        explanation: 'Se requieren mínimo 3 vueltas para un prusik efectivo en condiciones secas. En cuerdas mojadas, heladas o si el cordino está desgastado, se deben dar 4-5 vueltas para garantizar el agarre.'
+    },
+    {
+        question: '¿Qué componente del acrónimo SERENE-A previene que el sistema se cargue con un tirón brusco si falla uno de los puntos de anclaje?',
+        options: [
+            { letter: 'a', text: 'Equalized (Ecualizado)' },
+            { letter: 'b', text: 'Redundant (Redundante)' },
+            { letter: 'c', text: 'No Extension (Sin extensión)' },
+            { letter: 'd', text: 'Angles (Ángulos)' },
+        ],
+        correctAnswer: 'c',
+        explanation: '"No Extension" (sin extensión) significa que si un punto de anclaje falla, el sistema no se extiende bruscamente generando una carga de choque sobre los puntos restantes. Se logra con configuraciones tipo cornamusa o equalizadores limted-extension.'
+    },
+    {
+        question: '¿Cuál es la función principal del "tiller man" en una operación de camilla en vertical?',
+        options: [
+            { letter: 'a', text: 'Operar el sistema de cuerdas superiormente' },
+            { letter: 'b', text: 'Guiar y controlar la orientación de la camilla desde la parte inferior/cabeza' },
+            { letter: 'c', text: 'Comunicar condiciones del paciente' },
+            { letter: 'd', text: 'Asegurar el anclaje principal' },
+        ],
+        correctAnswer: 'b',
+        explanation: 'El tiller man es el rescatista que va en la parte inferior/cabeza de la camilla (puede estar en rapel o desde abajo), guiando y controlando la orientación de la camilla para evitar que gire o choque contra paredes durante el descenso o ascenso.'
+    },
+    {
+        question: '¿Qué norma de la NFPA regula específicamente los requisitos para cuerdas y equipo de vida en rescate técnico?',
+        options: [
+            { letter: 'a', text: 'NFPA 1001' },
+            { letter: 'b', text: 'NFPA 1006' },
+            { letter: 'c', text: 'NFPA 1983' },
+            { letter: 'd', text: 'NFPA 101' },
+        ],
+        correctAnswer: 'c',
+        explanation: 'NFPA 1983 es el estándar que establece los criterios de desempeño para cuerdas de vida, conectores, arneses y accesorios usados en rescate técnico. NFPA 1006 es el estándar de calificaciones profesionales para rescatistas técnicos.'
+    },
+    {
+        question: 'Durante un cambio de sistema (rapel a ascenso), ¿cuál es el error más peligroso que puede cometer el rescatista?',
+        options: [
+            { letter: 'a', text: 'Mover el prusik demasiado arriba' },
+            { letter: 'b', text: 'Quedar sin conexión a la cuerda durante el cambio' },
+            { letter: 'c', text: 'Usar un dispositivo de descenso incorrecto' },
+            { letter: 'd', text: 'No tener suficiente cuerda' },
+        ],
+        correctAnswer: 'b',
+        explanation: 'El error fatal en un changeover es perder la conexión a la cuerda en cualquier momento del proceso. La regla fundamental es: siempre mantener al menos un punto de conexión a la cuerda ANTES de remover el otro.'
+    },
+    {
+        question: '¿Qué característica distingue a un mosquetón tipo HMS del resto?',
+        options: [
+            { letter: 'a', text: 'Es de aluminio ultrarresistente' },
+            { letter: 'b', text: 'Tiene forma de pera asimétrica que permite usar el nudo dinámico' },
+            { letter: 'c', text: 'Tiene seguro de triple acción' },
+            { letter: 'd', text: 'Es el más pequeño y liviano del mercado' },
+        ],
+        correctAnswer: 'b',
+        explanation: 'HMS significa "Half Mast Securité" (en francés). Su forma de pera permite que el nudo Münter/dinámico funcione correctamente y pueda "voltear" para frenar en ambas direcciones, siendo esencial para aseguramiento y rapel de emergencia.'
+    },
+    {
+        question: 'En rescate técnico, ¿qué se entiende por "carga de trabajo segura" (SWL - Safe Working Load)?',
+        options: [
+            { letter: 'a', text: 'El 100% de la resistencia de rotura del equipo' },
+            { letter: 'b', text: 'La resistencia mínima de rotura' },
+            { letter: 'c', text: 'La resistencia de rotura dividida entre el factor de seguridad aplicable' },
+            { letter: 'd', text: 'El peso máximo de una víctima con equipo' },
+        ],
+        correctAnswer: 'c',
+        explanation: 'La SWL es la carga máxima a la que debe someterse un componente en uso normal. Se calcula dividiendo la resistencia mínima de rotura (MBS) entre el factor de seguridad (generalmente 10:1 para life safety según NFPA). Ejemplo: cuerda 22 kN ÷ 10 = 2.2 kN SWL.'
+    },
+    {
+        question: '¿Por qué se debe proteger la cuerda con "edge protection" en bordes de estructuras?',
+        options: [
+            { letter: 'a', text: 'Para evitar que la cuerda se ensucie' },
+            { letter: 'b', text: 'La abrasión puede cortar la funda y comprometer el alma de la cuerda' },
+            { letter: 'c', text: 'Para que la cuerda no se mueva lateralmente' },
+            { letter: 'd', text: 'Por requerimiento estético de las operaciones' },
+        ],
+        correctAnswer: 'b',
+        explanation: 'Los bordes afilados pueden abrazar y cortar la funda exterior de la cuerda, comprometiendo el alma y reduciendo drásticamente la resistencia. Un protector de arista (edge roller, pad, etc.) distribuye la presión y elimina este riesgo.'
+    },
+    {
+        question: '¿Cuándo se considera que una cuerda debe ser retirada definitivamente del servicio de vida?',
+        options: [
+            { letter: 'a', text: 'Después de 5 años sin importar el estado' },
+            { letter: 'b', text: 'Solo cuando tiene cortes visibles en el alma' },
+            { letter: 'c', text: 'Tras cualquier caída con factor mayor a 1, exposición a químicos, daño visible o si se desconoce su historial' },
+            { letter: 'd', text: 'Solo cuando el fabricante lo indica por fecha de caducidad' },
+        ],
+        correctAnswer: 'c',
+        explanation: 'Una cuerda debe retirarse si: sufrió una caída con factor >1, estuvo expuesta a químicos/calor extremo, tiene daño visible (cortes, abrasiones profundas, deformaciones), o su historial es desconocido. La fecha es una guía adicional, no el único criterio.'
+    },
+    {
+        question: '¿Cuál es el propósito del "buddy check" antes de iniciar un rappel?',
+        options: [
+            { letter: 'a', text: 'Verificar que todos los rescatistas estén listos' },
+            { letter: 'b', text: 'Un compañero verifica externamente nudos, conexiones y posición de equipo del rappelista' },
+            { letter: 'c', text: 'Checar el estado de salud antes de la operación' },
+            { letter: 'd', text: 'Probar la resistencia del anclaje' },
+        ],
+        correctAnswer: 'b',
+        explanation: 'El buddy check (verificación de compañero) consiste en que otra persona con entrenamiento verifica visualmente TODOS los elementos del sistema del rappelista: arnés bien puesto y ajustado, nudos correctos y con cola suficiente, dispositivo de descenso conectado correctamente, seguro cerrado, backup instalado.'
+    },
+    {
+        question: '¿Qué señal de voz indica que se debe dar cuerda o reducir la tensión en el sistema?',
+        options: [
+            { letter: 'a', text: '¡TENSIÓN!' },
+            { letter: 'b', text: '¡FIRME!' },
+            { letter: 'c', text: '¡FLOJO!' },
+            { letter: 'd', text: '¡LIBRE!' },
+        ],
+        correctAnswer: 'c',
+        explanation: '"¡FLOJO!" es la señal para dar cuerda o reducir la tensión del sistema. "¡TENSIÓN!" es lo opuesto — se usa para pedir que se aplique tensión. Estas señales deben ser confirmadas por el receptor antes de ejecutarse.'
+    },
+    {
+        question: '¿Cuál es la función del bloqueador de retroceso (progress capture device) en un sistema de polipasto?',
+        options: [
+            { letter: 'a', text: 'Aumentar la ventaja mecánica del sistema' },
+            { letter: 'b', text: 'Prevenir que la carga retroceda mientras se resetea el sistema' },
+            { letter: 'c', text: 'Controlar la velocidad de descenso' },
+            { letter: 'd', text: 'Conectar la polea al anclaje principal' },
+        ],
+        correctAnswer: 'b',
+        explanation: 'El bloqueador de retroceso (progress capture device, PCD — generalmente un prusik o bloqueador mecánico en el anclaje) evita que la carga baje mientras el equipo resetea el sistema de polipasto para hacer otra tracción. Sin él, el sistema no puede operar de forma segura.'
+    },
+    {
+        question: '¿Qué característica hace al nudo "Ocho sobre Seno" diferente del "Ocho Doble"?',
+        options: [
+            { letter: 'a', text: 'El ocho sobre seno es más resistente' },
+            { letter: 'b', text: 'El ocho sobre seno se hace sin acceso a los extremos de la cuerda' },
+            { letter: 'c', text: 'El ocho doble no puede usarse para encordamiento' },
+            { letter: 'd', text: 'No hay diferencia práctica' },
+        ],
+        correctAnswer: 'b',
+        explanation: 'El Ocho sobre Seno (Figure Eight on a Bight) se construye trabajando con el seno (parte media) de la cuerda sin necesitar los extremos. El Ocho Doble (Follow Through) necesita el extremo libre para seguir el camino del nudo existente. Son equivalentes en resistencia pero se usan en situaciones diferentes.'
+    },
+    {
+        question: '¿Cuál es el comportamiento correcto del operador de freno durante un lowering estándar?',
+        options: [
+            { letter: 'a', text: 'Soltar la cuerda de freno cuando el descenso es muy lento' },
+            { letter: 'b', text: 'Mantener siempre una mano en la cuerda de freno, nunca soltarla' },
+            { letter: 'c', text: 'Dar cuerda libremente y solo frenar al llegar abajo' },
+            { letter: 'd', text: 'Usar ambas manos para dar más velocidad si se necesita' },
+        ],
+        correctAnswer: 'b',
+        explanation: 'La regla fundamental del operador de freno es NUNCA soltar la cuerda de freno. Si pierde el control (desmayo, impacto, etc.), el sistema sería catastrófico. Por eso también existe el backup/antipánico — para compensar fallos humanos inesperados.'
+    },
+    {
+        question: '¿Cuántas vueltas mínimas se recomienda dar en un tensionless hitch en un árbol?',
+        options: [
+            { letter: 'a', text: '1 vuelta' },
+            { letter: 'b', text: '2 vueltas' },
+            { letter: 'c', text: '3-4 vueltas' },
+            { letter: 'd', text: '6 o más vueltas siempre' },
+        ],
+        correctAnswer: 'c',
+        explanation: 'Se recomiendan mínimo 3-4 vueltas para que la fricción sea suficiente. El árbol debe tener al menos 20 cm de diámetro para que el ansclaje sea seguro. Más vueltas no es siempre mejor — puede dificultar el paso de la cuerda.'
+    },
+    {
+        question: '¿Cuál es la diferencia entre "rescate tipo 1" (lowering) y "rescate tipo 2" (raising) según clasificación técnica?',
+        options: [
+            { letter: 'a', text: 'Tipo 1 es sin paciente; tipo 2 es con paciente' },
+            { letter: 'b', text: 'Tipo 1 utiliza cuerda simple; tipo 2 utiliza doble cuerda' },
+            { letter: 'c', text: 'Tipo 1 baja la carga usando gravedad; tipo 2 sube la carga contra la gravedad usando polipasto' },
+            { letter: 'd', text: 'Tipo 1 es operación simple; tipo 2 requiere equipo especializado' },
+        ],
+        correctAnswer: 'c',
+        explanation: 'En terminología de rescate técnico, lowering (bajar) aprovecha la gravedad con la cuerda como freno controlado, y es la operación más sencilla y segura. Raising (subir) requiere vencer la gravedad mediante sistemas de ventaja mecánica (polipastos).'
+    },
+    {
+        question: '¿Qué nivel de NFPA 1006 se requiere para operar sistemas complejos de polipasto y rescate vertical con paciente?',
+        options: [
+            { letter: 'a', text: 'Awareness Level (Conocimiento)' },
+            { letter: 'b', text: 'Operations Level (Nivel Operaciones)' },
+            { letter: 'c', text: 'Technician Level (Nivel Técnico)' },
+            { letter: 'd', text: 'Instructor Level' },
+        ],
+        correctAnswer: 'c',
+        explanation: 'NFPA 1006 establece tres niveles: Awareness (reconocer la situación y pedir ayuda), Operations (apoyo básico) y Technician (operar sistemas completos de rescate vertical, polipastos, changeovers, empaquetamiento y extracción de víctimas).'
+    },
+    {
+        question: '¿Por qué es recomendable usar guantes de rescate durante operaciones con cuerda?',
+        options: [
+            { letter: 'a', text: 'Solo por motivos de imagen profesional' },
+            { letter: 'b', text: 'Para proteger de abrasión, calor por fricción y mejorar agarre en la cuerda de freno' },
+            { letter: 'c', text: 'Son obligatorios solo en temperaturas frías' },
+            { letter: 'd', text: 'Para evitar daños a la cuerda por el sudor' },
+        ],
+        correctAnswer: 'b',
+        explanation: 'Los guantes de rescate protegen las manos de la abrasión por la cuerda en movimiento, del calor generado por fricción en el descenso, y mejoran el agarre sobre la cuerda de freno especialmente cuando está mojada o el rescatista está sudando.'
     }
 ];
 
@@ -1173,13 +1833,18 @@ export const SAFETY_PROTOCOLS = {
 export const VOICE_SIGNALS = [
     { signal: '¡EN CUERDA!', meaning: 'El rescatista está conectado y listo para cargar el sistema' },
     { signal: '¡CUERDA LISTA!', meaning: 'El sistema está preparado para soportar carga' },
-    { signal: '¡BAJANDO!', meaning: 'Iniciando descenso - todos alertas' },
-    { signal: '¡ALTO!', meaning: 'Detener todo movimiento inmediatamente' },
-    { signal: '¡FIRME!', meaning: 'Asegurar y mantener posición' },
-    { signal: '¡LIBRE!', meaning: 'El rescatista se ha desconectado del sistema' },
-    { signal: '¡TENSIÓN!', meaning: 'Aplicar tensión al sistema' },
-    { signal: '¡FLOJO!', meaning: 'Dar cuerda/reducir tensión' },
-    { signal: '¡CUERDA!', meaning: 'Advertencia de cuerda cayendo' },
-    { signal: '¡ROCA!', meaning: 'Advertencia de objeto cayendo' }
+    { signal: '¡BAJANDO!', meaning: 'Iniciando descenso — todos alertas y atentos' },
+    { signal: '¡ALTO!', meaning: 'Detener todo movimiento inmediatamente — emergencia' },
+    { signal: '¡FIRME!', meaning: 'Asegurar y mantener posición — no dar ni quitar cuerda' },
+    { signal: '¡LIBRE!', meaning: 'El rescatista se ha desconectado del sistema — zona segura' },
+    { signal: '¡TENSIÓN!', meaning: 'Aplicar tensión al sistema — prepararse para carga' },
+    { signal: '¡FLOJO!', meaning: 'Dar cuerda / reducir tensión en el sistema' },
+    { signal: '¡CUERDA!', meaning: 'Advertencia: cuerda cayendo — cubrir la cabeza' },
+    { signal: '¡ROCA!', meaning: 'Advertencia: objeto cayendo — evacuarse del área' },
+    { signal: '¡SUBIENDO!', meaning: 'Iniciando ascenso — sistema activado hacia arriba' },
+    { signal: '¡IZANDO!', meaning: 'El sistema de polipasto está en operación — todos a traccionar' },
+    { signal: '¡RESETEAR!', meaning: 'Resetear el bloqueador del polipasto para nueva tracción' },
+    { signal: '¡MEDICAL!', meaning: 'Situación médica en el rescatista o víctima — prioridad máxima' },
+    { signal: '¡EVACUACIÓN!', meaning: 'Señal de evacuación inmediata de la zona de trabajo' }
 ];
 
