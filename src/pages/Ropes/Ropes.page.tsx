@@ -5,6 +5,7 @@ import { MdQuiz, MdMenuBook, MdSecurity } from "react-icons/md";
 import { GiRolledCloth, GiKnot, GiMountainClimbing } from "react-icons/gi";
 import { BsGear } from "react-icons/bs";
 import { FaYoutube, FaBook, FaShieldAlt } from "react-icons/fa";
+import { TbMathFunction } from "react-icons/tb";
 import SEOWrapper from "../../components/SEOWrapper/SEOWrapper.component";
 import { ForumSection } from "../../components/ForumSection";
 import { useRopesPage } from "./Ropes.hook";
@@ -14,6 +15,7 @@ import Equipment from "./components/Equipment.component";
 import Techniques from "./components/Techniques.component";
 import Safety from "./components/Safety.component";
 import Practice from "./components/Practice.component";
+import Tools from "./components/Tools.component";
 
 export default function RopesPage() {
     const {
@@ -45,6 +47,7 @@ export default function RopesPage() {
         { id: 'techniques', label: 'Técnicas', icon: <GiMountainClimbing className="w-4 h-4" /> },
         { id: 'safety', label: 'Seguridad', icon: <FaShieldAlt className="w-4 h-4" /> },
         { id: 'practice', label: 'Práctica', icon: <MdQuiz className="w-4 h-4" /> },
+        { id: 'tools', label: 'Herramientas', icon: <TbMathFunction className="w-4 h-4" /> },
     ];
 
     return (
@@ -186,6 +189,9 @@ export default function RopesPage() {
                             )}
                             {activeTab === 'practice' && (
                                 <Practice />
+                            )}
+                            {activeTab === 'tools' && (
+                                <Tools />
                             )}
                         </div>
 
