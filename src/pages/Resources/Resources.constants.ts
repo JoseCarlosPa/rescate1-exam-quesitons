@@ -13,6 +13,7 @@ import reneo from "../../assets/reneo.png";
 import ekg from "../../assets/ekg.jpg"
 import farma from "../../assets/farma.jpg"
 import tcc from "../../assets/tecc.jpg"
+import rope from "../../assets/rope.jpg"
 
 export const resources = [
     {
@@ -64,7 +65,7 @@ export const resources = [
         img: phtl,
         title: "PHTLS Soporte Vital Prehospitalario para Traumatismos",
         subtitle: "American College of Surgeons Association",
-        edition: "Décima edición 2023",
+        edition: "Décima edición 2024",
         category: "Manual",
         download: "https://drive.google.com/uc?export=download&id=1J0PAh0nONBGmSpiYdyyjemKb-Ujx65fC",
         link: {
@@ -156,6 +157,12 @@ export const resources = [
             url: "https://www.amazon.com.mx/Netter-anatom%C3%ADa-humana-Abordaje-regional/dp/8413823986/ref=sr_1_1?__mk_es_MX=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=2LWDOLOA9WUX7&dib=eyJ2IjoiMSJ9.gkCj_-HZMdJkKvTwgd-BzlNH0bY9aRmYcShoRzuh3VbgUsFBGaivTESq9-l_l56vfK5XeqQRIl8vKYfh_W1Js2GqMzwSnVpF8-aDAvGMbXB4asHwKZokAPV9rAKknAXEq9nQr9cADfZoN91mgZ7-LlJO19X6fOAFi96tpomJKIAkp_faIf4aMmqdiN7Hd1byzWU8mHjWIAYWrR6o678BJEabsuBYO7Eolna-AQ40cVGOEau8FR-r_aqNNIA8_wxZhTFDKgJEI7-Hf2vjeLmM1w3aygDxwPcImzGoOpbE6rQ.ldXkP8YRQuCLMJ7kfO36x8IvTjHeGpBwhCMeVqkzsxw&dib_tag=se&keywords=Netter+Atlas+de+anatomia+humana&qid=1746026012&sprefix=netter+atlas+de+anatomia+humana,aps,390&sr=8-1&ufe=app_do:amzn1.fos.de93fa6a-174c-4df7-be7c-5bc8e9c5a71b",
             label: "Comprar"
         },
+    },
+    {
+        img: rope,
+        title: "CMC Rope Rescue",
+        category: "Manual",
+        download: "https://drive.google.com/file/d/1VBX12O7ELbu1lFRkdk7g3nBjplQ4RpnN/view?usp=sharing",
     },
     {
         img: nudos,
