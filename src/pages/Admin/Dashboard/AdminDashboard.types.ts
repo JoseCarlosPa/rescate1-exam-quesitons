@@ -1,6 +1,6 @@
 import {Timestamp} from "firebase/firestore";
 
-export type ActiveTab = 'overview' | 'users' | 'forum' | 'lessons' | 'tasks' | 'checklists';
+export type ActiveTab = 'overview' | 'users' | 'elementos' | 'forum' | 'lessons' | 'tasks' | 'checklists';
 
 export interface ExamData {
     completed: boolean;
@@ -105,4 +105,43 @@ export interface UserDetail {
     taskSubmissions?: TaskSubmission[];
     attendance?: number;
     finalGrade?: number;
+}
+
+// ─── Elementos (Personal Operativo) ───────────────────────────────────────────
+
+export type ElementStatus = 'activo' | 'inactivo';
+export type ElementRank = 'Básico' | 'Avanzado';
+
+export const CERTIFICATIONS_LIST = [
+    'BLS (Soporte Vital Básico)',
+    'ACLS (Soporte Vital Cardiovascular Avanzado)',
+    'PHTLS (Soporte Vital Prehospitalario en Trauma)',
+    'PALS (Soporte Vital Pediátrico Avanzado)',
+    'ITLS (Soporte Vital en Trauma Internacional)',
+    'NRP (Reanimación Neonatal)',
+    'AMLS (Soporte Vital Médico Avanzado)',
+    'EPC (Cuidados del Paciente de Emergencia)',
+    'Stop the Bleed',
+    'Rescate Vehicular',
+    'Rescate en Altura',
+    'Manejo de Materiales Peligrosos (HazMat)',
+    'Paramédico',
+    'Técnico en Urgencias Médicas',
+    'Instructor BLS',
+    'Instructor ACLS',
+] as const;
+
+export interface Elemento {
+    id: string;
+    name: string;
+    email: string;
+    phone?: string;
+    status: ElementStatus;
+    rank: ElementRank;
+    graduationYear: number;
+    certifications: string[];
+    photoURL?: string;
+    bio?: string;
+    createdAt: Timestamp;
+    updatedAt?: Timestamp;
 }

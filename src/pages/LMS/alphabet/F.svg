@@ -1,0 +1,13 @@
+<svg width='200' height='260' viewBox='0 0 200 260' xmlns='http://www.w3.org/2000/svg'>
+        <rect width='200' height='260' rx='20' fill='white' stroke='#3B82F6' stroke-width='4'/>
+        <rect width='200' height='60' rx='20 20 0 0' fill='#3B82F6'/>
+        <text x='100' y='42' font-family='Arial' font-size='40' font-weight='black' fill='white' text-anchor='middle'>F</text>
+        <circle cx='100' cy='140' r='50' fill='#EFF6FF' stroke='#DBEAFE' stroke-width='2'/>
+        <path d='M85 140 Q100 110 115 140' stroke='#3B82F6' stroke-width='4' fill='none' stroke-linecap='round'/>
+        <path d='M90 150 L110 150' stroke='#3B82F6' stroke-width='4' fill='none' stroke-linecap='round'/>
+        <foreignObject x='15' y='200' width='170' height='50'>
+            <div xmlns='http://www.w3.org/1999/xhtml' style='font-family: Arial; font-size: 11px; color: #1E40AF; text-align: center; line-height: 1.2;'>
+                Puntas del índice y pulgar se tocan, otros tres extendidos.
+            </div>
+        </foreignObject>
+    </svg>
