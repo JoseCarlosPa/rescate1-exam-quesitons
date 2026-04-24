@@ -4,27 +4,30 @@ import { db } from "../../firebase/firebaseConfig";
 import {
     IChecklistFormState,
     IChecklistGeneral,
-    IChecklistEquipamiento,
+    IChecklistAmbulancia,
     IChecklistTrauma,
+    IChecklistBotiquinPR,
     IChecklistViaAerea,
     IChecklistMecanica
 } from "./AmbulanceChecklist.types";
 import {
     INITIAL_DATOS_GENERALES,
-    INITIAL_EQUIPAMIENTO,
+    INITIAL_AMBULANCIA,
     INITIAL_TRAUMA,
+    INITIAL_BOTIQUIN_PR,
     INITIAL_VIA_AEREA,
     INITIAL_MECANICA
 } from "./AmbulanceChecklist.constants";
 
-const TOTAL_STEPS = 5;
+const TOTAL_STEPS = 8;
 
 export default function useAmbulanceChecklist() {
     const [formState, setFormState] = useState<IChecklistFormState>({
         currentStep: 1,
         datosGenerales: { ...INITIAL_DATOS_GENERALES },
-        equipamiento: { ...INITIAL_EQUIPAMIENTO },
+        ambulancia: { ...INITIAL_AMBULANCIA },
         botiquinTrauma: { ...INITIAL_TRAUMA },
+        botiquinPrimerRespondiente: { ...INITIAL_BOTIQUIN_PR },
         viaAerea: { ...INITIAL_VIA_AEREA },
         mecanica: { ...INITIAL_MECANICA },
         isSubmitting: false,
@@ -42,19 +45,46 @@ export default function useAmbulanceChecklist() {
         }));
     };
 
-    // Actualizar equipamiento
-    const updateEquipamiento = (field: keyof IChecklistEquipamiento, value: number) => {
+    // Actualizar ambulancia (campo genérico)
+    const updateAmbulancia = <K extends keyof IChecklistAmbulancia>(
+        field: K,
+        value: IChecklistAmbulancia[K]
+    ) => {
         setFormState(prev => ({
             ...prev,
-            equipamiento: {
-                ...prev.equipamiento,
+            ambulancia: {
+                ...prev.ambulancia,
                 [field]: value
             }
         }));
     };
 
+    // Toggle checkbox en array (para monitor, DEA, COVID)
+    const toggleArrayItem = (
+        section: "ambulancia",
+        field: keyof IChecklistAmbulancia,
+        item: string
+    ) => {
+        setFormState(prev => {
+            const current = prev[section][field] as string[];
+            const exists = current.includes(item);
+            return {
+                ...prev,
+                [section]: {
+                    ...prev[section],
+                    [field]: exists
+                        ? current.filter((i) => i !== item)
+                        : [...current, item]
+                }
+            };
+        });
+    };
+
     // Actualizar botiquín trauma
-    const updateTrauma = (field: keyof IChecklistTrauma, value: number) => {
+    const updateTrauma = <K extends keyof IChecklistTrauma>(
+        field: K,
+        value: IChecklistTrauma[K]
+    ) => {
         setFormState(prev => ({
             ...prev,
             botiquinTrauma: {
@@ -64,8 +94,42 @@ export default function useAmbulanceChecklist() {
         }));
     };
 
+    // Toggle array en trauma (brazaletes pediátricos)
+    const toggleTraumaArray = (field: keyof IChecklistTrauma, item: string) => {
+        setFormState(prev => {
+            const current = prev.botiquinTrauma[field] as string[];
+            const exists = current.includes(item);
+            return {
+                ...prev,
+                botiquinTrauma: {
+                    ...prev.botiquinTrauma,
+                    [field]: exists
+                        ? current.filter((i) => i !== item)
+                        : [...current, item]
+                }
+            };
+        });
+    };
+
+    // Actualizar botiquín primer respondiente
+    const updateBotiquinPR = <K extends keyof IChecklistBotiquinPR>(
+        field: K,
+        value: IChecklistBotiquinPR[K]
+    ) => {
+        setFormState(prev => ({
+            ...prev,
+            botiquinPrimerRespondiente: {
+                ...prev.botiquinPrimerRespondiente,
+                [field]: value
+            }
+        }));
+    };
+
     // Actualizar vía aérea
-    const updateViaAerea = (field: keyof IChecklistViaAerea, value: number) => {
+    const updateViaAerea = <K extends keyof IChecklistViaAerea>(
+        field: K,
+        value: IChecklistViaAerea[K]
+    ) => {
         setFormState(prev => ({
             ...prev,
             viaAerea: {
@@ -76,7 +140,10 @@ export default function useAmbulanceChecklist() {
     };
 
     // Actualizar mecánica
-    const updateMecanica = (field: keyof IChecklistMecanica, value: number) => {
+    const updateMecanica = <K extends keyof IChecklistMecanica>(
+        field: K,
+        value: IChecklistMecanica[K]
+    ) => {
         setFormState(prev => ({
             ...prev,
             mecanica: {
@@ -94,15 +161,9 @@ export default function useAmbulanceChecklist() {
                 if (!unidad) return { isValid: false, error: "Selecciona una unidad" };
                 if (!guardia) return { isValid: false, error: "Selecciona una guardia" };
                 if (!nombreEncargado.trim()) return { isValid: false, error: "Ingresa el nombre del encargado" };
-                if (!motivo) return { isValid: false, error: "Selecciona un motivo" };
+                if (!motivo) return { isValid: false, error: "Selecciona un motivo de llenado" };
                 return { isValid: true };
             }
-            case 2:
-            case 3:
-            case 4:
-            case 5:
-                // Los campos numéricos pueden ser 0, no requieren validación especial
-                return { isValid: true };
             default:
                 return { isValid: true };
         }
@@ -114,7 +175,6 @@ export default function useAmbulanceChecklist() {
         if (!validation.isValid) {
             return { success: false, error: validation.error };
         }
-
         if (formState.currentStep < TOTAL_STEPS) {
             setFormState(prev => ({
                 ...prev,
@@ -157,8 +217,9 @@ export default function useAmbulanceChecklist() {
             const checklistData = {
                 fechaCreacion: Timestamp.now(),
                 datosGenerales: formState.datosGenerales,
-                equipamiento: formState.equipamiento,
+                ambulancia: formState.ambulancia,
                 botiquinTrauma: formState.botiquinTrauma,
+                botiquinPrimerRespondiente: formState.botiquinPrimerRespondiente,
                 viaAerea: formState.viaAerea,
                 mecanica: formState.mecanica
             };
@@ -184,8 +245,9 @@ export default function useAmbulanceChecklist() {
         setFormState({
             currentStep: 1,
             datosGenerales: { ...INITIAL_DATOS_GENERALES },
-            equipamiento: { ...INITIAL_EQUIPAMIENTO },
+            ambulancia: { ...INITIAL_AMBULANCIA },
             botiquinTrauma: { ...INITIAL_TRAUMA },
+            botiquinPrimerRespondiente: { ...INITIAL_BOTIQUIN_PR },
             viaAerea: { ...INITIAL_VIA_AEREA },
             mecanica: { ...INITIAL_MECANICA },
             isSubmitting: false,
@@ -196,8 +258,11 @@ export default function useAmbulanceChecklist() {
     return {
         formState,
         updateDatosGenerales,
-        updateEquipamiento,
+        updateAmbulancia,
+        toggleArrayItem,
         updateTrauma,
+        toggleTraumaArray,
+        updateBotiquinPR,
         updateViaAerea,
         updateMecanica,
         nextStep,
@@ -208,4 +273,3 @@ export default function useAmbulanceChecklist() {
         totalSteps: TOTAL_STEPS
     };
 }
-

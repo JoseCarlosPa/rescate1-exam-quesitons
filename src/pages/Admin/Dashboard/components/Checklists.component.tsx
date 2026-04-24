@@ -3,16 +3,43 @@ import { collection, getDocs, query, orderBy, Timestamp } from "firebase/firesto
 import { db } from "../../../../firebase/firebaseConfig";
 import { IChecklistCompleto } from "../../../AmbulanceChecklist/AmbulanceChecklist.types";
 import {
-    EQUIPAMIENTO_LABELS,
-    TRAUMA_LABELS,
-    VIA_AEREA_LABELS,
-    MECANICA_LABELS,
-    UNIDADES_AMBULANCIA
+    UNIDADES_AMBULANCIA,
+    AMBULANCIA_CATEGORIAS,
+    MONITOR_DEA_CATEGORIAS,
+    OBSTETRICIA_ASPIRADOR_CATEGORIAS,
+    TRAUMA_CATEGORIAS,
+    BOTIQUIN_PR_CATEGORIAS,
+    VIA_AEREA_CATEGORIAS,
+    MECANICA_CATEGORIAS
 } from "../../../AmbulanceChecklist/AmbulanceChecklist.constants";
 import { FaDownload, FaEye, FaFilter, FaTimes, FaFileExcel, FaFilePdf } from "react-icons/fa";
 import { ImSpinner2 } from "react-icons/im";
 import * as XLSX from "xlsx";
 import jsPDF from "jspdf";
+
+const getAllLabels = () => {
+    const labels: Record<string, string> = {};
+    const categories = [
+        AMBULANCIA_CATEGORIAS,
+        MONITOR_DEA_CATEGORIAS,
+        OBSTETRICIA_ASPIRADOR_CATEGORIAS,
+        TRAUMA_CATEGORIAS,
+        BOTIQUIN_PR_CATEGORIAS,
+        VIA_AEREA_CATEGORIAS,
+        MECANICA_CATEGORIAS
+    ];
+    categories.forEach(catGroup => {
+        Object.values(catGroup).forEach((section: any) => {
+            if (section.campos) {
+                section.campos.forEach((campo: any) => {
+                    labels[campo.key] = campo.label;
+                });
+            }
+        });
+    });
+    return labels;
+};
+const ALL_LABELS = getAllLabels();
 
 export default function Checklists() {
     const [checklists, setChecklists] = useState<IChecklistCompleto[]>([]);
@@ -104,30 +131,36 @@ export default function Checklists() {
                 "Guardia": c.datosGenerales.guardia,
                 "Encargado": c.datosGenerales.nombreEncargado,
                 "Motivo": c.datosGenerales.motivo,
-                // Equipamiento
-                ...Object.entries(c.equipamiento || {}).reduce((acc, [key, value]) => {
-                    const label = EQUIPAMIENTO_LABELS[key as keyof typeof EQUIPAMIENTO_LABELS] || key;
-                    acc[`Equip: ${label}`] = value;
+                // Ambulancia
+                ...Object.entries(c.ambulancia || {}).reduce((acc, [key, value]) => {
+                    const label = ALL_LABELS[key] || key;
+                    acc[`Ambulancia: ${label}`] = Array.isArray(value) ? value.join(", ") : value;
                     return acc;
-                }, {} as Record<string, number>),
+                }, {} as Record<string, any>),
                 // Trauma
                 ...Object.entries(c.botiquinTrauma || {}).reduce((acc, [key, value]) => {
-                    const label = TRAUMA_LABELS[key as keyof typeof TRAUMA_LABELS] || key;
-                    acc[`Trauma: ${label}`] = value;
+                    const label = ALL_LABELS[key] || key;
+                    acc[`Trauma: ${label}`] = Array.isArray(value) ? value.join(", ") : value;
                     return acc;
-                }, {} as Record<string, number>),
+                }, {} as Record<string, any>),
+                // Botiquín PR
+                ...Object.entries(c.botiquinPrimerRespondiente || {}).reduce((acc, [key, value]) => {
+                    const label = ALL_LABELS[key] || key;
+                    acc[`Botiquín PR: ${label}`] = Array.isArray(value) ? value.join(", ") : value;
+                    return acc;
+                }, {} as Record<string, any>),
                 // Vía Aérea
                 ...Object.entries(c.viaAerea || {}).reduce((acc, [key, value]) => {
-                    const label = VIA_AEREA_LABELS[key as keyof typeof VIA_AEREA_LABELS] || key;
-                    acc[`VíaAérea: ${label}`] = value;
+                    const label = ALL_LABELS[key] || key;
+                    acc[`VíaAérea: ${label}`] = Array.isArray(value) ? value.join(", ") : value;
                     return acc;
-                }, {} as Record<string, number>),
+                }, {} as Record<string, any>),
                 // Mecánica
                 ...Object.entries(c.mecanica || {}).reduce((acc, [key, value]) => {
-                    const label = MECANICA_LABELS[key as keyof typeof MECANICA_LABELS] || key;
-                    acc[`Mecánica: ${label}`] = value;
+                    const label = ALL_LABELS[key] || key;
+                    acc[`Mecánica: ${label}`] = Array.isArray(value) ? value.join(", ") : value;
                     return acc;
-                }, {} as Record<string, number>)
+                }, {} as Record<string, any>)
             };
         });
 
@@ -177,23 +210,30 @@ export default function Checklists() {
     };
 
     const DetailModal = ({ checklist, onClose }: { checklist: IChecklistCompleto; onClose: () => void }) => {
-        const renderSection = <T extends object>(title: string, data: T, labels: Record<string, string>) => (
+        const renderSection = <T extends object>(title: string, data: T) => (
             <div className="mb-6">
                 <h4 className="font-semibold text-orange-600 mb-3 pb-2 border-b border-orange-200">{title}</h4>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-                    {Object.entries(data).map(([key, value]) => (
-                        <div key={key} className="flex justify-between text-sm py-1 px-2 bg-gray-50 rounded">
-                            <span className="text-gray-600 truncate">{labels[key] || key}</span>
-                            <span className={`font-medium ml-2 ${(value as number) > 0 ? 'text-green-600' : 'text-gray-400'}`}>{value as number}</span>
-                        </div>
-                    ))}
+                    {Object.entries(data).map(([key, value]) => {
+                        const label = ALL_LABELS[key] || key;
+                        const displayValue = Array.isArray(value) ? value.join(", ") : String(value);
+                        const isPositive = typeof value === 'number' ? value > 0 : !!value;
+                        return (
+                            <div key={key} className="flex justify-between text-sm py-1 px-2 bg-gray-50 rounded">
+                                <span className="text-gray-600 truncate mr-2" title={label}>{label}</span>
+                                <span className={`font-medium text-right ${isPositive ? 'text-green-600' : 'text-gray-400'}`}>
+                                    {displayValue}
+                                </span>
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
         );
 
         return (
             <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-                <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
+                <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col">
                     <div className="bg-orange-500 text-white px-6 py-4 flex justify-between items-center">
                         <div>
                             <h3 className="text-lg font-bold">{checklist.datosGenerales.unidad}</h3>
@@ -206,7 +246,7 @@ export default function Checklists() {
                         </button>
                     </div>
 
-                    <div className="p-6 overflow-y-auto max-h-[calc(90vh-120px)]">
+                    <div className="p-6 overflow-y-auto flex-1">
                         <div className="bg-gray-50 rounded-xl p-4 mb-6">
                             <h4 className="font-semibold text-gray-800 mb-2">Datos Generales</h4>
                             <div className="grid grid-cols-2 gap-4 text-sm">
@@ -221,10 +261,11 @@ export default function Checklists() {
                             </div>
                         </div>
 
-                        {renderSection("Equipamiento General", checklist.equipamiento, EQUIPAMIENTO_LABELS)}
-                        {renderSection("Botiquín de Trauma", checklist.botiquinTrauma, TRAUMA_LABELS)}
-                        {renderSection("Vía Aérea", checklist.viaAerea, VIA_AEREA_LABELS)}
-                        {renderSection("Mecánica y Seguridad", checklist.mecanica, MECANICA_LABELS)}
+                        {renderSection("Ambulancia (Equipamiento)", checklist.ambulancia || {})}
+                        {renderSection("Botiquín de Trauma", checklist.botiquinTrauma || {})}
+                        {renderSection("Botiquín Primer Respondiente", checklist.botiquinPrimerRespondiente || {})}
+                        {renderSection("Vía Aérea", checklist.viaAerea || {})}
+                        {renderSection("Mecánica y Seguridad", checklist.mecanica || {})}
                     </div>
                 </div>
             </div>
@@ -415,4 +456,3 @@ export default function Checklists() {
         </div>
     );
 }
-
