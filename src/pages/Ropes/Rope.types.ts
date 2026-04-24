@@ -106,5 +106,6 @@ export type RopeTab =
     | 'equipment'
     | 'techniques'
     | 'safety'
-    | 'practice';
+    | 'practice'
+    | 'tools';
 

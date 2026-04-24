@@ -29,6 +29,12 @@ const KNOT_VIDEOS: Record<string, string> = {
     'alpine-butterfly': 'https://www.youtube.com/results?search_query=alpine+butterfly+knot+tutorial',
     'girth-hitch': 'https://www.youtube.com/results?search_query=girth+hitch+knot+climbing',
     'water-knot': 'https://www.youtube.com/results?search_query=water+knot+webbing+tutorial',
+    'overhand-knot': 'https://www.youtube.com/results?search_query=overhand+safety+knot+rope+rescue',
+    'inline-figure-eight': 'https://www.youtube.com/results?search_query=inline+figure+eight+directional+knot+rescue',
+    'tensionless-hitch': 'https://www.youtube.com/results?search_query=tensionless+hitch+rope+rescue+anchor',
+    'radium-release-hitch': 'https://www.youtube.com/results?search_query=radium+release+hitch+rope+rescue',
+    'load-releasing-hitch': 'https://www.youtube.com/results?search_query=munter+mule+overhand+load+releasing+hitch',
+    'mariner-hitch': 'https://www.youtube.com/results?search_query=mariner+hitch+rope+rescue+rigging',
 };
 
 // Imágenes representativas de los nudos (usando emojis/iconos como placeholder)
@@ -44,6 +50,12 @@ const KNOT_IMAGES: Record<string, string> = {
     'alpine-butterfly': '🦋',
     'girth-hitch': '🔘',
     'water-knot': '💧',
+    'overhand-knot': '✋',
+    'inline-figure-eight': '↔️',
+    'tensionless-hitch': '🌲',
+    'radium-release-hitch': '⚡',
+    'load-releasing-hitch': '🔓',
+    'mariner-hitch': '⚓',
 };
 
 export default function Knots({
