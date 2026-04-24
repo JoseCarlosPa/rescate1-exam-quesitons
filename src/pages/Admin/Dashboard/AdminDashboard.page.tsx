@@ -43,7 +43,7 @@ export default function AdminDashboard() {
     }
 
     return (
-        <div className="min-h-screen flex" style={{background: '#f1f5f9'}}>
+        <div className="h-screen overflow-hidden flex" style={{background: '#f1f5f9'}}>
 
             {/* ── Sidebar overlay (mobile) ── */}
             {sidebarOpen && (
@@ -52,8 +52,8 @@ export default function AdminDashboard() {
             )}
 
             {/* ── Sidebar ── */}
-            <aside className={`fixed top-0 left-0 h-full z-50 flex flex-col transition-transform duration-300 w-64
-                ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 lg:static lg:flex`}
+            <aside className={`fixed inset-y-0 left-0 h-screen z-50 flex flex-col transition-transform duration-300 w-64
+                ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0`}
                    style={{background: 'linear-gradient(180deg,#0f172a 0%,#1e293b 100%)'}}>
 
                 {/* Logo */}
@@ -103,9 +103,9 @@ export default function AdminDashboard() {
             </aside>
 
             {/* ── Main content ── */}
-            <div className="flex-1 flex flex-col min-w-0">
+            <div className="flex-1 flex flex-col min-w-0 lg:ml-64 overflow-y-auto">
                 {/* Top bar */}
-                <header className="bg-white border-b border-slate-200 px-4 lg:px-8 py-4 flex items-center gap-4 sticky top-0 z-30">
+                <header className="bg-white border-b border-slate-200 px-4 lg:px-8 py-4 flex items-center gap-4 sticky top-0 z-20">
                     <button onClick={() => setSidebarOpen(true)}
                             className="lg:hidden p-2 rounded-xl text-slate-500 hover:bg-slate-100 transition-colors">
                         <FiMenu className="w-5 h-5"/>
@@ -119,7 +119,7 @@ export default function AdminDashboard() {
                 </header>
 
                 {/* Page content */}
-                <main className="flex-1 p-4 lg:p-8">
+                <main className="flex-1 p-4 lg:p-8 min-h-0">
                     {activeTab === 'overview'   && <Overview/>}
                     {activeTab === 'users'      && <Users/>}
                     {activeTab === 'elementos'  && <Elementos/>}

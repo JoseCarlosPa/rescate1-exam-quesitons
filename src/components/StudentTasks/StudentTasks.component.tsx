@@ -1,347 +1,314 @@
+import React, {useState} from 'react';
+import {NavLink} from 'react-router';
+import {AllRoutes} from '../../components/Router/Router.constants';
+import {ImSpinner2} from 'react-icons/im';
 import {
-    FaCalendar,
-    FaCheckCircle,
-    FaClock,
-    FaExclamationTriangle,
-    FaLink,
-    FaSpinner,
-    FaStar,
-    FaTasks
-} from "react-icons/fa";
-import {useState} from "react";
-import useStudentTasks, {Task, TaskSubmission} from "../../hooks/useStudentTasks.hook";
+    FiAlertCircle,
+    FiArrowLeft,
+    FiArrowUpRight,
+    FiCheck,
+    FiCheckCircle,
+    FiClock,
+    FiExternalLink,
+    FiFileText,
+    FiLink,
+    FiStar,
+    FiX,
+} from 'react-icons/fi';
+import useStudentTasks, {Task, TaskSubmission} from '../../hooks/useStudentTasks.hook';
+
+// ── Helpers ────────────────────────────────────────────────────────────────────
+function scoreStyle(score: number, max: number) {
+    const pct = max > 0 ? (score / max) * 100 : 0;
+    if (pct >= 90) return {color: '#16a34a', bg: '#dcfce7', label: 'Excelente'};
+    if (pct >= 80) return {color: '#2563eb', bg: '#dbeafe', label: 'Muy Bien'};
+    if (pct >= 70) return {color: '#d97706', bg: '#fef3c7', label: 'Aprobado'};
+    return {color: '#dc2626', bg: '#fee2e2', label: 'Repaso'};
+}
 
 export default function StudentTasks() {
-    const {
-        tasks,
-        mySubmissions,
-        loading,
-        submitTask,
-        isTaskOpen,
-        getTaskStatus,
-        hasSubmitted,
-        getSubmission
-    } = useStudentTasks();
+    const {tasks, mySubmissions, loading, submitTask, isTaskOpen, getTaskStatus, hasSubmitted, getSubmission} = useStudentTasks();
 
-    const [showSubmissionModal, setShowSubmissionModal] = useState(false);
+    const [showModal, setShowModal] = useState(false);
     const [selectedTask, setSelectedTask] = useState<Task | null>(null);
-    const [submissionLink, setSubmissionLink] = useState("");
+    const [submissionLink, setSubmissionLink] = useState('');
     const [submitting, setSubmitting] = useState(false);
+    const [mounted, setMounted] = React.useState(false);
+    React.useEffect(() => { setMounted(true); }, []);
 
     const handleSubmitTask = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!selectedTask || !submissionLink.trim()) return;
-
         setSubmitting(true);
         try {
             await submitTask(selectedTask.id, submissionLink.trim());
-            setShowSubmissionModal(false);
+            setShowModal(false);
             setSelectedTask(null);
-            setSubmissionLink("");
+            setSubmissionLink('');
         } finally {
             setSubmitting(false);
         }
     };
 
-    const getScoreColor = (score: number) => {
-        if (score >= 90) return "text-green-600";
-        if (score >= 80) return "text-blue-600";
-        if (score >= 70) return "text-yellow-600";
-        return "text-red-600";
-    };
+    const pending   = tasks.filter((t: Task) => isTaskOpen(t) && !hasSubmitted(t.id)).length;
+    const graded    = mySubmissions.filter((s: TaskSubmission) => s.isGraded).length;
 
     if (loading) {
         return (
-            <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-                <FaSpinner className="animate-spin w-8 h-8 text-blue-500"/>
+            <div className="min-h-screen flex items-center justify-center"
+                 style={{background: 'linear-gradient(135deg,#0f172a,#1e293b)'}}>
+                <ImSpinner2 className="animate-spin w-10 h-10 text-orange-500"/>
             </div>
         );
     }
 
     return (
-        <div className="min-h-screen bg-gray-100 p-4">
-            <div className="max-w-6xl mx-auto">
-                {/* Header */}
-                <div className="mb-8">
-                    <div className="flex items-center mb-6">
-                        <div className="p-3 bg-blue-100 rounded-full mr-4">
-                            <FaTasks className="text-blue-600 text-xl"/>
-                        </div>
-                        <div>
-                            <h1 className="text-3xl font-bold text-gray-900">Mis Tareas</h1>
-                            <p className="text-gray-600 mt-1">Administra tus entregas y revisa tus calificaciones</p>
-                        </div>
-                    </div>
+        <div className="min-h-screen"
+             style={{
+                 background: 'linear-gradient(160deg,#0f172a 0%,#1e293b 36%,#f1f5f9 36%)',
+                 opacity: mounted ? 1 : 0,
+                 transition: 'opacity 0.4s ease',
+             }}>
 
-                    {/* Summary Cards */}
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-                        <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
-                            <div className="flex items-center">
-                                <div className="p-2 bg-blue-100 rounded-full">
-                                    <FaTasks className="text-blue-600"/>
-                                </div>
-                                <div className="ml-3">
-                                    <p className="text-sm text-gray-600">Total Tareas</p>
-                                    <p className="text-xl font-bold text-gray-900">{tasks.length}</p>
-                                </div>
+            {/* ── Hero ── */}
+            <div className="px-4 md:px-8 lg:px-12 pt-6 pb-28">
+                <NavLink to={AllRoutes.STUDENT_DASHBOARD}
+                         className="inline-flex items-center gap-2 text-slate-400 hover:text-white text-sm font-medium mb-8 transition-colors group">
+                    <FiArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform"/>
+                    Volver al panel
+                </NavLink>
+                <p className="text-orange-400 text-sm font-bold uppercase tracking-widest mb-1">Académico</p>
+                <h1 className="text-3xl md:text-4xl font-black text-white">Mis Tareas</h1>
+                <p className="text-slate-400 mt-1 text-sm">Gestiona tus entregas y revisa tus calificaciones</p>
+            </div>
+
+            {/* ── Content ── */}
+            <div className="px-4 md:px-8 lg:px-12 -mt-16 pb-12">
+
+                {/* Stats */}
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                    {[
+                        {icon: FiFileText, label: 'Total', value: tasks.length, iconBg: '#fff7ed', iconColor: '#f97316'},
+                        {icon: FiCheckCircle, label: 'Entregadas', value: mySubmissions.length, iconBg: '#f0fdf4', iconColor: '#16a34a'},
+                        {icon: FiClock, label: 'Pendientes', value: pending, iconBg: '#fef3c7', iconColor: '#d97706'},
+                        {icon: FiStar, label: 'Calificadas', value: graded, iconBg: '#fdf4ff', iconColor: '#a855f7'},
+                    ].map(s => (
+                        <div key={s.label} className="bg-white rounded-2xl shadow-sm border border-slate-100 p-5 flex items-center gap-4">
+                            <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                                 style={{background: s.iconBg}}>
+                                <s.icon className="w-5 h-5" style={{color: s.iconColor}}/>
+                            </div>
+                            <div>
+                                <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide">{s.label}</p>
+                                <p className="text-2xl font-black text-slate-900">{s.value}</p>
                             </div>
                         </div>
-
-                        <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
-                            <div className="flex items-center">
-                                <div className="p-2 bg-green-100 rounded-full">
-                                    <FaCheckCircle className="text-green-600"/>
-                                </div>
-                                <div className="ml-3">
-                                    <p className="text-sm text-gray-600">Entregadas</p>
-                                    <p className="text-xl font-bold text-gray-900">{mySubmissions.length}</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
-                            <div className="flex items-center">
-                                <div className="p-2 bg-yellow-100 rounded-full">
-                                    <FaClock className="text-yellow-600"/>
-                                </div>
-                                <div className="ml-3">
-                                    <p className="text-sm text-gray-600">Pendientes</p>
-                                    <p className="text-xl font-bold text-gray-900">
-                                        {tasks.filter((task: Task) => isTaskOpen(task) && !hasSubmitted(task.id)).length}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
-                            <div className="flex items-center">
-                                <div className="p-2 bg-purple-100 rounded-full">
-                                    <FaStar className="text-purple-600"/>
-                                </div>
-                                <div className="ml-3">
-                                    <p className="text-sm text-gray-600">Calificadas</p>
-                                    <p className="text-xl font-bold text-gray-900">
-                                        {mySubmissions.filter((s: TaskSubmission) => s.isGraded).length}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    ))}
                 </div>
 
-                {/* Tasks List */}
-                <div className="space-y-6">
-                    {tasks.length > 0 ? (
-                        tasks.map((task: Task) => {
-                            const taskStatus = getTaskStatus(task);
-                            const submission = getSubmission(task.id);
+                {/* Task list */}
+                {tasks.length === 0 ? (
+                    <div className="bg-white rounded-2xl shadow-sm border border-slate-100 py-20 flex flex-col items-center">
+                        <FiFileText className="w-14 h-14 text-slate-200 mb-4"/>
+                        <p className="text-slate-500 font-semibold text-lg">No hay tareas disponibles</p>
+                        <p className="text-slate-400 text-sm mt-1">Las tareas aparecerán aquí cuando sean publicadas</p>
+                    </div>
+                ) : (
+                    <div className="space-y-4">
+                        {tasks.map((task: Task) => {
+                            const taskStatus  = getTaskStatus(task);
+                            const submission  = getSubmission(task.id);
                             const isSubmitted = hasSubmitted(task.id);
+                            const open        = isTaskOpen(task);
+
+                            const statusStyle = taskStatus.color === 'green'
+                                ? {bg: '#dcfce7', color: '#16a34a', icon: FiCheckCircle}
+                                : taskStatus.color === 'yellow'
+                                    ? {bg: '#fef3c7', color: '#d97706', icon: FiClock}
+                                    : {bg: '#fee2e2', color: '#dc2626', icon: FiAlertCircle};
+
+                            const ss = submission?.isGraded
+                                ? scoreStyle(submission.score ?? 0, task.maxScore)
+                                : null;
 
                             return (
                                 <div key={task.id}
-                                     className="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
+                                     className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+                                    {/* Top accent */}
+                                    <div className="h-1" style={{
+                                        background: open && !isSubmitted
+                                            ? 'linear-gradient(90deg,#f97316,#ea580c)'
+                                            : isSubmitted
+                                                ? 'linear-gradient(90deg,#22c55e,#16a34a)'
+                                                : '#e2e8f0'
+                                    }}/>
+
                                     <div className="p-6">
-                                        <div className="flex items-start justify-between mb-4">
-                                            <div className="flex-1">
-                                                <div className="flex items-center gap-3 mb-2">
-                                                    <h3 className="text-xl font-bold text-gray-900">{task.title}</h3>
-                                                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                                                        taskStatus.color === 'green' ? 'bg-green-100 text-green-800' :
-                                                            taskStatus.color === 'yellow' ? 'bg-yellow-100 text-yellow-800' :
-                                                                'bg-gray-100 text-gray-800'
-                                                    }`}>
+                                        {/* Header row */}
+                                        <div className="flex flex-col sm:flex-row sm:items-start gap-3 mb-4">
+                                            <div className="flex-1 min-w-0">
+                                                <div className="flex flex-wrap items-center gap-2 mb-1">
+                                                    <h3 className="text-lg font-black text-slate-900">{task.title}</h3>
+                                                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-bold"
+                                                          style={{background: statusStyle.bg, color: statusStyle.color}}>
+                                                        <statusStyle.icon className="w-3 h-3"/>
                                                         {taskStatus.label}
                                                     </span>
                                                     {isSubmitted && (
-                                                        <span
-                                                            className="px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                                                            Entregada
+                                                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-bold bg-blue-50 text-blue-600">
+                                                            <FiCheck className="w-3 h-3"/> Entregada
                                                         </span>
                                                     )}
                                                 </div>
-                                                <p className="text-gray-600 mb-4">{task.description}</p>
-
-                                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm mb-4">
-                                                    <div className="flex items-center text-gray-600">
-                                                        <FaCalendar className="mr-2"/>
-                                                        <div>
-                                                            <div className="font-medium">Apertura</div>
-                                                            <div>{task.openDate.toDate().toLocaleDateString()}</div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="flex items-center text-gray-600">
-                                                        <FaClock className="mr-2"/>
-                                                        <div>
-                                                            <div className="font-medium">Cierre</div>
-                                                            <div>{task.closeDate.toDate().toLocaleDateString()}</div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="flex items-center text-gray-600">
-                                                        <FaStar className="mr-2"/>
-                                                        <div>
-                                                            <div className="font-medium">Puntaje Máximo</div>
-                                                            <div>{task.maxScore} puntos</div>
-                                                        </div>
-                                                    </div>
+                                                <p className="text-slate-500 text-sm">{task.description}</p>
+                                            </div>
+                                            {/* Max score pill */}
+                                            <div className="flex-shrink-0 text-right">
+                                                <div className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
+                                                    <FiStar className="w-3.5 h-3.5 text-orange-400"/>
+                                                    <span className="text-sm font-black text-slate-700">{task.maxScore} pts</span>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        {/* Submission Status */}
-                                        {isSubmitted && submission ? (
-                                            <div className="bg-gray-50 rounded-lg p-4">
-                                                <h4 className="font-semibold text-gray-900 mb-3">Mi Entrega</h4>
-                                                <div className="space-y-2">
-                                                    <div className="flex items-center text-sm text-gray-600">
-                                                        <FaLink className="mr-2"/>
-                                                        <a
-                                                            href={submission.submissionLink}
-                                                            target="_blank"
-                                                            rel="noopener noreferrer"
-                                                            className="text-blue-600 hover:text-blue-800 break-all"
-                                                        >
-                                                            {submission.submissionLink}
-                                                        </a>
+                                        {/* Dates */}
+                                        <div className="flex flex-wrap gap-4 mb-4">
+                                            {[
+                                                {icon: FiCheck, label: 'Apertura', date: task.openDate.toDate()},
+                                                {icon: FiClock, label: 'Cierre', date: task.closeDate.toDate()},
+                                            ].map(d => (
+                                                <div key={d.label} className="flex items-center gap-2">
+                                                    <div className="w-7 h-7 rounded-lg bg-slate-100 flex items-center justify-center">
+                                                        <d.icon className="w-3.5 h-3.5 text-slate-500"/>
                                                     </div>
-                                                    <div className="text-sm text-gray-600">
-                                                        <span
-                                                            className="font-medium">Entregado:</span> {submission.submittedAt.toDate().toLocaleString()}
+                                                    <div>
+                                                        <p className="text-xs text-slate-400 font-semibold">{d.label}</p>
+                                                        <p className="text-sm font-bold text-slate-700">
+                                                            {d.date.toLocaleDateString('es-MX', {day: 'numeric', month: 'short', year: 'numeric'})}
+                                                        </p>
                                                     </div>
+                                                </div>
+                                            ))}
+                                        </div>
 
-                                                    {submission.isGraded ? (
-                                                        <div className="mt-3 p-3 rounded-lg bg-white border">
-                                                            <div className="flex items-center justify-between mb-2">
-                                                                <span
-                                                                    className="font-medium text-gray-900">Calificación</span>
-                                                                <span
-                                                                    className={`text-xl font-bold ${getScoreColor(submission.score || 0)}`}>
-                                                                    {submission.score}/{task.maxScore}
+                                        {/* Submission section */}
+                                        {isSubmitted && submission ? (
+                                            <div className="rounded-xl border border-slate-100 bg-slate-50 p-4">
+                                                <div className="flex items-center justify-between mb-3">
+                                                    <p className="text-xs font-black text-slate-600 uppercase tracking-wide">Mi entrega</p>
+                                                    <span className="text-xs text-slate-400">
+                                                        {submission.submittedAt.toDate().toLocaleDateString('es-MX')}
+                                                    </span>
+                                                </div>
+                                                <a href={submission.submissionLink} target="_blank" rel="noopener noreferrer"
+                                                   className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 text-sm font-semibold mb-3 break-all transition-colors">
+                                                    <FiLink className="w-4 h-4 flex-shrink-0"/>
+                                                    {submission.submissionLink}
+                                                    <FiExternalLink className="w-3.5 h-3.5 flex-shrink-0"/>
+                                                </a>
+
+                                                {submission.isGraded && ss ? (
+                                                    <div className="mt-3 p-4 rounded-xl bg-white border border-slate-200">
+                                                        <div className="flex items-center justify-between mb-2">
+                                                            <span className="text-sm font-black text-slate-800">Calificación</span>
+                                                            <div className="flex items-center gap-2">
+                                                                <span className="text-2xl font-black" style={{color: ss.color}}>
+                                                                    {submission.score}
+                                                                </span>
+                                                                <span className="text-slate-400 font-semibold">/{task.maxScore}</span>
+                                                                <span className="px-2 py-0.5 rounded-full text-xs font-bold"
+                                                                      style={{background: ss.bg, color: ss.color}}>
+                                                                    {ss.label}
                                                                 </span>
                                                             </div>
-                                                            {submission.feedback && (
-                                                                <div className="mt-2">
-                                                                    <span
-                                                                        className="font-medium text-gray-700">Retroalimentación:</span>
-                                                                    <p className="text-gray-600 mt-1">{submission.feedback}</p>
-                                                                </div>
-                                                            )}
-                                                            <div className="text-xs text-gray-500 mt-2">
-                                                                Calificado: {submission.gradedAt?.toDate().toLocaleString()}
-                                                            </div>
                                                         </div>
-                                                    ) : (
-                                                        <div
-                                                            className="mt-3 p-3 rounded-lg bg-yellow-50 border border-yellow-200">
-                                                            <div className="flex items-center text-yellow-800">
-                                                                <FaClock className="mr-2"/>
-                                                                <span
-                                                                    className="font-medium">Pendiente de calificación</span>
+                                                        {submission.feedback && (
+                                                            <div className="mt-2 pt-2 border-t border-slate-100">
+                                                                <p className="text-xs font-semibold text-slate-500 mb-1">Retroalimentación</p>
+                                                                <p className="text-sm text-slate-700">{submission.feedback}</p>
                                                             </div>
-                                                        </div>
-                                                    )}
-                                                </div>
+                                                        )}
+                                                    </div>
+                                                ) : (
+                                                    <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-yellow-50 border border-yellow-200">
+                                                        <FiClock className="w-4 h-4 text-yellow-600 flex-shrink-0"/>
+                                                        <span className="text-sm font-semibold text-yellow-800">Pendiente de calificación</span>
+                                                    </div>
+                                                )}
                                             </div>
                                         ) : (
                                             <div className="flex justify-end">
-                                                {isTaskOpen(task) ? (
-                                                    <button
-                                                        onClick={() => {
-                                                            setSelectedTask(task);
-                                                            setShowSubmissionModal(true);
-                                                        }}
-                                                        className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors flex items-center gap-2"
-                                                    >
-                                                        <FaLink/>
-                                                        Entregar Tarea
+                                                {open ? (
+                                                    <button onClick={() => { setSelectedTask(task); setShowModal(true); }}
+                                                            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-white text-sm font-bold transition-all hover:opacity-90"
+                                                            style={{background: 'linear-gradient(135deg,#f97316,#ea580c)', boxShadow: '0 4px 12px rgba(249,115,22,0.35)'}}>
+                                                        <FiArrowUpRight className="w-4 h-4"/> Entregar tarea
                                                     </button>
                                                 ) : taskStatus.status === 'pending' ? (
-                                                    <div className="text-gray-500 text-sm flex items-center gap-2">
-                                                        <FaClock/>
-                                                        Aún no disponible
-                                                    </div>
+                                                    <span className="flex items-center gap-1.5 text-slate-400 text-sm font-medium">
+                                                        <FiClock className="w-4 h-4"/> Aún no disponible
+                                                    </span>
                                                 ) : (
-                                                    <div className="text-red-500 text-sm flex items-center gap-2">
-                                                        <FaExclamationTriangle/>
-                                                        Tiempo agotado
-                                                    </div>
+                                                    <span className="flex items-center gap-1.5 text-red-400 text-sm font-medium">
+                                                        <FiX className="w-4 h-4"/> Tiempo agotado
+                                                    </span>
                                                 )}
                                             </div>
                                         )}
                                     </div>
                                 </div>
                             );
-                        })
-                    ) : (
-                        <div className="bg-white rounded-lg shadow-lg p-8 text-center">
-                            <FaTasks className="mx-auto text-gray-300 text-4xl mb-4"/>
-                            <h3 className="text-lg font-medium text-gray-900 mb-2">No hay tareas disponibles</h3>
-                            <p className="text-gray-600">Las tareas aparecerán aquí cuando estén disponibles</p>
-                        </div>
-                    )}
-                </div>
-
-                {/* Submission Modal */}
-                {showSubmissionModal && selectedTask && (
-                    <div
-                        className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50 flex items-center justify-center">
-                        <div className="relative bg-white rounded-lg shadow-xl max-w-lg w-full mx-4">
-                            <div className="px-6 py-4 border-b border-gray-200">
-                                <h3 className="text-lg font-semibold text-gray-900">Entregar Tarea</h3>
-                                <p className="text-sm text-gray-600 mt-1">{selectedTask.title}</p>
-                            </div>
-                            <form onSubmit={handleSubmitTask} className="p-6">
-                                <div className="mb-4">
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                                        Link de tu tarea (Google Drive, OneDrive, etc.)
-                                    </label>
-                                    <input
-                                        type="url"
-                                        value={submissionLink}
-                                        onChange={(e) => setSubmissionLink(e.target.value)}
-                                        placeholder="https://drive.google.com/..."
-                                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                        required
-                                    />
-                                    <p className="text-xs text-gray-500 mt-1">
-                                        Asegúrate de que el link sea público o compartido con permisos de visualización
-                                    </p>
-                                </div>
-                                <div className="flex justify-end space-x-3">
-                                    <button
-                                        type="button"
-                                        onClick={() => {
-                                            setShowSubmissionModal(false);
-                                            setSelectedTask(null);
-                                            setSubmissionLink("");
-                                        }}
-                                        className="px-4 py-2 text-gray-700 bg-gray-200 hover:bg-gray-300 rounded-lg transition-colors"
-                                        disabled={submitting}
-                                    >
-                                        Cancelar
-                                    </button>
-                                    <button
-                                        type="submit"
-                                        className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors flex items-center gap-2"
-                                        disabled={submitting}
-                                    >
-                                        {submitting ? (
-                                            <>
-                                                <FaSpinner className="animate-spin"/>
-                                                Entregando...
-                                            </>
-                                        ) : (
-                                            <>
-                                                <FaCheckCircle/>
-                                                Entregar
-                                            </>
-                                        )}
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
+                        })}
                     </div>
                 )}
             </div>
+
+            {/* ── Submit modal ── */}
+            {showModal && selectedTask && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-4"
+                     style={{background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(4px)'}}>
+                    <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden">
+                        <div className="p-5 border-b border-slate-100">
+                            <h3 className="text-lg font-black text-slate-900">Entregar tarea</h3>
+                            <p className="text-sm text-slate-500 mt-0.5 truncate">{selectedTask.title}</p>
+                        </div>
+                        <form onSubmit={handleSubmitTask} className="p-5 space-y-4">
+                            <div>
+                                <label className="block text-xs font-semibold text-slate-600 mb-1.5">
+                                    Enlace de tu entrega
+                                </label>
+                                <div className="relative">
+                                    <FiLink className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 w-4 h-4"/>
+                                    <input
+                                        type="url" value={submissionLink} required
+                                        onChange={e => setSubmissionLink(e.target.value)}
+                                        placeholder="https://drive.google.com/..."
+                                        className="w-full pl-10 pr-4 py-3 rounded-xl border-2 border-slate-200 text-slate-800 text-sm font-medium outline-none transition-all focus:border-orange-400"
+                                    />
+                                </div>
+                                <p className="text-xs text-slate-400 mt-1.5 ml-1">
+                                    Asegúrate que el enlace sea público o con permisos de visualización
+                                </p>
+                            </div>
+                            <div className="flex gap-3 pt-1">
+                                <button type="button"
+                                        onClick={() => {setShowModal(false); setSelectedTask(null); setSubmissionLink('');}}
+                                        className="flex-1 py-3 rounded-xl border-2 border-slate-200 text-slate-600 font-semibold text-sm hover:bg-slate-50 transition-colors">
+                                    Cancelar
+                                </button>
+                                <button type="submit" disabled={submitting}
+                                        className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-white font-bold text-sm transition-all disabled:opacity-60"
+                                        style={{background: 'linear-gradient(135deg,#f97316,#ea580c)'}}>
+                                    {submitting
+                                        ? <><ImSpinner2 className="animate-spin w-4 h-4"/> Entregando...</>
+                                        : <><FiCheckCircle className="w-4 h-4"/> Entregar</>
+                                    }
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
