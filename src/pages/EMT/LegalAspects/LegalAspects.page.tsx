@@ -83,7 +83,6 @@ export default function LegalAspects() {
                                 <p className="text-center font-medium">Capítulo</p>
                             </a>
                         </div>
-
                         {/* Navegación por pestañas */}
                         <div className="mb-6 border-b border-gray-200 max-w-5xl mx-auto">
                             <nav className="flex space-x-2 overflow-x-auto">

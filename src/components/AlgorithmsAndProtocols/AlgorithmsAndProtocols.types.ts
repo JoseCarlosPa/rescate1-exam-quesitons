@@ -29,7 +29,9 @@ export interface Protocol {
     id: string;
     name: string;
     description: string;
-    category: string ;
+    category: string;
+    /** Fuente / referencia clínica del protocolo (solo para visualización en UI) */
+    source?: string;
     nodes: FlowNode[];
     edges: FlowEdge[];
 }

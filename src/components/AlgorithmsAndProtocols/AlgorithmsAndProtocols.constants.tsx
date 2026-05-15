@@ -6,7 +6,13 @@ import {
     viaAereaProtocol,
     shockProtocol,
     sindromeCoronarioProtocol,
-    acvProtocol
+    acvProtocol,
+    ovaceProtocol,
+    anafilaxiaProtocol,
+    crisisConvulsivaProtocol,
+    hipoglucemiaProtocol,
+    tceProtocol,
+    partoEmergenciaProtocol
 } from './AlgorithmsAndProtocols.additional.tsx';
 
 // Protocolos disponibles
@@ -17,6 +23,7 @@ export const patientEvaluationProtocol: Protocol = {
     name: "Evaluación del Paciente",
     description: "Algoritmo de evaluación inicial y secundaria del paciente en el ámbito prehospitalario",
     category: "basic",
+    source: "DOT/NHTSA National EMS Education Standards (2009)",
     nodes: [
         {
             id: 'escena',
@@ -127,7 +134,7 @@ export const patientEvaluationProtocol: Protocol = {
             data: {
                 label: (
                     <>
-                        <strong>Evaluación rápida trauma</strong>
+                        <strong>Evaluación rápida del paciente médico</strong>
                         <br/>*Línea basal de signos vitales
                         <br/>*Historial SAMPLE
                         <br/>*Reevaluar decisión de transporte
@@ -237,6 +244,7 @@ export const blsProtocol: Protocol = {
     name: "BLS - Soporte Vital Básico",
     description: "Protocolo de Soporte Vital Básico para la atención de pacientes en paro cardiorrespiratorio",
     category: "basic",
+    source: "AHA Basic Life Support Guidelines 2020",
     nodes: [
         {
             id: 'inicio',
@@ -447,6 +455,7 @@ export const xabcdeProtocol: Protocol = {
     name: "XABCDE",
     description: "Evaluación sistemática de pacientes críticos con el método XABCDE",
     category: "basic",
+    source: "PHTLS 10ª edición (2021) / NAEMSP 2023",
     nodes: [
         {
             id: 'inicio',
@@ -607,6 +616,7 @@ export const aclsProtocol: Protocol = {
     name: "ACLS - Soporte Vital Cardiovascular Avanzado",
     description: "Protocolo avanzado para la atención de emergencias cardiovasculares y paro cardíaco",
     category: "advanced",
+    source: "AHA ACLS Guidelines 2020",
     nodes: [
         {
             id: 'inicio',
@@ -836,6 +846,7 @@ export const phtlsProtocol: Protocol = {
     name: "PHTLS - Soporte Vital en Trauma Prehospitalario",
     description: "Enfoque sistemático para la evaluación y manejo del paciente politraumatizado",
     category: "trauma",
+    source: "PHTLS 10ª edición (2021)",
     nodes: [
         {
             id: 'inicio',
@@ -1012,7 +1023,13 @@ export const allProtocols: Protocol[] = [
     viaAereaProtocol,
     shockProtocol,
     sindromeCoronarioProtocol,
-    acvProtocol
+    acvProtocol,
+    ovaceProtocol,
+    anafilaxiaProtocol,
+    crisisConvulsivaProtocol,
+    hipoglucemiaProtocol,
+    tceProtocol,
+    partoEmergenciaProtocol,
 ];
 
 // Categorías de protocolos
@@ -1022,5 +1039,6 @@ export const protocolCategories = [
     {id: 'advanced', name: 'Avanzados'},
     {id: 'trauma', name: 'Trauma'},
     {id: 'medical', name: 'Médicos'},
-    {id: 'triage', name: 'Triage'}
+    {id: 'triage', name: 'Triage'},
+    {id: 'obstetric', name: 'Obstétrico'},
 ];

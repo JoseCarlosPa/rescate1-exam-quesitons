@@ -16,9 +16,9 @@ import {NavLink} from "react-router";
 import {AllRoutes} from "../Router/Router.constants";
 import {IoReturnDownBack} from "react-icons/io5";
 import {LuNetwork} from "react-icons/lu";
-import {FaBriefcaseMedical, FaInfoCircle, FaMedkit} from "react-icons/fa";
+import {FaBriefcaseMedical, FaInfoCircle, FaMedkit, FaTags, FaBookMedical} from "react-icons/fa";
 import {TbEmergencyBed} from "react-icons/tb";
-import {GiMedicalPack} from "react-icons/gi";
+import {GiMedicalPack, GiBabyFace} from "react-icons/gi";
 import {Protocol} from "./AlgorithmsAndProtocols.types.ts";
 
 export default function AlgorithmsAndProtocols() {
@@ -50,6 +50,10 @@ export default function AlgorithmsAndProtocols() {
                 return <TbEmergencyBed className="mr-2"/>;
             case 'medical':
                 return <GiMedicalPack className="mr-2"/>;
+            case 'triage':
+                return <FaTags className="mr-2"/>;
+            case 'obstetric':
+                return <GiBabyFace className="mr-2"/>;
             default:
                 return <LuNetwork className="mr-2"/>;
         }
@@ -148,10 +152,15 @@ export default function AlgorithmsAndProtocols() {
                                     <div>
                                         <h2 className="text-2xl font-bold mb-2">{selectedProtocol.name}</h2>
                                         <p className="text-gray-700">{selectedProtocol.description}</p>
-                                        <div className="mt-2 flex items-center">
-                                            <span className="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded-full">
-                                                Categoría: {protocolCategories.find((cat: any) => cat.id === selectedProtocol.category)?.name}
-                                            </span>
+                        <div className="mt-2 flex flex-wrap items-center gap-2">
+                                             <span className="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded-full">
+                                                 Categoría: {protocolCategories.find((cat: any) => cat.id === selectedProtocol.category)?.name}
+                                             </span>
+                                            {selectedProtocol.source && (
+                                                <span className="flex items-center gap-1 text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded-full">
+                                                    <FaBookMedical className="inline"/>&nbsp;{selectedProtocol.source}
+                                                </span>
+                                            )}
                                         </div>
                                     </div>
                                 </div>
