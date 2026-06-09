@@ -70,5 +70,8 @@ export enum AllRoutes {
     RAPID_RESPONSE = "/rapid-response",
     MEDICAL_QUIZ_ARENA = "/medical-quiz-arena",
     ROPE_RESCUE = "/rope-rescue",
-    AMBULANCE_CHECKLIST = "/checklist-ambulancia"
+    AMBULANCE_CHECKLIST = "/checklist-ambulancia",
+    TAMPA = '/tampa',
+    SIMULATOR = '/simulator',
+    ECG_MONITOR_SIMULATOR = '/simulator/ecg-monitor'
 }
