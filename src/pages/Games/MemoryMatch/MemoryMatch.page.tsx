@@ -21,13 +21,15 @@ export default function MemoryMatch() {
 
     // Timer
     useEffect(() => {
-        let interval: NodeJS.Timeout;
+        let interval: ReturnType<typeof setInterval> | undefined;
         if (gameStarted && !gameWon) {
             interval = setInterval(() => {
                 setStats(prev => ({ ...prev, timeElapsed: prev.timeElapsed + 1 }));
             }, 1000);
         }
-        return () => clearInterval(interval);
+        return () => {
+            if (interval) clearInterval(interval);
+        };
     }, [gameStarted, gameWon]);
 
     const initializeGame = useCallback((selectedDifficulty: GameDifficulty) => {

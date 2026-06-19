@@ -65,26 +65,6 @@ export default function Simulator() {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    // Load votes from LocalStorage on mount
-    useEffect(() => {
-        const storedVotes = localStorage.getItem("simulator_votes");
-        const storedHasVoted = localStorage.getItem("simulator_has_voted");
-        if (storedVotes) {
-            try {
-                setVotes(JSON.parse(storedVotes));
-            } catch (e) {
-                console.error("Error loading votes", e);
-            }
-        }
-        if (storedHasVoted) {
-            try {
-                setHasVoted(JSON.parse(storedHasVoted));
-            } catch (e) {
-                console.error("Error loading voting history", e);
-            }
-        }
-    }, []);
-
     const handleVote = (id: string) => {
         if (hasVoted[id]) {
             toast.info("Ya has votado por este simulador", {
@@ -147,7 +127,7 @@ export default function Simulator() {
             icon: <FaSyringe className="w-12 h-12" />,
             category: "Farmacología",
             difficulty: "Avanzado",
-            status: "próximamente",
+            status: "en desarrollo",
             features: [
                 "Programación de flujo en mL/h y dosificación por peso (mcg/kg/min)",
                 "Vademécum prehospitalario incorporado (Adrenalina, Dopamina, Fentanilo, Amiodarona, etc.)",
@@ -295,6 +275,12 @@ export default function Simulator() {
         return base + (votes[id] || 0);
     };
 
+    const getSimulatorRoute = (id: string) => {
+        if (id === "cardiac-monitor") return AllRoutes.ECG_MONITOR_SIMULATOR;
+        if (id === "infusion-pump") return AllRoutes.INFUSION_PUMP_SIMULATOR;
+        return null;
+    };
+
     return (
         <SEOWrapper
             title="Simuladores Clínicos y Médicos - EMT EXAM"
@@ -381,7 +367,6 @@ export default function Simulator() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                         {filteredSimulators.length > 0 ? (
                             filteredSimulators.map((sim, index) => {
-                                const voted = hasVoted[sim.id];
                                 return (
                                     <div
                                         key={sim.id}
@@ -430,12 +415,16 @@ export default function Simulator() {
                                             </div>
 
                                             <div className="flex gap-2">
-                                                {sim.id === "cardiac-monitor" ? (
+                                                {getSimulatorRoute(sim.id) ? (
                                                     <NavLink
-                                                        to={AllRoutes.ECG_MONITOR_SIMULATOR}
-                                                        className="flex-1 py-2.5 bg-gradient-to-r from-rose-500 to-red-600 hover:opacity-90 text-white font-bold rounded-xl text-sm transition-all flex items-center justify-center gap-1.5 shadow-md"
+                                                        to={getSimulatorRoute(sim.id) || AllRoutes.SIMULATOR}
+                                                        className={`flex-1 py-2.5 hover:opacity-90 text-white font-bold rounded-xl text-sm transition-all flex items-center justify-center gap-1.5 shadow-md ${
+                                                            sim.id === "cardiac-monitor"
+                                                                ? "bg-gradient-to-r from-rose-500 to-red-600"
+                                                                : "bg-gradient-to-r from-cyan-500 to-blue-600"
+                                                        }`}
                                                     >
-                                                        <FaHeartbeat className="text-sm" />
+                                                        {sim.id === "cardiac-monitor" ? <FaHeartbeat className="text-sm" /> : <FaSyringe className="text-sm" />}
                                                         <span>Abrir Simulador</span>
                                                     </NavLink>
                                                 ) : (
@@ -447,17 +436,6 @@ export default function Simulator() {
                                                         <span>Detalles</span>
                                                     </button>
                                                 )}
-                                                <button
-                                                    onClick={() => handleVote(sim.id)}
-                                                    className={`flex-1 py-2.5 font-bold rounded-xl text-sm transition-all flex items-center justify-center gap-1.5 ${
-                                                        voted 
-                                                            ? "bg-green-500 text-white shadow-inner cursor-default" 
-                                                            : `bg-gradient-to-r ${sim.colorTheme.gradient} hover:opacity-90 text-white shadow-md shadow-indigo-100`
-                                                    }`}
-                                                >
-                                                    <FaVoteYea className="text-sm" />
-                                                    <span>{voted ? "Votado" : "Votar"}</span>
-                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -549,6 +527,16 @@ export default function Simulator() {
                                     <FaVoteYea className="text-indigo-500 text-sm" />
                                     <span>{getVotesCount(selectedSimulator.id, selectedSimulator.baseVotes)} personas interesadas</span>
                                 </div>
+                                {getSimulatorRoute(selectedSimulator.id) ? (
+                                    <NavLink
+                                        to={getSimulatorRoute(selectedSimulator.id) || AllRoutes.SIMULATOR}
+                                        onClick={() => setSelectedSimulator(null)}
+                                        className="px-5 py-2.5 font-bold rounded-xl text-sm transition-all flex items-center gap-1.5 bg-gradient-to-r from-cyan-600 to-blue-700 hover:opacity-90 text-white shadow-md"
+                                    >
+                                        {selectedSimulator.id === "cardiac-monitor" ? <FaHeartbeat className="text-base" /> : <FaSyringe className="text-base" />}
+                                        <span>Abrir simulador</span>
+                                    </NavLink>
+                                ) : null}
                                 <button
                                     onClick={() => {
                                         handleVote(selectedSimulator.id);

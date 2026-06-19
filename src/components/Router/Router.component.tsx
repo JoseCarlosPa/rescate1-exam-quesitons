@@ -164,6 +164,7 @@ import { ropeRescueQuestions, ropeRescueChallengeQuestions } from "../../pages/R
 import AmbulanceChecklist from "../../pages/AmbulanceChecklist/AmbulanceChecklist.page.tsx";
 import Simulator from "../../pages/Simulator/Simulator.page.tsx";
 import MonitorAndEkgSimulator from "../../pages/Simulator/MonitorAndEkgSimulator/MonitorAndEkgSimulator.page.tsx";
+import InfusionPumpSimulator from "../../pages/Simulator/InfusionPumpSimulator/InfusionPumpSimulator.page.tsx";
 
 export default function Router() {
        return (
@@ -406,6 +407,7 @@ export default function Router() {
 
                             <Route path={AllRoutes.SIMULATOR} element={<Simulator />} />
                             <Route path={AllRoutes.ECG_MONITOR_SIMULATOR} element={<MonitorAndEkgSimulator />} />
+                            <Route path={AllRoutes.INFUSION_PUMP_SIMULATOR} element={<InfusionPumpSimulator />} />
 
                             {/* Ambulance Checklist */}
                             <Route path={AllRoutes.AMBULANCE_CHECKLIST} element={<AmbulanceChecklist />} />

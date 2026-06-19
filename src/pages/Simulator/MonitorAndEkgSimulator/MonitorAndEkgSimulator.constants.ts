@@ -1,4 +1,4 @@
-import type { EcgScenario, RhythmType } from './MonitorAndEkgSimulator.types';
+import type { EcgScenario, LeadType, MonitorType, ProtocolProfile, RhythmType, TwelveLeadReport } from './MonitorAndEkgSimulator.types';
 
 // ──────────────────────────────────────────────
 // Energy levels per monitor type
@@ -6,7 +6,30 @@ import type { EcgScenario, RhythmType } from './MonitorAndEkgSimulator.types';
 export const ZOLL_ENERGY_LEVELS = [1, 2, 3, 5, 7, 10, 20, 30, 50, 70, 100, 120, 150, 200];
 export const LIFEPAK_ENERGY_LEVELS = [1, 2, 3, 5, 7, 10, 20, 30, 50, 70, 100, 120, 150, 200, 300, 360];
 
-export const LEAD_OPTIONS = ['I', 'II', 'III', 'aVR', 'aVL', 'aVF'];
+export const LEAD_OPTIONS: LeadType[] = ['I', 'II', 'III', 'aVR', 'aVL', 'aVF', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6'];
+
+const LEAD_PROFILE: Record<LeadType, { gain: number; invert: boolean; baseline: number; morph: number }> = {
+    I: { gain: 0.92, invert: false, baseline: 0.0, morph: 0.010 },
+    II: { gain: 1.0, invert: false, baseline: 0.0, morph: 0.012 },
+    III: { gain: 0.78, invert: false, baseline: 0.0, morph: 0.010 },
+    aVR: { gain: 0.72, invert: true, baseline: 0.0, morph: 0.008 },
+    aVL: { gain: 0.64, invert: false, baseline: 0.0, morph: 0.008 },
+    aVF: { gain: 0.88, invert: false, baseline: 0.0, morph: 0.010 },
+    V1: { gain: 0.72, invert: true, baseline: -0.005, morph: 0.012 },
+    V2: { gain: 0.84, invert: true, baseline: -0.004, morph: 0.012 },
+    V3: { gain: 0.96, invert: false, baseline: -0.002, morph: 0.011 },
+    V4: { gain: 1.06, invert: false, baseline: 0.0, morph: 0.010 },
+    V5: { gain: 1.0, invert: false, baseline: 0.001, morph: 0.009 },
+    V6: { gain: 0.92, invert: false, baseline: 0.002, morph: 0.009 },
+};
+
+function applyLeadMorphology(base: number, time: number, hr: number, lead: LeadType): number {
+    const profile = LEAD_PROFILE[lead];
+    const beatHz = Math.max(0.6, hr / 60);
+    const morphShift = Math.sin(time * 2 * Math.PI * beatHz) * profile.morph;
+    const transformed = (profile.invert ? -base : base) * profile.gain;
+    return transformed + morphShift + profile.baseline;
+}
 
 export const ALARM_THRESHOLDS = {
     hrHigh: 150,
@@ -22,6 +45,28 @@ export const PACER_CURRENT_MAX = 200;
 export const PACER_CURRENT_STEP = 5;
 
 export const DISPLAY_SECONDS = 6;
+
+export const HYBRID_PROTOCOL_PROFILE: ProtocolProfile = {
+    id: 'hybrid_acl_local',
+    name: 'Hibrido ACLS (AHA + protocolo local)',
+    sources: ['AHA', 'LOCAL'],
+    syncRequiredForCardioversion: true,
+    energyToleranceJ: 30,
+    criticalTimeToFirstShockSec: 120,
+};
+
+export const EVALUATION_START_SCORE = 100;
+export const EVALUATION_MIN_SCORE = 0;
+
+export function clampScore(score: number): number {
+    return Math.max(EVALUATION_MIN_SCORE, Math.round(score));
+}
+
+export function isScenarioCardioversionCandidate(scenario: EcgScenario): boolean {
+    return ['atrial', 'ventricular'].includes(scenario.category)
+        && !scenario.isShockable
+        && scenario.recommendedEnergy !== null;
+}
 
 // ──────────────────────────────────────────────
 // Waveform generation helpers
@@ -248,6 +293,11 @@ export function generateEcgValue(time: number, rhythmType: RhythmType, hr: numbe
     }
 }
 
+export function generateLeadEcgValue(time: number, rhythmType: RhythmType, hr: number, lead: LeadType): number {
+    const base = generateEcgValue(time, rhythmType, hr);
+    return applyLeadMorphology(base, time, hr, lead);
+}
+
 // ──────────────────────────────────────────────
 // Pacer spike generator
 // ──────────────────────────────────────────────
@@ -258,6 +308,31 @@ export function generatePacerSpike(time: number, paceRate: number): number {
     if (phase < 0.005) return 0.95;
     if (phase < 0.008) return -0.2;
     return 0;
+}
+
+export function generateTwelveLeadReport(
+    rhythm: RhythmType,
+    heartRate: number,
+    monitor: MonitorType,
+): TwelveLeadReport {
+    const seconds = 2.5;
+    const samplesPerLead = 240;
+    const strips = LEAD_OPTIONS.map((lead) => {
+        const samples: number[] = [];
+        for (let i = 0; i < samplesPerLead; i++) {
+            const t = (i / samplesPerLead) * seconds;
+            samples.push(generateLeadEcgValue(t, rhythm, heartRate, lead));
+        }
+        return { lead, samples };
+    });
+
+    return {
+        generatedAt: Date.now(),
+        rhythm,
+        heartRate,
+        monitor,
+        strips,
+    };
 }
 
 // ──────────────────────────────────────────────

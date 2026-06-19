@@ -32,7 +32,7 @@ export default function RapidResponse() {
         questionType: 'normal',
     });
 
-    const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
+    const [timer, setTimer] = useState<ReturnType<typeof setInterval> | null>(null);
 
     // Función para mezclar las opciones de respuesta
     const shuffleOptions = (question: RapidResponseQuestion): RapidResponseQuestion => {

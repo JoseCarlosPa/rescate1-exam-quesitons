@@ -73,5 +73,6 @@ export enum AllRoutes {
     AMBULANCE_CHECKLIST = "/checklist-ambulancia",
     TAMPA = '/tampa',
     SIMULATOR = '/simulator',
-    ECG_MONITOR_SIMULATOR = '/simulator/ecg-monitor'
+    ECG_MONITOR_SIMULATOR = '/simulator/ecg-monitor',
+    INFUSION_PUMP_SIMULATOR = '/simulator/infusion-pump'
 }

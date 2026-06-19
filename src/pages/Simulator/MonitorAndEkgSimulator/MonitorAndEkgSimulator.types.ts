@@ -1,5 +1,20 @@
 export type MonitorType = 'zoll' | 'lifepak';
 
+export type SimulationMode = 'practice' | 'evaluation';
+
+export type LeadType = 'I' | 'II' | 'III' | 'aVR' | 'aVL' | 'aVF' | 'V1' | 'V2' | 'V3' | 'V4' | 'V5' | 'V6';
+
+export type ProtocolSource = 'AHA' | 'LOCAL';
+
+export interface ProtocolProfile {
+    id: string;
+    name: string;
+    sources: ProtocolSource[];
+    syncRequiredForCardioversion: boolean;
+    energyToleranceJ: number;
+    criticalTimeToFirstShockSec: number;
+}
+
 export type RhythmType =
     | 'normal_sinus'
     | 'sinus_tachycardia'
@@ -55,3 +70,47 @@ export interface AlarmState {
     spo2Low: boolean;
     muted: boolean;
 }
+
+export interface EvaluationEvent {
+    id: string;
+    timestamp: number;
+    action: string;
+    detail: string;
+    points: number;
+    critical: boolean;
+}
+
+export interface EvaluationState {
+    active: boolean;
+    completed: boolean;
+    startedAt: number | null;
+    finishedAt: number | null;
+    score: number;
+    criticalErrors: number;
+    events: EvaluationEvent[];
+}
+
+export interface NibpState {
+    measuring: boolean;
+    autoCycle: boolean;
+    intervalSec: number;
+    lastReadingAt: number | null;
+    reading: {
+        systolic: number;
+        diastolic: number;
+    } | null;
+}
+
+export interface LeadPrintout {
+    lead: LeadType;
+    samples: number[];
+}
+
+export interface TwelveLeadReport {
+    generatedAt: number;
+    rhythm: RhythmType;
+    heartRate: number;
+    monitor: MonitorType;
+    strips: LeadPrintout[];
+}
+

@@ -25,7 +25,7 @@ export default function Trivia() {
 
     // Timer
     useEffect(() => {
-        let interval: NodeJS.Timeout;
+        let interval: ReturnType<typeof setInterval> | undefined;
         if (gameStarted && !isGameOver && !isPaused && timeRemaining > 0) {
             interval = setInterval(() => {
                 setTimeRemaining(prev => {
@@ -37,7 +37,9 @@ export default function Trivia() {
                 });
             }, 1000);
         }
-        return () => clearInterval(interval);
+        return () => {
+            if (interval) clearInterval(interval);
+        };
     }, [gameStarted, isGameOver, isPaused, timeRemaining]);
 
     const convertToTriviaQuestion = (q: any): TriviaQuestion => ({
