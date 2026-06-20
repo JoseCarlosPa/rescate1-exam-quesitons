@@ -1,4 +1,7 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
+import bipSrc from '../../../assets/audio/bip.mp3';
+import unhealthySrc from '../../../assets/audio/unhealthy.mp3';
+import deadSrc from '../../../assets/audio/dead.mp3';
 import type {
     MonitorType,
     VitalSigns,
@@ -31,6 +34,7 @@ import {
     generatePlethValue,
     generatePacerSpike,
 } from './MonitorAndEkgSimulator.constants';
+import { useEkgSession } from './useEkgSession.hook';
 
 // ──────────────────────────────────────────────
 // Canvas drawing helpers
@@ -59,7 +63,15 @@ function drawGrid(ctx: CanvasRenderingContext2D, w: number, h: number) {
 // ──────────────────────────────────────────────
 // Main hook
 // ──────────────────────────────────────────────
-export default function useMonitorSimulator() {
+export default function useMonitorSimulator(liveSessionId?: string) {
+    // ── Session sync ────────────────────────────
+    const { sessionData, deliverShock, attachSession } = useEkgSession();
+    useEffect(() => {
+        if (liveSessionId) attachSession(liveSessionId);
+    }, [liveSessionId, attachSession]);
+
+    const isLiveSession = Boolean(liveSessionId);
+
     // ── Core state ──────────────────────────────
     const [monitorType, setMonitorType] = useState<MonitorType | null>(null);
     const [simulationMode, setSimulationMode] = useState<SimulationMode>('practice');
@@ -115,6 +127,52 @@ export default function useMonitorSimulator() {
     const timeRef = useRef(0);
     const lastTsRef = useRef(0);
     const animIdRef = useRef(0);
+
+    // ── Audio ────────────────────────────────────
+    const bipBufferRef = useRef<AudioBuffer | null>(null);
+    const unhealthyBufferRef = useRef<AudioBuffer | null>(null);
+    const deadBufferRef = useRef<AudioBuffer | null>(null);
+    const audioCtxRef = useRef<AudioContext | null>(null);
+    const lastBeatSecRef = useRef(-1);
+    const lastAlarmSecRef = useRef(-1);
+    const alarmsMutedRef = useRef(alarmsMuted);
+    useEffect(() => { alarmsMutedRef.current = alarmsMuted; }, [alarmsMuted]);
+
+    useEffect(() => {
+        const ctx = new AudioContext();
+        audioCtxRef.current = ctx;
+        const load = (src: string) =>
+            fetch(src).then(r => r.arrayBuffer()).then(ab => ctx.decodeAudioData(ab)).catch(() => null);
+        load(bipSrc).then(buf => { if (buf) bipBufferRef.current = buf; });
+        load(unhealthySrc).then(buf => { if (buf) unhealthyBufferRef.current = buf; });
+        load(deadSrc).then(buf => { if (buf) deadBufferRef.current = buf; });
+        return () => { ctx.close(); };
+    }, []);
+
+    // ── Live session sync ────────────────────────
+    useEffect(() => {
+        if (!isLiveSession || !sessionData) return;
+        const remoteScenario = ECG_SCENARIOS.find(s => s.rhythmType === sessionData.scenario.rhythmType);
+        if (remoteScenario && remoteScenario.id !== currentScenario.id) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
+            setCurrentScenario(remoteScenario);
+            timeRef.current = 0;
+            posRef.current = 0;
+            lastTsRef.current = 0;
+            if (ecgBufferRef.current.length > 0) ecgBufferRef.current.fill(0);
+            if (plethBufferRef.current.length > 0) plethBufferRef.current.fill(0);
+        }
+        if (sessionData.monitorType && !monitorType) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
+            setMonitorType(sessionData.monitorType);
+        }
+    }, [sessionData, isLiveSession, currentScenario.id, monitorType]);
+
+    useEffect(() => {
+        if (!isLiveSession || !sessionData?.scenario?.vitals) return;
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        setDisplayVitals(sessionData.scenario.vitals);
+    }, [sessionData?.scenario?.vitals, isLiveSession]);
 
     // ── Energy levels for current monitor ───────
     const energyLevels = monitorType === 'lifepak' ? LIFEPAK_ENERGY_LEVELS : ZOLL_ENERGY_LEVELS;
@@ -230,9 +288,10 @@ export default function useMonitorSimulator() {
     // Vital signs fluctuation
     // ──────────────────────────────────────────────
     useEffect(() => {
-        if (!isOn) return;
+        if (!isOn || isLiveSession) return;
         const id = setInterval(() => {
             const base = currentScenario.defaultVitals;
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setDisplayVitals({
                 hr: base.hr > 0 ? base.hr + Math.round((Math.random() - 0.5) * 4) : 0,
                 spo2: base.spo2 > 0 ? Math.min(100, Math.max(0, base.spo2 + Math.round((Math.random() - 0.5) * 2))) : 0,
@@ -244,7 +303,7 @@ export default function useMonitorSimulator() {
             });
         }, 2500);
         return () => clearInterval(id);
-    }, [isOn, currentScenario]);
+    }, [isOn, isLiveSession, currentScenario]);
 
     const performNibpMeasurement = useCallback(() => {
         if (!isOn || nibp.measuring) return;
@@ -291,6 +350,9 @@ export default function useMonitorSimulator() {
             muted: alarmsMuted,
         };
     }, [displayVitals, alarmsMuted]);
+
+    const alarmsRef = useRef(alarms);
+    useEffect(() => { alarmsRef.current = alarms; }, [alarms]);
 
     // ──────────────────────────────────────────────
     // Canvas animation loop
@@ -350,6 +412,40 @@ export default function useMonitorSimulator() {
             const hr = currentScenario.defaultVitals.hr;
             const rhythm = currentScenario.rhythmType;
             const beatDuration = hr > 0 ? 60 / hr : 999;
+
+            // ── Beep sync ──────────────────────
+            if (hr > 0 && !alarmsMutedRef.current && bipBufferRef.current && audioCtxRef.current) {
+                const currentBeat = Math.floor(timeRef.current / beatDuration);
+                if (currentBeat !== lastBeatSecRef.current) {
+                    lastBeatSecRef.current = currentBeat;
+                    const ctx = audioCtxRef.current;
+                    const src = ctx.createBufferSource();
+                    src.buffer = bipBufferRef.current;
+                    src.connect(ctx.destination);
+                    src.start();
+                }
+            }
+
+            // ── Alarm sounds ────────────────────
+            if (!alarmsMutedRef.current && audioCtxRef.current) {
+                const ctx = audioCtxRef.current;
+                const a = alarmsRef.current;
+                const isVitalAlarm = a.hrHigh || a.hrLow || a.spo2Low;
+                const isDead = hr === 0;
+                // fire every ~1 s for vital alarms, ~2 s for flatline
+                const alarmInterval = isDead ? 2 : 1;
+                const alarmTick = Math.floor(timeRef.current / alarmInterval);
+                if (alarmTick !== lastAlarmSecRef.current) {
+                    lastAlarmSecRef.current = alarmTick;
+                    const buf = isDead ? deadBufferRef.current : isVitalAlarm ? unhealthyBufferRef.current : null;
+                    if (buf) {
+                        const src = ctx.createBufferSource();
+                        src.buffer = buf;
+                        src.connect(ctx.destination);
+                        src.start();
+                    }
+                }
+            }
 
             for (let i = 0; i < advance; i++) {
                 timeRef.current += 1 / pixPerSec;
@@ -507,6 +603,10 @@ export default function useMonitorSimulator() {
             registerEvaluationAction('SHOCK_NON_SHOCKABLE', `Descarga inapropiada en ${currentScenario.shortName}`, -15, true);
         }
 
+        if (isLiveSession && liveSessionId) {
+            deliverShock(liveSessionId, energy, syncMode).catch(() => {});
+        }
+
         setShockDelivered(true);
         setIsCharged(false);
         setDefiMessage(`⚡ DESCARGA ${energy}J ENTREGADA`);
@@ -523,6 +623,9 @@ export default function useMonitorSimulator() {
         evaluation.active,
         evaluation.startedAt,
         registerEvaluationAction,
+        isLiveSession,
+        liveSessionId,
+        deliverShock,
     ]);
 
     const toggleSync = useCallback(() => {
@@ -604,6 +707,7 @@ export default function useMonitorSimulator() {
         // Monitor
         monitorType, setMonitorType, simulationMode, setSimulationMode, isOn, togglePower,
         protocolProfile: HYBRID_PROTOCOL_PROFILE,
+        isLiveSession,
         // Scenario
         currentScenario, selectScenario, scenarios: ECG_SCENARIOS,
         // Vitals

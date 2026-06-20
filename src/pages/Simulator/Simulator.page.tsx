@@ -406,13 +406,6 @@ export default function Simulator() {
 
                                         {/* Bottom Details & Button Grid */}
                                         <div className="mt-auto p-6 pt-2 border-t border-slate-50 bg-slate-50/50 flex flex-col gap-4">
-                                            <div className="flex items-center justify-between text-xs font-semibold text-slate-400">
-                                                <span>Dificultad: <strong className="text-slate-600 font-bold">{sim.difficulty}</strong></span>
-                                                <span className="flex items-center gap-1">
-                                                    <FaVoteYea className="text-indigo-500 text-sm" /> 
-                                                    <strong className="text-slate-600 font-bold">{getVotesCount(sim.id, sim.baseVotes)}</strong> votos
-                                                </span>
-                                            </div>
 
                                             <div className="flex gap-2">
                                                 {getSimulatorRoute(sim.id) ? (

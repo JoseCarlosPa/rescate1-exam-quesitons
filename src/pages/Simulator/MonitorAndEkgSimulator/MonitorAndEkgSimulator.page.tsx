@@ -1,10 +1,11 @@
 import { useMemo, useState } from 'react';
-import { NavLink } from 'react-router';
+import { NavLink, useSearchParams } from 'react-router';
 import { jsPDF } from 'jspdf';
 import {
     FaArrowLeft, FaHeartbeat, FaPowerOff, FaBolt,
     FaChevronLeft, FaChevronRight, FaInfoCircle,
-    FaList, FaVolumeMute, FaVolumeUp, FaClipboardCheck,
+    FaList, FaVolumeMute, FaVolumeUp, FaClipboardCheck, FaChalkboardTeacher,
+    FaExpand, FaCompress, FaPrint,
 } from 'react-icons/fa';
 import { MdSync, MdSyncDisabled } from 'react-icons/md';
 import { GiHeartBeats } from 'react-icons/gi';
@@ -79,9 +80,12 @@ function buildLongLead(samples: number[], repeat: number = 4): number[] {
 }
 
 export default function MonitorAndEkgSimulator() {
+    const [searchParams] = useSearchParams();
+    const liveSessionId = searchParams.get('session') ?? undefined;
+
     const {
         monitorType, setMonitorType, simulationMode, setSimulationMode, isOn, togglePower,
-        protocolProfile,
+        protocolProfile, isLiveSession,
         currentScenario, selectScenario, scenarios,
         displayVitals,
         energy, isCharging, isCharged, syncMode, shockDelivered, defiMessage,
@@ -94,9 +98,10 @@ export default function MonitorAndEkgSimulator() {
         showScenarioPanel, toggleScenarioPanel, showInfoPanel, toggleInfoPanel,
         evaluation, evaluationElapsedSeconds, startEvaluation, finishEvaluation, resetEvaluation,
         ecgCanvasRef, plethCanvasRef,
-    } = useMonitorSimulator();
+    } = useMonitorSimulator(liveSessionId);
     const [showTwelveLeadReport, setShowTwelveLeadReport] = useState(false);
     const [twelveLeadReport, setTwelveLeadReport] = useState<TwelveLeadReport | null>(null);
+    const [isFullscreen, setIsFullscreen] = useState(false);
     const [printMeta, setPrintMeta] = useState({
         patientName: 'Paciente Simulado',
         patientId: 'SIM-001',
@@ -109,6 +114,22 @@ export default function MonitorAndEkgSimulator() {
         const mm = Math.floor(seconds / 60);
         const ss = seconds % 60;
         return `${mm}:${ss.toString().padStart(2, '0')}`;
+    };
+
+    const toggleFullscreen = () => {
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen().then(() => setIsFullscreen(true)).catch(() => {});
+        } else {
+            document.exitFullscreen().then(() => setIsFullscreen(false)).catch(() => {});
+        }
+    };
+
+    const handlePrintTwelveLead = () => {
+        const report = createTwelveLeadReport();
+        if (!report) return;
+        setTwelveLeadReport(report);
+        setShowTwelveLeadReport(true);
+        setTimeout(() => window.print(), 400);
     };
 
     const handleGenerateTwelveLeadReport = () => {
@@ -146,13 +167,24 @@ export default function MonitorAndEkgSimulator() {
 
         const stripMap = new Map(twelveLeadReport.strips.map((s) => [s.lead, s.samples]));
 
+        const drawEcgGridPdf = (bx: number, by: number, bw: number, bh: number) => {
+            const small = 1; const big = 5;
+            doc.setDrawColor(255, 180, 180); doc.setLineWidth(0.1);
+            for (let dx = 0; dx <= bw; dx += small) { doc.line(bx + dx, by, bx + dx, by + bh); }
+            for (let dy = 0; dy <= bh; dy += small) { doc.line(bx, by + dy, bx + bw, by + dy); }
+            doc.setDrawColor(220, 100, 100); doc.setLineWidth(0.25);
+            for (let dx = 0; dx <= bw; dx += big) { doc.line(bx + dx, by, bx + dx, by + bh); }
+            for (let dy = 0; dy <= bh; dy += big) { doc.line(bx, by + dy, bx + bw, by + dy); }
+        };
+
         TWELVE_LEAD_LAYOUT.forEach((row, r) => {
             row.forEach((lead, c) => {
                 const x = margin + c * boxW;
                 const y = rowStartY + r * boxH;
                 const samples = stripMap.get(lead) ?? [];
 
-                doc.setDrawColor(230, 230, 230);
+                drawEcgGridPdf(x, y, boxW, boxH);
+                doc.setDrawColor(180, 180, 180); doc.setLineWidth(0.3);
                 doc.rect(x, y, boxW, boxH);
                 doc.setFontSize(8);
                 doc.setTextColor(60, 60, 60);
@@ -177,10 +209,11 @@ export default function MonitorAndEkgSimulator() {
         const longLead = stripMap.get('II') ?? [];
         const longY = rowStartY + TWELVE_LEAD_LAYOUT.length * boxH + 2;
         const longH = 56;
-        doc.setDrawColor(220, 220, 220);
+        drawEcgGridPdf(margin, longY, pageW - margin * 2, longH);
+        doc.setDrawColor(180, 180, 180); doc.setLineWidth(0.3);
         doc.rect(margin, longY, pageW - margin * 2, longH);
         doc.setFontSize(8);
-        doc.text('Ritmo largo II', margin + 1.5, longY + 3.5);
+        doc.text('Ritmo largo — Derivación II', margin + 1.5, longY + 3.5);
         drawCalibrationPulsePdf(doc, margin + 2, longY + longH - 2);
 
         if (longLead.length > 1) {
@@ -366,13 +399,22 @@ export default function MonitorAndEkgSimulator() {
                             <p className="text-teal-200 text-lg max-w-2xl mx-auto mb-6">
                                 Elige tu modelo de monitor-desfibrilador y domina la lectura de ritmos, desfibrilación y marcapasos transcutáneo.
                             </p>
-                            <NavLink
-                                to={AllRoutes.SIMULATOR}
-                                className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-full px-5 py-2.5 hover:bg-white/20 transition-all font-semibold"
-                            >
-                                <FaArrowLeft />
-                                Regresar a simuladores
-                            </NavLink>
+                            <div className="flex flex-wrap items-center justify-center gap-3">
+                                <NavLink
+                                    to={AllRoutes.SIMULATOR}
+                                    className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-full px-5 py-2.5 hover:bg-white/20 transition-all font-semibold"
+                                >
+                                    <FaArrowLeft />
+                                    Regresar a simuladores
+                                </NavLink>
+                                <NavLink
+                                    to={AllRoutes.ECG_INSTRUCTOR}
+                                    className="inline-flex items-center gap-2 bg-emerald-600/80 backdrop-blur-sm border border-emerald-400/30 text-white rounded-full px-5 py-2.5 hover:bg-emerald-600 transition-all font-semibold"
+                                >
+                                    <FaChalkboardTeacher />
+                                    Modo Instructor
+                                </NavLink>
+                            </div>
                         </div>
                     </div>
 
@@ -497,10 +539,17 @@ export default function MonitorAndEkgSimulator() {
                         </span>
                     </div>
                     <div className="flex items-center gap-2">
-                        <span className={`px-2.5 py-1 rounded-lg text-[10px] font-bold uppercase tracking-widest ${simulationMode === 'evaluation' ? 'bg-violet-900/40 text-violet-300 border border-violet-600/30' : 'bg-emerald-900/40 text-emerald-300 border border-emerald-600/30'}`}>
-                            {simulationMode === 'evaluation' ? 'Evaluacion' : 'Practica'}
-                        </span>
-                        <button onClick={toggleScenarioPanel} className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${showScenarioPanel ? (isZoll ? 'bg-blue-600 text-white' : 'bg-amber-600 text-white') : 'bg-gray-800 text-gray-400 hover:text-white'}`}>
+                        {isLiveSession && (
+                            <span className="px-2.5 py-1 rounded-lg text-[10px] font-bold uppercase tracking-widest bg-emerald-800/60 text-emerald-300 border border-emerald-600/30 animate-pulse">
+                                ● En vivo con instructor
+                            </span>
+                        )}
+                        {!isLiveSession && (
+                            <span className={`px-2.5 py-1 rounded-lg text-[10px] font-bold uppercase tracking-widest ${simulationMode === 'evaluation' ? 'bg-violet-900/40 text-violet-300 border border-violet-600/30' : 'bg-emerald-900/40 text-emerald-300 border border-emerald-600/30'}`}>
+                                {simulationMode === 'evaluation' ? 'Evaluacion' : 'Practica'}
+                            </span>
+                        )}
+                        <button onClick={toggleScenarioPanel} disabled={isLiveSession} className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${isLiveSession ? 'hidden' : showScenarioPanel ? (isZoll ? 'bg-blue-600 text-white' : 'bg-amber-600 text-white') : 'bg-gray-800 text-gray-400 hover:text-white'}`}>
                             <FaList className="text-xs" />
                             <span className="hidden sm:inline">Escenarios</span>
                         </button>
@@ -522,7 +571,7 @@ export default function MonitorAndEkgSimulator() {
                 <div className="flex flex-1 overflow-hidden">
 
                     {/* ── Monitor Area ── */}
-                    <div className="flex-1 flex flex-col min-w-0">
+                    <div className="flex-1 flex flex-col min-w-0 relative">
 
                         {/* Alarm banner */}
                         {alarmActive && (
@@ -549,10 +598,16 @@ export default function MonitorAndEkgSimulator() {
                         )}
 
                         {/* ── Monitor screen ── */}
-                        <div className={`flex flex-col md:flex-row flex-1 ${isOn ? '' : 'opacity-20'}`}>
+                        <div className="flex flex-col lg:flex-row flex-1">
+                            {/* Monitor OFF overlay */}
+                            {!isOn && (
+                                <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
+                                    <span className="text-gray-500 text-2xl font-black tracking-[0.3em] opacity-60">MONITOR APAGADO</span>
+                                </div>
+                            )}
 
                             {/* Waveforms column */}
-                            <div className="flex-1 flex flex-col min-w-0 p-2 gap-1">
+                            <div className={`flex-1 flex flex-col min-w-0 p-2 gap-1 transition-opacity ${isOn ? 'opacity-100' : 'opacity-10'}`}>
                                 {/* ECG label */}
                                 <div className="flex items-center justify-between px-2">
                                     <span className="text-green-500 text-xs font-bold tracking-wider">ECG · {leadSelection} · {sweepSpeed}mm/s</span>
@@ -561,10 +616,11 @@ export default function MonitorAndEkgSimulator() {
                                     </span>
                                 </div>
                                 {/* ECG Canvas */}
-                                <div className="flex-1 min-h-[140px] md:min-h-[200px] rounded-lg overflow-hidden border border-green-900/30">
+                                <div className="flex-1 min-h-[180px] lg:min-h-[220px] rounded-lg overflow-hidden border border-green-900/30">
                                     <canvas
                                         ref={ecgCanvasRef}
                                         className="w-full h-full block"
+                                        aria-label={`ECG en tiempo real - Derivación ${leadSelection}`}
                                         style={{ imageRendering: 'auto' }}
                                     />
                                 </div>
@@ -573,22 +629,23 @@ export default function MonitorAndEkgSimulator() {
                                     <span className="text-cyan-500 text-xs font-bold tracking-wider">SpO2 PLETH</span>
                                 </div>
                                 {/* Pleth Canvas */}
-                                <div className="h-16 md:h-20 rounded-lg overflow-hidden border border-cyan-900/20">
+                                <div className="h-20 lg:h-24 rounded-lg overflow-hidden border border-cyan-900/20">
                                     <canvas
                                         ref={plethCanvasRef}
                                         className="w-full h-full block"
+                                        aria-label="Pletismografía SpO2"
                                         style={{ imageRendering: 'auto' }}
                                     />
                                 </div>
                             </div>
 
                             {/* ── Vital signs column ── */}
-                            <div className={`w-full md:w-56 flex md:flex-col flex-wrap gap-2 p-3 ${isZoll ? 'bg-[#0e1828]' : 'bg-[#0a0a10]'} border-l ${isZoll ? 'border-blue-900/30' : 'border-amber-900/20'}`}>
+                            <div className={`w-full lg:w-56 grid grid-cols-3 lg:grid-cols-1 gap-2 p-3 transition-opacity ${isOn ? 'opacity-100' : 'opacity-10'} ${isZoll ? 'bg-[#0e1828]' : 'bg-[#0a0a10]'} border-t lg:border-t-0 lg:border-l ${isZoll ? 'border-blue-900/30' : 'border-amber-900/20'}`}>
                                 {/* HR */}
-                                <div className="flex-1 min-w-[100px]">
-                                    <p className="text-green-600 text-[10px] font-bold uppercase tracking-widest">Frec. Cardíaca</p>
+                                <div>
+                                    <p className="text-green-600 text-[10px] font-bold uppercase tracking-widest">FC</p>
                                     <div className="flex items-baseline gap-1">
-                                        <span className={`text-green-400 font-black ${displayVitals.hr > 0 ? 'text-4xl md:text-5xl' : 'text-3xl'}`}>
+                                        <span className={`text-green-400 font-black ${displayVitals.hr > 0 ? 'text-3xl lg:text-5xl' : 'text-2xl'}`}>
                                             {displayVitals.hr > 0 ? displayVitals.hr : '---'}
                                         </span>
                                         <span className="text-green-600 text-xs">bpm</span>
@@ -596,26 +653,28 @@ export default function MonitorAndEkgSimulator() {
                                     {displayVitals.hr > 0 && <GiHeartBeats className="text-green-500 text-lg animate-pulse" />}
                                 </div>
                                 {/* SpO2 */}
-                                <div className="flex-1 min-w-[100px]">
+                                <div>
                                     <p className="text-cyan-600 text-[10px] font-bold uppercase tracking-widest">SpO2</p>
                                     <div className="flex items-baseline gap-1">
-                                        <span className={`text-cyan-400 font-black ${displayVitals.spo2 > 0 ? 'text-4xl md:text-5xl' : 'text-3xl'}`}>
+                                        <span className={`text-cyan-400 font-black ${displayVitals.spo2 > 0 ? 'text-3xl lg:text-5xl' : 'text-2xl'}`}>
                                             {displayVitals.spo2 > 0 ? displayVitals.spo2 : '---'}
                                         </span>
                                         <span className="text-cyan-600 text-xs">%</span>
                                     </div>
                                 </div>
                                 {/* NIBP */}
-                                <div className="flex-1 min-w-[100px]">
+                                <div>
                                     <p className="text-red-600 text-[10px] font-bold uppercase tracking-widest">NIBP</p>
-                                    <span className="text-red-400 font-black text-2xl md:text-3xl">
+                                    <span className="text-red-400 font-black text-xl lg:text-3xl">
                                         {nibp.reading ? `${nibp.reading.systolic}/${nibp.reading.diastolic}` : '---/---'}
                                     </span>
                                     <span className="text-red-600 text-xs ml-1">mmHg</span>
-                                    <p className="text-[10px] text-red-500 mt-0.5">{nibp.measuring ? 'MIDIENDO...' : nibp.autoCycle ? `AUTO ${Math.floor(nibp.intervalSec / 60)}m` : 'MANUAL'}</p>
+                                    <p className={`text-[10px] mt-0.5 font-bold ${nibp.measuring ? 'text-yellow-400 animate-pulse' : 'text-red-500'}`}>
+                                        {nibp.measuring ? '● MIDIENDO...' : nibp.autoCycle ? `AUTO ${Math.floor(nibp.intervalSec / 60)}m` : 'MANUAL'}
+                                    </p>
                                 </div>
                                 {/* FR */}
-                                <div className="flex-1 min-w-[80px]">
+                                <div>
                                     <p className="text-yellow-600 text-[10px] font-bold uppercase tracking-widest">FR</p>
                                     <span className="text-yellow-400 font-black text-2xl">
                                         {displayVitals.rr > 0 ? displayVitals.rr : '---'}
@@ -623,7 +682,7 @@ export default function MonitorAndEkgSimulator() {
                                     <span className="text-yellow-600 text-xs ml-1">/min</span>
                                 </div>
                                 {/* EtCO2 */}
-                                <div className="flex-1 min-w-[80px]">
+                                <div>
                                     <p className="text-gray-500 text-[10px] font-bold uppercase tracking-widest">EtCO2</p>
                                     <span className="text-gray-300 font-black text-2xl">
                                         {displayVitals.etco2 > 0 ? displayVitals.etco2 : '---'}
@@ -631,7 +690,7 @@ export default function MonitorAndEkgSimulator() {
                                     <span className="text-gray-500 text-xs ml-1">mmHg</span>
                                 </div>
                                 {/* Temp */}
-                                <div className="flex-1 min-w-[80px]">
+                                <div>
                                     <p className="text-gray-500 text-[10px] font-bold uppercase tracking-widest">Temp</p>
                                     <span className="text-gray-300 font-black text-xl">
                                         {displayVitals.temp > 0 ? displayVitals.temp.toFixed(1) : '---'}
@@ -641,129 +700,179 @@ export default function MonitorAndEkgSimulator() {
                             </div>
                         </div>
 
-                        {/* ── Control buttons ── */}
-                        <div className={`p-3 flex flex-wrap gap-2 items-center justify-center border-t ${isZoll ? 'bg-[#141e30] border-blue-900/40' : 'bg-[#121216] border-amber-900/30'}`}>
+                        {/* ── Control buttons — reorganizados en grupos ── */}
+                        <div className={`border-t ${isZoll ? 'bg-[#141e30] border-blue-900/40' : 'bg-[#121216] border-amber-900/30'}`}>
+
+                            {/* Fila 1: Evaluación (solo si aplica) */}
                             {simulationMode === 'evaluation' && (
-                                <>
-                                    {!evaluation.active && !evaluation.completed ? (
-                                        <button
-                                            onClick={startEvaluation}
-                                            className="px-4 py-2.5 rounded-xl font-bold text-sm bg-violet-700 hover:bg-violet-600 text-white transition-all"
-                                        >
-                                            Iniciar evaluacion
+                                <div className={`flex flex-wrap gap-2 items-center px-3 py-2 border-b ${isZoll ? 'border-blue-900/30' : 'border-amber-900/20'}`}>
+                                    {!evaluation.active && !evaluation.completed && (
+                                        <button onClick={startEvaluation} className="px-4 py-2 rounded-xl font-bold text-sm bg-violet-700 hover:bg-violet-600 text-white transition-all">
+                                            Iniciar evaluación
                                         </button>
-                                    ) : null}
-                                    {evaluation.active ? (
-                                        <button
-                                            onClick={finishEvaluation}
-                                            className="px-4 py-2.5 rounded-xl font-bold text-sm bg-violet-900/60 hover:bg-violet-900 text-violet-100 transition-all"
-                                        >
-                                            Finalizar evaluacion
+                                    )}
+                                    {evaluation.active && (
+                                        <button onClick={finishEvaluation} className="px-4 py-2 rounded-xl font-bold text-sm bg-violet-900/60 hover:bg-violet-900 text-violet-100 transition-all">
+                                            Finalizar evaluación
                                         </button>
-                                    ) : null}
-                                    {evaluation.completed ? (
-                                        <button
-                                            onClick={resetEvaluation}
-                                            className="px-4 py-2.5 rounded-xl font-bold text-sm bg-gray-800 hover:bg-gray-700 text-gray-200 transition-all"
-                                        >
-                                            Nueva evaluacion
+                                    )}
+                                    {evaluation.completed && (
+                                        <button onClick={resetEvaluation} className="px-4 py-2 rounded-xl font-bold text-sm bg-gray-800 hover:bg-gray-700 text-gray-200 transition-all">
+                                            Nueva evaluación
                                         </button>
-                                    ) : null}
-                                    <div className="w-px h-8 bg-gray-700 mx-1 hidden sm:block" />
-                                </>
+                                    )}
+                                </div>
                             )}
 
-                            {/* Power */}
-                            <button onClick={togglePower} className={`p-2.5 rounded-xl transition-all ${isOn ? 'bg-green-600 text-white shadow-lg shadow-green-900/40' : 'bg-gray-700 text-gray-400'}`} title="Encender/Apagar">
-                                <FaPowerOff className="w-5 h-5" />
-                            </button>
-
-                            {/* Energy select */}
-                            <div className={`flex items-center gap-1 rounded-xl px-2 py-1 ${isZoll ? 'bg-[#1a2640]' : 'bg-[#1e1e24]'}`}>
-                                <button onClick={decreaseEnergy} className="p-1.5 rounded-lg bg-gray-700 hover:bg-gray-600 text-white transition-all"><FaChevronLeft className="w-3 h-3" /></button>
-                                <div className="text-center min-w-[70px]">
-                                    <p className="text-[9px] text-gray-500 font-bold uppercase">Energía</p>
-                                    <p className="text-orange-400 font-black text-lg leading-tight">{energy}J</p>
-                                </div>
-                                <button onClick={increaseEnergy} className="p-1.5 rounded-lg bg-gray-700 hover:bg-gray-600 text-white transition-all"><FaChevronRight className="w-3 h-3" /></button>
-                            </div>
-
-                            {/* Charge */}
-                            <button onClick={handleCharge} disabled={isCharging || isCharged} className={`px-4 py-2.5 rounded-xl font-bold text-sm transition-all ${isCharging ? 'bg-yellow-600 text-black animate-pulse' : isCharged ? 'bg-orange-500 text-white ring-2 ring-orange-300 animate-pulse' : isZoll ? 'bg-blue-700 hover:bg-blue-600 text-white' : 'bg-neutral-700 hover:bg-neutral-600 text-white'}`}>
-                                {isCharging ? 'CARGANDO...' : isCharged ? 'CARGADO ✓' : isZoll ? 'CHARGE' : 'CARGAR ENERGIA'}
-                            </button>
-
-                            {/* Shock */}
-                            <button onClick={handleShock} className={`px-5 py-2.5 rounded-xl font-extrabold text-sm transition-all ${isCharged ? 'bg-red-600 hover:bg-red-500 text-white ring-2 ring-red-300 shadow-lg shadow-red-900/50 animate-pulse' : 'bg-red-900/40 text-red-400/50 cursor-not-allowed'}`}>
-                                <FaBolt className="inline mr-1" />
-                                {isZoll ? 'SHOCK' : 'DESCARGA'}
-                            </button>
-
-                            <button onClick={performNibpMeasurement} disabled={nibp.measuring || !isOn} className={`px-3 py-2 rounded-xl text-xs font-bold transition-all ${nibp.measuring ? 'bg-red-800/70 text-red-100 animate-pulse' : 'bg-red-900/40 text-red-300 hover:text-red-100'}`}>
-                                NIBP START
-                            </button>
-
-                            <button onClick={toggleNibpAutoCycle} className={`px-3 py-2 rounded-xl text-xs font-bold transition-all ${nibp.autoCycle ? 'bg-red-700 text-white' : 'bg-gray-700 text-gray-300 hover:text-white'}`}>
-                                AUTO {nibp.autoCycle ? 'ON' : 'OFF'}
-                            </button>
-
-                            <button onClick={cycleNibpInterval} className="px-3 py-2 rounded-xl text-xs font-bold bg-gray-700 text-gray-300 hover:text-white transition-all">
-                                INT {Math.floor(nibp.intervalSec / 60)}m
-                            </button>
-
-                            <button onClick={handleGenerateTwelveLeadReport} className={`px-3 py-2 rounded-xl text-xs font-bold transition-all ${isZoll ? 'bg-blue-900/60 text-blue-200 hover:text-white' : 'bg-amber-900/50 text-amber-200 hover:text-white'}`}>
-                                IMPRESION 12-LEAD
-                            </button>
-
-                            <div className="w-px h-8 bg-gray-700 mx-1 hidden sm:block" />
-
-                            {/* Sync */}
-                            <button onClick={toggleSync} className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold transition-all ${syncMode ? 'bg-green-700 text-white' : 'bg-gray-700 text-gray-400 hover:text-white'}`}>
-                                {syncMode ? <MdSync className="w-4 h-4" /> : <MdSyncDisabled className="w-4 h-4" />}
-                                SYNC {syncMode ? 'ON' : 'OFF'}
-                            </button>
-
-                            {/* Pacer */}
-                            <div className={`flex items-center gap-1 rounded-xl px-2 py-1 ${pacer.active ? 'bg-purple-900/50 ring-1 ring-purple-500/30' : isZoll ? 'bg-[#1a2640]' : 'bg-[#1e1e24]'}`}>
-                                <button onClick={togglePacer} className={`px-2 py-1 rounded-lg text-xs font-bold transition-all ${pacer.active ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-400 hover:text-white'}`}>
-                                    PACER {pacer.active ? 'ON' : 'OFF'}
+                            {/* Fila 2: Desfibrilador + NIBP (acciones críticas) */}
+                            <div className="flex flex-wrap gap-2 items-center px-3 py-2.5">
+                                {/* Power */}
+                                <button
+                                    onClick={togglePower}
+                                    title={isOn ? 'Apagar monitor' : 'Encender monitor'}
+                                    className={`flex items-center gap-1.5 px-3 py-2 rounded-xl font-bold text-xs transition-all ${isOn ? 'bg-green-600 text-white shadow-lg shadow-green-900/40' : 'bg-gray-700 text-gray-400 hover:text-white'}`}
+                                >
+                                    <FaPowerOff className="w-3.5 h-3.5" />
+                                    {isOn ? 'ON' : 'OFF'}
                                 </button>
-                                {pacer.active && (
-                                    <>
-                                        <div className="flex items-center gap-0.5">
-                                            <button onClick={decreasePacerRate} className="p-1 rounded bg-gray-700 hover:bg-gray-600 text-white text-[10px]">−</button>
-                                            <span className="text-purple-300 text-xs font-bold min-w-[40px] text-center">{pacer.rate}<span className="text-[9px] text-purple-500">ppm</span></span>
-                                            <button onClick={increasePacerRate} className="p-1 rounded bg-gray-700 hover:bg-gray-600 text-white text-[10px]">+</button>
-                                        </div>
-                                        <div className="flex items-center gap-0.5">
-                                            <button onClick={decreasePacerCurrent} className="p-1 rounded bg-gray-700 hover:bg-gray-600 text-white text-[10px]">−</button>
-                                            <span className="text-purple-300 text-xs font-bold min-w-[40px] text-center">{pacer.current}<span className="text-[9px] text-purple-500">mA</span></span>
-                                            <button onClick={increasePacerCurrent} className="p-1 rounded bg-gray-700 hover:bg-gray-600 text-white text-[10px]">+</button>
-                                        </div>
-                                    </>
-                                )}
+
+                                <div className="w-px h-7 bg-gray-700" />
+
+                                {/* Energy select */}
+                                <div className={`flex items-center gap-1 rounded-xl px-2 py-1 ${isZoll ? 'bg-[#1a2640]' : 'bg-[#1e1e24]'}`}>
+                                    <button onClick={decreaseEnergy} className="p-1.5 rounded-lg bg-gray-700 hover:bg-gray-600 text-white transition-all" aria-label="Reducir energía"><FaChevronLeft className="w-3 h-3" /></button>
+                                    <div className="text-center min-w-[64px]">
+                                        <p className="text-[9px] text-gray-500 font-bold uppercase">Energía</p>
+                                        <p className="text-orange-400 font-black text-lg leading-tight">{energy}J</p>
+                                    </div>
+                                    <button onClick={increaseEnergy} className="p-1.5 rounded-lg bg-gray-700 hover:bg-gray-600 text-white transition-all" aria-label="Aumentar energía"><FaChevronRight className="w-3 h-3" /></button>
+                                </div>
+
+                                {/* Charge */}
+                                <button
+                                    onClick={handleCharge}
+                                    disabled={isCharging || isCharged}
+                                    className={`px-4 py-2 rounded-xl font-bold text-sm transition-all ${
+                                        isCharging ? 'bg-yellow-600 text-black animate-pulse'
+                                        : isCharged ? 'bg-orange-500 text-white ring-2 ring-orange-300 animate-pulse'
+                                        : isZoll ? 'bg-blue-700 hover:bg-blue-600 text-white'
+                                        : 'bg-slate-600 hover:bg-slate-500 text-white'
+                                    }`}
+                                >
+                                    {isCharging ? 'CARGANDO...' : isCharged ? 'CARGADO ✓' : 'CARGAR'}
+                                </button>
+
+                                {/* Shock */}
+                                <button
+                                    onClick={handleShock}
+                                    className={`flex items-center gap-1.5 px-5 py-2 rounded-xl font-extrabold text-sm transition-all ${
+                                        isCharged
+                                            ? 'bg-red-600 hover:bg-red-500 text-white ring-2 ring-red-300 shadow-lg shadow-red-900/50 animate-pulse'
+                                            : 'bg-red-900/40 text-red-400/50 cursor-not-allowed'
+                                    }`}
+                                >
+                                    <FaBolt className="w-3.5 h-3.5" />
+                                    DESCARGA
+                                </button>
+
+                                {/* Sync */}
+                                <button onClick={toggleSync} className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold transition-all ${syncMode ? 'bg-green-700 text-white ring-1 ring-green-400/40' : 'bg-gray-700 text-gray-400 hover:text-white'}`}>
+                                    {syncMode ? <MdSync className="w-4 h-4" /> : <MdSyncDisabled className="w-4 h-4" />}
+                                    SYNC
+                                </button>
+
+                                <div className="w-px h-7 bg-gray-700" />
+
+                                {/* NIBP */}
+                                <button
+                                    onClick={performNibpMeasurement}
+                                    disabled={nibp.measuring || !isOn}
+                                    className={`px-3 py-2 rounded-xl text-xs font-bold transition-all ${
+                                        nibp.measuring ? 'bg-yellow-700/70 text-yellow-100 animate-pulse cursor-not-allowed'
+                                        : 'bg-red-900/40 text-red-300 hover:text-red-100 hover:bg-red-900/60'
+                                    }`}
+                                >
+                                    {nibp.measuring ? 'MIDIENDO...' : 'NIBP'}
+                                </button>
+
+                                <button onClick={toggleNibpAutoCycle} className={`px-3 py-2 rounded-xl text-xs font-bold transition-all ${nibp.autoCycle ? 'bg-red-700 text-white' : 'bg-gray-700 text-gray-300 hover:text-white'}`}>
+                                    AUTO {nibp.autoCycle ? 'ON' : 'OFF'}
+                                </button>
+
+                                <button onClick={cycleNibpInterval} title="Ciclar intervalo NIBP" className="px-3 py-2 rounded-xl text-xs font-bold bg-gray-700 text-gray-300 hover:text-white transition-all">
+                                    {Math.floor(nibp.intervalSec / 60)} min
+                                </button>
                             </div>
 
-                            <div className="w-px h-8 bg-gray-700 mx-1 hidden sm:block" />
+                            {/* Fila 3: Pacer + Configuración */}
+                            <div className={`flex flex-wrap gap-2 items-center px-3 py-2 border-t ${isZoll ? 'border-blue-900/20' : 'border-amber-900/20'}`}>
+                                {/* Pacer */}
+                                <div className={`flex items-center gap-1 rounded-xl px-2 py-1 ${pacer.active ? 'bg-purple-900/50 ring-1 ring-purple-500/40' : isZoll ? 'bg-[#1a2640]' : 'bg-[#1e1e24]'}`}>
+                                    <button onClick={togglePacer} className={`px-2 py-1 rounded-lg text-xs font-bold transition-all ${pacer.active ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-400 hover:text-white'}`}>
+                                        PACER {pacer.active ? 'ON' : 'OFF'}
+                                    </button>
+                                    {pacer.active && (
+                                        <>
+                                            <div className="flex items-center gap-0.5">
+                                                <button onClick={decreasePacerRate} className="p-1.5 rounded bg-gray-700 hover:bg-gray-600 text-white text-[10px]" aria-label="Reducir frecuencia">−</button>
+                                                <span className="text-purple-300 text-xs font-bold min-w-[44px] text-center">{pacer.rate}<span className="text-[9px] text-purple-500">ppm</span></span>
+                                                <button onClick={increasePacerRate} className="p-1.5 rounded bg-gray-700 hover:bg-gray-600 text-white text-[10px]" aria-label="Aumentar frecuencia">+</button>
+                                            </div>
+                                            <div className="flex items-center gap-0.5">
+                                                <button onClick={decreasePacerCurrent} className="p-1.5 rounded bg-gray-700 hover:bg-gray-600 text-white text-[10px]" aria-label="Reducir corriente">−</button>
+                                                <span className="text-purple-300 text-xs font-bold min-w-[44px] text-center">{pacer.current}<span className="text-[9px] text-purple-500">mA</span></span>
+                                                <button onClick={increasePacerCurrent} className="p-1.5 rounded bg-gray-700 hover:bg-gray-600 text-white text-[10px]" aria-label="Aumentar corriente">+</button>
+                                            </div>
+                                        </>
+                                    )}
+                                </div>
 
-                            {/* Lead select */}
-                            <select
-                                value={leadSelection}
-                                onChange={(e) => setLeadSelection(e.target.value as LeadType)}
-                                className={`px-3 py-2 rounded-xl text-xs font-bold ${isZoll ? 'bg-[#1a2640] text-blue-300' : 'bg-[#1e1e24] text-amber-300'} border-none outline-none cursor-pointer`}
-                            >
-                                {LEAD_OPTIONS.map((l) => <option key={l} value={l}>{l}</option>)}
-                            </select>
+                                <div className="w-px h-7 bg-gray-700" />
 
-                            {/* Sweep speed */}
-                            <button onClick={toggleSweepSpeed} className="px-3 py-2 rounded-xl text-xs font-bold bg-gray-700 text-gray-300 hover:text-white transition-all">
-                                {sweepSpeed}mm/s
-                            </button>
+                                {/* Lead select */}
+                                <div className={`flex items-center gap-1.5 px-2 py-1 rounded-xl ${isZoll ? 'bg-[#1a2640]' : 'bg-[#1e1e24]'}`}>
+                                    <span className="text-[9px] text-gray-500 font-bold uppercase">Lead</span>
+                                    <select
+                                        value={leadSelection}
+                                        onChange={(e) => setLeadSelection(e.target.value as LeadType)}
+                                        className={`text-xs font-bold bg-transparent ${isZoll ? 'text-blue-300' : 'text-amber-300'} border-none outline-none cursor-pointer`}
+                                        aria-label="Seleccionar derivación"
+                                    >
+                                        {LEAD_OPTIONS.map((l) => <option key={l} value={l}>{l}</option>)}
+                                    </select>
+                                </div>
 
-                            {/* Alarm mute */}
-                            <button onClick={toggleAlarmMute} className={`p-2.5 rounded-xl transition-all ${alarms.muted ? 'bg-red-900/40 text-red-400' : 'bg-gray-700 text-gray-400 hover:text-white'}`} title={alarms.muted ? 'Activar alarmas' : 'Silenciar alarmas'}>
-                                {alarms.muted ? <FaVolumeMute className="w-4 h-4" /> : <FaVolumeUp className="w-4 h-4" />}
-                            </button>
+                                {/* Sweep speed */}
+                                <button onClick={toggleSweepSpeed} title="Cambiar velocidad de barrido" className="px-3 py-2 rounded-xl text-xs font-bold bg-gray-700 text-gray-300 hover:text-white transition-all">
+                                    {sweepSpeed} mm/s
+                                </button>
+
+                                {/* Alarm mute */}
+                                <button
+                                    onClick={toggleAlarmMute}
+                                    title={alarms.muted ? 'Activar alarmas' : 'Silenciar alarmas'}
+                                    className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold transition-all ${alarms.muted ? 'bg-red-900/40 text-red-400' : 'bg-gray-700 text-gray-400 hover:text-white'}`}
+                                >
+                                    {alarms.muted ? <FaVolumeMute className="w-3.5 h-3.5" /> : <FaVolumeUp className="w-3.5 h-3.5" />}
+                                    {alarms.muted ? 'ALARMA SILENCIADA' : 'ALARMA'}
+                                </button>
+
+                                <div className="w-px h-7 bg-gray-700" />
+
+                                {/* 12-lead */}
+                                <button onClick={handleGenerateTwelveLeadReport} className={`px-3 py-2 rounded-xl text-xs font-bold transition-all ${isZoll ? 'bg-blue-900/60 text-blue-200 hover:text-white' : 'bg-amber-900/50 text-amber-200 hover:text-white'}`}>
+                                    12 DERIVACIONES
+                                </button>
+
+                                {/* Fullscreen */}
+                                <button
+                                    onClick={toggleFullscreen}
+                                    title={isFullscreen ? 'Salir de pantalla completa' : 'Pantalla completa'}
+                                    className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold bg-gray-700 text-gray-400 hover:text-white transition-all"
+                                >
+                                    {isFullscreen ? <FaCompress className="w-3.5 h-3.5" /> : <FaExpand className="w-3.5 h-3.5" />}
+                                </button>
+                            </div>
                         </div>
 
                         {/* ── Info panel (collapsible below controls) ── */}
@@ -861,71 +970,95 @@ export default function MonitorAndEkgSimulator() {
                 </div>
 
                 {showTwelveLeadReport && twelveLeadReport && (
-                    <div className="fixed inset-0 z-50 bg-black/65 backdrop-blur-sm p-4 overflow-y-auto">
-                        <div className="max-w-6xl mx-auto bg-[#0b1119] border border-blue-900/40 rounded-2xl p-5">
-                            <div className="flex items-center justify-between mb-4">
+                    <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm overflow-y-auto">
+                        <div className="min-h-full flex items-start justify-center p-4 py-6">
+                        <div className="w-full max-w-6xl bg-[#0b1119] border border-blue-900/40 rounded-2xl overflow-hidden">
+
+                            {/* Header */}
+                            <div className="flex flex-wrap items-center justify-between gap-3 p-4 border-b border-blue-900/30">
                                 <div>
-                                    <h3 className="text-white text-lg font-bold">Impresion ECG 12 derivadas</h3>
-                                    <p className="text-gray-400 text-xs">{twelveLeadReport.monitor.toUpperCase()} · FC {twelveLeadReport.heartRate} lpm · {reportTime}</p>
+                                    <h3 className="text-white text-base font-bold">ECG 12 Derivaciones</h3>
+                                    <p className="text-gray-400 text-xs mt-0.5">
+                                        {twelveLeadReport.monitor.toUpperCase()} &nbsp;·&nbsp; FC {twelveLeadReport.heartRate} lpm &nbsp;·&nbsp; {reportTime}
+                                        &nbsp;·&nbsp; <span className={currentScenario.isShockable ? 'text-red-400' : 'text-green-400'}>{currentScenario.name}</span>
+                                    </p>
                                 </div>
-                                <div className="flex items-center gap-2">
-                                    <button onClick={handleExportTwelveLeadPdf} className="px-3 py-1.5 rounded-lg bg-blue-700/70 text-blue-100 hover:text-white text-xs font-bold">Exportar PDF</button>
-                                    <button onClick={handleExportTwelveLeadPng} className="px-3 py-1.5 rounded-lg bg-emerald-700/70 text-emerald-100 hover:text-white text-xs font-bold">Exportar PNG</button>
-                                    <button onClick={() => setShowTwelveLeadReport(false)} className="px-3 py-1.5 rounded-lg bg-gray-800 text-gray-300 hover:text-white text-xs font-bold">Cerrar</button>
+                                <div className="flex flex-wrap items-center gap-2">
+                                    <button onClick={handleExportTwelveLeadPdf} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-700/70 text-blue-100 hover:bg-blue-700 text-xs font-bold transition-all">
+                                        PDF
+                                    </button>
+                                    <button onClick={handleExportTwelveLeadPng} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-700/70 text-emerald-100 hover:bg-emerald-700 text-xs font-bold transition-all">
+                                        PNG
+                                    </button>
+                                    <button onClick={handlePrintTwelveLead} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gray-700 text-gray-200 hover:bg-gray-600 text-xs font-bold transition-all">
+                                        <FaPrint className="text-[10px]" /> Imprimir
+                                    </button>
+                                    <button onClick={() => setShowTwelveLeadReport(false)} className="px-3 py-1.5 rounded-lg bg-gray-800 text-gray-400 hover:text-white text-xs font-bold transition-all">
+                                        ✕ Cerrar
+                                    </button>
                                 </div>
                             </div>
 
-                            <div className="rounded-xl border border-gray-800 bg-[#070b11] p-3 mb-3">
-                                <p className="text-xs text-gray-300 font-bold mb-2">Datos del encabezado clínico</p>
-                                <div className="grid md:grid-cols-5 gap-2">
-                                    <input
-                                        value={printMeta.patientName}
-                                        onChange={(e) => setPrintMeta((p) => ({ ...p, patientName: e.target.value }))}
-                                        className="px-2 py-1.5 rounded bg-gray-900 text-gray-100 text-xs"
-                                        placeholder="Paciente"
-                                    />
-                                    <input
-                                        value={printMeta.patientId}
-                                        onChange={(e) => setPrintMeta((p) => ({ ...p, patientId: e.target.value }))}
-                                        className="px-2 py-1.5 rounded bg-gray-900 text-gray-100 text-xs"
-                                        placeholder="ID"
-                                    />
-                                    <input
-                                        value={printMeta.age}
-                                        onChange={(e) => setPrintMeta((p) => ({ ...p, age: e.target.value }))}
-                                        className="px-2 py-1.5 rounded bg-gray-900 text-gray-100 text-xs"
-                                        placeholder="Edad"
-                                    />
+                            {/* Datos clínicos */}
+                            <div className="bg-[#070b11] border-b border-gray-800 p-3">
+                                <p className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-2">Encabezado clínico</p>
+                                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2">
+                                    {[
+                                        { key: 'patientName', placeholder: 'Nombre del paciente' },
+                                        { key: 'patientId',   placeholder: 'ID / Expediente' },
+                                        { key: 'age',         placeholder: 'Edad' },
+                                        { key: 'operator',    placeholder: 'Operador' },
+                                    ].map(({ key, placeholder }) => (
+                                        <input
+                                            key={key}
+                                            value={printMeta[key as keyof typeof printMeta]}
+                                            onChange={(e) => setPrintMeta((p) => ({ ...p, [key]: e.target.value }))}
+                                            className="px-2 py-1.5 rounded-lg bg-gray-900 text-gray-100 text-xs border border-gray-700 focus:outline-none focus:border-blue-500"
+                                            placeholder={placeholder}
+                                            aria-label={placeholder}
+                                        />
+                                    ))}
                                     <select
                                         value={printMeta.sex}
                                         onChange={(e) => setPrintMeta((p) => ({ ...p, sex: e.target.value }))}
-                                        className="px-2 py-1.5 rounded bg-gray-900 text-gray-100 text-xs"
+                                        className="px-2 py-1.5 rounded-lg bg-gray-900 text-gray-100 text-xs border border-gray-700 focus:outline-none focus:border-blue-500"
+                                        aria-label="Sexo"
                                     >
-                                        {SEX_OPTIONS.map((option) => <option key={option} value={option}>{option}</option>)}
+                                        {SEX_OPTIONS.map((o) => <option key={o} value={o}>{o}</option>)}
                                     </select>
-                                    <input
-                                        value={printMeta.operator}
-                                        onChange={(e) => setPrintMeta((p) => ({ ...p, operator: e.target.value }))}
-                                        className="px-2 py-1.5 rounded bg-gray-900 text-gray-100 text-xs"
-                                        placeholder="Operador"
-                                    />
                                 </div>
                             </div>
 
-                            <div className="space-y-2">
+                            {/* Grid 12 derivaciones */}
+                            <div className="p-3 space-y-2">
                                 {TWELVE_LEAD_LAYOUT.map((row, idx) => (
-                                    <div key={`row-${idx}`} className="grid md:grid-cols-4 gap-2">
+                                    <div key={`row-${idx}`} className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                                         {row.map((lead) => {
                                             const strip = twelveLeadReport.strips.find((s) => s.lead === lead);
+                                            const W = 300; const H = 100;
                                             return (
                                                 <div key={lead} className="rounded-xl border border-gray-800 bg-[#070b11] p-2">
                                                     <p className="text-[11px] text-green-400 font-bold mb-1">{lead}</p>
-                                                    <svg viewBox="0 0 300 90" className="w-full h-24 bg-black/50 rounded">
+                                                    <svg viewBox={`0 0 ${W} ${H}`} className="w-full" style={{ height: '80px' }} role="img" aria-label={`Derivación ${lead}`}>
+                                                        {/* Cuadrícula ECG */}
+                                                        <defs>
+                                                            <pattern id={`sg-${lead}`} width="10" height="10" patternUnits="userSpaceOnUse">
+                                                                <path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,80,80,0.15)" strokeWidth="0.5"/>
+                                                            </pattern>
+                                                            <pattern id={`lg-${lead}`} width="50" height="50" patternUnits="userSpaceOnUse">
+                                                                <rect width="50" height="50" fill={`url(#sg-${lead})`}/>
+                                                                <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(255,80,80,0.3)" strokeWidth="0.8"/>
+                                                            </pattern>
+                                                        </defs>
+                                                        <rect width={W} height={H} fill="#050a0f"/>
+                                                        <rect width={W} height={H} fill={`url(#lg-${lead})`}/>
                                                         <polyline
                                                             fill="none"
                                                             stroke="#00ff55"
-                                                            strokeWidth="1.4"
-                                                            points={samplesToPolyline(strip?.samples ?? [], 300, 90)}
+                                                            strokeWidth="1.5"
+                                                            strokeLinecap="round"
+                                                            strokeLinejoin="round"
+                                                            points={samplesToPolyline(strip?.samples ?? [], W, H)}
                                                         />
                                                     </svg>
                                                 </div>
@@ -934,18 +1067,36 @@ export default function MonitorAndEkgSimulator() {
                                     </div>
                                 ))}
 
+                                {/* Ritmo largo II */}
                                 <div className="rounded-xl border border-gray-800 bg-[#070b11] p-2">
-                                    <p className="text-[11px] text-amber-300 font-bold mb-1">Ritmo largo II</p>
-                                    <svg viewBox="0 0 1220 100" className="w-full h-28 bg-black/50 rounded">
+                                    <p className="text-[11px] text-amber-300 font-bold mb-1">Ritmo largo — Derivación II</p>
+                                    <svg viewBox="0 0 1200 100" className="w-full" style={{ height: '80px' }} role="img" aria-label="Ritmo largo derivación II">
+                                        <defs>
+                                            <pattern id="sg-long" width="10" height="10" patternUnits="userSpaceOnUse">
+                                                <path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,80,80,0.15)" strokeWidth="0.5"/>
+                                            </pattern>
+                                            <pattern id="lg-long" width="50" height="50" patternUnits="userSpaceOnUse">
+                                                <rect width="50" height="50" fill="url(#sg-long)"/>
+                                                <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(255,80,80,0.3)" strokeWidth="0.8"/>
+                                            </pattern>
+                                        </defs>
+                                        <rect width="1200" height="100" fill="#050a0f"/>
+                                        <rect width="1200" height="100" fill="url(#lg-long)"/>
                                         <polyline
                                             fill="none"
                                             stroke="#ffd166"
-                                            strokeWidth="1.5"
-                                            points={samplesToPolyline((twelveLeadReport.strips.find((s) => s.lead === 'II')?.samples ?? []), 1220, 100)}
+                                            strokeWidth="1.6"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            points={samplesToPolyline(
+                                                buildLongLead(twelveLeadReport.strips.find((s) => s.lead === 'II')?.samples ?? []),
+                                                1200, 100
+                                            )}
                                         />
                                     </svg>
                                 </div>
                             </div>
+                        </div>
                         </div>
                     </div>
                 )}
