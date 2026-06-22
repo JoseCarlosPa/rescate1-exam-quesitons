@@ -183,7 +183,7 @@ export default function Simulator() {
             icon: <GiHeartOrgan className="w-12 h-12" />,
             category: "Anatomía",
             difficulty: "Principiante",
-            status: "próximamente",
+            status: "en desarrollo",
             features: [
                 "Esquema de conducción eléctrica cardíaca 2D animado e interactivo",
                 "Controles de velocidad para pausar y analizar cada segmento del ciclo cardíaco",
@@ -211,7 +211,7 @@ export default function Simulator() {
             icon: <MdBloodtype className="w-12 h-12" />,
             category: "Fisiología",
             difficulty: "Intermedio",
-            status: "próximamente",
+            status: "en desarrollo",
             features: [
                 "Control de precarga (líquidos), contractilidad y poscarga (resistencia vascular)",
                 "Simulador de shock hipovolémico, cardiogénico, anafiláctico y neurogénico",
@@ -279,6 +279,8 @@ export default function Simulator() {
         if (id === "cardiac-monitor") return AllRoutes.ECG_MONITOR_SIMULATOR;
         if (id === "infusion-pump") return AllRoutes.INFUSION_PUMP_SIMULATOR;
         if (id === "mechanical-ventilator") return AllRoutes.MECHANICAL_VENTILATOR_SIMULATOR;
+        if (id === "heart-physiology") return AllRoutes.CARDIAC_CONDUCTION_SIMULATOR;
+        if (id === "circulatory-system") return AllRoutes.CIRCULATORY_SYSTEM_SIMULATOR;
         return null;
     };
 
