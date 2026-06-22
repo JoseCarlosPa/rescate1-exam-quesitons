@@ -185,7 +185,7 @@ export default function CirculatorySystemSimulator() {
   const shockDef = SHOCK_DEFINITIONS[sim.shockType]
 
   const SHOCK_TYPES: ShockType[] = ['none', 'hypovolemic', 'cardiogenic', 'distributive_septic', 'distributive_anaphylactic', 'neurogenic', 'obstructive']
-  const INTERVENTIONS: Intervention[] = ['fluid_bolus', 'vasopressor', 'inotrope', 'oxygen', 'epinephrine', 'tourniquet']
+  const INTERVENTIONS: Exclude<Intervention, 'none'>[] = ['fluid_bolus', 'vasopressor', 'inotrope', 'oxygen', 'epinephrine', 'tourniquet']
 
   return (
     <div className="min-h-screen bg-slate-900 flex flex-col text-white">
@@ -295,7 +295,7 @@ export default function CirculatorySystemSimulator() {
                 <ReferenceLine y={90} stroke="#34d399" strokeDasharray="3 3" strokeWidth={1} />
                 <Tooltip
                   contentStyle={{ backgroundColor: '#1e293b', border: '1px solid #334155', borderRadius: '8px', fontSize: '11px' }}
-                  formatter={(v: number) => [`${Math.round(v)} mmHg`, 'Presión']}
+                  formatter={(value) => [`${Math.round(Number(value ?? 0))} mmHg`, 'Presión']}
                   labelFormatter={() => ''}
                 />
                 <Area
@@ -381,7 +381,7 @@ export default function CirculatorySystemSimulator() {
                         ? 'ring-2 text-white'
                         : 'bg-slate-700/50 text-slate-400 hover:bg-slate-700'
                     }`}
-                    style={sim.shockType === type ? { backgroundColor: d.color + '33', ringColor: d.color, color: d.color } : undefined}
+                    style={sim.shockType === type ? { backgroundColor: d.color + '33', boxShadow: `0 0 0 2px ${d.color}`, color: d.color } : undefined}
                   >
                     <span>{d.icon}</span>
                     <span className="flex-1 text-left">{d.label}</span>
