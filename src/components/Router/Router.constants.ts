@@ -75,5 +75,6 @@ export enum AllRoutes {
     SIMULATOR = '/simulator',
     ECG_MONITOR_SIMULATOR = '/simulator/ecg-monitor',
     ECG_INSTRUCTOR = '/simulator/ecg-monitor/instructor',
-    INFUSION_PUMP_SIMULATOR = '/simulator/infusion-pump'
+    INFUSION_PUMP_SIMULATOR = '/simulator/infusion-pump',
+    MECHANICAL_VENTILATOR_SIMULATOR = '/simulator/mechanical-ventilator'
 }

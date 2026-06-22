@@ -73,6 +73,58 @@ export const INFUSION_DRUG_LIBRARY: DrugLibraryEntry[] = [
         ahaDoseMaxMcgKgMin: 0.05,
         notes: 'Usar segun protocolo local y monitorizar ventilacion continuamente.',
     },
+    {
+        id: 'lidocaine',
+        name: 'Lidocaina',
+        className: 'Antiarritmico clase Ib',
+        indication: 'Mantenimiento post-cardioversion de arritmias ventriculares',
+        standardBagMg: 2000,
+        standardVolumeMl: 500,
+        ahaDoseMinMcgKgMin: 0,
+        ahaDoseMaxMcgKgMin: 0,
+        dosingUnit: 'mg/min',
+        preferredMode: 'mlh',
+        notes: 'Dosis mantenimiento: 1-4 mg/min IV. Concentracion estandar 4 mg/mL (2 g/500 mL). Equivale a 15-60 mL/h.',
+    },
+    {
+        id: 'vasopressin',
+        name: 'Vasopresina',
+        className: 'Vasopresor no adrenergico',
+        indication: 'Adjunto a norepinefrina en shock distributivo refractario',
+        standardBagMg: 40,
+        standardVolumeMl: 100,
+        ahaDoseMinMcgKgMin: 0,
+        ahaDoseMaxMcgKgMin: 0,
+        dosingUnit: 'UI/min',
+        preferredMode: 'mlh',
+        notes: 'Dosis fija: 0.03-0.04 UI/min. Concentracion estandar 0.4 UI/mL (40 UI/100 mL). No titular mas alla de 0.04 UI/min.',
+    },
+    {
+        id: 'midazolam',
+        name: 'Midazolam',
+        className: 'Benzodiacepina / Sedante',
+        indication: 'Sedacion en convulsiones refractarias o intubacion prehospitalaria',
+        standardBagMg: 50,
+        standardVolumeMl: 50,
+        ahaDoseMinMcgKgMin: 0,
+        ahaDoseMaxMcgKgMin: 0,
+        dosingUnit: 'mg/kg/h',
+        preferredMode: 'weight-based',
+        notes: 'Sedacion: 0.02-0.1 mg/kg/h. A 1 mg/mL en paciente de 70 kg: 1.4-7 mL/h. Monitorizar FR y SpO2 continuamente.',
+    },
+    {
+        id: 'ketamine',
+        name: 'Ketamina',
+        className: 'Disociativo / Analgesico',
+        indication: 'Analgesia en trauma penetrante o sedacion procedimental',
+        standardBagMg: 500,
+        standardVolumeMl: 500,
+        ahaDoseMinMcgKgMin: 0,
+        ahaDoseMaxMcgKgMin: 0,
+        dosingUnit: 'mg/kg/h',
+        preferredMode: 'weight-based',
+        notes: 'Analgesia: 0.1-0.5 mg/kg/h. A 1 mg/mL en 70 kg: 7-35 mL/h. Sedacion disociativa: 1-2 mg/kg bolus (no en infusion).',
+    },
 ];
 
 export const PREHOSPITAL_CASES: SimulatorCase[] = [
@@ -102,6 +154,37 @@ export const PREHOSPITAL_CASES: SimulatorCase[] = [
         suggestedWeightKg: 70,
         suggestedDoseMcgKgMin: 1,
         suggestedVtbiMl: 100,
+        preferredMode: 'weight-based',
+    },
+    {
+        id: 'penetrating-trauma-analgesia',
+        title: 'Analgesia en trauma penetrante',
+        objective: 'Titular ketamina para analgesia en paciente consciente con trauma penetrante.',
+        drugId: 'ketamine',
+        suggestedWeightKg: 80,
+        suggestedDoseMcgKgMin: 0,
+        suggestedVtbiMl: 100,
+        preferredMode: 'weight-based',
+    },
+    {
+        id: 'refractory-seizures',
+        title: 'Convulsiones refractarias en campo',
+        objective: 'Iniciar midazolam IV en infusion y monitorizar ventilacion continuamente.',
+        drugId: 'midazolam',
+        suggestedWeightKg: 70,
+        suggestedDoseMcgKgMin: 0,
+        suggestedVtbiMl: 50,
+        preferredMode: 'weight-based',
+    },
+    {
+        id: 'afib-post-cardioversion',
+        title: 'FA post-cardioversion: mantenimiento',
+        objective: 'Configurar lidocaina de mantenimiento post-cardioversion de FA con respuesta ventricular rapida.',
+        drugId: 'lidocaine',
+        suggestedWeightKg: 75,
+        suggestedDoseMcgKgMin: 0,
+        suggestedVtbiMl: 100,
+        preferredMode: 'mlh',
     },
 ];
 
@@ -129,6 +212,16 @@ export function calculateDoseMcgKgMinFromRate(
 
 export function validateDoseWithinAhaRange(drug: DrugLibraryEntry, doseMcgKgMin: number): boolean {
     return doseMcgKgMin >= drug.ahaDoseMinMcgKgMin && doseMcgKgMin <= drug.ahaDoseMaxMcgKgMin;
+}
+
+export function isDoseValidationApplicable(drug: DrugLibraryEntry): boolean {
+    return !drug.dosingUnit || drug.dosingUnit === 'mcg/kg/min';
+}
+
+export function validateMlhRateForDrug(drug: DrugLibraryEntry, rateMlHr: number): boolean {
+    if (drug.id === 'lidocaine') return rateMlHr >= 15 && rateMlHr <= 60;
+    if (drug.id === 'vasopressin') return rateMlHr >= 4 && rateMlHr <= 7;
+    return true;
 }
 
 export function isWithinPercentage(value: number, expected: number, percentage: number): boolean {

@@ -1,4 +1,4 @@
-import { useMemo, useState, useCallback, useEffect } from 'react';
+import { useMemo, useState, useCallback, useEffect, useRef } from 'react';
 import {
     BASE_ALARMS,
     DEFAULT_SAFETY_CHECKLIST,
@@ -8,16 +8,20 @@ import {
     calculateDoseMcgKgMinFromRate,
     calculateRateMlHrFromDose,
     concentrationMcgMl,
+    isDoseValidationApplicable,
     isWithinPercentage,
     validateDoseWithinAhaRange,
 } from './InfusionPumpSimulator.constants';
 import type {
     AlarmState,
+    ChartDataPoint,
     DrugLibraryEntry,
+    EvaluationState,
     InfusionMode,
     PumpProfile,
     PumpStatus,
     SafetyChecklistItem,
+    SimulationMode,
     SimulatorEvent,
     TrainingScore,
 } from './InfusionPumpSimulator.types';
@@ -32,6 +36,16 @@ function withUpdatedAlarm(alarms: AlarmState[], alarmId: string, active: boolean
 function hasCriticalAlarm(alarms: AlarmState[]): boolean {
     return alarms.some((alarm) => alarm.active && alarm.severity === 'critical');
 }
+
+const EMPTY_EVALUATION: EvaluationState = {
+    active: false,
+    completed: false,
+    startedAt: null,
+    finishedAt: null,
+    score: 100,
+    criticalErrors: 0,
+    events: [],
+};
 
 export default function useInfusionPumpSimulator() {
     const [pumpProfileId, setPumpProfileId] = useState<PumpProfile['id']>('alaris-gw');
@@ -53,6 +67,18 @@ export default function useInfusionPumpSimulator() {
     const [safetyChecklist, setSafetyChecklist] = useState<SafetyChecklistItem[]>(DEFAULT_SAFETY_CHECKLIST);
     const [trainingScore, setTrainingScore] = useState<TrainingScore>({ value: 100, penalties: 0, rewards: 0 });
     const [programLocked, setProgramLocked] = useState(false);
+
+    const [simulationMode, setSimulationModeState] = useState<SimulationMode>('practice');
+    const [titrationOpen, setTitrationOpen] = useState(false);
+    const [titrationDelta, setTitrationDelta] = useState(0);
+    const [isTransitioningRate, setIsTransitioningRate] = useState(false);
+    const [chartData, setChartData] = useState<ChartDataPoint[]>([]);
+    const [elapsedSeconds, setElapsedSeconds] = useState(0);
+    const [evaluation, setEvaluation] = useState<EvaluationState>(EMPTY_EVALUATION);
+    const [evaluationNow, setEvaluationNow] = useState(0);
+
+    const chartTickRef = useRef(0);
+    const transitionTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
     const unlockProgram = useCallback(() => {
         setProgramLocked(false);
@@ -93,6 +119,11 @@ export default function useInfusionPumpSimulator() {
         unlockProgram();
     }, [unlockProgram]);
 
+    const setSimulationMode = useCallback((value: SimulationMode) => {
+        if (status === 'running' || status === 'paused') return;
+        setSimulationModeState(value);
+    }, [status]);
+
     const selectedDrug = useMemo(
         () => INFUSION_DRUG_LIBRARY.find((item) => item.id === selectedDrugId) ?? null,
         [selectedDrugId],
@@ -130,7 +161,11 @@ export default function useInfusionPumpSimulator() {
     }, [selectedDrug, mode, targetDoseMcgKgMin, manualRateMlHr, weightKg, concentration]);
 
     const doseOutOfRange = useMemo(
-        () => (selectedDrug ? !validateDoseWithinAhaRange(selectedDrug, activeDoseMcgKgMin) : false),
+        () => {
+            if (!selectedDrug) return false;
+            if (!isDoseValidationApplicable(selectedDrug)) return false;
+            return !validateDoseWithinAhaRange(selectedDrug, activeDoseMcgKgMin);
+        },
         [selectedDrug, activeDoseMcgKgMin],
     );
 
@@ -149,6 +184,27 @@ export default function useInfusionPumpSimulator() {
         setEvents((prev) => [{ id: `${Date.now()}-${prev.length + 1}`, timestamp: Date.now(), message }, ...prev].slice(0, 40));
     }, []);
 
+    const registerEvaluationAction = useCallback((
+        action: string, detail: string, points: number, critical: boolean = false,
+    ) => {
+        setEvaluation((prev) => {
+            if (!prev.active || prev.completed) return prev;
+            return {
+                ...prev,
+                score: Math.max(0, Math.min(100, prev.score + points)),
+                criticalErrors: prev.criticalErrors + (critical ? 1 : 0),
+                events: [...prev.events, {
+                    id: `${Date.now()}-${prev.events.length + 1}`,
+                    timestamp: Date.now(),
+                    action,
+                    detail,
+                    points,
+                    critical,
+                }],
+            };
+        });
+    }, []);
+
     const updateTrainingScore = useCallback((delta: number, message: string) => {
         setTrainingScore((prev) => ({
             value: Math.max(0, Math.min(100, prev.value + delta)),
@@ -156,7 +212,13 @@ export default function useInfusionPumpSimulator() {
             rewards: prev.rewards + (delta > 0 ? delta : 0),
         }));
         appendEvent(message);
-    }, [appendEvent]);
+        registerEvaluationAction(
+            delta >= 0 ? 'RECOMPENSA' : 'PENALIZACION',
+            message,
+            delta,
+            delta <= -8,
+        );
+    }, [appendEvent, registerEvaluationAction]);
 
     const setAlarmActive = useCallback((alarmId: string, active: boolean) => {
         setAlarms((prev) => withUpdatedAlarm(prev, alarmId, active));
@@ -230,12 +292,14 @@ export default function useInfusionPumpSimulator() {
             }
 
             const targetMatch = isWithinPercentage(activeDoseMcgKgMin, activeCase.suggestedDoseMcgKgMin, 20);
-            updateTrainingScore(
-                targetMatch ? 6 : -6,
-                targetMatch
-                    ? 'Dosis dentro de tolerancia del caso (+/-20%).'
-                    : 'Dosis fuera de tolerancia del caso (+/-20%).',
-            );
+            if (activeCase.suggestedDoseMcgKgMin > 0) {
+                updateTrainingScore(
+                    targetMatch ? 6 : -6,
+                    targetMatch
+                        ? 'Dosis dentro de tolerancia del caso (+/-20%).'
+                        : 'Dosis fuera de tolerancia del caso (+/-20%).',
+                );
+            }
         }
     }, [activeDoseMcgKgMin, activeRateMlHr, activeCase, alarms, appendEvent, doseOutOfRange, programLocked, resetTransientAlarms, selectedDrug?.id, setAlarmActive, updateTrainingScore, validateProgramming]);
 
@@ -254,6 +318,9 @@ export default function useInfusionPumpSimulator() {
     const stopInfusion = useCallback(() => {
         setStatus('stopped');
         setInfusedMl(0);
+        setChartData([]);
+        setElapsedSeconds(0);
+        chartTickRef.current = 0;
         resetTransientAlarms();
         appendEvent('Infusion detenida y volumen reiniciado.');
     }, [appendEvent, resetTransientAlarms]);
@@ -270,6 +337,10 @@ export default function useInfusionPumpSimulator() {
         setActiveCaseId(picked.id);
         setSafetyChecklist(DEFAULT_SAFETY_CHECKLIST);
         setProgramLocked(false);
+        setChartData([]);
+        setElapsedSeconds(0);
+        chartTickRef.current = 0;
+        if (picked.preferredMode) setMode(picked.preferredMode);
         appendEvent(`Caso cargado: ${picked.title}.`);
     }, [appendEvent]);
 
@@ -295,11 +366,131 @@ export default function useInfusionPumpSimulator() {
         appendEvent(`Alarma ${alarmId} conmutada manualmente.`);
     }, [appendEvent, status, updateTrainingScore]);
 
+    // --- Titulación ---
+
+    const openTitration = useCallback(() => {
+        if (status !== 'running') return;
+        setTitrationDelta(0);
+        setTitrationOpen(true);
+    }, [status]);
+
+    const closeTitration = useCallback(() => {
+        setTitrationOpen(false);
+        setTitrationDelta(0);
+    }, []);
+
+    const titrationStep = useMemo(() => {
+        if (mode === 'weight-based') {
+            return Math.max(0.01, Math.round(targetDoseMcgKgMin * 0.1 * 1000) / 1000);
+        }
+        return 0.5;
+    }, [mode, targetDoseMcgKgMin]);
+
+    const titrationProposedDose = useMemo(() => {
+        if (mode === 'weight-based') {
+            return Math.max(0.001, targetDoseMcgKgMin + titrationDelta);
+        }
+        return Math.max(0.1, manualRateMlHr + titrationDelta);
+    }, [mode, targetDoseMcgKgMin, manualRateMlHr, titrationDelta]);
+
+    const adjustTitration = useCallback((direction: 'up' | 'down') => {
+        setTitrationDelta((prev) => {
+            const step = direction === 'up' ? titrationStep : -titrationStep;
+            return Math.round((prev + step) * 10000) / 10000;
+        });
+    }, [titrationStep]);
+
+    const commitTitration = useCallback(() => {
+        if (!selectedDrug || titrationDelta === 0) {
+            setTitrationOpen(false);
+            setTitrationDelta(0);
+            return;
+        }
+
+        const previousLabel = mode === 'weight-based'
+            ? `${targetDoseMcgKgMin.toFixed(3)} mcg/kg/min`
+            : `${manualRateMlHr.toFixed(2)} mL/h`;
+
+        if (mode === 'weight-based') {
+            setTargetDoseMcgKgMin(Math.max(0.001, targetDoseMcgKgMin + titrationDelta));
+        } else {
+            setManualRateMlHr(Math.max(0.1, manualRateMlHr + titrationDelta));
+        }
+
+        const newValue = mode === 'weight-based'
+            ? Math.max(0.001, targetDoseMcgKgMin + titrationDelta)
+            : Math.max(0.1, manualRateMlHr + titrationDelta);
+
+        const newLabel = mode === 'weight-based'
+            ? `${newValue.toFixed(3)} mcg/kg/min`
+            : `${newValue.toFixed(2)} mL/h`;
+
+        const withinRange = isDoseValidationApplicable(selectedDrug)
+            ? validateDoseWithinAhaRange(selectedDrug, mode === 'weight-based' ? newValue : activeDoseMcgKgMin)
+            : true;
+
+        const message = `Titracion: ${previousLabel} → ${newLabel}${withinRange ? '' : ' (fuera de rango AHA)'}`;
+        updateTrainingScore(withinRange ? 3 : -5, message);
+
+        if (transitionTimerRef.current) clearTimeout(transitionTimerRef.current);
+        setIsTransitioningRate(true);
+        transitionTimerRef.current = setTimeout(() => setIsTransitioningRate(false), 1200);
+
+        setTitrationDelta(0);
+        setTitrationOpen(false);
+    }, [
+        selectedDrug, mode, targetDoseMcgKgMin, manualRateMlHr, titrationDelta,
+        activeDoseMcgKgMin, updateTrainingScore,
+    ]);
+
+    // --- Modo evaluación ---
+
+    const startEvaluation = useCallback(() => {
+        if (status === 'running' || status === 'paused') return;
+        setSimulationModeState('evaluation');
+        setEvaluationNow(Date.now());
+        setEvaluation({
+            active: true,
+            completed: false,
+            startedAt: Date.now(),
+            finishedAt: null,
+            score: 100,
+            criticalErrors: 0,
+            events: [],
+        });
+        appendEvent('MODO EVALUACION iniciado.');
+    }, [status, appendEvent]);
+
+    const finishEvaluation = useCallback(() => {
+        setEvaluation((prev) => {
+            if (!prev.active || prev.completed) return prev;
+            return { ...prev, completed: true, active: false, finishedAt: Date.now() };
+        });
+        appendEvent('EVALUACION finalizada. Ver resumen de puntaje.');
+    }, [appendEvent]);
+
+    const resetEvaluation = useCallback(() => {
+        setEvaluation(EMPTY_EVALUATION);
+        setSimulationModeState('practice');
+        appendEvent('Evaluacion reiniciada.');
+    }, [appendEvent]);
+
+    // Timer del modo evaluación
+    useEffect(() => {
+        if (!evaluation.active || evaluation.completed) return;
+        const id = setInterval(() => setEvaluationNow(Date.now()), 1000);
+        return () => clearInterval(id);
+    }, [evaluation.active, evaluation.completed]);
+
+    // Intervalo principal de infusión
     useEffect(() => {
         if (status !== 'running') return;
         if (hasCriticalAlarm(alarms)) return;
 
         const id = setInterval(() => {
+            chartTickRef.current += 1;
+            setElapsedSeconds((prev) => prev + 1);
+
             const infusedStepMl = activeRateMlHr / 3600;
             setInfusedMl((prev) => {
                 const next = prev + infusedStepMl;
@@ -309,8 +500,30 @@ export default function useInfusionPumpSimulator() {
                     setAlarmActive('infusion-complete', true);
                     appendEvent('Infusion completada.');
                     updateTrainingScore(12, 'Objetivo de infusion completado.');
+                    if (evaluation.active) {
+                        setEvaluation((prev) => {
+                            if (!prev.active || prev.completed) return prev;
+                            return { ...prev, completed: true, active: false, finishedAt: Date.now() };
+                        });
+                    }
                     return vtbiMl;
                 }
+
+                // Muestreo de gráfico cada 10 segundos
+                if (chartTickRef.current % 10 === 0) {
+                    const timeMin = Math.round((chartTickRef.current / 60) * 100) / 100;
+                    setChartData((prevData) => {
+                        const point: ChartDataPoint = {
+                            timeMin,
+                            infusedMl: Math.round(next * 100) / 100,
+                            rateMlHr: activeRateMlHr,
+                            doseMcgKgMin: activeDoseMcgKgMin,
+                        };
+                        const trimmed = prevData.length >= 100 ? prevData.slice(1) : prevData;
+                        return [...trimmed, point];
+                    });
+                }
+
                 return next;
             });
 
@@ -324,7 +537,12 @@ export default function useInfusionPumpSimulator() {
         }, 1000);
 
         return () => clearInterval(id);
-    }, [activeRateMlHr, alarms, appendEvent, setAlarmActive, status, updateTrainingScore, vtbiMl]);
+    }, [activeDoseMcgKgMin, activeRateMlHr, alarms, appendEvent, evaluation.active, setAlarmActive, status, updateTrainingScore, vtbiMl]);
+
+    const evaluationElapsedSeconds = evaluation.startedAt
+        ? Math.max(0, Math.floor(((evaluation.completed && evaluation.finishedAt
+            ? evaluation.finishedAt : evaluationNow) - evaluation.startedAt) / 1000))
+        : 0;
 
     return {
         pumpProfiles: PUMP_PROFILES,
@@ -363,6 +581,24 @@ export default function useInfusionPumpSimulator() {
         status,
         alarms,
         events,
+        simulationMode,
+        setSimulationMode,
+        titrationOpen,
+        titrationDelta,
+        titrationProposedDose,
+        titrationStep,
+        isTransitioningRate,
+        openTitration,
+        closeTitration,
+        adjustTitration,
+        commitTitration,
+        chartData,
+        elapsedSeconds,
+        evaluation,
+        evaluationElapsedSeconds,
+        startEvaluation,
+        finishEvaluation,
+        resetEvaluation,
         confirmProgramming,
         startInfusion,
         pauseInfusion,
@@ -373,5 +609,3 @@ export default function useInfusionPumpSimulator() {
         toggleAlarm,
     };
 }
-
-

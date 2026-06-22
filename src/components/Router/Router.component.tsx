@@ -166,6 +166,7 @@ import Simulator from "../../pages/Simulator/Simulator.page.tsx";
 import MonitorAndEkgSimulator from "../../pages/Simulator/MonitorAndEkgSimulator/MonitorAndEkgSimulator.page.tsx";
 import InstructorPanel from "../../pages/Simulator/MonitorAndEkgSimulator/InstructorPanel.page.tsx";
 import InfusionPumpSimulator from "../../pages/Simulator/InfusionPumpSimulator/InfusionPumpSimulator.page.tsx";
+import MechanicalVentilatorSimulator from "../../pages/Simulator/MechanicalVentilatorSimulator/MechanicalVentilatorSimulator.page.tsx";
 
 export default function Router() {
        return (
@@ -410,6 +411,7 @@ export default function Router() {
                             <Route path={AllRoutes.ECG_INSTRUCTOR} element={<InstructorPanel />} />
                             <Route path={AllRoutes.ECG_MONITOR_SIMULATOR} element={<MonitorAndEkgSimulator />} />
                             <Route path={AllRoutes.INFUSION_PUMP_SIMULATOR} element={<InfusionPumpSimulator />} />
+                            <Route path={AllRoutes.MECHANICAL_VENTILATOR_SIMULATOR} element={<MechanicalVentilatorSimulator />} />
 
                             {/* Ambulance Checklist */}
                             <Route path={AllRoutes.AMBULANCE_CHECKLIST} element={<AmbulanceChecklist />} />

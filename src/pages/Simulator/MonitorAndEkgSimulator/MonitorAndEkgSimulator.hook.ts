@@ -163,15 +163,15 @@ export default function useMonitorSimulator(liveSessionId?: string) {
             if (plethBufferRef.current.length > 0) plethBufferRef.current.fill(0);
         }
         if (sessionData.monitorType && !monitorType) {
-            // eslint-disable-next-line react-hooks/set-state-in-effect
             setMonitorType(sessionData.monitorType);
         }
     }, [sessionData, isLiveSession, currentScenario.id, monitorType]);
 
     useEffect(() => {
         if (!isLiveSession || !sessionData?.scenario?.vitals) return;
-        // eslint-disable-next-line react-hooks/set-state-in-effect
-        setDisplayVitals(sessionData.scenario.vitals);
+        queueMicrotask(() => {
+            setDisplayVitals(sessionData.scenario.vitals);
+        });
     }, [sessionData?.scenario?.vitals, isLiveSession]);
 
     // ── Energy levels for current monitor ───────
@@ -291,7 +291,6 @@ export default function useMonitorSimulator(liveSessionId?: string) {
         if (!isOn || isLiveSession) return;
         const id = setInterval(() => {
             const base = currentScenario.defaultVitals;
-            // eslint-disable-next-line react-hooks/set-state-in-effect
             setDisplayVitals({
                 hr: base.hr > 0 ? base.hr + Math.round((Math.random() - 0.5) * 4) : 0,
                 spo2: base.spo2 > 0 ? Math.min(100, Math.max(0, base.spo2 + Math.round((Math.random() - 0.5) * 2))) : 0,
@@ -432,8 +431,8 @@ export default function useMonitorSimulator(liveSessionId?: string) {
                 const a = alarmsRef.current;
                 const isVitalAlarm = a.hrHigh || a.hrLow || a.spo2Low;
                 const isDead = hr === 0;
-                // fire every ~1 s for vital alarms, ~2 s for flatline
-                const alarmInterval = isDead ? 2 : 1;
+                // fire every ~3 s for vital alarms, ~2 s for flatline
+                const alarmInterval = isDead ? 2 : 3;
                 const alarmTick = Math.floor(timeRef.current / alarmInterval);
                 if (alarmTick !== lastAlarmSecRef.current) {
                     lastAlarmSecRef.current = alarmTick;

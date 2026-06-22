@@ -155,7 +155,7 @@ export default function Simulator() {
             icon: <GiLungs className="w-12 h-12" />,
             category: "Equipamiento",
             difficulty: "Avanzado",
-            status: "próximamente",
+            status: "en desarrollo",
             features: [
                 "Ajustes mecánicos: Volumen Corriente (Vt), Frecuencia (FR), PEEP, FiO2 y Sensibilidad de disparo",
                 "Monitoreo visual mediante curvas dinámicas de Presión/Tiempo y Flujo/Tiempo",
@@ -278,6 +278,7 @@ export default function Simulator() {
     const getSimulatorRoute = (id: string) => {
         if (id === "cardiac-monitor") return AllRoutes.ECG_MONITOR_SIMULATOR;
         if (id === "infusion-pump") return AllRoutes.INFUSION_PUMP_SIMULATOR;
+        if (id === "mechanical-ventilator") return AllRoutes.MECHANICAL_VENTILATOR_SIMULATOR;
         return null;
     };
 

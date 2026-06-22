@@ -1,14 +1,33 @@
 import { useMemo, useState } from 'react';
 import { NavLink } from 'react-router';
 import { FaArrowLeft, FaPlay, FaPause, FaStop, FaSyringe, FaExclamationTriangle } from 'react-icons/fa';
+import {
+    Area,
+    CartesianGrid,
+    ComposedChart,
+    Legend,
+    Line,
+    ResponsiveContainer,
+    Tooltip,
+    XAxis,
+    YAxis,
+} from 'recharts';
 import { AllRoutes } from '../../../components/Router/Router.constants.ts';
 import SEOWrapper from '../../../components/SEOWrapper/SEOWrapper.component.tsx';
+import { isDoseValidationApplicable } from './InfusionPumpSimulator.constants';
 import useInfusionPumpSimulator from './InfusionPumpSimulator.hook';
 
 function severityStyles(severity: 'info' | 'warning' | 'critical'): string {
     if (severity === 'critical') return 'bg-red-100 text-red-700 border-red-300';
     if (severity === 'warning') return 'bg-amber-100 text-amber-700 border-amber-300';
     return 'bg-slate-100 text-slate-700 border-slate-300';
+}
+
+function statusBadgeStyles(s: string): string {
+    if (s === 'running') return 'bg-emerald-500 text-white';
+    if (s === 'paused') return 'bg-amber-500 text-white';
+    if (s === 'completed') return 'bg-blue-500 text-white';
+    return 'bg-slate-600 text-white';
 }
 
 export default function InfusionPumpSimulator() {
@@ -49,6 +68,23 @@ export default function InfusionPumpSimulator() {
         status,
         alarms,
         events,
+        simulationMode,
+        setSimulationMode,
+        titrationOpen,
+        titrationDelta,
+        titrationProposedDose,
+        titrationStep,
+        isTransitioningRate,
+        openTitration,
+        closeTitration,
+        adjustTitration,
+        commitTitration,
+        chartData,
+        evaluation,
+        evaluationElapsedSeconds,
+        startEvaluation,
+        finishEvaluation,
+        resetEvaluation,
         confirmProgramming,
         startInfusion,
         pauseInfusion,
@@ -63,6 +99,7 @@ export default function InfusionPumpSimulator() {
     const [keypadBuffer, setKeypadBuffer] = useState('');
 
     const activeAlarms = alarms.filter((alarm) => alarm.active);
+    const hasCriticalAlarmActive = activeAlarms.some((a) => a.severity === 'critical');
 
     const targetCurrentValue = useMemo(() => {
         if (keypadTarget === 'weight') return String(weightKg);
@@ -99,6 +136,12 @@ export default function InfusionPumpSimulator() {
         if (keypadTarget === 'vtbi') setVtbiMl(parsed);
         setKeypadBuffer('');
     };
+
+    // Barra de progreso LCD segmentada (20 segmentos)
+    const PROGRESS_SEGMENTS = 20;
+    const filledSegments = vtbiMl > 0 ? Math.round((infusedMl / vtbiMl) * PROGRESS_SEGMENTS) : 0;
+
+    const displayValue = keypadBuffer || targetCurrentValue;
 
     return (
         <SEOWrapper
@@ -137,6 +180,48 @@ export default function InfusionPumpSimulator() {
 
                 <main className="container mx-auto px-4 md:px-8 mt-8 grid grid-cols-1 xl:grid-cols-3 gap-6">
                     <section className="xl:col-span-2 bg-white rounded-3xl border border-slate-200 shadow-lg p-6 space-y-6">
+
+                        {/* Modo de simulación */}
+                        <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 flex items-center justify-between">
+                            <span className="text-sm font-bold text-slate-700">Modo de simulacion</span>
+                            <div className="flex gap-2">
+                                <button
+                                    onClick={() => setSimulationMode('practice')}
+                                    disabled={status === 'running' || status === 'paused'}
+                                    className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all disabled:opacity-50 ${
+                                        simulationMode === 'practice'
+                                            ? 'bg-emerald-600 text-white'
+                                            : 'bg-slate-200 text-slate-600'
+                                    }`}
+                                >
+                                    Practica
+                                </button>
+                                <button
+                                    onClick={() => setSimulationMode('evaluation')}
+                                    disabled={status === 'running' || status === 'paused'}
+                                    className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all disabled:opacity-50 ${
+                                        simulationMode === 'evaluation'
+                                            ? 'bg-violet-600 text-white'
+                                            : 'bg-slate-200 text-slate-600'
+                                    }`}
+                                >
+                                    Evaluacion
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Timer de evaluación activa */}
+                        {simulationMode === 'evaluation' && evaluation.active && (
+                            <div className="rounded-xl bg-violet-900/10 border border-violet-400/40 px-4 py-2 flex items-center justify-between">
+                                <span className="text-violet-700 text-xs font-bold uppercase tracking-wider">Evaluacion en curso</span>
+                                <span className="text-violet-800 font-mono text-sm font-bold">
+                                    {String(Math.floor(evaluationElapsedSeconds / 60)).padStart(2, '0')}:
+                                    {String(evaluationElapsedSeconds % 60).padStart(2, '0')}
+                                </span>
+                                <span className="text-violet-700 text-xs font-bold">Score: {evaluation.score}</span>
+                            </div>
+                        )}
+
                         <div className="grid md:grid-cols-3 gap-4">
                             <label className="flex flex-col gap-1 text-sm text-slate-600">
                                 Perfil de bomba
@@ -183,7 +268,12 @@ export default function InfusionPumpSimulator() {
                             <div className="rounded-xl border border-cyan-200 bg-cyan-50 px-3 py-2 text-sm text-cyan-900">
                                 <p className="font-semibold">Concentracion estandar</p>
                                 <p>{concentration.toFixed(2)} mcg/mL</p>
-                                {selectedDrug ? <p className="text-xs mt-1">{selectedDrug.indication}</p> : null}
+                                {selectedDrug && simulationMode === 'practice'
+                                    ? <p className="text-xs mt-1">{selectedDrug.indication}</p>
+                                    : null}
+                                {selectedDrug?.dosingUnit && selectedDrug.dosingUnit !== 'mcg/kg/min'
+                                    ? <p className="text-xs mt-1 font-semibold text-cyan-700">Unidad: {selectedDrug.dosingUnit}</p>
+                                    : null}
                             </div>
                         </div>
 
@@ -273,7 +363,7 @@ export default function InfusionPumpSimulator() {
                                 </div>
                             </div>
 
-                            {doseOutOfRange ? (
+                            {simulationMode === 'practice' && doseOutOfRange ? (
                                 <p className="mt-3 text-xs font-semibold text-amber-700 bg-amber-50 border border-amber-200 rounded-xl px-3 py-2">
                                     Advertencia: la dosis actual esta fuera del rango recomendado ACLS/AHA para este farmaco.
                                 </p>
@@ -290,7 +380,7 @@ export default function InfusionPumpSimulator() {
 
                                 <div className="rounded-xl border border-slate-300 bg-black text-green-400 font-mono px-3 py-2 text-sm mb-3">
                                     <p className="text-[11px] text-green-300/80">TARGET: {keypadTarget.toUpperCase()}</p>
-                                    <p>{keypadBuffer || targetCurrentValue}</p>
+                                    <p>{displayValue}</p>
                                 </div>
 
                                 <div className="grid grid-cols-3 gap-2">
@@ -332,6 +422,7 @@ export default function InfusionPumpSimulator() {
                             </div>
                         </div>
 
+                        {/* Controles de infusión + TITRATE + Evaluación */}
                         <div className="flex flex-wrap gap-3">
                             <button onClick={confirmProgramming} className="px-4 py-2 rounded-xl bg-indigo-600 text-white font-bold inline-flex items-center gap-2">
                                 Confirmar programacion
@@ -348,7 +439,67 @@ export default function InfusionPumpSimulator() {
                             <button onClick={stopInfusion} className="px-4 py-2 rounded-xl bg-rose-600 text-white font-bold inline-flex items-center gap-2">
                                 <FaStop /> Detener
                             </button>
+                            {status === 'running' ? (
+                                <button
+                                    onClick={openTitration}
+                                    className="px-4 py-2 rounded-xl bg-violet-600 text-white font-bold inline-flex items-center gap-2"
+                                >
+                                    TITRAR
+                                </button>
+                            ) : null}
+
+                            {/* Controles modo evaluación */}
+                            {simulationMode === 'evaluation' && !evaluation.active && !evaluation.completed ? (
+                                <button onClick={startEvaluation} className="px-4 py-2 rounded-xl bg-violet-700 text-white font-bold">
+                                    Iniciar evaluacion
+                                </button>
+                            ) : null}
+                            {simulationMode === 'evaluation' && evaluation.active ? (
+                                <button onClick={finishEvaluation} className="px-4 py-2 rounded-xl bg-violet-500 text-white font-bold">
+                                    Finalizar evaluacion
+                                </button>
+                            ) : null}
+                            {simulationMode === 'evaluation' && evaluation.completed ? (
+                                <button onClick={resetEvaluation} className="px-4 py-2 rounded-xl border border-violet-400 text-violet-700 font-bold">
+                                    Nueva evaluacion
+                                </button>
+                            ) : null}
                         </div>
+
+                        {/* Debrief de evaluación */}
+                        {evaluation.completed ? (
+                            <div className="rounded-2xl border border-violet-300 bg-violet-50 p-4 space-y-3">
+                                <div className="flex flex-wrap items-center gap-3">
+                                    <h3 className="font-bold text-violet-900">Debrief de evaluacion</h3>
+                                    <span className="text-xs font-bold bg-violet-200 text-violet-800 px-2 py-1 rounded-lg">
+                                        Score: {evaluation.score}/100
+                                    </span>
+                                    <span className="text-xs font-bold bg-red-200 text-red-800 px-2 py-1 rounded-lg">
+                                        Errores criticos: {evaluation.criticalErrors}
+                                    </span>
+                                </div>
+                                {evaluation.events.length === 0 ? (
+                                    <p className="text-xs text-violet-600">No se registraron eventos de evaluacion.</p>
+                                ) : (
+                                    <div className="space-y-2 max-h-64 overflow-y-auto">
+                                        {evaluation.events.map((event) => (
+                                            <div
+                                                key={event.id}
+                                                className={`rounded-xl border px-3 py-2 text-xs ${event.critical ? 'border-red-200 bg-red-50' : 'border-slate-200 bg-white'}`}
+                                            >
+                                                <div className="flex justify-between items-center">
+                                                    <span className="font-bold text-slate-800">{event.action}</span>
+                                                    <span className={`font-bold ${event.points >= 0 ? 'text-emerald-700' : 'text-red-700'}`}>
+                                                        {event.points >= 0 ? `+${event.points}` : event.points} pts
+                                                    </span>
+                                                </div>
+                                                <p className="text-slate-500 mt-0.5">{event.detail}</p>
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                        ) : null}
 
                         <div className="rounded-2xl border border-slate-200 p-4">
                             <p className="font-bold mb-3">Casos prehospitalarios sugeridos</p>
@@ -367,6 +518,7 @@ export default function InfusionPumpSimulator() {
                         </div>
                     </section>
 
+                    {/* Sidebar derecho */}
                     <aside className="bg-slate-900 text-slate-100 rounded-3xl shadow-lg p-5 space-y-5">
                         <div className="border border-slate-700 rounded-2xl p-4 bg-black/30">
                             <p className="text-xs uppercase tracking-wider text-slate-400">Evaluacion ACLS/AHA</p>
@@ -374,14 +526,71 @@ export default function InfusionPumpSimulator() {
                             <p className="text-xs text-slate-400 mt-1">Recompensas: +{trainingScore.rewards} | Penalizaciones: -{trainingScore.penalties}</p>
                         </div>
 
-                        <div className="border border-slate-700 rounded-2xl p-4 bg-black/30">
-                            <p className="text-xs uppercase tracking-wider text-slate-400">Pantalla principal</p>
-                            <p className="text-lg font-bold mt-1">Estado: {status.toUpperCase()}</p>
-                            <div className="mt-3 text-sm space-y-1">
-                                <p>Infundido: {infusedMl.toFixed(1)} mL</p>
-                                <p>Restante: {remainingMl.toFixed(1)} mL</p>
-                                <p>Tiempo restante: {timeRemainingMin.toFixed(1)} min</p>
+                        {/* Display LCD */}
+                        <div className={`rounded-2xl border-2 p-4 ${hasCriticalAlarmActive ? 'border-red-500 animate-pulse' : 'border-[#5a6a3e]'}`}
+                            style={{ background: '#2e3d25' }}>
+                            {/* Línea superior */}
+                            <div className="flex items-center justify-between mb-2">
+                                <span className="font-mono text-xs text-[#8ab060]">
+                                    {selectedDrug ? selectedDrug.name.toUpperCase() : 'SIN FARMACO'}
+                                </span>
+                                <span className="font-mono text-xs text-[#8ab060]">
+                                    {mode === 'weight-based' ? 'MCG/KG/MIN' : 'ML/H'}
+                                </span>
                             </div>
+
+                            {/* Valor central grande */}
+                            <div className="text-center py-2">
+                                <p className={`font-mono font-black text-4xl ${
+                                    hasCriticalAlarmActive
+                                        ? 'text-red-400'
+                                        : isTransitioningRate
+                                            ? 'text-amber-400 animate-pulse'
+                                            : 'text-[#b4ff7a]'
+                                }`}>
+                                    {activeRateMlHr.toFixed(2)}
+                                </p>
+                                <p className="font-mono text-xs text-[#8ab060] mt-0.5">mL/h</p>
+                            </div>
+
+                            {/* Línea inferior */}
+                            <div className="flex justify-between font-mono text-xs text-[#8ab060] mt-1">
+                                <span>{activeDoseMcgKgMin.toFixed(3)} mcg/kg/min</span>
+                                <span>{remainingMl.toFixed(1)} mL rest.</span>
+                            </div>
+
+                            {/* Badge de estado */}
+                            <div className="mt-3 flex items-center justify-between">
+                                <span className={`text-xs font-black px-2 py-1 rounded-lg ${statusBadgeStyles(status)}`}>
+                                    {status === 'running' ? 'RUNNING'
+                                        : status === 'paused' ? 'PAUSED'
+                                        : status === 'completed' ? 'COMPLETED'
+                                        : 'STOPPED'}
+                                </span>
+                                {isTransitioningRate ? (
+                                    <span className="text-xs font-bold text-amber-400 animate-pulse">AJUSTANDO...</span>
+                                ) : null}
+                            </div>
+
+                            {/* Barra de progreso segmentada */}
+                            <div className="mt-3 flex gap-0.5">
+                                {Array.from({ length: PROGRESS_SEGMENTS }, (_, i) => (
+                                    <div
+                                        key={i}
+                                        className="h-2.5 flex-1 rounded-sm"
+                                        style={{ background: i < filledSegments ? '#b4ff7a' : '#2a3a1e' }}
+                                    />
+                                ))}
+                            </div>
+                            <div className="flex justify-between font-mono text-[10px] text-[#8ab060] mt-1">
+                                <span>0 mL</span>
+                                <span>{vtbiMl} mL</span>
+                            </div>
+
+                            {/* Tiempo restante */}
+                            <p className="font-mono text-xs text-[#8ab060] mt-2 text-center">
+                                {timeRemainingMin.toFixed(1)} min restantes
+                            </p>
                         </div>
 
                         <div>
@@ -425,8 +634,162 @@ export default function InfusionPumpSimulator() {
                         </div>
                     </aside>
                 </main>
+
+                {/* Gráfico de progreso */}
+                {chartData.length > 1 ? (
+                    <section className="container mx-auto px-4 md:px-8 mt-6">
+                        <div className="bg-white rounded-3xl border border-slate-200 shadow-lg p-6">
+                            <p className="font-bold text-slate-800 mb-4">Progreso de infusion en tiempo real</p>
+                            <ResponsiveContainer width="100%" height={280}>
+                                <ComposedChart data={chartData} margin={{ top: 5, right: 30, left: 10, bottom: 20 }}>
+                                    <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+                                    <XAxis
+                                        dataKey="timeMin"
+                                        tick={{ fontSize: 11 }}
+                                        label={{ value: 'Tiempo (min)', position: 'insideBottom', offset: -10, fontSize: 11 }}
+                                    />
+                                    <YAxis
+                                        yAxisId="left"
+                                        tick={{ fontSize: 11 }}
+                                        label={{ value: 'mL', angle: -90, position: 'insideLeft', fontSize: 11 }}
+                                    />
+                                    <YAxis
+                                        yAxisId="right"
+                                        orientation="right"
+                                        tick={{ fontSize: 11 }}
+                                        label={{ value: 'mL/h', angle: 90, position: 'insideRight', fontSize: 11 }}
+                                    />
+                                    <Tooltip
+                                        formatter={(value, name) => {
+                                            if (name === 'infusedMl') return [`${value} mL`, 'Volumen infundido'];
+                                            if (name === 'rateMlHr') return [`${value} mL/h`, 'Flujo activo'];
+                                            if (name === 'doseMcgKgMin') return [`${value} mcg/kg/min`, 'Dosis activa'];
+                                            return [`${value}`, `${name}`];
+                                        }}
+                                        labelFormatter={(label) => `T: ${label} min`}
+                                    />
+                                    <Legend verticalAlign="top" />
+                                    <Area
+                                        yAxisId="left"
+                                        type="monotone"
+                                        dataKey="infusedMl"
+                                        fill="#dbeafe"
+                                        stroke="#3b82f6"
+                                        fillOpacity={0.4}
+                                        name="Volumen infundido"
+                                        dot={false}
+                                        isAnimationActive={false}
+                                    />
+                                    <Line
+                                        yAxisId="right"
+                                        type="stepAfter"
+                                        dataKey="rateMlHr"
+                                        stroke="#f59e0b"
+                                        strokeWidth={2}
+                                        name="Flujo activo"
+                                        dot={false}
+                                        isAnimationActive={false}
+                                    />
+                                    {mode === 'weight-based' ? (
+                                        <Line
+                                            yAxisId="right"
+                                            type="stepAfter"
+                                            dataKey="doseMcgKgMin"
+                                            stroke="#8b5cf6"
+                                            strokeWidth={1.5}
+                                            strokeDasharray="4 2"
+                                            name="Dosis activa"
+                                            dot={false}
+                                            isAnimationActive={false}
+                                        />
+                                    ) : null}
+                                </ComposedChart>
+                            </ResponsiveContainer>
+                        </div>
+                    </section>
+                ) : null}
             </div>
+
+            {/* Overlay de titulación */}
+            {titrationOpen ? (
+                <div className="fixed inset-0 bg-black/60 flex items-end justify-center z-50 pb-8">
+                    <div className="bg-slate-900 rounded-3xl border border-violet-500/50 p-6 w-full max-w-sm space-y-4 mx-4">
+                        <p className="font-bold text-white text-center text-lg">TITRACION ACTIVA</p>
+                        <p className="text-slate-400 text-xs text-center">
+                            {mode === 'weight-based' ? 'Ajuste de dosis (mcg/kg/min)' : 'Ajuste de flujo (mL/h)'}
+                        </p>
+                        <p className="text-slate-500 text-xs text-center">
+                            Incremento: {titrationStep.toFixed(mode === 'weight-based' ? 3 : 1)}
+                        </p>
+
+                        {/* Valor actual */}
+                        <div className="flex items-center justify-between bg-slate-800 rounded-xl p-3">
+                            <span className="text-slate-400 text-sm">Actual:</span>
+                            <span className="text-white font-mono font-bold">
+                                {mode === 'weight-based'
+                                    ? `${targetDoseMcgKgMin.toFixed(3)} mcg/kg/min`
+                                    : `${manualRateMlHr.toFixed(2)} mL/h`}
+                            </span>
+                        </div>
+
+                        {/* Valor propuesto */}
+                        <div className="flex items-center justify-between bg-violet-900/40 rounded-xl p-3 border border-violet-500/30">
+                            <span className="text-violet-300 text-sm">Propuesta:</span>
+                            <span className="text-violet-100 font-mono font-bold text-lg">
+                                {mode === 'weight-based'
+                                    ? `${titrationProposedDose.toFixed(3)} mcg/kg/min`
+                                    : `${titrationProposedDose.toFixed(2)} mL/h`}
+                            </span>
+                        </div>
+
+                        {/* Hint de rango AHA solo en modo práctica */}
+                        {simulationMode === 'practice' && selectedDrug && isDoseValidationApplicable(selectedDrug) ? (
+                            <p className="text-xs text-cyan-400 text-center">
+                                Rango AHA: {selectedDrug.ahaDoseMinMcgKgMin} – {selectedDrug.ahaDoseMaxMcgKgMin} mcg/kg/min
+                            </p>
+                        ) : null}
+
+                        {/* Botones +/- */}
+                        <div className="flex gap-3 justify-center">
+                            <button
+                                onClick={() => adjustTitration('down')}
+                                className="px-8 py-4 rounded-xl bg-slate-700 text-white font-black text-2xl hover:bg-slate-600 active:scale-95"
+                            >
+                                −
+                            </button>
+                            <button
+                                onClick={() => adjustTitration('up')}
+                                className="px-8 py-4 rounded-xl bg-slate-700 text-white font-black text-2xl hover:bg-slate-600 active:scale-95"
+                            >
+                                +
+                            </button>
+                        </div>
+
+                        <p className={`text-xs text-center font-semibold ${
+                            titrationDelta === 0 ? 'text-slate-500' : titrationDelta > 0 ? 'text-emerald-400' : 'text-rose-400'
+                        }`}>
+                            Delta: {titrationDelta > 0 ? '+' : ''}{titrationDelta.toFixed(mode === 'weight-based' ? 3 : 1)}
+                        </p>
+
+                        {/* Confirmar / Cancelar */}
+                        <div className="flex gap-2">
+                            <button
+                                onClick={closeTitration}
+                                className="flex-1 px-4 py-2 rounded-xl bg-slate-700 text-slate-300 font-bold hover:bg-slate-600"
+                            >
+                                Cancelar
+                            </button>
+                            <button
+                                onClick={commitTitration}
+                                disabled={titrationDelta === 0}
+                                className="flex-1 px-4 py-2 rounded-xl bg-violet-600 text-white font-bold hover:bg-violet-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                            >
+                                CONFIRMAR
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            ) : null}
         </SEOWrapper>
     );
 }
-
