@@ -1,15 +1,152 @@
-import { GiCog } from "react-icons/gi";
+import { ReactNode, useState } from "react";
+import { NavLink } from "react-router";
+import { GiMetalBar } from "react-icons/gi";
+import { FaLink } from "react-icons/fa";
+import { GiGears } from "react-icons/gi";
+import { MdOutlineDevicesOther, MdMenuBook, MdQuiz } from "react-icons/md";
+import { IoReturnDownBack } from "react-icons/io5";
+import { Disclosure } from "@headlessui/react";
+import { ChevronUpIcon } from "@heroicons/react/16/solid";
 import { AllRoutes } from "../../../../components/Router/Router.constants";
-import LessonTemplate from "../../components/LessonTemplate.component";
+import SEOWrapper from "../../../../components/SEOWrapper/SEOWrapper.component";
+import { ForumSection } from "../../../../components/ForumSection";
+import { hardwareFaqData } from "./Hardware.questions";
+import HardwareOverview from "./components/Overview.component";
+import Carabiners from "./components/Carabiners.component";
+import Pulleys from "./components/Pulleys.component";
+import Devices from "./components/Devices.component";
+
+type HardwareTab = "overview" | "carabiners" | "pulleys" | "devices";
 
 export default function Hardware() {
+    const [activeTab, setActiveTab] = useState<HardwareTab>("overview");
+
+    const tabs: { id: HardwareTab; label: string; icon: ReactNode }[] = [
+        { id: "overview",    label: "Generalidades",  icon: <MdMenuBook className="w-4 h-4" /> },
+        { id: "carabiners",  label: "Mosquetones",    icon: <FaLink className="w-4 h-4" /> },
+        { id: "pulleys",     label: "Poleas",         icon: <GiGears className="w-4 h-4" /> },
+        { id: "devices",     label: "Dispositivos",   icon: <MdOutlineDevicesOther className="w-4 h-4" /> },
+    ];
+
     return (
-        <LessonTemplate
-            title="Hardware de Rescate con Cuerdas"
-            icon={<GiCog className="w-14 h-14 text-white"/>}
-            moduleNumber={6}
-            route={AllRoutes.ROPE_HARDWARE}
-            forumKey="rope-hardware"
-        />
+        <SEOWrapper
+            title="Hardware de Rescate con Cuerdas | Lección 6"
+            description="Lección 6 del curso de Rescate con Cuerdas: mosquetones (tipos, materiales, NFPA, gate flutter), poleas (VM fija vs. móvil, Prusik-minding, knot-pass), descendedores (Figura 8, Brake Bar Rack, autobloqueantes, MPD, CLUTCH), ascendedores y dispositivos de aseguramiento."
+            keywords="hardware rescate cuerdas, mosquetones NFPA, poleas ventaja mecánica, Figura 8 descender, Brake Bar Rack, MPD, CLUTCH, ascendedor Gibbs, 540 rescue belay"
+            section="ropes"
+            difficulty="Intermediate"
+            timeRequired="PT1H30M"
+            educationalLevel="Technical"
+            includeEducationalSchema={true}
+        >
+            <div className="min-h-screen bg-gray-50">
+                <div className="flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-white pb-12 px-4 p-4">
+                    <div className="w-full max-w-5xl">
+
+                        {/* Cabecera */}
+                        <header className="mb-8 text-center">
+                            <div className="flex justify-center">
+                                <div className="w-24 h-24 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
+                                    <GiMetalBar className="w-14 h-14 text-white" />
+                                </div>
+                            </div>
+                            <p className="text-sm font-semibold text-orange-600 mb-1">Lección 6</p>
+                            <h1 className="text-4xl font-bold mb-2 text-center bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
+                                Hardware de Rescate con Cuerdas
+                            </h1>
+                            <p className="text-sm italic mb-4 text-gray-500">Alumnos Rescate 1</p>
+                            <div className="flex justify-center">
+                                <NavLink
+                                    to={AllRoutes.ROPE_RESCUE}
+                                    className="flex gap-2 mb-4 bg-white shadow rounded-lg p-2 hover:bg-orange-50 transition duration-300 ease-in-out"
+                                >
+                                    <IoReturnDownBack className="w-5 h-5 my-auto" />
+                                    <p className="text-lg">Regresar a lecciones</p>
+                                </NavLink>
+                            </div>
+                        </header>
+
+                        {/* Examen */}
+                        <div className="flex justify-center mb-8">
+                            <NavLink
+                                to={`${AllRoutes.ROPE_HARDWARE}/exam`}
+                                className="flex flex-col items-center justify-center p-4 w-48 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md"
+                            >
+                                <MdQuiz className="w-10 h-10 text-orange-500 mb-2" />
+                                <p className="text-center font-medium">Examen</p>
+                            </NavLink>
+                        </div>
+
+                        {/* Tabs */}
+                        <div className="mb-6 border-b border-gray-200 max-w-5xl mx-auto">
+                            <nav className="flex space-x-1 overflow-x-auto pb-1">
+                                {tabs.map((tab) => (
+                                    <button
+                                        key={tab.id}
+                                        onClick={() => setActiveTab(tab.id)}
+                                        className={`flex items-center gap-2 py-3 px-4 font-medium text-sm border-b-2 transition whitespace-nowrap ${
+                                            activeTab === tab.id
+                                                ? "border-orange-500 text-orange-600"
+                                                : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+                                        }`}
+                                    >
+                                        {tab.icon}
+                                        {tab.label}
+                                    </button>
+                                ))}
+                            </nav>
+                        </div>
+
+                        {/* Contenido */}
+                        <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-sm p-6 mb-8">
+                            {activeTab === "overview"   && <HardwareOverview />}
+                            {activeTab === "carabiners" && <Carabiners />}
+                            {activeTab === "pulleys"    && <Pulleys />}
+                            {activeTab === "devices"    && <Devices />}
+                        </div>
+
+                        {/* FAQ */}
+                        <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm mb-8">
+                            <h2 className="text-3xl font-bold mb-6 text-center">Preguntas Frecuentes</h2>
+                            <div className="space-y-4">
+                                {hardwareFaqData.map((faq, idx) => (
+                                    <Disclosure key={idx}>
+                                        {({ open }) => (
+                                            <div className="border rounded-lg overflow-hidden">
+                                                <Disclosure.Button className="flex w-full justify-between items-center bg-gray-100 px-4 py-3 text-left text-lg font-medium hover:bg-orange-100 transition">
+                                                    <span>{faq.question}</span>
+                                                    <ChevronUpIcon className={`${open ? "transform rotate-180" : ""} h-5 w-5 text-gray-500`} />
+                                                </Disclosure.Button>
+                                                <Disclosure.Panel className="px-4 pb-4 pt-2 text-gray-700">
+                                                    {faq.answer}
+                                                </Disclosure.Panel>
+                                            </div>
+                                        )}
+                                    </Disclosure>
+                                ))}
+                            </div>
+                        </section>
+
+                        {/* Foro */}
+                        <ForumSection
+                            pagina="rope-hardware"
+                            titulo="Foro de Discusión - Hardware de Rescate con Cuerdas"
+                        />
+
+                        {/* Referencias */}
+                        <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm mt-8">
+                            <h2 className="text-2xl font-bold mb-4">Referencias y recursos adicionales</h2>
+                            <ul className="list-disc list-inside space-y-2 text-gray-700">
+                                <li>CMC Rescue. (2020). <em>CMC Rope Rescue Technician Manual, 6th Edition</em> — Cap. 06: "Rope Rescue Hardware".</li>
+                                <li>NFPA. (2018). <em>NFPA 1983: Standard on Life Safety Rope and Equipment for Emergency Services</em>.</li>
+                                <li><a href="https://www.cmcpro.com/manuals" target="_blank" rel="noopener noreferrer" className="text-orange-600 hover:underline">CMC Rescue — Manuales del MPD, CLUTCH y más</a></li>
+                                <li><a href="https://www.petzl.com/rescue" target="_blank" rel="noopener noreferrer" className="text-orange-600 hover:underline">Petzl — MAESTRO y equipos de rescate</a></li>
+                            </ul>
+                        </section>
+
+                    </div>
+                </div>
+            </div>
+        </SEOWrapper>
     );
 }
