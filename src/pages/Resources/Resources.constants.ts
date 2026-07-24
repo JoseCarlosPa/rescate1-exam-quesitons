@@ -14,6 +14,8 @@ import ekg from "../../assets/ekg.jpg"
 import farma from "../../assets/farma.jpg"
 import tcc from "../../assets/tecc.jpg"
 import rope from "../../assets/rope.jpg"
+import rapid from "../../assets/rapid.jpg"
+import manualaerea from "../../assets/manualaerea.jpeg"
 
 export const resources = [
     {
@@ -96,6 +98,15 @@ export const resources = [
 
     },
     {
+        img: manualaerea,
+        title: "Manual Walls para el manejo urgente de la vía aérea",
+        subtitle: "",
+        edition: "2016",
+        category: "Manual",
+        download: "https://drive.google.com/file/d/1vvtuT3fjWJrBDCogw8W5rcuCEU1fiqeB/view?usp=sharing",
+
+    },
+    {
         img: reneo,
         title: "Reanimación neonatal",
         subtitle: "",
@@ -111,6 +122,15 @@ export const resources = [
         edition: "Edicion 2022",
         category: "Manual",
         download: "https://drive.google.com/file/d/1iubeDAgkfCiOQmSwqW_6ka15IJ6WJ_tm/view?usp=sharing",
+
+    },
+    {
+        img: rapid,
+        title: "Rapid Interpretation of EKG's ",
+        subtitle: "Interpretación rápida de EKG",
+        edition: "6ta Edición",
+        category: "Manual",
+        download: "https://drive.google.com/file/d/1M02GleQZqCyQYL2AhBztIv9CLqWDMRFF/view?usp=sharing",
 
     },
     {
