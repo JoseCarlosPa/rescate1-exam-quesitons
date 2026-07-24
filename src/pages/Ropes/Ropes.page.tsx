@@ -58,7 +58,7 @@ export default function RopesPage() {
                     />
                 </div>
 
-                <div className="grid md:grid-cols-3 lg:grid-cols-6 grid-cols-2 gap-4 w-full max-w-7xl mb-2 mt-4">
+                <div className="grid md:grid-cols-4 lg:grid-cols-4 gap-4 w-full max-w-7xl mb-2 mt-4">
                     {filteredLessons.map((lesson) => (
                         <NavLink
                             key={lesson.id}
