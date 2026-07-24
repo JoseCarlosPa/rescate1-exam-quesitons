@@ -160,7 +160,80 @@ import BuzzerBattle from "../../pages/Games/BuzzerBattle/BuzzerBattle.page.tsx";
 import RapidResponse from "../../pages/Games/RapidResponse/RapidResponse.page.tsx";
 import MedicalQuizArena from "../../pages/Games/MedicalQuizArena";
 import RopesPage from "../../pages/Ropes/Ropes.page.tsx";
-import { ropeRescueQuestions, ropeRescueChallengeQuestions } from "../../pages/Ropes/Ropes.questions.ts";
+import Introduction from "../../pages/Ropes/lessons/Introduction/Introduction.page.tsx";
+import { introductionQuestions } from "../../pages/Ropes/lessons/Introduction/Introduction.questions.ts";
+import Safety from "../../pages/Ropes/lessons/Safety/Safety.page.tsx";
+import { safetyQuestions } from "../../pages/Ropes/lessons/Safety/Safety.questions.ts";
+import Standards from "../../pages/Ropes/lessons/Standards/Standards.page.tsx";
+import { standardsQuestions } from "../../pages/Ropes/lessons/Standards/Standards.questions.ts";
+import EquipmentTesting from "../../pages/Ropes/lessons/EquipmentTesting/EquipmentTesting.page.tsx";
+import { equipmentTestingQuestions } from "../../pages/Ropes/lessons/EquipmentTesting/EquipmentTesting.questions.ts";
+import RopeWebbing from "../../pages/Ropes/lessons/RopeWebbing/RopeWebbing.page.tsx";
+import { ropeWebbingQuestions } from "../../pages/Ropes/lessons/RopeWebbing/RopeWebbing.questions.ts";
+import Hardware from "../../pages/Ropes/lessons/Hardware/Hardware.page.tsx";
+import { hardwareQuestions } from "../../pages/Ropes/lessons/Hardware/Hardware.questions.ts";
+import PersonalEquipment from "../../pages/Ropes/lessons/PersonalEquipment/PersonalEquipment.page.tsx";
+import { personalEquipmentQuestions } from "../../pages/Ropes/lessons/PersonalEquipment/PersonalEquipment.questions.ts";
+import Knots from "../../pages/Ropes/lessons/Knots/Knots.page.tsx";
+import { knotsQuestions } from "../../pages/Ropes/lessons/Knots/Knots.questions.ts";
+import Anchors from "../../pages/Ropes/lessons/Anchors/Anchors.page.tsx";
+import { anchorsQuestions } from "../../pages/Ropes/lessons/Anchors/Anchors.questions.ts";
+import AnchorSystems from "../../pages/Ropes/lessons/AnchorSystems/AnchorSystems.page.tsx";
+import { anchorSystemsQuestions } from "../../pages/Ropes/lessons/AnchorSystems/AnchorSystems.questions.ts";
+import EdgeProtection from "../../pages/Ropes/lessons/EdgeProtection/EdgeProtection.page.tsx";
+import { edgeProtectionQuestions } from "../../pages/Ropes/lessons/EdgeProtection/EdgeProtection.questions.ts";
+import PatientPackaging from "../../pages/Ropes/lessons/PatientPackaging/PatientPackaging.page.tsx";
+import { patientPackagingQuestions } from "../../pages/Ropes/lessons/PatientPackaging/PatientPackaging.questions.ts";
+import LitterRigging from "../../pages/Ropes/lessons/LitterRigging/LitterRigging.page.tsx";
+import { litterRiggingQuestions } from "../../pages/Ropes/lessons/LitterRigging/LitterRigging.questions.ts";
+import TwinTensionSystems from "../../pages/Ropes/lessons/TwinTensionSystems/TwinTensionSystems.page.tsx";
+import { twinTensionSystemsQuestions } from "../../pages/Ropes/lessons/TwinTensionSystems/TwinTensionSystems.questions.ts";
+import BelaySystems from "../../pages/Ropes/lessons/BelaySystems/BelaySystems.page.tsx";
+import { belaySystemsQuestions } from "../../pages/Ropes/lessons/BelaySystems/BelaySystems.questions.ts";
+import LoweringSystems from "../../pages/Ropes/lessons/LoweringSystems/LoweringSystems.page.tsx";
+import { loweringSystemsQuestions } from "../../pages/Ropes/lessons/LoweringSystems/LoweringSystems.questions.ts";
+import RaisingSystems from "../../pages/Ropes/lessons/RaisingSystems/RaisingSystems.page.tsx";
+import { raisingSystemsQuestions } from "../../pages/Ropes/lessons/RaisingSystems/RaisingSystems.questions.ts";
+import ReversingSystem from "../../pages/Ropes/lessons/ReversingSystem/ReversingSystem.page.tsx";
+import { reversingSystemQuestions } from "../../pages/Ropes/lessons/ReversingSystem/ReversingSystem.questions.ts";
+import KnotPass from "../../pages/Ropes/lessons/KnotPass/KnotPass.page.tsx";
+import { knotPassQuestions } from "../../pages/Ropes/lessons/KnotPass/KnotPass.questions.ts";
+import AnalyzingSystem from "../../pages/Ropes/lessons/AnalyzingSystem/AnalyzingSystem.page.tsx";
+import { analyzingSystemQuestions } from "../../pages/Ropes/lessons/AnalyzingSystem/AnalyzingSystem.questions.ts";
+import Rappelling from "../../pages/Ropes/lessons/Rappelling/Rappelling.page.tsx";
+import { rappellingQuestions } from "../../pages/Ropes/lessons/Rappelling/Rappelling.questions.ts";
+import Ascending from "../../pages/Ropes/lessons/Ascending/Ascending.page.tsx";
+import { ascendingQuestions } from "../../pages/Ropes/lessons/Ascending/Ascending.questions.ts";
+import FallProtection from "../../pages/Ropes/lessons/FallProtection/FallProtection.page.tsx";
+import { fallProtectionQuestions } from "../../pages/Ropes/lessons/FallProtection/FallProtection.questions.ts";
+import AccessStabilization from "../../pages/Ropes/lessons/AccessStabilization/AccessStabilization.page.tsx";
+import { accessStabilizationQuestions } from "../../pages/Ropes/lessons/AccessStabilization/AccessStabilization.questions.ts";
+import PersonPickOff from "../../pages/Ropes/lessons/PersonPickOff/PersonPickOff.page.tsx";
+import { personPickOffQuestions } from "../../pages/Ropes/lessons/PersonPickOff/PersonPickOff.questions.ts";
+import HighAngleEvacuations from "../../pages/Ropes/lessons/HighAngleEvacuations/HighAngleEvacuations.page.tsx";
+import { highAngleEvacuationsQuestions } from "../../pages/Ropes/lessons/HighAngleEvacuations/HighAngleEvacuations.questions.ts";
+import LowAngleEvacuations from "../../pages/Ropes/lessons/LowAngleEvacuations/LowAngleEvacuations.page.tsx";
+import { lowAngleEvacuationsQuestions } from "../../pages/Ropes/lessons/LowAngleEvacuations/LowAngleEvacuations.questions.ts";
+import GuidingLines from "../../pages/Ropes/lessons/GuidingLines/GuidingLines.page.tsx";
+import { guidingLinesQuestions } from "../../pages/Ropes/lessons/GuidingLines/GuidingLines.questions.ts";
+import HighLines from "../../pages/Ropes/lessons/HighLines/HighLines.page.tsx";
+import { highLinesQuestions } from "../../pages/Ropes/lessons/HighLines/HighLines.questions.ts";
+import HighAnchorsDirectionals from "../../pages/Ropes/lessons/HighAnchorsDirectionals/HighAnchorsDirectionals.page.tsx";
+import { highAnchorsDirectionalsQuestions } from "../../pages/Ropes/lessons/HighAnchorsDirectionals/HighAnchorsDirectionals.questions.ts";
+import LadderRescueSystems from "../../pages/Ropes/lessons/LadderRescueSystems/LadderRescueSystems.page.tsx";
+import { ladderRescueSystemsQuestions } from "../../pages/Ropes/lessons/LadderRescueSystems/LadderRescueSystems.questions.ts";
+import OrganizationPlanning from "../../pages/Ropes/lessons/OrganizationPlanning/OrganizationPlanning.page.tsx";
+import { organizationPlanningQuestions } from "../../pages/Ropes/lessons/OrganizationPlanning/OrganizationPlanning.questions.ts";
+import PuttingItTogether from "../../pages/Ropes/lessons/PuttingItTogether/PuttingItTogether.page.tsx";
+import { puttingItTogetherQuestions } from "../../pages/Ropes/lessons/PuttingItTogether/PuttingItTogether.questions.ts";
+import RopeAccess from "../../pages/Ropes/lessons/RopeAccess/RopeAccess.page.tsx";
+import { ropeAccessQuestions } from "../../pages/Ropes/lessons/RopeAccess/RopeAccess.questions.ts";
+import AntennaTowerRescue from "../../pages/Ropes/lessons/AntennaTowerRescue/AntennaTowerRescue.page.tsx";
+import { antennaTowerRescueQuestions } from "../../pages/Ropes/lessons/AntennaTowerRescue/AntennaTowerRescue.questions.ts";
+import EscapeBailout from "../../pages/Ropes/lessons/EscapeBailout/EscapeBailout.page.tsx";
+import { escapeBailoutQuestions } from "../../pages/Ropes/lessons/EscapeBailout/EscapeBailout.questions.ts";
+import SnowSlopeEvacuations from "../../pages/Ropes/lessons/SnowSlopeEvacuations/SnowSlopeEvacuations.page.tsx";
+import { snowSlopeEvacuationsQuestions } from "../../pages/Ropes/lessons/SnowSlopeEvacuations/SnowSlopeEvacuations.questions.ts";
 import AmbulanceChecklist from "../../pages/AmbulanceChecklist/AmbulanceChecklist.page.tsx";
 import Simulator from "../../pages/Simulator/Simulator.page.tsx";
 import MonitorAndEkgSimulator from "../../pages/Simulator/MonitorAndEkgSimulator/MonitorAndEkgSimulator.page.tsx";
@@ -403,10 +476,154 @@ export default function Router() {
                             <Route path={AllRoutes.BUZZER_BATTLE} element={<BuzzerBattle />} />
                             <Route path={AllRoutes.MEDICAL_QUIZ_ARENA} element={<MedicalQuizArena />} />
                             <Route path={AllRoutes.ROPE_RESCUE} element={<RopesPage />} />
-                            <Route path={`${AllRoutes.ROPE_RESCUE}/exam`}
-                                   element={<Exam returnRoute={AllRoutes.ROPE_RESCUE} name="Rescate con Cuerdas"
-                                          questions={ropeRescueQuestions} id={45}
-                                          challengingQuestions={ropeRescueChallengeQuestions} />} />
+                            <Route path={AllRoutes.ROPE_INTRODUCTION} element={<Introduction />} />
+                            <Route path={`${AllRoutes.ROPE_INTRODUCTION}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_INTRODUCTION} name="Introducción al Rescate con Cuerdas"
+                                          questions={introductionQuestions} id={45} />} />
+                            <Route path={AllRoutes.ROPE_SAFETY} element={<Safety />} />
+                            <Route path={`${AllRoutes.ROPE_SAFETY}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_SAFETY} name="Seguridad"
+                                          questions={safetyQuestions} id={46} />} />
+                            <Route path={AllRoutes.ROPE_STANDARDS} element={<Standards />} />
+                            <Route path={`${AllRoutes.ROPE_STANDARDS}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_STANDARDS} name="Normativas y Estándares"
+                                          questions={standardsQuestions} id={47} />} />
+                            <Route path={AllRoutes.ROPE_EQUIPMENT_TESTING} element={<EquipmentTesting />} />
+                            <Route path={`${AllRoutes.ROPE_EQUIPMENT_TESTING}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_EQUIPMENT_TESTING} name="Pruebas de Equipo de Seguridad de Vida"
+                                          questions={equipmentTestingQuestions} id={48} />} />
+                            <Route path={AllRoutes.ROPE_WEBBING} element={<RopeWebbing />} />
+                            <Route path={`${AllRoutes.ROPE_WEBBING}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_WEBBING} name="Cuerdas y Cintas de Seguridad de Vida"
+                                          questions={ropeWebbingQuestions} id={49} />} />
+                            <Route path={AllRoutes.ROPE_HARDWARE} element={<Hardware />} />
+                            <Route path={`${AllRoutes.ROPE_HARDWARE}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_HARDWARE} name="Hardware de Rescate con Cuerdas"
+                                          questions={hardwareQuestions} id={50} />} />
+                            <Route path={AllRoutes.ROPE_PERSONAL_EQUIPMENT} element={<PersonalEquipment />} />
+                            <Route path={`${AllRoutes.ROPE_PERSONAL_EQUIPMENT}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_PERSONAL_EQUIPMENT} name="Equipo Personal"
+                                          questions={personalEquipmentQuestions} id={51} />} />
+                            <Route path={AllRoutes.ROPE_KNOTS} element={<Knots />} />
+                            <Route path={`${AllRoutes.ROPE_KNOTS}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_KNOTS} name="Nudos"
+                                          questions={knotsQuestions} id={52} />} />
+                            <Route path={AllRoutes.ROPE_ANCHORS} element={<Anchors />} />
+                            <Route path={`${AllRoutes.ROPE_ANCHORS}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_ANCHORS} name="Anclajes"
+                                          questions={anchorsQuestions} id={53} />} />
+                            <Route path={AllRoutes.ROPE_ANCHOR_SYSTEMS} element={<AnchorSystems />} />
+                            <Route path={`${AllRoutes.ROPE_ANCHOR_SYSTEMS}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_ANCHOR_SYSTEMS} name="Sistemas de Anclaje"
+                                          questions={anchorSystemsQuestions} id={54} />} />
+                            <Route path={AllRoutes.ROPE_EDGE_PROTECTION} element={<EdgeProtection />} />
+                            <Route path={`${AllRoutes.ROPE_EDGE_PROTECTION}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_EDGE_PROTECTION} name="Protección de Arista"
+                                          questions={edgeProtectionQuestions} id={55} />} />
+                            <Route path={AllRoutes.ROPE_PATIENT_PACKAGING} element={<PatientPackaging />} />
+                            <Route path={`${AllRoutes.ROPE_PATIENT_PACKAGING}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_PATIENT_PACKAGING} name="Empaquetamiento del Paciente"
+                                          questions={patientPackagingQuestions} id={56} />} />
+                            <Route path={AllRoutes.ROPE_LITTER_RIGGING} element={<LitterRigging />} />
+                            <Route path={`${AllRoutes.ROPE_LITTER_RIGGING}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_LITTER_RIGGING} name="Camillas y Aparejo de Camillas"
+                                          questions={litterRiggingQuestions} id={57} />} />
+                            <Route path={AllRoutes.ROPE_TWIN_TENSION_SYSTEMS} element={<TwinTensionSystems />} />
+                            <Route path={`${AllRoutes.ROPE_TWIN_TENSION_SYSTEMS}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_TWIN_TENSION_SYSTEMS} name="Sistemas de Doble Tensión"
+                                          questions={twinTensionSystemsQuestions} id={58} />} />
+                            <Route path={AllRoutes.ROPE_BELAY_SYSTEMS} element={<BelaySystems />} />
+                            <Route path={`${AllRoutes.ROPE_BELAY_SYSTEMS}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_BELAY_SYSTEMS} name="Sistemas de Aseguramiento (Belay)"
+                                          questions={belaySystemsQuestions} id={59} />} />
+                            <Route path={AllRoutes.ROPE_LOWERING_SYSTEMS} element={<LoweringSystems />} />
+                            <Route path={`${AllRoutes.ROPE_LOWERING_SYSTEMS}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_LOWERING_SYSTEMS} name="Sistemas de Descenso"
+                                          questions={loweringSystemsQuestions} id={60} />} />
+                            <Route path={AllRoutes.ROPE_RAISING_SYSTEMS} element={<RaisingSystems />} />
+                            <Route path={`${AllRoutes.ROPE_RAISING_SYSTEMS}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_RAISING_SYSTEMS} name="Sistemas de Izado y Ventaja Mecánica"
+                                          questions={raisingSystemsQuestions} id={61} />} />
+                            <Route path={AllRoutes.ROPE_REVERSING_SYSTEM} element={<ReversingSystem />} />
+                            <Route path={`${AllRoutes.ROPE_REVERSING_SYSTEM}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_REVERSING_SYSTEM} name="Reversión de un Sistema"
+                                          questions={reversingSystemQuestions} id={62} />} />
+                            <Route path={AllRoutes.ROPE_KNOT_PASS} element={<KnotPass />} />
+                            <Route path={`${AllRoutes.ROPE_KNOT_PASS}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_KNOT_PASS} name="Paso de Nudo en un Sistema"
+                                          questions={knotPassQuestions} id={63} />} />
+                            <Route path={AllRoutes.ROPE_ANALYZING_SYSTEM} element={<AnalyzingSystem />} />
+                            <Route path={`${AllRoutes.ROPE_ANALYZING_SYSTEM}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_ANALYZING_SYSTEM} name="Análisis de un Sistema de Rescate"
+                                          questions={analyzingSystemQuestions} id={64} />} />
+                            <Route path={AllRoutes.ROPE_RAPPELLING} element={<Rappelling />} />
+                            <Route path={`${AllRoutes.ROPE_RAPPELLING}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_RAPPELLING} name="Rapel"
+                                          questions={rappellingQuestions} id={65} />} />
+                            <Route path={AllRoutes.ROPE_ASCENDING} element={<Ascending />} />
+                            <Route path={`${AllRoutes.ROPE_ASCENDING}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_ASCENDING} name="Ascenso"
+                                          questions={ascendingQuestions} id={66} />} />
+                            <Route path={AllRoutes.ROPE_FALL_PROTECTION} element={<FallProtection />} />
+                            <Route path={`${AllRoutes.ROPE_FALL_PROTECTION}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_FALL_PROTECTION} name="Protección Contra Caídas"
+                                          questions={fallProtectionQuestions} id={67} />} />
+                            <Route path={AllRoutes.ROPE_ACCESS_STABILIZATION} element={<AccessStabilization />} />
+                            <Route path={`${AllRoutes.ROPE_ACCESS_STABILIZATION}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_ACCESS_STABILIZATION} name="Acceso y Estabilización"
+                                          questions={accessStabilizationQuestions} id={68} />} />
+                            <Route path={AllRoutes.ROPE_PERSON_PICK_OFF} element={<PersonPickOff />} />
+                            <Route path={`${AllRoutes.ROPE_PERSON_PICK_OFF}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_PERSON_PICK_OFF} name="Recogida Estándar de Persona (Pick-Off)"
+                                          questions={personPickOffQuestions} id={69} />} />
+                            <Route path={AllRoutes.ROPE_HIGH_ANGLE_EVACUATIONS} element={<HighAngleEvacuations />} />
+                            <Route path={`${AllRoutes.ROPE_HIGH_ANGLE_EVACUATIONS}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_HIGH_ANGLE_EVACUATIONS} name="Evacuaciones en Alto Ángulo"
+                                          questions={highAngleEvacuationsQuestions} id={70} />} />
+                            <Route path={AllRoutes.ROPE_LOW_ANGLE_EVACUATIONS} element={<LowAngleEvacuations />} />
+                            <Route path={`${AllRoutes.ROPE_LOW_ANGLE_EVACUATIONS}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_LOW_ANGLE_EVACUATIONS} name="Evacuaciones en Bajo Ángulo"
+                                          questions={lowAngleEvacuationsQuestions} id={71} />} />
+                            <Route path={AllRoutes.ROPE_GUIDING_LINES} element={<GuidingLines />} />
+                            <Route path={`${AllRoutes.ROPE_GUIDING_LINES}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_GUIDING_LINES} name="Líneas Guía"
+                                          questions={guidingLinesQuestions} id={72} />} />
+                            <Route path={AllRoutes.ROPE_HIGH_LINES} element={<HighLines />} />
+                            <Route path={`${AllRoutes.ROPE_HIGH_LINES}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_HIGH_LINES} name="Líneas Altas (Highlines)"
+                                          questions={highLinesQuestions} id={73} />} />
+                            <Route path={AllRoutes.ROPE_HIGH_ANCHORS_DIRECTIONALS} element={<HighAnchorsDirectionals />} />
+                            <Route path={`${AllRoutes.ROPE_HIGH_ANCHORS_DIRECTIONALS}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_HIGH_ANCHORS_DIRECTIONALS} name="Anclajes Altos y Direccionales"
+                                          questions={highAnchorsDirectionalsQuestions} id={74} />} />
+                            <Route path={AllRoutes.ROPE_LADDER_RESCUE_SYSTEMS} element={<LadderRescueSystems />} />
+                            <Route path={`${AllRoutes.ROPE_LADDER_RESCUE_SYSTEMS}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_LADDER_RESCUE_SYSTEMS} name="Sistemas de Rescate con Escaleras"
+                                          questions={ladderRescueSystemsQuestions} id={75} />} />
+                            <Route path={AllRoutes.ROPE_ORGANIZATION_PLANNING} element={<OrganizationPlanning />} />
+                            <Route path={`${AllRoutes.ROPE_ORGANIZATION_PLANNING}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_ORGANIZATION_PLANNING} name="Organización y Planificación"
+                                          questions={organizationPlanningQuestions} id={76} />} />
+                            <Route path={AllRoutes.ROPE_PUTTING_IT_TOGETHER} element={<PuttingItTogether />} />
+                            <Route path={`${AllRoutes.ROPE_PUTTING_IT_TOGETHER}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_PUTTING_IT_TOGETHER} name="Integración Final"
+                                          questions={puttingItTogetherQuestions} id={77} />} />
+                            <Route path={AllRoutes.ROPE_ROPE_ACCESS} element={<RopeAccess />} />
+                            <Route path={`${AllRoutes.ROPE_ROPE_ACCESS}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_ROPE_ACCESS} name="Acceso por Cuerda"
+                                          questions={ropeAccessQuestions} id={78} />} />
+                            <Route path={AllRoutes.ROPE_ANTENNA_TOWER_RESCUE} element={<AntennaTowerRescue />} />
+                            <Route path={`${AllRoutes.ROPE_ANTENNA_TOWER_RESCUE}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_ANTENNA_TOWER_RESCUE} name="Rescate en Torres de Antena y Escaleras Enjauladas"
+                                          questions={antennaTowerRescueQuestions} id={79} />} />
+                            <Route path={AllRoutes.ROPE_ESCAPE_BAILOUT} element={<EscapeBailout />} />
+                            <Route path={`${AllRoutes.ROPE_ESCAPE_BAILOUT}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_ESCAPE_BAILOUT} name="Escape y Evacuación de Emergencia"
+                                          questions={escapeBailoutQuestions} id={80} />} />
+                            <Route path={AllRoutes.ROPE_SNOW_SLOPE_EVACUATIONS} element={<SnowSlopeEvacuations />} />
+                            <Route path={`${AllRoutes.ROPE_SNOW_SLOPE_EVACUATIONS}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.ROPE_SNOW_SLOPE_EVACUATIONS} name="Evacuaciones en Nieve y Pendientes"
+                                          questions={snowSlopeEvacuationsQuestions} id={81} />} />
 
 
                             <Route path={AllRoutes.SIMULATOR} element={<Simulator />} />
