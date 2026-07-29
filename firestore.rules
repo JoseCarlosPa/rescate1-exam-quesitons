@@ -1,6 +1,23 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
+
+    function callerData() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+    }
+
+    function isAdmin() {
+      return request.auth != null && callerData().role == 'Admin';
+    }
+
+    // Jefe/Sub-jefe de guardia: administra (alta + edición) a los Elementos de su propia guardia
+    function isGuardLeaderOfGuardia(targetGuardia) {
+      return request.auth != null
+        && callerData().role == 'Elemento'
+        && callerData().guardRole in ['Jefe de Guardia', 'Sub-jefe de Guardia']
+        && callerData().guardia == targetGuardia;
+    }
+
     match /public/{publicDoc}{
       allow read: if true;
     }
@@ -11,14 +28,20 @@ service cloud.firestore {
     }
 
     match /users/{userId} {
-      // Cualquier usuario autenticado puede leer documentos de usuarios
-      allow read: if request.auth != null;
+      // Un usuario puede leer su propio perfil; el Admin puede leer cualquiera;
+      // un Elemento puede además leer los perfiles de su propia guardia
+      allow read: if request.auth != null && (
+        request.auth.uid == userId ||
+        isAdmin() ||
+        (resource.data.role == 'Elemento'
+          && callerData().role == 'Elemento'
+          && resource.data.guardia == callerData().guardia)
+      );
 
       // El administrador puede escribir cualquier campo (incluyendo resourcesAccess,
       // role y los campos de Personal Operativo: rank, status, graduationYear,
-      // certifications, phone, bio)
-      allow write: if request.auth != null
-        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'Admin';
+      // certifications, phone, bio, guardia, guardRole)
+      allow write: if isAdmin();
 
       // Un usuario puede actualizar únicamente sus propios campos de perfil/progreso;
       // no puede tocar su rol ni los campos administrativos de Personal Operativo
@@ -27,9 +50,26 @@ service cloud.firestore {
         && request.resource.data.diff(resource.data).affectedKeys()
              .hasOnly(['name', 'photoURL', 'exams']);
 
+      // Un Jefe/Sub-jefe de guardia puede editar a los Elementos de su propia guardia:
+      // no puede cambiarles el rol fuera de 'Elemento' ni moverlos a otra guardia
+      allow update: if isGuardLeaderOfGuardia(resource.data.guardia)
+        && request.resource.data.role == 'Elemento'
+        && request.resource.data.guardia == resource.data.guardia
+        && request.resource.data.diff(resource.data).affectedKeys()
+             .hasOnly(['name', 'phone', 'photoURL', 'bio', 'rank', 'status',
+                       'graduationYear', 'certifications', 'guardRole']);
+
       // Un usuario puede crear su propio documento (al registrarse)
       allow create: if request.auth != null
-        && request.auth.uid == userId;
+        && request.auth.uid == userId
+        && request.resource.data.role == 'Sin asignar';
+
+      // Un Jefe/Sub-jefe de guardia puede dar de alta nuevos Elementos en su propia guardia
+      allow create: if isGuardLeaderOfGuardia(request.resource.data.guardia)
+        && request.resource.data.role == 'Elemento'
+        && request.resource.data.keys().hasOnly(
+             ['name', 'email', 'phone', 'photoURL', 'bio', 'role', 'rank', 'status',
+              'graduationYear', 'certifications', 'guardia', 'guardRole', 'attendance', 'createdAt']);
     }
 
     match /{document=**} {

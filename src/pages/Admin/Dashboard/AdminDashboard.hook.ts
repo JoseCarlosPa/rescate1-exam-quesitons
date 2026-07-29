@@ -98,6 +98,8 @@ export default function useAdminDashboard() {
                 status: data.status,
                 graduationYear: data.graduationYear,
                 certifications: data.certifications,
+                guardia: data.guardia,
+                guardRole: data.guardRole,
                 attendance: 0,
                 createdAt: Timestamp.now(),
             };
@@ -148,9 +150,11 @@ export default function useAdminDashboard() {
                 certifications: null,
                 phone: null,
                 bio: null,
+                guardia: null,
+                guardRole: null,
             });
             setUsers(prev => prev.map(u => u.id === id
-                ? {...u, role: 'Sin asignar', rank: undefined, status: undefined, graduationYear: undefined, certifications: undefined, phone: undefined, bio: undefined}
+                ? {...u, role: 'Sin asignar', rank: undefined, status: undefined, graduationYear: undefined, certifications: undefined, phone: undefined, bio: undefined, guardia: undefined, guardRole: undefined}
                 : u
             ));
             toast.success('Elemento removido del personal operativo');

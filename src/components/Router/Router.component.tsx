@@ -64,6 +64,7 @@ import StudentGrades from "../../pages/Student/Grades/StudentGrades.page.tsx";
 import StudentForum from "../../pages/Student/Forum/StudentForum.page.tsx";
 import AdminDashboard from "../../pages/Admin/Dashboard/AdminDashboard.page.tsx";
 import StudentTasksPage from "../../pages/Student/Tasks/StudentTasks.page.tsx";
+import MiGuardia from "../../pages/Guardia/MiGuardia.page.tsx";
 import {
        respiratoryEmergenciesChallengingExam,
        respiratoryEmergenciesExam,
@@ -259,6 +260,7 @@ export default function Router() {
                             <Route path={AllRoutes.STUDENT_GRADES} element={<ProtectedRoute requireMainAccess><StudentGrades /></ProtectedRoute>} />
                             <Route path={AllRoutes.STUDENT_FORUM} element={<ProtectedRoute requireMainAccess><StudentForum /></ProtectedRoute>} />
                             <Route path={AllRoutes.STUDENT_TASKS} element={<ProtectedRoute requireMainAccess><StudentTasksPage /></ProtectedRoute>} />
+                            <Route path={AllRoutes.MI_GUARDIA} element={<ProtectedRoute requireMainAccess requireElemento><MiGuardia /></ProtectedRoute>} />
 
                             {/* Admin Dashboard Routes — solo para Admin */}
                             <Route path={AllRoutes.ADMIN_DASHBOARD} element={<ProtectedRoute requireMainAccess requireAdmin><AdminDashboard /></ProtectedRoute>} />

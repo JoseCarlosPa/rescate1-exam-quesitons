@@ -12,6 +12,8 @@ interface ProtectedRouteProps {
     requireResourcesAccess?: boolean;
     /** Requiere que el usuario tenga role === 'Admin' */
     requireAdmin?: boolean;
+    /** Requiere que el usuario tenga role === 'Elemento' */
+    requireElemento?: boolean;
 }
 
 /**
@@ -27,6 +29,7 @@ export default function ProtectedRoute({
     requireMainAccess = false,
     requireResourcesAccess = false,
     requireAdmin = false,
+    requireElemento = false,
 }: ProtectedRouteProps) {
     const {user, loading} = useAuth();
     const location = useLocation();
@@ -69,6 +72,17 @@ export default function ProtectedRoute({
                 to={AllRoutes.MAIN}
                 replace
                 state={{from: location, reason: 'admin'}}
+            />
+        );
+    }
+
+    // Verificar rol de Elemento (secciones de guardia)
+    if (requireElemento && user?.role !== 'Elemento') {
+        return (
+            <Navigate
+                to={AllRoutes.MAIN}
+                replace
+                state={{from: location, reason: 'elemento'}}
             />
         );
     }

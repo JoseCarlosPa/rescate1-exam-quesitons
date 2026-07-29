@@ -43,6 +43,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({children}) => {
                             photoURL: userData.photoURL || firebaseUser.photoURL,
                             role: userData.role || 'Sin asignar',
                             resourcesAccess: userData.resourcesAccess ?? false,
+                            guardia: userData.guardia,
+                            guardRole: userData.guardRole,
                             createdAt: new Date(),
                         });
                     } else {

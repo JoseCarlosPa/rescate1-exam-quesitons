@@ -16,6 +16,7 @@ import {
     FiTarget,
     FiTrendingUp,
     FiUser,
+    FiUsers,
     FiFileText,
 } from 'react-icons/fi';
 import logo from '../../../assets/logo.png';
@@ -121,6 +122,15 @@ const NAV_CARDS = [
     },
 ];
 
+const GUARDIA_NAV_CARD = {
+    to: AllRoutes.MI_GUARDIA,
+    icon: FiUsers,
+    label: 'Mi Guardia',
+    desc: 'Personal operativo',
+    gradient: 'linear-gradient(135deg,#6366f1,#4f46e5)',
+    shadow: 'rgba(99,102,241,0.35)',
+};
+
 // ── Component ──────────────────────────────────────────────────────────────────
 export default function StudentDashboard() {
     const {user, logout} = useAuth();
@@ -204,6 +214,7 @@ export default function StudentDashboard() {
     const progressPct = Math.round((examStats.completed / examStats.total) * 100);
     const grade = getScoreGrade(examStats.averageScore);
     const displayName = studentData?.name || user?.name || 'Estudiante';
+    const navCards = user?.role === 'Elemento' ? [...NAV_CARDS, GUARDIA_NAV_CARD] : NAV_CARDS;
 
     return (
         <div
@@ -319,7 +330,7 @@ export default function StudentDashboard() {
 
                 {/* ── Nav cards ── */}
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-6">
-                    {NAV_CARDS.map(({to, icon: Icon, label, desc, gradient, shadow}) => (
+                    {navCards.map(({to, icon: Icon, label, desc, gradient, shadow}) => (
                         <NavLink key={to} to={to}
                                  className="group flex flex-col items-center justify-center gap-2 p-5 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5">
                             <div className="w-11 h-11 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-200"

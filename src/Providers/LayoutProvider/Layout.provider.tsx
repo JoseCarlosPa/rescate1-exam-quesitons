@@ -3,7 +3,7 @@ import {tProvidersProps} from "./Layout.types.ts";
 import {AllRoutes} from "../../components/Router/Router.constants.ts";
 import {LayoutContext} from "./Layout.context.tsx";
 import {useAuth} from "../AuthProvider";
-import {FaCog, FaSignOutAlt, FaUser} from "react-icons/fa";
+import {FaCog, FaSignOutAlt, FaUser, FaUsers} from "react-icons/fa";
 import {useEffect, useRef, useState} from "react";
 
 export default function LayoutProvider(props: tProvidersProps) {
@@ -106,6 +106,16 @@ export default function LayoutProvider(props: tProvidersProps) {
                                             >
                                                 <FaCog className="w-4 h-4"/>
                                                 <span>Admin</span>
+                                            </NavLink>
+                                        }
+                                        {user?.role === 'Elemento' &&
+                                            <NavLink
+                                                to={AllRoutes.MI_GUARDIA}
+                                                className="flex items-center space-x-2 px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors"
+                                                onClick={() => setShowUserMenu(false)}
+                                            >
+                                                <FaUsers className="w-4 h-4"/>
+                                                <span>Mi Guardia</span>
                                             </NavLink>
                                         }
 

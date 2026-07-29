@@ -1,4 +1,5 @@
 import {Timestamp} from "firebase/firestore";
+import {Guardia, GuardRole} from "../../../constants/guardia.constants";
 
 export type ActiveTab = 'overview' | 'users' | 'elementos' | 'forum' | 'lessons' | 'tasks' | 'checklists';
 
@@ -25,6 +26,8 @@ export interface User {
     status?: ElementStatus;
     graduationYear?: number;
     certifications?: string[];
+    guardia?: Guardia;
+    guardRole?: GuardRole;
 }
 
 export interface ForumMessage {
@@ -145,6 +148,8 @@ export const CERTIFICATIONS_LIST = [
  * No existe una colección separada: toda su información (rango,
  * certificaciones, estado, etc.) vive en su propio documento de `users`.
  */
+// `guardia` y `guardRole` quedan opcionales (heredados de User) porque los
+// elementos creados antes de introducir guardias no las tienen asignadas.
 export type Elemento = User & {
     rank: ElementRank;
     status: ElementStatus;
