@@ -1,8 +1,8 @@
 import {FaTrash} from "react-icons/fa";
-import useAdminDashboard from "../AdminDashboard.hook.ts";
+import {useAdminDashboardContext} from "../AdminDashboard.context";
 
 export default function Forum() {
-    const {forumMessages, handleDeleteForumMessage} = useAdminDashboard()
+    const {forumMessages, handleDeleteForumMessage} = useAdminDashboardContext()
     return (
         <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Moderación del Foro</h2>

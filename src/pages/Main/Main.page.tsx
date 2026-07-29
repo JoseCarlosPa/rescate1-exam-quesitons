@@ -9,8 +9,14 @@ import { MdLocalHospital } from "react-icons/md";
 import { IoGameController } from "react-icons/io5";
 import { GiCarabiner } from "react-icons/gi";
 import { RiComputerLine } from "react-icons/ri";
+import { useAuth } from "../../Providers/AuthProvider";
+import { canAccessMainContent, canAccessResources } from "../../utils/permissions.ts";
 
 export default function Main() {
+    const { user } = useAuth();
+    const hasMainAccess = canAccessMainContent(user?.role ?? null);
+    const hasResourcesAccess = canAccessResources(user);
+
     return (
         <SEOWrapper
             title="EMT EXAM - Plataforma de Estudio para Técnico en Urgencias Médicas"
@@ -30,25 +36,12 @@ export default function Main() {
                     <p className="text-5xl font-bold mb-12 flex text-center">Rescate 1: Alumnos</p>
 
                     <div className="grid md:grid-cols-4 grid-cols-2 gap-4">
-                        <NavLink to={AllRoutes.EMT}
-                            className="flex flex-col items-center justify-center gap-2 mb-4 bg-white rounded-lg shadow-md p-4   hover:bg-orange-100 hover:scale-105 transition duration-300 ease-in-out h-32 md:w-52 w-full">
-                            <TbMedicalCrossFilled className="text-orange-500 w-10 h-10" />
-                            <p className="text-lg text-orange-500">TAMP B</p>
-                        </NavLink>
-                        <NavLink to={AllRoutes.TAMPA}
-                            className="flex flex-col items-center justify-center gap-2 mb-4 bg-white rounded-lg shadow-md p-4   hover:bg-orange-100 hover:scale-105 transition duration-300 ease-in-out h-32 md:w-52 w-full">
-                            <TbMedicalCross className="text-orange-500 w-10 h-10" />
-                            <p className="text-lg text-orange-500">TAMP A</p>
-                        </NavLink>
+
+                        {/* ── Secciones de acceso libre (Sin asignar y no logueados) ── */}
                         <NavLink to={AllRoutes.LMS}
                             className="flex flex-col items-center justify-center gap-2 mb-4 bg-white rounded-lg shadow-md p-4   hover:bg-orange-100 hover:scale-105 transition duration-300 ease-in-out h-32 md:w-52 w-full">
                             <FaHandScissors className="text-orange-500 w-10 h-10" />
                             <p className="text-lg text-orange-500">Lengua de señas</p>
-                        </NavLink>
-                        <NavLink to={AllRoutes.ROPE_RESCUE}
-                            className="flex flex-col items-center justify-center gap-2 mb-4 bg-white rounded-lg shadow-md p-4   hover:bg-orange-100 hover:scale-105 transition duration-300 ease-in-out h-32 md:w-52 w-full">
-                            <GiCarabiner className="text-orange-500 w-10 h-10" />
-                            <p className="text-lg text-orange-500">Rescate con cuerdas</p>
                         </NavLink>
                         <NavLink to={AllRoutes.CASE_SIMULATOR}
                             className="flex flex-col items-center justify-center gap-2 mb-4 bg-white rounded-lg shadow-md p-4   hover:bg-orange-100 hover:scale-105 transition duration-300 ease-in-out h-32 md:w-52 w-full">
@@ -65,11 +58,36 @@ export default function Main() {
                             <RiComputerLine className="text-orange-500 w-10 h-10" />
                             <p className="text-lg text-orange-500">Simulador</p>
                         </NavLink>
-                        <NavLink to={AllRoutes.RESOURCES}
-                            className="flex flex-col items-center justify-center gap-2 mb-4 bg-white rounded-lg shadow-md p-4   hover:bg-orange-100 hover:scale-105 transition duration-300 ease-in-out h-32 md:w-52 w-full">
-                            <ImBooks className="text-orange-500 w-10 h-10" />
-                            <p className="text-lg text-orange-500">Recursos</p>
-                        </NavLink>
+
+                        {/* ── Secciones que requieren rol completo ── */}
+                        {hasMainAccess && (
+                            <>
+                                <NavLink to={AllRoutes.EMT}
+                                    className="flex flex-col items-center justify-center gap-2 mb-4 bg-white rounded-lg shadow-md p-4   hover:bg-orange-100 hover:scale-105 transition duration-300 ease-in-out h-32 md:w-52 w-full">
+                                    <TbMedicalCrossFilled className="text-orange-500 w-10 h-10" />
+                                    <p className="text-lg text-orange-500">TAMP B</p>
+                                </NavLink>
+                                <NavLink to={AllRoutes.TAMPA}
+                                    className="flex flex-col items-center justify-center gap-2 mb-4 bg-white rounded-lg shadow-md p-4   hover:bg-orange-100 hover:scale-105 transition duration-300 ease-in-out h-32 md:w-52 w-full">
+                                    <TbMedicalCross className="text-orange-500 w-10 h-10" />
+                                    <p className="text-lg text-orange-500">TAMP A</p>
+                                </NavLink>
+                                <NavLink to={AllRoutes.ROPE_RESCUE}
+                                    className="flex flex-col items-center justify-center gap-2 mb-4 bg-white rounded-lg shadow-md p-4   hover:bg-orange-100 hover:scale-105 transition duration-300 ease-in-out h-32 md:w-52 w-full">
+                                    <GiCarabiner className="text-orange-500 w-10 h-10" />
+                                    <p className="text-lg text-orange-500">Rescate con cuerdas</p>
+                                </NavLink>
+                            </>
+                        )}
+
+                        {/* ── Recursos — acceso especial explícito ── */}
+                        {hasResourcesAccess && (
+                            <NavLink to={AllRoutes.RESOURCES}
+                                className="flex flex-col items-center justify-center gap-2 mb-4 bg-white rounded-lg shadow-md p-4   hover:bg-orange-100 hover:scale-105 transition duration-300 ease-in-out h-32 md:w-52 w-full">
+                                <ImBooks className="text-orange-500 w-10 h-10" />
+                                <p className="text-lg text-orange-500">Recursos</p>
+                            </NavLink>
+                        )}
 
                     </div>
                 </div>

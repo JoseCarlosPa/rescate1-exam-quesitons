@@ -1,6 +1,6 @@
 import {useAuth} from "../../../Providers/AuthProvider";
 import {useNavigate} from "react-router";
-import {useCallback, useEffect, useState} from "react";
+import {useCallback, useEffect, useMemo, useState} from "react";
 import {
     ActiveTab,
     Elemento,
@@ -23,12 +23,13 @@ import {
     getDocs,
     orderBy,
     query,
+    setDoc,
     Timestamp,
     updateDoc
 } from "firebase/firestore";
 import {toast} from "sonner";
 import {AllRoutes} from "../../../components/Router/Router.constants.ts";
-import {db} from "../../../firebase/firebaseConfig.ts";
+import {createManagedUser, db} from "../../../firebase/firebaseConfig.ts";
 
 export default function useAdminDashboard() {
 
@@ -43,7 +44,6 @@ export default function useAdminDashboard() {
     const [showUserDetail, setShowUserDetail] = useState(false);
     const [tasks, setTasks] = useState<Task[]>([]);
     const [taskSubmissions, setTaskSubmissions] = useState<TaskSubmission[]>([]);
-    const [elementos, setElementos] = useState<Elemento[]>([]);
     const [gradeWeights, setGradeWeights] = useState<GradeWeights>({
         exams: 70,
         tasks: 20,
@@ -62,44 +62,62 @@ export default function useAdminDashboard() {
         pendingTasks: 0
     });
 
-    // ── Fetch Elementos ────────────────────────────────────────────────────────
+    // ── Elementos (Personal Operativo) ────────────────────────────────────────
+    // Un "Elemento" es un usuario con role === 'Elemento'; no existe colección
+    // separada, se deriva directamente de `users` y sus campos extra viven en
+    // el mismo documento.
 
-    const fetchElementos = useCallback(async () => {
-        try {
-            const snap = await getDocs(
-                query(collection(db, 'elementos'), orderBy('createdAt', 'desc'))
-            );
-            const data = snap.docs.map(d => ({id: d.id, ...d.data()})) as Elemento[];
-            setElementos(data);
-        } catch (error) {
-            console.error('Error fetching elementos:', error);
-            toast.error('Error al cargar los elementos');
-        }
-    }, []);
+    const elementos = useMemo<Elemento[]>(() =>
+        users
+            .filter((u): u is Elemento => u.role === 'Elemento')
+            .map(u => ({
+                ...u,
+                rank: u.rank ?? 'Básico',
+                status: u.status ?? 'activo',
+                graduationYear: u.graduationYear ?? new Date().getFullYear(),
+                certifications: u.certifications ?? [],
+            })),
+        [users]
+    );
 
-    const handleCreateElemento = async (data: Omit<Elemento, 'id' | 'createdAt'>) => {
+    /**
+     * Crea la cuenta de Firebase Auth + su documento en `users` con role='Elemento'
+     * y le envía un correo de restablecimiento de contraseña para que la defina.
+     */
+    const handleCreateElemento = async (data: Omit<Elemento, 'id' | 'createdAt' | 'attendance' | 'role'>) => {
         try {
-            const newElemento = {
-                ...data,
+            const uid = await createManagedUser(data.email);
+            const newUser = {
+                name: data.name,
+                email: data.email,
+                phone: data.phone ?? '',
+                photoURL: data.photoURL ?? '',
+                bio: data.bio ?? '',
+                role: 'Elemento',
+                rank: data.rank,
+                status: data.status,
+                graduationYear: data.graduationYear,
+                certifications: data.certifications,
+                attendance: 0,
                 createdAt: Timestamp.now(),
-                updatedAt: Timestamp.now(),
             };
-            await addDoc(collection(db, 'elementos'), newElemento);
-            await fetchElementos();
-            toast.success('Elemento creado exitosamente');
-        } catch (error) {
+            await setDoc(doc(db, 'users', uid), newUser);
+            setUsers(prev => [...prev, {id: uid, ...newUser}]);
+            toast.success('Elemento creado. Se envió un correo para que defina su contraseña.');
+        } catch (error: any) {
             console.error('Error creating elemento:', error);
-            toast.error('Error al crear el elemento');
+            if (error?.code === 'auth/email-already-in-use') {
+                toast.error('Ya existe una cuenta con ese correo');
+            } else {
+                toast.error('Error al crear el elemento');
+            }
         }
     };
 
     const handleUpdateElemento = async (id: string, data: Partial<Elemento>) => {
         try {
-            await updateDoc(doc(db, 'elementos', id), {
-                ...data,
-                updatedAt: Timestamp.now(),
-            });
-            setElementos(prev => prev.map(e => e.id === id ? {...e, ...data} : e));
+            await updateDoc(doc(db, 'users', id), data);
+            setUsers(prev => prev.map(u => u.id === id ? {...u, ...data} : u));
             toast.success('Elemento actualizado exitosamente');
         } catch (error) {
             console.error('Error updating elemento:', error);
@@ -114,15 +132,31 @@ export default function useAdminDashboard() {
         await handleUpdateElemento(id, {status: newStatus});
     };
 
+    /**
+     * "Eliminar" un elemento no borra su cuenta (no es posible desde el
+     * cliente) ni su historial de exámenes: solo le quita el rol y los
+     * campos de Personal Operativo, devolviéndolo a 'Sin asignar'.
+     */
     const handleDeleteElemento = async (id: string) => {
-        if (!confirm('¿Estás seguro de que quieres eliminar este elemento?')) return;
+        if (!confirm('¿Quitar a este elemento del personal operativo? Su cuenta y su historial de exámenes se conservarán, pero perderá el rol de Elemento.')) return;
         try {
-            await deleteDoc(doc(db, 'elementos', id));
-            setElementos(prev => prev.filter(e => e.id !== id));
-            toast.success('Elemento eliminado');
+            await updateDoc(doc(db, 'users', id), {
+                role: 'Sin asignar',
+                rank: null,
+                status: null,
+                graduationYear: null,
+                certifications: null,
+                phone: null,
+                bio: null,
+            });
+            setUsers(prev => prev.map(u => u.id === id
+                ? {...u, role: 'Sin asignar', rank: undefined, status: undefined, graduationYear: undefined, certifications: undefined, phone: undefined, bio: undefined}
+                : u
+            ));
+            toast.success('Elemento removido del personal operativo');
         } catch (error) {
-            console.error('Error deleting elemento:', error);
-            toast.error('Error al eliminar el elemento');
+            console.error('Error removing elemento:', error);
+            toast.error('Error al remover el elemento');
         }
     };
 
@@ -147,7 +181,6 @@ export default function useAdminDashboard() {
             setForumMessages(forumData);
 
             await fetchTasks();
-            await fetchElementos();
 
             try {
                 const weightsDoc = await getDocs(query(collection(db, 'settings')));
@@ -220,7 +253,7 @@ export default function useAdminDashboard() {
         } finally {
             setLoading(false);
         }
-    }, [tasks, fetchElementos]);
+    }, [tasks]);
 
     useEffect(() => {
         if (!user) {
@@ -270,6 +303,19 @@ export default function useAdminDashboard() {
         } catch (error) {
             console.error('Error updating user role:', error);
             toast.error('Error al actualizar el rol del usuario');
+        }
+    };
+
+    const handleToggleResourcesAccess = async (userId: string, currentValue: boolean) => {
+        try {
+            await updateDoc(doc(db, 'users', userId), {resourcesAccess: !currentValue});
+            setUsers(prev => prev.map(user =>
+                user.id === userId ? {...user, resourcesAccess: !currentValue} : user
+            ));
+            toast.success(!currentValue ? 'Acceso a Recursos activado' : 'Acceso a Recursos revocado');
+        } catch (error) {
+            console.error('Error updating resources access:', error);
+            toast.error('Error al actualizar el acceso a Recursos');
         }
     };
 
@@ -471,6 +517,7 @@ export default function useAdminDashboard() {
         handleDeleteForumMessage,
         handleToggleLesson,
         handleChangeUserRole,
+        handleToggleResourcesAccess,
         handleViewUser,
         handleCloseUserDetail,
         fetchTasks,
@@ -481,7 +528,6 @@ export default function useAdminDashboard() {
         calculateFinalGrade,
         // Elementos
         elementos,
-        fetchElementos,
         handleCreateElemento,
         handleUpdateElemento,
         handleToggleElementoStatus,

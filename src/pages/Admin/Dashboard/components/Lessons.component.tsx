@@ -1,8 +1,8 @@
 import {FaToggleOff, FaToggleOn} from "react-icons/fa";
-import useAdminDashboard from "../AdminDashboard.hook.ts";
+import {useAdminDashboardContext} from "../AdminDashboard.context";
 
 export default function Lessons() {
-    const {lessons, handleToggleLesson} = useAdminDashboard()
+    const {lessons, handleToggleLesson} = useAdminDashboardContext()
     return (
         <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Gestión de Lecciones</h2>

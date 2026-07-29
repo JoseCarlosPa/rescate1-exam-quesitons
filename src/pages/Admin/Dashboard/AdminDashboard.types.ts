@@ -16,6 +16,15 @@ export interface User {
     role: string;
     createdAt: Timestamp;
     exams?: Record<string, ExamData>;
+    resourcesAccess?: boolean;
+    photoURL?: string;
+    // Campos de Personal Operativo — solo tienen sentido cuando role === 'Elemento'
+    phone?: string;
+    bio?: string;
+    rank?: ElementRank;
+    status?: ElementStatus;
+    graduationYear?: number;
+    certifications?: string[];
 }
 
 export interface ForumMessage {
@@ -131,17 +140,14 @@ export const CERTIFICATIONS_LIST = [
     'Instructor ACLS',
 ] as const;
 
-export interface Elemento {
-    id: string;
-    name: string;
-    email: string;
-    phone?: string;
-    status: ElementStatus;
+/**
+ * Un "Elemento" es simplemente un `User` con role === 'Elemento'.
+ * No existe una colección separada: toda su información (rango,
+ * certificaciones, estado, etc.) vive en su propio documento de `users`.
+ */
+export type Elemento = User & {
     rank: ElementRank;
+    status: ElementStatus;
     graduationYear: number;
     certifications: string[];
-    photoURL?: string;
-    bio?: string;
-    createdAt: Timestamp;
-    updatedAt?: Timestamp;
-}
+};

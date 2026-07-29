@@ -1,5 +1,5 @@
 import {FaEye, FaFilter, FaSearch, FaUsers} from "react-icons/fa";
-import useAdminDashboard from "../AdminDashboard.hook.ts";
+import {useAdminDashboardContext} from "../AdminDashboard.context";
 import UserDetailModal from "./UserDetailModal.component.tsx";
 import {useState} from "react";
 
@@ -7,12 +7,13 @@ export default function Users() {
     const {
         users,
         handleChangeUserRole,
+        handleToggleResourcesAccess,
         handleViewUser,
         selectedUser,
         showUserDetail,
         handleCloseUserDetail,
         handleUpdateAttendance
-    } = useAdminDashboard();
+    } = useAdminDashboardContext();
     const [searchTerm, setSearchTerm] = useState("");
     const [roleFilter, setRoleFilter] = useState("Alumno");
 
@@ -29,6 +30,8 @@ export default function Users() {
                 return 'bg-red-100 text-red-800 border-red-200';
             case 'Moderador':
                 return 'bg-purple-100 text-purple-800 border-purple-200';
+            case 'Sin asignar':
+                return 'bg-gray-100 text-gray-700 border-gray-200';
             default:
                 return 'bg-blue-100 text-blue-800 border-blue-200';
         }
@@ -88,6 +91,7 @@ export default function Users() {
                                 className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                             >
                                 <option value="all">Todos los roles</option>
+                                <option value="Sin asignar">Sin asignar</option>
                                 <option value="Alumno">Alumno</option>
                                 <option value="Admin">Admin</option>
                                 <option value="Elemento">Elemento</option>
@@ -151,11 +155,23 @@ export default function Users() {
                                                 onChange={(e) => handleChangeUserRole(user.id, e.target.value)}
                                                 className={`text-sm border rounded-lg px-3 py-1 font-medium ${getRoleColor(user.role)} focus:ring-2 focus:ring-blue-500`}
                                             >
+                                                <option value="Sin asignar">Sin asignar</option>
                                                 <option value="Alumno">Alumno</option>
                                                 <option value="Admin">Admin</option>
                                                 <option value="Elemento">Elemento</option>
                                                 <option value="Moderador">Moderador</option>
                                             </select>
+                                            <button
+                                                onClick={() => handleToggleResourcesAccess(user.id, !!user.resourcesAccess)}
+                                                title={user.resourcesAccess ? 'Revocar acceso a Recursos' : 'Dar acceso a Recursos'}
+                                                className={`mt-1 text-xs px-2 py-1 rounded-full font-medium transition-colors ${
+                                                    user.resourcesAccess
+                                                        ? 'bg-green-100 text-green-700 hover:bg-green-200 border border-green-300'
+                                                        : 'bg-gray-100 text-gray-500 hover:bg-gray-200 border border-gray-300'
+                                                }`}
+                                            >
+                                                {user.resourcesAccess ? '📚 Recursos ✓' : '📚 Recursos'}
+                                            </button>
                                         </td>
                                         <td className="px-6 py-4 whitespace-nowrap">
                                             <div className="text-sm text-gray-900">
@@ -278,6 +294,18 @@ export default function Users() {
                             </p>
                         </div>
                         <FaUsers className="text-green-500 text-2xl"/>
+                    </div>
+                </div>
+
+                <div className="bg-gradient-to-r from-gray-50 to-slate-50 p-4 rounded-lg border border-gray-200">
+                    <div className="flex items-center justify-between">
+                        <div>
+                            <p className="text-sm font-medium text-gray-700">Sin asignar</p>
+                            <p className="text-2xl font-bold text-gray-900">
+                                {users.filter(user => user.role === 'Sin asignar').length}
+                            </p>
+                        </div>
+                        <FaUsers className="text-gray-400 text-2xl"/>
                     </div>
                 </div>
             </div>

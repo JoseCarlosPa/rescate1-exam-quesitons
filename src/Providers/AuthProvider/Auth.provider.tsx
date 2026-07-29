@@ -41,7 +41,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({children}) => {
                             email: firebaseUser.email,
                             name: userData.name || firebaseUser.displayName,
                             photoURL: userData.photoURL || firebaseUser.photoURL,
-                            role: userData.role || 'Alumno',
+                            role: userData.role || 'Sin asignar',
+                            resourcesAccess: userData.resourcesAccess ?? false,
                             createdAt: new Date(),
                         });
                     } else {
@@ -52,7 +53,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({children}) => {
                             id: firebaseUser.uid,
                             email: firebaseUser.email,
                             name: firebaseUser.displayName || firebaseUser.email?.split('@')[0],
-                            role: 'Alumno',
+                            role: 'Sin asignar',
                             createdAt: new Date(),
                             photoURL: firebaseUser.photoURL,
                             exams: initialExams
@@ -65,7 +66,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({children}) => {
                             email: firebaseUser.email,
                             name: firebaseUser.displayName,
                             photoURL: firebaseUser.photoURL,
-                            role: 'Alumno',
+                            role: 'Sin asignar',
                             createdAt: new Date(),
                         });
                     }
@@ -76,7 +77,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({children}) => {
                         email: firebaseUser.email,
                         name: firebaseUser.displayName,
                         photoURL: firebaseUser.photoURL,
-                        role: 'Alumno',
+                        role: 'Sin asignar',
                         createdAt: new Date(),
                     });
                 }
@@ -118,7 +119,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({children}) => {
                     id: user.uid,
                     email: user.email,
                     name: user.displayName || user.email?.split('@')[0],
-                    role: 'Alumno',
+                    role: 'Sin asignar',
                     createdAt: new Date(),
                     photoURL: user.photoURL,
                     exams: initialExams
@@ -178,7 +179,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({children}) => {
                 id: user.uid,
                 email: user.email,
                 name: fullName,
-                role: 'Alumno',
+                role: 'Sin asignar',
                 createdAt: new Date(),
                 photoURL: null,
                 exams: initialExams

@@ -1,14 +1,16 @@
 import {useState} from "react";
 import {FiActivity, FiAward, FiCalendar, FiEdit2, FiMail, FiPhone, FiPlus, FiSearch, FiToggleLeft, FiToggleRight, FiTrash2, FiUser, FiX} from "react-icons/fi";
 import {CERTIFICATIONS_LIST, Elemento, ElementRank, ElementStatus} from "../AdminDashboard.types.ts";
-import useAdminDashboard from "../AdminDashboard.hook.ts";
+import {useAdminDashboardContext} from "../AdminDashboard.context";
+
+type ElementoFormData = Omit<Elemento, 'id' | 'createdAt' | 'attendance' | 'role'>;
 
 // ── Modal ──────────────────────────────────────────────────────────────────────
 interface ModalProps {
     isOpen: boolean;
     onClose: () => void;
     initialData?: Elemento | null;
-    onSave: (data: Omit<Elemento, 'id' | 'createdAt'>) => void;
+    onSave: (data: ElementoFormData) => void;
 }
 
 function ElementoModal({isOpen, onClose, initialData, onSave}: ModalProps) {
@@ -23,7 +25,27 @@ function ElementoModal({isOpen, onClose, initialData, onSave}: ModalProps) {
     const [certifications, setCertifications] = useState<string[]>(initialData?.certifications ?? []);
     const [customCert, setCustomCert] = useState("");
 
+    // Sincronizar el formulario cuando el modal se abre o cambia el elemento a editar.
+    // DEBE estar antes del return condicional para cumplir las Reglas de Hooks de React.
+    React.useEffect(() => {
+        if (isOpen) {
+            setName(initialData?.name ?? "");
+            setEmail(initialData?.email ?? "");
+            setPhone(initialData?.phone ?? "");
+            setPhotoURL(initialData?.photoURL ?? "");
+            setBio(initialData?.bio ?? "");
+            setRank(initialData?.rank ?? "Básico");
+            setStatus(initialData?.status ?? "activo");
+            setGraduationYear(initialData?.graduationYear ?? new Date().getFullYear());
+            setCertifications(initialData?.certifications ?? []);
+            setCustomCert("");
+        }
+        // Usar initialData?.email como dependency permite detectar cambios de elemento
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [isOpen, initialData?.email]);
+
     if (!isOpen) return null;
+
 
     const toggleCert = (cert: string) => {
         setCertifications(prev =>
@@ -217,7 +239,7 @@ function ElementoModal({isOpen, onClose, initialData, onSave}: ModalProps) {
 import React from "react";
 
 export default function Elementos() {
-    const {elementos, handleCreateElemento, handleUpdateElemento, handleToggleElementoStatus, handleDeleteElemento} = useAdminDashboard();
+    const {elementos, handleCreateElemento, handleUpdateElemento, handleToggleElementoStatus, handleDeleteElemento} = useAdminDashboardContext();
     const [search, setSearch] = useState("");
     const [statusFilter, setStatusFilter] = useState<'all' | 'activo' | 'inactivo'>('all');
     const [rankFilter, setRankFilter] = useState<'all' | 'Básico' | 'Avanzado'>('all');
@@ -238,7 +260,7 @@ export default function Elementos() {
     const openCreate = () => { setEditingElemento(null); setShowModal(true); };
     const openEdit = (e: Elemento) => { setEditingElemento(e); setShowModal(true); };
 
-    const handleSave = async (data: Omit<Elemento, 'id' | 'createdAt'>) => {
+    const handleSave = async (data: ElementoFormData) => {
         if (editingElemento) {
             await handleUpdateElemento(editingElemento.id, data);
         } else {

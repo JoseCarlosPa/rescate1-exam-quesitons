@@ -1,16 +1,38 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-   match /public/{publicDoc}{
-   allow read: if true;
-   }
+    match /public/{publicDoc}{
+      allow read: if true;
+    }
 
-   // Reglas para el foro - permitir lectura y escritura sin autenticación
-   match /forum/{forumDoc} {
-     allow read, write: if true;
-   }
+    // Reglas para el foro - permitir lectura y escritura sin autenticación
+    match /forum/{forumDoc} {
+      allow read, write: if true;
+    }
 
-   match /{document=**} {
+    match /users/{userId} {
+      // Cualquier usuario autenticado puede leer documentos de usuarios
+      allow read: if request.auth != null;
+
+      // El administrador puede escribir cualquier campo (incluyendo resourcesAccess,
+      // role y los campos de Personal Operativo: rank, status, graduationYear,
+      // certifications, phone, bio)
+      allow write: if request.auth != null
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'Admin';
+
+      // Un usuario puede actualizar únicamente sus propios campos de perfil/progreso;
+      // no puede tocar su rol ni los campos administrativos de Personal Operativo
+      allow update: if request.auth != null
+        && request.auth.uid == userId
+        && request.resource.data.diff(resource.data).affectedKeys()
+             .hasOnly(['name', 'photoURL', 'exams']);
+
+      // Un usuario puede crear su propio documento (al registrarse)
+      allow create: if request.auth != null
+        && request.auth.uid == userId;
+    }
+
+    match /{document=**} {
       allow read, write: if request.auth.uid != null;
     }
   }

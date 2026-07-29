@@ -9,7 +9,7 @@ import {
     FaTasks
 } from "react-icons/fa";
 import {useState} from "react";
-import useAdminDashboard from "../AdminDashboard.hook.ts";
+import {useAdminDashboardContext} from "../AdminDashboard.context";
 import {Task, TaskSubmission} from "../AdminDashboard.types";
 
 export default function Tasks() {
@@ -20,7 +20,7 @@ export default function Tasks() {
         handleCreateTask,
         handleGradeTask,
         handleUpdateGradeWeights,
-    } = useAdminDashboard();
+    } = useAdminDashboardContext();
 
     const [showCreateModal, setShowCreateModal] = useState(false);
     const [showGradeModal, setShowGradeModal] = useState(false);

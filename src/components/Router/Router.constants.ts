@@ -82,6 +82,7 @@ export enum AllRoutes {
     ROPE_ANCHOR_SYSTEMS = "/rope-rescue/sistemas-anclaje",
     ROPE_EDGE_PROTECTION = "/rope-rescue/proteccion-arista",
     ROPE_PATIENT_PACKAGING = "/rope-rescue/empaquetamiento-paciente",
+
     ROPE_LITTER_RIGGING = "/rope-rescue/camillas-aparejo",
     ROPE_TWIN_TENSION_SYSTEMS = "/rope-rescue/sistemas-doble-tension",
     ROPE_BELAY_SYSTEMS = "/rope-rescue/sistemas-aseguramiento",

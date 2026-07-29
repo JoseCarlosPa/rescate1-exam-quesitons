@@ -1,15 +1,141 @@
-import { FaUsers } from "react-icons/fa";
+import { ReactNode, useState } from "react";
+import { NavLink } from "react-router";
+import { FaUserPlus } from "react-icons/fa";
+import { MdMenuBook, MdQuiz, MdPeopleOutline } from "react-icons/md";
+import { IoReturnDownBack } from "react-icons/io5";
+import { Disclosure } from "@headlessui/react";
+import { ChevronUpIcon } from "@heroicons/react/16/solid";
 import { AllRoutes } from "../../../../components/Router/Router.constants";
-import LessonTemplate from "../../components/LessonTemplate.component";
+import SEOWrapper from "../../../../components/SEOWrapper/SEOWrapper.component";
+import { ForumSection } from "../../../../components/ForumSection";
+import { pickOffFaqData } from "./PersonPickOff.questions";
+import Overview from "./components/Overview.component";
+import Technique from "./components/Technique.component";
+
+type PickOffTab = "overview" | "technique";
 
 export default function PersonPickOff() {
+    const [activeTab, setActiveTab] = useState<PickOffTab>("overview");
+
+    const tabs: { id: PickOffTab; label: string; icon: ReactNode }[] = [
+        { id: "overview", label: "El Rescate Pick-Off", icon: <MdMenuBook className="w-4 h-4" /> },
+        { id: "technique",  label: "Transferencia de Peso", icon: <MdPeopleOutline className="w-4 h-4" /> },
+    ];
+
     return (
-        <LessonTemplate
-            title="Recogida Estándar de Persona (Pick-Off)"
-            icon={<FaUsers className="w-14 h-14 text-white"/>}
-            moduleNumber={25}
-            route={AllRoutes.ROPE_PERSON_PICK_OFF}
-            forumKey="rope-recogida-persona"
-        />
+        <SEOWrapper
+            title="Recogida de Persona (Pick-Off) | Lección 24"
+            description="Lección 24 del curso de Rescate con Cuerdas: Pick-Off Rescue. Lowering vs Rappel pick-off, transferencia de carga con AZTEK LT y vector pulls."
+            keywords="pick-off rescate, rescate de persona recogida, lowering pick-off, rescate vertical rappel"
+            section="ropes"
+            difficulty="Advanced"
+            timeRequired="PT1H10M"
+            educationalLevel="Technical"
+            includeEducationalSchema={true}
+        >
+            <div className="min-h-screen bg-gray-50">
+                <div className="flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-white pb-12 px-4 p-4">
+                    <div className="w-full max-w-5xl">
+
+                        {/* Cabecera */}
+                        <header className="mb-8 text-center">
+                            <div className="flex justify-center">
+                                <div className="w-24 h-24 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
+                                    <FaUserPlus className="w-14 h-14 text-white" />
+                                </div>
+                            </div>
+                            <p className="text-sm font-semibold text-orange-600 mb-1">Lección 24</p>
+                            <h1 className="text-4xl font-bold mb-2 text-center bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
+                                Recogida de Persona (Pick-Off)
+                            </h1>
+                            <p className="text-sm italic mb-4 text-gray-500">Alumnos Rescate 1 (Capítulo 25)</p>
+                            <div className="flex justify-center">
+                                <NavLink
+                                    to={AllRoutes.ROPE_RESCUE}
+                                    className="flex gap-2 mb-4 bg-white shadow rounded-lg p-2 hover:bg-orange-50 transition duration-300 ease-in-out"
+                                >
+                                    <IoReturnDownBack className="w-5 h-5 my-auto" />
+                                    <p className="text-lg">Regresar a lecciones</p>
+                                </NavLink>
+                            </div>
+                        </header>
+
+                        {/* Examen */}
+                        <div className="flex justify-center mb-8">
+                            <NavLink
+                                to={`${AllRoutes.ROPE_PERSON_PICK_OFF}/exam`}
+                                className="flex flex-col items-center justify-center p-4 w-48 bg-white rounded-lg shadow hover:bg-orange-50 transition duration-300 hover:shadow-md"
+                            >
+                                <MdQuiz className="w-10 h-10 text-orange-500 mb-2" />
+                                <p className="text-center font-medium">Examen</p>
+                            </NavLink>
+                        </div>
+
+                        {/* Tabs */}
+                        <div className="mb-6 border-b border-gray-200 max-w-5xl mx-auto">
+                            <nav className="flex space-x-1 overflow-x-auto pb-1">
+                                {tabs.map((tab) => (
+                                    <button
+                                        key={tab.id}
+                                        onClick={() => setActiveTab(tab.id)}
+                                        className={`flex items-center gap-2 py-3 px-4 font-medium text-sm border-b-2 transition whitespace-nowrap ${
+                                            activeTab === tab.id
+                                                ? "border-orange-600 text-orange-700"
+                                                : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+                                        }`}
+                                    >
+                                        {tab.icon}
+                                        {tab.label}
+                                    </button>
+                                ))}
+                            </nav>
+                        </div>
+
+                        {/* Contenido */}
+                        <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-sm p-6 mb-8">
+                            {activeTab === "overview" && <Overview />}
+                            {activeTab === "technique" && <Technique />}
+                        </div>
+
+                        {/* FAQ */}
+                        <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm mb-8">
+                            <h2 className="text-3xl font-bold mb-6 text-center">Preguntas Frecuentes</h2>
+                            <div className="space-y-4">
+                                {pickOffFaqData.map((faq, idx) => (
+                                    <Disclosure key={idx}>
+                                        {({ open }) => (
+                                            <div className="border rounded-lg overflow-hidden">
+                                                <Disclosure.Button className="flex w-full justify-between items-center bg-gray-100 px-4 py-3 text-left text-lg font-medium hover:bg-orange-100 transition">
+                                                    <span>{faq.question}</span>
+                                                    <ChevronUpIcon className={`${open ? "transform rotate-180" : ""} h-5 w-5 text-gray-500`} />
+                                                </Disclosure.Button>
+                                                <Disclosure.Panel className="px-4 pb-4 pt-2 text-gray-700">
+                                                    {faq.answer}
+                                                </Disclosure.Panel>
+                                            </div>
+                                        )}
+                                    </Disclosure>
+                                ))}
+                            </div>
+                        </section>
+
+                        {/* Foro */}
+                        <ForumSection
+                            pagina="rope-person-pick-off"
+                            titulo="Foro de Discusión - Pick-Off Rescue"
+                        />
+
+                        {/* Referencias */}
+                        <section className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-sm mt-8">
+                            <h2 className="text-2xl font-bold mb-4">Referencias y recursos adicionales</h2>
+                            <ul className="list-disc list-inside space-y-2 text-gray-700">
+                                <li>CMC Rescue. (2020). <em>CMC Rope Rescue Technician Manual, 6th Edition</em> — Cap. 25: "Stranded Person Pick-Off".</li>
+                            </ul>
+                        </section>
+
+                    </div>
+                </div>
+            </div>
+        </SEOWrapper>
     );
 }

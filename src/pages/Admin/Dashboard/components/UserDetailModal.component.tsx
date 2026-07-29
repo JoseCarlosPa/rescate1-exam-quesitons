@@ -51,6 +51,8 @@ export default function UserDetailModal({user, onClose, isOpen, onUpdateAttendan
                 return 'bg-red-100 text-red-800';
             case 'Moderador':
                 return 'bg-purple-100 text-purple-800';
+            case 'Sin asignar':
+                return 'bg-gray-100 text-gray-700';
             default:
                 return 'bg-blue-100 text-blue-800';
         }

@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { Route, Routes } from "react-router";
+import ProtectedRoute from "./ProtectedRoute.component";
 import App from "../../App.tsx";
 import GeneralExam from "../../pages/EMT/GeneralExam/GeneralExam.page.tsx";
 import LegalAspects from "../../pages/EMT/LegalAspects/LegalAspects.page.tsx";
@@ -184,10 +185,11 @@ import EdgeProtection from "../../pages/Ropes/lessons/EdgeProtection/EdgeProtect
 import { edgeProtectionQuestions } from "../../pages/Ropes/lessons/EdgeProtection/EdgeProtection.questions.ts";
 import PatientPackaging from "../../pages/Ropes/lessons/PatientPackaging/PatientPackaging.page.tsx";
 import { patientPackagingQuestions } from "../../pages/Ropes/lessons/PatientPackaging/PatientPackaging.questions.ts";
+
 import LitterRigging from "../../pages/Ropes/lessons/LitterRigging/LitterRigging.page.tsx";
 import { litterRiggingQuestions } from "../../pages/Ropes/lessons/LitterRigging/LitterRigging.questions.ts";
 import TwinTensionSystems from "../../pages/Ropes/lessons/TwinTensionSystems/TwinTensionSystems.page.tsx";
-import { twinTensionSystemsQuestions } from "../../pages/Ropes/lessons/TwinTensionSystems/TwinTensionSystems.questions.ts";
+import { twinTensionQuestions } from "../../pages/Ropes/lessons/TwinTensionSystems/TwinTensionSystems.questions.ts";
 import BelaySystems from "../../pages/Ropes/lessons/BelaySystems/BelaySystems.page.tsx";
 import { belaySystemsQuestions } from "../../pages/Ropes/lessons/BelaySystems/BelaySystems.questions.ts";
 import LoweringSystems from "../../pages/Ropes/lessons/LoweringSystems/LoweringSystems.page.tsx";
@@ -251,220 +253,216 @@ export default function Router() {
                             <Route path={AllRoutes.LOGIN} element={<Login />} />
                             <Route path={AllRoutes.REGISTER} element={<Register />} />
 
-                            {/* Student Dashboard Routes */}
-                            <Route path={AllRoutes.STUDENT_DASHBOARD} element={<StudentDashboard />} />
-                            <Route path={AllRoutes.STUDENT_PROFILE} element={<StudentProfile />} />
-                            <Route path={AllRoutes.STUDENT_GRADES} element={<StudentGrades />} />
-                            <Route path={AllRoutes.STUDENT_FORUM} element={<StudentForum />} />
-                            <Route path={AllRoutes.STUDENT_TASKS} element={<StudentTasksPage />} />
+                            {/* Student Dashboard Routes — requieren rol completo */}
+                            <Route path={AllRoutes.STUDENT_DASHBOARD} element={<ProtectedRoute requireMainAccess><StudentDashboard /></ProtectedRoute>} />
+                            <Route path={AllRoutes.STUDENT_PROFILE} element={<ProtectedRoute requireMainAccess><StudentProfile /></ProtectedRoute>} />
+                            <Route path={AllRoutes.STUDENT_GRADES} element={<ProtectedRoute requireMainAccess><StudentGrades /></ProtectedRoute>} />
+                            <Route path={AllRoutes.STUDENT_FORUM} element={<ProtectedRoute requireMainAccess><StudentForum /></ProtectedRoute>} />
+                            <Route path={AllRoutes.STUDENT_TASKS} element={<ProtectedRoute requireMainAccess><StudentTasksPage /></ProtectedRoute>} />
 
-                            {/* Admin Dashboard Routes */}
-                            <Route path={AllRoutes.ADMIN_DASHBOARD} element={<AdminDashboard />} />
+                            {/* Admin Dashboard Routes — solo para Admin */}
+                            <Route path={AllRoutes.ADMIN_DASHBOARD} element={<ProtectedRoute requireMainAccess requireAdmin><AdminDashboard /></ProtectedRoute>} />
 
                             <Route path="/" element={<Main />} />
 
-                            <Route path={AllRoutes.EMT} element={<App />} />
-                            <Route path={AllRoutes.GENERAL} element={<GeneralExam />} />
-                            <Route path={AllRoutes.LEGAL} element={<LegalAspects />} />
+                            <Route path={AllRoutes.EMT} element={<ProtectedRoute requireMainAccess><App /></ProtectedRoute>} />
+                            <Route path={AllRoutes.GENERAL} element={<ProtectedRoute requireMainAccess><GeneralExam /></ProtectedRoute>} />
+                            <Route path={AllRoutes.LEGAL} element={<ProtectedRoute requireMainAccess><LegalAspects /></ProtectedRoute>} />
                             <Route path={`/${AllRoutes.LEGAL}/exam`}
                                    element={<Exam returnRoute={AllRoutes.LEGAL} name="Aspectos Legales" questions={legalQuestions}
                                           challengingQuestions={legalChallengingQuestions} id={2} />} />
-                            <Route path={AllRoutes.COMMUNICATIONS} element={<Communications />} />
+                            <Route path={AllRoutes.COMMUNICATIONS} element={<ProtectedRoute requireMainAccess><Communications /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.COMMUNICATIONS}/exam`}
                                    element={<Exam returnRoute={AllRoutes.COMMUNICATIONS} name="Comunicaciones y documentación"
                                           questions={communicationsQuestions}
                                           challengingQuestions={communicationsChallengingQuestions} id={3} />} />
-                            <Route path={AllRoutes.SEM} element={<Sem />} />
+                            <Route path={AllRoutes.SEM} element={<ProtectedRoute requireMainAccess><Sem /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.SEM}/exam`}
                                    element={<Exam returnRoute={AllRoutes.SEM} name="Sistema SEM" questions={semSystemQuestions}
                                           challengingQuestions={semSystemChallengingQuestions} id={4} />} />
-                            <Route path={AllRoutes.SECURITY_OF_PERSONAL} element={<SecurityOfPersonal />} />
+                            <Route path={AllRoutes.SECURITY_OF_PERSONAL} element={<ProtectedRoute requireMainAccess><SecurityOfPersonal /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.SECURITY_OF_PERSONAL}/exam`}
                                    element={<Exam returnRoute={AllRoutes.SECURITY_OF_PERSONAL}
                                           name="Seguridad y bienestar del personal" questions={securityQuestions}
                                           challengingQuestions={securityChallengingQuestions} id={5} />} />
-                            <Route path={AllRoutes.MEDIC_TERMS} element={<MedicTerms />} />
+                            <Route path={AllRoutes.MEDIC_TERMS} element={<ProtectedRoute requireMainAccess><MedicTerms /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.MEDIC_TERMS}/exam`}
                                    element={<Exam returnRoute={AllRoutes.MEDIC_TERMS} name="Terminos Médicos"
                                           questions={medicTermsQuestions}
                                           challengingQuestions={medicTermsChallengingQuestions} id={6} />} />
-                            <Route path={AllRoutes.HUMAN_BODY} element={<HumanBody />} />
+                            <Route path={AllRoutes.HUMAN_BODY} element={<ProtectedRoute requireMainAccess><HumanBody /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.HUMAN_BODY}/exam`}
                                    element={<Exam returnRoute={AllRoutes.HUMAN_BODY} name="El Cuerpo Humano"
                                           questions={humanBodyQuestions}
                                           challengingQuestions={humanBodyChallengingQuestions} id={7} />} />
-                            <Route path={AllRoutes.LIFE_SPEC} element={<LifeSpec />} />
+                            <Route path={AllRoutes.LIFE_SPEC} element={<ProtectedRoute requireMainAccess><LifeSpec /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.LIFE_SPEC}/exam`}
                                    element={<Exam returnRoute={AllRoutes.LIFE_SPEC} name="Desarrollo y esperanza de vida"
                                           questions={lifeSpecQuestions} challengingQuestions={lifeSpecChallengingQuestions}
                                           id={8} />} />
-                            <Route path={AllRoutes.EVALUATION} element={<Evaluation />} />
+                            <Route path={AllRoutes.EVALUATION} element={<ProtectedRoute requireMainAccess><Evaluation /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.EVALUATION}/exam`}
                                    element={<Exam returnRoute={AllRoutes.EVALUATION} name="Evaluacion del paciente"
                                           questions={patientAssessmentQuestions}
                                           challengingQuestions={patientAssessmentChallengingQuestions} id={9} />} />
-                            <Route path={AllRoutes.MNEMOTECNIAS} element={<Mnemotecnias />} />
+                            <Route path={AllRoutes.MNEMOTECNIAS} element={<ProtectedRoute requireMainAccess><Mnemotecnias /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.MNEMOTECNIAS}/exam`}
                                    element={<Exam returnRoute={AllRoutes.MNEMOTECNIAS} name="Mnemotecnias"
                                           questions={nemotecniasQuestions} challengingQuestions={[]} id={10} />} />
-                            <Route path={AllRoutes.AIRWAY_MANAGE} element={<AirwayManage />} />
+                            <Route path={AllRoutes.AIRWAY_MANAGE} element={<ProtectedRoute requireMainAccess><AirwayManage /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.AIRWAY_MANAGE}/exam`}
                                    element={<Exam returnRoute={AllRoutes.AIRWAY_MANAGE} name="Manejo de la Vía Aérea"
                                           questions={airwayManagementQuestions}
                                           challengingQuestions={airwayManagementChallengingQuestions} id={11} />} />
-                            <Route path={AllRoutes.PHARMACOLOGY} element={<Pharmacology />} />
+                            <Route path={AllRoutes.PHARMACOLOGY} element={<ProtectedRoute requireMainAccess><Pharmacology /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.PHARMACOLOGY}/exam`}
                                    element={<Exam returnRoute={AllRoutes.PHARMACOLOGY} name="Principios de la Farmacología"
                                           questions={pharmacologyQuestions} id={12}
                                           challengingQuestions={pharmacologyChallengeQuestions} />} />
-                            <Route path={AllRoutes.MED_ADMIN} element={<MedAdmin />} />
+                            <Route path={AllRoutes.MED_ADMIN} element={<ProtectedRoute requireMainAccess><MedAdmin /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.MED_ADMIN}/exam`}
                                    element={<Exam returnRoute={AllRoutes.MED_ADMIN} name="Administración de Medicamentos"
                                           questions={medicationAdministrationQuestions} id={13}
                                           challengingQuestions={medicationAdministrationChallengeQuestions} />} />
-                            <Route path={AllRoutes.SHOCK} element={<Shock />} />
+                            <Route path={AllRoutes.SHOCK} element={<ProtectedRoute requireMainAccess><Shock /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.SHOCK}/exam`}
                                    element={<Exam returnRoute={AllRoutes.SHOCK} name="shock" questions={shockQuestions} id={14}
                                           challengingQuestions={shockChallengeQuestions} />} />
-                            <Route path={AllRoutes.REANIMATE_SVB} element={<ReanimateSvb />} />
+                            <Route path={AllRoutes.REANIMATE_SVB} element={<ProtectedRoute requireMainAccess><ReanimateSvb /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.REANIMATE_SVB}/exam`} element={<Exam returnRoute={AllRoutes.REANIMATE_SVB}
                                    name="Reanimación: Soporte Vital Básico (SVB)"
                                    questions={svbQuestions} id={15}
                                    challengingQuestions={svbChallengeQuestions} />} />
-                            <Route path={AllRoutes.MEGA} element={<Mega />} />
+                            <Route path={AllRoutes.MEGA} element={<ProtectedRoute requireMainAccess><Mega /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.MEGA}/exam`}
                                    element={<Exam returnRoute={AllRoutes.MEGA} name="Codigo Mega" questions={megaQuestions}
                                           id={16} />} />
-                            <Route path={AllRoutes.MEDIC_VISION} element={<MedicVision />} />
+                            <Route path={AllRoutes.MEDIC_VISION} element={<ProtectedRoute requireMainAccess><MedicVision /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.MEDIC_VISION}/exam`}
                                    element={<Exam returnRoute={AllRoutes.MEDIC_VISION} name="Vision médica general"
                                           questions={visionMedicGeneralQuestions} id={17} challengingQuestions={visionMedicChallengeQuestions} />} />
-                            <Route path={AllRoutes.AIRWAY_EMERGENCY} element={<AirwayEmergency />} />
+                            <Route path={AllRoutes.AIRWAY_EMERGENCY} element={<ProtectedRoute requireMainAccess><AirwayEmergency /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.AIRWAY_EMERGENCY}/exam`}
                                    element={<Exam returnRoute={AllRoutes.AIRWAY_EMERGENCY} name="Emergencias respiratorias"
                                           questions={respiratoryEmergenciesExam} id={18}
                                           challengingQuestions={respiratoryEmergenciesChallengingExam} />} />
-                            <Route path={AllRoutes.CARDIO_EMERGENCY} element={<CardioEmergency />} />
+                            <Route path={AllRoutes.CARDIO_EMERGENCY} element={<ProtectedRoute requireMainAccess><CardioEmergency /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.CARDIO_EMERGENCY}/exam`}
                                    element={<Exam returnRoute={AllRoutes.CARDIO_EMERGENCY} name="Emergencias Cardiovasculares"
                                           questions={cardiovascularQuestions} id={19}
                                           challengingQuestions={cardiovascularQuestionsChallenge} />} />
-                            <Route path={AllRoutes.NEURO_EMERGENCY} element={<NeuroEmergency />} />
+                            <Route path={AllRoutes.NEURO_EMERGENCY} element={<ProtectedRoute requireMainAccess><NeuroEmergency /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.NEURO_EMERGENCY}/exam`}
                                    element={<Exam returnRoute={AllRoutes.NEURO_EMERGENCY} name="Emergencias Neurologicas"
                                           questions={neurologicasQuestions} id={20}
                                           challengingQuestions={neurologicalQuestionsChallenge} />} />
-                            <Route path={AllRoutes.GASTRO_EMERGENCY} element={<GastroEmergency />} />
+                            <Route path={AllRoutes.GASTRO_EMERGENCY} element={<ProtectedRoute requireMainAccess><GastroEmergency /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.GASTRO_EMERGENCY}/exam`}
                                    element={<Exam returnRoute={AllRoutes.GASTRO_EMERGENCY}
                                           name="Emergencias gastrointestinales y urológicas"
                                           questions={gastrointestinalUrologicQuestions} id={21}
                                           challengingQuestions={gastrointestinalUrologicQuestionsChallenge} />} />
-                            <Route path={AllRoutes.ENDOCRINE_EMERGENCY} element={<EndocryEmergency />} />
+                            <Route path={AllRoutes.ENDOCRINE_EMERGENCY} element={<ProtectedRoute requireMainAccess><EndocryEmergency /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.ENDOCRINE_EMERGENCY}/exam`}
                                    element={<Exam returnRoute={AllRoutes.ENDOCRINE_EMERGENCY}
                                           name="Emergencias endocrinas y hematológicas"
                                           questions={endocrineHematologicQuestions} id={22} />} />
-                            <Route path={AllRoutes.TRAUMA} element={<Trauma />} />
+                            <Route path={AllRoutes.TRAUMA} element={<ProtectedRoute requireMainAccess><Trauma /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.TRAUMA}/exam`}
                                    element={<Exam returnRoute={AllRoutes.TRAUMA} name="Conceptos generales de trauma"
                                           questions={traumaGeneralQuestions} id={23} />} />
-                            <Route path={AllRoutes.IMMOBILIZATION} element={<Immobilization />} />
+                            <Route path={AllRoutes.IMMOBILIZATION} element={<ProtectedRoute requireMainAccess><Immobilization /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.IMMOBILIZATION}/exam`}
                                    element={<Exam returnRoute={AllRoutes.IMMOBILIZATION} name="Inmovilización"
                                           questions={immobilizationQuestions} id={24} />} />
-                            <Route path={AllRoutes.BLEEDING} element={<Bleeding />} />
+                            <Route path={AllRoutes.BLEEDING} element={<ProtectedRoute requireMainAccess><Bleeding /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.BLEEDING}/exam`}
                                    element={<Exam returnRoute={AllRoutes.BLEEDING} name="Hemorragias"
                                           questions={hemorragiasQuestions} id={25} />} />
-                            <Route path={AllRoutes.FACE_AND_NECK} element={<FaceAndNeck />} />
+                            <Route path={AllRoutes.FACE_AND_NECK} element={<ProtectedRoute requireMainAccess><FaceAndNeck /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.FACE_AND_NECK}/exam`}
                                    element={<Exam returnRoute={AllRoutes.FACE_AND_NECK} name="Lesiones de cara y cuello"
                                           questions={faceAndNeckExamen} id={27} />} />
-                            <Route path={AllRoutes.SOFT_TISSUE} element={<SoftTissue />} />
+                            <Route path={AllRoutes.SOFT_TISSUE} element={<ProtectedRoute requireMainAccess><SoftTissue /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.SOFT_TISSUE}/exam`}
                                    element={<Exam returnRoute={AllRoutes.HEAD_AND_COLUMN_INJURIES} name="Lesiones del tejido blando" challengingQuestions={softTissueChallengeQuestions}
                                           questions={softTissueExam} id={28} />} />
-                            <Route path={AllRoutes.HEAD_AND_COLUMN_INJURIES} element={<HeadAndColumnInjuries />} />
+                            <Route path={AllRoutes.HEAD_AND_COLUMN_INJURIES} element={<ProtectedRoute requireMainAccess><HeadAndColumnInjuries /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.HEAD_AND_COLUMN_INJURIES}/exam`}
                                    element={<Exam returnRoute={AllRoutes.TORAX_INJURIES}
                                           name="Lesiones de caveza y columna vertebral"
                                           questions={headAndColumnInjuriesQuestions} id={29} />} />
-                            <Route path={AllRoutes.TORAX_INJURIES} element={<ToraxInjuries />} />
+                            <Route path={AllRoutes.TORAX_INJURIES} element={<ProtectedRoute requireMainAccess><ToraxInjuries /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.TORAX_INJURIES}/exam`}
                                    element={<Exam returnRoute={AllRoutes.TORAX_INJURIES} name="Lesiones del torax"
                                           questions={toraxInjuriesQuestions} id={30} />} />
-                            <Route path={AllRoutes.FEET_INJURIES} element={<FeetInjuries />} />
+                            <Route path={AllRoutes.FEET_INJURIES} element={<ProtectedRoute requireMainAccess><FeetInjuries /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.FEET_INJURIES}/exam`}
                                    element={<Exam returnRoute={AllRoutes.FEET_INJURIES} name="Lesiones Ortopedicas"
                                           questions={feetInjuriesQuestions} id={31} />} />
-                            <Route path={AllRoutes.ABDO_GENI_INJURIES} element={<AbdoGeniInjuries />} />
+                            <Route path={AllRoutes.ABDO_GENI_INJURIES} element={<ProtectedRoute requireMainAccess><AbdoGeniInjuries /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.ABDO_GENI_INJURIES}/exam`}
                                    element={<Exam returnRoute={AllRoutes.ABDO_GENI_INJURIES}
                                           name="Lesiones Abdominales y genitourinarias"
                                           questions={abdoBeniInjuriesQuestions} id={32} />} />
-                            <Route path={AllRoutes.INMUNO_EMERGENCY} element={<InmunologyEmergencies />} />
+                            <Route path={AllRoutes.INMUNO_EMERGENCY} element={<ProtectedRoute requireMainAccess><InmunologyEmergencies /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.INMUNO_EMERGENCY}/exam`}
                                    element={<Exam returnRoute={AllRoutes.INMUNO_EMERGENCY} name="Emergencias inmunologicas"
                                           questions={inmunologieQuestions} id={33} />} />
-                            <Route path={AllRoutes.TOXICOLOGY} element={<Toxicology />} />
+                            <Route path={AllRoutes.TOXICOLOGY} element={<ProtectedRoute requireMainAccess><Toxicology /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.TOXICOLOGY}/exam`}
                                    element={<Exam returnRoute={AllRoutes.TOXICOLOGY} name="Toxicologia"
                                           questions={toxicologyQuestions} id={34} />} />
-                            <Route path={AllRoutes.AMBIENTAL_EMERGENCIES} element={<AmbientalEmergencies />} />
+                            <Route path={AllRoutes.AMBIENTAL_EMERGENCIES} element={<ProtectedRoute requireMainAccess><AmbientalEmergencies /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.AMBIENTAL_EMERGENCIES}/exam`}
                                    element={<Exam returnRoute={AllRoutes.AMBIENTAL_EMERGENCIES} name="Emergencias Ambientales"
                                           questions={environmentalEmergencyQuestions} id={35} />} />
-                            <Route path={AllRoutes.PSIQUIATRIC_EMERGENCY} element={<PsiquiatricEmergencies />} />
+                            <Route path={AllRoutes.PSIQUIATRIC_EMERGENCY} element={<ProtectedRoute requireMainAccess><PsiquiatricEmergencies /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.PSIQUIATRIC_EMERGENCY}/exam`}
                                    element={<Exam returnRoute={AllRoutes.PSIQUIATRIC_EMERGENCY} name="Emergencias Psiquiatricas" challengingQuestions={psiquiatricChallengeQuestions}
                                           questions={psiquiatricQuestions} id={36} />} />
-                            <Route path={AllRoutes.GINE_EMERGENCY} element={<GineEmergencies />} />
+                            <Route path={AllRoutes.GINE_EMERGENCY} element={<ProtectedRoute requireMainAccess><GineEmergencies /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.GINE_EMERGENCY}/exam`}
                                    element={<Exam returnRoute={AllRoutes.GINE_EMERGENCY} name="Emergencias Ginecologicas"
                                           questions={gineQuestions} id={37} />} />
-                            <Route path={AllRoutes.OBSTETRIC_CARE} element={<ObstreticCare />} />
+                            <Route path={AllRoutes.OBSTETRIC_CARE} element={<ProtectedRoute requireMainAccess><ObstreticCare /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.OBSTETRIC_CARE}/exam`}
                                    element={<Exam returnRoute={AllRoutes.OBSTETRIC_CARE} name="Cuidados obstétricos y neonatales" challengingQuestions={obstetricChallengeQuestions}
                                           questions={obstetricQuestions} id={38} />} />
-                            <Route path={AllRoutes.PEDIATRIC_EMERGENCIES} element={<PediatricEmergencies />} />
+                            <Route path={AllRoutes.PEDIATRIC_EMERGENCIES} element={<ProtectedRoute requireMainAccess><PediatricEmergencies /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.PEDIATRIC_EMERGENCIES}/exam`}
                                    element={<Exam returnRoute={AllRoutes.PEDIATRIC_EMERGENCIES} name="Emergencias pediátricas" challengingQuestions={pediatricChallengeQuestions}
                                           questions={pediatricQuestions} id={39} />} />
-                            <Route path={AllRoutes.GERIATRIC_EMERGENCIES} element={<GeriatricEmergencies />} />
+                            <Route path={AllRoutes.GERIATRIC_EMERGENCIES} element={<ProtectedRoute requireMainAccess><GeriatricEmergencies /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.GERIATRIC_EMERGENCIES}/exam`}
                                    element={<Exam returnRoute={AllRoutes.GERIATRIC_EMERGENCIES} name="Emergencias Geriatricas"
                                           questions={geriatricQuestions} id={40} />} />
-                            <Route path={AllRoutes.SPECIAL_NEEDS_PACIENT} element={<SpecialNeedsPacient />} />
+                            <Route path={AllRoutes.SPECIAL_NEEDS_PACIENT} element={<ProtectedRoute requireMainAccess><SpecialNeedsPacient /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.SPECIAL_NEEDS_PACIENT}/exam`}
                                    element={<Exam returnRoute={AllRoutes.SPECIAL_NEEDS_PACIENT}
                                           name="Pacientes con necesidades especiales" challengingQuestions={specialNeedsChallengeQuestions}
                                           questions={specialNeedsPacientQuestions} id={41} />} />
-                            <Route path={AllRoutes.TRANSPORT_OPERATIONS} element={<TransportOperations />} />
+                            <Route path={AllRoutes.TRANSPORT_OPERATIONS} element={<ProtectedRoute requireMainAccess><TransportOperations /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.TRANSPORT_OPERATIONS}/exam`}
                                    element={<Exam returnRoute={AllRoutes.TRANSPORT_OPERATIONS} name="Operaciones de transporte"
                                           questions={transportOperationsQuestions} id={42} />} />
-                            <Route path={AllRoutes.INCIDENT_MANAGEMENT} element={<IncidentManage />} />
+                            <Route path={AllRoutes.INCIDENT_MANAGEMENT} element={<ProtectedRoute requireMainAccess><IncidentManage /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.INCIDENT_MANAGEMENT}/exam`}
                                    element={<Exam returnRoute={AllRoutes.INCIDENT_MANAGEMENT} name="Manejo de incidentes"
                                           questions={incidentManageQuestions} id={43} />} />
-                            <Route path={AllRoutes.INCIDENT_MANAGEMENT} element={<IncidentManage />} />
-                            <Route path={`${AllRoutes.INCIDENT_MANAGEMENT}/exam`}
-                                   element={<Exam returnRoute={AllRoutes.INCIDENT_MANAGEMENT} name="Manejo de incidentes"
-                                          questions={incidentManageQuestions} id={43} />} />
-                            <Route path={AllRoutes.TERRORIST_MANAGEMENT} element={<TerroristManage />} />
+                            <Route path={AllRoutes.TERRORIST_MANAGEMENT} element={<ProtectedRoute requireMainAccess><TerroristManage /></ProtectedRoute>} />
                             <Route path={`${AllRoutes.TERRORIST_MANAGEMENT}/exam`}
                                    element={<Exam returnRoute={AllRoutes.TERRORIST_MANAGEMENT}
                                           name="Respuesta al terrorismo y manejo de desastres"
                                           questions={terroristManageQuestions} id={44} />} />
 
                             <Route path={AllRoutes.LMS} element={<Lms />} />
-                            <Route path={AllRoutes.BLS} element={<Bls />} />
-                            <Route path={AllRoutes.STOP_THE_BLEED} element={<StopTheBleed />} />
-                            <Route path={AllRoutes.GLOSARY} element={<Glosary />} />
-                            <Route path={AllRoutes.STUDY_CASES} element={<StudyCase />} />
-                            <Route path={AllRoutes.ALOGIRTHMS} element={<AlgorithmsAndProtocols />} />
-                            <Route path={AllRoutes.RESOURCES} element={<Resources />} />
+                            <Route path={AllRoutes.BLS} element={<ProtectedRoute requireMainAccess><Bls /></ProtectedRoute>} />
+                            <Route path={AllRoutes.STOP_THE_BLEED} element={<ProtectedRoute requireMainAccess><StopTheBleed /></ProtectedRoute>} />
+                            <Route path={AllRoutes.GLOSARY} element={<ProtectedRoute requireMainAccess><Glosary /></ProtectedRoute>} />
+                            <Route path={AllRoutes.STUDY_CASES} element={<ProtectedRoute requireMainAccess><StudyCase /></ProtectedRoute>} />
+                            <Route path={AllRoutes.ALOGIRTHMS} element={<ProtectedRoute requireMainAccess><AlgorithmsAndProtocols /></ProtectedRoute>} />
+                            <Route path={AllRoutes.RESOURCES} element={<ProtectedRoute requireResourcesAccess><Resources /></ProtectedRoute>} />
                             <Route path={AllRoutes.DISCLAMER} element={<Disclaimer />} />
                             <Route path={AllRoutes.PRIVACYANDTERMS} element={<PrivacyAndTerms />} />
                             <Route path={AllRoutes.CASE_SIMULATOR} element={<CaseSimulatorPage />} />
@@ -475,7 +473,7 @@ export default function Router() {
                             <Route path={AllRoutes.RAPID_RESPONSE} element={<RapidResponse />} />
                             <Route path={AllRoutes.BUZZER_BATTLE} element={<BuzzerBattle />} />
                             <Route path={AllRoutes.MEDICAL_QUIZ_ARENA} element={<MedicalQuizArena />} />
-                            <Route path={AllRoutes.ROPE_RESCUE} element={<RopesPage />} />
+                            <Route path={AllRoutes.ROPE_RESCUE} element={<ProtectedRoute requireMainAccess><RopesPage /></ProtectedRoute>} />
                             <Route path={AllRoutes.ROPE_INTRODUCTION} element={<Introduction />} />
                             <Route path={`${AllRoutes.ROPE_INTRODUCTION}/exam`}
                                    element={<Exam returnRoute={AllRoutes.ROPE_INTRODUCTION} name="Introducción al Rescate con Cuerdas"
@@ -531,7 +529,7 @@ export default function Router() {
                             <Route path={AllRoutes.ROPE_TWIN_TENSION_SYSTEMS} element={<TwinTensionSystems />} />
                             <Route path={`${AllRoutes.ROPE_TWIN_TENSION_SYSTEMS}/exam`}
                                    element={<Exam returnRoute={AllRoutes.ROPE_TWIN_TENSION_SYSTEMS} name="Sistemas de Doble Tensión"
-                                          questions={twinTensionSystemsQuestions} id={58} />} />
+                                          questions={twinTensionQuestions} id={58} />} />
                             <Route path={AllRoutes.ROPE_BELAY_SYSTEMS} element={<BelaySystems />} />
                             <Route path={`${AllRoutes.ROPE_BELAY_SYSTEMS}/exam`}
                                    element={<Exam returnRoute={AllRoutes.ROPE_BELAY_SYSTEMS} name="Sistemas de Aseguramiento (Belay)"

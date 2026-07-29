@@ -6,7 +6,7 @@ import logo from '../../../assets/logo.png';
 import {NavLink} from 'react-router';
 import {AllRoutes} from '../../../components/Router/Router.constants.ts';
 import {HiArrowLeft} from 'react-icons/hi2';
-import useAdminDashboard from "./AdminDashboard.hook.ts";
+import {AdminDashboardProvider, useAdminDashboardContext} from "./AdminDashboard.context";
 import {ActiveTab} from "./AdminDashboard.types.ts";
 import Overview from "./components/Overview.component.tsx";
 import Users from "./components/Users.component.tsx";
@@ -27,7 +27,15 @@ const NAV_ITEMS = [
 ] as const;
 
 export default function AdminDashboard() {
-    const {activeTab, setActiveTab, loading} = useAdminDashboard();
+    return (
+        <AdminDashboardProvider>
+            <AdminDashboardContent/>
+        </AdminDashboardProvider>
+    );
+}
+
+function AdminDashboardContent() {
+    const {activeTab, setActiveTab, loading} = useAdminDashboardContext();
     const [sidebarOpen, setSidebarOpen] = useState(false);
 
     if (loading) {

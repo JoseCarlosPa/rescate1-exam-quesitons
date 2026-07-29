@@ -1,9 +1,9 @@
 import {FaChartBar, FaClipboardList, FaComments, FaFire, FaGraduationCap, FaTrophy, FaUsers} from "react-icons/fa";
-import useAdminDashboard from "../AdminDashboard.hook.ts";
+import {useAdminDashboardContext} from "../AdminDashboard.context";
 
 export default function Overview() {
 
-    const {stats} = useAdminDashboard()
+    const {stats} = useAdminDashboardContext()
 
     const getScoreColor = (score: number) => {
         if (score >= 90) return "text-green-600";
