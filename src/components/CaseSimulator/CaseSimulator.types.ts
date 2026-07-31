@@ -4,14 +4,18 @@ export interface SimulatorStep {
     title: string;
     description: string;
     options: SimulatorOption[];
-    correctOptionId: string;
+    /**
+     * @deprecated La fuente de verdad es `SimulatorOption.isCorrect`. Este campo
+     * se mantiene solo por compatibilidad con los casos existentes y se valida
+     * contra `isCorrect` en las pruebas para evitar inconsistencias.
+     */
+    correctOptionId?: string;
     feedback: {
         correct: string;
         incorrect: string;
         explanation: string;
     };
     criticalStep?: boolean; // Si es verdadero, un error aquí termina la simulación
-    stepType?: 'normal' | 'glasgow'; // Nuevo tipo para pasos especiales
 }
 
 export interface SimulatorOption {
@@ -57,6 +61,8 @@ export interface SimulatorProgress {
     mistakes: number;
     criticalErrors: number;
     glasgowAnswer?: number;
+    /** Verdadero si la simulación terminó por un error en un paso crítico. */
+    failedCriticalStep?: boolean;
 }
 
 export interface SimulatorResult {
@@ -67,6 +73,8 @@ export interface SimulatorResult {
     mistakes: number;
     criticalErrors: number;
     performance: 'excellent' | 'good' | 'needs_improvement' | 'poor';
+    /** Verdadero si la simulación terminó anticipadamente por un error crítico. */
+    failedCriticalStep: boolean;
     feedback: string;
     recommendations: string[];
     glasgowEvaluation?: {

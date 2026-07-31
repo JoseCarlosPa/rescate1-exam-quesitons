@@ -1,22 +1,42 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import {CaseSimulatorComponent} from './CaseSimulator.component';
 import {getSimulatorCasesByDifficulty, simulatorCases} from './CaseSimulator.constants';
 import {SimulatorCase, SimulatorResult} from './CaseSimulator.types';
 import {FaArrowLeft, FaClock, FaFilter, FaGraduationCap, FaPlay, FaTrophy} from 'react-icons/fa';
 import {MdLocalHospital} from 'react-icons/md';
 
+const COMPLETED_CASES_STORAGE_KEY = 'case_simulator_completed';
+
+const loadCompletedCases = (): Set<string> => {
+    try {
+        const raw = localStorage.getItem(COMPLETED_CASES_STORAGE_KEY);
+        if (!raw) return new Set();
+        const parsed = JSON.parse(raw);
+        return Array.isArray(parsed) ? new Set(parsed.filter((id): id is string => typeof id === 'string')) : new Set();
+    } catch {
+        return new Set();
+    }
+};
+
 export default function CaseSimulatorPage() {
     const [selectedCase, setSelectedCase] = useState<SimulatorCase | null>(null);
     const [difficultyFilter, setDifficultyFilter] = useState<'all' | 'beginner' | 'intermediate' | 'advanced'>('all');
-    const [completedCases, setCompletedCases] = useState<Set<string>>(new Set());
+    const [completedCases, setCompletedCases] = useState<Set<string>>(loadCompletedCases);
+
+    // Persistir los casos completados para que sobrevivan a recargas.
+    useEffect(() => {
+        try {
+            localStorage.setItem(COMPLETED_CASES_STORAGE_KEY, JSON.stringify([...completedCases]));
+        } catch {
+            // Ignorar fallos de almacenamiento (p. ej. modo privado o cuota llena).
+        }
+    }, [completedCases]);
 
     const filteredCases = difficultyFilter === 'all'
         ? simulatorCases
         : getSimulatorCasesByDifficulty(difficultyFilter);
 
-    const handleCaseComplete = (results: SimulatorResult) => {
-        // Aquí podrías procesar los resultados si es necesario
-        console.log('Caso completado con resultados:', results);
+    const handleCaseComplete = (_results: SimulatorResult) => {
         if (selectedCase) {
             setCompletedCases(prev => new Set(prev).add(selectedCase.id));
         }

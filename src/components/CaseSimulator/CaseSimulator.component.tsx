@@ -24,6 +24,7 @@ export const CaseSimulatorComponent: React.FC<CaseSimulatorComponentProps> = ({
         selectedOption,
         isLastStep,
         showGlasgowEvaluation,
+        elapsedTime,
         submitAnswer,
         nextStep,
         resetSimulator,
@@ -226,6 +227,26 @@ export const CaseSimulatorComponent: React.FC<CaseSimulatorComponentProps> = ({
                         Has terminado el caso: {simulatorCase.title}
                     </motion.p>
                 </div>
+
+                {/* Aviso de finalización por error crítico */}
+                {results.failedCriticalStep && (
+                    <motion.div
+                        initial={{opacity: 0, y: 10}}
+                        animate={{opacity: 1, y: 0}}
+                        transition={{delay: 0.45}}
+                        className="bg-red-50 border-l-4 border-red-500 p-6 mb-8"
+                    >
+                        <h3 className="text-lg font-semibold text-red-900 mb-2 flex items-center">
+                            <FaExclamationTriangle className="w-5 h-5 mr-2"/>
+                            Simulación terminada por error crítico
+                        </h3>
+                        <p className="text-red-800 leading-relaxed">
+                            Tomaste una decisión incorrecta en un paso crítico del protocolo. En un
+                            escenario real, este tipo de error puede comprometer la vida del paciente,
+                            por lo que la simulación finaliza aquí.
+                        </p>
+                    </motion.div>
+                )}
 
                 {/* Resultados principales */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -482,7 +503,7 @@ export const CaseSimulatorComponent: React.FC<CaseSimulatorComponentProps> = ({
           </span>
                     <span className="text-sm text-gray-600">
             <FaClock className="inline w-4 h-4 mr-1"/>
-                        {formatTime(Date.now() - progress.startTime)}
+                        {formatTime(elapsedTime)}
           </span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2">
@@ -620,9 +641,18 @@ export const CaseSimulatorComponent: React.FC<CaseSimulatorComponentProps> = ({
                                     whileHover={{scale: 1.05}}
                                     whileTap={{scale: 0.95}}
                                     onClick={nextStep}
-                                    className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
+                                    className={`inline-flex items-center px-6 py-3 text-white font-medium rounded-lg transition-colors ${
+                                        progress.failedCriticalStep
+                                            ? 'bg-red-600 hover:bg-red-700'
+                                            : 'bg-blue-600 hover:bg-blue-700'
+                                    }`}
                                 >
-                                    {isLastStep ? (
+                                    {progress.failedCriticalStep ? (
+                                        <>
+                                            <FaExclamationTriangle className="w-5 h-5 mr-2"/>
+                                            Ver Resultados
+                                        </>
+                                    ) : isLastStep ? (
                                         simulatorCase.glasgowScore ? (
                                             <>
                                                 <FaBrain className="w-5 h-5 mr-2"/>

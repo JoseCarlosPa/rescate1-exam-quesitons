@@ -1,66 +1,65 @@
-import {useCallback, useEffect, useState} from 'react';
+import {useCallback, useEffect, useRef, useState} from 'react';
 import {SimulatorCase, SimulatorProgress, SimulatorResult} from './CaseSimulator.types';
+import {calculateScore as computeScore, getPerformanceLevel as computePerformanceLevel} from './CaseSimulator.logic';
 
 export const useCaseSimulator = (simulatorCase: SimulatorCase) => {
-    const [progress, setProgress] = useState<SimulatorProgress>({
+    const [progress, setProgress] = useState<SimulatorProgress>(() => ({
         currentStep: 0,
         userAnswers: [],
         score: 0,
         startTime: Date.now(),
         mistakes: 0,
-        criticalErrors: 0
-    });
+        criticalErrors: 0,
+        failedCriticalStep: false
+    }));
 
     const [isCompleted, setIsCompleted] = useState(false);
-    const [currentStepStartTime, setCurrentStepStartTime] = useState(Date.now());
+    const [currentStepStartTime, setCurrentStepStartTime] = useState(() => Date.now());
     const [showFeedback, setShowFeedback] = useState(false);
     const [selectedOption, setSelectedOption] = useState<string | null>(null);
     const [showGlasgowEvaluation, setShowGlasgowEvaluation] = useState(false);
-    const [glasgowAnswer, setGlasgowAnswer] = useState<number | null>(null);
+    // Tiempo transcurrido en ms; se actualiza cada segundo mientras el caso está activo.
+    const [elapsedTime, setElapsedTime] = useState(0);
+    // Instante de finalización, para congelar el tiempo total al terminar.
+    const endTimeRef = useRef<number | null>(null);
 
     const currentStep = simulatorCase.steps[progress.currentStep];
     const isLastStep = progress.currentStep === simulatorCase.steps.length - 1;
 
-    const calculateScore = useCallback(() => {
-        const correctAnswers = progress.userAnswers.filter(answer => answer.isCorrect).length;
-        const totalQuestions = simulatorCase.steps.length;
-        const baseScore = (correctAnswers / totalQuestions) * 100;
+    const calculateScore = useCallback((prog: SimulatorProgress, endTime: number): number => {
+        return computeScore(prog, simulatorCase.steps.length, endTime);
+    }, [simulatorCase.steps.length]);
 
-        // Penalizaciones
-        const mistakePenalty = progress.mistakes * 2;
-        const criticalErrorPenalty = progress.criticalErrors * 10;
-        const timePenalty = Math.max(0, (Date.now() - progress.startTime) / 60000 - 20); // Penalización por tiempo > 20min
+    const generateFeedback = useCallback((performance: string, prog: SimulatorProgress, totalTimeMs: number): string => {
+        const correctAnswers = prog.userAnswers.filter(answer => answer.isCorrect).length;
+        const totalTime = Math.round(totalTimeMs / 60000);
+        const total = simulatorCase.steps.length;
 
-        return Math.max(0, Math.round(baseScore - mistakePenalty - criticalErrorPenalty - timePenalty));
-    }, [progress, simulatorCase.steps.length]);
-
-    const getPerformanceLevel = useCallback((score: number): 'excellent' | 'good' | 'needs_improvement' | 'poor' => {
-        if (score >= 90) return 'excellent';
-        if (score >= 75) return 'good';
-        if (score >= 60) return 'needs_improvement';
-        return 'poor';
-    }, []);
-
-    const generateFeedback = useCallback((performance: string): string => {
-        const correctAnswers = progress.userAnswers.filter(answer => answer.isCorrect).length;
-        const totalTime = Math.round((Date.now() - progress.startTime) / 60000);
+        if (prog.failedCriticalStep) {
+            return `La simulación terminó anticipadamente por un error en un paso crítico. En un caso real, esta decisión podría comprometer la vida del paciente. Repasa el protocolo y vuelve a intentarlo. Alcanzaste ${correctAnswers}/${total} pasos correctos antes del error.`;
+        }
 
         switch (performance) {
             case 'excellent':
-                return `¡Excelente trabajo! Demostraste un manejo excepcional del caso clínico. Tu evaluación sistemática y toma de decisiones fueron sobresalientes. Completaste ${correctAnswers}/${simulatorCase.steps.length} pasos correctamente en ${totalTime} minutos.`;
+                return `¡Excelente trabajo! Demostraste un manejo excepcional del caso clínico. Tu evaluación sistemática y toma de decisiones fueron sobresalientes. Completaste ${correctAnswers}/${total} pasos correctamente en ${totalTime} minutos.`;
             case 'good':
-                return `¡Buen trabajo! Mostraste un sólido entendimiento del protocolo médico. Algunas decisiones menores podrían mejorarse, pero tu aproximación general fue correcta. Completaste ${correctAnswers}/${simulatorCase.steps.length} pasos correctamente en ${totalTime} minutos.`;
+                return `¡Buen trabajo! Mostraste un sólido entendimiento del protocolo médico. Algunas decisiones menores podrían mejorarse, pero tu aproximación general fue correcta. Completaste ${correctAnswers}/${total} pasos correctamente en ${totalTime} minutos.`;
             case 'needs_improvement':
-                return `Tu desempeño indica que necesitas repasar algunos conceptos clave. Aunque completaste el caso, hubo varios errores que en situaciones reales podrían afectar el resultado del paciente. Completaste ${correctAnswers}/${simulatorCase.steps.length} pasos correctamente en ${totalTime} minutos.`;
+                return `Tu desempeño indica que necesitas repasar algunos conceptos clave. Aunque completaste el caso, hubo varios errores que en situaciones reales podrían afectar el resultado del paciente. Completaste ${correctAnswers}/${total} pasos correctamente en ${totalTime} minutos.`;
             case 'poor':
-                return `Es importante que repases los fundamentos de este tipo de emergencia antes de continuar. Los errores cometidos podrían tener consecuencias serias en un caso real. Te recomendamos estudiar más el protocolo. Completaste ${correctAnswers}/${simulatorCase.steps.length} pasos correctamente en ${totalTime} minutos.`;
+                return `Es importante que repases los fundamentos de este tipo de emergencia antes de continuar. Los errores cometidos podrían tener consecuencias serias en un caso real. Te recomendamos estudiar más el protocolo. Completaste ${correctAnswers}/${total} pasos correctamente en ${totalTime} minutos.`;
             default:
                 return '';
         }
-    }, [progress, simulatorCase.steps.length]);
+    }, [simulatorCase.steps.length]);
 
-    const generateRecommendations = useCallback((performance: string, criticalErrors: number, mistakes: number): string[] => {
+    const generateRecommendations = useCallback((performance: string, criticalErrors: number, mistakes: number, failedCriticalStep: boolean): string[] => {
         const recommendations: string[] = [];
+
+        if (failedCriticalStep) {
+            recommendations.push('Identifica los pasos críticos del protocolo antes de actuar - un error aquí puede ser fatal');
+            recommendations.push('Practica la secuencia completa hasta que las decisiones críticas sean automáticas');
+        }
 
         if (criticalErrors > 0) {
             recommendations.push('Revisa los pasos críticos del protocolo - estos errores pueden comprometer la vida del paciente');
@@ -87,11 +86,11 @@ export const useCaseSimulator = (simulatorCase: SimulatorCase) => {
     }, []);
 
     const submitGlasgowScore = useCallback((score: number) => {
+        endTimeRef.current = Date.now();
         setProgress(prev => ({
             ...prev,
             glasgowAnswer: score
         }));
-        setGlasgowAnswer(score);
         setShowGlasgowEvaluation(false);
         setIsCompleted(true);
     }, []);
@@ -107,11 +106,12 @@ export const useCaseSimulator = (simulatorCase: SimulatorCase) => {
     const submitAnswer = useCallback((optionId: string) => {
         if (!currentStep || showFeedback) return;
 
-        const selectedOption = currentStep.options.find(opt => opt.id === optionId);
-        if (!selectedOption) return;
+        const chosenOption = currentStep.options.find(opt => opt.id === optionId);
+        if (!chosenOption) return;
 
         const timeSpent = Date.now() - currentStepStartTime;
-        const isCorrect = selectedOption.isCorrect;
+        const isCorrect = chosenOption.isCorrect;
+        const isCriticalFailure = !isCorrect && !!currentStep.criticalStep;
 
         const newAnswer = {
             stepId: currentStep.id,
@@ -124,7 +124,8 @@ export const useCaseSimulator = (simulatorCase: SimulatorCase) => {
             ...prev,
             userAnswers: [...prev.userAnswers, newAnswer],
             mistakes: prev.mistakes + (isCorrect ? 0 : 1),
-            criticalErrors: prev.criticalErrors + (isCorrect ? 0 : (currentStep.criticalStep ? 1 : 0))
+            criticalErrors: prev.criticalErrors + (isCriticalFailure ? 1 : 0),
+            failedCriticalStep: prev.failedCriticalStep || isCriticalFailure
         }));
 
         setSelectedOption(optionId);
@@ -132,10 +133,18 @@ export const useCaseSimulator = (simulatorCase: SimulatorCase) => {
     }, [currentStep, showFeedback, currentStepStartTime]);
 
     const nextStep = useCallback(() => {
+        // Un error en un paso crítico termina la simulación de inmediato.
+        if (progress.failedCriticalStep) {
+            endTimeRef.current = Date.now();
+            setIsCompleted(true);
+            return;
+        }
+
         if (isLastStep) {
             if (simulatorCase.glasgowScore) {
                 setShowGlasgowEvaluation(true);
             } else {
+                endTimeRef.current = Date.now();
                 setIsCompleted(true);
             }
         } else {
@@ -147,13 +156,14 @@ export const useCaseSimulator = (simulatorCase: SimulatorCase) => {
             setSelectedOption(null);
             setCurrentStepStartTime(Date.now());
         }
-    }, [isLastStep, simulatorCase.glasgowScore]);
+    }, [isLastStep, simulatorCase.glasgowScore, progress.failedCriticalStep]);
 
     const getResults = useCallback((): SimulatorResult => {
         const correctAnswers = progress.userAnswers.filter(answer => answer.isCorrect).length;
-        const totalTime = Date.now() - progress.startTime;
-        const score = calculateScore();
-        const performance = getPerformanceLevel(score);
+        const endTime = endTimeRef.current ?? Date.now();
+        const totalTime = endTime - progress.startTime;
+        const score = calculateScore(progress, endTime);
+        const performance = computePerformanceLevel(score);
 
         let glasgowEvaluation;
         if (simulatorCase.glasgowScore && progress.glasgowAnswer !== undefined) {
@@ -176,34 +186,41 @@ export const useCaseSimulator = (simulatorCase: SimulatorCase) => {
             mistakes: progress.mistakes,
             criticalErrors: progress.criticalErrors,
             performance,
-            feedback: generateFeedback(performance),
-            recommendations: generateRecommendations(performance, progress.criticalErrors, progress.mistakes),
+            failedCriticalStep: !!progress.failedCriticalStep,
+            feedback: generateFeedback(performance, progress, totalTime),
+            recommendations: generateRecommendations(performance, progress.criticalErrors, progress.mistakes, !!progress.failedCriticalStep),
             glasgowEvaluation
         };
-    }, [progress, simulatorCase, calculateScore, getPerformanceLevel, generateFeedback, generateRecommendations]);
+    }, [progress, simulatorCase, calculateScore, generateFeedback, generateRecommendations]);
 
     const resetSimulator = useCallback(() => {
+        endTimeRef.current = null;
         setProgress({
             currentStep: 0,
             userAnswers: [],
             score: 0,
             startTime: Date.now(),
             mistakes: 0,
-            criticalErrors: 0
+            criticalErrors: 0,
+            failedCriticalStep: false
         });
         setIsCompleted(false);
         setShowFeedback(false);
         setSelectedOption(null);
         setShowGlasgowEvaluation(false);
-        setGlasgowAnswer(null);
+        setElapsedTime(0);
         setCurrentStepStartTime(Date.now());
     }, []);
 
-    // Actualizar score en tiempo real
+    // Cronómetro: actualiza el tiempo transcurrido cada segundo mientras el caso
+    // está activo, y se detiene al completarse.
     useEffect(() => {
-        const newScore = calculateScore();
-        setProgress(prev => ({...prev, score: newScore}));
-    }, [progress.userAnswers, calculateScore]);
+        if (isCompleted) return;
+        const tick = () => setElapsedTime(Date.now() - progress.startTime);
+        tick();
+        const intervalId = window.setInterval(tick, 1000);
+        return () => window.clearInterval(intervalId);
+    }, [isCompleted, progress.startTime]);
 
     return {
         progress,
@@ -213,7 +230,7 @@ export const useCaseSimulator = (simulatorCase: SimulatorCase) => {
         selectedOption,
         isLastStep,
         showGlasgowEvaluation,
-        glasgowAnswer,
+        elapsedTime,
         submitAnswer,
         nextStep,
         resetSimulator,
