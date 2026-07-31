@@ -1,3 +1,5 @@
+import {AllRoutes} from '../components/Router/Router.constants.ts';
+
 export const examNamesExported: Record<number, string> = {
     1: "Examen General",
     2: "Aspectos Legales",
@@ -42,5 +44,52 @@ export const examNamesExported: Record<number, string> = {
     42: "Operaciones de transporte",
     43: "Manejo de incidentes",
     44: "Respuesta al terrorismo y manejo de desastres"
+};
+
+// Ruta del tema asociado a cada examen, para que el estudiante pueda ir a estudiarlo.
+export const examRoutesExported: Record<number, string> = {
+    1: AllRoutes.GENERAL,
+    2: AllRoutes.LEGAL,
+    3: AllRoutes.COMMUNICATIONS,
+    4: AllRoutes.SEM,
+    5: AllRoutes.SECURITY_OF_PERSONAL,
+    6: AllRoutes.MEDIC_TERMS,
+    7: AllRoutes.HUMAN_BODY,
+    8: AllRoutes.LIFE_SPEC,
+    9: AllRoutes.EVALUATION,
+    10: AllRoutes.MNEMOTECNIAS,
+    11: AllRoutes.AIRWAY_MANAGE,
+    12: AllRoutes.PHARMACOLOGY,
+    13: AllRoutes.MED_ADMIN,
+    14: AllRoutes.SHOCK,
+    15: AllRoutes.REANIMATE_SVB,
+    16: AllRoutes.MEGA,
+    17: AllRoutes.MEDIC_VISION,
+    18: AllRoutes.AIRWAY_EMERGENCY,
+    19: AllRoutes.CARDIO_EMERGENCY,
+    20: AllRoutes.NEURO_EMERGENCY,
+    21: AllRoutes.GASTRO_EMERGENCY,
+    22: AllRoutes.ENDOCRINE_EMERGENCY,
+    23: AllRoutes.TRAUMA,
+    24: AllRoutes.IMMOBILIZATION,
+    25: AllRoutes.BLEEDING,
+    27: AllRoutes.FACE_AND_NECK,
+    28: AllRoutes.SOFT_TISSUE,
+    29: AllRoutes.HEAD_AND_COLUMN_INJURIES,
+    30: AllRoutes.TORAX_INJURIES,
+    31: AllRoutes.FEET_INJURIES,
+    32: AllRoutes.ABDO_GENI_INJURIES,
+    33: AllRoutes.INMUNO_EMERGENCY,
+    34: AllRoutes.TOXICOLOGY,
+    35: AllRoutes.AMBIENTAL_EMERGENCIES,
+    36: AllRoutes.PSIQUIATRIC_EMERGENCY,
+    37: AllRoutes.GINE_EMERGENCY,
+    38: AllRoutes.OBSTETRIC_CARE,
+    39: AllRoutes.PEDIATRIC_EMERGENCIES,
+    40: AllRoutes.GERIATRIC_EMERGENCIES,
+    41: AllRoutes.SPECIAL_NEEDS_PACIENT,
+    42: AllRoutes.TRANSPORT_OPERATIONS,
+    43: AllRoutes.INCIDENT_MANAGEMENT,
+    44: AllRoutes.TERRORIST_MANAGEMENT,
 };
 

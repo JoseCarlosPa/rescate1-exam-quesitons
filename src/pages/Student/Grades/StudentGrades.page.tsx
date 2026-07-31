@@ -6,7 +6,7 @@ import {db} from '../../../firebase/firebaseConfig';
 import {ImSpinner2} from 'react-icons/im';
 import {toast} from 'sonner';
 import {useAuth} from '../../../Providers/AuthProvider';
-import {examNamesExported} from '../../../constants/exam.constants.ts';
+import {examNamesExported, examRoutesExported} from '../../../constants/exam.constants.ts';
 import {
     FiArrowLeft,
     FiAward,
@@ -39,6 +39,7 @@ interface ExamResult {
     completedAt?: Date;
     totalQuestions: number;
     correctAnswers: number;
+    route?: string;
 }
 
 interface StudentData {
@@ -131,6 +132,7 @@ export default function StudentGrades() {
                 completedAt:    examData.completedAt?.toDate?.() || undefined,
                 totalQuestions: examData.totalQuestions || 0,
                 correctAnswers: examData.correctAnswers || 0,
+                route:          examRoutesExported[examId],
             });
         });
         setExamResults(results);
@@ -364,16 +366,15 @@ export default function StudentGrades() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         {displayed.map(exam => {
                             const s = scoreStyle(exam.score, exam.completed);
-                            return (
-                                <div key={exam.id}
-                                     className="bg-white rounded-2xl shadow-sm border border-slate-100 p-4 flex items-center gap-4 hover:shadow-md transition-all duration-150 group">
-
+                            const cardClass = "bg-white rounded-2xl shadow-sm border border-slate-100 p-4 flex items-center gap-4 hover:shadow-md hover:border-orange-200 transition-all duration-150 group";
+                            const inner = (
+                                <>
                                     {/* Score ring */}
                                     <ScoreRing score={exam.score} completed={exam.completed} size={48}/>
 
                                     {/* Info */}
                                     <div className="flex-1 min-w-0">
-                                        <p className="text-sm font-black text-slate-900 leading-tight truncate pr-2">
+                                        <p className="text-sm font-black text-slate-900 leading-tight truncate pr-2 group-hover:text-orange-600 transition-colors">
                                             {exam.name}
                                         </p>
                                         <div className="flex items-center gap-2 mt-1">
@@ -416,6 +417,16 @@ export default function StudentGrades() {
                                             </span>
                                         )}
                                     </div>
+                                </>
+                            );
+                            return exam.route ? (
+                                <NavLink key={exam.id} to={exam.route}
+                                         title={`Estudiar: ${exam.name}`} className={cardClass}>
+                                    {inner}
+                                </NavLink>
+                            ) : (
+                                <div key={exam.id} className={cardClass}>
+                                    {inner}
                                 </div>
                             );
                         })}

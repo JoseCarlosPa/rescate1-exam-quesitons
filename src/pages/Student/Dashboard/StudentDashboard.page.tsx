@@ -6,6 +6,7 @@ import {db} from '../../../firebase/firebaseConfig';
 import {ImSpinner2} from 'react-icons/im';
 import {toast} from 'sonner';
 import {useAuth} from '../../../Providers/AuthProvider';
+import {examNamesExported, examRoutesExported} from '../../../constants/exam.constants.ts';
 import {
     FiAward,
     FiBarChart2,
@@ -18,6 +19,7 @@ import {
     FiUser,
     FiUsers,
     FiFileText,
+    FiChevronRight,
 } from 'react-icons/fi';
 import logo from '../../../assets/logo.png';
 
@@ -144,7 +146,7 @@ export default function StudentDashboard() {
         total: 44,
         averageScore: 0,
         passed: 0,           // >= 80
-        recentExams: [] as {name: string; score: number; completedAt?: Date}[],
+        recentExams: [] as {name: string; score: number; completedAt?: Date; route?: string}[],
     });
 
     useEffect(() => { setMounted(true); }, []);
@@ -182,9 +184,10 @@ export default function StudentDashboard() {
         // Last 4 completed sorted by date desc
         const recentExams = completedEntries
             .map(([id, e]) => ({
-                name: `Examen ${id}`,
+                name: examNamesExported[Number(id)] ?? `Examen ${id}`,
                 score: e.score,
                 completedAt: e.completedAt?.toDate?.(),
+                route: examRoutesExported[Number(id)],
             }))
             .sort((a, b) => (b.completedAt?.getTime() ?? 0) - (a.completedAt?.getTime() ?? 0))
             .slice(0, 4);
@@ -374,8 +377,8 @@ export default function StudentDashboard() {
                             ) : (
                                 examStats.recentExams.map((ex, i) => {
                                     const g = getScoreGrade(ex.score);
-                                    return (
-                                        <div key={i} className="flex items-center gap-4 px-6 py-3.5">
+                                    const row = (
+                                        <>
                                             <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
                                                  style={{background: g.bg}}>
                                                 <span className="text-xs font-black" style={{color: g.color}}>
@@ -392,6 +395,20 @@ export default function StudentDashboard() {
                                                   style={{background: g.bg, color: g.color}}>
                                                 {g.label}
                                             </span>
+                                            {ex.route && (
+                                                <FiChevronRight className="w-4 h-4 text-slate-300 group-hover:text-orange-500 group-hover:translate-x-0.5 transition-all flex-shrink-0"/>
+                                            )}
+                                        </>
+                                    );
+                                    return ex.route ? (
+                                        <NavLink key={i} to={ex.route}
+                                                 title={`Estudiar: ${ex.name}`}
+                                                 className="group flex items-center gap-4 px-6 py-3.5 hover:bg-orange-50/50 transition-colors">
+                                            {row}
+                                        </NavLink>
+                                    ) : (
+                                        <div key={i} className="group flex items-center gap-4 px-6 py-3.5">
+                                            {row}
                                         </div>
                                     );
                                 })
