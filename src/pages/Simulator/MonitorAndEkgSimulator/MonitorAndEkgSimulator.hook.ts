@@ -17,6 +17,7 @@ import {
     ECG_SCENARIOS,
     ZOLL_ENERGY_LEVELS,
     LIFEPAK_ENERGY_LEVELS,
+    ZOLL_M_ENERGY_LEVELS,
     ALARM_THRESHOLDS,
     PACER_RATE_MIN,
     PACER_RATE_MAX,
@@ -87,6 +88,13 @@ export default function useMonitorSimulator(liveSessionId?: string) {
     const [shockDelivered, setShockDelivered] = useState(false);
     const [defiMessage, setDefiMessage] = useState('');
 
+    // ── ZOLL M Series specific state ─────────────
+    // Dial rotatorio físico: OFF / MONITOR / DEFIB / PACER
+    const [mDialMode, setMDialMode] = useState<'off' | 'monitor' | 'defib' | 'pacer'>('monitor');
+    // Modo DEA semiautomático (secuencia ANALYZE)
+    const [analyzeState, setAnalyzeState] = useState<'idle' | 'analyzing' | 'shock_advised' | 'no_shock'>('idle');
+    const analyzeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
     // ── Pacer ───────────────────────────────────
     const [pacer, setPacer] = useState<PacerSettings>({ rate: 70, current: 60, active: false });
 
@@ -149,6 +157,11 @@ export default function useMonitorSimulator(liveSessionId?: string) {
         return () => { ctx.close(); };
     }, []);
 
+    // Limpiar el temporizador del DEA (ANALYZE) al desmontar
+    useEffect(() => () => {
+        if (analyzeTimerRef.current) clearTimeout(analyzeTimerRef.current);
+    }, []);
+
     // ── Live session sync ────────────────────────
     useEffect(() => {
         if (!isLiveSession || !sessionData) return;
@@ -175,7 +188,11 @@ export default function useMonitorSimulator(liveSessionId?: string) {
     }, [sessionData?.scenario?.vitals, isLiveSession]);
 
     // ── Energy levels for current monitor ───────
-    const energyLevels = monitorType === 'lifepak' ? LIFEPAK_ENERGY_LEVELS : ZOLL_ENERGY_LEVELS;
+    const energyLevels = monitorType === 'lifepak'
+        ? LIFEPAK_ENERGY_LEVELS
+        : monitorType === 'zoll_m'
+            ? ZOLL_M_ENERGY_LEVELS
+            : ZOLL_ENERGY_LEVELS;
 
     const isCardioversionCandidate = isScenarioCardioversionCandidate(currentScenario);
 
@@ -223,6 +240,12 @@ export default function useMonitorSimulator(liveSessionId?: string) {
         setIsCharged(false);
         setShockDelivered(false);
         setDefiMessage('');
+        // Reset DEA / ANALYZE (ZOLL M)
+        if (analyzeTimerRef.current) {
+            clearTimeout(analyzeTimerRef.current);
+            analyzeTimerRef.current = null;
+        }
+        setAnalyzeState('idle');
         setPacer(p => ({ ...p, active: false }));
         setNibp(prev => ({
             ...prev,
@@ -608,6 +631,7 @@ export default function useMonitorSimulator(liveSessionId?: string) {
 
         setShockDelivered(true);
         setIsCharged(false);
+        setAnalyzeState('idle');
         setDefiMessage(`⚡ DESCARGA ${energy}J ENTREGADA`);
         setTimeout(() => {
             setShockDelivered(false);
@@ -635,6 +659,80 @@ export default function useMonitorSimulator(liveSessionId?: string) {
             return !prev;
         });
     }, [registerEvaluationAction]);
+
+    // ──────────────────────────────────────────────
+    // ZOLL M Series — dial selector rotatorio
+    // ──────────────────────────────────────────────
+    const setDialMode = useCallback((mode: 'off' | 'monitor' | 'defib' | 'pacer') => {
+        setMDialMode(mode);
+        if (mode === 'off') {
+            setIsOn(false);
+            setPacer(p => ({ ...p, active: false }));
+            setIsCharging(false);
+            setIsCharged(false);
+            if (analyzeTimerRef.current) {
+                clearTimeout(analyzeTimerRef.current);
+                analyzeTimerRef.current = null;
+            }
+            setAnalyzeState('idle');
+            return;
+        }
+        setIsOn(true);
+        if (mode === 'monitor') {
+            setPacer(p => ({ ...p, active: false }));
+        } else if (mode === 'pacer') {
+            setPacer(p => ({ ...p, active: true }));
+        }
+        // Salir del modo DEFIB cancela una carga/análisis en curso
+        if (mode !== 'defib') {
+            setIsCharging(false);
+            setIsCharged(false);
+            if (analyzeTimerRef.current) {
+                clearTimeout(analyzeTimerRef.current);
+                analyzeTimerRef.current = null;
+            }
+            setAnalyzeState('idle');
+        }
+    }, []);
+
+    // ──────────────────────────────────────────────
+    // ZOLL M Series — modo DEA semiautomático (ANALYZE)
+    // ──────────────────────────────────────────────
+    const handleAnalyze = useCallback(() => {
+        if (!isOn) return;
+        if (analyzeTimerRef.current) return; // análisis ya en curso
+        setAnalyzeState('analyzing');
+        setIsCharged(false);
+        setIsCharging(false);
+        setDefiMessage('ANALIZANDO - NO TOQUE AL PACIENTE');
+        registerEvaluationAction('AED_ANALYZE', 'Analisis de ritmo (DEA) iniciado', 2, false);
+
+        analyzeTimerRef.current = setTimeout(() => {
+            analyzeTimerRef.current = null;
+            if (currentScenario.isShockable) {
+                const recEnergy = currentScenario.recommendedEnergy ?? energy;
+                // Ajustar energía al valor recomendado disponible en la escala M
+                const target = energyLevels.reduce((best, lvl) =>
+                    Math.abs(lvl - recEnergy) < Math.abs(best - recEnergy) ? lvl : best, energyLevels[0]);
+                setEnergy(target);
+                setAnalyzeState('shock_advised');
+                setDefiMessage('DESCARGA RECOMENDADA - CARGANDO...');
+                setIsCharging(true);
+                registerEvaluationAction('AED_SHOCK_ADVISED', `DEA recomienda descarga (${target}J)`, 6, false);
+                analyzeTimerRef.current = setTimeout(() => {
+                    analyzeTimerRef.current = null;
+                    setIsCharging(false);
+                    setIsCharged(true);
+                    setDefiMessage('DESCARGA RECOMENDADA - PRESIONE DESCARGA');
+                }, 1800);
+            } else {
+                setAnalyzeState('no_shock');
+                setDefiMessage('NO SE RECOMIENDA DESCARGA');
+                registerEvaluationAction('AED_NO_SHOCK', 'DEA no recomienda descarga (ritmo no desfibrilable)', 6, false);
+                setTimeout(() => setDefiMessage(''), 2500);
+            }
+        }, 5000);
+    }, [isOn, currentScenario, energy, energyLevels, registerEvaluationAction]);
 
     // ──────────────────────────────────────────────
     // Pacer handlers
@@ -714,6 +812,8 @@ export default function useMonitorSimulator(liveSessionId?: string) {
         // Defibrillator
         energy, isCharging, isCharged, syncMode, shockDelivered, defiMessage,
         increaseEnergy, decreaseEnergy, handleCharge, handleShock, toggleSync,
+        // ZOLL M Series (dial + DEA)
+        mDialMode, setDialMode, analyzeState, handleAnalyze,
         // Pacer
         pacer, togglePacer, increasePacerRate, decreasePacerRate, increasePacerCurrent, decreasePacerCurrent,
         // Alarms

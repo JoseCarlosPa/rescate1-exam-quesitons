@@ -13,6 +13,7 @@ import { RiComputerLine } from 'react-icons/ri';
 import SEOWrapper from '../../../components/SEOWrapper/SEOWrapper.component.tsx';
 import { AllRoutes } from '../../../components/Router/Router.constants.ts';
 import useMonitorSimulator from './MonitorAndEkgSimulator.hook';
+import ZollMSeriesFace from './ZollMSeriesFace.component';
 import { LEAD_OPTIONS } from './MonitorAndEkgSimulator.constants';
 import type { LeadType, MonitorType, ScenarioCategory, TwelveLeadReport } from './MonitorAndEkgSimulator.types';
 
@@ -83,6 +84,7 @@ export default function MonitorAndEkgSimulator() {
     const [searchParams] = useSearchParams();
     const liveSessionId = searchParams.get('session') ?? undefined;
 
+    const sim = useMonitorSimulator(liveSessionId);
     const {
         monitorType, setMonitorType, simulationMode, setSimulationMode, isOn, togglePower,
         protocolProfile, isLiveSession,
@@ -98,7 +100,7 @@ export default function MonitorAndEkgSimulator() {
         showScenarioPanel, toggleScenarioPanel, showInfoPanel, toggleInfoPanel,
         evaluation, evaluationElapsedSeconds, startEvaluation, finishEvaluation, resetEvaluation,
         ecgCanvasRef, plethCanvasRef,
-    } = useMonitorSimulator(liveSessionId);
+    } = sim;
     const [showTwelveLeadReport, setShowTwelveLeadReport] = useState(false);
     const [twelveLeadReport, setTwelveLeadReport] = useState<TwelveLeadReport | null>(null);
     const [isFullscreen, setIsFullscreen] = useState(false);
@@ -445,7 +447,7 @@ export default function MonitorAndEkgSimulator() {
                                 </div>
                             </div>
 
-                            <div className="grid md:grid-cols-2 gap-8 w-full">
+                            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
                             {([
                                 {
                                     type: 'zoll' as MonitorType,
@@ -466,6 +468,16 @@ export default function MonitorAndEkgSimulator() {
                                     border: 'border-amber-500/30',
                                     accent: 'text-amber-400',
                                     btnBg: 'bg-amber-600 hover:bg-amber-500',
+                                },
+                                {
+                                    type: 'zoll_m' as MonitorType,
+                                    name: 'ZOLL M Series',
+                                    desc: 'Desfibrilador-monitor portátil y robusto. Combina desfibrilación bifásica, marcapasos transcutáneo y modo DEA semiautomático con carátula física de perillas.',
+                                    features: ['Onda bifásica', 'Hasta 200J', 'DEA semiautomático', 'Marcapasos transcutáneo'],
+                                    gradient: 'from-teal-600 to-emerald-800',
+                                    border: 'border-teal-500/30',
+                                    accent: 'text-teal-300',
+                                    btnBg: 'bg-teal-600 hover:bg-teal-500',
                                 },
                             ]).map((m) => (
                                 <button
@@ -499,13 +511,15 @@ export default function MonitorAndEkgSimulator() {
     // ════════════════════════════════════════════
     // MONITOR SIMULATOR SCREEN
     // ════════════════════════════════════════════
+    const isZollM = monitorType === 'zoll_m';
     const isZoll = monitorType === 'zoll';
+    const monitorLabel = isZollM ? 'ZOLL M Series' : isZoll ? 'ZOLL X Series' : 'LIFEPAK 15';
     const alarmActive = !alarms.muted && (alarms.hrHigh || alarms.hrLow || alarms.spo2Low);
     const inStrictEvaluation = simulationMode === 'evaluation' && evaluation.active;
 
     return (
         <SEOWrapper
-            title={`Simulador ${isZoll ? 'ZOLL X Series' : 'LIFEPAK 15'} - ECG Monitor | EMT EXAM`}
+            title={`Simulador ${monitorLabel} - ECG Monitor | EMT EXAM`}
             description="Simulador interactivo de monitor ECG. Practica lectura de arritmias, desfibrilación y marcapasos."
             keywords="ecg, monitor cardiaco, arritmias, desfibrilador, marcapasos, simulador"
             section="ecg-simulator"
@@ -531,11 +545,11 @@ export default function MonitorAndEkgSimulator() {
                             <span className="hidden sm:inline">Simuladores</span>
                         </NavLink>
                         <span className="text-gray-600">|</span>
-                        <span className={`font-bold text-sm ${isZoll ? 'text-blue-400' : 'text-amber-400'}`}>
-                            {isZoll ? 'ZOLL X Series' : 'LIFEPAK 15'}
+                        <span className={`font-bold text-sm ${isZollM ? 'text-teal-300' : isZoll ? 'text-blue-400' : 'text-amber-400'}`}>
+                            {monitorLabel}
                         </span>
                         <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-black/30 text-gray-300 border border-white/10">
-                            {isZoll ? 'SERIE X - MODO MANUAL' : 'LP15 - MANUAL MODE'}
+                            {isZollM ? 'M SERIES - DEA / MANUAL' : isZoll ? 'SERIE X - MODO MANUAL' : 'LP15 - MANUAL MODE'}
                         </span>
                     </div>
                     <div className="flex items-center gap-2">
@@ -597,6 +611,11 @@ export default function MonitorAndEkgSimulator() {
                             </div>
                         )}
 
+                        {/* ── ZOLL M Series: carátula física ── */}
+                        {isZollM ? (
+                            <ZollMSeriesFace sim={sim} onGenerateTwelveLead={handleGenerateTwelveLeadReport} patientId={printMeta.patientId} />
+                        ) : (
+                        <>
                         {/* ── Monitor screen ── */}
                         <div className="flex flex-col lg:flex-row flex-1">
                             {/* Monitor OFF overlay */}
@@ -874,6 +893,8 @@ export default function MonitorAndEkgSimulator() {
                                 </button>
                             </div>
                         </div>
+                        </>
+                        )}
 
                         {/* ── Info panel (collapsible below controls) ── */}
                         {showInfoPanel && (

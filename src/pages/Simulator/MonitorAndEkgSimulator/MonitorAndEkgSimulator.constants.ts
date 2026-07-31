@@ -5,6 +5,8 @@ import type { EcgScenario, LeadType, MonitorType, ProtocolProfile, RhythmType, T
 // ──────────────────────────────────────────────
 export const ZOLL_ENERGY_LEVELS = [1, 2, 3, 5, 7, 10, 20, 30, 50, 70, 100, 120, 150, 200];
 export const LIFEPAK_ENERGY_LEVELS = [1, 2, 3, 5, 7, 10, 20, 30, 50, 70, 100, 120, 150, 200, 300, 360];
+// ZOLL M Series: onda bifásica, máx 200 J (defibrilación) según especificación del equipo.
+export const ZOLL_M_ENERGY_LEVELS = [1, 2, 3, 5, 7, 10, 15, 20, 30, 50, 70, 100, 120, 150, 200];
 
 export const LEAD_OPTIONS: LeadType[] = ['I', 'II', 'III', 'aVR', 'aVL', 'aVF', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6'];
 

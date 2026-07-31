@@ -156,16 +156,22 @@ export default function InstructorPanel() {
                     </div>
                     <div>
                         <p className="text-gray-400 text-sm mb-3">Modelo de monitor para los alumnos</p>
-                        <div className="grid grid-cols-2 gap-3">
-                            {(['zoll', 'lifepak'] as MonitorType[]).map(m => (
-                                <button
-                                    key={m}
-                                    onClick={() => setMonitorType(m)}
-                                    className={`py-3 rounded-xl font-bold text-sm transition-all border ${monitorType === m ? (m === 'zoll' ? 'bg-blue-600 border-blue-400 text-white' : 'bg-amber-600 border-amber-400 text-white') : 'bg-slate-700 border-slate-600 text-gray-300 hover:text-white'}`}
-                                >
-                                    {m === 'zoll' ? 'ZOLL X Series' : 'LIFEPAK 15'}
-                                </button>
-                            ))}
+                        <div className="grid grid-cols-3 gap-3">
+                            {(['zoll', 'lifepak', 'zoll_m'] as MonitorType[]).map(m => {
+                                const label = m === 'zoll' ? 'ZOLL X Series' : m === 'lifepak' ? 'LIFEPAK 15' : 'ZOLL M Series';
+                                const activeClass = m === 'zoll' ? 'bg-blue-600 border-blue-400 text-white'
+                                    : m === 'lifepak' ? 'bg-amber-600 border-amber-400 text-white'
+                                    : 'bg-teal-600 border-teal-400 text-white';
+                                return (
+                                    <button
+                                        key={m}
+                                        onClick={() => setMonitorType(m)}
+                                        className={`py-3 rounded-xl font-bold text-sm transition-all border ${monitorType === m ? activeClass : 'bg-slate-700 border-slate-600 text-gray-300 hover:text-white'}`}
+                                    >
+                                        {label}
+                                    </button>
+                                );
+                            })}
                         </div>
                     </div>
                     <button

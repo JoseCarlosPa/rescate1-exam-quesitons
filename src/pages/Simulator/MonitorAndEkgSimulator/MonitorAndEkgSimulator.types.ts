@@ -1,4 +1,4 @@
-export type MonitorType = 'zoll' | 'lifepak';
+export type MonitorType = 'zoll' | 'lifepak' | 'zoll_m';
 
 export type SimulationMode = 'practice' | 'evaluation';
 
