@@ -5,33 +5,79 @@ import {IoClose, IoReturnDownBack} from "react-icons/io5";
 import {NavLink} from "react-router";
 import {jsPDF} from "jspdf";
 import logo from '../../assets/logo.png';
-import {FaFilePdf, FaSearch} from "react-icons/fa";
+import {
+    FaFilePdf, FaSearch, FaHeartbeat, FaThermometerHalf, FaLungs,
+    FaInfoCircle, FaQuestionCircle, FaBook, FaUserMd, FaLock,
+    FaUnlock, FaStethoscope, FaPen
+} from "react-icons/fa";
 import {IoMdRefresh} from "react-icons/io";
 
 export default function StudyCase() {
     const [currentCase, setCurrentCase] = useState<CaseStudy | null>(null);
     const [logoBase64, setLogoBase64] = useState<string | null>(null);
-    const [activeTab, setActiveTab] = useState<'descripcion' | 'preguntas' | 'manejo' | 'referencias'>('descripcion');
+    const [activeTab, setActiveTab] = useState<'preguntas' | 'manejo' | 'referencias'>('preguntas');
     const [showCaseSelector, setShowCaseSelector] = useState<boolean>(false);
     const [searchTerm, setSearchTerm] = useState<string>('');
+    const [selectedCategory, setSelectedCategory] = useState<string>('Todos');
+    const [userAnswers, setUserAnswers] = useState<Record<number, string>>({});
+    const [showResolution, setShowResolution] = useState<boolean>(false);
 
-    // Filtrar casos de estudio basados en el término de búsqueda
-    const filteredCases = caseStudies.filter(
-        (caseStudy) =>
-            caseStudy.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            caseStudy.description.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    const CATEGORIES = ['Todos', 'Trauma', 'Pediatría', 'Obstetricia', 'Neurología', 'Cardiología', 'Toxicología', 'Ambiental', 'Geriatría', 'Médica'];
+
+    const getVitalIcon = (key: string) => {
+        const k = key.toLowerCase();
+        if (k.includes('fc') || k.includes('frecuencia cardiaca') || k.includes('pulso')) return <FaHeartbeat className="text-red-500" />;
+        if (k.includes('fr') || k.includes('frecuencia respiratoria')) return <FaLungs className="text-blue-400" />;
+        if (k.includes('temp') || k.includes('tc')) return <FaThermometerHalf className="text-orange-500" />;
+        if (k.includes('ta') || k.includes('presion') || k.includes('t/a')) return <FaStethoscope className="text-purple-500" />;
+        if (k.includes('spo2') || k.includes('sato2')) return <FaLungs className="text-cyan-500" />;
+        return <FaInfoCircle className="text-gray-400" />;
+    };
+
+    const normalizeText = (text: string) => {
+        return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    };
+
+    // Filtrar casos de estudio basados en el término de búsqueda y categoría
+    const filteredCases = caseStudies.filter((caseStudy) => {
+        const searchNormalized = normalizeText(searchTerm);
+        const matchesSearch = normalizeText(caseStudy.title).includes(searchNormalized) ||
+            normalizeText(caseStudy.description).includes(searchNormalized);
+            
+        let matchesCategory = true;
+        if (selectedCategory !== 'Todos') {
+            const cat = normalizeText(selectedCategory);
+            const textToSearch = normalizeText(`${caseStudy.id} ${caseStudy.title} ${caseStudy.description}`);
+            
+            if (cat === 'cardiologia') {
+                matchesCategory = textToSearch.includes('iam') || textToSearch.includes('icc') || textToSearch.includes('cardiac') || textToSearch.includes('corazon');
+            } else if (cat === 'medica') {
+                matchesCategory = textToSearch.includes('medica') || textToSearch.includes('sepsis') || textToSearch.includes('infecciosas') || textToSearch.includes('gastro');
+            } else {
+                matchesCategory = textToSearch.includes(cat);
+            }
+        }
+
+        return matchesSearch && matchesCategory;
+    });
 
     const loadRandomCase = () => {
         const random = Math.floor(Math.random() * caseStudies.length);
         setCurrentCase(caseStudies[random]);
         setShowCaseSelector(false);
+        setUserAnswers({});
+        setShowResolution(false);
+        setActiveTab('preguntas');
     };
 
     const selectSpecificCase = (caseStudy: CaseStudy) => {
         setCurrentCase(caseStudy);
         setShowCaseSelector(false);
         setSearchTerm('');
+        setSelectedCategory('Todos');
+        setUserAnswers({});
+        setShowResolution(false);
+        setActiveTab('preguntas');
     };
 
     const convertLogoToBase64 = async () => {
@@ -199,14 +245,15 @@ export default function StudyCase() {
 
             {/* Modal de selección de casos */}
             {showCaseSelector && (
-                <div className="fixed inset-0 bg-black/50 bg-opacity-50 flex items-center justify-center z-10 p-4">
-                    <div className="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[80vh] flex flex-col">
-                        <div className="p-4 border-b border-gray-200 flex justify-between items-center">
+                <div className="fixed inset-0 bg-black/50 bg-opacity-50 flex items-center justify-center z-50 p-4">
+                    <div className="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] flex flex-col overflow-hidden">
+                        <div className="p-4 border-b border-gray-200 flex justify-between items-center shrink-0">
                             <h2 className="text-xl font-bold text-gray-800">Seleccionar Caso de Estudio</h2>
                             <button
                                 onClick={() => {
                                     setShowCaseSelector(false);
                                     setSearchTerm('');
+                                    setSelectedCategory('Todos');
                                 }}
                                 className="text-gray-500 hover:text-gray-700"
                             >
@@ -214,19 +261,38 @@ export default function StudyCase() {
                             </button>
                         </div>
 
-                        <div className="p-4">
-                            <div className="relative mb-4">
-                                <input
-                                    type="text"
-                                    placeholder="Buscar por título o descripción..."
-                                    value={searchTerm}
-                                    onChange={(e) => setSearchTerm(e.target.value)}
-                                    className="w-full p-3 pl-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                />
-                                <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"/>
+                        <div className="p-4 flex flex-col flex-1 min-h-0 overflow-hidden">
+                            <div className="shrink-0">
+                                <div className="relative mb-4">
+                                    <input
+                                        type="text"
+                                        placeholder="Buscar por título o descripción..."
+                                        value={searchTerm}
+                                        onChange={(e) => setSearchTerm(e.target.value)}
+                                        className="w-full p-3 pl-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                    />
+                                    <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"/>
+                                </div>
+                                
+                                {/* Filtros de Categoría */}
+                                <div className="flex gap-2 overflow-x-auto pb-3 mb-4 scrollbar-hide">
+                                    {CATEGORIES.map(cat => (
+                                        <button
+                                            key={cat}
+                                            onClick={() => setSelectedCategory(cat)}
+                                            className={`px-4 py-1.5 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-200 ${
+                                                selectedCategory === cat 
+                                                    ? 'bg-blue-600 text-white shadow-md transform scale-105' 
+                                                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                                            }`}
+                                        >
+                                            {cat}
+                                        </button>
+                                    ))}
+                                </div>
                             </div>
 
-                            <div className="overflow-y-auto max-h-[60vh]">
+                            <div className="overflow-y-auto flex-1 pr-2">
                                 {filteredCases.length === 0 ? (
                                     <div className="text-center py-8 text-gray-500">
                                         No se encontraron casos que coincidan con tu búsqueda
@@ -267,145 +333,185 @@ export default function StudyCase() {
                 </div>
             )}
 
-            <div className="bg-blue-50 p-4 rounded-xl mb-6 border-l-4 border-blue-500">
-                <h2 className="text-2xl font-bold text-blue-700 mb-2">{currentCase.title}</h2>
-                <p className="text-gray-700">{currentCase.description}</p>
-            </div>
-
-            {/* Tabs para navegar entre secciones */}
-            <div className="border-b border-gray-200 mb-6">
-                <nav className="flex space-x-8">
-                    <button
-                        onClick={() => setActiveTab('descripcion')}
-                        className={`py-2 px-1 border-b-2 font-medium text-sm ${
-                            activeTab === 'descripcion'
-                                ? 'border-blue-500 text-blue-600'
-                                : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                        }`}
-                    >
-                        Información del Caso
-                    </button>
-                    <button
-                        onClick={() => setActiveTab('preguntas')}
-                        className={`py-2 px-1 border-b-2 font-medium text-sm ${
-                            activeTab === 'preguntas'
-                                ? 'border-blue-500 text-blue-600'
-                                : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                        }`}
-                    >
-                        Preguntas
-                    </button>
-                    <button
-                        onClick={() => setActiveTab('manejo')}
-                        className={`py-2 px-1 border-b-2 font-medium text-sm ${
-                            activeTab === 'manejo'
-                                ? 'border-blue-500 text-blue-600'
-                                : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                        }`}
-                    >
-                        Manejo
-                    </button>
-                    <button
-                        onClick={() => setActiveTab('referencias')}
-                        className={`py-2 px-1 border-b-2 font-medium text-sm ${
-                            activeTab === 'referencias'
-                                ? 'border-blue-500 text-blue-600'
-                                : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                        }`}
-                    >
-                        Referencias
-                    </button>
-                </nav>
-            </div>
-
-            {/* Contenido según la pestaña activa */}
-            {activeTab === 'descripcion' && (
-                <div className="space-y-6">
-                    <div className="bg-white p-4 rounded-lg border border-gray-200">
-                        <h3 className="font-semibold text-blue-600 mb-2 text-lg">Evaluación inicial</h3>
-                        <p className="text-gray-800">{currentCase.initialAssessment}</p>
+            <div className="flex flex-col lg:flex-row gap-8">
+                {/* Panel Izquierdo: Información del Caso */}
+                <div className="w-full lg:w-1/2 space-y-6">
+                    <div className="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-500 shadow-sm">
+                        <h2 className="text-2xl font-bold text-blue-800 mb-3">{currentCase.title}</h2>
+                        <p className="text-gray-700 leading-relaxed text-lg">{currentCase.description}</p>
                     </div>
 
-                    <div className="bg-white p-4 rounded-lg border border-gray-200">
-                        <h3 className="font-semibold text-blue-600 mb-2 text-lg">Signos vitales</h3>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                    <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                        <h3 className="font-semibold text-blue-700 mb-3 text-lg flex items-center gap-2">
+                            <FaStethoscope /> Evaluación inicial
+                        </h3>
+                        <p className="text-gray-800 leading-relaxed">{currentCase.initialAssessment}</p>
+                    </div>
+
+                    <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                        <h3 className="font-semibold text-blue-700 mb-4 text-lg flex items-center gap-2">
+                            <FaHeartbeat /> Signos vitales
+                        </h3>
+                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                             {Object.entries(currentCase.vitalSigns).map(([key, val]) => (
-                                <div key={key} className="flex items-center p-2 bg-gray-50 rounded">
-                                    <span className="font-medium text-gray-700">{key}:</span>
-                                    <span className="ml-2 text-gray-900">{val}</span>
+                                <div key={key} className="flex flex-col p-4 bg-gray-50 rounded-xl border border-gray-100 hover:shadow-md transition">
+                                    <div className="flex items-center gap-2 mb-2">
+                                        {getVitalIcon(key)}
+                                        <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{key}</span>
+                                    </div>
+                                    <span className="text-lg font-bold text-gray-900">{val}</span>
                                 </div>
                             ))}
                         </div>
                     </div>
 
-                    <div className="bg-white p-4 rounded-lg border border-gray-200">
-                        <h3 className="font-semibold text-blue-600 mb-2 text-lg">Hallazgos clínicos</h3>
-                        <ul className="space-y-2">
+                    <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                        <h3 className="font-semibold text-blue-700 mb-4 text-lg flex items-center gap-2">
+                            <FaInfoCircle /> Hallazgos clínicos
+                        </h3>
+                        <ul className="space-y-3">
                             {currentCase.findings.map((f, i) => (
-                                <li key={i} className="flex items-start">
-                                    <span className="text-blue-500 mr-2">•</span>
-                                    <span>{f}</span>
+                                <li key={i} className="flex items-start bg-blue-50/30 p-3 rounded-lg border border-blue-50">
+                                    <span className="text-blue-500 mr-3 mt-1 text-lg">•</span>
+                                    <span className="text-gray-700">{f}</span>
                                 </li>
                             ))}
                         </ul>
                     </div>
                 </div>
-            )}
 
-            {activeTab === 'preguntas' && (
-                <div className="bg-white p-4 rounded-lg border border-gray-200">
-                    <h3 className="font-semibold text-blue-600 mb-4 text-lg">Preguntas para reflexionar</h3>
-                    <ol className="space-y-4">
-                        {currentCase.questions.map((q, i) => (
-                            <li key={i} className="bg-gray-50 p-3 rounded-lg">
-                                <div className="flex">
-                                    <span className="font-semibold text-blue-700 mr-2">{i + 1}.</span>
-                                    <span>{q.question}</span>
+                {/* Panel Derecho: Navegación Interactiva */}
+                <div className="w-full lg:w-1/2 flex flex-col">
+                    <div className="border-b border-gray-200 mb-6 bg-white sticky top-0 z-10">
+                        <nav className="flex space-x-4 md:space-x-8">
+                            <button
+                                onClick={() => setActiveTab('preguntas')}
+                                className={`py-3 px-2 flex items-center gap-2 border-b-2 font-medium text-sm md:text-base transition-colors ${
+                                    activeTab === 'preguntas'
+                                        ? 'border-blue-500 text-blue-700'
+                                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                                }`}
+                            >
+                                <FaQuestionCircle /> Preguntas
+                            </button>
+                            <button
+                                onClick={() => setActiveTab('manejo')}
+                                className={`py-3 px-2 flex items-center gap-2 border-b-2 font-medium text-sm md:text-base transition-colors ${
+                                    activeTab === 'manejo'
+                                        ? 'border-blue-500 text-blue-700'
+                                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                                }`}
+                            >
+                                <FaUserMd /> Resolución
+                            </button>
+                            <button
+                                onClick={() => setActiveTab('referencias')}
+                                className={`py-3 px-2 flex items-center gap-2 border-b-2 font-medium text-sm md:text-base transition-colors ${
+                                    activeTab === 'referencias'
+                                        ? 'border-blue-500 text-blue-700'
+                                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                                }`}
+                            >
+                                <FaBook /> Referencias
+                            </button>
+                        </nav>
+                    </div>
+
+                    <div className="flex-grow">
+                        {activeTab === 'preguntas' && (
+                            <div className="space-y-6">
+                                <div className="bg-blue-50 border border-blue-100 rounded-xl p-4 flex gap-4 items-center">
+                                    <div className="bg-blue-500 p-3 rounded-full text-white shrink-0">
+                                        <FaPen />
+                                    </div>
+                                    <p className="text-blue-800 text-sm">
+                                        Analiza el caso e ingresa tus respuestas. Cuando termines, ve a la pestaña de "Resolución" para compararlas.
+                                    </p>
                                 </div>
-                            </li>
-                        ))}
-                    </ol>
+                                <div className="space-y-6">
+                                    {currentCase.questions.map((q, i) => (
+                                        <div key={i} className="bg-white p-5 rounded-xl border border-gray-200 shadow-sm transition-all focus-within:ring-2 focus-within:ring-blue-200 focus-within:border-blue-400">
+                                            <div className="flex mb-3">
+                                                <span className="font-bold text-blue-600 mr-2 text-lg">{i + 1}.</span>
+                                                <span className="font-medium text-gray-800 text-lg">{q.question}</span>
+                                            </div>
+                                            <textarea
+                                                rows={3}
+                                                placeholder="Escribe tu razonamiento aquí..."
+                                                value={userAnswers[i] || ''}
+                                                onChange={(e) => setUserAnswers({...userAnswers, [i]: e.target.value})}
+                                                className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-0 focus:outline-none text-gray-700 resize-none placeholder-gray-400"
+                                            />
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+
+                        {activeTab === 'manejo' && (
+                            <div className="space-y-6">
+                                {!showResolution ? (
+                                    <div className="flex flex-col items-center justify-center py-16 bg-gray-50 rounded-xl border-2 border-dashed border-gray-300 text-center px-4">
+                                        <FaLock className="w-16 h-16 text-gray-300 mb-4" />
+                                        <h3 className="text-2xl font-bold text-gray-700 mb-2">Resolución Oculta</h3>
+                                        <p className="text-gray-500 mb-8 max-w-sm">
+                                            Intenta responder las preguntas y analizar el caso por tu cuenta antes de ver el manejo correcto.
+                                        </p>
+                                        <button
+                                            onClick={() => setShowResolution(true)}
+                                            className="flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                                        >
+                                            <FaUnlock /> Revelar Resolución
+                                        </button>
+                                    </div>
+                                ) : (
+                                    <div className="space-y-6 animate-fadeIn">
+                                        {currentCase.correctManage && (
+                                            <div className="bg-green-50 p-6 rounded-xl border border-green-200 shadow-sm">
+                                                <h3 className="font-semibold text-green-800 mb-4 text-xl flex items-center gap-2">
+                                                    <FaUserMd /> Manejo Correcto
+                                                </h3>
+                                                <div className="text-gray-800 whitespace-pre-line leading-relaxed text-lg">{currentCase.correctManage}</div>
+                                            </div>
+                                        )}
+
+                                        {currentCase.explanation && (
+                                            <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                                                <h3 className="font-semibold text-blue-700 mb-4 text-xl flex items-center gap-2">
+                                                    <FaInfoCircle /> Explicación del caso
+                                                </h3>
+                                                <p className="text-gray-700 leading-relaxed text-lg">{currentCase.explanation}</p>
+                                            </div>
+                                        )}
+                                        
+                                        {!currentCase.correctManage && !currentCase.explanation && (
+                                            <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                                                <p className="text-gray-500 italic text-center">No hay información de manejo disponible para este caso.</p>
+                                            </div>
+                                        )}
+                                    </div>
+                                )}
+                            </div>
+                        )}
+
+                        {activeTab === 'referencias' && (
+                            <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                                <h3 className="font-semibold text-blue-700 mb-5 text-xl flex items-center gap-2">
+                                    <FaBook /> Referencias bibliográficas
+                                </h3>
+                                <ul className="space-y-4 text-gray-600">
+                                    {currentCase.references.map((ref, i) => (
+                                        <li key={i} className="flex items-start bg-gray-50 p-4 rounded-lg border border-gray-100">
+                                            <span className="text-gray-400 mr-3 mt-1">•</span>
+                                            <span className="leading-relaxed">{ref}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+                    </div>
                 </div>
-            )}
-
-            {activeTab === 'manejo' && (
-                <div className="space-y-6">
-                    {currentCase.correctManage && (
-                        <div className="bg-white p-4 rounded-lg border border-gray-200">
-                            <h3 className="font-semibold text-blue-600 mb-2 text-lg">Manejo Correcto</h3>
-                            <div className="text-gray-800 whitespace-pre-line">{currentCase.correctManage}</div>
-                        </div>
-                    )}
-
-                    {currentCase.explanation && (
-                        <div className="bg-white p-4 rounded-lg border border-gray-200">
-                            <h3 className="font-semibold text-blue-600 mb-2 text-lg">Explicación</h3>
-                            <p className="text-gray-800">{currentCase.explanation}</p>
-                        </div>
-                    )}
-
-                    {!currentCase.correctManage && !currentCase.explanation && (
-                        <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                            <p className="text-gray-500 italic">No hay información de manejo disponible para este
-                                caso.</p>
-                        </div>
-                    )}
-                </div>
-            )}
-
-            {activeTab === 'referencias' && (
-                <div className="bg-white p-4 rounded-lg border border-gray-200">
-                    <h3 className="font-semibold text-blue-600 mb-2 text-lg">Referencias bibliográficas</h3>
-                    <ul className="space-y-2 text-sm text-gray-600">
-                        {currentCase.references.map((ref, i) => (
-                            <li key={i} className="flex items-start">
-                                <span className="text-gray-400 mr-2">•</span>
-                                <span>{ref}</span>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            )}
+            </div>
         </div>
     );
 }

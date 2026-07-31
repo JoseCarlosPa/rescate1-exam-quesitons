@@ -16,7 +16,8 @@ export default function Exam(props: ExamProps) {
     const [loading, setLoading] = useState(false);
     const [timer, setTimer] = useState<number>(0);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
-    const [showAllQuestions, setShowAllQuestions] = useState<boolean>(false);
+    const [viewMode, setViewMode] = useState<"single" | "all" | "split">("single");
+    const [showSubmitModal, setShowSubmitModal] = useState(false);
     const [examType, setExamType] = useState<string | null>(null);
     const [questions, setQuestions] = useState<Question[]>([]);
     const timerIntervalRef = useRef<number | null>(null);
@@ -53,6 +54,20 @@ export default function Exam(props: ExamProps) {
 
     const handleSelect = (qIndex: number, letter: string) => {
         setAnswers({...answers, [qIndex]: letter});
+    };
+
+    const handleClearAnswer = (qIndex: number) => {
+        const newAnswers = { ...answers };
+        delete newAnswers[qIndex];
+        setAnswers(newAnswers);
+    };
+
+    const handlePreSubmit = () => {
+        if (Object.keys(answers).length < questions.length) {
+            setShowSubmitModal(true);
+        } else {
+            handleSubmit();
+        }
     };
 
     const navigateToQuestion = (index: number) => {
@@ -391,144 +406,180 @@ export default function Exam(props: ExamProps) {
                                         Tiempo: {formatTime(timer)}
                                     </span>
                                 </div>
-                                <div className="flex items-center">
-                                    <span className="text-lg font-semibold mr-2">
+                                <div className="flex items-center gap-3">
+                                    <span className="text-lg font-semibold hidden md:inline">
                                         Progreso: {Object.keys(answers).length} / {questions.length}
                                     </span>
-                                    <button
-                                        type="button"
-                                        onClick={() => setShowAllQuestions(!showAllQuestions)}
-                                        className="ml-4 bg-blue-100 hover:bg-blue-200 text-blue-800 font-medium py-2 px-4 rounded-md shadow-sm transition duration-300"
+                                    <select
+                                        value={viewMode}
+                                        onChange={(e) => setViewMode(e.target.value as any)}
+                                        className="bg-blue-50 border border-blue-200 text-blue-800 font-medium py-2 px-3 rounded-md shadow-sm outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
                                     >
-                                        {showAllQuestions ? "Ver una pregunta" : "Ver todas las preguntas"}
-                                    </button>
+                                        <option value="single">Pregunta individual</option>
+                                        <option value="split">Vista dividida</option>
+                                        <option value="all">Ver todas</option>
+                                    </select>
                                 </div>
                             </div>
 
                             {/* Barra de progreso */}
                             <div className="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
                                 <div
-                                    className="bg-orange-500 h-4"
+                                    className="bg-orange-500 h-4 transition-all duration-300"
                                     style={{width: `${(Object.keys(answers).length / questions.length) * 100}%`}}
                                 ></div>
                             </div>
 
-                            {/* Indicadores numéricos */}
-                            <div className="mt-3 flex flex-wrap gap-2 justify-center">
-                                {questions.map((_, idx) => (
-                                    <button
-                                        type="button"
-                                        key={idx}
-                                        onClick={() => !showAllQuestions && navigateToQuestion(idx)}
-                                        className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium transition-all
-                                            ${!showAllQuestions && currentQuestionIndex === idx
-                                            ? 'bg-blue-500 text-white'
-                                            : answers[idx]
-                                                ? 'bg-green-500 text-white'
-                                                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
-                                    >
-                                        {idx + 1}
-                                    </button>
-                                ))}
-                            </div>
+                            {/* Indicadores numéricos (solo en vista individual para no saturar) */}
+                            {viewMode === "single" && (
+                                <div className="mt-4 flex flex-wrap gap-2 justify-center">
+                                    {questions.map((_, idx) => (
+                                        <button
+                                            type="button"
+                                            key={idx}
+                                            onClick={() => navigateToQuestion(idx)}
+                                            className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium transition-all
+                                                ${currentQuestionIndex === idx
+                                                ? 'bg-blue-500 text-white'
+                                                : answers[idx]
+                                                    ? 'bg-green-500 text-white'
+                                                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
+                                        >
+                                            {idx + 1}
+                                        </button>
+                                    ))}
+                                </div>
+                            )}
                         </div>
 
                         {/* Preguntas */}
-                        {showAllQuestions ? (
-                            <div className="space-y-6">
-                                {questions.map((q, index) => (
-                                    <div key={index}
-                                         className="bg-white rounded-lg shadow-md p-6 transition-all hover:shadow-lg">
-                                        <div className="flex items-center mb-4">
-                                            <span
-                                                className="bg-orange-500 text-white text-lg font-bold rounded-full w-8 h-8 flex items-center justify-center mr-3">
-                                                {index + 1}
-                                            </span>
-                                            <h3 className="text-lg font-semibold text-gray-800">{q.question}</h3>
+                        {(() => {
+                            const renderQuestion = (index: number, showNav: boolean) => {
+                                const q = questions[index];
+                                if (!q) return null;
+                                return (
+                                    <div key={`q-${index}`} className="bg-white rounded-lg shadow-md p-6 transition-all hover:shadow-lg w-full mb-6">
+                                        <div className="flex items-start justify-between mb-4 gap-4">
+                                            <div className="flex items-start">
+                                                <span className="bg-orange-500 text-white text-lg font-bold rounded-full w-8 h-8 flex items-center justify-center mr-3 shrink-0 mt-1">
+                                                    {index + 1}
+                                                </span>
+                                                <h3 className="text-lg font-semibold text-gray-800">{q.question}</h3>
+                                            </div>
+                                            {answers[index] && (
+                                                <button
+                                                    type="button"
+                                                    onClick={() => handleClearAnswer(index)}
+                                                    className="text-sm text-red-500 hover:text-red-700 underline shrink-0 transition"
+                                                >
+                                                    Limpiar
+                                                </button>
+                                            )}
                                         </div>
-                                        <div className="space-y-3 ml-11">
+                                        <div className="space-y-3 md:ml-11">
                                             {q.options.map((opt) => (
                                                 <label key={opt.letter}
-                                                       className="flex items-start p-3 rounded-md border border-gray-200 hover:bg-blue-50 transition-colors cursor-pointer">
+                                                       className={`flex items-start p-3 rounded-md border hover:bg-blue-50 transition-colors cursor-pointer ${
+                                                           answers[index] === opt.letter ? 'bg-blue-50 border-blue-300' : 'border-gray-200'
+                                                       }`}>
                                                     <input
                                                         type="radio"
                                                         name={`question-${index}`}
                                                         value={opt.letter}
                                                         checked={answers[index] === opt.letter}
                                                         onChange={() => handleSelect(index, opt.letter)}
-                                                        className="mt-1 mr-3"
+                                                        className="mt-1 mr-3 text-orange-500 focus:ring-orange-500"
                                                     />
                                                     <div>
-                                                        <span
-                                                            className="font-medium text-gray-700">{opt.letter.toUpperCase()}) </span>
+                                                        <span className="font-medium text-gray-700">{opt.letter.toUpperCase()}) </span>
                                                         <span className="text-gray-800">{opt.text}</span>
                                                     </div>
                                                 </label>
                                             ))}
                                         </div>
-                                    </div>
-                                ))}
-                            </div>
-                        ) : (
-                            <div className="bg-white rounded-lg shadow-md p-6 transition-all hover:shadow-lg">
-                                <div className="flex items-center mb-4">
-                                    <span
-                                        className="bg-orange-500 text-white text-lg font-bold rounded-full w-8 h-8 flex items-center justify-center mr-3">
-                                        {currentQuestionIndex + 1}
-                                    </span>
-                                    <h3 className="text-lg font-semibold text-gray-800">{questions[currentQuestionIndex]?.question}</h3>
-                                </div>
-                                <div className="space-y-3 ml-11">
-                                    {questions[currentQuestionIndex]?.options.map((opt) => (
-                                        <label key={opt.letter}
-                                               className="flex items-start p-3 rounded-md border border-gray-200 hover:bg-blue-50 transition-colors cursor-pointer">
-                                            <input
-                                                type="radio"
-                                                name={`question-${currentQuestionIndex}`}
-                                                value={opt.letter}
-                                                checked={answers[currentQuestionIndex] === opt.letter}
-                                                onChange={() => handleSelect(currentQuestionIndex, opt.letter)}
-                                                className="mt-1 mr-3"
-                                            />
-                                            <div>
-                                                <span
-                                                    className="font-medium text-gray-700">{opt.letter.toUpperCase()}) </span>
-                                                <span className="text-gray-800">{opt.text}</span>
-                                            </div>
-                                        </label>
-                                    ))}
-                                </div>
 
-                                {/* Navegación entre preguntas */}
-                                <div className="flex justify-between items-center mt-6 pt-4 border-t border-gray-200">
-                                    <button
-                                        type="button"
-                                        onClick={() => navigateToQuestion(currentQuestionIndex - 1)}
-                                        className="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-md shadow-sm disabled:opacity-50 disabled:cursor-not-allowed transition"
-                                        disabled={currentQuestionIndex === 0}
-                                    >
-                                        <FaArrowLeft/>
-                                        <span>Anterior</span>
-                                    </button>
-                                    <button
-                                        type="button"
-                                        onClick={() => navigateToQuestion(currentQuestionIndex + 1)}
-                                        className="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-md shadow-sm disabled:opacity-50 disabled:cursor-not-allowed transition"
-                                        disabled={currentQuestionIndex === questions.length - 1}
-                                    >
-                                        <span>Siguiente</span>
-                                        <FaArrowLeft className="rotate-180"/>
-                                    </button>
-                                </div>
-                            </div>
-                        )}
+                                        {/* Navegación entre preguntas */}
+                                        {showNav && (
+                                            <div className="flex justify-between items-center mt-6 pt-4 border-t border-gray-200">
+                                                <button
+                                                    type="button"
+                                                    onClick={() => navigateToQuestion(index - 1)}
+                                                    className="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-md shadow-sm disabled:opacity-50 disabled:cursor-not-allowed transition"
+                                                    disabled={index === 0}
+                                                >
+                                                    <FaArrowLeft/>
+                                                    <span>Anterior</span>
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    onClick={() => navigateToQuestion(index + 1)}
+                                                    className="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-md shadow-sm disabled:opacity-50 disabled:cursor-not-allowed transition"
+                                                    disabled={index === questions.length - 1}
+                                                >
+                                                    <span>Siguiente</span>
+                                                    <FaArrowLeft className="rotate-180"/>
+                                                </button>
+                                            </div>
+                                        )}
+                                    </div>
+                                );
+                            };
+
+                            return (
+                                <>
+                                    {viewMode === "all" && (
+                                        <div className="space-y-2">
+                                            {questions.map((_, index) => renderQuestion(index, false))}
+                                        </div>
+                                    )}
+                                    
+                                    {viewMode === "single" && renderQuestion(currentQuestionIndex, true)}
+                                    
+                                    {viewMode === "split" && (
+                                        <div className="flex flex-col md:flex-row gap-6">
+                                            {/* Lista a la izquierda */}
+                                            <div className="w-full md:w-1/3 bg-white rounded-lg shadow-md p-4 max-h-[600px] overflow-y-auto">
+                                                <h4 className="font-semibold text-gray-700 mb-4 border-b pb-2 sticky top-0 bg-white z-10">Preguntas</h4>
+                                                <div className="space-y-2">
+                                                    {questions.map((q, idx) => (
+                                                        <button
+                                                            key={idx}
+                                                            type="button"
+                                                            onClick={() => navigateToQuestion(idx)}
+                                                            className={`w-full text-left p-3 rounded-md transition-colors flex gap-2 items-start ${
+                                                                currentQuestionIndex === idx
+                                                                    ? 'bg-blue-100 border-blue-400 border-2'
+                                                                    : answers[idx]
+                                                                        ? 'bg-green-50 hover:bg-green-100 border border-green-200'
+                                                                        : 'bg-gray-50 hover:bg-gray-100 border border-gray-200'
+                                                            }`}
+                                                        >
+                                                            <span className={`font-bold shrink-0 ${answers[idx] ? 'text-green-600' : 'text-gray-500'}`}>
+                                                                {idx + 1}.
+                                                            </span>
+                                                            <span className="text-sm text-gray-700 line-clamp-2">
+                                                                {q.question}
+                                                            </span>
+                                                        </button>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                            {/* Pregunta a la derecha */}
+                                            <div className="w-full md:w-2/3">
+                                                {renderQuestion(currentQuestionIndex, true)}
+                                            </div>
+                                        </div>
+                                    )}
+                                </>
+                            );
+                        })()}
 
                         {/* Botón de enviar */}
-                        <div className="mt-8 flex justify-center">
+                        <div className="mt-8 flex justify-center flex-col items-center">
                             <button
-                                type="submit"
-                                className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-colors flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                                disabled={Object.keys(answers).length < questions.length}
+                                type="button"
+                                onClick={handlePreSubmit}
+                                className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-colors flex items-center gap-2"
                             >
                                 {loading ? (
                                     <AiOutlineLoading3Quarters className="animate-spin h-5 w-5"/>
@@ -538,12 +589,12 @@ export default function Exam(props: ExamProps) {
                                     </>
                                 )}
                             </button>
+                            {Object.keys(answers).length < questions.length && (
+                                <p className="text-gray-500 mt-2 text-sm">
+                                    Faltan {questions.length - Object.keys(answers).length} preguntas por responder
+                                </p>
+                            )}
                         </div>
-                        {Object.keys(answers).length < questions.length && (
-                            <p className="text-center text-red-500 mt-2">
-                                Debes responder todas las preguntas para enviar el examen
-                            </p>
-                        )}
                     </form>
                 ) : (
                     <div className="bg-white rounded-lg shadow-lg p-6">
@@ -642,6 +693,38 @@ export default function Exam(props: ExamProps) {
                     </div>
                 )}
             </div>
+
+            {/* Modal de Confirmación de Envío */}
+            {showSubmitModal && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+                    <div className="bg-white p-6 rounded-lg shadow-xl max-w-md w-full">
+                        <h3 className="text-2xl font-bold text-gray-800 mb-4">¿Enviar examen?</h3>
+                        <p className="text-gray-600 mb-6">
+                            Aún tienes <span className="font-bold text-red-500">{questions.length - Object.keys(answers).length}</span> preguntas sin responder.
+                            ¿Estás seguro de que deseas enviar y calificar el examen ahora?
+                        </p>
+                        <div className="flex justify-end gap-4">
+                            <button
+                                type="button"
+                                onClick={() => setShowSubmitModal(false)}
+                                className="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-md transition"
+                            >
+                                Cancelar
+                            </button>
+                            <button
+                                type="button"
+                                onClick={() => {
+                                    setShowSubmitModal(false);
+                                    handleSubmit();
+                                }}
+                                className="px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-md transition flex items-center gap-2 font-semibold"
+                            >
+                                <FaCheck /> Enviar de todos modos
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

@@ -2180,7 +2180,277 @@ export const caseStudies: CaseStudy[] = [
         ],
         "correctManage": "- Administrar oxígeno de alto flujo con una mascarilla no recirculante para corregir la hipoxemia.\n- Colocar a la paciente en una posición de confort, usualmente sentada.\n- Establecer acceso IV.\n- Obtener un ECG de 12 derivaciones para descartar un IAM y buscar signos de sobrecarga del ventrículo derecho (ej. patrón S1Q3T3).\n- Mantener un alto índice de sospecha y transportar rápidamente.\n- Notificar al hospital receptor la sospecha de TEP para que puedan preparar el equipo de tomografía computarizada.",
         "explanation": "La cirugía mayor y la inmovilidad son los principales factores de riesgo para desarrollar una Trombosis Venosa Profunda (TVP), generalmente en las piernas. Si un fragmento de este coágulo se desprende, viaja a los pulmones y obstruye el flujo sanguíneo, causando una embolia pulmonar. Esto crea un desequilibrio ventilación/perfusión (el aire llega pero la sangre no), lo que resulta en una hipoxia severa a pesar de tener pulmones físicamente sanos y limpios a la auscultación. Es una emergencia de tiempo crítico."
+    },
+    {
+        "id": "obstetricia-parto-extrahospitalario-81",
+        "title": "Parto inminente en vía pública",
+        "description": "Mujer de 28 años, primigesta a término, rompe fuente mientras caminaba por la calle y comienza con contracciones intensas y continuas. Siente ganas inminentes de pujar.",
+        "initialAssessment": "Paciente sentada en el suelo, ansiosa. Se observan contracciones uterinas fuertes. A la inspección visual, la cabeza del bebé (coronamiento) es visible en el introito vaginal.",
+        "vitalSigns": {
+            "FC": "110 lpm",
+            "TA": "130/80 mmHg",
+            "FR": "24 rpm",
+            "SpO2": "98%"
+        },
+        "findings": [
+            "Parto extrahospitalario inminente (Fase expulsiva).",
+            "Coronamiento visible, lo que indica que el nacimiento ocurrirá en los próximos minutos.",
+            "Requiere preparación inmediata para recibir al recién nacido y prevenir hipotermia."
+        ],
+        "questions": [
+            {"question": "¿Cuáles son los pasos inmediatos al observar el coronamiento?"},
+            {"question": "¿Cómo se previene la hipotermia en el recién nacido en un entorno prehospitalario?"},
+            {"question": "¿Qué se debe evaluar en el recién nacido durante el primer minuto de vida (APGAR)?"}
+        ],
+        "references": [
+            "Atención médica prehospitalaria básica de la AAOS - Capítulo de Emergencias Obstétricas y Atención Neonatal."
+        ],
+        "correctManage": "- Preparar el kit de parto obstétrico y asegurar la privacidad de la paciente dentro de lo posible.\n- Guiar a la madre para controlar el pujo, protegiendo el periné y controlando la salida suave de la cabeza del bebé para evitar desgarros rápidos.\n- Una vez expulsado el bebé, secarlo de inmediato vigorosamente y estimularlo.\n- Cubrir al recién nacido con mantas secas y cálidas y colocarlo sobre el pecho o abdomen de la madre (contacto piel con piel) para prevenir la hipotermia.\n- Pinzar y cortar el cordón umbilical una vez que haya dejado de pulsar.\n- Evaluar APGAR a los 1 y 5 minutos.\n- Prepararse para el alumbramiento de la placenta sin traccionar el cordón y trasladar a madre e hijo al hospital materno.",
+    },
+    {
+        "id": "trauma-neumotorax-abierto-82",
+        "title": "Herida penetrante en tórax",
+        "description": "Joven de 22 años sufre una herida por arma blanca en el lado derecho del tórax durante un altercado. Refiere mucha dificultad para respirar y dolor intenso.",
+        "initialAssessment": "Paciente consciente, pálido y con franca disnea. Se observa una herida de aproximadamente 3 cm en el 4to espacio intercostal derecho, por la que se escucha un sonido de 'succión' al inspirar.",
+        "vitalSigns": {
+            "FC": "130 lpm",
+            "TA": "110/70 mmHg",
+            "FR": "32 rpm",
+            "SpO2": "89% (aire ambiente)"
+        },
+        "findings": [
+            "Neumotórax abierto (herida torácica succionante).",
+            "Pérdida de la presión negativa intratorácica que colapsa el pulmón derecho.",
+            "Riesgo de evolucionar a neumotórax a tensión si no se sella correctamente."
+        ],
+        "questions": [
+            {"question": "¿Cuál es el tratamiento inmediato para una herida torácica succionante?"},
+            {"question": "¿Por qué se utiliza un parche oclusivo sellado por tres lados (o válvula unidireccional) en lugar de sellarlo completamente?"},
+            {"question": "¿Qué signos clínicos te alertarían de que el paciente está desarrollando un neumotórax a tensión?"}
+        ],
+        "references": [
+            "PHTLS 9ª Edición - Capítulo de Trauma Torácico."
+        ],
+        "correctManage": "- Cubrir inmediatamente la herida con un parche oclusivo (comercial con válvula unidireccional) o crear uno improvisado sellándolo por 3 de sus 4 lados.\n- Administrar oxígeno de alto flujo.\n- Si el paciente desarrolla signos de neumotórax a tensión (deterioro respiratorio, caída de la TA, distensión de venas yugulares), levantar el lado no sellado del parche para permitir que el aire escape (descompresión).\n- Monitorizar SpO2 y función ventilatoria continuamente.\n- Traslado urgente a un centro de trauma.",
+        "explanation": "El sonido de 'succión' indica que el aire está entrando a la cavidad pleural a través de la herida en lugar de por la tráquea, colapsando el pulmón. Sellar la herida detiene esta entrada anormal. Usar una válvula unidireccional o un parche sellado por 3 lados permite que el aire atrapado salga durante la exhalación, pero evita que entre durante la inhalación, reduciendo el riesgo de un neumotórax a tensión fatal."
+    },
+    {
+        "id": "pediatria-anafilaxia-83",
+        "title": "Dificultad respiratoria súbita en un parque",
+        "description": "Niño de 7 años es picado por una abeja mientras jugaba. En menos de 5 minutos, comienza a toser compulsivamente, se queja de picazón generalizada y siente que 'se le cierra la garganta'.",
+        "initialAssessment": "Niño ansioso, en posición de trípode. Presenta edema facial y labial marcado. Urticaria visible en tórax y extremidades. A la auscultación se escuchan sibilancias inspiratorias y espiratorias en ambos campos pulmonares.",
+        "vitalSigns": {
+            "FC": "145 lpm",
+            "TA": "85/50 mmHg",
+            "FR": "36 rpm",
+            "SpO2": "91% (aire ambiente)"
+        },
+        "findings": [
+            "Shock anafiláctico (reacción alérgica severa y multisistémica).",
+            "Compromiso de la vía aérea (edema facial) y respiratorio (broncoespasmo).",
+            "Afectación cardiovascular (hipotensión)."
+        ],
+        "questions": [
+            {"question": "¿Cuál es el medicamento de primera línea y la vía de administración para la anafilaxia?"},
+            {"question": "¿Cuál es el mecanismo de acción de la epinefrina que revierte estos síntomas?"},
+            {"question": "Si el paciente tiene un autoinyector de epinefrina (EpiPen), ¿en qué zona anatómica se debe administrar?"}
+        ],
+        "references": [
+            "AAOS 11ª Edición - Capítulo de Reacciones Alérgicas y Anafilaxia."
+        ],
+        "correctManage": "- Inyectar Epinefrina intramuscular (IM) de inmediato en la cara anterolateral del muslo (0.15 mg para niños menores de 30 kg, 0.3 mg si pesan más).\n- Administrar oxígeno de alto flujo.\n- Establecer acceso IV e iniciar reanimación con líquidos para tratar el shock distributivo.\n- Administrar antihistamínicos (Difenhidramina) y corticosteroides IV si el protocolo lo permite, pero nunca retrasar la epinefrina por estos.\n- Considerar Albuterol nebulizado para el broncoespasmo persistente.\n- Traslado rápido.",
+        "explanation": "La anafilaxia es una emergencia de tiempo crítico mediada por histamina que causa broncoespasmo severo, vasodilatación masiva y fuga capilar. La epinefrina es el único fármaco que revierte todos estos efectos simultáneamente: sus propiedades alfa-adrenérgicas causan vasoconstricción (aumentando la presión arterial y reduciendo el edema) y sus propiedades beta-adrenérgicas causan broncodilatación, abriendo las vías respiratorias."
+    },
+    {
+        "id": "cardiologia-svt-84",
+        "title": "Palpitaciones y mareos en reposo",
+        "description": "Mujer de 32 años llama por presentar un inicio repentino de palpitaciones muy rápidas y sensación de mareo mientras leía un libro. Niega dolor en el pecho, pero se siente débil.",
+        "initialAssessment": "Paciente consciente, alerta pero ansiosa. Piel con temperatura y coloración normal. Pulsos radiales presentes, muy rápidos pero rítmicos. No hay dificultad respiratoria evidente.",
+        "vitalSigns": {
+            "FC": "190 lpm",
+            "TA": "115/75 mmHg",
+            "FR": "18 rpm",
+            "SpO2": "98%"
+        },
+        "findings": [
+            "Taquicardia Supraventricular (TSV / SVT) de complejo estrecho.",
+            "Paciente hemodinámicamente estable (presión arterial conservada, sin alteración del estado mental, sin signos de shock).",
+            "Ritmo regular con ausencia de ondas P visibles en el monitor."
+        ],
+        "questions": [
+            {"question": "¿Cuál es el criterio clínico más importante para decidir el tratamiento de una taquicardia?"},
+            {"question": "¿Qué son las maniobras vagales y cómo se realizan?"},
+            {"question": "¿Qué fármaco es el tratamiento de elección para una TSV estable si las maniobras vagales fallan?"}
+        ],
+        "references": [
+            "Protocolos ACLS (Soporte Vital Cardiovascular Avanzado) - Algoritmo de Taquicardia."
+        ],
+        "correctManage": "- Monitorización cardíaca de 12 derivaciones para confirmar el ritmo de complejo estrecho y descartar isquemia.\n- Como la paciente está hemodinámicamente estable, intentar maniobras vagales primero (ej. Maniobra de Valsalva modificada: soplar una jeringa y luego elevar las piernas).\n- Si la SVT persiste, establecer un buen acceso IV (proximal) y administrar Adenosina rápida (bolo de 6 mg seguido de lavado con solución salina). Preparar una dosis de 12 mg si la primera falla.\n- Trasladar para evaluación cardiológica continua, incluso si revierte a ritmo sinusal.",
+        "explanation": "La TSV es una arritmia originada por encima de los ventrículos. La estabilidad hemodinámica (ausencia de hipotensión, shock o alteración mental) dicta el tratamiento. Al estar estable, se intenta estimular el nervio vago para ralentizar la conducción del nodo AV. Si esto falla, la Adenosina bloquea transitoriamente el nodo AV, a menudo rompiendo el circuito de reentrada. Si la paciente estuviera inestable, el tratamiento inmediato sería la cardioversión eléctrica sincronizada."
+    },
+    {
+        "id": "ambiental-hipotermia-85",
+        "title": "Excursionista encontrado desorientado bajo la lluvia",
+        "description": "Un hombre de 50 años que se perdió durante una excursión es encontrado por el equipo de rescate después de 12 horas. Ha estado lloviendo y la temperatura ambiente es de 5°C.",
+        "initialAssessment": "El paciente está empapado. Está despierto pero severamente desorientado y confuso. Tiembla de forma incontrolable y violenta. Tiene dificultad para responder preguntas simples.",
+        "vitalSigns": {
+            "FC": "90 lpm",
+            "TA": "100/70 mmHg",
+            "FR": "14 rpm",
+            "SpO2": "94% (lectura difícil por frío)",
+            "Temp (axilar)": "33.5°C"
+        },
+        "findings": [
+            "Hipotermia leve a moderada (temblores vigorosos presentes).",
+            "Ropa mojada que acelera dramáticamente la pérdida de calor por conducción y evaporación.",
+            "Alteración del estado mental, lo que indica un compromiso neurológico temprano."
+        ],
+        "questions": [
+            {"question": "¿Por qué es crucial mover a un paciente hipotérmico con extrema suavidad?"},
+            {"question": "¿Cuáles son los cuatro mecanismos por los que el cuerpo pierde calor, y cuál es el principal responsable en este escenario?"},
+            {"question": "¿Qué indica el cese de los temblores en un paciente hipotérmico?"}
+        ],
+        "references": [
+            "AAOS 11ª Edición - Capítulo de Emergencias Ambientales."
+        ],
+        "correctManage": "- Mover al paciente con mucho cuidado a un entorno cálido (ambulancia o refugio) para evitar arritmias cardíacas inducidas por el movimiento (como la Fibrilación Ventricular).\n- Retirar toda la ropa mojada de inmediato y secar la piel.\n- Iniciar el recalentamiento externo pasivo y activo: cubrir con mantas secas, mantas térmicas e incorporar fuentes de calor seguras (bolsas de agua tibia o paquetes térmicos) en axilas, ingles y cuello.\n- No dar líquidos orales debido al estado mental alterado (riesgo de aspiración).\n- Traslado suave y monitorización cardíaca constante.",
+        "explanation": "La hipotermia reduce el metabolismo y deprime la función cerebral y cardíaca. La ropa mojada roba el calor corporal hasta 25 veces más rápido que el aire seco. Mover bruscamente al paciente puede irritar el miocardio frío y causar fibrilación ventricular, una arritmia a menudo refractaria a la desfibrilación a bajas temperaturas. El temblor es el intento del cuerpo de generar calor; si se detiene, indica que la hipotermia se ha vuelto severa y las reservas de energía se han agotado."
+    },
+    {
+        "id": "neurologia-estatus-86",
+        "title": "Convulsiones prolongadas sin recuperar conciencia",
+        "description": "Hombre de 25 años con epilepsia conocida está convulsionando en su cama. Su pareja afirma que la crisis comenzó hace más de 10 minutos de forma ininterrumpida.",
+        "initialAssessment": "Paciente en convulsión tónico-clónica generalizada activa. Hay abundante secreción (babeo) y sangre en la boca (posible mordedura de lengua). Cianosis peribucal evidente.",
+        "vitalSigns": {
+            "FC": "140 lpm",
+            "TA": "Inmedible",
+            "FR": "Irregular / superficial",
+            "SpO2": "85%"
+        },
+        "findings": [
+            "Estatus epiléptico (Status Epilepticus), una verdadera emergencia médica.",
+            "Hipoxia secundaria a la contracción de los músculos respiratorios y obstrucción por secreciones.",
+            "Riesgo de daño cerebral permanente por actividad eléctrica prolongada y falta de oxígeno."
+        ],
+        "questions": [
+            {"question": "¿Cómo se define médicamente el estatus epiléptico?"},
+            {"question": "¿Por qué es peligrosa la administración de oxígeno mediante cánula nasofaríngea u orofaríngea durante una convulsión activa?"},
+            {"question": "¿Cuál es la clase de medicamentos utilizada prehospitalariamente para detener la actividad convulsiva?"}
+        ],
+        "references": [
+            "Atención médica prehospitalaria básica y avanzada - Capítulo de Trastornos Neurológicos."
+        ],
+        "correctManage": "- Proteger al paciente de traumatismos retirando objetos cercanos, pero sin intentar inmovilizar sus extremidades.\n- Posicionar en decúbito lateral (si es posible) para facilitar el drenaje de secreciones y evitar la aspiración.\n- Administrar oxígeno de alto flujo con mascarilla no recirculante. No introducir dispositivos en la boca debido al trismo (mandíbula apretada) y riesgo de rotura.\n- Establecer un acceso IV (a menudo muy difícil) o usar la vía intranasal o intramuscular para administrar Benzodiacepinas (ej. Midazolam, Lorazepam o Diazepam) según el protocolo, para detener la convulsión.\n- Monitorizar estrechamente la vía aérea y prepararse para la ventilación con bolsa-válvula-mascarilla si el paciente deja de respirar al ceder la crisis.\n- Traslado emergente (código rojo).",
+        "explanation": "El estatus epiléptico se define como una convulsión que dura más de 5 minutos, o dos o más convulsiones sucesivas sin recuperación completa de la conciencia entre ellas. El cerebro consume cantidades masivas de glucosa y oxígeno durante la crisis, mientras que la respiración es ineficaz, llevando rápidamente a una hipoxia cerebral severa. Las benzodiacepinas actúan deprimiendo el sistema nervioso central y son el pilar fundamental para abortar rápidamente la crisis eléctrica."
+    },
+    {
+        "id": "trauma-hemotorax-87",
+        "title": "Impacto de alta energía en tórax",
+        "description": "Conductor de 35 años sufre un choque frontal a alta velocidad sin cinturón de seguridad. Su pecho impactó fuertemente contra el volante.",
+        "initialAssessment": "Paciente pálido, frío y diaforético (sudoroso). Presenta dificultad respiratoria moderada. A la auscultación, hay abolición de los ruidos respiratorios en la base del hemitórax izquierdo, que a la percusión suena mate (no timpánico). Venas yugulares planas.",
+        "vitalSigns": {
+            "FC": "125 lpm",
+            "TA": "90/60 mmHg",
+            "FR": "28 rpm",
+            "SpO2": "92% (aire ambiente)"
+        },
+        "findings": [
+            "Hemotórax masivo (acumulación de sangre en la cavidad pleural).",
+            "Shock hemorrágico secundario a la pérdida de volumen dentro del tórax.",
+            "Matidez a la percusión y venas yugulares colapsadas lo diferencian del neumotórax a tensión."
+        ],
+        "questions": [
+            {"question": "¿Cuál es la principal diferencia a la percusión entre un hemotórax y un neumotórax?"},
+            {"question": "¿Por qué las venas yugulares suelen estar colapsadas en un hemotórax masivo pero distendidas en un neumotórax a tensión?"},
+            {"question": "¿Cuál es el manejo hídrico prehospitalario recomendado para este paciente?"}
+        ],
+        "references": [
+            "PHTLS - Soporte Vital de Trauma Prehospitalario."
+        ],
+        "correctManage": "- Asegurar la vía aérea y administrar oxígeno suplementario.\n- Establecer al menos dos accesos intravenosos (IV) de gran calibre.\n- Iniciar reanimación con cristaloides calentados administrando pequeños bolos para mantener una perfusión mínima (hipotensión permisiva), evitando hemodilución y el desprendimiento de coágulos.\n- Traslado rápido (Scoop and Run) a un centro de trauma con capacidad quirúrgica, ya que el tratamiento definitivo requiere la colocación de un tubo torácico o toracotomía.",
+        "explanation": "El hemotórax produce una matidez a la percusión debido a la acumulación de líquidos (sangre), a diferencia de la hiperresonancia (timpanismo) del aire en el neumotórax. Un hemotórax masivo es un evento hemorrágico que causa hipovolemia sistémica, resultando en yugulares colapsadas, mientras que un neumotórax a tensión bloquea el retorno venoso al corazón por presión intratorácica positiva, distendiendo las venas yugulares. El manejo se enfoca en el control del shock hemorrágico y el traslado quirúrgico."
+    },
+    {
+        "id": "neurologia-convulsion-88",
+        "title": "Crisis convulsiva en centro comercial",
+        "description": "Joven de 19 años colapsa en una tienda. Los testigos indican que su cuerpo se puso rígido y luego comenzó a sacudirse violentamente por unos 2 minutos. Al llegar el SME, los movimientos han cesado.",
+        "initialAssessment": "Paciente en el suelo, letárgico, confuso y combativo al tacto. No responde preguntas de forma coherente. Respiración profunda y ruidosa. Relajación de esfínteres (incontinencia urinaria) presente.",
+        "vitalSigns": {
+            "FC": "115 lpm",
+            "TA": "130/85 mmHg",
+            "FR": "22 rpm",
+            "SpO2": "97%"
+        },
+        "findings": [
+            "Fase postictal posterior a una crisis convulsiva tónico-clónica generalizada.",
+            "Alteración temporal del estado mental secundaria a la descarga eléctrica cerebral masiva.",
+            "Riesgo de compromiso de la vía aérea por la pérdida de tono muscular o vómito."
+        ],
+        "questions": [
+            {"question": "¿Cuáles son las fases principales de una convulsión tónico-clónica generalizada?"},
+            {"question": "¿Cuál es la prioridad absoluta en la atención de un paciente en estado postictal?"},
+            {"question": "¿Por qué es importante medir la glucosa capilar en cualquier paciente con un estado mental alterado tras una convulsión?"}
+        ],
+        "references": [
+            "AMLS - Soporte Vital Médico Avanzado."
+        ],
+        "correctManage": "- Proteger la vía aérea: posicionar al paciente en decúbito lateral (posición de recuperación) para facilitar el manejo de secreciones y proteger contra la aspiración.\n- Monitorizar SpO2 y asistir la ventilación si hay depresión respiratoria prolongada.\n- Realizar glucemia capilar para descartar que una hipoglucemia severa sea la causa de la convulsión.\n- Obtener historial médico de los acompañantes (epilepsia conocida, falta de medicación, trauma reciente, fiebre).\n- Permitir que el paciente se recupere lentamente en un entorno tranquilo, transportando para valoración médica.",
+        "explanation": "Las fases típicas incluyen: el aura (advertencia), la fase tónica (rigidez muscular y apnea), la fase clónica (sacudidas rítmicas) y la fase postictal (período de recuperación cerebral con alteración de consciencia). En la fase postictal, los músculos se relajan profusamente, lo que puede causar que la lengua obstruya la vía aérea. Adicionalmente, la hipoglucemia puede desencadenar convulsiones y requiere corrección inmediata, por lo que medir la glucosa es obligatorio."
+    },
+    {
+        "id": "endocrino-hiperglucemia-89",
+        "title": "Debilidad extrema, poliuria y aliento frutal",
+        "description": "Mujer de 24 años con Diabetes Mellitus Tipo 1 llama por debilidad generalizada, náuseas, vómitos repetidos y dolor abdominal difuso desde hace 2 días. Su bomba de insulina falló el fin de semana.",
+        "initialAssessment": "Paciente letárgica, con piel caliente y muy seca. Sus mucosas orales están deshidratadas. Destaca un patrón respiratorio inusualmente profundo y rápido, y un olor dulce en el aliento (similar a quitaesmalte).",
+        "vitalSigns": {
+            "FC": "135 lpm",
+            "TA": "95/60 mmHg",
+            "FR": "30 rpm (Respiraciones de Kussmaul)",
+            "SpO2": "98%",
+            "Glucosa": "HI (Fuera de rango en glucómetro, >500 mg/dL)"
+        },
+        "findings": [
+            "Cetoacidosis Diabética (CAD), una crisis hiperglucémica grave.",
+            "Deshidratación severa secundaria a diuresis osmótica.",
+            "Acidosis metabólica compensatoria, evidenciada por la taquipnea profunda."
+        ],
+        "questions": [
+            {"question": "¿Qué son las respiraciones de Kussmaul y cuál es su propósito fisiológico?"},
+            {"question": "¿Por qué el aliento tiene un olor dulce o afrutado en estos pacientes?"},
+            {"question": "¿Cuál es la intervención prehospitalaria más crítica en la Cetoacidosis Diabética?"}
+        ],
+        "references": [
+            "AAOS 11ª Edición - Capítulo de Emergencias Endocrinas."
+        ],
+        "correctManage": "- Asegurar la vía aérea y proveer soporte ventilatorio o de oxígeno según necesidad.\n- Establecer acceso intravenoso de gran calibre de forma rápida.\n- Iniciar reanimación intensiva con líquidos (Solución Salina Normal al 0.9%) administrando bolos repetidos (ej. 1 litro) para corregir la hipovolemia profunda y ayudar a diluir la glucosa plasmática.\n- No administrar insulina en el entorno prehospitalario sin un protocolo estricto, ya que el pilar del rescate inicial es la hidratación.\n- Monitorización cardíaca continua (ECG) debido a posibles desequilibrios de potasio.\n- Traslado inmediato.",
+        "explanation": "Sin insulina, las células no pueden utilizar la glucosa y en su lugar queman grasas, lo que produce cuerpos cetónicos (ácidos). La acumulación de cetonas causa acidosis metabólica. El cuerpo responde aumentando la frecuencia y profundidad respiratoria (respiraciones de Kussmaul) en un intento de 'exhalar' el ácido en forma de dióxido de carbono. La acetona, una cetona específica, se elimina por los pulmones causando el característico olor afrutado. El tratamiento vital es la rehidratación hídrica masiva."
+    },
+    {
+        "id": "neurologia-acv-90",
+        "title": "Debilidad súbita y dificultad para hablar",
+        "description": "Hombre de 68 años es encontrado por su esposa sentado en su sillón. No puede levantar el brazo derecho y cuando intenta hablar, las palabras son incomprensibles.",
+        "initialAssessment": "El paciente está consciente y ansioso. Presenta ptosis y caída de la comisura labial derecha. Su mirada está ligeramente desviada hacia la izquierda. Comprende las instrucciones (sigue órdenes con la mano izquierda) pero no puede articular palabras correctamente (afasia motora o disartria grave).",
+        "vitalSigns": {
+            "FC": "88 lpm (Irregular - posible FA)",
+            "TA": "185/100 mmHg",
+            "FR": "16 rpm",
+            "SpO2": "96%",
+            "Glucosa": "105 mg/dL"
+        },
+        "findings": [
+            "Accidente Cerebrovascular (ACV / Ictus) isquémico agudo, probablemente originado por un émbolo de la Fibrilación Auricular.",
+            "Hemiparesia derecha y afasia apuntan a un infarto en el hemisferio cerebral izquierdo.",
+            "Emergencia de tiempo crítico (\"Time is Brain\")."
+        ],
+        "questions": [
+            {"question": "¿Cuál es la herramienta prehospitalaria más común para evaluar rápidamente un posible ACV?"},
+            {"question": "¿Por qué es crucial medir el nivel de glucosa en este escenario?"},
+            {"question": "¿Qué información crítica debe ser recopilada de los familiares (esposa) inmediatamente?"}
+        ],
+        "references": [
+            "AHA/ASA - Guías para el manejo temprano del Accidente Cerebrovascular Isquémico Agudo."
+        ],
+        "correctManage": "- Realizar una escala de ictus (ej. Cincinnati Prehospital Stroke Scale o Escala FAST).\n- Confirmar el nivel normal de glucosa para descartar una hipoglucemia como simuladora del ACV.\n- Determinar con exactitud la hora de inicio de los síntomas (o la hora en que fue 'visto por última vez normal').\n- Minimizar las intervenciones en el lugar que retrasen el transporte (no intentar normalizar la presión arterial prehospitalariamente).\n- Trasladar rápidamente a un Centro Primario o Integral de Ictus.\n- Notificar al hospital receptor la llegada de un 'Código Ictus' para que puedan preparar el equipo de neuroimagen (TC).",
+        "explanation": "El tejido cerebral muere rápidamente sin oxígeno; el ACV isquémico requiere reperfusión urgente (a menudo mediante medicación trombolítica que 'rompe el coágulo' o cirugía endovascular). Estos tratamientos son altamente dependientes del tiempo, típicamente limitados a una ventana de 3 a 4.5 horas desde que los síntomas comenzaron. Por ello, determinar la última vez que el paciente estuvo normal y alertar al hospital antes de la llegada es tan crítico como cualquier intervención física."
     }
-
-
 ]
