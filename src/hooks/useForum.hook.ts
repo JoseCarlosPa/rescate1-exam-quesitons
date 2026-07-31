@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import {
     addDoc,
     collection,
@@ -11,12 +11,11 @@ import {
     updateDoc,
     where
 } from 'firebase/firestore';
-import {db} from '../firebase/firebaseConfig';
-import {ForumFormData, ForumMessage, ForumThread} from '../types/forum.types';
+import { db } from '../firebase/firebaseConfig';
+import { ForumFormData, ForumMessage, ForumThread } from '../types/forum.types';
 
 export const useForum = (pagina: string) => {
     const [threads, setThreads] = useState<ForumThread[]>([]);
-
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
@@ -37,12 +36,18 @@ export const useForum = (pagina: string) => {
                         id: doc.id,
                         nombre: data.nombre,
                         correo: data.correo,
+                        titulo: data.titulo || undefined,
                         contenido: data.contenido,
                         timestamp: data.timestamp.toDate(),
                         pagina: data.pagina,
                         parentId: data.parentId || null,
-                        isThread: data.isThread ?? true, // Por defecto es thread si no está definido
-                        replyCount: data.replyCount || 0
+                        isThread: data.isThread ?? true,
+                        replyCount: data.replyCount || 0,
+                        role: data.role || undefined,
+                        guardRole: data.guardRole || undefined,
+                        deleted: data.deleted || false,
+                        deletedAt: data.deletedAt?.toDate() || undefined,
+                        editedAt: data.editedAt?.toDate() || undefined,
                     });
                 });
 
@@ -93,11 +98,15 @@ export const useForum = (pagina: string) => {
             await addDoc(collection(db, 'forum'), {
                 nombre: formData.nombre.trim(),
                 correo: formData.correo.trim(),
+                titulo: formData.titulo?.trim() || null,
                 contenido: formData.contenido.trim(),
                 pagina,
                 timestamp: Timestamp.now(),
                 isThread: true,
-                replyCount: 0
+                parentId: null,
+                replyCount: 0,
+                role: formData.role || null,
+                guardRole: formData.guardRole || null,
             });
             return true;
         } catch (err) {
@@ -120,7 +129,9 @@ export const useForum = (pagina: string) => {
                 pagina,
                 timestamp: Timestamp.now(),
                 parentId,
-                isThread: false
+                isThread: false,
+                role: formData.role || null,
+                guardRole: formData.guardRole || null,
             });
 
             // Incrementar el contador de respuestas del thread padre
@@ -147,12 +158,46 @@ export const useForum = (pagina: string) => {
             }));
     }
 
+    // Editar el contenido de un mensaje (thread o reply)
+    const editarMensaje = async (id: string, nuevoContenido: string, nuevoTitulo?: string): Promise<boolean> => {
+        try {
+            const updates: Record<string, unknown> = {
+                contenido: nuevoContenido.trim(),
+                editedAt: Timestamp.now(),
+            };
+            if (nuevoTitulo !== undefined) {
+                updates.titulo = nuevoTitulo.trim() || null;
+            }
+            await updateDoc(doc(db, 'forum', id), updates);
+            return true;
+        } catch (err) {
+            console.error('Error editing message:', err);
+            return false;
+        }
+    };
+
+    // Soft-delete: marca el mensaje como eliminado pero conserva el contenido en Firestore
+    const eliminarMensaje = async (id: string): Promise<boolean> => {
+        try {
+            await updateDoc(doc(db, 'forum', id), {
+                deleted: true,
+                deletedAt: Timestamp.now(),
+            });
+            return true;
+        } catch (err) {
+            console.error('Error deleting message:', err);
+            return false;
+        }
+    };
+
     return {
         threads,
         loading,
         error,
         enviarThread,
         enviarRespuesta,
-        getUserThreadsWithOtherReplies
+        getUserThreadsWithOtherReplies,
+        editarMensaje,
+        eliminarMensaje,
     };
 };
