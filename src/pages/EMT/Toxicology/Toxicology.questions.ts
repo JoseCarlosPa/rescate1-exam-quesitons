@@ -148,3 +148,72 @@ export const toxicologyQuestions: Question[] = [
         "explanation": "Estadísticamente, la ingestión (tragar una sustancia) es, con diferencia, la vía de envenenamiento más frecuente, tanto en exposiciones accidentales (especialmente en niños) como en sobredosis intencionales."
     }
 ]
+
+export const toxicologyChallengeQuestions: Question[] = [
+    {
+        "question": "Es llamado a un domicilio donde un hombre de 40 años, trabajador agrícola, es encontrado tirado junto a un tanque de pesticida organofosforado derramado. Presenta salivación profusa, lagrimeo, incontinencia urinaria, broncorrea intensa, sibilancias difusas y bradicardia de 42/min. Sus pupilas están mióticas. Además de la descontaminación y protección respiratoria del equipo (EPP con máscara y guantes), ¿cuál es la intervención farmacológica prehospitalaria más crítica para este paciente y por qué?",
+        "options": [
+            {"letter": "a", "text": "Administrar naloxona, ya que la bradicardia y la miosis sugieren una sobredosis opiácea concomitante"},
+            {"letter": "b", "text": "Administrar atropina en dosis repetidas, ya que bloquea los receptores muscarínicos y revierte la broncorrea, la bradicardia y las secreciones que amenazan la vía aérea"},
+            {"letter": "c", "text": "Administrar epinefrina IM para revertir la bradicardia mediante estimulación beta-adrenérgica"},
+            {"letter": "d", "text": "Administrar carbón activado por sonda nasogástrica para limitar la absorción sistémica del organofosforado"}
+        ],
+        "correctAnswer": "b",
+        "explanation": "Este es un toxidrome colinérgico clásico por inhibición de la acetilcolinesterasa: el exceso de acetilcolina sobreestimula los receptores muscarínicos (SLUDGE: salivación, lagrimeo, incontinencia urinaria, diarrea, malestar gastrointestinal, emesis) y también los receptores nicotínicos, causando broncorrea y broncoespasmo que pueden ahogar al paciente en sus propias secreciones. La atropina es un antagonista muscarínico competitivo que revierte específicamente la broncorrea, el broncoespasmo, la bradicardia y las secreciones, y a menudo se requieren dosis repetidas y agresivas hasta que las secreciones se sequen. La naloxona no tiene ningún efecto sobre receptores colinérgicos. El carbón activado no está indicado en exposición dérmica/inhalatoria y el riesgo de aspiración en un paciente con secreciones masivas y posible alteración del estado mental contraindica cualquier maniobra que no proteja primero la vía aérea."
+    },
+    {
+        "question": "Un paciente de 22 años es encontrado agitado, con la piel roja, seca y caliente, pupilas dilatadas, taquicardia de 130/min, temperatura de 39.5°C, y verbaliza frases incoherentes mientras intenta quitarse la ropa. Un amigo menciona que tomó 'algo para la ansiedad' junto con un antihistamínico de venta libre en dosis altas. ¿Qué toxidrome explica mejor este cuadro y cuál es la diferencia clave que lo distingue del toxidrome simpaticomimético?",
+        "options": [
+            {"letter": "a", "text": "Toxidrome anticolinérgico; a diferencia del simpaticomimético, la piel está seca y caliente en lugar de diaforética, debido al bloqueo de los receptores muscarínicos en las glándulas sudoríparas"},
+            {"letter": "b", "text": "Toxidrome colinérgico; la taquicardia y la fiebre son indistinguibles del simpaticomimético, por lo que no existe diferencia clínica relevante"},
+            {"letter": "c", "text": "Toxidrome sedante-hipnótico; la agitación se debe a un efecto paradójico y las pupilas dilatadas confirman el diagnóstico"},
+            {"letter": "d", "text": "Toxidrome opiáceo atípico; los antihistamínicos potencian el efecto miótico de los opiáceos y producen hipertermia por interacción farmacológica"}
+        ],
+        "correctAnswer": "a",
+        "explanation": "El antihistamínico en dosis altas (y muchos ansiolíticos con propiedades anticolinérgicas) bloquea los receptores muscarínicos periféricos y centrales, produciendo el clásico cuadro 'rojo como remolacha, seco como hueso, ciego como murciélago, caliente como liebre y loco como sombrerero': rubefacción cutánea, piel seca (anhidrosis por bloqueo de glándulas sudoríparas), midriasis, hipertermia y delirio agitado. Esto contrasta con el toxidrome simpaticomimético (cocaína, anfetaminas), que también produce taquicardia, hipertermia y agitación, pero con piel diaforética (húmeda) porque la estimulación adrenérgica activa, en lugar de bloquear, las glándulas sudoríparas. Esta distinción táctil de la piel (seca vs. diaforética) es la clave clínica más confiable para diferenciar ambos toxidromes en el campo cuando la historia es incierta."
+    },
+    {
+        "question": "Usted atiende a un paciente de 30 años encontrado inconsciente en un baño público, con frecuencia respiratoria de 4/min, pupilas puntiformes y cianosis peribucal. Su compañero refiere que también consumió alcohol y posiblemente 'unas pastillas para dormir' de su abuela. Antes de administrar naloxona, ¿cuál es la prioridad de manejo y qué riesgo debe anticipar al revertir la sobredosis en este contexto de politoxicomanía?",
+        "options": [
+            {"letter": "a", "text": "Administrar naloxona en dosis alta de inmediato para maximizar la reversión, ya que no existe riesgo al combinarla con benzodiacepinas o alcohol"},
+            {"letter": "b", "text": "Asegurar primero la ventilación con dispositivo de balón-mascarilla y oxígeno suplementario, y anticipar que la naloxona revertirá solo el componente opiáceo, dejando al paciente aún deprimido por el alcohol y posibles sedantes-hipnóticos, con riesgo de agitación y vómito al despertar parcialmente"},
+            {"letter": "c", "text": "Evitar cualquier soporte ventilatorio hasta confirmar el tipo exacto de sustancia ingerida mediante análisis toxicológico"},
+            {"letter": "d", "text": "Administrar naloxona únicamente por vía intravenosa en bolo rápido, ya que la vía intranasal no es efectiva en depresión respiratoria severa"}
+        ],
+        "correctAnswer": "b",
+        "explanation": "En cualquier sobredosis con depresión respiratoria severa, la prioridad inmediata es el manejo básico de la vía aérea y la ventilación asistida (BVM con oxígeno a alto flujo), ya que la oxigenación no puede esperar a la administración de un antídoto. La naloxona es un antagonista específico de receptores opiáceos y no tendrá ningún efecto sobre la depresión del SNC causada por alcohol o benzodiacepinas ('pastillas para dormir'), por lo que revertir parcialmente el componente opiáceo puede dejar al paciente con un nivel de conciencia fluctuante, todavía hipoventilando por los otros depresores, y con riesgo de agitación, vómito y aspiración al despertar abruptamente pero de forma incompleta. Por ello la ventilación asistida continua es indispensable independientemente de la respuesta a la naloxona."
+    },
+    {
+        "question": "Un paciente de 50 años con antecedente de depresión es encontrado con un frasco vacío de amitriptilina junto a él. Está somnoliento, con piel seca, pupilas dilatadas, taquicardia de 140/min y el ECG de 12 derivaciones muestra un complejo QRS ensanchado de 130 ms. Su compañero sugiere administrar naloxona 'por si acaso hay opiáceos también'. ¿Cuál es la preocupación clínica más importante respecto a esta sugerencia y cuál es la intervención prioritaria basada en el ECG?",
+        "options": [
+            {"letter": "a", "text": "La naloxona está indicada y no representa ningún riesgo; la prioridad del ECG es preparar cardioversión eléctrica sincronizada"},
+            {"letter": "b", "text": "La naloxona no tiene indicación en ausencia de evidencia clara de coingesta opiácea y puede consumir tiempo crítico; el QRS ensanchado por toxicidad de antidepresivos tricíclicos (bloqueo de canales de sodio) requiere alerta para bicarbonato de sodio en el hospital y monitoreo continuo por riesgo de arritmias ventriculares y convulsiones"},
+            {"letter": "c", "text": "El QRS ensanchado indica hiperkalemia por insuficiencia renal aguda y debe tratarse con gluconato de calcio prehospitalario"},
+            {"letter": "d", "text": "La combinación de naloxona con antidepresivos tricíclicos es sinérgica y mejora la reversión del estado mental alterado"}
+        ],
+        "correctAnswer": "b",
+        "explanation": "Los antidepresivos tricíclicos (ATC) como la amitriptilina bloquean los canales rápidos de sodio cardíacos, lo que se traduce en un ensanchamiento progresivo del complejo QRS y predispone a arritmias ventriculares potencialmente letales y a convulsiones; un QRS mayor a 100 ms es un marcador de toxicidad significativa. Administrar naloxona sin evidencia clara de coingesta opiácea no aporta beneficio y retrasa el reconocimiento y manejo de la toxicidad cardíaca, que en el ámbito hospitalario se trata con bicarbonato de sodio para alcalinizar la sangre y reducir la fracción libre del fármaco unida a los canales de sodio. Además, se ha descrito que la naloxona puede, en algunos casos de sobredosis mixta, precipitar agitación o convulsiones al revertir abruptamente la sedación en un paciente con umbral convulsivo ya reducido por los ATC, por lo que su uso debe reservarse a evidencia razonable de opiáceos coingeridos y no administrarse de forma reflexiva."
+    },
+    {
+        "question": "Llega a la escena de un incendio estructural y encuentra a un bombero retirado del lugar, consciente pero confundido, con cefalea intensa, náuseas y una saturación de oxígeno por pulsioximetría (SpO2) de 98%. ¿Por qué la lectura de SpO2 en este paciente es potencialmente peligrosa y qué acción debe tomar en consecuencia?",
+        "options": [
+            {"letter": "a", "text": "La SpO2 de 98% confirma oxigenación adecuada, por lo que no se requiere oxígeno suplementario"},
+            {"letter": "b", "text": "La pulsioximetría estándar no puede distinguir entre oxihemoglobina y carboxihemoglobina, por lo que puede mostrar una lectura falsamente normal o elevada en presencia de intoxicación por monóxido de carbono; debe administrar oxígeno de alto flujo al 100% independientemente de la lectura y trasladar considerando la posibilidad de oxígeno hiperbárico"},
+            {"letter": "c", "text": "La SpO2 elevada indica que el paciente está hiperventilando y debe ser tratado con una bolsa de reinhalación para elevar el CO2"},
+            {"letter": "d", "text": "El pulsioxímetro está mal calibrado por el humo ambiental y debe ser reemplazado antes de confiar en cualquier signo vital"}
+        ],
+        "correctAnswer": "b",
+        "explanation": "El monóxido de carbono (CO) tiene una afinidad por la hemoglobina aproximadamente 200 a 250 veces mayor que el oxígeno, formando carboxihemoglobina (COHb). Los pulsioxímetros convencionales de dos longitudes de onda no pueden diferenciar la carboxihemoglobina de la oxihemoglobina y frecuentemente interpretan la COHb como si fuera oxígeno unido, arrojando una SpO2 falsamente normal o incluso elevada mientras el paciente cursa una hipoxia tisular real y significativa. Por esta razón, ante sospecha clínica de intoxicación por CO (cefalea, náuseas, confusión, exposición a combustión), el tratamiento se basa en la presentación clínica y el contexto, no en la pulsioximetría: se debe administrar oxígeno al 100% con mascarilla no reinhalante (o considerar intubación si hay compromiso severo) para acelerar la disociación del CO de la hemoglobina, y evaluar traslado a un centro con cámara hiperbárica en casos graves."
+    },
+    {
+        "question": "Un paciente de 35 años con antecedente de uso de heroína es encontrado apneico, con SpO2 de 78%, pupilas puntiformes y vómito visible en la vía aérea. Antes de que pueda colocar una cánula orofaríngea, comienza a vomitar activamente. ¿Cuál es la secuencia de manejo de vía aérea más apropiada, priorizando tanto la oxigenación como la protección contra aspiración?",
+        "options": [
+            {"letter": "a", "text": "Administrar naloxona intranasal inmediatamente antes de cualquier manejo de vía aérea, ya que revertirá el vómito activo"},
+            {"letter": "b", "text": "Colocar al paciente en posición supina, insertar una vía aérea orofaríngea de inmediato y comenzar ventilación con BVM a pesar del vómito activo"},
+            {"letter": "c", "text": "Colocar al paciente en posición de recuperación o lateral, succionar activamente la vía aérea para retirar el vómito, y una vez despejada, reevaluar la necesidad de dispositivo adjunto de vía aérea y ventilación asistida con oxígeno de alto flujo, reservando la naloxona como paso posterior una vez controlada la vía aérea"},
+            {"letter": "d", "text": "Intubar endotraquealmente de inmediato sin succión previa, ya que el tubo endotraqueal protegerá la vía aérea del contenido gástrico"}
+        ],
+        "correctAnswer": "c",
+        "explanation": "En un paciente con depresión respiratoria por opiáceos y vómito activo, el manejo de la vía aérea siempre precede a la administración de antídotos: la naloxona no actúa instantáneamente y no debe usarse como sustituto del manejo básico de la vía aérea. La secuencia correcta es proteger contra la aspiración colocando al paciente en posición lateral o de recuperación mientras se succiona el contenido gástrico, ya que insertar una cánula orofaríngea o ventilar con BVM durante el vómito activo empujaría el contenido gástrico hacia las vías respiratorias inferiores, causando neumonitis por aspiración. Solo después de despejar y controlar la vía aérea se debe reevaluar la necesidad de dispositivos adjuntos, ventilación asistida con oxígeno a alto flujo, y considerar la naloxona como parte del tratamiento continuo, idealmente titulada para revertir la depresión respiratoria sin precipitar un despertar violento con más vómito."
+    }
+]
