@@ -245,6 +245,9 @@ import InfusionPumpSimulator from "../../pages/Simulator/InfusionPumpSimulator/I
 import MechanicalVentilatorSimulator from "../../pages/Simulator/MechanicalVentilatorSimulator/MechanicalVentilatorSimulator.page.tsx";
 import CardiacConductionSimulator from "../../pages/Simulator/CardiacConductionSimulator/CardiacConductionSimulator.page.tsx";
 import CirculatorySystemSimulator from "../../pages/Simulator/CirculatorySystemSimulator/CirculatorySystemSimulator.page.tsx";
+import TampA from "../../pages/TAMPA/TampA.page.tsx";
+import ComingSoon from "../../pages/TAMPA/ComingSoon/ComingSoon.page.tsx";
+import {tampAModules} from "../../pages/TAMPA/TampA.constants.tsx";
 
 export default function Router() {
        return (
@@ -636,6 +639,12 @@ export default function Router() {
 
                             {/* Ambulance Checklist */}
                             <Route path={AllRoutes.AMBULANCE_CHECKLIST} element={<AmbulanceChecklist />} />
+
+                            {/* TAMP-A — Técnico Avanzado */}
+                            <Route path={AllRoutes.TAMPA} element={<ProtectedRoute requireMainAccess><TampA /></ProtectedRoute>} />
+                            {tampAModules.map((module) => (
+                                   <Route key={module.key} path={module.route} element={<ProtectedRoute requireMainAccess><ComingSoon /></ProtectedRoute>} />
+                            ))}
 
                      </Routes>
               </Suspense>
