@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {FiAward, FiCalendar, FiMail, FiPhone, FiPlus, FiShield, FiToggleLeft, FiToggleRight, FiUser, FiUsers, FiX} from "react-icons/fi";
 import {CERTIFICATIONS_LIST, Elemento, ElementRank, ElementStatus} from "../AdminDashboard.types.ts";
 import {Guardia, GUARD_ROLES, GuardRole, GUARDIAS} from "../../../../constants/guardia.constants";
+import {CertRecord, certStatus, certStatusMeta, normalizeCerts, serializeCerts} from "../../../../utils/certifications";
 
 export type ElementoFormData = Omit<Elemento, 'id' | 'createdAt' | 'attendance' | 'role'>;
 
@@ -26,7 +27,7 @@ export default function ElementoModal({isOpen, onClose, initialData, onSave, fix
     const [rank, setRank] = useState<ElementRank>(initialData?.rank ?? "Básico");
     const [status, setStatus] = useState<ElementStatus>(initialData?.status ?? "activo");
     const [graduationYear, setGraduationYear] = useState(initialData?.graduationYear ?? new Date().getFullYear());
-    const [certifications, setCertifications] = useState<string[]>(initialData?.certifications ?? []);
+    const [certifications, setCertifications] = useState<CertRecord[]>(normalizeCerts(initialData?.certifications));
     const [customCert, setCustomCert] = useState("");
     const [guardia, setGuardia] = useState<Guardia>(initialData?.guardia ?? fixedGuardia ?? GUARDIAS[0]);
     const [guardRole, setGuardRole] = useState<GuardRole>(initialData?.guardRole ?? "Cadete");
@@ -43,7 +44,7 @@ export default function ElementoModal({isOpen, onClose, initialData, onSave, fix
             setRank(initialData?.rank ?? "Básico");
             setStatus(initialData?.status ?? "activo");
             setGraduationYear(initialData?.graduationYear ?? new Date().getFullYear());
-            setCertifications(initialData?.certifications ?? []);
+            setCertifications(normalizeCerts(initialData?.certifications));
             setCustomCert("");
             setGuardia(initialData?.guardia ?? fixedGuardia ?? GUARDIAS[0]);
             setGuardRole(initialData?.guardRole ?? "Cadete");
@@ -54,24 +55,41 @@ export default function ElementoModal({isOpen, onClose, initialData, onSave, fix
 
     if (!isOpen) return null;
 
-    const toggleCert = (cert: string) => {
+    const hasCert = (certName: string) => certifications.some(c => c.name === certName);
+
+    const toggleCert = (certName: string) => {
         setCertifications(prev =>
-            prev.includes(cert) ? prev.filter(c => c !== cert) : [...prev, cert]
+            prev.some(c => c.name === certName)
+                ? prev.filter(c => c.name !== certName)
+                : [...prev, {name: certName}]
         );
     };
 
     const addCustomCert = () => {
         const trimmed = customCert.trim();
-        if (trimmed && !certifications.includes(trimmed)) {
-            setCertifications(prev => [...prev, trimmed]);
+        if (trimmed && !hasCert(trimmed)) {
+            setCertifications(prev => [...prev, {name: trimmed}]);
             setCustomCert("");
         }
+    };
+
+    const updateCertDate = (certName: string, field: 'issuedAt' | 'expiresAt', value: string) => {
+        setCertifications(prev => prev.map(c =>
+            c.name === certName ? {...c, [field]: value || undefined} : c
+        ));
+    };
+
+    const removeCert = (certName: string) => {
+        setCertifications(prev => prev.filter(c => c.name !== certName));
     };
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (!name.trim() || !email.trim()) return;
-        onSave({name, email, phone, photoURL, bio, rank, status, graduationYear, certifications, guardia, guardRole});
+        onSave({
+            name, email, phone, photoURL, bio, rank, status, graduationYear,
+            certifications: serializeCerts(certifications), guardia, guardRole,
+        });
         onClose();
     };
 
@@ -207,25 +225,26 @@ export default function ElementoModal({isOpen, onClose, initialData, onSave, fix
                             <FiAward className="inline w-3.5 h-3.5 mr-1"/>
                             Certificaciones / Capacitaciones ({certifications.length})
                         </label>
+                        {/* Catálogo para agregar/quitar rápidamente */}
                         <div className="grid grid-cols-2 gap-1.5 mb-3 max-h-40 overflow-y-auto pr-1">
                             {CERTIFICATIONS_LIST.map(cert => (
                                 <label key={cert}
                                        className={`flex items-center gap-2 px-2.5 py-1.5 rounded-lg border cursor-pointer text-xs transition-all ${
-                                           certifications.includes(cert)
+                                           hasCert(cert)
                                                ? 'border-orange-400 bg-orange-50 text-orange-700 font-semibold'
                                                : 'border-slate-200 text-slate-600 hover:border-slate-300'
                                        }`}>
-                                    <input type="checkbox" className="hidden" checked={certifications.includes(cert)}
+                                    <input type="checkbox" className="hidden" checked={hasCert(cert)}
                                            onChange={() => toggleCert(cert)}/>
-                                    <span className={`w-3.5 h-3.5 rounded border flex-shrink-0 flex items-center justify-center ${certifications.includes(cert) ? 'bg-orange-500 border-orange-500' : 'border-slate-300'}`}>
-                                        {certifications.includes(cert) && <span className="text-white text-[9px]">✓</span>}
+                                    <span className={`w-3.5 h-3.5 rounded border flex-shrink-0 flex items-center justify-center ${hasCert(cert) ? 'bg-orange-500 border-orange-500' : 'border-slate-300'}`}>
+                                        {hasCert(cert) && <span className="text-white text-[9px]">✓</span>}
                                     </span>
                                     {cert}
                                 </label>
                             ))}
                         </div>
-                        {/* Custom cert */}
-                        <div className="flex gap-2">
+                        {/* Cert personalizada */}
+                        <div className="flex gap-2 mb-3">
                             <input value={customCert} onChange={e => setCustomCert(e.target.value)}
                                    placeholder="Otra certificación..."
                                    onKeyDown={e => e.key === 'Enter' && (e.preventDefault(), addCustomCert())}
@@ -235,17 +254,45 @@ export default function ElementoModal({isOpen, onClose, initialData, onSave, fix
                                 <FiPlus className="w-4 h-4"/>
                             </button>
                         </div>
-                        {/* Extra certs pills */}
-                        {certifications.filter(c => !(CERTIFICATIONS_LIST as readonly string[]).includes(c)).length > 0 && (
-                            <div className="flex flex-wrap gap-1.5 mt-2">
-                                {certifications.filter(c => !(CERTIFICATIONS_LIST as readonly string[]).includes(c)).map(c => (
-                                    <span key={c} className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-purple-100 text-purple-700 text-xs font-medium">
-                                        {c}
-                                        <button type="button" onClick={() => setCertifications(prev => prev.filter(x => x !== c))}>
-                                            <FiX className="w-3 h-3"/>
-                                        </button>
-                                    </span>
-                                ))}
+                        {/* Certs seleccionadas con fechas de emisión/vencimiento */}
+                        {certifications.length > 0 && (
+                            <div className="space-y-2">
+                                <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wide">
+                                    Vigencias (opcional)
+                                </p>
+                                {certifications.map(cert => {
+                                    const meta = certStatusMeta(certStatus(cert));
+                                    return (
+                                        <div key={cert.name}
+                                             className="flex flex-col sm:flex-row sm:items-center gap-2 p-2.5 rounded-xl border border-slate-100 bg-slate-50/60">
+                                            <div className="flex items-center gap-2 flex-1 min-w-0">
+                                                <button type="button" onClick={() => removeCert(cert.name)}
+                                                        className="text-slate-300 hover:text-red-500 transition-colors flex-shrink-0">
+                                                    <FiX className="w-4 h-4"/>
+                                                </button>
+                                                <span className="text-xs font-semibold text-slate-700 truncate flex-1">{cert.name}</span>
+                                                <span className="px-1.5 py-0.5 rounded-full text-[10px] font-bold flex-shrink-0"
+                                                      style={{background: meta.bg, color: meta.color}}>
+                                                    {meta.label}
+                                                </span>
+                                            </div>
+                                            <div className="flex items-center gap-2 flex-shrink-0">
+                                                <div className="flex flex-col">
+                                                    <span className="text-[9px] text-slate-400 ml-1">Emisión</span>
+                                                    <input type="date" value={cert.issuedAt ?? ''}
+                                                           onChange={e => updateCertDate(cert.name, 'issuedAt', e.target.value)}
+                                                           className="px-2 py-1 rounded-lg border border-slate-200 text-[11px] outline-none focus:border-orange-400"/>
+                                                </div>
+                                                <div className="flex flex-col">
+                                                    <span className="text-[9px] text-slate-400 ml-1">Vence</span>
+                                                    <input type="date" value={cert.expiresAt ?? ''}
+                                                           onChange={e => updateCertDate(cert.name, 'expiresAt', e.target.value)}
+                                                           className="px-2 py-1 rounded-lg border border-slate-200 text-[11px] outline-none focus:border-orange-400"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    );
+                                })}
                             </div>
                         )}
                     </div>

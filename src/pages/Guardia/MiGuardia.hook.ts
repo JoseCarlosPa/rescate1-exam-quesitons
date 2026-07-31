@@ -109,6 +109,7 @@ export default function useMiGuardia() {
     return {
         guardia,
         canManage,
+        currentUserId: user?.id,
         elementos,
         loading,
         stats,

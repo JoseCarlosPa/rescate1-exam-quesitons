@@ -43,12 +43,14 @@ service cloud.firestore {
       // certifications, phone, bio, guardia, guardRole)
       allow write: if isAdmin();
 
-      // Un usuario puede actualizar únicamente sus propios campos de perfil/progreso;
-      // no puede tocar su rol ni los campos administrativos de Personal Operativo
+      // Un usuario puede actualizar únicamente sus propios campos de perfil/progreso.
+      // No puede tocar su rol ni los campos administrativos de Personal Operativo
+      // (rank, status, graduationYear, certifications, guardia, guardRole). Un
+      // Elemento puede además autoeditar sus datos de contacto: phone y bio.
       allow update: if request.auth != null
         && request.auth.uid == userId
         && request.resource.data.diff(resource.data).affectedKeys()
-             .hasOnly(['name', 'photoURL', 'exams']);
+             .hasOnly(['name', 'photoURL', 'exams', 'phone', 'bio']);
 
       // Un Jefe/Sub-jefe de guardia puede editar a los Elementos de su propia guardia:
       // no puede cambiarles el rol fuera de 'Elemento' ni moverlos a otra guardia
@@ -70,6 +72,24 @@ service cloud.firestore {
         && request.resource.data.keys().hasOnly(
              ['name', 'email', 'phone', 'photoURL', 'bio', 'role', 'rank', 'status',
               'graduationYear', 'certifications', 'guardia', 'guardRole', 'attendance', 'createdAt']);
+    }
+
+    // Asistencia de guardias: un doc por sesión (id = slug(guardia)__fecha).
+    // Los elementos de la guardia pueden leer su historial; solo Jefe/Sub-jefe
+    // de esa guardia (o Admin) pueden registrar/actualizar.
+    match /attendance/{sessionId} {
+      allow read: if isAdmin() || (
+        request.auth != null
+        && callerData().role == 'Elemento'
+        && callerData().guardia == resource.data.guardia
+      );
+
+      allow create, update: if isAdmin() || (
+        isGuardLeaderOfGuardia(request.resource.data.guardia)
+        && request.resource.data.recordedBy == request.auth.uid
+      );
+
+      allow delete: if isAdmin();
     }
 
     match /{document=**} {

@@ -1,5 +1,6 @@
 import {Timestamp} from "firebase/firestore";
 import {Guardia, GuardRole} from "../../../constants/guardia.constants";
+import {StoredCert} from "../../../utils/certifications";
 
 export type ActiveTab = 'overview' | 'users' | 'elementos' | 'forum' | 'lessons' | 'tasks' | 'checklists';
 
@@ -25,7 +26,9 @@ export interface User {
     rank?: ElementRank;
     status?: ElementStatus;
     graduationYear?: number;
-    certifications?: string[];
+    // Puede contener strings heredados u objetos con fechas de vencimiento.
+    // Usa normalizeCerts()/serializeCerts() de utils/certifications para operar.
+    certifications?: StoredCert[];
     guardia?: Guardia;
     guardRole?: GuardRole;
 }
@@ -154,5 +157,5 @@ export type Elemento = User & {
     rank: ElementRank;
     status: ElementStatus;
     graduationYear: number;
-    certifications: string[];
+    certifications: StoredCert[];
 };

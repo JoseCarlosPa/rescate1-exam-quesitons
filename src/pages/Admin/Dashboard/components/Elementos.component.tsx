@@ -4,6 +4,7 @@ import {Elemento} from "../AdminDashboard.types.ts";
 import {useAdminDashboardContext} from "../AdminDashboard.context";
 import ElementoModal, {ElementoFormData} from "./ElementoModal.component.tsx";
 import {GUARDIAS} from "../../../../constants/guardia.constants";
+import {normalizeCerts} from "../../../../utils/certifications";
 
 export default function Elementos() {
     const {elementos, handleCreateElemento, handleUpdateElemento, handleToggleElementoStatus, handleDeleteElemento} = useAdminDashboardContext();
@@ -168,26 +169,30 @@ export default function Elementos() {
                                 </div>
 
                                 {/* Certifications */}
-                                {el.certifications.length > 0 && (
-                                    <div className="mb-3">
-                                        <p className="text-xs font-semibold text-slate-500 mb-1.5">
-                                            <FiAward className="inline w-3 h-3 mr-1"/>
-                                            {el.certifications.length} certificación{el.certifications.length !== 1 ? 'es' : ''}
-                                        </p>
-                                        <div className="flex flex-wrap gap-1">
-                                            {el.certifications.slice(0, 3).map(c => (
-                                                <span key={c} className="px-1.5 py-0.5 rounded-md bg-slate-100 text-slate-600 text-xs">
-                                                    {c.split('(')[0].trim()}
-                                                </span>
-                                            ))}
-                                            {el.certifications.length > 3 && (
-                                                <span className="px-1.5 py-0.5 rounded-md bg-orange-100 text-orange-600 text-xs font-semibold">
-                                                    +{el.certifications.length - 3}
-                                                </span>
-                                            )}
+                                {(() => {
+                                    const certs = normalizeCerts(el.certifications);
+                                    if (certs.length === 0) return null;
+                                    return (
+                                        <div className="mb-3">
+                                            <p className="text-xs font-semibold text-slate-500 mb-1.5">
+                                                <FiAward className="inline w-3 h-3 mr-1"/>
+                                                {certs.length} certificación{certs.length !== 1 ? 'es' : ''}
+                                            </p>
+                                            <div className="flex flex-wrap gap-1">
+                                                {certs.slice(0, 3).map(c => (
+                                                    <span key={c.name} className="px-1.5 py-0.5 rounded-md bg-slate-100 text-slate-600 text-xs">
+                                                        {c.name.split('(')[0].trim()}
+                                                    </span>
+                                                ))}
+                                                {certs.length > 3 && (
+                                                    <span className="px-1.5 py-0.5 rounded-md bg-orange-100 text-orange-600 text-xs font-semibold">
+                                                        +{certs.length - 3}
+                                                    </span>
+                                                )}
+                                            </div>
                                         </div>
-                                    </div>
-                                )}
+                                    );
+                                })()}
 
                                 {/* Phone */}
                                 {el.phone && (
