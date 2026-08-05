@@ -128,16 +128,72 @@ export default function Systems() {
                         <h3 className="text-xl font-bold text-indigo-700">Sistema
                             Genitourinario</h3>
                     </div>
-                    <p className="text-gray-700 mb-3">
-                        Riñones, vejiga, uréteres y órganos reproductivos. Filtra desechos y
-                        mantiene equilibrio.
+                    <p className="text-gray-700 mb-3 text-sm">
+                        Riñones, vejiga, uréteres y órganos reproductivos. Filtra desechos y mantiene el equilibrio de líquidos y pH.
                     </p>
                     <div className="bg-indigo-50 p-3 rounded">
                         <strong className="text-indigo-800">Emergencias comunes:</strong>
-                        <ul className="text-sm text-indigo-700 mt-1">
+                        <ul className="text-xs text-indigo-700 mt-1">
                             <li>• Insuficiencia renal aguda</li>
                             <li>• Retención urinaria</li>
                             <li>• Emergencias obstétricas</li>
+                        </ul>
+                    </div>
+                </div>
+
+                {/* Sistema Tegumentario */}
+                <div className="bg-white border border-pink-200 rounded-lg p-5 hover:shadow-md transition-shadow">
+                    <div className="flex items-center mb-3">
+                        <span className="text-pink-500 mr-3 text-3xl">🖐️</span>
+                        <h3 className="text-xl font-bold text-pink-700">Sistema Tegumentario</h3>
+                    </div>
+                    <p className="text-gray-700 mb-3 text-sm">
+                        La piel, dividida en epidermis, dermis y tejido subcutáneo. Regula la temperatura, protege y proporciona sensibilidad.
+                    </p>
+                    <div className="bg-pink-50 p-3 rounded">
+                        <strong className="text-pink-800">Emergencias comunes:</strong>
+                        <ul className="text-xs text-pink-700 mt-1">
+                            <li>• Quemaduras graves</li>
+                            <li>• Laceraciones y abrasiones</li>
+                            <li>• Infecciones de tejidos blandos</li>
+                        </ul>
+                    </div>
+                </div>
+
+                {/* Sistema Endocrino */}
+                <div className="bg-white border border-teal-200 rounded-lg p-5 hover:shadow-md transition-shadow">
+                    <div className="flex items-center mb-3">
+                        <span className="text-teal-500 mr-3 text-3xl">⚕️</span>
+                        <h3 className="text-xl font-bold text-teal-700">Sistema Endocrino</h3>
+                    </div>
+                    <p className="text-gray-700 mb-3 text-sm">
+                        Complejo sistema de control mediante glándulas y hormonas (ej. insulina, epinefrina). Regula metabolismo y estrés.
+                    </p>
+                    <div className="bg-teal-50 p-3 rounded">
+                        <strong className="text-teal-800">Emergencias comunes:</strong>
+                        <ul className="text-xs text-teal-700 mt-1">
+                            <li>• Hipoglucemia / Hiperglucemia</li>
+                            <li>• Cetoacidosis diabética</li>
+                            <li>• Crisis suprarrenal</li>
+                        </ul>
+                    </div>
+                </div>
+
+                {/* Sistema Linfático */}
+                <div className="bg-white border border-lime-200 rounded-lg p-5 hover:shadow-md transition-shadow">
+                    <div className="flex items-center mb-3">
+                        <span className="text-lime-500 mr-3 text-3xl">🛡️</span>
+                        <h3 className="text-xl font-bold text-lime-700">Sistema Linfático</h3>
+                    </div>
+                    <p className="text-gray-700 mb-3 text-sm">
+                        Compuesto por bazo, ganglios linfáticos y linfa. Elimina toxinas, transporta nutrientes y ayuda al sistema inmunológico.
+                    </p>
+                    <div className="bg-lime-50 p-3 rounded">
+                        <strong className="text-lime-800">Emergencias comunes:</strong>
+                        <ul className="text-xs text-lime-700 mt-1">
+                            <li>• Ruptura esplénica (trauma cerrado)</li>
+                            <li>• Reacciones anafilácticas</li>
+                            <li>• Infecciones sistémicas severas</li>
                         </ul>
                     </div>
                 </div>

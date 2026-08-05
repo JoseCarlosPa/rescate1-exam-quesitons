@@ -254,6 +254,33 @@ export default function Roots() {
                     </div>
                 </div>
             </div>
+
+            {/* Reglas de construcción y plurales */}
+            <div className="pt-6 border-t border-gray-200">
+                <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2">Reglas para la construcción de palabras</h2>
+                <div className="grid md:grid-cols-2 gap-6">
+                    <div className="bg-white border border-blue-200 p-5 rounded-lg shadow-sm">
+                        <h3 className="font-semibold text-blue-800 mb-3">Vocales de Combinación</h3>
+                        <p className="text-sm text-gray-700 mb-3">
+                            Parte de un término que conecta la raíz con un sufijo u otra raíz para facilitar la pronunciación. La vocal más usada es la <strong>"o"</strong>.
+                        </p>
+                        <ul className="text-sm text-gray-600 space-y-2">
+                            <li>• Se usa al unir un sufijo que comienza con consonante.</li>
+                            <li>• Se usa al unir dos raíces, incluso si la segunda empieza con vocal (ej. <em>gastr/o + enter/o + logía = gastroenterología</em>).</li>
+                        </ul>
+                    </div>
+                    <div className="bg-white border border-purple-200 p-5 rounded-lg shadow-sm">
+                        <h3 className="font-semibold text-purple-800 mb-3">Terminaciones en Plural</h3>
+                        <p className="text-sm text-gray-700 mb-2">Para cambiar de singular a plural en términos médicos latinos y griegos:</p>
+                        <ul className="text-sm text-gray-600 space-y-2">
+                            <li>• Palabras que terminan en <strong>a</strong> ➔ cambian a <strong>ae</strong> (ej. vértebra ➔ vértebras). <em>*En español se usa s/es comúnmente.</em></li>
+                            <li>• Terminadas en <strong>r</strong> ➔ agregan <strong>es</strong> (ej. fémur ➔ fémures).</li>
+                            <li>• Terminadas en <strong>ex</strong> o <strong>ix</strong> ➔ cambian a <strong>ices</strong> (ej. apex ➔ ápices).</li>
+                            <li>• Terminadas en <strong>on</strong> ➔ cambian a <strong>ones</strong> (ej. embrión ➔ embriones).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }

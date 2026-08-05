@@ -90,6 +90,36 @@ export default function Anatomy() {
                 </div>
             </div>
 
+            {/* Fisiopatología, Metabolismo y Shock */}
+            <div className="bg-gradient-to-br from-red-50 to-orange-50 p-6 rounded-lg mb-6">
+                <h3 className="text-xl font-bold text-red-800 mb-4 flex items-center">
+                    <MdBloodtype className="mr-2"/>
+                    Fisiopatología: Cadena de Soporte de Vida y Shock
+                </h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                    <div className="bg-white p-4 rounded border-l-4 border-red-500 shadow-sm">
+                        <h4 className="font-bold text-red-700 mb-2">Metabolismo Celular</h4>
+                        <p className="text-sm text-gray-700 mb-2">
+                            <strong>Aeróbico:</strong> Usa oxígeno para producir energía (ATP) y genera dióxido de carbono y agua como desechos. 15 veces más eficiente.
+                        </p>
+                        <p className="text-sm text-gray-700">
+                            <strong>Anaeróbico:</strong> Sin oxígeno, genera muy poco ATP y un exceso de <strong>ácido láctico</strong>, el cual altera el pH de la sangre. Si la falta de oxígeno continúa, las células mueren irreversiblemente (necrosis).
+                        </p>
+                    </div>
+                    <div className="bg-white p-4 rounded border-l-4 border-orange-500 shadow-sm">
+                        <h4 className="font-bold text-orange-700 mb-2">Compromiso en la Perfusión (Shock)</h4>
+                        <p className="text-sm text-gray-700">
+                            El <strong>shock o hipoperfusión</strong> es la incapacidad del sistema cardiovascular para suministrar suficiente flujo de sangre rica en oxígeno a los órganos y tejidos.
+                        </p>
+                        <ul className="text-xs text-gray-600 mt-2 space-y-1 list-disc pl-4">
+                            <li>El cuerpo compensa con vasoconstricción periférica, taquicardia y liberación de epinefrina.</li>
+                            <li>La presión arterial (PA) depende del Gasto Cardíaco (GC) y la Resistencia Vascular Sistémica (RVS).</li>
+                            <li>Si los mecanismos fallan, la PA cae drásticamente.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
             <div>
                 <h3 className="text-xl font-semibold mb-4 text-gray-800 flex items-center">
                     <MdThermostat className="text-orange-500 mr-2"/>

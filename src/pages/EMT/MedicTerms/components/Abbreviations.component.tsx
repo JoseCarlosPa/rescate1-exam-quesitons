@@ -9,10 +9,13 @@ export default function Abbreviations() {
                 <h2 className="text-2xl font-semibold mb-3 text-gray-800 border-b pb-2">Abreviaturas
                     críticas para paramédicos</h2>
                 <p className="text-gray-700 mb-4">
-                    Las abreviaturas son esenciales en la documentación rápida y comunicación en
-                    emergencias.
-                    Aquí están organizadas por categorías para facilitar su memorización.
+                    Las abreviaturas son esenciales en la documentación rápida y comunicación en emergencias. 
+                    Un <strong>acrónimo</strong> se lee como una palabra (ej. SAMPLE), mientras que en una <strong>abreviatura</strong> se deletrea cada letra (ej. P-A-P).
                 </p>
+                <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded-r">
+                    <p className="text-sm text-yellow-800 font-medium">⚠️ Precaución con las abreviaturas</p>
+                    <p className="text-xs text-yellow-700 mt-1">Organizaciones como la <em>Joint Commission</em> recomiendan usar solo abreviaturas estandarizadas para evitar errores médicos graves (por ejemplo, confundir el símbolo "U" con un 0 o un 4 en dosis de medicamentos).</p>
+                </div>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
@@ -237,6 +240,45 @@ export default function Abbreviations() {
                             Verifica que el contexto sea claro
                         </li>
                     </ul>
+                </div>
+            </div>
+
+            {/* Símbolos comunes */}
+            <div className="mt-8 border-t border-gray-200 pt-6">
+                <h2 className="text-2xl font-semibold mb-4 text-gray-800 pb-2">Símbolos Comunes</h2>
+                <div className="grid md:grid-cols-4 gap-4 text-center">
+                    <div className="bg-gray-50 p-4 rounded shadow-sm">
+                        <span className="text-xl font-bold">1° / 2°</span>
+                        <p className="text-xs text-gray-600 mt-2">Primario / Secundario</p>
+                    </div>
+                    <div className="bg-gray-50 p-4 rounded shadow-sm">
+                        <span className="text-xl font-bold">↑ / ↓</span>
+                        <p className="text-xs text-gray-600 mt-2">Aumentó / Disminuyó</p>
+                    </div>
+                    <div className="bg-gray-50 p-4 rounded shadow-sm">
+                        <span className="text-xl font-bold">L / R (o Ⓛ / Ⓡ)</span>
+                        <p className="text-xs text-gray-600 mt-2">Izquierda / Derecha</p>
+                    </div>
+                    <div className="bg-gray-50 p-4 rounded shadow-sm">
+                        <span className="text-xl font-bold">Δ</span>
+                        <p className="text-xs text-gray-600 mt-2">Cambio</p>
+                    </div>
+                    <div className="bg-gray-50 p-4 rounded shadow-sm">
+                        <span className="text-xl font-bold">Rx / Tx / Dx / Fx</span>
+                        <p className="text-xs text-gray-600 mt-2">Receta / Tratam. / Diag. / Fractura</p>
+                    </div>
+                    <div className="bg-gray-50 p-4 rounded shadow-sm">
+                        <span className="text-xl font-bold">♀ / ♂</span>
+                        <p className="text-xs text-gray-600 mt-2">Femenino / Masculino</p>
+                    </div>
+                    <div className="bg-gray-50 p-4 rounded shadow-sm">
+                        <span className="text-xl font-bold">~</span>
+                        <p className="text-xs text-gray-600 mt-2">Aproximadamente</p>
+                    </div>
+                    <div className="bg-gray-50 p-4 rounded shadow-sm">
+                        <span className="text-xl font-bold">&gt; / &lt;</span>
+                        <p className="text-xs text-gray-600 mt-2">Mayor que / Menor que</p>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-import {Question} from "../../../types";
+import {Question} from "../../../question";
 
 export const faqData = [
   {
@@ -37,243 +37,223 @@ export const faqData = [
 
 export const anatomyPhysiologyQuestions: Question[] = [
   {
-    id: "ap-1",
-    text: "Un paciente de 65 años presenta dificultad respiratoria grave y expectoración rosada y espumosa. Ausculta estertores crepitantes bilaterales. Si este cuadro es secundario a una falla cardíaca, ¿qué cámara del corazón es la principal responsable del problema?",
+    question: "Un paciente de 65 años presenta dificultad respiratoria grave y expectoración rosada y espumosa. Ausculta estertores crepitantes bilaterales. Si este cuadro es secundario a una falla cardíaca, ¿qué cámara del corazón es la principal responsable del problema?",
     options: [
-      "Ventrículo derecho",
-      "Aurícula derecha",
-      "Ventrículo izquierdo",
-      "Aurícula izquierda"
+      { letter: "a", text: "Ventrículo derecho" },
+      { letter: "b", text: "Aurícula derecha" },
+      { letter: "c", text: "Ventrículo izquierdo" },
+      { letter: "d", text: "Aurícula izquierda" }
     ],
-    correctAnswer: 2,
+    correctAnswer: "c",
     explanation: "El fallo del ventrículo izquierdo causa que la sangre se acumule (retrógradamente) hacia la aurícula izquierda y los pulmones, aumentando la presión hidrostática en los capilares pulmonares y produciendo edema agudo de pulmón (estertores, esputo asalmonado)."
   },
   {
-    id: "ap-2",
-    text: "¿Qué válvula cardíaca se localiza entre la aurícula izquierda y el ventrículo izquierdo?",
+    question: "¿Qué válvula cardíaca se localiza entre la aurícula izquierda y el ventrículo izquierdo?",
     options: [
-      "Válvula tricúspide",
-      "Válvula mitral",
-      "Válvula aórtica",
-      "Válvula pulmonar"
+      { letter: "a", text: "Válvula tricúspide" },
+      { letter: "b", text: "Válvula mitral" },
+      { letter: "c", text: "Válvula aórtica" },
+      { letter: "d", text: "Válvula pulmonar" }
     ],
-    correctAnswer: 1,
+    correctAnswer: "b",
     explanation: "La válvula mitral (o bicúspide) separa la aurícula izquierda del ventrículo izquierdo. La tricúspide separa las cámaras derechas."
   },
   {
-    id: "ap-3",
-    text: "En un electrocardiograma normal, la contracción de los ventrículos es coordinada por un sistema de conducción especializado. ¿Cuál es el marcapasos primario del corazón?",
+    question: "En un electrocardiograma normal, la contracción de los ventrículos es coordinada por un sistema de conducción especializado. ¿Cuál es el marcapasos primario del corazón?",
     options: [
-      "Nodo auriculoventricular (AV)",
-      "Haz de His",
-      "Fibras de Purkinje",
-      "Nodo sinoauricular (SA)"
+      { letter: "a", text: "Nodo auriculoventricular (AV)" },
+      { letter: "b", text: "Haz de His" },
+      { letter: "c", text: "Fibras de Purkinje" },
+      { letter: "d", text: "Nodo sinoauricular (SA)" }
     ],
-    correctAnswer: 3,
+    correctAnswer: "d",
     explanation: "El nodo sinoauricular (SA) es el marcapasos principal del corazón, que genera impulsos a una frecuencia de 60-100 latidos por minuto."
   },
   {
-    id: "ap-4",
-    text: "¿Cuál es la fórmula correcta para calcular el gasto cardíaco?",
+    question: "¿Cuál es la fórmula correcta para calcular el gasto cardíaco?",
     options: [
-      "Volumen sistólico × Resistencia vascular periférica",
-      "Frecuencia cardíaca × Volumen sistólico",
-      "Presión arterial media × Frecuencia cardíaca",
-      "Volumen diastólico final - Volumen sistólico"
+      { letter: "a", text: "Volumen sistólico × Resistencia vascular periférica" },
+      { letter: "b", text: "Frecuencia cardíaca × Volumen sistólico" },
+      { letter: "c", text: "Presión arterial media × Frecuencia cardíaca" },
+      { letter: "d", text: "Volumen diastólico final - Volumen sistólico" }
     ],
-    correctAnswer: 1,
+    correctAnswer: "b",
     explanation: "El gasto cardíaco (GC) se define como el volumen de sangre expulsado por el corazón en un minuto, y se calcula multiplicando la Frecuencia Cardíaca (FC) por el Volumen Sistólico (VS)."
   },
   {
-    id: "ap-5",
-    text: "Usted evalúa a un paciente asmático en crisis. Administra salbutamol, que es un agonista beta-2. ¿Qué efecto anatómico y fisiológico busca en el sistema respiratorio?",
+    question: "Usted evalúa a un paciente asmático en crisis. Administra salbutamol, que es un agonista beta-2. ¿Qué efecto anatómico y fisiológico busca en el sistema respiratorio?",
     options: [
-      "Estimular el centro respiratorio del bulbo raquídeo",
-      "Reducir la inflamación alveolar",
-      "Producir broncodilatación relajando el músculo liso bronquial",
-      "Aumentar la producción de surfactante"
+      { letter: "a", text: "Estimular el centro respiratorio del bulbo raquídeo" },
+      { letter: "b", text: "Reducir la inflamación alveolar" },
+      { letter: "c", text: "Producir broncodilatación relajando el músculo liso bronquial" },
+      { letter: "d", text: "Aumentar la producción de surfactante" }
     ],
-    correctAnswer: 2,
+    correctAnswer: "c",
     explanation: "El salbutamol actúa sobre los receptores beta-2 adrenérgicos en el músculo liso de los bronquios y bronquiolos, provocando su relajación y, por consiguiente, broncodilatación."
   },
   {
-    id: "ap-6",
-    text: "¿Aproximadamente cuántos alvéolos se estima que tiene un pulmón adulto sano para llevar a cabo el intercambio gaseoso?",
+    question: "¿Aproximadamente cuántos alvéolos se estima que tiene un pulmón adulto sano para llevar a cabo el intercambio gaseoso?",
     options: [
-      "3 millones",
-      "30 millones",
-      "300 millones",
-      "3 billones"
+      { letter: "a", text: "3 millones" },
+      { letter: "b", text: "30 millones" },
+      { letter: "c", text: "300 millones" },
+      { letter: "d", text: "3 billones" }
     ],
-    correctAnswer: 2,
+    correctAnswer: "c",
     explanation: "Se estima que los pulmones humanos contienen alrededor de 300 millones de alvéolos, lo que proporciona una enorme superficie para el intercambio gaseoso."
   },
   {
-    id: "ap-7",
-    text: "Un paciente inconsciente tras un traumatismo craneoencefálico comienza a presentar un patrón respiratorio irregular. ¿Qué parte del tallo cerebral es el principal centro de control de la respiración?",
+    question: "Un paciente inconsciente tras un traumatismo craneoencefálico comienza a presentar un patrón respiratorio irregular. ¿Qué parte del tallo cerebral es el principal centro de control de la respiración?",
     options: [
-      "Cerebelo",
-      "Mesencéfalo",
-      "Bulbo raquídeo (médula oblonga)",
-      "Hipotálamo"
+      { letter: "a", text: "Cerebelo" },
+      { letter: "b", text: "Mesencéfalo" },
+      { letter: "c", text: "Bulbo raquídeo (médula oblonga)" },
+      { letter: "d", text: "Hipotálamo" }
     ],
-    correctAnswer: 2,
+    correctAnswer: "c",
     explanation: "El bulbo raquídeo (o médula oblonga) junto con la protuberancia (puente) contienen los centros respiratorios que controlan la frecuencia y el patrón de la respiración."
   },
   {
-    id: "ap-8",
-    text: "Durante una evaluación de un paciente sano, el estímulo primario que le indica a su cuerpo que debe respirar es:",
+    question: "Durante una evaluación de un paciente sano, el estímulo primario que le indica a su cuerpo que debe respirar es:",
     options: [
-      "Una disminución de los niveles de oxígeno (O2) en sangre",
-      "Un aumento de los niveles de dióxido de carbono (CO2) en sangre",
-      "Una disminución del pH intracelular",
-      "Un aumento de la presión arterial"
+      { letter: "a", text: "Una disminución de los niveles de oxígeno (O2) en sangre" },
+      { letter: "b", text: "Un aumento de los niveles de dióxido de carbono (CO2) en sangre" },
+      { letter: "c", text: "Una disminución del pH intracelular" },
+      { letter: "d", text: "Un aumento de la presión arterial" }
     ],
-    correctAnswer: 1,
+    correctAnswer: "b",
     explanation: "En personas sanas, el impulso respiratorio primario está mediado por los niveles de CO2 en el líquido cefalorraquídeo. El aumento de CO2 estimula a los quimiorreceptores centrales para aumentar la ventilación."
   },
   {
-    id: "ap-9",
-    text: "Un joven sufre un golpe en el lóbulo occipital de la cabeza durante un accidente deportivo. ¿Qué función neurológica es más probable que se vea afectada inicialmente?",
+    question: "Un joven sufre un golpe en el lóbulo occipital de la cabeza durante un accidente deportivo. ¿Qué función neurológica es más probable que se vea afectada inicialmente?",
     options: [
-      "El lenguaje expresivo",
-      "El movimiento voluntario de las piernas",
-      "La visión",
-      "La audición"
+      { letter: "a", text: "El lenguaje expresivo" },
+      { letter: "b", text: "El movimiento voluntario de las piernas" },
+      { letter: "c", text: "La visión" },
+      { letter: "d", text: "La audición" }
     ],
-    correctAnswer: 2,
+    correctAnswer: "c",
     explanation: "El lóbulo occipital, situado en la parte posterior del cerebro, es el principal centro de procesamiento visual."
   },
   {
-    id: "ap-10",
-    text: "Tras sufrir un traumatismo, un paciente se presenta con las pupilas dilatadas (midriasis), taquicardia y palidez por vasoconstricción periférica. Estos signos indican la activación del:",
+    question: "Tras sufrir un traumatismo, un paciente se presenta con las pupilas dilatadas (midriasis), taquicardia y palidez por vasoconstricción periférica. Estos signos indican la activación del:",
     options: [
-      "Sistema nervioso parasimpático",
-      "Sistema nervioso somático",
-      "Sistema reticular de activación",
-      "Sistema nervioso simpático"
+      { letter: "a", text: "Sistema nervioso parasimpático" },
+      { letter: "b", text: "Sistema nervioso somático" },
+      { letter: "c", text: "Sistema reticular de activación" },
+      { letter: "d", text: "Sistema nervioso simpático" }
     ],
-    correctAnswer: 3,
+    correctAnswer: "d",
     explanation: "El sistema nervioso autónomo simpático media la respuesta de 'pelea o huida', provocando midriasis, taquicardia, broncodilatación y vasoconstricción cutánea (palidez)."
   },
   {
-    id: "ap-11",
-    text: "Un paciente sufrió una fractura craneal en el hueso temporal tras un golpe con un bate. Horas más tarde, presenta un rápido deterioro del nivel de conciencia. Usted sospecha de un sangrado arterial de la arteria meníngea media. ¿Qué tipo de hematoma describe esto?",
+    question: "Un paciente sufrió una fractura craneal en el hueso temporal tras un golpe con un bate. Horas más tarde, presenta un rápido deterioro del nivel de conciencia. Usted sospecha de un sangrado arterial de la arteria meníngea media. ¿Qué tipo de hematoma describe esto?",
     options: [
-      "Hematoma subdural",
-      "Hemorragia subaracnoidea",
-      "Hemorragia intraparenquimatosa",
-      "Hematoma epidural"
+      { letter: "a", text: "Hematoma subdural" },
+      { letter: "b", text: "Hemorragia subaracnoidea" },
+      { letter: "c", text: "Hemorragia intraparenquimatosa" },
+      { letter: "d", text: "Hematoma epidural" }
     ],
-    correctAnswer: 3,
+    correctAnswer: "d",
     explanation: "El hematoma epidural clásicamente ocurre por la ruptura de la arteria meníngea media (a menudo secundaria a una fractura temporal), causando un sangrado rápido entre el cráneo y la duramadre."
   },
   {
-    id: "ap-12",
-    text: "La estructura responsable de la coordinación de los movimientos finos y el equilibrio es el:",
+    question: "La estructura responsable de la coordinación de los movimientos finos y el equilibrio es el:",
     options: [
-      "Cerebelo",
-      "Cerebro (córtex motor)",
-      "Bulbo raquídeo",
-      "Tálamo"
+      { letter: "a", text: "Cerebelo" },
+      { letter: "b", text: "Cerebro (córtex motor)" },
+      { letter: "c", text: "Bulbo raquídeo" },
+      { letter: "d", text: "Tálamo" }
     ],
-    correctAnswer: 0,
+    correctAnswer: "a",
     explanation: "El cerebelo, ubicado debajo del cerebro y posterior al tallo cerebral, coordina el movimiento, la postura y el equilibrio."
   },
   {
-    id: "ap-13",
-    text: "¿Cuál es la capa más externa y resistente de las meninges que cubre el cerebro y la médula espinal?",
+    question: "¿Cuál es la capa más externa y resistente de las meninges que cubre el cerebro y la médula espinal?",
     options: [
-      "Aracnoides",
-      "Piamadre",
-      "Duramadre",
-      "Periostio"
+      { letter: "a", text: "Aracnoides" },
+      { letter: "b", text: "Piamadre" },
+      { letter: "c", text: "Duramadre" },
+      { letter: "d", text: "Periostio" }
     ],
-    correctAnswer: 2,
+    correctAnswer: "c",
     explanation: "La duramadre es la capa más externa, fibrosa y resistente de las meninges. Debajo de ella se encuentra la aracnoides, y la más interna es la piamadre."
   },
   {
-    id: "ap-14",
-    text: "Al evaluar a un paciente diabético inconsciente, usted obtiene una glucemia capilar de 35 mg/dL. ¿Qué hormona, normalmente producida en el páncreas, está ausente o fue administrada en exceso, causando este cuadro?",
+    question: "Al evaluar a un paciente diabético inconsciente, usted obtiene una glucemia capilar de 35 mg/dL. ¿Qué hormona, normalmente producida en el páncreas, está ausente o fue administrada en exceso, causando este cuadro?",
     options: [
-      "Glucagón",
-      "Cortisol",
-      "Adrenalina",
-      "Insulina"
+      { letter: "a", text: "Glucagón" },
+      { letter: "b", text: "Cortisol" },
+      { letter: "c", text: "Adrenalina" },
+      { letter: "d", text: "Insulina" }
     ],
-    correctAnswer: 3,
+    correctAnswer: "d",
     explanation: "La hipoglucemia severa a menudo es resultado de un exceso de insulina en un paciente diabético. La insulina disminuye los niveles de glucosa en sangre."
   },
   {
-    id: "ap-15",
-    text: "Las glándulas suprarrenales (adrenales) se localizan por encima de los riñones. ¿Qué hormona importante para el manejo del estrés agudo ('pelea o huida') se produce en la médula de estas glándulas?",
+    question: "Las glándulas suprarrenales (adrenales) se localizan por encima de los riñones. ¿Qué hormona importante para el manejo del estrés agudo ('pelea o huida') se produce en la médula de estas glándulas?",
     options: [
-      "Aldosterona",
-      "Adrenalina (epinefrina)",
-      "Cortisol",
-      "Insulina"
+      { letter: "a", text: "Aldosterona" },
+      { letter: "b", text: "Adrenalina (epinefrina)" },
+      { letter: "c", text: "Cortisol" },
+      { letter: "d", text: "Insulina" }
     ],
-    correctAnswer: 1,
+    correctAnswer: "b",
     explanation: "La médula suprarrenal secreta catecolaminas, principalmente adrenalina (epinefrina) y noradrenalina, durante la estimulación simpática. La corteza produce cortisol y aldosterona."
   },
   {
-    id: "ap-16",
-    text: "El hipotálamo es una región vital del cerebro que funciona como puente entre el sistema nervioso y el endocrino. ¿Cuál de las siguientes es una de sus funciones primarias?",
+    question: "El hipotálamo es una región vital del cerebro que funciona como puente entre el sistema nervioso y el endocrino. ¿Cuál de las siguientes es una de sus funciones primarias?",
     options: [
-      "Producción de líquido cefalorraquídeo",
-      "Control de la temperatura corporal",
-      "Coordinación motora fina",
-      "Mantenimiento de la postura"
+      { letter: "a", text: "Producción de líquido cefalorraquídeo" },
+      { letter: "b", text: "Control de la temperatura corporal" },
+      { letter: "c", text: "Coordinación motora fina" },
+      { letter: "d", text: "Mantenimiento de la postura" }
     ],
-    correctAnswer: 1,
+    correctAnswer: "b",
     explanation: "El hipotálamo es el principal centro de control para mantener la homeostasis, regulando la temperatura corporal, el hambre, la sed, y controlando la glándula pituitaria (hipófisis)."
   },
   {
-    id: "ap-17",
-    text: "Un paciente de 25 años cayó torciéndose gravemente el tobillo. En urgencias, le diagnostican un esguince de tercer grado. ¿Qué estructuras anatómicas son las que se dañan en un esguince?",
+    question: "Un paciente de 25 años cayó torciéndose gravemente el tobillo. En urgencias, le diagnostican un esguince de tercer grado. ¿Qué estructuras anatómicas son las que se dañan en un esguince?",
     options: [
-      "Tendones",
-      "Músculos esqueléticos",
-      "Ligamentos",
-      "Cartílago hialino"
+      { letter: "a", text: "Tendones" },
+      { letter: "b", text: "Músculos esqueléticos" },
+      { letter: "c", text: "Ligamentos" },
+      { letter: "d", text: "Cartílago hialino" }
     ],
-    correctAnswer: 2,
+    correctAnswer: "c",
     explanation: "Un esguince es el estiramiento o desgarro de los ligamentos, que son las bandas de tejido conectivo que unen hueso con hueso. Las lesiones de tendones o músculos se denominan desgarros (o distensiones)."
   },
   {
-    id: "ap-18",
-    text: "Usted atiende a un paciente con insuficiencia renal crónica severa. El cuerpo intenta compensar un desequilibrio ácido-base. Si los riñones no pueden retener bicarbonato adecuadamente (causando acidosis metabólica), ¿cuál será la respuesta compensatoria principal del sistema respiratorio?",
+    question: "Usted atiende a un paciente con insuficiencia renal crónica severa. El cuerpo intenta compensar un desequilibrio ácido-base. Si los riñones no pueden retener bicarbonato adecuadamente (causando acidosis metabólica), ¿cuál será la respuesta compensatoria principal del sistema respiratorio?",
     options: [
-      "Bradipnea para retener CO2",
-      "Broncoconstricción masiva",
-      "Taquipnea para eliminar CO2",
-      "Aumento en la producción de surfactante"
+      { letter: "a", text: "Bradipnea para retener CO2" },
+      { letter: "b", text: "Broncoconstricción masiva" },
+      { letter: "c", text: "Taquipnea para eliminar CO2" },
+      { letter: "d", text: "Aumento en la producción de surfactante" }
     ],
-    correctAnswer: 2,
+    correctAnswer: "c",
     explanation: "En una acidosis metabólica, el sistema respiratorio intenta compensar eliminando ácido en forma de dióxido de carbono (CO2), lo cual logra aumentando la frecuencia y profundidad de la ventilación (taquipnea/hiperventilación)."
   },
   {
-    id: "ap-19",
-    text: "El sistema nervioso periférico se divide funcionalmente en somático y autónomo. ¿Qué tipo de tejido está bajo control del sistema somático?",
+    question: "El sistema nervioso periférico se divide funcionalmente en somático y autónomo. ¿Qué tipo de tejido está bajo control del sistema somático?",
     options: [
-      "Músculo liso de los vasos sanguíneos",
-      "Músculo esquelético",
-      "Músculo cardíaco",
-      "Glándulas endocrinas"
+      { letter: "a", text: "Músculo liso de los vasos sanguíneos" },
+      { letter: "b", text: "Músculo esquelético" },
+      { letter: "c", text: "Músculo cardíaco" },
+      { letter: "d", text: "Glándulas endocrinas" }
     ],
-    correctAnswer: 1,
+    correctAnswer: "b",
     explanation: "El sistema nervioso somático controla las acciones voluntarias, que incluyen exclusivamente a los músculos esqueléticos. El músculo liso, el cardíaco y las glándulas son controlados por el sistema nervioso autónomo."
   },
   {
-    id: "ap-20",
-    text: "Las plaquetas, los glóbulos rojos y la mayoría de los glóbulos blancos se producen en el tejido óseo. ¿En qué parte específica del hueso tiene lugar la hematopoyesis?",
+    question: "Las plaquetas, los glóbulos rojos y la mayoría de los glóbulos blancos se producen en el tejido óseo. ¿En qué parte específica del hueso tiene lugar la hematopoyesis?",
     options: [
-      "Médula ósea amarilla",
-      "Periostio",
-      "Médula ósea roja",
-      "Endostio"
+      { letter: "a", text: "Médula ósea amarilla" },
+      { letter: "b", text: "Periostio" },
+      { letter: "c", text: "Médula ósea roja" },
+      { letter: "d", text: "Endostio" }
     ],
-    correctAnswer: 2,
+    correctAnswer: "c",
     explanation: "La hematopoyesis (formación de células sanguíneas) ocurre en la médula ósea roja, que se encuentra típicamente en las epífisis de los huesos largos y en huesos planos como el esternón y la pelvis."
   }
 ];

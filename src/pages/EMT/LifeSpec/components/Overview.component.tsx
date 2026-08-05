@@ -38,10 +38,10 @@ export default function Overview() {
                             </div>
                             <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                 <li>Respiradores nasales obligados</li>
-                                <li>Reflejos primitivos presentes</li>
-                                <li>Sistema inmune inmaduro</li>
+                                <li>Reflejos primitivos: Moro (sobresalto), palmar, búsqueda y succión</li>
+                                <li>Sistema inmune inmaduro (depende de inmunidad pasiva materna)</li>
                                 <li>Termorregulación deficiente</li>
-                                <li>Fontanelas abiertas</li>
+                                <li>Fontanelas abiertas (permiten moldear el cráneo)</li>
                             </ul>
                         </div>
 
@@ -52,11 +52,11 @@ export default function Overview() {
                                     mes - 1 año)</h3>
                             </div>
                             <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
-                                <li>Crecimiento rápido peso/talla</li>
-                                <li>Desarrollo motor progresivo</li>
-                                <li>Mayor superficie corporal relativa</li>
-                                <li>Vulnerable a deshidratación</li>
-                                <li>Ansiedad ante extraños (6+ meses)</li>
+                                <li>Crecimiento rápido: triplican su peso al primer año</li>
+                                <li>Llanto como método principal de comunicación</li>
+                                <li>Mayor superficie corporal relativa y vulnerables a deshidratación</li>
+                                <li>Desarrollan apego seguro, ansioso o evitativo</li>
+                                <li>Confianza vs desconfianza (hasta los 18 meses)</li>
                             </ul>
                         </div>
 
@@ -67,11 +67,11 @@ export default function Overview() {
                                     pequeños (1-3 años)</h3>
                             </div>
                             <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
-                                <li>Desarrollo del lenguaje explosivo</li>
-                                <li>Autonomía inicial (caminar, hablar)</li>
-                                <li>Curiosidad y exploración activa</li>
-                                <li>Miedo a separación de padres</li>
-                                <li>Control de esfínteres en desarrollo</li>
+                                <li>Pérdida de la inmunidad pasiva materna (más resfriados)</li>
+                                <li>Desarrollo de motricidad fina y gruesa</li>
+                                <li>Empiezan a entender causa y efecto</li>
+                                <li>Miedo a la separación de sus padres</li>
+                                <li>Control neuromuscular de esfínteres (12-15 meses), pero preparación psicológica más tarde</li>
                             </ul>
                         </div>
 
@@ -82,11 +82,11 @@ export default function Overview() {
                                     (3-6 años)</h3>
                             </div>
                             <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
-                                <li>Pensamiento mágico y fantasioso</li>
-                                <li>Mayor cooperación con adultos</li>
-                                <li>Habilidades motoras refinadas</li>
-                                <li>Comprenden explicaciones simples</li>
-                                <li>Pueden verbalizar síntomas básicos</li>
+                                <li>Dominan el lenguaje básico y oraciones completas</li>
+                                <li>Aprenden interactuando con sus pares</li>
+                                <li>Cerebro alcanza el 90% de su peso adulto final</li>
+                                <li>Aumenta la masa muscular y densidad ósea</li>
+                                <li>Siguen rutinas y comprenden explicaciones simples</li>
                             </ul>
                         </div>
                     </div>
@@ -100,11 +100,11 @@ export default function Overview() {
                                     (6-12 años)</h3>
                             </div>
                             <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
-                                <li>Pensamiento lógico concreto</li>
-                                <li>Comprenden causa-efecto</li>
-                                <li>Pueden seguir instrucciones complejas</li>
-                                <li>Miedo al dolor y procedimientos</li>
-                                <li>Importancia del grupo de pares</li>
+                                <li>Desarrollo de autoconcepto y autoestima</li>
+                                <li>Razonamiento moral: preconvencional, convencional y posconvencional</li>
+                                <li>Crecen aprox. 6 cm y 2 kg cada año</li>
+                                <li>Los dientes de leche son reemplazados por los permanentes</li>
+                                <li>Causa principal de muerte: lesiones involuntarias</li>
                             </ul>
                         </div>
 
@@ -115,11 +115,11 @@ export default function Overview() {
                                     (12-18 años)</h3>
                             </div>
                             <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
-                                <li>Cambios puberales significativos</li>
-                                <li>Búsqueda de identidad personal</li>
-                                <li>Pensamiento abstracto desarrollado</li>
-                                <li>Conductas de riesgo aumentadas</li>
-                                <li>Privacidad y autonomía importantes</li>
+                                <li>Crecimiento repentino (2 a 3 años) muscular y óseo</li>
+                                <li>Maduración reproductiva (menarquia, hormonas sexuales)</li>
+                                <li>Conflicto por independencia e identidad personal</li>
+                                <li>Alto riesgo de depresión, suicidio y trastornos alimenticios</li>
+                                <li>Privacidad y autoimagen son muy importantes</li>
                             </ul>
                         </div>
 
@@ -130,11 +130,11 @@ export default function Overview() {
                                     jóvenes (19-40 años)</h3>
                             </div>
                             <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
-                                <li>Máxima condición física</li>
-                                <li>Sistemas orgánicos en plenitud</li>
-                                <li>Formación de relaciones íntimas</li>
-                                <li>Establecimiento profesional</li>
-                                <li>Estrés laboral y social</li>
+                                <li>Cuerpo funciona a su máxima eficiencia</li>
+                                <li>Formación de hábitos de por vida (dieta, ejercicio)</li>
+                                <li>Asentamiento de discos vertebrales (encogimiento sutil)</li>
+                                <li>Enfoque principal: trabajo, familia, estrés</li>
+                                <li>Causa principal de muerte: lesión no intencional</li>
                             </ul>
                         </div>
 
@@ -145,11 +145,11 @@ export default function Overview() {
                                     mayores (65+ años)</h3>
                             </div>
                             <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
-                                <li>Declino fisiológico progresivo</li>
-                                <li>Comorbilidades múltiples</li>
-                                <li>Polifarmacia frecuente</li>
-                                <li>Fragilidad ósea aumentada</li>
-                                <li>Cambios sensoriales (visión, audición)</li>
+                                <li>Envejecimiento y declive fisiológico progresivo</li>
+                                <li>Disminución en filtración renal (50%) y peso cerebral</li>
+                                <li>Enfermedad cardíaca es la principal causa de muerte</li>
+                                <li>Enfrentan retos psicosociales: depresión y aislamiento</li>
+                                <li>Requieren cuidado paciente: tienen sabiduría y experiencia invaluables</li>
                             </ul>
                         </div>
                     </div>

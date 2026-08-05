@@ -150,6 +150,50 @@ export default function Overview() {
                     ))}
                 </div>
             </div>
+
+            {/* Posiciones y direcciones anatómicas */}
+            <div className="pt-6 border-t border-gray-200">
+                <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2">Términos de Dirección y Posición</h2>
+                <div className="grid md:grid-cols-2 gap-6">
+                    <div className="bg-indigo-50 p-5 rounded-lg">
+                        <h3 className="font-semibold text-indigo-800 mb-3">Términos de Dirección</h3>
+                        <ul className="space-y-3 text-sm text-gray-700">
+                            <li><strong>Anterior (Ventral) / Posterior (Dorsal):</strong> Frente del cuerpo / Atrás del cuerpo.</li>
+                            <li><strong>Superior / Inferior:</strong> Más cerca de la cabeza / Más cerca de los pies.</li>
+                            <li><strong>Medial / Lateral:</strong> Más cerca de la línea media / Más lejos de la línea media.</li>
+                            <li><strong>Proximal / Distal:</strong> Más cerca del tronco o punto de unión / Más lejos del tronco.</li>
+                            <li><strong>Superficial / Profundo:</strong> Cerca de la piel / Más adentro del cuerpo.</li>
+                            <li><strong>Palmar / Plantar:</strong> Palma de la mano / Planta del pie.</li>
+                        </ul>
+                    </div>
+                    <div className="bg-teal-50 p-5 rounded-lg">
+                        <h3 className="font-semibold text-teal-800 mb-3">Posiciones Anatómicas</h3>
+                        <ul className="space-y-3 text-sm text-gray-700">
+                            <li><strong>Supina:</strong> Acostado boca arriba.</li>
+                            <li><strong>Prona:</strong> Acostado boca abajo.</li>
+                            <li><strong>Fowler:</strong> Posición sentada o semisentada. Ayuda al paciente a respirar mejor y controlar las vías respiratorias.
+                                <ul className="pl-5 mt-1 list-disc text-teal-900">
+                                    <li>Semi-Fowler: Ángulo de ~45 grados.</li>
+                                    <li>Fowler Alta: Ángulo de 90 grados.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Posición de recuperación:</strong> Recostado sobre el lado izquierdo (o derecho) para mantener la vía aérea permeable en pacientes inconscientes.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            {/* Movimiento */}
+            <div className="bg-gray-50 p-5 rounded-lg mt-6">
+                <h3 className="font-semibold text-gray-800 mb-3">Términos de Movimiento</h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-gray-700">
+                    <div className="bg-white p-3 rounded shadow-sm border-l-4 border-blue-400"><strong>Flexión:</strong> Doblar una articulación.</div>
+                    <div className="bg-white p-3 rounded shadow-sm border-l-4 border-blue-400"><strong>Extensión:</strong> Enderezar una articulación.</div>
+                    <div className="bg-white p-3 rounded shadow-sm border-l-4 border-green-400"><strong>Aducción:</strong> Movimiento hacia la línea media.</div>
+                    <div className="bg-white p-3 rounded shadow-sm border-l-4 border-green-400"><strong>Abducción:</strong> Movimiento que se aleja de la línea media.</div>
+                </div>
+            </div>
+
         </div>
     );
 }
