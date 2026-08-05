@@ -1,6 +1,5 @@
-import { FaLungs, FaHeart, FaBrain, FaStarOfLife } from "react-icons/fa";
+import { FaStarOfLife } from "react-icons/fa";
 import { MdTimer, MdHealthAndSafety } from "react-icons/md";
-import { BsLungsFill } from "react-icons/bs";
 
 export default function PrimaryAssessment() {
     return (

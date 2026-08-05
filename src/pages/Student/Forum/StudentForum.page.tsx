@@ -352,7 +352,7 @@ export default function StudentForum() {
         })
         : baseThreads;
 
-    const totalPages = Math.ceil(filteredThreads.length / THREADS_PER_PAGE);
+    // const totalPages = Math.ceil(filteredThreads.length / THREADS_PER_PAGE);
     const paginatedThreads = filteredThreads.slice(
         (currentPage - 1) * THREADS_PER_PAGE,
         currentPage * THREADS_PER_PAGE
