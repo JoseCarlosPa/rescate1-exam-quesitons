@@ -102,19 +102,22 @@ export default function Epp() {
                         </div>
                     </div>
 
-                    <div className="bg-white p-4 rounded-lg shadow">
+                    <div className="bg-white p-4 rounded-lg shadow col-span-full">
                         <div className="flex items-center mb-3">
                             <MdSecurity className="mr-2 text-red-600"/>
-                            <h4 className="font-bold text-red-700">EPP Adicional</h4>
+                            <h4 className="font-bold text-red-700">Ropa Protectora Especializada</h4>
                         </div>
-                        <ul className="text-sm text-gray-600 space-y-1">
-                            <li>• Chaleco reflectante</li>
-                            <li>• Casco de seguridad</li>
-                            <li>• Chaleco balístico</li>
-                            <li>• Linterna/iluminación</li>
-                        </ul>
-                        <div className="mt-2 p-2 bg-red-50 rounded text-xs text-red-700">
-                            <strong>Uso:</strong> Situaciones especiales de alto riesgo
+                        <div className="grid md:grid-cols-2 gap-4">
+                            <ul className="text-sm text-gray-600 space-y-1">
+                                <li>• <strong>Clima Frío (3 capas):</strong> 1) Capa interna delgada (polipropileno/lana) que aleja humedad. 2) Capa intermedia térmica (lana/poliéster) para aislamiento. 3) Capa externa resistente al viento y agua con cierres para ventilación.</li>
+                                <li>• <strong>Chalecos reflectantes:</strong> Requeridos por ANSI (Clase 2 o 3) para trabajar cerca del tráfico.</li>
+                                <li>• <strong>Cascos:</strong> Deben proteger contra impacto superior y lateral, con correa de mentón. Los cascos de bomberos (estructurales) protegen del calor pero pueden limitar la movilidad en rescates de vehículos.</li>
+                            </ul>
+                            <ul className="text-sm text-gray-600 space-y-1">
+                                <li>• <strong>Botas de seguridad:</strong> Flexibles, resistentes al agua, protección de tobillos, y preferiblemente con punta de acero. En clima frío, usar botas impermeables con calcetines absorbentes.</li>
+                                <li>• <strong>Chalecos antibalas (Balísticos):</strong> Ligeros bajo el uniforme (contra calibres pequeños) o pesados sobre el uniforme. No protegen contra rifles o apuñalamientos pesados.</li>
+                                <li>• <strong>Protección del cabello y joyas:</strong> Cabello largo recogido, limitar joyas y anillos que pueden quedar atrapados en maquinaria.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>

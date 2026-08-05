@@ -141,6 +141,76 @@ export default function Legal() {
                 </div>
             </div>
 
+            <div
+                className="bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-200 rounded-lg p-6 mb-6">
+                <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+                    <FaUserMd className="mr-2 text-indigo-500"/>
+                    Instrucciones Anticipadas y Reportes Obligatorios
+                </h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                    <div className="bg-white p-4 rounded border-l-4 border-indigo-400">
+                        <h4 className="font-semibold text-gray-800 mb-2">📄 Instrucciones Anticipadas y ONR</h4>
+                        <ul className="text-gray-700 text-sm space-y-1">
+                            <li>• <strong>ONR:</strong> Orden de No Reanimar (debe ser clara, firmada por paciente/tutor y médico).</li>
+                            <li>• <strong>Poder Notarial:</strong> Sustitutos para tomar decisiones si el paciente se incapacita.</li>
+                            <li>• Obligación de proveer medidas de confort (oxígeno, alivio) a pacientes que no están en paro.</li>
+                            <li>• Ante la duda o falta del documento físico: iniciar reanimación.</li>
+                        </ul>
+                    </div>
+                    <div className="bg-white p-4 rounded border-l-4 border-indigo-400">
+                        <h4 className="font-semibold text-gray-800 mb-2">📞 Reportes Obligatorios</h4>
+                        <ul className="text-gray-700 text-sm space-y-1">
+                            <li>• <strong>Abuso:</strong> Infantil, a personas mayores o grupos vulnerables.</li>
+                            <li>• <strong>Delitos:</strong> Heridas por arma de fuego, arma blanca.</li>
+                            <li>• <strong>Salud Pública:</strong> Enfermedades transmisibles y nacimientos (alumbramiento fuera de hospital).</li>
+                            <li>• <strong>Escena del crimen:</strong> Informar y preservar evidencia sin retrasar la atención.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6 mb-6">
+                {/* Asalto, Agresión y Secuestro */}
+                <div
+                    className="bg-white border border-yellow-200 rounded-lg p-5 hover:shadow-md transition-shadow">
+                    <div className="flex items-center mb-3">
+                        <AiOutlineWarning className="w-8 h-8 text-yellow-500 mr-3"/>
+                        <h3 className="text-xl font-bold text-yellow-700">Asalto, Agresión y Secuestro</h3>
+                    </div>
+                    <p className="text-gray-700 mb-3 text-sm">
+                        Proporcionar atención sin consentimiento puede derivar en cargos graves, tanto civiles como penales.
+                    </p>
+                    <div className="bg-yellow-50 p-3 rounded">
+                        <ul className="text-sm text-yellow-700 mt-1 space-y-1">
+                            <li>• <strong>Asalto:</strong> Poner a una persona en estado de temor a un daño corporal.</li>
+                            <li>• <strong>Agresión:</strong> Tocar ilegalmente a una persona (ej. tratar sin consentimiento).</li>
+                            <li>• <strong>Secuestro / Privación ilegal:</strong> Transportar en contra de su voluntad.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                {/* Leyes del Buen Samaritano */}
+                <div
+                    className="bg-white border border-teal-200 rounded-lg p-5 hover:shadow-md transition-shadow">
+                    <div className="flex items-center mb-3">
+                        <BsShieldCheck className="w-8 h-8 text-teal-500 mr-3"/>
+                        <h3 className="text-xl font-bold text-teal-700">Leyes del Buen Samaritano</h3>
+                    </div>
+                    <p className="text-gray-700 mb-3 text-sm">
+                        Protegen a quienes brindan asistencia de buena fe sin esperar compensación, aunque con límites.
+                    </p>
+                    <div className="bg-teal-50 p-3 rounded">
+                        <strong className="text-teal-800 text-sm">Para estar protegido se requiere:</strong>
+                        <ul className="text-sm text-teal-700 mt-1 space-y-1">
+                            <li>• Actuar de buena fe al prestar atención.</li>
+                            <li>• Sin expectativa de compensación.</li>
+                            <li>• Actuar dentro del alcance del entrenamiento.</li>
+                            <li>• No actuar de manera negligente grave (descuido irresponsable).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
             <div className="overflow-x-auto">
                 <h3 className="text-lg font-semibold text-gray-800 mb-3">📋 Tabla comparativa de
                     responsabilidades legales</h3>

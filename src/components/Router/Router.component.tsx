@@ -287,6 +287,12 @@ import CirculatorySystemSimulator from "../../pages/Simulator/CirculatorySystemS
 import TampA from "../../pages/TAMPA/TampA.page.tsx";
 import ComingSoon from "../../pages/TAMPA/ComingSoon/ComingSoon.page.tsx";
 import {tampAModules} from "../../pages/TAMPA/TampA.constants.tsx";
+import TampaIntroduction from "../../pages/TAMPA/Introduction/Introduction.page.tsx";
+import {introductionQuestions as tampaIntroductionQuestions} from "../../pages/TAMPA/Introduction/Introduction.questions.ts";
+import TampaAnatomyPhysiology from "../../pages/TAMPA/AnatomyPhysiology/AnatomyPhysiology.page.tsx";
+import {anatomyPhysiologyQuestions as tampaAnatomyPhysiologyQuestions} from "../../pages/TAMPA/AnatomyPhysiology/AnatomyPhysiology.questions.ts";
+import TampaPatientAssessment from "../../pages/TAMPA/PatientAssessment/PatientAssessment.page.tsx";
+import {patientAssessmentQuestions as tampaPatientAssessmentQuestions} from "../../pages/TAMPA/PatientAssessment/PatientAssessment.questions.ts";
 
 export default function Router() {
        return (
@@ -681,7 +687,22 @@ export default function Router() {
 
                             {/* TAMP-A — Técnico Avanzado */}
                             <Route path={AllRoutes.TAMPA} element={<ProtectedRoute requireMainAccess><TampA /></ProtectedRoute>} />
-                            {tampAModules.map((module) => (
+                            <Route path={AllRoutes.TAMPA_INTRODUCTION} element={<ProtectedRoute requireMainAccess><TampaIntroduction /></ProtectedRoute>} />
+                            <Route path={`${AllRoutes.TAMPA_INTRODUCTION}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.TAMPA_INTRODUCTION} name="Introducción TAMP-A"
+                                          questions={tampaIntroductionQuestions} id={200}
+                                          challengingQuestions={[]} />} />
+                            <Route path={AllRoutes.TAMPA_ANATOMY_PHYSIOLOGY} element={<ProtectedRoute requireMainAccess><TampaAnatomyPhysiology /></ProtectedRoute>} />
+                            <Route path={`${AllRoutes.TAMPA_ANATOMY_PHYSIOLOGY}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.TAMPA_ANATOMY_PHYSIOLOGY} name="Anatomía & Fisiología II"
+                                          questions={tampaAnatomyPhysiologyQuestions} id={201}
+                                          challengingQuestions={[]} />} />
+                            <Route path={AllRoutes.TAMPA_PATIENT_ASSESSMENT} element={<ProtectedRoute requireMainAccess><TampaPatientAssessment /></ProtectedRoute>} />
+                            <Route path={`${AllRoutes.TAMPA_PATIENT_ASSESSMENT}/exam`}
+                                   element={<Exam returnRoute={AllRoutes.TAMPA_PATIENT_ASSESSMENT} name="Evaluación de Pacientes"
+                                          questions={tampaPatientAssessmentQuestions} id={202}
+                                          challengingQuestions={[]} />} />
+                            {tampAModules.filter(m => m.route !== AllRoutes.TAMPA_INTRODUCTION && m.route !== AllRoutes.TAMPA_ANATOMY_PHYSIOLOGY && m.route !== AllRoutes.TAMPA_PATIENT_ASSESSMENT).map((module) => (
                                    <Route key={module.key} path={module.route} element={<ProtectedRoute requireMainAccess><ComingSoon /></ProtectedRoute>} />
                             ))}
 

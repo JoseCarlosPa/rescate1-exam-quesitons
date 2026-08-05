@@ -99,7 +99,7 @@ export default function Overview() {
                 </div>
             </div>
 
-            <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border border-yellow-200 rounded-lg p-6">
+            <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border border-yellow-200 rounded-lg p-6 mb-6">
                 <h3 className="text-lg font-semibold text-yellow-800 mb-4 flex items-center">
                     <MdFeedback className="mr-2"/>
                     Principios de comunicación efectiva (4 C's)
@@ -140,6 +140,50 @@ export default function Overview() {
                         <p className="text-sm text-yellow-700">
                             Mantener respeto y profesionalismo, especialmente en situaciones de estrés.
                         </p>
+                    </div>
+                </div>
+            </div>
+
+            {/* Poblaciones especiales */}
+            <div className="bg-white border border-purple-200 rounded-lg p-6 mb-6">
+                <h3 className="text-xl font-semibold text-purple-700 mb-4 flex items-center">
+                    <FaComments className="mr-2"/>
+                    Comunicación con poblaciones especiales
+                </h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                    <div className="bg-purple-50 p-4 rounded-lg">
+                        <strong className="text-purple-800">Adultos Mayores:</strong>
+                        <ul className="text-sm text-purple-700 mt-2 space-y-1">
+                            <li>• Llame al paciente por su apellido (ej. Sr. Smith) a menos que pida lo contrario.</li>
+                            <li>• No asuma que están confundidos o sordos por defecto.</li>
+                            <li>• Hable despacio, claro y de frente; no aumente el volumen si no hay pérdida auditiva confirmada.</li>
+                            <li>• Tenga paciencia para que respondan.</li>
+                        </ul>
+                    </div>
+                    <div className="bg-purple-50 p-4 rounded-lg">
+                        <strong className="text-purple-800">Niños:</strong>
+                        <ul className="text-sm text-purple-700 mt-2 space-y-1">
+                            <li>• Colóquese a la altura de sus ojos.</li>
+                            <li>• Sea honesto; los niños detectan mentiras. (Ej. "Esto va a doler un poco").</li>
+                            <li>• Permita que los padres se queden cerca si ayudan, o que el niño tenga un juguete familiar.</li>
+                            <li>• Respete su pudor, especialmente en adolescentes.</li>
+                        </ul>
+                    </div>
+                    <div className="bg-purple-50 p-4 rounded-lg">
+                        <strong className="text-purple-800">Dificultades Auditivas o Visuales:</strong>
+                        <ul className="text-sm text-purple-700 mt-2 space-y-1">
+                            <li>• <strong>Auditivas:</strong> Tenga papel y lápiz, colóquese de frente para lectura de labios, aprenda señas básicas (ayuda, enfermo). Nunca grite.</li>
+                            <li>• <strong>Visuales:</strong> Explique cada paso detalladamente antes de hacerlo. Mantenga contacto físico constante. Si tiene perro guía, intente transportarlo o haga arreglos.</li>
+                        </ul>
+                    </div>
+                    <div className="bg-purple-50 p-4 rounded-lg">
+                        <strong className="text-purple-800">Pacientes que no hablan español:</strong>
+                        <ul className="text-sm text-purple-700 mt-2 space-y-1">
+                            <li>• Use preguntas simples y señale partes del cuerpo.</li>
+                            <li>• Evite términos médicos complejos.</li>
+                            <li>• Busque un intérprete (familiar, testigo) o use apps de traducción.</li>
+                            <li>• Hablar más fuerte no ayuda a la comprensión del idioma.</li>
+                        </ul>
                     </div>
                 </div>
             </div>

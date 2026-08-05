@@ -62,6 +62,63 @@ export default function Stress() {
                 </div>
             </div>
 
+            {/* El proceso de duelo */}
+            <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 rounded-lg">
+                <h3 className="text-xl font-bold text-indigo-800 mb-3 flex items-center">
+                    <MdPsychology className="mr-2"/>
+                    El Proceso de Duelo y Muerte
+                </h3>
+                <p className="text-sm text-gray-700 mb-4">
+                    La Dra. Elisabeth Kübler-Ross definió cinco etapas del duelo que experimentan los pacientes con enfermedades terminales, o familiares ante una pérdida. Estas no siempre ocurren en orden:
+                </p>
+                <div className="grid md:grid-cols-5 gap-2">
+                    <div className="bg-white p-3 rounded shadow-sm text-center">
+                        <h4 className="font-bold text-indigo-700 text-sm">1. Negación</h4>
+                        <p className="text-xs text-gray-600">Rechazo a aceptar la realidad, demandas poco realistas.</p>
+                    </div>
+                    <div className="bg-white p-3 rounded shadow-sm text-center">
+                        <h4 className="font-bold text-indigo-700 text-sm">2. Ira</h4>
+                        <p className="text-xs text-gray-600">Hostilidad a menudo dirigida hacia el personal del SEM.</p>
+                    </div>
+                    <div className="bg-white p-3 rounded shadow-sm text-center">
+                        <h4 className="font-bold text-indigo-700 text-sm">3. Negociación</h4>
+                        <p className="text-xs text-gray-600">Promesas de cambio a cambio de más tiempo de vida.</p>
+                    </div>
+                    <div className="bg-white p-3 rounded shadow-sm text-center">
+                        <h4 className="font-bold text-indigo-700 text-sm">4. Depresión</h4>
+                        <p className="text-xs text-gray-600">Tristeza profunda, silencio y desesperanza.</p>
+                    </div>
+                    <div className="bg-white p-3 rounded shadow-sm text-center">
+                        <h4 className="font-bold text-indigo-700 text-sm">5. Aceptación</h4>
+                        <p className="text-xs text-gray-600">Aceptación de la muerte inminente o la pérdida.</p>
+                    </div>
+                </div>
+            </div>
+
+            {/* Comunicación con pacientes críticos */}
+            <div className="bg-white p-6 rounded-lg border border-gray-200">
+                <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                    <FaUsers className="mr-2 text-gray-600"/>
+                    Comunicación con el Paciente Crítico y Familiares
+                </h3>
+                <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-700">
+                    <div>
+                        <ul className="space-y-2">
+                            <li>• <strong>Orientar al paciente:</strong> Explique quién es usted y qué está haciendo (ej. "Soy PAP y voy a entablillar su brazo").</li>
+                            <li>• <strong>Ser honesto:</strong> No dé falsas esperanzas ni diga "Todo va a estar bien" cuando no lo está. Diga "Haremos todo lo que podamos".</li>
+                            <li>• <strong>No dar noticias tristes no relacionadas:</strong> Si hubo otros fallecidos, el paciente crítico no debe enterarse en ese momento para no deprimirlo o afectar su esperanza.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul className="space-y-2">
+                            <li>• <strong>Permitir a los padres estar presentes:</strong> Ayuda en el proceso de duelo que vean que se hizo todo lo posible por su hijo.</li>
+                            <li>• <strong>Lidiar con la familia:</strong> Validar el duelo. Decir "Lamento su pérdida", no juzgar ni usar frases trilladas como "Es la voluntad de Dios".</li>
+                            <li>• <strong>Diversidad cultural:</strong> Sea respetuoso y comprenda que las reacciones y costumbres (como contacto visual, amuletos) varían entre culturas.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
             {/* Signos y síntomas */}
             <div className="bg-yellow-50 p-6 rounded-lg">
                 <h3 className="text-xl font-bold text-yellow-800 mb-4 flex items-center">

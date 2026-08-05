@@ -147,6 +147,51 @@ export default function Overview() {
                 </div>
             </div>
 
+            {/* Dirección Médica y Control de Calidad */}
+            <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-lg">
+                <h3 className="text-xl font-bold text-purple-800 mb-4 flex items-center">
+                    <MdInfo className="mr-2"/>
+                    Dirección Médica y Calidad
+                </h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                    <div className="bg-white p-4 rounded border-l-4 border-purple-500">
+                        <h4 className="font-bold text-purple-700 mb-2">Dirección Médica</h4>
+                        <ul className="text-sm text-gray-700 space-y-2">
+                            <li><strong>En línea (Directa):</strong> Órdenes dadas directamente por el médico vía radio o teléfono durante la emergencia.</li>
+                            <li><strong>Fuera de línea (Indirecta):</strong> Protocolos, guías y órdenes permanentes aprobadas previamente por el director médico.</li>
+                        </ul>
+                    </div>
+                    <div className="bg-white p-4 rounded border-l-4 border-purple-500">
+                        <h4 className="font-bold text-purple-700 mb-2">Mejora Continua de Calidad (MCC)</h4>
+                        <p className="text-sm text-gray-700">
+                            Sistema circular de revisiones y auditorías internas para mejorar la atención. Identifica áreas de mejora, asigna capacitación correctiva y discute informes de atención prehospitalaria (RAPP) sin fines punitivos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            {/* Salud Pública y Prevención */}
+            <div className="bg-gradient-to-br from-teal-50 to-teal-100 p-6 rounded-lg">
+                <h3 className="text-xl font-bold text-teal-800 mb-4 flex items-center">
+                    <FaShieldAlt className="mr-2"/>
+                    Salud Pública y Prevención
+                </h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                    <div className="bg-white p-4 rounded border-l-4 border-teal-500">
+                        <h4 className="font-bold text-teal-700 mb-2">Prevención Primaria</h4>
+                        <p className="text-sm text-gray-700">
+                            Estrategias que evitan que suceda el evento o enfermedad. Ejemplos: vacunación, fluoración del agua, clases de seguridad en albercas.
+                        </p>
+                    </div>
+                    <div className="bg-white p-4 rounded border-l-4 border-teal-500">
+                        <h4 className="font-bold text-teal-700 mb-2">Prevención Secundaria</h4>
+                        <p className="text-sm text-gray-700">
+                            El evento ya ocurrió, pero se busca disminuir sus efectos. Ejemplos: uso de cascos, cinturones de seguridad, barreras en carreteras.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
             {/* Objetivos del SEM */}
             <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg">

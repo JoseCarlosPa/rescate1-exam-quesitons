@@ -129,15 +129,14 @@ export default function Documentation() {
                 <div className="bg-white border border-green-200 rounded-lg p-5">
                     <div className="flex items-center mb-3">
                         <BsFileText className="w-6 h-6 text-green-500 mr-3"/>
-                        <h3 className="text-lg font-semibold text-green-700">Buenas prácticas</h3>
+                        <h3 className="text-lg font-semibold text-green-700">Buenas prácticas y estándares</h3>
                     </div>
                     <ul className="space-y-2 text-green-700 text-sm">
-                        <li>• <strong>Información objetiva:</strong> "Paciente presenta aliento alcohólico"</li>
-                        <li>• <strong>Tiempos precisos:</strong> Usar formato 24 horas</li>
-                        <li>• <strong>Signos vitales completos:</strong> Incluir todos los parámetros</li>
-                        <li>• <strong>Citas textuales:</strong> Entre comillas para declaraciones</li>
-                        <li>• <strong>Correcciones apropiadas:</strong> Addendum si es necesario</li>
-                        <li>• <strong>Revisión final:</strong> Verificar antes de entregar</li>
+                        <li>• <strong>Horario Militar:</strong> Usar formato de 24 hrs (ej. 14:00) para evitar confusiones (am/pm).</li>
+                        <li>• <strong>Información objetiva:</strong> Reportar lo que observa ("aliento a alcohol") y no juicios ("está borracho").</li>
+                        <li>• <strong>NEMSIS:</strong> Sistema Nacional de Información del SEM. Permite recopilar y analizar datos a gran escala para mejorar protocolos.</li>
+                        <li>• <strong>Correcciones apropiadas:</strong> Nunca usar corrector. Trace una sola línea horizontal sobre el error, escriba la información correcta, sus iniciales y fecha.</li>
+                        <li>• <strong>Métodos (SOAP/CHART):</strong> Siga la estructura local (Subjetivo/Objetivo o Queja/Historia/Evaluación) para ordenar la narrativa.</li>
                     </ul>
                 </div>
             </div>

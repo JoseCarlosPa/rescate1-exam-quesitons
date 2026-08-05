@@ -13,6 +13,31 @@ export default function Radio() {
                 y salvar vidas.
             </p>
 
+            <div className="bg-gradient-to-r from-gray-50 to-slate-100 border border-gray-200 rounded-lg p-6 mb-6">
+                <h3 className="text-xl font-bold text-gray-800 mb-4">Equipos de Comunicación del SEM</h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                    <div className="bg-white p-4 rounded-lg shadow-sm border-l-4 border-gray-500">
+                        <strong className="text-gray-800 block mb-1">Tipos de Radios:</strong>
+                        <ul className="text-sm text-gray-700 space-y-1">
+                            <li>• <strong>Estación Base:</strong> Transmisor/receptor en lugar fijo (ej. hospital, base de bomberos) con gran potencia.</li>
+                            <li>• <strong>Radios Móviles:</strong> Instaladas en la ambulancia; operan en VHF o UHF y alcanzan 10-15 millas promedio.</li>
+                            <li>• <strong>Radios Portátiles:</strong> Dispositivos de mano, potencia baja (1-5 vatios). Esenciales fuera de la ambulancia.</li>
+                        </ul>
+                    </div>
+                    <div className="bg-white p-4 rounded-lg shadow-sm border-l-4 border-gray-500">
+                        <strong className="text-gray-800 block mb-1">Tecnologías Adicionales:</strong>
+                        <ul className="text-sm text-gray-700 space-y-1">
+                            <li>• <strong>Repetidoras:</strong> Reciben señales (incluso débiles) y las retransmiten con potencia alta en otra frecuencia.</li>
+                            <li>• <strong>Telemetría:</strong> Convierte señales (como ECG de 12 derivaciones) en señales digitales para enviarlas al hospital en tiempo real.</li>
+                            <li>• <strong>Celulares/Satelitales:</strong> Fáciles de usar, pero vulnerables a la congestión de red en emergencias masivas o desastres.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div className="mt-4 bg-gray-100 p-3 rounded text-sm text-gray-700">
+                    <strong>Comisión Federal de Comunicaciones (CFC):</strong> Regula todas las comunicaciones por radio en EE. UU. (y sus equivalentes en otros países). Asignan frecuencias, otorgan licencias, establecen estándares de potencia y vigilan las transmisiones del SEM (Ej. asignación de canales MED en UHF).
+                </div>
+            </div>
+
             <div className="grid md:grid-cols-2 gap-6 mb-6">
                 {/* Técnica de radio */}
                 <div className="bg-white border border-blue-200 rounded-lg p-5 hover:shadow-md transition-shadow">

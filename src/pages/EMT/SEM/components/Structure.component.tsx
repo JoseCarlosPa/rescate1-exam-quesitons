@@ -111,6 +111,54 @@ export default function Structure() {
                 </div>
             </div>
 
+
+            {/* Niveles de Entrenamiento */}
+            <div className="bg-gradient-to-br from-gray-50 to-slate-100 p-6 rounded-lg">
+                <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                    <FaUsers className="mr-2 text-slate-600"/>
+                    Niveles de Entrenamiento (National EMS Scope of Practice Model)
+                </h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                    <div className="bg-white p-4 rounded shadow-sm border-l-4 border-gray-400">
+                        <h4 className="font-bold text-gray-700 mb-1">1. Respondiente de Emergencias Médicas (REM)</h4>
+                        <p className="text-sm text-gray-600 mb-2">Primeros respondedores como policías, bomberos o rescatistas.</p>
+                        <ul className="text-xs text-gray-600 space-y-1">
+                            <li>• RCP, SVB inmediato y uso de DEA.</li>
+                            <li>• Control básico de hemorragias.</li>
+                            <li>• Asistencia inicial antes de la ambulancia.</li>
+                        </ul>
+                    </div>
+                    <div className="bg-white p-4 rounded shadow-sm border-l-4 border-blue-500">
+                        <h4 className="font-bold text-blue-700 mb-1">2. Proveedor de Atención Prehospitalaria (PAP / TUM-B)</h4>
+                        <p className="text-sm text-gray-600 mb-2">Columna vertebral del SEM (~150 horas de curso).</p>
+                        <ul className="text-xs text-gray-600 space-y-1">
+                            <li>• Vía aérea básica y oxigenoterapia.</li>
+                            <li>• RCP y DEA avanzado.</li>
+                            <li>• Asistencia con ciertos medicamentos (ej. autoinyectores, aspirina).</li>
+                        </ul>
+                    </div>
+                    <div className="bg-white p-4 rounded shadow-sm border-l-4 border-orange-500">
+                        <h4 className="font-bold text-orange-700 mb-1">3. PAP-Intermedio (PAP-I / TUM-I)</h4>
+                        <p className="text-sm text-gray-600 mb-2">Entrenamiento en aspectos específicos de SVA.</p>
+                        <ul className="text-xs text-gray-600 space-y-1">
+                            <li>• Terapia intravenosa (IV) e intraósea (IO).</li>
+                            <li>• Dispositivos supraglóticos.</li>
+                            <li>• Administración limitada de medicamentos.</li>
+                        </ul>
+                    </div>
+                    <div className="bg-white p-4 rounded shadow-sm border-l-4 border-red-600">
+                        <h4 className="font-bold text-red-700 mb-1">4. Paramédico</h4>
+                        <p className="text-sm text-gray-600 mb-2">Soporte Vital Avanzado extenso (1000 a 1300+ horas).</p>
+                        <ul className="text-xs text-gray-600 space-y-1">
+                            <li>• Intubación endotraqueal.</li>
+                            <li>• Farmacología de emergencia amplia.</li>
+                            <li>• Monitoreo cardíaco (ECG 12 derivaciones).</li>
+                            <li>• Intervenciones invasivas complejas.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
             {/* Tipos de ambulancias */}
             <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">

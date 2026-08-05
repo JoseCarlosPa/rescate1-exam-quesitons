@@ -1,5 +1,5 @@
 import {FaAmbulance, FaBrain, FaMask, FaShieldAlt, FaUsers} from "react-icons/fa";
-import {MdEmergency, MdInfo, MdPsychology, MdTipsAndUpdates, MdWarning} from "react-icons/md";
+import {MdEmergency, MdInfo, MdPsychology, MdTipsAndUpdates, MdWarning, MdHealthAndSafety} from "react-icons/md";
 import {FiActivity, FiCheckCircle, FiShield} from "react-icons/fi";
 import {HiOutlineExclamationTriangle} from "react-icons/hi2";
 
@@ -62,6 +62,60 @@ export default function Overview() {
                             </div>
                             <span
                                 className="text-sm">Asegurar la escena antes de ingresar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Bienestar General y Salud */}
+            <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg">
+                <h3 className="text-xl font-bold text-green-800 mb-4 flex items-center">
+                    <MdHealthAndSafety className="mr-2"/>
+                    Bienestar General del Proveedor
+                </h3>
+                <div className="grid md:grid-cols-3 gap-4">
+                    <div className="bg-white p-4 rounded border-l-4 border-green-500">
+                        <h4 className="font-bold text-green-700 mb-2">Nutrición e Hidratación</h4>
+                        <p className="text-sm text-gray-700">
+                            Mantener niveles de energía mediante carbohidratos complejos, evitar el exceso de azúcares simples y grasas. La hidratación constante (agua) es vital para el rendimiento físico y cognitivo.
+                        </p>
+                    </div>
+                    <div className="bg-white p-4 rounded border-l-4 border-green-500">
+                        <h4 className="font-bold text-green-700 mb-2">Ejercicio y Relajación</h4>
+                        <p className="text-sm text-gray-700">
+                            Realizar al menos 30 min de actividad física 5 días a la semana previene lesiones de espalda al cargar pacientes y ayuda a manejar el estrés.
+                        </p>
+                    </div>
+                    <div className="bg-white p-4 rounded border-l-4 border-green-500">
+                        <h4 className="font-bold text-green-700 mb-2">Sueño y Descanso</h4>
+                        <p className="text-sm text-gray-700">
+                            El sueño ininterrumpido es esencial. La fatiga severa disminuye la concentración. Se recomienda limitar estimulantes como la cafeína y evitar alcohol y tabaco.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            {/* Vías de transmisión */}
+            <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 rounded-lg">
+                <h3 className="text-xl font-bold text-indigo-800 mb-4 flex items-center">
+                    <FaMask className="mr-2"/>
+                    Vías de Transmisión de Enfermedades
+                </h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                    <div className="bg-white p-4 rounded border-l-4 border-indigo-500">
+                        <ul className="text-sm text-gray-700 space-y-2">
+                            <li><strong>Contacto directo:</strong> De persona a persona sin intermediarios (ej. sangre en contacto con una herida, VIH, Hepatitis B).</li>
+                            <li><strong>Contacto indirecto:</strong> A través de un objeto inanimado contaminado o "fómite" (ej. camilla no desinfectada, pinchazo con aguja).</li>
+                            <li><strong>Por el aire:</strong> A través de gotitas o polvo, aerosoles producidos al toser o estornudar (ej. resfriado común, tuberculosis).</li>
+                        </ul>
+                    </div>
+                    <div className="bg-white p-4 rounded border-l-4 border-indigo-500">
+                        <ul className="text-sm text-gray-700 space-y-2">
+                            <li><strong>Por alimentos:</strong> Contaminación de alimentos o agua (ej. Salmonella).</li>
+                            <li><strong>Por vectores:</strong> A través de insectos o parásitos (ej. pulgas, garrapatas, mosquitos que causan malaria o rabia).</li>
+                        </ul>
+                        <div className="mt-3 p-2 bg-indigo-50 rounded text-xs text-indigo-800">
+                            <strong>Control de infecciones:</strong> Las precauciones estándar asumen que cualquier persona puede ser portadora de una enfermedad infecciosa. El lavado de manos es la medida preventiva más eficaz.
                         </div>
                     </div>
                 </div>

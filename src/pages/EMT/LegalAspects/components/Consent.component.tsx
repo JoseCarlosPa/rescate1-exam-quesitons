@@ -59,6 +59,48 @@ export default function Consent() {
                         </ul>
                     </div>
                 </div>
+
+                {/* Consentimiento involuntario */}
+                <div
+                    className="bg-white border border-purple-200 rounded-lg p-5 hover:shadow-md transition-shadow">
+                    <div className="flex items-center mb-3">
+                        <BsFileText className="w-8 h-8 text-purple-500 mr-3"/>
+                        <h3 className="text-xl font-bold text-purple-700">Consentimiento
+                            Involuntario</h3>
+                    </div>
+                    <p className="text-gray-700 mb-3 text-sm">
+                        Aplica a pacientes incompetentes mentalmente o en custodia policial. Debe obtenerse de alguien legalmente responsable.
+                    </p>
+                    <div className="bg-purple-50 p-3 rounded">
+                        <strong className="text-purple-800 text-sm">Consideraciones:</strong>
+                        <ul className="text-sm text-purple-700 mt-1">
+                            <li>• Custodio, tutor legal u oficial a cargo.</li>
+                            <li>• Prisioneros o arrestados (si están conscientes/competentes, aún pueden rechazar).</li>
+                            <li>• Consultar control médico en línea.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                {/* Restricción forzada */}
+                <div
+                    className="bg-white border border-orange-200 rounded-lg p-5 hover:shadow-md transition-shadow">
+                    <div className="flex items-center mb-3">
+                        <AiOutlineWarning className="w-8 h-8 text-orange-500 mr-3"/>
+                        <h3 className="text-xl font-bold text-orange-700">Restricción Forzada</h3>
+                    </div>
+                    <p className="text-gray-700 mb-3 text-sm">
+                        Paciente combativo que representa riesgo para sí mismo o el equipo.
+                    </p>
+                    <div className="bg-orange-50 p-3 rounded">
+                        <strong className="text-orange-800 text-sm">Lineamientos:</strong>
+                        <ul className="text-sm text-orange-700 mt-1">
+                            <li>• Proteger vía aérea en todo momento.</li>
+                            <li>• Solicitar apoyo de autoridades (policía).</li>
+                            <li>• Consultar protocolo y control médico.</li>
+                            <li>• Nunca remover restricciones en trayecto sin evaluar riesgo.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div
