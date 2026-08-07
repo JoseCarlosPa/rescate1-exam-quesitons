@@ -200,6 +200,12 @@ import Trivia from "../../pages/Games/Trivia/Trivia.page.tsx";
 import BuzzerBattle from "../../pages/Games/BuzzerBattle/BuzzerBattle.page.tsx";
 import RapidResponse from "../../pages/Games/RapidResponse/RapidResponse.page.tsx";
 import MedicalQuizArena from "../../pages/Games/MedicalQuizArena";
+import ProtocolOrder from "../../pages/Games/ProtocolOrder/ProtocolOrder.page.tsx";
+import Flashcards from "../../pages/Games/Flashcards/Flashcards.page.tsx";
+import AnatomiaVisual from "../../pages/Games/AnatomiaVisual/AnatomiaVisual.page.tsx";
+import ContrarrelojDosis from "../../pages/Games/ContrarrelojDosis/ContrarrelojDosis.page.tsx";
+import Ahorcado from "../../pages/Games/Ahorcado/Ahorcado.page.tsx";
+import TriageMaster from "../../pages/Games/TriageMaster/TriageMaster.page.tsx";
 import RopesPage from "../../pages/Ropes/Ropes.page.tsx";
 import Introduction from "../../pages/Ropes/lessons/Introduction/Introduction.page.tsx";
 import { introductionQuestions } from "../../pages/Ropes/lessons/Introduction/Introduction.questions.ts";
@@ -523,6 +529,12 @@ export default function Router() {
                             <Route path={AllRoutes.RAPID_RESPONSE} element={<RapidResponse />} />
                             <Route path={AllRoutes.BUZZER_BATTLE} element={<BuzzerBattle />} />
                             <Route path={AllRoutes.MEDICAL_QUIZ_ARENA} element={<MedicalQuizArena />} />
+                            <Route path={AllRoutes.PROTOCOL_ORDER} element={<ProtocolOrder />} />
+                            <Route path={AllRoutes.FLASHCARDS} element={<Flashcards />} />
+                            <Route path={AllRoutes.ANATOMIA_VISUAL} element={<AnatomiaVisual />} />
+                            <Route path={AllRoutes.CONTRARRELOJ_DOSIS} element={<ContrarrelojDosis />} />
+                            <Route path={AllRoutes.AHORCADO} element={<Ahorcado />} />
+                            <Route path={AllRoutes.TRIAGE_MASTER} element={<TriageMaster />} />
                             <Route path={AllRoutes.ROPE_RESCUE} element={<ProtectedRoute requireMainAccess><RopesPage /></ProtectedRoute>} />
                             <Route path={AllRoutes.ROPE_INTRODUCTION} element={<Introduction />} />
                             <Route path={`${AllRoutes.ROPE_INTRODUCTION}/exam`}
